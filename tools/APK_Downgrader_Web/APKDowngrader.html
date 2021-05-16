@@ -93,6 +93,20 @@
         margin-top: 3px;
         margin-bottom: 3px;
     }
+
+    .guideHeader {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .guideSteps {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .topicContainer {
+        padding-left: 10px;
+    }
     
     </style>
     </head>
@@ -152,58 +166,76 @@
                         <div style="font-size: 24px;">Notes</div>
                         <div style="font-size: 20px; text-align: left;">
                             Tested Devices + Browsers
-                            <div style="font-size: 11px; color: #888; margin-bottom: 10px;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices</i></div>
-                            <div style="font-size: 14px; color: #DDD;">
-                                <div style="display: flex; flex-direction: column;">
-                                    <div class="devicesRow" style="font-size: 16px;">
-                                        <div class="devicesRowItem">Device</div>
-                                        <div class="devicesRowItem">MS Edge</div>
-                                        <div class="devicesRowItem">Mozilla Firefox</div>
-                                        <div class="devicesRowItem">Google Chrome</div>
-                                        <div class="devicesRowItem">Opera</div>
-                                        <div class="devicesRowItem">Safari</div>
-                                    </div>
-                                    <div class="devicesRow">
-                                        <div class="devicesRowItem">Oculus Quest 1</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">Oculus Broser N</div>
-                                        <div class="devicesRowItem"></div>
-                                        <div class="devicesRowItem"></div>
-                                    </div>
-                                    <div class="devicesRow">
-                                        <div class="devicesRowItem">Android Phone (4 GB RAM)</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItem"></div>
-                                    </div>
-                                    <div class="devicesRow">
-                                        <div class="devicesRowItem">Android Phone (8+ GB RAM)</div>
-                                        <div class="devicesRowItemY">Y</div>
-                                        <div class="devicesRowItem"></div>
-                                        <div class="devicesRowItemY">Y</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItem"></div>
-                                    </div>
-                                    <div class="devicesRow">
-                                        <div class="devicesRowItem">Windows (8+ GB RAM)</div>
-                                        <div class="devicesRowItemY">Y</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItemN">N</div>
-                                        <div class="devicesRowItem"></div>
-                                    </div>
-                                    <div class="devicesRow">
-                                        <div class="devicesRowItem">MacOS 10.13.6+ (8+ GB RAM)</div>
-                                        <div class="devicesRowItem"></div>
-                                        <div class="devicesRowItemY">Y</div>
-                                        <div class="devicesRowItem"></div>
-                                        <div class="devicesRowItem"></div>
-                                        <div class="devicesRowItemY">Y</div>
+                            <div style="font-size: 11px; color: #888; margin-bottom: 10px; padding-left: 20px;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices. N/A means the browser hasn't been tested/doesn't exist</i></div>
+                            <div class="topicContainer">
+                                <div style="font-size: 14px; color: #DDD;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <div class="devicesRow" style="font-size: 16px;">
+                                            <div class="devicesRowItem">Device</div>
+                                            <div class="devicesRowItem">MS Edge</div>
+                                            <div class="devicesRowItem">Mozilla Firefox</div>
+                                            <div class="devicesRowItem">Google Chrome</div>
+                                            <div class="devicesRowItem">Opera</div>
+                                            <div class="devicesRowItem">Safari</div>
+                                        </div>
+                                        <div class="devicesRow">
+                                            <div class="devicesRowItem">Oculus Quest 1</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">Oculus Broser N</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                        </div>
+                                        <div class="devicesRow">
+                                            <div class="devicesRowItem">Android Phone (4 GB RAM)</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                        </div>
+                                        <div class="devicesRow">
+                                            <div class="devicesRowItem">Android Phone (8+ GB RAM)</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                        </div>
+                                        <div class="devicesRow">
+                                            <div class="devicesRowItem">Windows (8+ GB RAM)</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItemN">N</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                        </div>
+                                        <div class="devicesRow">
+                                            <div class="devicesRowItem">MacOS 10.13.6+ (8+ GB RAM)</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItem">N/A</div>
+                                            <div class="devicesRowItemY">Y</div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div style="font-size: 16px;">
+                                <div style="font-size: 20px; margin-top: 30px;">Guide
+                                    <div style="font-size: 11px; color: #888; margin-bottom: 10px; padding-left: 20px;">Instructions and help with this tool</i></div>
+                                    <div class="topicContainer">
+                                        
+                                        <div class="guideHeader">Downgrading</div>
+                                        <div class="guideSteps">
+                                            First Backup your APK via Sidequest and download the patch you want to use from the patches section.
+                                            Then click Choose file for APK and select the APK you backed up and click Choose File for the downgrade file as well and select the patch you downloaded.
+                                            Finally put in the nameyou want the downgraded file to have. e. g. Beat Saber 1.13.2 and hit Downgrade. The file should now download
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
                             </div>
                         </div>
                         <br/>
