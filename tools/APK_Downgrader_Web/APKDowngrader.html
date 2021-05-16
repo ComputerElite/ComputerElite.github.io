@@ -8,7 +8,7 @@
         padding: 10px;
     }
     body {
-        background: rgb(32,34,37);
+        background: #202225;
         color: #EEE;
     }
     body, table, input {
@@ -35,7 +35,7 @@
         padding: 5px;
         border: none;
         color: #EEEEEE;
-        background-color: rgb(32,34,37);
+        background-color: #202225;
     }
 
     .red {
@@ -49,6 +49,49 @@
     .os {
         font-size: 16px;
         color: #EEE;
+    }
+
+    .item {
+        flex: 1;
+        width: 30%;
+        word-wrap: break-word;
+        padding: 3px;
+        margin-right: 5%;
+    }
+
+    .item2 {
+        flex: 1;
+        width: 30%;
+        word-wrap: break-word;
+        padding: 3px;
+    }
+
+    .devicesRowItem {
+        flex: 1;
+        width: 16%;
+        text-align: center;
+    }
+
+    .devicesRowItemN {
+        flex: 1;
+        width: 16%;
+        color: #FF2222;
+        text-align: center;
+    }
+
+    .devicesRowItemY {
+        flex: 1;
+        width: 16%;
+        color: #00BB00;
+        text-align: center;
+    }
+
+    .devicesRow {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
     
     </style>
@@ -75,12 +118,12 @@
                                 </label>
                             </td>
                             <td style="text-align: right;">
-                                <input type="button" value="Patch" id="input-apply" disabled="true">
+                                <input type="button" value="Downgrade" id="input-apply" disabled="true">
                             </td>
                         </tr>
                     </table>
                     <div style="background: #666; text-align: left;">
-                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #0FF;"></div>
+                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF;"></div>
                     </div>
                 </div>
             </div>
@@ -90,16 +133,13 @@
                         <div style="font-size: 24px;">Download patches</div>
                         <div style="font-size: 11px; color: #888;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download)</i></div>
                         <br/>
-                        <div style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-around;">
-                            <div id="appids">
-                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">App</a>
-                            </div>
-                            <div id="apkversions">
-                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">APK Version</a>
-                            </div>
-                            <div id="targetversions">
-                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">Target Version</a>
-                            </div>
+                        <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+                            <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                                <div class="item">App</div>
+                                <div class="item">APK Version</div>
+                                <div class="item2">Target Version</div>
+                            </a>
+                            
                         </div>
                         <br/>
                         <div style="font-size: 11px; color: #888;"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader</a></div>
@@ -112,14 +152,58 @@
                         <div style="font-size: 24px;">Notes</div>
                         <div style="font-size: 20px; text-align: left;">
                             Tested Devices + Browsers
-                            <div style="font-size: 11px; color: #888;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices</i></div>
+                            <div style="font-size: 11px; color: #888; margin-bottom: 10px;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices</i></div>
                             <div style="font-size: 14px; color: #DDD;">
-                                <br/>
-                                <a class="os">Oculus Quest 1:</a> Oculus browser <a class="red">N</a>, Firefox reality <a class="red">N</a>, Sideloaded MS Edge: <a class="red">N</a>
-                                <br/>
-                                <a class="os">Android Phone (4GB RAM):</a> MS Edge <a class="red">N</a>, Google Chrome <a class="red">N</a>, Mozilla Firefox <a class="red">N</a>, Opera <a class="red">N</a>
-                                <br/>
-                                <a class="os">Windows (8+ GB RAM; lower might also work):</a> MS Edge <a class="green">Y</a>, Google Chrome <a class="red">N</a>, Mozilla Firefox <a class="red">N</a>
+                                <div style="display: flex; flex-direction: column;">
+                                    <div class="devicesRow" style="font-size: 16px;">
+                                        <div class="devicesRowItem">Device</div>
+                                        <div class="devicesRowItem">MS Edge</div>
+                                        <div class="devicesRowItem">Mozilla Firefox</div>
+                                        <div class="devicesRowItem">Google Chrome</div>
+                                        <div class="devicesRowItem">Opera</div>
+                                        <div class="devicesRowItem">Safari</div>
+                                    </div>
+                                    <div class="devicesRow">
+                                        <div class="devicesRowItem">Oculus Quest 1</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">Oculus Broser N</div>
+                                        <div class="devicesRowItem"></div>
+                                        <div class="devicesRowItem"></div>
+                                    </div>
+                                    <div class="devicesRow">
+                                        <div class="devicesRowItem">Android Phone (4 GB RAM)</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItem"></div>
+                                    </div>
+                                    <div class="devicesRow">
+                                        <div class="devicesRowItem">Android Phone (8+ GB RAM)</div>
+                                        <div class="devicesRowItemY">Y</div>
+                                        <div class="devicesRowItem"></div>
+                                        <div class="devicesRowItemY">Y</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItem"></div>
+                                    </div>
+                                    <div class="devicesRow">
+                                        <div class="devicesRowItem">Windows (8+ GB RAM)</div>
+                                        <div class="devicesRowItemY">Y</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItemN">N</div>
+                                        <div class="devicesRowItem"></div>
+                                    </div>
+                                    <div class="devicesRow">
+                                        <div class="devicesRowItem">MacOS 10.13.6+ (8+ GB RAM)</div>
+                                        <div class="devicesRowItem"></div>
+                                        <div class="devicesRowItemY">Y</div>
+                                        <div class="devicesRowItem"></div>
+                                        <div class="devicesRowItem"></div>
+                                        <div class="devicesRowItemY">Y</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <br/>
@@ -147,11 +231,17 @@
     
     downgrades["versions"].forEach(element => {
         if(element["isXDelta3"]) {
-            document.getElementById("appids").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["appid"]).replace("{1}", element["download"])
-            document.getElementById("apkversions").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["SV"]).replace("{1}", element["download"])
-            document.getElementById("targetversions").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["TV"]).replace("{1}", element["download"])
+            document.getElementById("patches").innerHTML += GetFormatted(element)
         }
     });
+
+    function GetFormatted(element) {
+        return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
+                    <div class="item">${element.appid}</div>
+                    <div class="item">${element.SV}</div>
+                    <div class="item2">${element.TV}</div>
+                </a>`
+    }
 
     function attachBinaryInput(selector, onloadend)
     {
