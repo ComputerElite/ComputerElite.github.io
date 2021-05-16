@@ -1,0 +1,372 @@
+<head>
+    <title>APK Downgrader - Web Version</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <script src="libpatch.js?2"></script>
+    <script src="lzma.js"></script>
+    <style>
+    td {
+        padding: 10px;
+    }
+    body {
+        background: rgb(32,34,37);
+        color: #EEE;
+    }
+    body, table, input {
+        font-size: 14px;
+        font-family: 'Open Sans';
+    }
+    a {
+        text-decoration: none;
+        color: #30A2EC;
+    }
+    a:visited
+    {
+        color: #30A2EC;
+    }
+    
+    input[type='file']
+    {
+        background-color: rgba(0,0,0,0.15);
+        padding: 10px;
+    }
+    
+    input[type='text']
+    {
+        padding: 5px;
+        border: none;
+        color: #EEEEEE;
+        background-color: rgb(32,34,37);
+    }
+
+    .red {
+        color: #FF2222;
+    }
+
+    .green {
+        color: #00BB00;
+    }
+
+    .os {
+        font-size: 16px;
+        color: #EEE;
+    }
+    
+    </style>
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;">
+                    <div style=" padding: 10px;">
+                        <div style="font-size: 24px;">APK Downgrader - Web</div>
+                        <div style="font-size: 11px; color: #888;">Based on <a href="https://hack64.net/tools/patcher.php" target="_blank">Hack64's Web Patcher</a></div>
+                    </div>
+                    <table style="padding: 10px; width: 100%;">
+                        <tr><td>APK</td><td><input type="file" style="width: 100%;" id="input-rom" accept=".apk"></td></tr>
+                        <tr><td>Downgrade file</td><td><input type="file" style="width: 100%;" id="input-patch" accept=".bin, .xdelta, .xdelta3"></td></tr>
+                        <tr><td>Save as</td><td><input type="text" style="width: 100%;" id="input-saveas" spellcheck="false"></td></tr>
+                    </table>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <label style="padding: 5px; font-size: 12px; vertical-align: center;" title="Skip checksum verification (not recommended)">
+                                    <input type="checkbox" style="vertical-align: middle;" id="input-skip-checksums">
+                                    <span style="margin-left: 5px;">Skip checksums</span>
+                                </label>
+                            </td>
+                            <td style="text-align: right;">
+                                <input type="button" value="Patch" id="input-apply" disabled="true">
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="background: #666; text-align: left;">
+                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #0FF;"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Download patches</div>
+                        <div style="font-size: 11px; color: #888;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download)</i></div>
+                        <br/>
+                        <div style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-around;">
+                            <div id="appids">
+                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">App</a>
+                            </div>
+                            <div id="apkversions">
+                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">APK Version</a>
+                            </div>
+                            <div id="targetversions">
+                                <a style="font-size: 22px; color: #EEEEEE; text-align: center;">Target Version</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div style="font-size: 11px; color: #888;"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader</a></div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 20px;">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Notes</div>
+                        <div style="font-size: 20px; text-align: left;">
+                            Tested Devices + Browsers
+                            <div style="font-size: 11px; color: #888;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices</i></div>
+                            <div style="font-size: 14px; color: #DDD;">
+                                <br/>
+                                <a class="os">Oculus Quest 1:</a> Oculus browser <a class="red">N</a>, Firefox reality <a class="red">N</a>, Sideloaded MS Edge: <a class="red">N</a>
+                                <br/>
+                                <a class="os">Android Phone (4GB RAM):</a> MS Edge <a class="red">N</a>, Google Chrome <a class="red">N</a>, Mozilla Firefox <a class="red">N</a>, Opera <a class="red">N</a>
+                                <br/>
+                                <a class="os">Windows (8+ GB RAM; lower might also work):</a> MS Edge <a class="green">Y</a>, Google Chrome <a class="red">N</a>, Mozilla Firefox <a class="red">N</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            The Web Version of <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a> wouldn't have been possible without the work of <a href="https://hack64.net/tools/patcher.php" target="_blank">hack64's Web Patcher</a> which is powering most of the code behind downgrading
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+    
+    var sourceData = null;
+    var patchData = null;
+    var saveAsName = '';
+    
+    var domInputRom = document.querySelector('#input-rom');
+    var domInputPatch = document.querySelector('#input-patch');
+    var domInputSaveAs = document.querySelector('#input-saveas');
+    var domInputApply = document.querySelector('#input-apply');
+    var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
+    var domProgressBar = document.querySelector('#progress-bar');
+
+    var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
+    
+    downgrades["versions"].forEach(element => {
+        if(element["isXDelta3"]) {
+            document.getElementById("appids").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["appid"]).replace("{1}", element["download"])
+            document.getElementById("apkversions").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["SV"]).replace("{1}", element["download"])
+            document.getElementById("targetversions").innerHTML += ('<a style="font-size: 16px; color: #EEEEEE; text-align: center;" href="{1}" ' + (element["isDirectDownload"] ? "download" : 'target="_blank"') + '><br/><br/>{0}</a>').replace("{0}", element["TV"]).replace("{1}", element["download"])
+        }
+    });
+
+    function attachBinaryInput(selector, onloadend)
+    {
+        var elem = document.querySelector(selector);
+    
+        if(!elem)
+        {
+            return false;
+        }
+    
+        elem.onchange = function(e)
+        {
+            if(!this.files[0])
+            {
+                return;
+            }
+    
+            var reader = new FileReader();
+            reader.onloadend = function()
+            {
+                onloadend(reader.result);
+            }
+            reader.readAsArrayBuffer(this.files[0]);
+        }
+    }
+    
+    attachBinaryInput('#input-rom', function(result)
+    {
+        sourceData = result;
+        autoName();
+        setApplyButtonState();
+    })
+    
+    attachBinaryInput('#input-patch', function(result)
+    {
+        patchData = result;
+        autoName();
+        setApplyButtonState();
+    })
+    
+    domInputSaveAs.onchange = domInputSaveAs.onkeydown = function()
+    {
+        setApplyButtonState();
+    }
+    
+    function isReady()
+    {
+        return (!!domInputRom.files[0] && !!domInputPatch.files[0] && domInputSaveAs.value != '');
+    }
+    
+    function autoName()
+    {
+        if(domInputSaveAs.value != '' || !domInputRom.files[0] || !domInputPatch.files[0])
+        {
+            return;
+        }
+    
+        var romFileName = domInputRom.files[0].name;
+        var patchFileName = domInputPatch.files[0].name;
+    
+        var ext = romFileName.split('.').pop();
+        var parts = patchFileName.split('.');
+        parts.pop();
+    
+        var name = parts.join('.') + '.' + ext;
+    
+        domInputSaveAs.value = name;
+    }
+    
+    domInputApply.onclick = function()
+    {
+        runPatcher();
+    }
+    
+    domInputApply.oncontextmenu = function()
+    {
+        runPatcher({debug: true});
+    }
+    
+    //Was for testing
+    function runPatcherSync()
+    {
+        var debug = cfg.debug || false;
+    
+        if(!isReady())
+        {
+            return;
+        }
+    
+        disableInputs();
+        
+        saveAs(domInputSaveAs.value, applyPatch(sourceData, patchData, domInputSkipChecksums.checked));
+        enableInputs();
+        domProgressBar.style.width = '0px';
+    }
+
+    function runPatcher(cfg)
+    {
+        cfg = cfg || {};
+        var debug = cfg.debug || false;
+    
+        if(!isReady())
+        {
+            return;
+        }
+    
+        disableInputs();
+    
+        function onpatchend(targetData)
+        {
+            domProgressBar.style.width = '0px';
+            enableInputs();
+    
+            if(!debug)
+            {
+                saveAs(domInputSaveAs.value, targetData);
+            }
+        }
+    
+        function onprogress(ratio)
+        {
+            domProgressBar.style.width = (ratio * 100) + '%';
+        }
+    
+        function onerror(message)
+        {
+            alert("Error: " + message + "\n\n" + "See console output for more information.");
+            domProgressBar.style.width = '0px';
+            enableInputs();
+        }
+    
+        var config = {
+            ignoreChecksums: domInputSkipChecksums.checked,
+            onerror: onerror,
+            onpatchend: onpatchend,
+            onprogress: onprogress
+        };
+    
+        applyPatchAsync(sourceData, patchData, config);
+    }
+    
+    function setApplyButtonState()
+    {
+        if(!isReady())
+        {
+            domInputApply.setAttribute('disabled', 'true');
+            return;
+        }
+    
+        domInputApply.removeAttribute('disabled');
+    }
+    
+    function disableInputs()
+    {
+        domInputRom.setAttribute('disabled', 'true');
+        domInputPatch.setAttribute('disabled', 'true');
+        domInputSaveAs.setAttribute('disabled', 'true');
+        domInputApply.setAttribute('disabled', 'true');
+    }
+    
+    function enableInputs()
+    {
+        domInputRom.removeAttribute('disabled');
+        domInputPatch.removeAttribute('disabled');
+        domInputSaveAs.removeAttribute('disabled');
+        domInputApply.removeAttribute('disabled');
+    }
+
+    function MakeTextGetRequest(url) {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, false);
+        request.send(null);
+        if (request.status == 200) {
+            return request.responseText;
+        } else {
+            return "Something went wrong: " + request.status;
+        }
+    }
+
+    function MakeJSONGetRequest(url) {
+        return JSON.parse(MakeTextGetRequest(url));
+    }
+    
+    function saveAs(filename, data)
+    {
+        console.log('saving ' + filename + '...')
+    
+        var blob = new Blob([data], {type: 'octet/stream'});
+        var url = window.URL.createObjectURL(blob);
+    
+        if(navigator && navigator.msSaveBlob)
+        {
+            console.log("using msSaveBlob...");
+            navigator.msSaveBlob(blob, filename);
+        }
+        else
+        {
+            var a = document.createElement('a');
+            a.style = "display: none";
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            try
+            {
+                a.click();
+            }
+            catch(e)
+            {
+                console.error(e);
+                console.log('failed to save file');
+            }
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    }
+    
+    </script>
+    </body>
