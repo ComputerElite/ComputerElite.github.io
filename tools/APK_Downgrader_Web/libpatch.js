@@ -1,7 +1,7 @@
 /*
 
 Copyright (C) 2018 hack64.net
-
+Modified by ComputerElite
 */
 
 if(!Array.prototype.fill)
@@ -199,6 +199,74 @@ ProgressBroadcaster.prototype.update = function(ratio)
         self.postMessage({ evtType: 'progress', param: ratio });
         this.ratio = ratio;
     }
+}
+
+PatchStream.prototype = {
+    seek: function(offset)
+    {
+        this.offset = offset;
+    },
+    skip: function(numBytes)
+    {
+        this.offset += numBytes;
+    },
+    isEOF: function()
+    {
+        return (this.offset >= this.ab.byteLength);
+    },
+    readBytes: function(dst, dstOffs, numBytes)
+    {
+        // read bytes into a u8 array
+        bytecopy(dst, dstOffs, this.u8, this.offset, numBytes);
+        this.skip(numBytes);
+    },
+    _readInt: function(dvType, numBytes)
+    {
+        var val = this.dv[dvType](this.offset, this.littleEndian);
+        this.offset += numBytes;
+        return val;
+    },
+    readU8: function()
+    {
+        return this._readInt('getUint8', 1);
+    },
+    readU16: function()
+    {
+        return this._readInt('getUint16', 2);
+    },
+    readU24: function()
+    {
+        if(!this.littleEndian)
+        {
+            return (this.readU16() << 8) | this.readU8();
+        }
+        return this.readU16() | (this.readU8() << 16);
+    },
+    readU32: function()
+    {
+        return this._readInt('getUint32', 4);
+    },
+    readU64: function()
+    {
+        var a = this.readU32();
+        var b = this.readU32();
+
+        if(this.littleEndian)
+        {
+            return ((b * 0x100000000) + a);
+        }
+
+        return ((a * 0x100000000) + b);
+    }
+};
+
+function PatchStream(ab, littleEndian)
+{
+    this.ab = ab;
+    this.u8 = new Uint8Array(ab);
+    this.dv = new DataView(ab);
+    this.offset = 0;
+    this.littleEndian = littleEndian || false;
 }
 
 PatchStream.prototype = {
