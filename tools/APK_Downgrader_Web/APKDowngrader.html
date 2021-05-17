@@ -1,49 +1,13 @@
 <head>
-    <title>APK Downgrader - Web Version</title>
+    <title>APK Downgrader - Web</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <script src="libpatch.js?2"></script>
     <script src="lzma.js"></script>
+    <link href="../../css/standart.css" type="text/css" rel="stylesheet">
+    <script src="../../js/standart.js"></script>
     <style>
     td {
         padding: 10px;
-    }
-    body {
-        background: #202225;
-        color: #EEE;
-    }
-    body, table, input {
-        font-size: 14px;
-        font-family: 'Open Sans';
-    }
-    a {
-        text-decoration: none;
-        color: #30A2EC;
-    }
-    a:visited
-    {
-        color: #30A2EC;
-    }
-    
-    input[type='file']
-    {
-        background-color: rgba(0,0,0,0.15);
-        padding: 10px;
-    }
-    
-    input[type='text']
-    {
-        padding: 5px;
-        border: none;
-        color: #EEEEEE;
-        background-color: #202225;
-    }
-
-    .red {
-        color: #FF2222;
-    }
-
-    .green {
-        color: #00BB00;
     }
 
     .os {
@@ -117,7 +81,7 @@
                 <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;">
                     <div style=" padding: 10px;">
                         <div style="font-size: 24px;">APK Downgrader - Web</div>
-                        <div style="font-size: 11px; color: #888;">Based on <a href="https://hack64.net/tools/patcher.php" target="_blank">Hack64's Web Patcher</a></div>
+                        <div class="headerDescription">Based on <a href="https://hack64.net/tools/patcher.php" target="_blank">Hack64's Web Patcher</a></div>
                     </div>
                     <table style="padding: 10px; width: 100%;">
                         <tr><td>APK</td><td><input type="file" style="width: 100%;" id="input-rom" accept=".apk"></td></tr>
@@ -146,7 +110,7 @@
                 <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;">
                     <div style="padding: 10px;">
                         <div style="font-size: 24px;">Download patches</div>
-                        <div style="font-size: 11px; color: #888;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download)</i></div>
+                        <div class="headerDescription">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download)</i></div>
                         <br/>
                         <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
                             <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
@@ -157,7 +121,7 @@
                             
                         </div>
                         <br/>
-                        <div style="font-size: 11px; color: #888;"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader</a></div>
+                        <div class="headerDescription"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader</a></div>
                     </div>
                 </div>
             </div>
@@ -167,9 +131,9 @@
                         <div style="font-size: 24px;">Notes</div>
                         <div style="font-size: 20px; text-align: left;">
                             Tested Devices + Browsers
-                            <div style="font-size: 11px; color: #888; margin-bottom: 10px; padding-left: 20px;">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices. This data is only by one person each so it might be incorrect. N/A means the browser hasn't been tested/doesn't exist.</i></div>
+                            <div class="headerDescription">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices. This data is only by one person each so it might be incorrect. N/A means the browser hasn't been tested/doesn't exist.</i></div>
                             <div class="topicContainer">
-                                <div style="font-size: 14;">Since the Web Version uses lots of RAM atm I figured this List would help you a bit.</div> 
+                                <div style="font-size: 14;">Since the Web Version uses lots of RAM atm I figured this List would help you a bit. <i>General guideline: Min RAM on light weight OS: 4GB, recommended: 8 GB</i></div> 
                             </br>
                                 <div style="font-size: 14px; color: #DDD;">
                                     <div style="display: flex; flex-direction: column;">
@@ -233,8 +197,8 @@
                                 </div>
                             </div>
                             <div style="font-size: 16px;">
-                                <div style="font-size: 20px; margin-top: 30px;">Guide
-                                    <div style="font-size: 11px; color: #888; margin-bottom: 10px; padding-left: 20px;">Instructions and help with this tool</i></div>
+                                <div style="font-size: 20px; margin-top: 30px;"><a style="color: #EEEEEE; cursor:default;" href="#guide">Guide</a>
+                                    <div class="headerDescription">Instructions and help with this tool</i></div>
                                     <div class="topicContainer">
                                         
                                         <div class="guideHeader">Downgrading</div>
@@ -249,10 +213,10 @@
 
                             <div style="font-size: 16px;">
                                 <div style="font-size: 20px; margin-top: 30px;">Common errors
-                                    <div style="font-size: 11px; color: #888; margin-bottom: 10px; padding-left: 20px;">Errors which may or may not show</i></div>
+                                    <div class="headerDescription">Errors which may or may not show</i></div>
                                     <div class="topicContainer">
                                         
-                                        <div class="guideHeader">"Array buffer allocation failed" or Browser crashs</div>
+                                        <div class="guideHeader"><code class="code">Array buffer allocation failed</code> or Browser crashs</div>
                                         <div class="guideSteps">
                                             This means you don't have enough RAM left. Either it'll not work on your device at all or you just have too much RAM in use.
                                         </div>
@@ -468,21 +432,6 @@
         domInputPatch.removeAttribute('disabled');
         domInputSaveAs.removeAttribute('disabled');
         domInputApply.removeAttribute('disabled');
-    }
-
-    function MakeTextGetRequest(url) {
-        var request = new XMLHttpRequest();
-        request.open('GET', url, false);
-        request.send(null);
-        if (request.status == 200) {
-            return request.responseText;
-        } else {
-            return "Something went wrong: " + request.status;
-        }
-    }
-
-    function MakeJSONGetRequest(url) {
-        return JSON.parse(MakeTextGetRequest(url));
     }
     
     function saveAs(filename, data)

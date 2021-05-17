@@ -1,0 +1,55 @@
+body {
+    color: #EEEEEE;
+    background-color: #202225;
+}
+
+body, table, input {
+    font-size: 14px;
+    font-family: 'Open Sans';
+}
+
+a {
+    text-decoration: none;
+    color: #30A2EC;
+}
+
+a:visited
+{
+    color: #30A2EC;
+}
+
+input[type='file']
+{
+    background-color: rgba(0,0,0,0.15);
+    padding: 10px;
+}
+
+input[type='text']
+{
+    padding: 5px;
+    border: none;
+    color: #EEEEEE;
+    background-color: #202225;
+}
+
+.red {
+    color: #FF2222;
+}
+
+.green {
+    color: #00BB00;
+}
+
+.code {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #202225;
+    border: 1px solid black;
+}
+
+.headerDescription {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
