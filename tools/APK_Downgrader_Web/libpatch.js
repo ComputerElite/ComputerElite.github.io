@@ -85,7 +85,7 @@ function bytecopy(dst, dstOffs, src, srcOffs, size)
     dst.set(subsrc, dstOffs);
 }
 
-function applyPatch(sourceData, patchData, ignoreChecksums)
+function applyPatch(sourceData, patchData, ignoreChecksums, isSync)
 {
     ignoreChecksums = ignoreChecksums || false;
     var header = new Uint8Array(patchData);
@@ -105,7 +105,7 @@ function applyPatch(sourceData, patchData, ignoreChecksums)
 
             console.log('libpatch: test applying ' + fmt.name + ' patch...');
             timeStart = _this.performance.now();
-            targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums);
+            targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums, isSync);
             timeEnd = _this.performance.now();
             console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
             return targetData;
