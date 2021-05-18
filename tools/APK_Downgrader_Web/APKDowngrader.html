@@ -133,7 +133,7 @@
                             Tested Devices + Browsers
                             <div class="headerDescription">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices. This data is only by one person each so it might be incorrect. N/A means the browser hasn't been tested/doesn't exist.</i></div>
                             <div class="topicContainer">
-                                <div style="font-size: 14;">Since the Web Version uses lots of RAM atm I figured this List would help you a bit. <i>General guideline: Min RAM on light weight OS: 4GB, recommended: 8 GB</i></div> 
+                                <div style="font-size: 14;">Since the Web Version uses lots of RAM atm (about 2GB) I figured this List would help you a bit. <i>General guideline: Min RAM on light weight OS: 4GB, recommended: 8 GB</i></div> 
                             </br>
                                 <div style="font-size: 14px; color: #DDD;">
                                     <div style="display: flex; flex-direction: column;">
@@ -200,7 +200,12 @@
                                 <div style="font-size: 20px; margin-top: 30px;"><a style="color: #EEEEEE; cursor:default;" href="#guide">Guide</a>
                                     <div class="headerDescription">Instructions and help with this tool</i></div>
                                     <div class="topicContainer">
-                                        
+                                        <div class="tip">
+                                            <div class="tipHeader">
+                                                Tip
+                                            </div>
+                                            If you are on a device which has low RAM then close all Apps/programs except your browser and close your browser or this tab after downgrading.
+                                        </div>
                                         <div class="guideHeader">Downgrading</div>
                                         <div class="guideSteps">
                                             First Backup your APK via Sidequest and download the patch you want to use from the patches section.
@@ -337,18 +342,34 @@
     
     domInputApply.onclick = function()
     {
-        runPatcher();
+        runPatcherSync();
     }
     
     domInputApply.oncontextmenu = function()
     {
-        runPatcher({debug: true});
+        runPatcher();
     }
     
-    //Was for testing
+    /*
+        RAM usage tests with MS Edge
+        - Async downgrading -
+
+        234 MB Base
+        1097 MB after selecting
+        ~4200 MB while downgrading
+        1099 MB After downgrading
+
+        - Sync downgrading -
+
+        268 MB Base
+        1099 MB After Selecting
+        ~2056 MB while downgrading
+        1100 MB After downgrading
+
+        => right click will be async and normal click sync.
+    */
     function runPatcherSync()
     {
-        var debug = cfg.debug || false;
     
         if(!isReady())
         {
@@ -362,11 +383,8 @@
         domProgressBar.style.width = '0px';
     }
 
-    function runPatcher(cfg)
+    function runPatcher()
     {
-        cfg = cfg || {};
-        var debug = cfg.debug || false;
-    
         if(!isReady())
         {
             return;

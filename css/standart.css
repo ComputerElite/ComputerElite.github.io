@@ -53,3 +53,48 @@ input[type='text']
     margin-bottom: 10px;
     padding-left: 20px;
 }
+
+.tip {
+    background-color: #36632898;
+    padding: 10px;
+    font-size: 14px;
+    border-left: 5px solid #5fc456;
+    margin-left: 10px;
+    color: #73c46c;
+}
+
+.tipHeader {
+    font-size: 16px;
+    color: #5fc456;
+    margin-bottom: 10px;
+}
+
+.info {
+    background-color: #a1870498;
+    padding: 10px;
+    font-size: 14px;
+    border-left: 5px solid #c7c700;
+    margin-left: 10px;
+    color: #f8ffb4;
+}
+
+.infoHeader {
+    font-size: 16px;
+    color: #ffff00;
+    margin-bottom: 10px;
+}
+
+.warning {
+    background-color: #49121298;
+    padding: 10px;
+    font-size: 14px;
+    border-left: 5px solid #c70000;
+    margin-left: 10px;
+    color: #ffb4b4;
+}
+
+.warningHeader {
+    font-size: 16px;
+    color: #c70000;
+    margin-bottom: 10px;
+}
