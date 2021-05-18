@@ -380,7 +380,7 @@
         
         disableInputs();
         domProgressBar.style.width = (0.5 * 100) + '%';
-        saveAs(domInputSaveAs.value, applyPatch(sourceData, patchData, domInputSkipChecksums.checked, true));
+        saveAs(domInputSaveAs.value, applyPatch(sourceData, patchData, domInputSkipChecksums.checked));
         enableInputs();
         domProgressBar.style.width = '0px';
     }
