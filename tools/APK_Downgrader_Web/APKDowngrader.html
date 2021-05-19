@@ -287,7 +287,7 @@
 
     downgrades["versions"].forEach(element => {
         //if(element["isXDelta3"]) {
-            var ram = element["SourceByteSize"] * (element["isXDelta3"] ? 3.8 : 19.0) + 10
+            var ram = (element["isXDelta3"] ? (element["SourceByteSize"]) :  (element["SourceByteSize"] + element["TargetByteSize"])) * (element["isXDelta3"] ? 3.8 : 11) + 10
             console.log(`Estimated RAM usage: ` + ByteSizeToString(ram))
             document.getElementById("patches").innerHTML += GetFormatted(element, ram)
         //}
