@@ -17,17 +17,17 @@
 
     .item {
         flex: 1;
-        width: 30%;
+        width: 25%;
         word-wrap: break-word;
         padding: 3px;
-        margin-right: 5%;
     }
 
-    .item2 {
+    .itemR {
         flex: 1;
-        width: 30%;
+        width: 25%;
         word-wrap: break-word;
         padding: 3px;
+        color: #FF2222;
     }
 
     .devicesRowItem {
@@ -85,7 +85,7 @@
                     </div>
                     <table style="padding: 10px; width: 100%;">
                         <tr><td>APK</td><td><input type="file" style="width: 100%;" id="input-rom" accept=".apk"></td></tr>
-                        <tr><td>Downgrade file</td><td><input type="file" style="width: 100%;" id="input-patch" accept=".bin, .xdelta, .xdelta3"></td></tr>
+                        <tr><td>Downgrade file</td><td><input type="file" style="width: 100%;" id="input-patch" accept=".bin, .xdelta, .xdelta3, .decr"></td></tr>
                         <tr><td>Save as</td><td><input type="text" style="width: 100%;" id="input-saveas" spellcheck="false"></td></tr>
                     </table>
                     <table style="width: 100%;">
@@ -110,13 +110,14 @@
                 <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;">
                     <div style="padding: 10px;">
                         <div style="font-size: 24px;">Download patches</div>
-                        <div class="headerDescription">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download)</i></div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download). Red patches may not work on 32 bit brosers as MS Edge, Google Chrome and Opera. It gets Red with 3GB est. RAM usage and more</i></div>
                         <br/>
                         <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
                             <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                                 <div class="item">App</div>
                                 <div class="item">APK Version</div>
-                                <div class="item2">Target Version</div>
+                                <div class="item">Est. RAM Usage</div>
+                                <div class="item">Target Version</div>
                             </a>
                             
                         </div>
@@ -133,7 +134,7 @@
                             Tested Devices + Browsers
                             <div class="headerDescription">Tested with Beat Saber 1.15.0 to 1.13.2. Smaller Apps may work on more devices. This data is only by one person each so it might be incorrect. N/A means the browser hasn't been tested/doesn't exist.</i></div>
                             <div class="topicContainer">
-                                <div style="font-size: 14px;">Since the Web Version uses lots of RAM atm (about 2GB) I figured this List would help you a bit. <i>General guideline: Min RAM on light weight OS: 4GB, recommended: 8 GB</i></div> 
+                                <div style="font-size: 14px;">Since the Web Version uses lots of RAM atm <i>(read for your patch above)</i> I figured this List would help you a bit. <i>General guideline: Min RAM on light weight OS: 4GB, recommended: 8 GB</i></div> 
                             </br>
                                 <div style="font-size: 14px; color: #DDD;">
                                     <div style="display: flex; flex-direction: column;">
@@ -224,7 +225,7 @@
                                     <div class="headerDescription">Errors which may or may not show</i></div>
                                     <div class="topicContainer">
                                         
-                                        <div class="guideHeader"><code class="code">Array buffer allocation failed</code> or Browser crashs</div>
+                                        <div class="guideHeader"><code>Array buffer allocation failed</code> or Browser crashs</div>
                                         <div class="guideSteps">
                                             This means you don't have enough RAM left. Either it'll not work on your device at all or you just have too much RAM in use.
                                         </div>
@@ -232,6 +233,10 @@
                                         <div class="guideHeader">Browser doesn't do anything after pressing Downgrade</div>
                                         <div class="guideSteps">
                                             Either your browser doesn't work with This tool or you don't have enough RAM left
+                                        </div>
+                                        <div class="guideHeader">I get an <code>out of memory</code> error</div>
+                                        <div class="guideSteps">
+                                            This means that you don't have enough RAM left. Try closing all other tabs and Apps. If the problem still occurs <i>(and you have RAM left)</i> Then the patch is too big to be used. <i>You can see estimated RAM usage above.</i>
                                         </div>
                                     </div>
                                 </div>
@@ -251,6 +256,7 @@
     var sourceData = null;
     var patchData = null;
     var saveAsName = '';
+    var patchFileName = '';
     
     var domInputRom = document.querySelector('#input-rom');
     var domInputPatch = document.querySelector('#input-patch');
@@ -261,17 +267,38 @@
 
     var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
     
+    /*
+    // testing
+    downgrades = {"versions": [{
+      "SV": "1.15.0",
+      "TV": "1.13.2",
+      "SSHA256": "0322e433369e45f793f2a90a6183a77eb7f85954384e7bd018c11001db03293d",
+      "DSHA256": "789463bed840a9ecb3ebbff7ed4fe6a2c7e384243b2881865902dd3c8e6ba76c",
+      "TSHA256": "cb3157ada1c97e496549ff902b20178f68d803dedd441b5b98c15f6dc3929240",
+      "download": "https://mega.nz/file/NzxGiKqb#7c_hi4BJ7n9H6BsboK6TIHdUOaMl1ubVZ4LOGfbp3g0",
+      "isDirectDownload": false,
+      "appid": "com.beatgames.beatsaber",
+      "isXDelta3": false,
+      "TargetByteSize": 497495067,
+      "SourceByteSize": 579562808
+    }]}
+    */
+    
+
     downgrades["versions"].forEach(element => {
-        if(element["isXDelta3"]) {
-            document.getElementById("patches").innerHTML += GetFormatted(element)
-        }
+        //if(element["isXDelta3"]) {
+            var ram = element["SourceByteSize"] * (element["isXDelta3"] ? 3.8 : 19.0) + 10
+            console.log(`Estimated RAM usage: ` + ByteSizeToString(ram))
+            document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+        //}
     });
 
-    function GetFormatted(element) {
+    function GetFormatted(element, ram) {
         return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
                     <div class="item">${element.appid}</div>
                     <div class="item">${element.SV}</div>
-                    <div class="item2">${element.TV}</div>
+                    <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
+                    <div class="item">${element.TV}</div>
                 </a>`
     }
 
@@ -299,7 +326,7 @@
             reader.readAsArrayBuffer(this.files[0]);
         }
     }
-    
+
     attachBinaryInput('#input-rom', function(result)
     {
         sourceData = result;
@@ -381,9 +408,13 @@
         
         disableInputs();
         domProgressBar.style.width = (0.5 * 100) + '%';
-        saveAs(domInputSaveAs.value, applyPatch(sourceData, patchData, domInputSkipChecksums.checked));
-        enableInputs();
-        domProgressBar.style.width = '0px';
+        applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades).then(function(result) {
+            console.log("returned")
+            if(result) saveAs(domInputSaveAs.value, result);
+            enableInputs();
+            domProgressBar.style.width = '0px';
+        })
+        
     }
 
     function runPatcher()
@@ -425,7 +456,7 @@
             onprogress: onprogress
         };
     
-        applyPatchAsync(sourceData, patchData, config);
+        applyPatchAsync(sourceData, patchData, config, domInputPatch.files[0].name, downgrades);
     }
     
     function setApplyButtonState()

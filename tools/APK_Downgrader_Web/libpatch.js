@@ -35,9 +35,9 @@ try {
 _this.applyPatch = applyPatch;
 _this.applyPatchAsync = applyPatchAsync;
 
-const ERR_PATCH_CHECKSUM = 'Patch checksum mismatch - patch file may be corrupt';
+const ERR_PATCH_CHECKSUM = 'Patch checksum mismatch - patch file may be corrupt to downgrade';
 const ERR_SOURCE_CHECKSUM = 'Source checksum mismatch - patch is not meant for this APK. Try backing the APK up again in case it is corrupted.';
-const ERR_TARGET_CHECKSUM = 'Target checksum mismatch';
+const ERR_TARGET_CHECKSUM = 'Target checksum mismatch - something failes while downgrading';
 const ERR_UNKNOWN_FORMAT = 'Unknown patch format';
 const ERR_FORMAT_VERSION = 'Unhandled format version';
 const ERR_GENERIC_DECODE = 'Decoding error';
@@ -57,7 +57,6 @@ if(!_this.performance)
 function adler32(arr, offs, size)
 {
     var a = 1, b = 0;
-
     for(var i = 0; i < size; i++)
     {
         a = (a + arr[offs + i]) % 65521;
@@ -85,10 +84,11 @@ function bytecopy(dst, dstOffs, src, srcOffs, size)
     dst.set(subsrc, dstOffs);
 }
 
-function applyPatch(sourceData, patchData, ignoreChecksums)
+function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades)
 {
     ignoreChecksums = ignoreChecksums || false;
     var header = new Uint8Array(patchData);
+    var decrReg = /.+_[0-9\.]+TO[0-9\.]+\.decr/g;
     
     var formats = [
         { sig: '\xD6\xC3\xC4', name: 'vcdiff', applyPatch: applyPatchVCD }
@@ -108,14 +108,125 @@ function applyPatch(sourceData, patchData, ignoreChecksums)
             targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums);
             timeEnd = _this.performance.now();
             console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
-            return targetData;
+            return new Promise((resolve, reject) => {
+                resolve(targetData)
+            });
         }
     }
+    if(decrReg.test(patchFilename)) {
+        console.log("libpatch: old decr patch detected.")
+        var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+        var vers = patchFilename.match(versionRegex)[0].split("TO")
+        var SV = vers[0]
+        var TV = vers[1]
+        var appid = patchFilename.substring(0, versionRegex.exec(patchFilename).index - 1)
+        console.log(`extracted infos from FileName: SV: ${SV}, TV: ${TV}, appid: ${appid}`)
+        var timeStart, timeEnd;
+        var targetData;
+        var downgrade = GetVersion(downgrades, SV, TV, appid, false)
+        if(downgrade == null) {
+            console.log("libpatch: Entry not found.")
+            alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
+            return new Promise((resolve, reject) => {
+                resolve("")
+            });
+        }
+        console.log("Downgrade found: ")
+        console.log(downgrade)
 
-    throw new Error(ERR_UNKNOWN_FORMAT);
+        timeStart = _this.performance.now();
+        return new Promise((resolve, reject) => {
+            applyDecr(sourceData, patchData, ignoreChecksums, downgrade).then(function(result) {
+                console.log(result)
+                timeEnd = _this.performance.now();
+                console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
+                return resolve(result);
+            })
+         });
+        
+    } else {
+        throw new Error(ERR_UNKNOWN_FORMAT);
+    }
 }
 
-function applyPatchAsync(sourceData, patchData, config)
+function applyDecr(sourceData, patchData, ignoreChecksums, downgrade) {
+    return new Promise((resolve, reject) => {
+        if(!ignoreChecksums) {
+            console.log("Calculating SSHA256")
+            GetSHA256(sourceData).then(function(SSHA256) {
+                console.log("finished: " + SSHA256)
+                if(SSHA256 != downgrade["SSHA256"]) {
+                    console.log("SSHA256 mismatch")
+                    throw new Error(ERR_SOURCE_CHECKSUM)
+                }
+                console.log("Calculating DSHA256")
+                GetSHA256(patchData).then(function(DSHA256) {
+                    console.log("finished: " + DSHA256)
+                    if(DSHA256 != downgrade["DSHA256"]) {
+                        console.log("DSHA256 mismatch")
+                        throw new Error(ERR_PATCH_CHECKSUM)
+                    }
+                    console.log("Hashes match. downgrading.")
+                    targetData = XOR(sourceData, patchData, downgrade["TargetByteSize"]);
+                    GetSHA256(targetData).then(function(TSHA256) {
+                        if(TSHA256 != downgrade["TSHA256"]) {
+                            console.log("TSHA256 mismatch")
+                            throw new Error(ERR_TARGET_CHECKSUM)
+                        }
+                        
+                        resolve(targetData)
+                    })
+                })
+            })
+        }
+    });
+    
+}
+
+function XOR(arrayOne, arrayTwo, targetLength) {
+    targetData = new ArrayBuffer(targetLength)
+    console.log("XORing")
+    for (let i = 0; i < targetLength; i++) {
+        if(i%1000 == 0) {
+            console.log(i + " / " + targetLength + " " + (i / targetLength * 100) + " %")
+        }
+        targetData[i] = arrayOne[i]^arrayTwo[i];
+    }
+    console.log("XORed")
+    return targetData
+}
+
+async function GetSHA256(input) {
+    const x = await crypto.subtle.digest('SHA-256', input)
+    console.log(x)
+    const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string    
+    return hashHex;
+}
+
+function GetVersion(downgrades, SV, TV, appid, isXDelta3) {
+    var outp = null
+    downgrades["versions"].forEach(element => {
+        if (RemoveDotZero(element["SV"]) == RemoveDotZero(SV) && RemoveDotZero(element["TV"]) == RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+        else if (RemoveDotZero(element["SV"]) == RemoveDotZero(TV) && RemoveDotZero(element["TV"]) == RemoveDotZero(SV) && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+    });
+    return outp
+}
+
+function RemoveDotZero(input)
+{
+    var done = false;
+    input = input.toString()
+    while(!done)
+    {
+        if (input.endsWith("0")) input = input.substring(0, input.length - 1);
+        else if (input.endsWith(".")) input = input.substring(0, input.length - 1);
+        else done = true;
+    }
+    return input;
+}
+
+function applyPatchAsync(sourceData, patchData, config, patchFilename, downgrades)
 {
     var patchWorker = new Worker(applyPatchAsync.WORKER_URL);
 
@@ -144,7 +255,9 @@ function applyPatchAsync(sourceData, patchData, config)
     var msg = {
         sourceData: sourceData,
         patchData: patchData,
-        ignoreChecksums: ignoreChecksums
+        ignoreChecksums: ignoreChecksums,
+        patchFilename: patchFilename,
+        downgrades: downgrades
     };
 
     patchWorker.postMessage(msg);
@@ -165,19 +278,22 @@ applyPatchAsync.WORKER_URL = (function()
     '    var sourceData = e.data.sourceData;',
     '    var patchData = e.data.patchData;',
     '    var ignoreChecksums = e.data.ignoreChecksums;',
+    '    var patchFilename = e.data.patchFilename;',
+    '    var downgrades = e.data.downgrades;',
     '    ',
     '    try',
     '    {',
-    '        var targetData = applyPatch(sourceData, patchData, ignoreChecksums);',
-    '        self.postMessage({ evtType: \'patchend\', param: targetData });',
+    '        applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades).then(function(result) {',
+    '                self.postMessage({ evtType: \'patchend\', param: result });',
+    '                self.close()',
+    '            }',
+    '        })',
     '    }',
     '    catch(e)',
     '    {',
     '        console.log(e);',
     '        self.postMessage({ evtType: \'error\', param: e.message });',
     '    }',
-    '',
-    '    self.close();',
     '}'].join('');
     
     var workerURL = URL.createObjectURL(new Blob([WORKER_SOURCE]));

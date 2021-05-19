@@ -40,7 +40,7 @@ input[type='text']
     color: #00BB00;
 }
 
-.code {
+code {
     padding: 5px;
     border-radius: 3px;
     background-color: #202225;
