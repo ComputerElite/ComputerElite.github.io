@@ -284,6 +284,7 @@
     }]}
     */
     
+    
 
     downgrades["versions"].forEach(element => {
         //if(element["isXDelta3"]) {
@@ -407,14 +408,18 @@
         }
         
         disableInputs();
-        domProgressBar.style.width = (0.5 * 100) + '%';
-        applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades).then(function(result) {
+        applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(function(result) {
             console.log("returned")
             if(result) saveAs(domInputSaveAs.value, result);
             enableInputs();
             domProgressBar.style.width = '0px';
         })
         
+    }
+
+    function updateProgress(ratio)
+    {
+        domProgressBar.style.width = (ratio * 100) + '%';
     }
 
     function runPatcher()

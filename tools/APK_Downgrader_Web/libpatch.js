@@ -84,7 +84,12 @@ function bytecopy(dst, dstOffs, src, srcOffs, size)
     dst.set(subsrc, dstOffs);
 }
 
-function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades)
+function updateProgress(ratio)
+{
+    document.querySelector('#progress-bar').style.width = (ratio * 100) + '%';
+}
+
+function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades, isSync = false)
 {
     ignoreChecksums = ignoreChecksums || false;
     var header = new Uint8Array(patchData);
@@ -136,7 +141,7 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
 
         timeStart = _this.performance.now();
         return new Promise((resolve, reject) => {
-            applyDecr(sourceData, patchData, ignoreChecksums, downgrade).then(function(result) {
+            applyDecr(sourceData, patchData, ignoreChecksums, downgrade, isSync).then(function(result) {
                 console.log(result)
                 timeEnd = _this.performance.now();
                 console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
@@ -149,10 +154,11 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
     }
 }
 
-function applyDecr(sourceData, patchData, ignoreChecksums, downgrade) {
+function applyDecr(sourceData, patchData, ignoreChecksums, downgrade, isSync) {
     return new Promise((resolve, reject) => {
         if(!ignoreChecksums) {
             console.log("Calculating SSHA256")
+            if(isSync) updateProgress(0.03)
             GetSHA256(sourceData).then(function(SSHA256) {
                 console.log("finished: " + SSHA256)
                 if(SSHA256 != downgrade["SSHA256"]) {
@@ -160,6 +166,7 @@ function applyDecr(sourceData, patchData, ignoreChecksums, downgrade) {
                     throw new Error(ERR_SOURCE_CHECKSUM)
                 }
                 console.log("Calculating DSHA256")
+                updateProgress(0.08)
                 GetSHA256(patchData).then(function(DSHA256) {
                     console.log("finished: " + DSHA256)
                     if(DSHA256 != downgrade["DSHA256"]) {
@@ -167,13 +174,14 @@ function applyDecr(sourceData, patchData, ignoreChecksums, downgrade) {
                         throw new Error(ERR_PATCH_CHECKSUM)
                     }
                     console.log("Hashes match. downgrading.")
-                    targetData = XOR(sourceData, patchData, downgrade["TargetByteSize"]);
+                    targetData = XOR(sourceData, patchData, downgrade["TargetByteSize"], isSync);
+                    if(isSync) updateProgress(0.98)
                     GetSHA256(targetData).then(function(TSHA256) {
                         if(TSHA256 != downgrade["TSHA256"]) {
                             console.log("TSHA256 mismatch")
                             throw new Error(ERR_TARGET_CHECKSUM)
                         }
-                        
+                        if(isSync) updateProgress(1)
                         resolve(targetData)
                     })
                 })
@@ -183,12 +191,13 @@ function applyDecr(sourceData, patchData, ignoreChecksums, downgrade) {
     
 }
 
-function XOR(arrayOne, arrayTwo, targetLength) {
+function XOR(arrayOne, arrayTwo, targetLength, isSync) {
     targetData = new ArrayBuffer(targetLength)
     console.log("XORing")
     for (let i = 0; i < targetLength; i++) {
-        if(i%1000 == 0) {
-            console.log(i + " / " + targetLength + " " + (i / targetLength * 100) + " %")
+        if(i%1000000 == 0) {
+            if(isSync) updateProgress(0.1 + i / targetLength * 0.95);
+            console.log(i + " / " + targetLength + " (" + (i / targetLength * 100) + " %)")
         }
         targetData[i] = arrayOne[i]^arrayTwo[i];
     }
