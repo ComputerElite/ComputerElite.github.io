@@ -288,7 +288,8 @@
 
     downgrades["versions"].forEach(element => {
         //if(element["isXDelta3"]) {
-            var ram = (element["isXDelta3"] ? (element["SourceByteSize"]) :  (element["SourceByteSize"] + element["TargetByteSize"])) * (element["isXDelta3"] ? 3.8 : 11) + 10
+            var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 10) + 10485760
+            //var ram = (element["isXDelta3"] ? (element["SourceByteSize"]) :  (element["SourceByteSize"] + element["TargetByteSize"])) * (element["isXDelta3"] ? 3.8 : 11) + 10
             console.log(`Estimated RAM usage: ` + ByteSizeToString(ram))
             document.getElementById("patches").innerHTML += GetFormatted(element, ram)
         //}
