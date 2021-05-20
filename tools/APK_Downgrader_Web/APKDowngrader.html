@@ -1,80 +1,82 @@
-<head>
-    <title>APK Downgrader - Web</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <script src="libpatch.js?2"></script>
-    <script src="lzma.js"></script>
-    <link href="../../css/standart.css" type="text/css" rel="stylesheet">
-    <script src="../../js/standart.js"></script>
-    <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
-    <style>
-    td {
-        padding: 10px;
-    }
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>APK Downgrader - Web</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <script src="libpatch.js?2"></script>
+        <script src="lzma.js"></script>
+        <link href="../../css/standart.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standart.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+        td {
+            padding: 10px;
+        }
 
-    .os {
-        font-size: 16px;
-        color: #EEE;
-    }
+        .os {
+            font-size: 16px;
+            color: #EEE;
+        }
 
-    .item {
-        flex: 1;
-        width: 25%;
-        word-wrap: break-word;
-        padding: 3px;
-    }
+        .item {
+            flex: 1;
+            width: 25%;
+            word-wrap: break-word;
+            padding: 3px;
+        }
 
-    .itemR {
-        flex: 1;
-        width: 25%;
-        word-wrap: break-word;
-        padding: 3px;
-        color: #FF2222;
-    }
+        .itemR {
+            flex: 1;
+            width: 25%;
+            word-wrap: break-word;
+            padding: 3px;
+            color: #FF2222;
+        }
 
-    .devicesRowItem {
-        flex: 1;
-        width: 16%;
-        text-align: center;
-    }
+        .devicesRowItem {
+            flex: 1;
+            width: 16%;
+            text-align: center;
+        }
 
-    .devicesRowItemN {
-        flex: 1;
-        width: 16%;
-        color: #FF2222;
-        text-align: center;
-    }
+        .devicesRowItemN {
+            flex: 1;
+            width: 16%;
+            color: #FF2222;
+            text-align: center;
+        }
 
-    .devicesRowItemY {
-        flex: 1;
-        width: 16%;
-        color: #00BB00;
-        text-align: center;
-    }
+        .devicesRowItemY {
+            flex: 1;
+            width: 16%;
+            color: #00BB00;
+            text-align: center;
+        }
 
-    .devicesRow {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-        margin-top: 3px;
-        margin-bottom: 3px;
-    }
+        .devicesRow {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
 
-    .guideHeader {
-        font-size: 16px;
-        margin-top: 10px;
-    }
+        .guideHeader {
+            font-size: 16px;
+            margin-top: 10px;
+        }
 
-    .guideSteps {
-        font-size: 14px;
-        margin-top: 5px;
-        padding-left: 10px;
-    }
+        .guideSteps {
+            font-size: 14px;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
 
-    .topicContainer {
-        padding-left: 10px;
-    }
-    
-    </style>
+        .topicContainer {
+            padding-left: 10px;
+        }
+        
+        </style>
     </head>
     <body style="font-size: 14px;">
         <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
@@ -85,9 +87,9 @@
                         <div class="headerDescription">Based on <a href="https://hack64.net/tools/patcher.php" target="_blank">Hack64's Web Patcher</a></div>
                     </div>
                     <table style="padding: 10px; width: 100%;">
-                        <tr><td>APK</td><td><input type="file" style="width: 100%;" id="input-rom" accept=".apk"></td></tr>
-                        <tr><td>Downgrade file</td><td><input type="file" style="width: 100%;" id="input-patch" accept=".bin, .xdelta, .xdelta3, .decr"></td></tr>
-                        <tr><td>Save as</td><td><input type="text" style="width: 100%;" id="input-saveas" spellcheck="false"></td></tr>
+                        <tr><td>APK</td><td><input type="file" id="input-rom" accept=".apk"></td></tr>
+                        <tr><td>Downgrade file</td><td><input type="file" id="input-patch" accept=".bin, .xdelta, .xdelta3, .decr"></td></tr>
+                        <tr><td>Save as</td><td><input type="text" id="input-saveas" spellcheck="false"></td></tr>
                     </table>
                     <table style="width: 100%;">
                         <tr>
@@ -102,7 +104,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div style="background: #666; text-align: left;">
+                    <div style="background: #666; text-align: left; height: 2px;">
                         <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF;"></div>
                     </div>
                 </div>
@@ -252,279 +254,292 @@
                 </div>
             </div>
         </div>
-    <script>
-    
-    var sourceData = null;
-    var patchData = null;
-    var saveAsName = '';
-    var patchFileName = '';
-    
-    var domInputRom = document.querySelector('#input-rom');
-    var domInputPatch = document.querySelector('#input-patch');
-    var domInputSaveAs = document.querySelector('#input-saveas');
-    var domInputApply = document.querySelector('#input-apply');
-    var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
-    var domProgressBar = document.querySelector('#progress-bar');
+        <script>
+        
+        var sourceData = null;
+        var patchData = null;
+        var saveAsName = '';
+        var patchFileName = '';
+        
+        var domInputRom = document.querySelector('#input-rom');
+        var domInputPatch = document.querySelector('#input-patch');
+        var domInputSaveAs = document.querySelector('#input-saveas');
+        var domInputApply = document.querySelector('#input-apply');
+        var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
+        var domProgressBar = document.querySelector('#progress-bar');
 
-    var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
-    
-    
-    // testing
-    downgrades = {"versions": [{
-      "SV": "1.15.0",
-      "TV": "1.13.2",
-      "SSHA256": "0322e433369e45f793f2a90a6183a77eb7f85954384e7bd018c11001db03293d",
-      "DSHA256": "789463bed840a9ecb3ebbff7ed4fe6a2c7e384243b2881865902dd3c8e6ba76c",
-      "TSHA256": "cb3157ada1c97e496549ff902b20178f68d803dedd441b5b98c15f6dc3929240",
-      "download": "https://mega.nz/file/NzxGiKqb#7c_hi4BJ7n9H6BsboK6TIHdUOaMl1ubVZ4LOGfbp3g0",
-      "isDirectDownload": false,
-      "appid": "com.beatgames.beatsaber",
-      "isXDelta3": false,
-      "TargetByteSize": 497495067,
-      "SourceByteSize": 579562808
-    }]}
-    
-    
-    
+        var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
+        
+        /*
+        // testing
+        downgrades = {"versions": [{
+        "SV": "1.15.0",
+        "TV": "1.13.2",
+        "SSHA256": "0322e433369e45f793f2a90a6183a77eb7f85954384e7bd018c11001db03293d",
+        "DSHA256": "789463bed840a9ecb3ebbff7ed4fe6a2c7e384243b2881865902dd3c8e6ba76c",
+        "TSHA256": "cb3157ada1c97e496549ff902b20178f68d803dedd441b5b98c15f6dc3929240",
+        "download": "https://mega.nz/file/NzxGiKqb#7c_hi4BJ7n9H6BsboK6TIHdUOaMl1ubVZ4LOGfbp3g0",
+        "isDirectDownload": false,
+        "appid": "com.beatgames.beatsaber",
+        "isXDelta3": false,
+        "TargetByteSize": 497495067,
+        "SourceByteSize": 579562808
+        }]}
+        */
+        
+        
+        
 
-    downgrades["versions"].forEach(element => {
-        //if(element["isXDelta3"]) {
-            var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 10) + 10485760
-            //var ram = (element["isXDelta3"] ? (element["SourceByteSize"]) :  (element["SourceByteSize"] + element["TargetByteSize"])) * (element["isXDelta3"] ? 3.8 : 11) + 10
-            console.log(`Estimated RAM usage: ` + ByteSizeToString(ram))
-            document.getElementById("patches").innerHTML += GetFormatted(element, ram)
-        //}
-    });
+        downgrades["versions"].forEach(element => {
+            //if(element["isXDelta3"]) {
+                var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 10) + 10485760
+                //var ram = (element["isXDelta3"] ? (element["SourceByteSize"]) :  (element["SourceByteSize"] + element["TargetByteSize"])) * (element["isXDelta3"] ? 3.8 : 11) + 10
+                console.log(`Estimated RAM usage: ` + ByteSizeToString(ram))
+                document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+            //}
+        });
 
-    function GetFormatted(element, ram) {
-        return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
-                    <div class="item">${element.appid}</div>
-                    <div class="item">${element.SV}</div>
-                    <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
-                    <div class="item">${element.TV}</div>
-                </a>`
-    }
-
-    function attachBinaryInput(selector, onloadend)
-    {
-        var elem = document.querySelector(selector);
-    
-        if(!elem)
-        {
-            return false;
+        function GetFormatted(element, ram) {
+            return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
+                        <div class="item">${element.appid}</div>
+                        <div class="item">${element.SV}</div>
+                        <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
+                        <div class="item">${element.TV}</div>
+                    </a>`
         }
-    
-        elem.onchange = function(e)
+
+        function attachBinaryInput(selector, onloadend)
         {
-            if(!this.files[0])
+            var elem = document.querySelector(selector);
+        
+            if(!elem)
+            {
+                return false;
+            }
+        
+            elem.onchange = function(e)
+            {
+                if(!this.files[0])
+                {
+                    return;
+                }
+        
+                var reader = new FileReader();
+                reader.onloadend = function()
+                {
+                    onloadend(reader.result);
+                }
+                reader.readAsArrayBuffer(this.files[0]);
+            }
+        }
+
+        attachBinaryInput('#input-rom', function(result)
+        {
+            sourceData = result;
+            autoName();
+            setApplyButtonState();
+        })
+        
+        attachBinaryInput('#input-patch', function(result)
+        {
+            patchData = result;
+            autoName();
+            setApplyButtonState();
+        })
+        
+        domInputSaveAs.onchange = domInputSaveAs.onkeydown = function()
+        {
+            setApplyButtonState();
+        }
+        
+        function isReady()
+        {
+            return (!!domInputRom.files[0] && !!domInputPatch.files[0] && domInputSaveAs.value != '');
+        }
+        
+        function autoName()
+        {
+            if(domInputSaveAs.value != '' || !domInputRom.files[0] || !domInputPatch.files[0])
             {
                 return;
             }
-    
-            var reader = new FileReader();
-            reader.onloadend = function()
-            {
-                onloadend(reader.result);
+
+            var specialNameReg = /.+_[0-9\.]+TO[0-9\.]+/g;
+
+            var romFileName = domInputRom.files[0].name;
+            var patchFileName = domInputPatch.files[0].name;
+        
+            var name = ''
+            if(specialNameReg.test(patchFileName)) {
+                var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+                var appid = patchFileName.substring(0, versionRegex.exec(patchFileName).index - 1)
+                var TV = patchFileName.match(versionRegex)[0].split("TO")[1]
+                if(TV.endsWith(".")) TV = TV.substring(0, TV.length - 1)
+                name = `${appid}_${TV}.apk`
+            } else {
+                var ext = romFileName.split('.').pop();
+                var parts = patchFileName.split('.');
+                parts.pop();
+                name = parts.join('.') + '.' + ext;
             }
-            reader.readAsArrayBuffer(this.files[0]);
-        }
-    }
-
-    attachBinaryInput('#input-rom', function(result)
-    {
-        sourceData = result;
-        autoName();
-        setApplyButtonState();
-    })
-    
-    attachBinaryInput('#input-patch', function(result)
-    {
-        patchData = result;
-        autoName();
-        setApplyButtonState();
-    })
-    
-    domInputSaveAs.onchange = domInputSaveAs.onkeydown = function()
-    {
-        setApplyButtonState();
-    }
-    
-    function isReady()
-    {
-        return (!!domInputRom.files[0] && !!domInputPatch.files[0] && domInputSaveAs.value != '');
-    }
-    
-    function autoName()
-    {
-        if(domInputSaveAs.value != '' || !domInputRom.files[0] || !domInputPatch.files[0])
-        {
-            return;
-        }
-    
-        var romFileName = domInputRom.files[0].name;
-        var patchFileName = domInputPatch.files[0].name;
-    
-        var ext = romFileName.split('.').pop();
-        var parts = patchFileName.split('.');
-        parts.pop();
-    
-        var name = parts.join('.') + '.' + ext;
-    
-        domInputSaveAs.value = name;
-    }
-    
-    domInputApply.onclick = function()
-    {
-        runPatcherSync();
-    }
-    
-    domInputApply.oncontextmenu = function()
-    {
-        runPatcher();
-    }
-    
-    /*
-        RAM usage tests with MS Edge
-        - Async downgrading -
-
-        234 MB Base
-        1097 MB after selecting
-        ~4200 MB while downgrading
-        1099 MB After downgrading
-
-        - Sync downgrading -
-
-        268 MB Base
-        1099 MB After Selecting
-        ~2056 MB while downgrading
-        1100 MB After downgrading
-
-        => right click will be async and normal click sync.
-    */
-
-    function runPatcherSync()
-    {
-        if(!isReady())
-        {
-            return;
+            
+        
+            domInputSaveAs.value = name;
         }
         
-        disableInputs();
-        applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(function(result) {
-            console.log("returned")
-            if(result) saveAs(domInputSaveAs.value, result);
-            enableInputs();
-            domProgressBar.style.width = '0px';
-        })
+        domInputApply.onclick = function()
+        {
+            runPatcherSync();
+        }
         
-    }
-
-    function updateProgress(ratio)
-    {
-        domProgressBar.style.width = (ratio * 100) + '%';
-    }
-
-    function runPatcher()
-    {
-        if(!isReady())
+        domInputApply.oncontextmenu = function()
         {
-            return;
+            runPatcher();
         }
-    
-        disableInputs();
-    
-        function onpatchend(targetData)
+        
+        /*
+            RAM usage tests with MS Edge
+            - Async downgrading -
+
+            234 MB Base
+            1097 MB after selecting
+            ~4200 MB while downgrading
+            1099 MB After downgrading
+
+            - Sync downgrading -
+
+            268 MB Base
+            1099 MB After Selecting
+            ~2056 MB while downgrading
+            1100 MB After downgrading
+
+            => right click will be async and normal click sync.
+        */
+
+        function runPatcherSync()
         {
-            domProgressBar.style.width = '0px';
-            enableInputs();
-    
-            if(!debug)
+            if(!isReady())
             {
-                saveAs(domInputSaveAs.value, targetData);
+                return;
             }
+            
+            disableInputs();
+            applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(function(result) {
+                console.log("returned")
+                if(result) saveAs(domInputSaveAs.value, result);
+                enableInputs();
+                domProgressBar.style.width = '0px';
+            })
+            
         }
-    
-        function onprogress(ratio)
+
+        function updateProgress(ratio)
         {
             domProgressBar.style.width = (ratio * 100) + '%';
         }
-    
-        function onerror(message)
+
+        function runPatcher()
         {
-            alert("Error: " + message + "\n\n" + "See console output for more information.");
-            domProgressBar.style.width = '0px';
-            enableInputs();
+            if(!isReady())
+            {
+                return;
+            }
+        
+            disableInputs();
+        
+            function onpatchend(targetData)
+            {
+                domProgressBar.style.width = '0px';
+                enableInputs();
+        
+                if(!debug)
+                {
+                    saveAs(domInputSaveAs.value, targetData);
+                }
+            }
+        
+            function onprogress(ratio)
+            {
+                domProgressBar.style.width = (ratio * 100) + '%';
+            }
+        
+            function onerror(message)
+            {
+                alert("Error: " + message + "\n\n" + "See console output for more information.");
+                domProgressBar.style.width = '0px';
+                enableInputs();
+            }
+        
+            var config = {
+                ignoreChecksums: domInputSkipChecksums.checked,
+                onerror: onerror,
+                onpatchend: onpatchend,
+                onprogress: onprogress
+            };
+        
+            applyPatchAsync(sourceData, patchData, config, domInputPatch.files[0].name, downgrades);
         }
-    
-        var config = {
-            ignoreChecksums: domInputSkipChecksums.checked,
-            onerror: onerror,
-            onpatchend: onpatchend,
-            onprogress: onprogress
-        };
-    
-        applyPatchAsync(sourceData, patchData, config, domInputPatch.files[0].name, downgrades);
-    }
-    
-    function setApplyButtonState()
-    {
-        if(!isReady())
+        
+        function setApplyButtonState()
         {
+            if(!isReady())
+            {
+                domInputApply.setAttribute('disabled', 'true');
+                return;
+            }
+        
+            domInputApply.removeAttribute('disabled');
+        }
+        
+        function disableInputs()
+        {
+            domInputRom.setAttribute('disabled', 'true');
+            domInputPatch.setAttribute('disabled', 'true');
+            domInputSaveAs.setAttribute('disabled', 'true');
             domInputApply.setAttribute('disabled', 'true');
-            return;
         }
-    
-        domInputApply.removeAttribute('disabled');
-    }
-    
-    function disableInputs()
-    {
-        domInputRom.setAttribute('disabled', 'true');
-        domInputPatch.setAttribute('disabled', 'true');
-        domInputSaveAs.setAttribute('disabled', 'true');
-        domInputApply.setAttribute('disabled', 'true');
-    }
-    
-    function enableInputs()
-    {
-        domInputRom.removeAttribute('disabled');
-        domInputPatch.removeAttribute('disabled');
-        domInputSaveAs.removeAttribute('disabled');
-        domInputApply.removeAttribute('disabled');
-    }
-    
-    function saveAs(filename, data)
-    {
-        console.log('saving ' + filename + '...')
-    
-        var blob = new Blob([data], {type: 'octet/stream'});
-        var url = window.URL.createObjectURL(blob);
-    
-        if(navigator && navigator.msSaveBlob)
+        
+        function enableInputs()
         {
-            console.log("using msSaveBlob...");
-            navigator.msSaveBlob(blob, filename);
+            domInputRom.removeAttribute('disabled');
+            domInputPatch.removeAttribute('disabled');
+            domInputSaveAs.removeAttribute('disabled');
+            domInputApply.removeAttribute('disabled');
         }
-        else
+        
+        function saveAs(filename, data)
         {
-            var a = document.createElement('a');
-            a.style = "display: none";
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            try
+            console.log('saving ' + filename + '...')
+        
+            var blob = new Blob([data], {type: 'octet/stream'});
+            var url = window.URL.createObjectURL(blob);
+        
+            if(navigator && navigator.msSaveBlob)
             {
-                a.click();
+                console.log("using msSaveBlob...");
+                navigator.msSaveBlob(blob, filename);
             }
-            catch(e)
+            else
             {
-                console.error(e);
-                console.log('failed to save file');
+                var a = document.createElement('a');
+                a.style = "display: none";
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                try
+                {
+                    a.click();
+                }
+                catch(e)
+                {
+                    console.error(e);
+                    console.log('failed to save file');
+                }
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
             }
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
         }
-    }
-    
-    </script>
+        
+        </script>
     </body>
+</html>

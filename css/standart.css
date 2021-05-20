@@ -20,13 +20,18 @@ a:visited
 
 input[type='file']
 {
-    background-color: rgba(0,0,0,0.15);
-    padding: 10px;
+    background-color: #00000023;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;  
+    width: 100%;
 }
 
 input[type='text']
 {
     padding: 5px;
+    width: 100%;
     border: none;
     color: #EEEEEE;
     background-color: #202225;
