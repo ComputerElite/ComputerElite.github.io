@@ -119,8 +119,8 @@
                             <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                                 <div class="item">App</div>
                                 <div class="item">APK Version</div>
-                                <div class="item">Est. RAM Usage</div>
                                 <div class="item">Target Version</div>
+                                <div class="item">Est. RAM Usage</div>
                             </a>
                             
                         </div>
@@ -303,8 +303,8 @@
             return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
                         <div class="item">${element.appid}</div>
                         <div class="item">${element.SV}</div>
-                        <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
                         <div class="item">${element.TV}</div>
+                        <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
                     </a>`
         }
 

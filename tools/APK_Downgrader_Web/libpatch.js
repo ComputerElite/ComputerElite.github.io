@@ -157,6 +157,7 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
 class DecrPatcher {
     sourceData = null
     patchData = null
+    targetData = null
 
     applyDecr(ignoreChecksums, downgrade, isSync) {
         return new Promise((resolve, reject) => {
@@ -178,7 +179,7 @@ class DecrPatcher {
                             throw new Error(ERR_PATCH_CHECKSUM)
                         }
                         console.log("Hashes match. downgrading.")
-                        targetData = this.XOR(downgrade["TargetByteSize"], isSync);
+                        this.XOR(downgrade["TargetByteSize"], isSync);
                         if(isSync) this.updateProgress(0.98)
                         GetSHA256(targetData).then((TSHA256) => {
                             if(TSHA256 != downgrade["TSHA256"]) {
@@ -201,6 +202,7 @@ class DecrPatcher {
     }
     
     XOR(targetLength, isSync) {
+        targetData = new ArrayBuffer(targetLength)
         console.log("XORing")
         for (let i = 0; i < targetLength; i++) {
             if(i%1000000 == 0) {
@@ -210,7 +212,6 @@ class DecrPatcher {
             targetData[i] = this.sourceData[i]^this.patchData[i];
         }
         console.log("XORed")
-        return targetData
     }
     
     GetSHA256(input) {
