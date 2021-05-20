@@ -105,7 +105,7 @@
                         </tr>
                     </table>
                     <div style="background: #666; text-align: left; height: 2px;">
-                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF; position: absolute;"></div>
+                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF; position: absolute; max-width: 80%;"></div>
                     </div>
                 </div>
             </div>
@@ -270,7 +270,7 @@
 
         var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
         
-        /*
+        
         // testing
         downgrades = {"versions": [{
         "SV": "1.15.0",
@@ -285,13 +285,13 @@
         "TargetByteSize": 497495067,
         "SourceByteSize": 579562808
         }]}
-        */
+        
         
         
         
 
         downgrades["versions"].forEach(element => {
-            var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 10) + 10485760
+            var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
             document.getElementById("patches").innerHTML += GetFormatted(element, ram)
         });
 

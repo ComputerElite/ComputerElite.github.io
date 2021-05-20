@@ -173,7 +173,7 @@ class DecrPatcher {
             console.log("Hashes match. downgrading.")
             this.XOR(downgrade["TargetByteSize"], isSync);
             if(isSync) this.updateProgress(0.98)
-            var TSHA256 = await GetSHA256(this.targetData)
+            var TSHA256 = await this.GetSHA256(this.targetData)
             if(TSHA256 != downgrade["TSHA256"]) {
                 console.log("TSHA256 mismatch")
                 throw new Error(ERR_TARGET_CHECKSUM)
@@ -190,23 +190,26 @@ class DecrPatcher {
     }
     
     XOR(targetLength, isSync) {
-        this.targetData = new ArrayBuffer(targetLength)
+        var tmp = new Uint8Array(targetLength)
+        var sourceTmp = new Uint8Array(this.sourceData)
+        var patchTmp = new Uint8Array(this.patchData)
         console.log("XORing")
         for (let i = 0; i < targetLength; i++) {
-            if(i%1000000 == 0) {
-                if(isSync) this.updateProgress(0.1 + i / targetLength * 0.95);
+            if(i%10000000 == 0) {
+                if(isSync) this.updateProgress(0.1 + i / targetLength * 0.85);
                 console.log(i + " / " + targetLength + " (" + (i / targetLength * 100) + " %)")
             }
-            this.targetData[i] = this.sourceData[i]^this.patchData[i];
+            tmp[i] = sourceTmp[i]^patchTmp[i];
         }
+        this.targetData = tmp.buffer
         console.log("XORed")
     }
     
     async GetSHA256(input) {
         var x = await crypto.subtle.digest('SHA-256', input)
-        console.log(x)
         const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
+        console.log("SHA256: " + hashHex)
         return hashHex
     }
     
