@@ -181,13 +181,13 @@ class DecrPatcher {
                         console.log("Hashes match. downgrading.")
                         this.XOR(downgrade["TargetByteSize"], isSync);
                         if(isSync) this.updateProgress(0.98)
-                        GetSHA256(targetData).then((TSHA256) => {
+                        GetSHA256(this.targetData).then((TSHA256) => {
                             if(TSHA256 != downgrade["TSHA256"]) {
                                 console.log("TSHA256 mismatch")
                                 throw new Error(ERR_TARGET_CHECKSUM)
                             }
                             if(isSync) this.updateProgress(1)
-                            resolve(targetData)
+                            resolve(this.targetData)
                         })
                     })
                 })
@@ -202,14 +202,14 @@ class DecrPatcher {
     }
     
     XOR(targetLength, isSync) {
-        targetData = new ArrayBuffer(targetLength)
+        this.targetData = new ArrayBuffer(targetLength)
         console.log("XORing")
         for (let i = 0; i < targetLength; i++) {
             if(i%1000000 == 0) {
                 if(isSync) this.updateProgress(0.1 + i / targetLength * 0.95);
                 console.log(i + " / " + targetLength + " (" + (i / targetLength * 100) + " %)")
             }
-            targetData[i] = this.sourceData[i]^this.patchData[i];
+            this.targetData[i] = this.sourceData[i]^this.patchData[i];
         }
         console.log("XORed")
     }
