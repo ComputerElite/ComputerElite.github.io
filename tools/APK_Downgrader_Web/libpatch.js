@@ -84,11 +84,6 @@ function bytecopy(dst, dstOffs, src, srcOffs, size)
     dst.set(subsrc, dstOffs);
 }
 
-function updateProgress(ratio)
-{
-    document.querySelector('#progress-bar').style.width = (ratio * 100) + '%';
-}
-
 function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades, isSync = false)
 {
     ignoreChecksums = ignoreChecksums || false;
@@ -128,7 +123,9 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
         console.log(`extracted infos from FileName: SV: ${SV}, TV: ${TV}, appid: ${appid}`)
         var timeStart, timeEnd;
         var targetData;
-        var downgrade = GetVersion(downgrades, SV, TV, appid, false)
+
+        var patcher = new DecrPatcher();
+        var downgrade = patcher.GetVersion(downgrades, SV, TV, appid, false)
         if(downgrade == null) {
             console.log("libpatch: Entry not found.")
             alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
@@ -141,11 +138,14 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
 
         timeStart = _this.performance.now();
         return new Promise((resolve, reject) => {
-            applyDecr(sourceData, patchData, ignoreChecksums, downgrade, isSync).then(function(result) {
+            patcher.sourceData = sourceData
+            patcher.patchData = patchData
+
+            patcher.applyDecr(ignoreChecksums, downgrade, isSync).then(function(result) {
                 console.log(result)
                 timeEnd = _this.performance.now();
                 console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
-                return resolve(result);
+                resolve(result);
             })
          });
         
@@ -154,86 +154,100 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
     }
 }
 
-function applyDecr(sourceData, patchData, ignoreChecksums, downgrade, isSync) {
-    return new Promise((resolve, reject) => {
-        if(!ignoreChecksums) {
-            console.log("Calculating SSHA256")
-            if(isSync) updateProgress(0.03)
-            GetSHA256(sourceData).then(function(SSHA256) {
-                console.log("finished: " + SSHA256)
-                if(SSHA256 != downgrade["SSHA256"]) {
-                    console.log("SSHA256 mismatch")
-                    throw new Error(ERR_SOURCE_CHECKSUM)
-                }
-                console.log("Calculating DSHA256")
-                updateProgress(0.08)
-                GetSHA256(patchData).then(function(DSHA256) {
-                    console.log("finished: " + DSHA256)
-                    if(DSHA256 != downgrade["DSHA256"]) {
-                        console.log("DSHA256 mismatch")
-                        throw new Error(ERR_PATCH_CHECKSUM)
+class DecrPatcher {
+    sourceData = null
+    patchData = null
+
+    applyDecr(ignoreChecksums, downgrade, isSync) {
+        return new Promise((resolve, reject) => {
+            if(!ignoreChecksums) {
+                console.log("Calculating SSHA256")
+                if(isSync) this.updateProgress(0.03)
+                this.GetSHA256(this.sourceData).then((SSHA256) => {
+                    console.log("finished: " + SSHA256)
+                    if(SSHA256 != downgrade["SSHA256"]) {
+                        console.log("SSHA256 mismatch")
+                        throw new Error(ERR_SOURCE_CHECKSUM)
                     }
-                    console.log("Hashes match. downgrading.")
-                    targetData = XOR(sourceData, patchData, downgrade["TargetByteSize"], isSync);
-                    if(isSync) updateProgress(0.98)
-                    GetSHA256(targetData).then(function(TSHA256) {
-                        if(TSHA256 != downgrade["TSHA256"]) {
-                            console.log("TSHA256 mismatch")
-                            throw new Error(ERR_TARGET_CHECKSUM)
+                    console.log("Calculating DSHA256")
+                    this.updateProgress(0.08)
+                    this.GetSHA256(this.patchData).then((DSHA256) => {
+                        console.log("finished: " + DSHA256)
+                        if(DSHA256 != downgrade["DSHA256"]) {
+                            console.log("DSHA256 mismatch")
+                            throw new Error(ERR_PATCH_CHECKSUM)
                         }
-                        if(isSync) updateProgress(1)
-                        resolve(targetData)
+                        console.log("Hashes match. downgrading.")
+                        targetData = this.XOR(downgrade["TargetByteSize"], isSync);
+                        if(isSync) this.updateProgress(0.98)
+                        GetSHA256(targetData).then((TSHA256) => {
+                            if(TSHA256 != downgrade["TSHA256"]) {
+                                console.log("TSHA256 mismatch")
+                                throw new Error(ERR_TARGET_CHECKSUM)
+                            }
+                            if(isSync) this.updateProgress(1)
+                            resolve(targetData)
+                        })
                     })
                 })
-            })
-        }
-    });
-    
-}
-
-function XOR(arrayOne, arrayTwo, targetLength, isSync) {
-    targetData = new ArrayBuffer(targetLength)
-    console.log("XORing")
-    for (let i = 0; i < targetLength; i++) {
-        if(i%1000000 == 0) {
-            if(isSync) updateProgress(0.1 + i / targetLength * 0.95);
-            console.log(i + " / " + targetLength + " (" + (i / targetLength * 100) + " %)")
-        }
-        targetData[i] = arrayOne[i]^arrayTwo[i];
+            }
+        });
+        
     }
-    console.log("XORed")
-    return targetData
-}
 
-async function GetSHA256(input) {
-    const x = await crypto.subtle.digest('SHA-256', input)
-    console.log(x)
-    const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string    
-    return hashHex;
-}
-
-function GetVersion(downgrades, SV, TV, appid, isXDelta3) {
-    var outp = null
-    downgrades["versions"].forEach(element => {
-        if (RemoveDotZero(element["SV"]) == RemoveDotZero(SV) && RemoveDotZero(element["TV"]) == RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
-        else if (RemoveDotZero(element["SV"]) == RemoveDotZero(TV) && RemoveDotZero(element["TV"]) == RemoveDotZero(SV) && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
-    });
-    return outp
-}
-
-function RemoveDotZero(input)
-{
-    var done = false;
-    input = input.toString()
-    while(!done)
+    updateProgress(ratio)
     {
-        if (input.endsWith("0")) input = input.substring(0, input.length - 1);
-        else if (input.endsWith(".")) input = input.substring(0, input.length - 1);
-        else done = true;
+        document.querySelector('#progress-bar').style.width = (ratio * 100) + '%';
     }
-    return input;
+    
+    XOR(targetLength, isSync) {
+        console.log("XORing")
+        for (let i = 0; i < targetLength; i++) {
+            if(i%1000000 == 0) {
+                if(isSync) this.updateProgress(0.1 + i / targetLength * 0.95);
+                console.log(i + " / " + targetLength + " (" + (i / targetLength * 100) + " %)")
+            }
+            targetData[i] = this.sourceData[i]^this.patchData[i];
+        }
+        console.log("XORed")
+        return targetData
+    }
+    
+    GetSHA256(input) {
+        return new Promise((resolve, reject) => {
+            crypto.subtle.digest('SHA-256', input).then((x) => {
+                console.log(x)
+                const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
+                resolve(hashHex)
+            })
+        })
+    }
+    
+    GetVersion(downgrades, SV, TV, appid, isXDelta3) {
+        var outp = null
+        downgrades["versions"].forEach(element => {
+            if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(SV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+            else if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(TV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(SV) && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+        });
+        return outp
+    }
+    
+    RemoveDotZero(input)
+    {
+        var done = false;
+        input = input.toString()
+        while(!done)
+        {
+            if (input.endsWith("0")) input = input.substring(0, input.length - 1);
+            else if (input.endsWith(".")) input = input.substring(0, input.length - 1);
+            else done = true;
+        }
+        return input;
+    }
 }
+
+
 
 function applyPatchAsync(sourceData, patchData, config, patchFilename, downgrades)
 {
