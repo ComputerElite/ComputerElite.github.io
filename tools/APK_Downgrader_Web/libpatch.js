@@ -1,7 +1,7 @@
 /*
 
 Copyright (C) 2018 hack64.net
-Modified by ComputerElite
+Modified a lot by ComputerElite
 */
 
 if(!Array.prototype.fill)
@@ -37,7 +37,7 @@ _this.applyPatchAsync = applyPatchAsync;
 
 const ERR_PATCH_CHECKSUM = 'Patch checksum mismatch - patch file may be corrupt to downgrade';
 const ERR_SOURCE_CHECKSUM = 'Source checksum mismatch - patch is not meant for this APK. Try backing the APK up again in case it is corrupted.';
-const ERR_TARGET_CHECKSUM = 'Target checksum mismatch - something failes while downgrading';
+const ERR_TARGET_CHECKSUM = 'Target checksum mismatch - something failed while downgrading';
 const ERR_UNKNOWN_FORMAT = 'Unknown patch format';
 const ERR_FORMAT_VERSION = 'Unhandled format version';
 const ERR_GENERIC_DECODE = 'Decoding error';
@@ -84,11 +84,11 @@ function bytecopy(dst, dstOffs, src, srcOffs, size)
     dst.set(subsrc, dstOffs);
 }
 
-function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades, isSync = false)
+async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downgrades, isSync = false)
 {
     ignoreChecksums = ignoreChecksums || false;
     var header = new Uint8Array(patchData);
-    var decrReg = /.+_[0-9\.]+TO[0-9\.]+\.decr/g;
+    var decrReg = /.+_[0-9\.]+TO[0-9\.]+.*\.decr/g;
     
     var formats = [
         { sig: '\xD6\xC3\xC4', name: 'vcdiff', applyPatch: applyPatchVCD }
@@ -108,9 +108,7 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
             targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums);
             timeEnd = _this.performance.now();
             console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
-            return new Promise((resolve, reject) => {
-                resolve(targetData)
-            });
+            return targetData
         }
     }
     if(decrReg.test(patchFilename)) {
@@ -129,26 +127,21 @@ function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename, downg
         if(downgrade == null) {
             console.log("libpatch: Entry not found.")
             alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
-            return new Promise((resolve, reject) => {
-                resolve("")
-            });
+            return null
         }
         console.log("Downgrade found: ")
         console.log(downgrade)
 
         timeStart = _this.performance.now();
-        return new Promise((resolve, reject) => {
-            patcher.sourceData = sourceData
-            patcher.patchData = patchData
+        patcher.sourceData = sourceData
+        patcher.patchData = patchData
 
-            patcher.applyDecr(ignoreChecksums, downgrade, isSync).then(function(result) {
-                console.log(result)
-                timeEnd = _this.performance.now();
-                console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
-                resolve(result);
-            })
-         });
-        
+        var result = await patcher.applyDecr(ignoreChecksums, downgrade, isSync)
+        console.log(result)
+        timeEnd = _this.performance.now();
+        console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
+        delete patcher
+        return result;
     } else {
         throw new Error(ERR_UNKNOWN_FORMAT);
     }
@@ -159,40 +152,35 @@ class DecrPatcher {
     patchData = null
     targetData = null
 
-    applyDecr(ignoreChecksums, downgrade, isSync) {
-        return new Promise((resolve, reject) => {
-            if(!ignoreChecksums) {
-                console.log("Calculating SSHA256")
-                if(isSync) this.updateProgress(0.03)
-                this.GetSHA256(this.sourceData).then((SSHA256) => {
-                    console.log("finished: " + SSHA256)
-                    if(SSHA256 != downgrade["SSHA256"]) {
-                        console.log("SSHA256 mismatch")
-                        throw new Error(ERR_SOURCE_CHECKSUM)
-                    }
-                    console.log("Calculating DSHA256")
-                    this.updateProgress(0.08)
-                    this.GetSHA256(this.patchData).then((DSHA256) => {
-                        console.log("finished: " + DSHA256)
-                        if(DSHA256 != downgrade["DSHA256"]) {
-                            console.log("DSHA256 mismatch")
-                            throw new Error(ERR_PATCH_CHECKSUM)
-                        }
-                        console.log("Hashes match. downgrading.")
-                        this.XOR(downgrade["TargetByteSize"], isSync);
-                        if(isSync) this.updateProgress(0.98)
-                        GetSHA256(this.targetData).then((TSHA256) => {
-                            if(TSHA256 != downgrade["TSHA256"]) {
-                                console.log("TSHA256 mismatch")
-                                throw new Error(ERR_TARGET_CHECKSUM)
-                            }
-                            if(isSync) this.updateProgress(1)
-                            resolve(this.targetData)
-                        })
-                    })
-                })
+    async applyDecr(ignoreChecksums, downgrade, isSync) {
+        if(!ignoreChecksums) {
+            console.log("Calculating SSHA256")
+            if(isSync) this.updateProgress(0.03)
+            var SSHA256 = await this.GetSHA256(this.sourceData)
+            console.log("finished: " + SSHA256)
+            if(SSHA256 != downgrade["SSHA256"]) {
+                console.log("SSHA256 mismatch")
+                throw new Error(ERR_SOURCE_CHECKSUM)
             }
-        });
+            console.log("Calculating DSHA256")
+            this.updateProgress(0.08)
+            var DSHA256 = await this.GetSHA256(this.patchData)
+            console.log("finished: " + DSHA256)
+            if(DSHA256 != downgrade["DSHA256"]) {
+                console.log("DSHA256 mismatch")
+                throw new Error(ERR_PATCH_CHECKSUM)
+            }
+            console.log("Hashes match. downgrading.")
+            this.XOR(downgrade["TargetByteSize"], isSync);
+            if(isSync) this.updateProgress(0.98)
+            var TSHA256 = await GetSHA256(this.targetData)
+            if(TSHA256 != downgrade["TSHA256"]) {
+                console.log("TSHA256 mismatch")
+                throw new Error(ERR_TARGET_CHECKSUM)
+            }
+            if(isSync) this.updateProgress(1)
+            return this.targetData
+        }
         
     }
 
@@ -214,15 +202,12 @@ class DecrPatcher {
         console.log("XORed")
     }
     
-    GetSHA256(input) {
-        return new Promise((resolve, reject) => {
-            crypto.subtle.digest('SHA-256', input).then((x) => {
-                console.log(x)
-                const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
-                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
-                resolve(hashHex)
-            })
-        })
+    async GetSHA256(input) {
+        var x = await crypto.subtle.digest('SHA-256', input)
+        console.log(x)
+        const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
+        return hashHex
     }
     
     GetVersion(downgrades, SV, TV, appid, isXDelta3) {
@@ -809,6 +794,15 @@ function applyPatchVCD(sourceData, patchData, ignoreChecksums)
         patchStream.skip(winHeader.dataLength + winHeader.copysLength + winHeader.instrsLength);
         targetWindowPosition += winHeader.targetWindowLength;
     }
+
+    delete codeTable
+    delete cache
+    delete header
+    delete progress
+    delete targetU8
+    delete targetSize
+    delete patchStream
+    delete sourceU8
 
     return targetData;
 }
