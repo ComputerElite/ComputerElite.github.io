@@ -45,6 +45,9 @@ var url = new URL(url_string);
 var ip = url.searchParams.get("ip");
 var rate = url.searchParams.get("updaterate")
 var decimals = url.searchParams.get("decimals")
+if(ip == null || ip == "") {
+    ip = prompt("Please enter your Quests IP:", "192.168.x.x");
+}
 if(rate == null) rate = 1000
 if(decimals == null) decimals = 2
 console.log(rate)
@@ -65,7 +68,6 @@ var songSub = document.getElementById("songSub")
 console.log("Ip: " + ip)
 
 setInterval(function() {
-    //var s = new WebSocket("ws://" + ip + ":3501")
     var s =  fetch("http://" + ip + ":3501").then((response) => {
         var stats = response.json().then((stats) => {
             console.log(stats)

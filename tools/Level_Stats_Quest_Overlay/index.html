@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ComputerElite's site</title>
+        <title>Level Stats Overlay</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Level Stats Viewer Quest Overlay Overview" />
+        <meta property="og:description" content="Overlay for Level Stats Viewer for Beat Saber on Quest" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Level_Stats_Quest_Overlay/" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standart.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
@@ -9,21 +13,30 @@
     <body>
         <div style="padding-top: 10px; width: 100%; display: flex;">
             <div style="flex: 1; background-color: #2F3136; padding: 10px;">
-                <div style="font-size: 24px; text-align: center;">Overlays for Level Stats Viewer</div>
+                <div style="font-size: 24px; text-align: center;">Overlays for the Level Stats Beat Saber mod on Oculus Quest</div>
+                <a href="https://github.com/ComputerElite/LevelStats/releases">Download the mod (not published yet)</a>
+                <br/>
                 IP: <input style="width: 10%; margin-top: 20px;" type="text" id="ip">
                 <br/>
                 Update Rate in ms <input style="width: 10%; margin-top: 20px;" type="text" id="rate" value="1000">
                 <br/>
                 Decimal places for Percentage: <input style="width: 10%; margin-top: 20px;" type="text" id="decimals" value="2">
                 <br/>
+
+                <div class="warning" style="margin-top: 10px;"><a class="warningHeader" href="#" id="downloadIt">Download all overlays here since they probably don't work in your browser</a></div>
+                
+
                 <div style="font-size: 16px; line-height: 2; margin-top: 10px">
                     <a id="overlay1" href="#">First Overlay</a>
                     <br/>
                     <a id="overlay2" href="#">Recreation of Overlay by reselim</a>
                 </div>
                 
+                
             </div>
         </div>
+        <script src="../../js/standart.js"></script>
+        <script src="../../js/jszip.js"></script>
         <script>
             document.getElementById("overlay1").onclick = function() {
                 openOverlay(1)
@@ -35,6 +48,63 @@
 
             function openOverlay(number) {
                 window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value, "_self")
+            }
+
+            document.getElementById("downloadIt").onclick = function() {
+                var zip = new JSZip();
+                zip.file("index.html", CleanUp(MakeTextGetRequest("index.html")));
+                zip.file("standart.css", MakeTextGetRequest("../../css/standart.css"));
+                zip.file("standart.js", MakeTextGetRequest("../../js/standart.js"));
+                zip.file("Overlay1.html", CleanUp(MakeTextGetRequest("Overlay1.html")));
+                zip.file("Overlay2.html", CleanUp(MakeTextGetRequest("Overlay2.html")));
+                zip.file("pulling.js", MakeTextGetRequest("pulling.js"));
+
+                zip.generateAsync({type:"blob"})
+                .then(function(content) {
+                    // see FileSaver.js
+                    saveAs(content, "Level_Stats_Quest_Overlay.zip");
+                });
+            }
+
+            function CleanUp(input) {
+                return input
+                .replace("../../css/", "")
+                .replace("../../js/", "")
+                .replace(`<link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">`, "")
+                .replace(`<div class="warning" style="margin-top: 10px;"><a class="warningHeader" href="#" id="downloadIt">Download all overlays here since they probably don't work in your browser</a></div>`, "")
+            }
+
+            function saveAs(data, filename)
+            {
+                console.log('saving ' + filename + '...')
+            
+                var blob = new Blob([data], {type: 'octet/stream'});
+                var url = window.URL.createObjectURL(blob);
+            
+                if(navigator && navigator.msSaveBlob)
+                {
+                    console.log("using msSaveBlob...");
+                    navigator.msSaveBlob(blob, filename);
+                }
+                else
+                {
+                    var a = document.createElement('a');
+                    a.style = "display: none";
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    try
+                    {
+                        a.click();
+                    }
+                    catch(e)
+                    {
+                        console.error(e);
+                        console.log('failed to save file');
+                    }
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }
             }
         </script>
     </body>
