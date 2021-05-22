@@ -12,24 +12,25 @@
         <style>
             body {
                 background-color: #000000FF;
+                padding: 20px;
             }
         </style>
     </head>
     <body>
-        WIP
-        <div style="width: 16%;">
-            <img style="width: 100px; height: 100px;" src="../../assets/CE_64px.png" id="cover">
+        <div style="display: flex; margin-bottom: 10px;">
+            <div style="flex: 0;">
+                <img style="width: 100px; height: 100px;" src="../../assets/CE_64px.png" id="cover">
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <div style="font-size: 24px; font-weight: bold; display: inline;"><div style="font-size: 24px; font-weight: bold; display: inline;" id="songName">Song name</div> (<div style="font-size: 24px; font-weight: bold; display: inline;" id="songSub"></div>)</div>
+                <div style="font-size: 18px;"><div style="font-size: 18px; display: inline;" id="songAuthor">Song Author</div> [<div style="font-size: 18px; display: inline;" id="mapper">Mapper</div>]</div>
+                <div style="font-size: 15px; background-color: #EEEEEE; color: #000000; border-radius: 4px; padding: 1px; padding-left: 5px; padding-right: 5px; margin-top: 20px; width: min-content; font-weight: bold;" id="diff">diff</div>
+            </div>
         </div>
-        <div style="padding-left: 10px; width: 100px; display: inline;">
-            <div style="font-size: 24px; font-weight: bold;" id="songName">Song name</div>
-            <div style="font-size: 15px;">Artist: <div style="font-size: 18px;" id="songAuthor">Artist</div></div>
-            <div style="font-size: 15px; margin-top: 10px; margin-bottom: 10px;">Mapper: <div style="font-size: 18px;" id="mapper">Mapper</div></div>
-            <div style="font-size: 15px;" id="diff">diff</div>
-            <div style="font-size: 11px;" id="key">key: </div>
-        </div>
-        <div>Combo: <div style="font-size: 15px; display: inline;" id="combo">Combo</div></div>
-        <div>Score: <div style="font-size: 15px; display: inline;" id="score">Score</div></div>
-        <div>Rank: <div style="font-size: 15px; display: inline;" id="rank">Rank</div> (<div style="font-size: 15px; display: inline;" id="percentage"></div>)</div>
+        <div style="font-size: 26px; font-weight: bold;" id="score">Score</div>
+        <div style="font-size: 18px; display: inline;" id="combo">Combo</div><div style="display: inline; font-size: 12px; color: #999999; margin-left: 5px;">Combo</div>
+        <br/>
+        <div style="font-size: 18px; display: inline;" id="rank">Rank</div><div style="display: inline; font-size: 12px; color: #999999; margin-left: 5px;" id="percentage"></div>
         <script src="pulling.js"></script>
     </body>
 </html>

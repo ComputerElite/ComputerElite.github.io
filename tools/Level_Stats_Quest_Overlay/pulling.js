@@ -14,7 +14,7 @@ function intToDiff(diff) {
         case 3:
             return "Expert";
         case 4:
-            return "Expert+";
+            return "Expert +";
     }
     return "Unknown";
 }
@@ -74,7 +74,7 @@ setInterval(function() {
                 songName.innerHTML = format(stats["levelName"])
             } catch {}
             try {
-                songAuthor.innerHTML = "<i>" + format(stats["songAuthor"]) + "</i>"
+                songAuthor.innerHTML = format(stats["songAuthor"])
             } catch {}
             try {
                 mapper.innerHTML = format(stats["mapper"])
@@ -86,7 +86,7 @@ setInterval(function() {
                 combo.innerHTML = format(stats["combo"], 1)
             } catch {}
             try {
-                score.innerHTML = format(stats["score"], 1)
+                score.innerHTML = format(AddComma(stats["score"]), 1)
             } catch {}
             try {
                 rank.innerHTML = format(stats["rank"], 2)
@@ -103,6 +103,10 @@ setInterval(function() {
         })
     })
 }, rate)
+
+function AddComma(input) {
+    return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function trim(input) {
     return input.toFixed(decimals)
