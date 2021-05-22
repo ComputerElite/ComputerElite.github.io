@@ -170,18 +170,21 @@ class DecrPatcher {
                 console.log("DSHA256 mismatch")
                 throw new Error(ERR_PATCH_CHECKSUM)
             }
-            console.log("Hashes match. downgrading.")
-            this.XOR(downgrade["TargetByteSize"], isSync);
-            if(isSync) this.updateProgress(0.98)
+            console.log("Hashes match.")
+            
+        }
+        console.log("downgrading")
+        this.XOR(downgrade["TargetByteSize"], isSync);
+        if(isSync) this.updateProgress(0.98)
+        if(!ignoreChecksums) {
             var TSHA256 = await this.GetSHA256(this.targetData)
             if(TSHA256 != downgrade["TSHA256"]) {
                 console.log("TSHA256 mismatch")
                 throw new Error(ERR_TARGET_CHECKSUM)
             }
-            if(isSync) this.updateProgress(1)
-            return this.targetData
         }
-        
+        if(isSync) this.updateProgress(1)
+        return this.targetData
     }
 
     updateProgress(ratio)
