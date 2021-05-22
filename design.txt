@@ -1,0 +1,14 @@
+Colors:
+    Background: #202225
+    Text: #EEEEEE
+    Text-note: #888888
+    Foreground: #2F3136
+    Links: #30A2EC
+    Green: #0A9E0B
+    Red: #FF2222
+    bright-cyan: #99CCD0
+Text:
+    Header: 16px
+    normal: 14px
+    note: 11px
+    Site-header: 24px

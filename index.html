@@ -14,7 +14,16 @@
                 I make programs, Beat Saber mods and will now also start with Web tools.
                 <h4>Tools</h4>
                 <a href="tools/APK_Downgrader_Web/APKDowngrader.html">- APK Downgrader - Web</a>
+                <br/>
+                IP: <input style="width: 30%; margin-top: 20px;" type="text" id="ip">
+                <br/>
+                <a id="levelstats">- Level Stats Quest Overlay for Beat Saber (Mod WIP; Enter IP in box above before clicking)</a>
             </div>
         </div>
+        <script>
+            document.getElementById("levelstats").onclick = function() {
+                window.open("tools/Level_Stats_Quest_Overlay/LevelStatsQuestOverlay.html?ip=" + document.getElementById("ip").value)
+            }
+        </script>
     </body>
 </html>
