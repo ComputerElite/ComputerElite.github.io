@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ComputerElite's site</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standart.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; background-color: #2F3136; padding: 10px;">
+                <div style="font-size: 24px; text-align: center;">Overlays for Level Stats Viewer</div>
+                IP: <input style="width: 10%; margin-top: 20px;" type="text" id="ip">
+                <br/>
+                Update Rate in ms <input style="width: 10%; margin-top: 20px;" type="text" id="rate" value="1000">
+                <br/>
+                Decimal places for Percentage: <input style="width: 10%; margin-top: 20px;" type="text" id="decimals" value="2">
+                <br/>
+                <div style="font-size: 16px; line-height: 2; margin-top: 10px">
+                    <a id="overlay1" href="#">First Overlay</a>
+                    <br/>
+                    <a id="overlay2" href="#">Recreation of Overlay by reselim</a>
+                </div>
+                
+            </div>
+        </div>
+        <script>
+            document.getElementById("overlay1").onclick = function() {
+                openOverlay(1)
+            }
+
+            document.getElementById("overlay2").onclick = function() {
+                openOverlay(2)
+            }
+
+            function openOverlay(number) {
+                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value, "_self")
+            }
+        </script>
+    </body>
+</html>
