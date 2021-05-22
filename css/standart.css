@@ -74,6 +74,22 @@ code {
     margin-bottom: 10px;
 }
 
+.guideHeader {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.guideSteps {
+    font-size: 14px;
+    margin-top: 5px;
+    padding-left: 10px;
+    line-height: 1.5;
+}
+
+.topicContainer {
+    padding-left: 10px;
+}
+
 .info {
     background-color: #a1870498;
     padding: 10px;
