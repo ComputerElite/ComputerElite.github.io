@@ -26,19 +26,25 @@
         </style>
     </head>
     <body>
-        <div style="display: flex; margin-bottom: 10px; position: absolute; bottom: 10px; left: 10px;">
-            <div style="flex: 1;">
-                <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="../../assets/CE_512px.png" id="cover">
+        <div style="display: flex; margin-bottom: 10px; position: absolute; bottom: 10px; left: 10px; flex-direction: column-reverse;">
+            <div style="display: flex; position: absolute; bottom: 10px; left: 10px; flex: 1;">
+                <div style="flex: 1;">
+                    <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="../../assets/CE_512px.png" id="cover">
+                </div>
+                <div style="flex: 1; flex-shrink: 0; white-space: nowrap; margin-left: 160px;">
+                    <div class="item" style="font-size: 16px; font-weight: bold; display: inline;">BSR: <div style="display: inline;" id="key"></div></div>
+                    <div class="item" style="font-size: 16px; font-weight: bold;" id="mapper">Mapper</div>
+                    <div class="item" style="font-size: 18px; font-weight: bold;" id="songAuthor">Song Author</div>
+                    <div class="item" style="font-size: 26px; font-weight: bold;" id="songName">Song name</div>
+                </div>
             </div>
-            <div style="flex: 1; flex-shrink: 0; white-space: nowrap; margin-left: 160px;">
-                <div class="item" style="font-size: 16px; font-weight: bold; display: inline;">BSR: <div style="display: inline;" id="key"></div></div>
-                <div class="item" style="font-size: 16px; font-weight: bold;" id="mapper">Mapper</div>
-                <div class="item" style="font-size: 18px; font-weight: bold;" id="songAuthor">Song Author</div>
-                <div class="item" style="font-size: 26px; font-weight: bold;" id="songName">Song name</div>
+            <div style="flex: 1; margin-bottom: 165px; white-space: nowrap; font-size: 16px; display: inline; margin-left: 10px; font-weight: bold;">
+                <div id="mpCodeContainer" class="item">Mp lobby: <div id="mpCode" style="display: inline;"></div></div>
+                <div class="item">Pre-BSR: <div id="preKey" style="display: inline;"></div></div>
             </div>
         </div>
         <div style="position: absolute; top: -5px; right: 0px; left: 0px; background: #33333388; margin: auto; width: min-content; padding: 5px; border-radius: 5px;">
-            <div style="display: flex; text-align: center; white-space: nowrap; font-weight: bold; ">
+            <div style="display: flex; text-align: center; white-space: nowrap; font-weight: bold; font-size: 20px;">
                 <div style="flex: 1;" style="display: inline;">
                     <div id="timePlayed" style="display: inline;"></div>/<div id="totalTime" style="display: inline;"></div>
                 </div>
@@ -53,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
+        <div id="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
             <div id="energybar" style="height: 100%; width: 100%; background: #EEEEEE; border-radius: 2px;">
             </div>
         </div>

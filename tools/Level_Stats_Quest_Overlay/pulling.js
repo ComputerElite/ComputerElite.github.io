@@ -27,6 +27,7 @@ function SetPercentage(percentage) {
 
 
 var lastID = "";
+var lastSongKey = "";
 
 function SetImage(id) {
     if(!id.startsWith("custom_level_")) return;
@@ -36,6 +37,11 @@ function SetImage(id) {
         result.json().then((json) => {
             cover.src = "https://beatsaver.com" + json["coverURL"]
             key.innerHTML = json["key"]
+            
+            try {
+                prekey.innerHTML = lastSongKey
+            } catch {}
+            lastSongKey = json["key"]
         })
     })
 }
@@ -45,14 +51,28 @@ var url = new URL(url_string);
 var ip = url.searchParams.get("ip");
 var rate = url.searchParams.get("updaterate")
 var decimals = url.searchParams.get("decimals")
+
+var showmpcode = url.searchParams.get("dontshowmpcode")
+if(showmpcode == null) showmpcode = true;
+else showmpcode = false
+
+var showenergyBar = url.searchParams.get("dontshowenergy")
+if(showenergyBar == null) showenergyBar = true;
+else showenergyBar = false
+
 if(ip == null || ip == "") {
     ip = prompt("Please enter your Quests IP:", "192.168.x.x");
 }
 if(rate == null) rate = 1000
 if(decimals == null) decimals = 2
-console.log(rate)
+console.log("update rate: " + rate)
+console.log("decimals for percentage: " + decimals)
+console.log("ip: " + ip)
+console.log("show mp code: " + showmpcode)
+console.log("show energy bar: " + showenergyBar)
 
 var bar = document.getElementById("energybar")
+var barContainer = document.getElementById("energybarContainer")
 var songName = document.getElementById("songName")
 var songAuthor = document.getElementById("songAuthor")
 var mapper = document.getElementById("mapper")
@@ -68,12 +88,22 @@ var njs = document.getElementById("njs")
 var bpm = document.getElementById("bpm")
 var timePlayed = document.getElementById("timePlayed")
 var totalTime = document.getElementById("totalTime")
+var mpCode = document.getElementById("mpCode")
+var mpCodeContainer = document.getElementById("mpCodeContainer")
+var prekey = document.getElementById("preKey")
 
-console.log("Ip: " + ip)
+var useLocalhost = false;
+const localip = 'http://localhost:2078/api/raw'
+
+fetch(localip).then((res) => {
+    useLocalhost = true
+}).catch(() => {
+    useLocalhost = false
+})
 
 setInterval(function() {
-    var s =  fetch("http://" + ip + ":3503").then((response) => {
-        var stats = response.json().then((stats) => {
+    fetch(useLocalhost ? localip : "http://" + ip + ":3501").then((response) => {
+        response.json().then((stats) => {
             console.log(stats)
             SetPercentage(stats["energy"])
             try {
@@ -113,7 +143,33 @@ setInterval(function() {
                 bpm.innerHTML = format(stats["bpm"], 1)
             } catch {}
             try {
+                if(stats["type"] == 2 || stats["type"] == 5) {
+                    // Is in mp lobby or song
+                    console.log(showmpcode)
+                    if(stats["mpGameIdShown"] && showmpcode) {
+                        mpCode.innerHTML = format(stats["mpGameId"])
+                    } else {
+                        mpCode.innerHTML = "*****"
+                    }
+                } else {
+                    mpCode.innerHTML = "not in lobby"
+                }
+            } catch {}
+            try {
+                if((stats["type"] == 2 || stats["type"] == 5) && showmpcode) {
+                    mpCodeContainer.style.display = "block"
+                } else {
+                    mpCodeContainer.style.display = "none"
+                }
+            } catch {}
+            try {
                 updateTime(stats["endTime"], stats["time"])
+            } catch {}
+
+            try {
+                if(!showenergyBar) {
+                    barContainer.style.display = "none"
+                }
             } catch {}
         })
     })
