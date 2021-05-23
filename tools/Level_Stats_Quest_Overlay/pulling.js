@@ -93,7 +93,7 @@ var mpCodeContainer = document.getElementById("mpCodeContainer")
 var prekey = document.getElementById("preKey")
 
 var useLocalhost = false;
-const localip = 'http://localhost:2078/api/raw'
+const localip = 'http://localhost:2078/api/raw?ip=' + ip;
 
 fetch(localip).then((res) => {
     useLocalhost = true
