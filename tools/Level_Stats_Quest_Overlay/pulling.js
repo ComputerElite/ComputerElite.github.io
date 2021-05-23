@@ -64,6 +64,8 @@ var key = document.getElementById("key")
 var rank = document.getElementById("rank")
 var percentage = document.getElementById("percentage")
 var songSub = document.getElementById("songSub")
+var njs = document.getElementById("njs")
+var bpm = document.getElementById("bpm")
 
 console.log("Ip: " + ip)
 
@@ -100,11 +102,25 @@ setInterval(function() {
                 SetImage(stats["id"])
             } catch {}
             try {
-                songSub.innerHTML = format(stats[levelSub])
+                songSub.innerHTML = format(stats["levelSub"])
+            } catch {}
+            try {
+                njs.innerHTML = format(stats["njs"])
+            } catch {}
+            try {
+                bpm.innerHTML = format(stats["bpm"], 1)
+            } catch {}
+            try {
+                updateTime(stats["totalTime"], stats["timePlayed"])
             } catch {}
         })
     })
 }, rate)
+
+function updateTime(songLength, currentTime) {
+    //To-Do
+    return;
+}
 
 function AddComma(input) {
     return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
