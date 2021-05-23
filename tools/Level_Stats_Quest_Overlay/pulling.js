@@ -72,7 +72,7 @@ var totalTime = document.getElementById("totalTime")
 console.log("Ip: " + ip)
 
 setInterval(function() {
-    var s =  fetch("http://" + ip + ":3501").then((response) => {
+    var s =  fetch("http://" + ip + ":3503").then((response) => {
         var stats = response.json().then((stats) => {
             console.log(stats)
             SetPercentage(stats["energy"])
@@ -83,7 +83,7 @@ setInterval(function() {
                 songAuthor.innerHTML = format(stats["songAuthor"])
             } catch {}
             try {
-                mapper.innerHTML = format(stats["mapper"])
+                mapper.innerHTML = format(stats["levelAuthor"])
             } catch {}
             try {
                 diff.innerHTML = intToDiff(stats["difficulty"])
@@ -98,13 +98,13 @@ setInterval(function() {
                 rank.innerHTML = format(stats["rank"], 2)
             } catch {}
             try {
-                percentage.innerHTML = format(trim(stats["percentage"] * 100)) + " %"
+                percentage.innerHTML = format(trim(stats["accuracy"] * 100)) + " %"
             } catch {}
             try {
                 SetImage(stats["id"])
             } catch {}
             try {
-                songSub.innerHTML = format(stats["levelSub"])
+                songSub.innerHTML = format(stats["levelSubName"])
             } catch {}
             try {
                 njs.innerHTML = format(stats["njs"])
@@ -113,7 +113,7 @@ setInterval(function() {
                 bpm.innerHTML = format(stats["bpm"], 1)
             } catch {}
             try {
-                updateTime(stats["totalTime"], stats["timePlayed"])
+                updateTime(stats["endTime"], stats["time"])
             } catch {}
         })
     })
