@@ -35,7 +35,7 @@ function SetImage(id) {
     fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
         result.json().then((json) => {
             cover.src = "https://beatsaver.com" + json["coverURL"]
-            key.innerHTML = "Key: " + json["key"]
+            key.innerHTML = json["key"]
         })
     })
 }
@@ -66,6 +66,8 @@ var percentage = document.getElementById("percentage")
 var songSub = document.getElementById("songSub")
 var njs = document.getElementById("njs")
 var bpm = document.getElementById("bpm")
+var timePlayed = document.getElementById("timePlayed")
+var totalTime = document.getElementById("totalTime")
 
 console.log("Ip: " + ip)
 
@@ -117,15 +119,17 @@ setInterval(function() {
     })
 }, rate)
 
-function updateTime(songLength, currentTime) {
-    //To-Do
-    return;
-}
-
 function AddComma(input) {
     return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function trim(input) {
     return input.toFixed(decimals)
+}
+
+function ToElapsed(input) {
+    var date = new Date(0);
+    date.setSeconds(input); // specify value for SECONDS here
+    var timeString = date.toISOString().substr(14, 5);
+    return timeString
 }

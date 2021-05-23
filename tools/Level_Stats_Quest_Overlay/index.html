@@ -30,6 +30,8 @@
                     <a id="overlay1" href="#">First Overlay</a>
                     <br/>
                     <a id="overlay2" href="#">Recreation of Overlay by reselim</a>
+                    <br/>
+                    <a id="overlay3" href="#">Recreation of Overlay which bandoot uses</a>
                 </div>
                 
                 
@@ -46,6 +48,10 @@
                 openOverlay(2)
             }
 
+            document.getElementById("overlay3").onclick = function() {
+                openOverlay(3)
+            }
+
             function openOverlay(number) {
                 window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value, "_self")
             }
@@ -57,6 +63,7 @@
                 zip.file("standart.js", MakeTextGetRequest("../../js/standart.js"));
                 zip.file("Overlay1.html", CleanUp(MakeTextGetRequest("Overlay1.html")));
                 zip.file("Overlay2.html", CleanUp(MakeTextGetRequest("Overlay2.html")));
+                zip.file("Overlay3.html", CleanUp(MakeTextGetRequest("Overlay3.html")));
                 zip.file("pulling.js", MakeTextGetRequest("pulling.js"));
 
                 zip.generateAsync({type:"blob"})

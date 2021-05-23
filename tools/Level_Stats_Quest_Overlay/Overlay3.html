@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Level Stats Viewer Quest Overlay</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Level Stats Viewer Quest Overlay" />
+        <meta property="og:description" content="An overlay for Level Stats Viewer for Beat Saber on Quest. Overlay 2" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Level_Stats_Quest_Overlay/Overlay2.html" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standart.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standart.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+            body {
+                background-color: #00000000;
+                padding: 20px;
+                letter-spacing: 2px;
+            }
+
+            .item {
+                background-color: #33333388;
+                border-radius: 5px;
+                padding: 3px;
+                margin-top: 5px;
+                width: min-content;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex; margin-bottom: 10px; position: absolute; bottom: 10px; left: 10px;">
+            <div style="flex: 1;">
+                <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="../../assets/CE_64px.png" id="cover">
+            </div>
+            <div style="flex: 1; flex-shrink: 0; white-space: nowrap; margin-left: 160px;">
+                <div class="item" style="font-size: 16px; font-weight: bold; display: inline;">BSR: <div style="display: inline;" id="key"></div></div>
+                <div class="item" style="font-size: 16px; font-weight: bold;" id="mapper">Mapper</div>
+                <div class="item" style="font-size: 18px; font-weight: bold;" id="songAuthor">Song Author</div>
+                <div class="item" style="font-size: 26px; font-weight: bold;" id="songName">Song name</div>
+            </div>
+        </div>
+        <div style="position: absolute; top: -5px; right: 0px; left: 0px; background: #33333388; margin: auto; width: min-content; padding: 5px; border-radius: 5px;">
+            <div style="display: flex; text-align: center; white-space: nowrap; font-weight: bold; ">
+                <div style="flex: 1;" style="display: inline;">
+                    <div id="timePlayed" style="display: inline;"></div>/<div id="totalTime" style="display: inline;"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div id="score"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div id="percentage"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div id="combo"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
+            <div id="energybar" style="height: 100%; width: 100%; background: #EEEEEE; border-radius: 2px;">
+            </div>
+        </div>
+        <script src="pulling.js"></script>
+        <script>
+            function updateTime(total, played) {
+                timePlayed.innerHTML = ToElapsed(played)
+                totalTime.innerHTML = ToElapsed(total)
+            }
+        </script>
+        
+    </body>
+</html>
