@@ -36,7 +36,9 @@ function SetImage(id) {
     fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
         result.json().then((json) => {
             cover.src = "https://beatsaver.com" + json["coverURL"]
-            key.innerHTML = json["key"]
+            try {
+                key.innerHTML = json["key"]
+            } catch {}
             
             try {
                 prekey.innerHTML = lastSongKey
@@ -63,7 +65,7 @@ else showenergyBar = false
 if(ip == null || ip == "") {
     ip = prompt("Please enter your Quests IP:", "192.168.x.x");
 }
-if(rate == null) rate = 1000
+if(rate == null) rate = 100
 if(decimals == null) decimals = 2
 console.log("update rate: " + rate)
 console.log("decimals for percentage: " + decimals)
@@ -93,7 +95,7 @@ var mpCodeContainer = document.getElementById("mpCodeContainer")
 var prekey = document.getElementById("preKey")
 
 var useLocalhost = false;
-const localip = 'http://localhost:2078/api/raw?ip=' + ip;
+const localip = 'http://localhost:2078/api/raw';
 
 fetch(localip).then((res) => {
     useLocalhost = true
@@ -101,11 +103,18 @@ fetch(localip).then((res) => {
     useLocalhost = false
 })
 
+
 setInterval(function() {
-    fetch(useLocalhost ? localip : "http://" + ip + ":3501").then((response) => {
+    fetch(useLocalhost ? localip + "?ip=" + ip : "http://" + ip + ":3501").then((response) => {
         response.json().then((stats) => {
-            console.log(stats)
-            SetPercentage(stats["energy"])
+            //console.log(stats)
+            setAll(stats)
+        })
+    })
+}, rate)
+
+function setAll(stats) {
+    SetPercentage(stats["energy"])
             try {
                 songName.innerHTML = format(stats["levelName"])
             } catch {}
@@ -171,9 +180,7 @@ setInterval(function() {
                     barContainer.style.display = "none"
                 }
             } catch {}
-        })
-    })
-}, rate)
+}
 
 function AddComma(input) {
     return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
