@@ -5,7 +5,7 @@
         <meta property="og:site_name" content="ComputerElite">
         <meta property="og:title" content="Level Stats Viewer Quest Overlay Overview" />
         <meta property="og:description" content="Overlay for Level Stats Viewer for Beat Saber on Quest" />
-        <meta property="og:url" content="https://computerelite.github.io/tools/Level_Stats_Quest_Overlay/" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standart.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
@@ -13,17 +13,28 @@
     <body>
         <div style="padding-top: 10px; width: 100%; display: flex;">
             <div style="flex: 1; background-color: #2F3136; padding: 10px;">
-                <div style="font-size: 24px; text-align: center;">Overlays for the Level Stats Beat Saber mod on Oculus Quest</div>
-                <a href="https://github.com/ComputerElite/LevelStats/releases">Download the mod (not published yet)</a>
+                <div style="font-size: 24px; text-align: center;">Overlays for the Streamer Tools Beat Saber mod on Oculus Quest</div>
+                <a href="https://github.com/EnderdracheLP/streamer-tools/releases/latest">Download the mod (not published yet)</a>
                 <br/>
                 IP: <input style="width: 10%; margin-top: 20px;" type="text" id="ip">
                 <br/>
-                Update Rate in ms <input style="width: 10%; margin-top: 20px;" type="text" id="rate" value="1000">
+                Update Rate in ms <input style="width: 10%; margin-top: 20px;" type="text" id="rate" value="100">
                 <br/>
                 Decimal places for Percentage: <input style="width: 10%; margin-top: 20px;" type="text" id="decimals" value="2">
                 <br/>
+                Custom Text: <input style="width: 10%; margin-top: 20px;" type="text" id="custom" value="">
+                <br/>
+                <br/>
+                Don't show energy bar <input type="checkbox" id="dontenergy">
+                <br/>
+                <br/>
+                Don't show mp code if shown in game <input type="checkbox" id="dontmpcode">
+                <br/>
+                <br/>
+                Always show mp code if shown in game <input type="checkbox" id="alwaysmpcode">
+                <br/>
 
-                <div class="warning" style="margin-top: 10px;"><a class="warningHeader" href="#" id="downloadIt">Download all overlays here since they probably don't work in your browser</a></div>
+                <div class="warning" style="margin-top: 10px;"><a class="warningHeader" href="#" id="downloadIt">Download all overlays here since they probably don't work in your browser</a> or <a>download a client to which the overlay connects to (link not added)</a></div>
                 
 
                 <div style="font-size: 16px; line-height: 2; margin-top: 10px">
@@ -53,7 +64,7 @@
             }
 
             function openOverlay(number) {
-                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value, "_self")
+                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value + (document.getElementById("dontenergy").value ? "&dontshowenergy" : "") + (document.getElementById("dontmpcode").value ? "&dontshowmpcode" : "") + (document.getElementById("alwaysmpcode").value ? "&alwaysshowmpcode" : "") + (document.getElementById("custom").value != "" ? "&customtext=" + document.getElementById("custom").value : ""), "_self")
             }
 
             document.getElementById("downloadIt").onclick = function() {

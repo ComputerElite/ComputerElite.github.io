@@ -28,6 +28,13 @@ input[type='file']
     width: 100%;
 }
 
+input[type='checkbox'] {
+    padding: 5px;
+    border: none;
+    color: #EEEEEE;
+    background-color: #202225;
+}
+
 input[type='text']
 {
     padding: 5px;

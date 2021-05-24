@@ -48,30 +48,6 @@ function SetImage(id) {
     })
 }
 
-var url_string = window.location.href
-var url = new URL(url_string);
-var ip = url.searchParams.get("ip");
-var rate = url.searchParams.get("updaterate")
-var decimals = url.searchParams.get("decimals")
-
-var showmpcode = url.searchParams.get("dontshowmpcode")
-if(showmpcode == null) showmpcode = true;
-else showmpcode = false
-
-var showenergyBar = url.searchParams.get("dontshowenergy")
-if(showenergyBar == null) showenergyBar = true;
-else showenergyBar = false
-
-if(ip == null || ip == "") {
-    ip = prompt("Please enter your Quests IP:", "192.168.x.x");
-}
-if(rate == null) rate = 100
-if(decimals == null) decimals = 2
-console.log("update rate: " + rate)
-console.log("decimals for percentage: " + decimals)
-console.log("ip: " + ip)
-console.log("show mp code: " + showmpcode)
-console.log("show energy bar: " + showenergyBar)
 
 var bar = document.getElementById("energybar")
 var barContainer = document.getElementById("energybarContainer")
@@ -93,6 +69,90 @@ var totalTime = document.getElementById("totalTime")
 var mpCode = document.getElementById("mpCode")
 var mpCodeContainer = document.getElementById("mpCodeContainer")
 var prekey = document.getElementById("preKey")
+var customTextContainer = document.getElementById("customText")
+
+var williamGayContainer = document.getElementById("williamGayContainer")
+var pinkCuteContainer = document.getElementById("pinkCuteContainer")
+var eraCuteContainer = document.getElementById("eraCuteContainer")
+
+var url_string = window.location.href
+var url = new URL(url_string);
+var ip = url.searchParams.get("ip");
+var rate = url.searchParams.get("updaterate")
+var decimals = url.searchParams.get("decimals")
+
+var showmpcode = url.searchParams.get("dontshowmpcode")
+if(showmpcode == null) showmpcode = true;
+else showmpcode = false
+
+var long = url.searchParams.get("unnecessarilylongparameterwhichsetsupdateratewithc00lstufftofuqy0u0ffs0youdontwriteitbtwpinkcuteandwilliamgayandblameenderforthisideaandcomputerforimplementingitintotheoverlaysgotabitcarriedawaytypingthissohavefunnowbutwhatifitellyouthisisntdoingwhatyouarethinkingbcicandowhatiwantwithcodeandyouaretypingittogetrickrolledsoicanhavemyfunevenwhenitsnotaprilfirst")
+if(long != null) {
+    alert("You're crazy stop typing this stuff. Here have fun:")
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_self")
+}
+
+var williamGay = url.searchParams.get("williamgay")
+if(williamGay != null) {
+    try {
+        williamGayContainer.style.display = "block"
+    } catch {}
+} else {
+    try {
+        williamGayContainer.style.display = "none"
+    } catch {}
+}
+
+var eraCute = url.searchParams.get("eracute")
+if(eraCute != null) {
+    try {
+        eraCuteContainer.style.display = "block"
+    } catch {}
+} else {
+    try {
+        eraCuteContainer.style.display = "none"
+    } catch {}
+}
+
+var pinkCute = url.searchParams.get("pinkcute")
+if(pinkCute != null) {
+    try {
+        pinkCuteContainer.style.display = "block"
+    } catch {}
+} else {
+    try {
+        pinkCuteContainer.style.display = "none"
+    } catch {}
+}
+
+var alwaysshowmpcode = url.searchParams.get("alwayshowmpcode")
+if(alwaysshowmpcode == null) alwaysshowmpcode = true;
+else alwaysshowmpcode = false
+
+var showenergyBar = url.searchParams.get("dontshowenergy")
+if(showenergyBar == null) showenergyBar = true;
+else showenergyBar = false
+
+var customText = url.searchParams.get("customtext");
+if(customText != null && customText != "") {
+    try {
+        customTextContainer.innerHTML = customText
+    } catch {}
+} else {
+    try {
+        customTextContainer.style.display = "none"
+    } catch {}
+}
+
+if(ip == null || ip == "") {
+    ip = prompt("Please enter your Quests IP:", "192.168.x.x");
+}
+if(rate == null) rate = 100
+if(decimals == null) decimals = 2
+console.log("update rate: " + rate)
+console.log("decimals for percentage: " + decimals)
+console.log("ip: " + ip)
+console.log("show mp code: " + showmpcode)
+console.log("show energy bar: " + showenergyBar)
 
 var useLocalhost = false;
 const localip = 'http://localhost:2078/api/raw';
@@ -152,10 +212,9 @@ function setAll(stats) {
                 bpm.innerHTML = format(stats["bpm"], 1)
             } catch {}
             try {
-                if(stats["type"] == 2 || stats["type"] == 5) {
+                if(stats["location"] == 2 || stats["location"] == 5) {
                     // Is in mp lobby or song
-                    console.log(showmpcode)
-                    if(stats["mpGameIdShown"] && showmpcode) {
+                    if(stats["mpGameIdShown"] && showmpcode || alwaysshowmpcode) {
                         mpCode.innerHTML = format(stats["mpGameId"])
                     } else {
                         mpCode.innerHTML = "*****"
@@ -165,7 +224,7 @@ function setAll(stats) {
                 }
             } catch {}
             try {
-                if((stats["type"] == 2 || stats["type"] == 5) && showmpcode) {
+                if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
                     mpCodeContainer.style.display = "block"
                 } else {
                     mpCodeContainer.style.display = "none"

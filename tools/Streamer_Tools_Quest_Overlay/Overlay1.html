@@ -4,7 +4,7 @@
         <meta property="og:site_name" content="ComputerElite">
         <meta property="og:title" content="Level Stats Viewer Quest Overlay" />
         <meta property="og:description" content="An overlay for Level Stats Viewer for Beat Saber on Quest. Original Overlay" />
-        <meta property="og:url" content="https://computerelite.github.io/tools/Level_Stats_Quest_Overlay/Overlay1.html" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay1.html" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standart.css" type="text/css" rel="stylesheet">
         <script src="../../js/standart.js"></script>
@@ -29,15 +29,22 @@
                     <div style="font-size: 11px;" id="key">key: </div>
                 </div>
             </div>
+            <div style="font-size: 5px; position: absolute; bottom: 0px; right: 0px; background-color: #222222; padding: 2px; border-radius: 2px; " id="pinkCuteContainer">Pink Cute</div>
+            <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px; background-color: #222222; padding: 2px; border-radius: 2px; " id="eraCuteContainer">Era Cute</div>
             <div id="mpCodeContainer">Mp lobby: <div style="font-size: 15px; display: inline;" id="mpCode">*****</div></div>
             <div>Combo: <div style="font-size: 15px; display: inline;" id="combo">Combo</div></div>
             <div>Score: <div style="font-size: 15px; display: inline;" id="score">Score</div></div>
             <div>Rank: <div style="font-size: 15px; display: inline;" id="rank">Rank</div> (<div style="font-size: 15px; display: inline;" id="percentage"></div>)</div>
+            <div style="font-size: 15px; margin-top: 5px;" id="customText"></div>
         </div>
-        <div id="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #222222; border-radius: 3px; margin: auto; bottom: 10px; left: 0px; right: 0px; padding: 1px;">
+        <div id="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #222222; border-radius: 3px; margin: auto; bottom: 10px; left: 0px; right: 0px; padding: 1px;z-index: -2;">
+            <div style="font-size: 5px; position: absolute; top: 0px; right: 0px; background-color: #222222; padding: 2px; border-radius: 2px; z-index: -1;" id="williamGayContainer">William Gay</div>
             <div id="energybar" style="height: 100%; width: 100%; background: #00FFFF; border-radius: 2px;">
             </div>
+            
         </div>
+
+        
         <script src="pulling.js"></script>
     </body>
 </html>
