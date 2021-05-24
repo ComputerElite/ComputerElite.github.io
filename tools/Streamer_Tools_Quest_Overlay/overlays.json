@@ -1,0 +1,67 @@
+{
+    "overlays": [
+        {
+            "Name": "Original Overlay",
+            "downloaded": false,
+            "downloads": [
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay1.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay2.html",
+                    "IsEntryPoint": true
+                },
+                {
+                    "URL": "https://computerelite.github.io/css/standard.css",
+                    "Path": "css/standard.css",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                }
+            ]
+        },
+        {
+            "Name": "reselim Overlay",
+            "downloaded": false,
+            "downloads": [
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay2.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay2.html",
+                    "IsEntryPoint": true
+                },
+                {
+                    "URL": "https://computerelite.github.io/css/standard.css",
+                    "Path": "css/standard.css",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                }
+            ]
+        },
+        {
+            "Name": "Bandoot Overlay",
+            "downloaded": false,
+            "downloads": [
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay3.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay2.html",
+                    "IsEntryPoint": true
+                },
+                {
+                    "URL": "https://computerelite.github.io/css/standard.css",
+                    "Path": "css/standard.css",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                }
+            ]
+        }
+    ]
+}

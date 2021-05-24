@@ -155,12 +155,17 @@ console.log("show mp code: " + showmpcode)
 console.log("show energy bar: " + showenergyBar)
 
 var useLocalhost = false;
-const localip = 'http://localhost:2078/api/raw';
+const localip = 'http://localhost:501/api/raw';
 
 fetch(localip).then((res) => {
     useLocalhost = true
 }).catch(() => {
-    useLocalhost = false
+    localip = 'http://localhost:2078/api/raw';
+    fetch(localip).then((res) => {
+        useLocalhost = true
+    }).catch(() => {
+        useLocalhost = false
+    })
 })
 
 
