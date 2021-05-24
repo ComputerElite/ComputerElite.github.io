@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Level Stats Overlay</title>
+        <title>Streamer Tools Overlay</title>
         <meta property="og:site_name" content="ComputerElite">
-        <meta property="og:title" content="Level Stats Viewer Quest Overlay Overview" />
-        <meta property="og:description" content="Overlay for Level Stats Viewer for Beat Saber on Quest" />
+        <meta property="og:title" content="Streamer Tools Viewer Quest Overlay Overview" />
+        <meta property="og:description" content="Overlay for Streamer Tools Viewer for Beat Saber on Quest" />
         <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standart.css" type="text/css" rel="stylesheet">
@@ -64,7 +64,7 @@
             }
 
             function openOverlay(number) {
-                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value + (document.getElementById("dontenergy").value ? "&dontshowenergy" : "") + (document.getElementById("dontmpcode").value ? "&dontshowmpcode" : "") + (document.getElementById("alwaysmpcode").value ? "&alwaysshowmpcode" : "") + (document.getElementById("custom").value != "" ? "&customtext=" + document.getElementById("custom").value : ""), "_self")
+                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value + (document.getElementById("dontenergy").checked ? "&dontshowenergy" : "") + (document.getElementById("dontmpcode").checked ? "&dontshowmpcode" : "") + (document.getElementById("alwaysmpcode").checked ? "&alwaysshowmpcode" : "") + (document.getElementById("custom").value != "" ? "&customtext=" + document.getElementById("custom").value : ""), "_self")
             }
 
             document.getElementById("downloadIt").onclick = function() {
