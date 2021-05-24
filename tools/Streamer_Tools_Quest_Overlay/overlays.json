@@ -1,7 +1,7 @@
 {
     "overlays": [
         {
-            "Name": "Original Overlay",
+            "Name": "Original_Overlay",
             "downloaded": false,
             "downloads": [
                 {
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "Name": "reselim Overlay",
+            "Name": "reselim_Overlay",
             "downloaded": false,
             "downloads": [
                 {
@@ -43,7 +43,7 @@
             ]
         },
         {
-            "Name": "Bandoot Overlay",
+            "Name": "Bandoot_Overlay",
             "downloaded": false,
             "downloads": [
                 {
