@@ -206,10 +206,10 @@ function setAll(stats) {
                 songSub.innerHTML = format(stats["levelSubName"])
             } catch {}
             try {
-                njs.innerHTML = format(stats["njs"])
+                njs.innerHTML = format(trim(stats["njs"]))
             } catch {}
             try {
-                bpm.innerHTML = format(stats["bpm"], 1)
+                bpm.innerHTML = format(trim(stats["bpm"]), 1)
             } catch {}
             try {
                 if(stats["location"] == 2 || stats["location"] == 5) {
