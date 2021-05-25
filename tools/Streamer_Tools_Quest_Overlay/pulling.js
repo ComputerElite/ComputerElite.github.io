@@ -189,7 +189,12 @@ setInterval(function() {
             //console.log(stats)
             if(json["location"] == 1 || json["location"] == 2 || json["location"] == 3 || json["location"] == 4 || alwaysupdate) {
                 stats = json
+            } else {
+                stats["location"] == json["location"]
+                stats["mpGameId"] = json["mpGameId"]
+                stats["mpGameIdShown"] = json["mpGameIdShown"]
             }
+            
             setAll()
         })
     })
