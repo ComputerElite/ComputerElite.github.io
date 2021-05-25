@@ -129,8 +129,8 @@ if(pinkCute != null) {
 }
 
 var alwaysshowmpcode = url.searchParams.get("alwayshowmpcode")
-if(alwaysshowmpcode == null) alwaysshowmpcode = true;
-else alwaysshowmpcode = false
+if(alwaysshowmpcode == null) alwaysshowmpcode = false;
+else alwaysshowmpcode = true
 
 var showenergyBar = url.searchParams.get("dontshowenergy")
 if(showenergyBar == null) showenergyBar = true;
