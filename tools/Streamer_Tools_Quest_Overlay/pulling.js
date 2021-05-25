@@ -159,7 +159,7 @@ console.log("show mp code: " + showmpcode)
 console.log("show energy bar: " + showenergyBar)
 
 var useLocalhost = false;
-const localip = 'http://localhost:501/api/raw';
+const localip = 'http://localhost:53510/api/raw';
 
 fetch(localip).then((res) => {
     useLocalhost = true
@@ -174,7 +174,7 @@ fetch(localip).then((res) => {
 
 
 setInterval(function() {
-    fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":3501").then((response) => {
+    fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":53502").then((response) => {
         response.json().then((stats) => {
             //console.log(stats)
             setAll(stats)
