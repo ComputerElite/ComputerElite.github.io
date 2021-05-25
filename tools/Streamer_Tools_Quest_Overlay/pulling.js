@@ -85,6 +85,10 @@ var showmpcode = url.searchParams.get("dontshowmpcode")
 if(showmpcode == null) showmpcode = true;
 else showmpcode = false
 
+var nosetip = url.searchParams.get("nosetip")
+if(nosetip == null) nosetip = false;
+else nosetip = true
+
 var long = url.searchParams.get("unnecessarilylongparameterwhichsetsupdateratewithc00lstufftofuqy0u0ffs0youdontwriteitbtwpinkcuteandwilliamgayandblameenderforthisideaandcomputerforimplementingitintotheoverlaysgotabitcarriedawaytypingthissohavefunnowbutwhatifitellyouthisisntdoingwhatyouarethinkingbcicandowhatiwantwithcodeandyouaretypingittogetrickrolledsoicanhavemyfunevenwhenitsnotaprilfirst")
 if(long != null) {
     alert("You're crazy stop typing this stuff. Here have fun:")
@@ -170,7 +174,7 @@ fetch(localip).then((res) => {
 
 
 setInterval(function() {
-    fetch(useLocalhost ? localip + "?ip=" + ip : "http://" + ip + ":3501").then((response) => {
+    fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":3501").then((response) => {
         response.json().then((stats) => {
             //console.log(stats)
             setAll(stats)
