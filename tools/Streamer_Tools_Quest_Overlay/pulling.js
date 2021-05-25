@@ -35,7 +35,9 @@ function SetImage(id) {
     lastID = id
     fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
         result.json().then((json) => {
-            cover.src = "https://beatsaver.com" + json["coverURL"]
+            try {
+                cover.src = "https://beatsaver.com" + json["coverURL"]
+            } catch {}
             try {
                 key.innerHTML = json["key"]
             } catch {}
@@ -45,6 +47,9 @@ function SetImage(id) {
             } catch {}
             lastSongKey = json["key"]
         })
+    }).catch((err) => {
+        // Fallback to default cover
+        cover.src = "default.png"
     })
 }
 

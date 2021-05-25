@@ -18,6 +18,11 @@
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
                     "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
                     "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "IsEntryPoint": false
                 }
             ]
         },
@@ -39,6 +44,11 @@
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
                     "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
                     "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "IsEntryPoint": false
                 }
             ]
         },
@@ -59,6 +69,11 @@
                 {
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
                     "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/default.png",
                     "IsEntryPoint": false
                 }
             ]
