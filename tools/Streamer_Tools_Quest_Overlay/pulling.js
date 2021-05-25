@@ -85,6 +85,10 @@ var showmpcode = url.searchParams.get("dontshowmpcode")
 if(showmpcode == null) showmpcode = true;
 else showmpcode = false
 
+var alwaysupdate = url.searchParams.get("alwaysupdate")
+if(alwaysupdate == null) alwaysupdate = false;
+else alwaysupdate = true
+
 var nosetip = url.searchParams.get("nosetip")
 if(nosetip == null) nosetip = false;
 else nosetip = true
@@ -172,82 +176,88 @@ fetch(localip).then((res) => {
     })
 })
 
+var stats = {}
 
 setInterval(function() {
     fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":53502").then((response) => {
-        response.json().then((stats) => {
+        response.json().then((json) => {
             //console.log(stats)
-            setAll(stats)
+            if(json["location"] == 1 || json["location"] == 2 || json["location"] == 3 || json["location"] == 4 || alwaysupdate) {
+                stats = json
+            }
+            setAll()
         })
     })
 }, rate)
 
-function setAll(stats) {
-    SetPercentage(stats["energy"])
-            try {
-                songName.innerHTML = format(stats["levelName"])
-            } catch {}
-            try {
-                songAuthor.innerHTML = format(stats["songAuthor"])
-            } catch {}
-            try {
-                mapper.innerHTML = format(stats["levelAuthor"])
-            } catch {}
-            try {
-                diff.innerHTML = intToDiff(stats["difficulty"])
-            } catch {}
-            try {
-                combo.innerHTML = format(stats["combo"], 1)
-            } catch {}
-            try {
-                score.innerHTML = format(AddComma(stats["score"]), 1)
-            } catch {}
-            try {
-                rank.innerHTML = format(stats["rank"], 2)
-            } catch {}
-            try {
-                percentage.innerHTML = format(trim(stats["accuracy"] * 100)) + " %"
-            } catch {}
-            try {
-                SetImage(stats["id"])
-            } catch {}
-            try {
-                songSub.innerHTML = format(stats["levelSubName"])
-            } catch {}
-            try {
-                njs.innerHTML = format(trim(stats["njs"]))
-            } catch {}
-            try {
-                bpm.innerHTML = format(trim(stats["bpm"]), 1)
-            } catch {}
-            try {
-                if(stats["location"] == 2 || stats["location"] == 5) {
-                    // Is in mp lobby or song
-                    if(stats["mpGameIdShown"] && showmpcode || alwaysshowmpcode) {
-                        mpCode.innerHTML = format(stats["mpGameId"])
-                    } else {
-                        mpCode.innerHTML = "*****"
-                    }
-                } else {
-                    mpCode.innerHTML = "not in lobby"
-                }
-            } catch {}
-            try {
-                if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
-                    mpCodeContainer.style.display = "block"
-                } else {
-                    mpCodeContainer.style.display = "none"
-                }
-            } catch {}
-            try {
-                updateTime(stats["endTime"], stats["time"])
-            } catch {}
+function setAll() {
+    try {
+        SetPercentage(stats["energy"])
+    } catch {}
+    try {
+        songName.innerHTML = format(stats["levelName"])
+    } catch {}
+    try {
+        songAuthor.innerHTML = format(stats["songAuthor"])
+    } catch {}
+    try {
+        mapper.innerHTML = format(stats["levelAuthor"])
+    } catch {}
+    try {
+        diff.innerHTML = intToDiff(stats["difficulty"])
+    } catch {}
+    try {
+        combo.innerHTML = format(stats["combo"], 1)
+    } catch {}
+    try {
+        score.innerHTML = format(AddComma(stats["score"]), 1)
+    } catch {}
+    try {
+        rank.innerHTML = format(stats["rank"], 2)
+    } catch {}
+    try {
+        percentage.innerHTML = format(trim(stats["accuracy"] * 100)) + " %"
+    } catch {}
+    try {
+        SetImage(stats["id"])
+    } catch {}
+    try {
+        songSub.innerHTML = format(stats["levelSubName"])
+    } catch {}
+    try {
+        njs.innerHTML = format(trim(stats["njs"]))
+    } catch {}
+    try {
+        bpm.innerHTML = format(trim(stats["bpm"]), 1)
+    } catch {}
+    try {
+        if(stats["location"] == 2 || stats["location"] == 5) {
+            // Is in mp lobby or song
+            if(stats["mpGameIdShown"] && showmpcode || alwaysshowmpcode) {
+                mpCode.innerHTML = format(stats["mpGameId"])
+            } else {
+                mpCode.innerHTML = "*****"
+            }
+        } else {
+            mpCode.innerHTML = "not in lobby"
+        }
+    } catch {}
+    try {
+        if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
+            mpCodeContainer.style.display = "block"
+        } else {
+            mpCodeContainer.style.display = "none"
+        }
+    } catch {}
+    try {
+        updateTime(stats["endTime"], stats["time"])
+    } catch {}
 
-            try {
-                if(!showenergyBar) {
-                    barContainer.style.display = "none"
-                }
-            } catch {}
+    try {
+        if(!showenergyBar) {
+            barContainer.style.display = "none"
+        }
+    } catch {}
 }
 
 function AddComma(input) {
