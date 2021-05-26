@@ -186,12 +186,15 @@ fetch(localip).then((res) => {
 
 var stats = {}
 
+var firstRequest = true
+
 setInterval(function() {
     fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":53502").then((response) => {
         response.json().then((json) => {
             //console.log(stats)
-            if(json["location"] == 1 || json["location"] == 2 || json["location"] == 3 || json["location"] == 4 || alwaysupdate) {
+            if(json["location"] == 1 || json["location"] == 2 || json["location"] == 3 || json["location"] == 4 || alwaysupdate || firstRequest) {
                 stats = json
+                firstRequest = false
             } else {
                 stats["location"] == json["location"]
                 stats["mpGameId"] = json["mpGameId"]
