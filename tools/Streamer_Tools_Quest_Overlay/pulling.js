@@ -172,12 +172,15 @@ const localip = 'http://localhost:53510/api/raw';
 
 fetch(localip).then((res) => {
     useLocalhost = true
+    console.log(`Using client at ${localip} to fetch data`)
 }).catch(() => {
     localip = 'http://localhost:2078/api/raw';
     fetch(localip).then((res) => {
+        console.log(`Using client at ${localip} to fetch data`)
         useLocalhost = true
     }).catch(() => {
         useLocalhost = false
+        console.log(`falling back to Quest ip (${ip})`)
     })
 })
 
