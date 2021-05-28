@@ -43,6 +43,11 @@ function SetImage(id) {
             } catch {}
             
             try {
+                if(lastSongKey != "") {
+                    try {
+                        prekeyContainer.style.display = "inline"
+                    } catch {}
+                }
                 prekey.innerHTML = lastSongKey
             } catch {}
             lastSongKey = json["key"]
@@ -74,6 +79,7 @@ var totalTime = document.getElementById("totalTime")
 var mpCode = document.getElementById("mpCode")
 var mpCodeContainer = document.getElementById("mpCodeContainer")
 var prekey = document.getElementById("preKey")
+var prekeyContainer = document.getElementById("preKeyContainer")
 var customTextContainer = document.getElementById("customText")
 
 var williamGayContainer = document.getElementById("williamGayContainer")
@@ -169,6 +175,10 @@ console.log("show energy bar: " + showenergyBar)
 
 var useLocalhost = false;
 const localip = 'http://localhost:53510/api/raw';
+
+try {
+    prekeyContainer.style.display = "none"
+} catch {}
 
 fetch(localip).then((res) => {
     useLocalhost = true
