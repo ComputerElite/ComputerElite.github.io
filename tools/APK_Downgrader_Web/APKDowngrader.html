@@ -111,10 +111,12 @@
                             <table style="width: 30%; margin: auto;">
                                 <tr>
                                     <td>
-                                        <input type='text' id="DSV" placeholder="Source Version">
+                                        Target Version
                                     </td>
                                     <td>
-                                        <input type='text' id="DTV" placeholder="Target Version">
+                                        <select id="DTV" name="target Version">
+
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,7 +124,7 @@
                                         <input type='button' onclick="ShowAllPatches()" value="Reset">
                                     </td>
                                     <td>
-                                        <input type='button' onclick='Find(document.getElementById("DSV").value, document.getElementById("DTV").value)' value="Find">
+                                        <input type='button' onclick='Find(document.getElementById("DTV").value)' value="Find">
                                     </td>
                                 </tr>
                             </table>
@@ -326,66 +328,91 @@
         
         function ShowAllPatches() {
             document.getElementById("patches").innerHTML = ""
+            var tvs = []
             downgrades["versions"].forEach(element => {
+                if(!tvs.includes(RemoveDotZero(element.TV))) tvs.push(RemoveDotZero(element.TV))
                 var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
                 document.getElementById("patches").innerHTML += GetFormatted(element, ram)
             });
+            document.getElementById("DTV").innerHTML = ""
+            tvs.sort();
+            tvs.forEach((v) => {
+                document.getElementById("DTV").innerHTML += FormatVersionHTML(v)
+            })
+        }
+        function FormatVersionHTML(version) {
+            return `<option value="${version}">${version}</option>`
         }
 
         var path = []
 
-        function Find (version, targetversion) {
+        function Find (targetversion) {
             path = []
             document.getElementById("patches").innerHTML = "";
-            if(RemoveDotZero(version) == RemoveDotZero(targetversion)) {
-                console.log("user dumb")
-                document.getElementById("patches").innerHTML = "... Imagine: you are already on the version you want to downgrade to.";
-                return
-            }
-            console.log("Trying to find downgrade from " + version + " to " + targetversion)
-            if(RecursiveFind(version, targetversion)) {
-                console.log("path found: ")
-                console.log(path[0].SV)
-                document.getElementById("patches").innerHTML += (path.length > 1 ? "Info: There might be a shorter path. Reload the page after every downgrade." : "")
-                path.forEach(element => {
-                    console.log(element.TV)
-                    var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
-                    document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+            console.log("Trying to find downgrades to " + targetversion)
+            if(RecursiveFind("N/A", targetversion, true)) {
+                path.forEach(cpath => {
+                    
+                    console.log("path found: ")
+                    console.log(path[0].SV)
+                    document.getElementById("patches").innerHTML += "<div style='width: 90%; margin-left: auto; margin-right: auto;'><hr></div>"
+                    cpath.forEach(element => {
+                        console.log(element.TV)
+                        var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
+                        document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+                    })
+                    console.log("path end")
                 })
-                console.log("path end")
             } else {
                 console.log("no path found")
                 document.getElementById("patches").innerHTML = "No path found";
             }
         }
 
-        function RecursiveFind(version, targetVersion)
+        var cpath = []
+        function RecursiveFind(version, targetVersion, isroot)
         {
             var found = false;
             downgrades["versions"].every((v, i) => {
-                if(RemoveDotZero(v.SV) == RemoveDotZero(version))
-                {
-                    // SV matches
-                    path.push(v);
+                if(isroot) cpath = []
+                if(isroot || (!isroot && RemoveDotZero(version) == RemoveDotZero(v.SV))) {
+                    cpath.push(v);
                     if (RemoveDotZero(v.TV) == RemoveDotZero(targetVersion))
                     {
                         // TV matches
                         found = true;
-                        return false;
+                        if(isroot) CheckPaths(cpath)
+                        return isroot;
                     }
-                    if(RecursiveFind(v.TV, targetVersion))
+                    if(RecursiveFind(v.TV, targetVersion, false))
                     {
                         found = true;
-                        return false;
+                        if(isroot) CheckPaths(cpath)
+                        return isroot;
                     } else
                     {
-                        path.pop();
+                        cpath.pop();
                     }
                 }
+                
                 return true;
             });
-                
             return found;
+        }
+
+        function CheckPaths(cpath) {
+            for(let i = 0; i < path.length; i++) {
+                if(RemoveDotZero(path[i][0].SV) == RemoveDotZero(cpath[0].SV)) {
+                    if(path[i].length > cpath.length) {
+                        path.splice(i, 1);
+                        path.push(cpath)
+                        return;
+                    } else {
+                        return;
+                    }
+                }
+            }
+            path.push(cpath)
         }
 
         function RemoveDotZero(input)
@@ -403,7 +430,7 @@
         
 
         function GetFormatted(element, ram) {
-            return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
+            return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `>
                         <div class="item">${element.appid}</div>
                         <div class="item">${element.SV}</div>
                         <div class="item">${element.TV}</div>
