@@ -108,21 +108,26 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
             
             if(!ignoreChecksums) {
                 var downgrade = extractDowngrade(patchFilename, false, downgrades, true)
-                console.log("Calculating SSHA256")
-                var SSHA256 = await GetSHA256(sourceData)
-                console.log("finished: " + SSHA256)
-                if(SSHA256 != downgrade["SSHA256"]) {
-                    console.log("SSHA256 mismatch")
-                    throw new Error(ERR_SOURCE_CHECKSUM)
+                if(downgrade != null) {
+                    console.log("Calculating SSHA256")
+                    var SSHA256 = await GetSHA256(sourceData)
+                    console.log("finished: " + SSHA256)
+                    if(SSHA256 != downgrade["SSHA256"]) {
+                        console.log("SSHA256 mismatch")
+                        throw new Error(ERR_SOURCE_CHECKSUM)
+                    }
+                    console.log("Calculating DSHA256")
+                    var DSHA256 = await GetSHA256(patchData)
+                    console.log("finished: " + DSHA256)
+                    if(DSHA256 != downgrade["DSHA256"]) {
+                        console.log("DSHA256 mismatch")
+                        throw new Error(ERR_PATCH_CHECKSUM)
+                    }
+                    console.log("Hashes match.")
+                } else {
+                    console.log("Downgrade not found. Continuing without hash validation.")
                 }
-                console.log("Calculating DSHA256")
-                var DSHA256 = await GetSHA256(patchData)
-                console.log("finished: " + DSHA256)
-                if(DSHA256 != downgrade["DSHA256"]) {
-                    console.log("DSHA256 mismatch")
-                    throw new Error(ERR_PATCH_CHECKSUM)
-                }
-                console.log("Hashes match.")
+                
             }
             
             targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums);
