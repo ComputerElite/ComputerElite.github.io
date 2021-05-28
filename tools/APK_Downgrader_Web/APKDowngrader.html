@@ -93,7 +93,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div style="margin-bottom: 20px;"><a style="font-size: 18px;" target="_blank" href="Guide.html">Guide</a></div>
+                    <div style="margin-bottom: 20px;"><a style="font-size: 18px; " target="_blank" href="Guide.html">Guide</a></div>
                     <div style="background: #666; text-align: left; height: 2px;">
                         <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF; position: absolute; max-width: 80%;"></div>
                     </div>
@@ -185,7 +185,7 @@
                                             <div class="devicesRowItemY">Y</div>
                                             <div class="devicesRowItemY">Y</div>
                                             <div class="devicesRowItem">N/A</div>
-                                            <div class="devicesRowItemY">Y</div>
+                                            <div class="devicesRowItemN">N</div>
                                         </div>
                                     </div>
                                 </div>
@@ -429,12 +429,15 @@
             }
             
             disableInputs();
-            var result = await applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true)
-            console.log("returned")
-            if(result) saveAs(domInputSaveAs.value, result);
-            enableInputs();
-            domProgressBar.style.width = '0px';
-            
+            applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(result => {
+                if(result) saveAs(domInputSaveAs.value, result);
+                enableInputs();
+                domProgressBar.style.width = '0px';
+            }).catch(err => {
+                alert(err + "\n\ncheck console for more info")
+                enableInputs();
+                domProgressBar.style.width = '0px';
+            })
         }
 
         function updateProgress(ratio)

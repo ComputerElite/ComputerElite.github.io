@@ -105,6 +105,26 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
 
             console.log('libpatch: test applying ' + fmt.name + ' patch...');
             timeStart = _this.performance.now();
+            
+            if(!ignoreChecksums) {
+                var downgrade = extractDowngrade(patchFilename, false, downgrades, true)
+                console.log("Calculating SSHA256")
+                var SSHA256 = await GetSHA256(sourceData)
+                console.log("finished: " + SSHA256)
+                if(SSHA256 != downgrade["SSHA256"]) {
+                    console.log("SSHA256 mismatch")
+                    throw new Error(ERR_SOURCE_CHECKSUM)
+                }
+                console.log("Calculating DSHA256")
+                var DSHA256 = await GetSHA256(patchData)
+                console.log("finished: " + DSHA256)
+                if(DSHA256 != downgrade["DSHA256"]) {
+                    console.log("DSHA256 mismatch")
+                    throw new Error(ERR_PATCH_CHECKSUM)
+                }
+                console.log("Hashes match.")
+            }
+            
             targetData = fmt.applyPatch(sourceData, patchData, ignoreChecksums);
             timeEnd = _this.performance.now();
             console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
@@ -112,31 +132,14 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
         }
     }
     if(decrReg.test(patchFilename)) {
-        console.log("libpatch: old decr patch detected.")
-        var versionRegex = /[0-9\.]+TO[0-9\.]+/g
-        var vers = patchFilename.match(versionRegex)[0].split("TO")
-        var SV = vers[0]
-        var TV = vers[1]
-        var appid = patchFilename.substring(0, versionRegex.exec(patchFilename).index - 1)
-        console.log(`extracted infos from FileName: SV: ${SV}, TV: ${TV}, appid: ${appid}`)
-        var timeStart, timeEnd;
-        var targetData;
-
-        var patcher = new DecrPatcher();
-        var downgrade = patcher.GetVersion(downgrades, SV, TV, appid, false)
-        if(downgrade == null) {
-            console.log("libpatch: Entry not found.")
-            alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
-            return null
-        }
-        console.log("Downgrade found: ")
-        console.log(downgrade)
+        console.log("old decr patch detected.")
 
         timeStart = _this.performance.now();
         patcher.sourceData = sourceData
         patcher.patchData = patchData
-
-        var result = await patcher.applyDecr(ignoreChecksums, downgrade, isSync)
+        var downgrade = extractDowngrade(patchFilename, true, downgrades)
+        if(downgrade == null) throw new Error()
+        var result = await patcher.applyDecr(ignoreChecksums, downgrade, isSync, false)
         console.log(result)
         timeEnd = _this.performance.now();
         console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
@@ -145,6 +148,34 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
     } else {
         throw new Error(ERR_UNKNOWN_FORMAT);
     }
+}
+
+function extractDowngrade(patchFilename, abortOnNotFound, downgrades, isXdelta3) {
+    var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+    var vers = patchFilename.match(versionRegex)[0].split("TO")
+    var SV = vers[0]
+    var TV = vers[1]
+    var appid = patchFilename.substring(0, versionRegex.exec(patchFilename).index - 1)
+    console.log(`extracted infos from FileName: SV: ${SV}, TV: ${TV}, appid: ${appid}`)
+
+    var patcher = new DecrPatcher();
+    var downgrade = patcher.GetVersion(downgrades, SV, TV, appid, isXdelta3)
+    if(downgrade == null && abortOnNotFound) {
+        console.log("Entry not found.")
+        alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
+        return null
+    }
+    console.log("Downgrade found: ")
+    console.log(downgrade)
+    return downgrade
+}
+
+async function GetSHA256(input) {
+    var x = await crypto.subtle.digest('SHA-256', input)
+    const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
+    console.log("SHA256: " + hashHex)
+    return hashHex
 }
 
 class DecrPatcher {
