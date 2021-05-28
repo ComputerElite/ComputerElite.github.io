@@ -106,14 +106,34 @@
                         <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download). Red patches may not work on 32 bit brosers as MS Edge, Google Chrome and Opera. It gets Red with 3GB est. RAM usage and more</i></div>
                         <br/>
                         <div style="margin-bottom: 10px;">Don't forget: you can dowgrade downgraded apks to downgrade further: e. g. 1.16 -> 1.15 -> 1.14 -> 1.11.1</div>
+                        <div style="margin: auto;">
+                            Find the downgrade path to your target version:
+                            <table style="width: 30%; margin: auto;">
+                                <tr>
+                                    <td>
+                                        <input type='text' id="DSV" placeholder="Source Version">
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <input type='text' id="DTV" placeholder="Target Version">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type='button' onclick="ShowAllPatches()" value="Reset">
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <input type='button' onclick='Find(document.getElementById("DSV").value, document.getElementById("DTV").value)' value="Find">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                            <div class="item">App</div>
+                            <div class="item">APK Version</div>
+                            <div class="item">Target Version</div>
+                            <div class="item">Est. RAM Usage</div>
+                        </a>
                         <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
-                            <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
-                                <div class="item">App</div>
-                                <div class="item">APK Version</div>
-                                <div class="item">Target Version</div>
-                                <div class="item">Est. RAM Usage</div>
-                            </a>
-                            
                         </div>
                         <br/>
                         <div class="headerDescription"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader</a></div>
@@ -298,12 +318,84 @@
         }]}
         */
         
-        
+        ShowAllPatches()
+        function ShowAllPatches() {
+            document.getElementById("patches").innerHTML = ""
+            downgrades["versions"].forEach(element => {
+                var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
+                document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+            });
+        }
 
-        downgrades["versions"].forEach(element => {
-            var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
-            document.getElementById("patches").innerHTML += GetFormatted(element, ram)
-        });
+        var path = []
+
+        function Find (version, targetversion) {
+            path = []
+            document.getElementById("patches").innerHTML = "";
+            if(RemoveDotZero(version) == RemoveDotZero(targetversion)) {
+                console.log("user dumb")
+                document.getElementById("patches").innerHTML = "... Imagine: you are already on the version you want to downgrade to.";
+                return
+            }
+            console.log("Trying to find downgrade from " + version + " to " + targetversion)
+            if(RecursiveFind(version, targetversion)) {
+                console.log("path found: ")
+                console.log(path[0].SV)
+                document.getElementById("patches").innerHTML += (path.length > 1 ? "Info: There might be a shorter path. Reload the page after every downgrade." : "")
+                path.forEach(element => {
+                    console.log(element.TV)
+                    var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
+                    document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+                })
+                console.log("path end")
+            } else {
+                console.log("no path found")
+                document.getElementById("patches").innerHTML = "No path found";
+            }
+        }
+
+        function RecursiveFind(version, targetVersion)
+        {
+            var found = false;
+            downgrades["versions"].every((v, i) => {
+                if(RemoveDotZero(v.SV) == RemoveDotZero(version))
+                {
+                    // SV matches
+                    path.push(v);
+                    if (RemoveDotZero(v.TV) == RemoveDotZero(targetVersion))
+                    {
+                        // TV matches
+                        found = true;
+                        return false;
+                    }
+                    if(RecursiveFind(v.TV, targetVersion))
+                    {
+                        found = true;
+                        return false;
+                    } else
+                    {
+                        path.pop();
+                    }
+                }
+                return true;
+            });
+                
+            return found;
+        }
+
+        function RemoveDotZero(input)
+        {
+            var done = false;
+            input = input.toString()
+            while(!done)
+            {
+                if (input.endsWith("0")) input = input.substring(0, input.length - 1);
+                else if (input.endsWith(".")) input = input.substring(0, input.length - 1);
+                else done = true;
+            }
+            return input;
+        }
+        
 
         function GetFormatted(element, ram) {
             return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download} ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `">
