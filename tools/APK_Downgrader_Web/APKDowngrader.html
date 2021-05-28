@@ -113,7 +113,7 @@
                                     <td>
                                         <input type='text' id="DSV" placeholder="Source Version">
                                     </td>
-                                    <td style="text-align: right;">
+                                    <td>
                                         <input type='text' id="DTV" placeholder="Target Version">
                                     </td>
                                 </tr>
@@ -121,7 +121,7 @@
                                     <td>
                                         <input type='button' onclick="ShowAllPatches()" value="Reset">
                                     </td>
-                                    <td style="text-align: right;">
+                                    <td>
                                         <input type='button' onclick='Find(document.getElementById("DSV").value, document.getElementById("DTV").value)' value="Find">
                                     </td>
                                 </tr>
@@ -299,7 +299,13 @@
         var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
         var domProgressBar = document.querySelector('#progress-bar');
 
-        var downgrades = MakeJSONGetRequest("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json")
+        var downgrades = {}
+        fetch("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json").then((res) => {
+            res.json().then((json) => {
+                downgrades = json;
+                ShowAllPatches();
+            })
+        })
         
         /*
         // testing
@@ -318,7 +324,6 @@
         }]}
         */
         
-        ShowAllPatches()
         function ShowAllPatches() {
             document.getElementById("patches").innerHTML = ""
             downgrades["versions"].forEach(element => {
