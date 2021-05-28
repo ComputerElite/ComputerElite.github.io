@@ -135,11 +135,12 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
         console.log("old decr patch detected.")
 
         timeStart = _this.performance.now();
+        var patcher = new DecrPatcher();
         patcher.sourceData = sourceData
         patcher.patchData = patchData
-        var downgrade = extractDowngrade(patchFilename, true, downgrades)
+        var downgrade = extractDowngrade(patchFilename, true, downgrades, false)
         if(downgrade == null) throw new Error()
-        var result = await patcher.applyDecr(ignoreChecksums, downgrade, isSync, false)
+        var result = await patcher.applyDecr(ignoreChecksums, downgrade, isSync)
         console.log(result)
         timeEnd = _this.performance.now();
         console.log('libpatch: took ' + (timeEnd - timeStart).toFixed(3) + 'ms');
