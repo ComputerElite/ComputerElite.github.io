@@ -17,28 +17,33 @@
         <script>
             // URL e. g.
             // https://computerElite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=100&timeout=10000&aftertimeout=https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
             const urls = [
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=59&timeout=6000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=fC7oUOUEEi4&start=0&timeout=6000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=0xzN6FM5x_E&start=10&timeout=2000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=A_BlNA7bBxo&start=13&timeout=7000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=L2W8PJuPcc4&start=548&timeout=14000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=BeG5FqTpl9U&start=0&timeout=10000&aftertimeout=",
-                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=J-fXTRHApRc&start=0&timeout=6800&aftertimeout="
+                {start: 59, id: "LDU_Txk06tM", timeout: 6000},
+                {start: 0, id: "fC7oUOUEEi4", timeout: 6000},
+                {start: 10, id: "0xzN6FM5x_E", timeout: 2000},
+                {start: 13, id: "A_BlNA7bBxo", timeout: 7000},
+                {start: 548, id: "L2W8PJuPcc4", timeout: 14000},
+                {start: 0, id: "BeG5FqTpl9U", timeout: 10000},
+                {start: 0, id: "J-fXTRHApRc", timeout: 68000},
             ]
             var url = new URL(window.location.href)
-            if(url.searchParams.get("random") != null) {
-                console.log("getting random redirect")
-                var target = url.searchParams.get("target")
-                var tmptimeout = url.searchParams.get("timeout")
-                url = new URL(urls[Math.round(Math.random() * (urls.length - 1))] + target)
-            }
+            
             var target = url.searchParams.get("target")
             if(target == null || target == "") target = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
             var start = url.searchParams.get("start")
             var timeout = url.searchParams.get("timeout")
             var aftertimeout = url.searchParams.get("aftertimeout")
             var length = url.searchParams.get("length")
+            if(url.searchParams.get("random") != null) {
+                console.log("getting random redirect")
+                var tmptarget = url.searchParams.get("target")
+                var params = urls[Math.round(Math.random() * (urls.length - 1))]
+                timeout = params.timeout;
+                aftertimeout = tmptarget
+                start = params.start
+                target = "https://www.youtube.com/watch?v=" + params.id
+            }
             if(length == null) length = 1000
             if(start == null) start = 0
             if(aftertimeout == null) aftertimeout = target
