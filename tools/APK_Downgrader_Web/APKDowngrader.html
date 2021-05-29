@@ -85,7 +85,7 @@
                             <td>
                                 <label style="padding: 5px; font-size: 12px; vertical-align: center;" title="Skip checksum verification (not recommended)">
                                     <input type="checkbox" style="vertical-align: middle;" id="input-skip-checksums">
-                                    <span style="margin-left: 5px;">Skip checksums</span>
+                                    <span style="margin-left: 5px;">Skip verification</span>
                                 </label>
                             </td>
                             <td style="text-align: right;">
@@ -300,6 +300,16 @@
         var domInputApply = document.querySelector('#input-apply');
         var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
         var domProgressBar = document.querySelector('#progress-bar');
+        var referrer = document.referrer;
+        console.log("referrer: " + referrer)
+
+        domInputSkipChecksums.onchange = function() {
+            if(domInputSkipChecksums.checked) {
+                if(!confirm("Warning: You wanted to disable verification. If your APK or patch are corrupted you'll not be able to install the downgraded APK. Do you still want to disable verification?")) {
+                    domInputSkipChecksums.checked = false;
+                }
+            }
+        }
 
         var downgrades = {}
         fetch("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json").then((res) => {
