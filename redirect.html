@@ -17,7 +17,22 @@
         <script>
             // URL e. g.
             // https://computerElite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=100&timeout=10000&aftertimeout=https://www.youtube.com/watch?v=dQw4w9WgXcQ
+            const urls = [
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=59&timeout=6000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=fC7oUOUEEi4&start=0&timeout=6000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=0xzN6FM5x_E&start=10&timeout=2000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=A_BlNA7bBxo&start=13&timeout=7000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=L2W8PJuPcc4&start=548&timeout=14000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=BeG5FqTpl9U&start=0&timeout=10000&aftertimeout=",
+                "https://computerelite.github.io/redirect.html?target=https://www.youtube.com/watch?v=J-fXTRHApRc&start=0&timeout=6800&aftertimeout="
+            ]
             var url = new URL(window.location.href)
+            if(url.searchParams.get("random") != null) {
+                console.log("getting random redirect")
+                var target = url.searchParams.get("target")
+                var tmptimeout = url.searchParams.get("timeout")
+                url = new URL(urls[Math.round(Math.random() * (urls.length - 1))] + target)
+            }
             var target = url.searchParams.get("target")
             if(target == null || target == "") target = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
             var start = url.searchParams.get("start")
@@ -71,13 +86,9 @@
             function onPlayerReady(event) {
                 event.target.playVideo();
                 event.target.seekTo(start, true)
-                if(timeout != null) {
-                    console.log("opening " + aftertimeout + " in " + timeout + " ms")
-                    setTimeout(() => {
-                        window.location.href = aftertimeout
-                    }, timeout)
-                }
             }
+
+            
 
             
 
@@ -85,9 +96,19 @@
             //    The function indicates that when playing a video (state=1),
             //    the player should play for six seconds and then stop.
             var done = false;
+            var setup = false;
             function onPlayerStateChange(event) {
+                console.log("new state: " + event.data)
                 if (event.data == YT.PlayerState.PAUSED) {
                     player.playVideo()
+                } else if (event.data == YT.PlayerState.PLAYING && !setup) {
+                    setup = true;
+                    if(timeout != null) {
+                        console.log("opening " + aftertimeout + " in " + timeout + " ms")
+                        setTimeout(() => {
+                            window.location.href = aftertimeout
+                        }, timeout)
+                    }
                 }
             }
             function stopVideo() {
