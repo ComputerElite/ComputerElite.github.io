@@ -106,7 +106,11 @@
                     if(timeout != null) {
                         console.log("opening " + aftertimeout + " in " + timeout + " ms")
                         setTimeout(() => {
-                            window.location.href = aftertimeout
+                            if(target == "self") {
+                                document.location.href = window.location.href
+                            } else {
+                                window.location.href = aftertimeout
+                            }
                         }, timeout)
                     }
                 }
