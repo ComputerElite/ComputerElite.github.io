@@ -36,7 +36,12 @@ function SetImage(id) {
     fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
         result.json().then((json) => {
             try {
-                cover.src = "https://beatsaver.com" + json["coverURL"]
+                fetch(useLocalhost ? localip + "/api/rawcover" : "http://" + ip + ":53502/cover").then((res) => {
+                    res.text().then((base64) => {
+                        cover.src = base64
+                    })
+                })
+                
             } catch {}
             try {
                 key.innerHTML = json["key"]
@@ -184,14 +189,8 @@ fetch(localip).then((res) => {
     useLocalhost = true
     console.log(`Using client at ${localip} to fetch data`)
 }).catch(() => {
-    localip = 'http://localhost:2078/api/raw';
-    fetch(localip).then((res) => {
-        console.log(`Using client at ${localip} to fetch data`)
-        useLocalhost = true
-    }).catch(() => {
-        useLocalhost = false
-        console.log(`falling back to Quest ip (${ip})`)
-    })
+    useLocalhost = false
+    console.log(`falling back to Quest ip (${ip})`)
 })
 
 var stats = {}

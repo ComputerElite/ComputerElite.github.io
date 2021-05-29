@@ -305,7 +305,7 @@
 
         domInputSkipChecksums.onchange = function() {
             if(domInputSkipChecksums.checked) {
-                if(!confirm("Warning: You wanted to disable verification. If your APK or patch are corrupted you'll not be able to install the downgraded APK. Do you still want to disable verification?")) {
+                if(!confirm("Warning: You wanted to disable verification. If your APK is not meant for the patch you're using you'll not be able to install the downgraded APK. Do you still want to disable verification?")) {
                     domInputSkipChecksums.checked = false;
                 }
             }
