@@ -215,7 +215,7 @@ setInterval(function() {
                 stats = json
                 firstRequest = false
             } else {
-                stats["location"] == json["location"]
+                stats["location"] = json["location"]
                 stats["mpGameId"] = json["mpGameId"]
                 stats["mpGameIdShown"] = json["mpGameIdShown"]
             }
