@@ -28,12 +28,10 @@ function SetPercentage(percentage) {
 
 var lastID = "";
 var lastSongKey = "";
+var got404 = false;
 
 function SetImage(id) {
-    
-    if(id == lastID) return;
-    lastID = id
-    if(id.startsWith("custom_level_")) {
+    if(id.startsWith("custom_level_") && id != lastID) {
         fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
                 try {
@@ -52,19 +50,24 @@ function SetImage(id) {
             })
         })
     }
-    
-    fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
-        res.text().then((base64) => {
-            if(res.status == 404) {
-                cover.src = "default.png"
-            } else {
-                cover.src = base64
-            }
+    if(id != lastID || got404) {
+        fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
+            res.text().then((base64) => {
+                if(res.status == 404) {
+                    cover.src = "default.png"
+                    got404 = true;
+                } else {
+                    cover.src = base64
+                    got404 = false;
+                }
+            })
+        }).catch((err) => {
+            // Fallback to default cover
+            got404 = true
+            cover.src = "default.png"
         })
-    }).catch((err) => {
-        // Fallback to default cover
-        cover.src = "default.png"
-    })
+    }
+    lastID = id
 }
 
 

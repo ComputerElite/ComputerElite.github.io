@@ -114,7 +114,7 @@
                                         Target Version
                                     </td>
                                     <td>
-                                        <select id="DTV" name="target Version">
+                                        <select id="DTV" onchange='Find(document.getElementById("DTV").value)' name="target Version">
 
                                         </select>
                                     </td>
@@ -122,9 +122,6 @@
                                 <tr>
                                     <td>
                                         <input type='button' onclick="ShowAllPatches()" value="Reset">
-                                    </td>
-                                    <td>
-                                        <input type='button' onclick='Find(document.getElementById("DTV").value)' value="Find">
                                     </td>
                                 </tr>
                             </table>
