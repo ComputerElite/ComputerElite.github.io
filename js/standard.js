@@ -14,11 +14,13 @@ function MakeJSONGetRequest(url) {
 }
 
 function InIframe () {
+    var inFrame = false;
     try {
-        return window.self !== window.top;
+        inFrame = window.self !== window.top;
     } catch (e) {
-        return false;
     }
+    console.log("in IFrame: " + inFrame)
+    return inFrame;
 }
 
 function ByteSizeToString(input, decimals = 2) {
