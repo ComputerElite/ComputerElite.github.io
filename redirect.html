@@ -19,7 +19,11 @@
             if(target == null || target == "") target = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
             if(target == "https://www.youtube.com/watch?v=dQw4w9WgXcQ") {
                 
-            } else {
+            } else if(target == "self") {
+                window.open(window.location.href, "_self")
+            }
+            else {
+                
                 window.open(target, "_self")
             }
             
