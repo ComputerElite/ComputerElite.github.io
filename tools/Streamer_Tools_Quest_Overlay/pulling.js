@@ -30,26 +30,29 @@ var lastID = "";
 var lastSongKey = "";
 
 function SetImage(id) {
-    if(!id.startsWith("custom_level_")) return;
+    
     if(id == lastID) return;
     lastID = id
-    fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
-        result.json().then((json) => {
-            try {
-                key.innerHTML = json["key"]
-            } catch {}
-            
-            try {
-                if(lastSongKey != "") {
-                    try {
-                        prekeyContainer.style.display = "inline"
-                    } catch {}
-                }
-                prekey.innerHTML = lastSongKey
-            } catch {}
-            lastSongKey = json["key"]
+    if(id.startsWith("custom_level_")) {
+        fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
+            result.json().then((json) => {
+                try {
+                    key.innerHTML = json["key"]
+                } catch {}
+                
+                try {
+                    if(lastSongKey != "") {
+                        try {
+                            prekeyContainer.style.display = "inline"
+                        } catch {}
+                    }
+                    prekey.innerHTML = lastSongKey
+                } catch {}
+                lastSongKey = json["key"]
+            })
         })
-    })
+    }
+    
     fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
         res.text().then((base64) => {
             if(res.status == 404) {
