@@ -78,5 +78,37 @@
                 }
             ]
         }
+        ,
+        {
+            "Name": "FPS_Chart",
+            "downloaded": false,
+            "downloads": [
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/FPS.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/FPS.html",
+                    "IsEntryPoint": true
+                },
+                {
+                    "URL": "https://computerelite.github.io/css/standard.css",
+                    "Path": "css/standard.css",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/js/standard.js",
+                    "Path": "js/standard.js",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/js/plotly.min.js",
+                    "Path": "js/plotly.min.js",
+                    "IsEntryPoint": false
+                }
+            ]
+        }
     ]
 }

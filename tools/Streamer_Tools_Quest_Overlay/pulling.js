@@ -149,6 +149,9 @@ var alwaysshowmpcode = url.searchParams.get("alwayshowmpcode")
 if(alwaysshowmpcode == null) alwaysshowmpcode = false;
 else alwaysshowmpcode = true
 
+var chartwidth = url.searchParams.get("chartwidth")
+if(chartwidth == null) chartwidth = 100;
+
 var showenergyBar = url.searchParams.get("dontshowenergy")
 if(showenergyBar == null) showenergyBar = true;
 else showenergyBar = false
@@ -279,6 +282,9 @@ function setAll() {
         if(!showenergyBar) {
             barContainer.style.display = "none"
         }
+    } catch {}
+    try {
+        SetFPS(stats["fps"], chartwidth)
     } catch {}
 }
 

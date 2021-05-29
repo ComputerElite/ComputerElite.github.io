@@ -11,12 +11,12 @@
         <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
     </head>
     <body>
-        UGLY FPS LOGGER WHICH CONNECTS WITH STREAMER TOOLS CLIENT TM
         <div id="chart">
 
         </div>
         <script src="../../js/standard.js"></script>
         <script src="../../js/plotly.min.js"></script>
+        <script src="pulling.js"></script>
         <script>
             Plotly.plot('chart', [{
                 y: [0],
@@ -27,12 +27,9 @@
 
             let width = 100;
 
-            setInterval(() => {
-                fetch("http://localhost:53510/api/raw").then((res) => {
-                    res.json().then((json) => {
-                        Plotly.extendTraces('chart', {y: [[json.fps]]}, [0])
-                    })
-                })
+            function SetFPS(fps, wdh) {
+                width = wdh;
+                Plotly.extendTraces('chart', {y: [[fps]]}, [0])
                 if(i > width) {
                     Plotly.relayout('chart', {
                         xaxis: {
@@ -41,6 +38,10 @@
                     })
                 }
                 i++;
+            }
+
+            setInterval(() => {
+                
             }, 50)
         </script>
     </body>
