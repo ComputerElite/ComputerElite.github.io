@@ -13,6 +13,14 @@ function MakeJSONGetRequest(url) {
     return JSON.parse(MakeTextGetRequest(url));
 }
 
+function InIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return false;
+    }
+}
+
 function ByteSizeToString(input, decimals = 2) {
     // TB
     if(input > 1099511627776) {
