@@ -52,7 +52,11 @@ function SetImage(id) {
     })
     fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
         res.text().then((base64) => {
-            cover.src = base64
+            if(res.status == 404) {
+                cover.src = "default.png"
+            } else {
+                cover.src = base64
+            }
         })
     }).catch((err) => {
         // Fallback to default cover
