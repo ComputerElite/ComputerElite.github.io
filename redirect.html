@@ -15,6 +15,8 @@
         <div style="font-size: 38px; text-align: center; width: 100%; height: 100%;" id="funContainer">Redirecting...</div>
         <div id="player"></div>
         <script>
+            // URL e. g.
+            // https://computerElite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=100&timeout=10000&aftertimeout=https://www.youtube.com/watch?v=dQw4w9WgXcQ
             var url = new URL(window.location.href)
             var target = url.searchParams.get("target")
             if(target == null || target == "") target = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -26,7 +28,7 @@
             if(start == null) start = 0
             if(aftertimeout == null) aftertimeout = target
             if(target.startsWith("https://www.youtube.com/watch?v=")) {
-                
+                console.log("playing " + target + " starting at " + start)
             } else if(target == "self") {
                 document.location.href = window.location.href
             }
@@ -70,10 +72,11 @@
                 event.target.playVideo();
                 event.target.seekTo(start, true)
                 if(timeout != null) {
-                setTimeout(() => {
-                    window.location.href = aftertimeout
-                }, timeout)
-            }
+                    console.log("opening " + aftertimeout + " in " + timeout + " ms")
+                    setTimeout(() => {
+                        window.location.href = aftertimeout
+                    }, timeout)
+                }
             }
 
             
