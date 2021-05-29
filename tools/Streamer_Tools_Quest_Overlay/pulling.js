@@ -36,14 +36,6 @@ function SetImage(id) {
     fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
         result.json().then((json) => {
             try {
-                fetch(useLocalhost ? localip + "/api/rawcover" : "http://" + ip + ":53502/cover").then((res) => {
-                    res.text().then((base64) => {
-                        cover.src = base64
-                    })
-                })
-                
-            } catch {}
-            try {
                 key.innerHTML = json["key"]
             } catch {}
             
@@ -56,6 +48,11 @@ function SetImage(id) {
                 prekey.innerHTML = lastSongKey
             } catch {}
             lastSongKey = json["key"]
+        })
+    })
+    fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover").then((res) => {
+        res.text().then((base64) => {
+            cover.src = base64
         })
     }).catch((err) => {
         // Fallback to default cover
