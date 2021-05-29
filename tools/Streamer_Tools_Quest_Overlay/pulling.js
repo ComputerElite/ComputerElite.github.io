@@ -50,7 +50,7 @@ function SetImage(id) {
             lastSongKey = json["key"]
         })
     })
-    fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover").then((res) => {
+    fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
         res.text().then((base64) => {
             cover.src = base64
         })
