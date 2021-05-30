@@ -111,7 +111,17 @@
                             <table style="width: 30%; margin: auto;">
                                 <tr>
                                     <td>
+                                        Source Version (optional)
+                                    </td>
+                                    <td>
                                         Target Version
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select id="DSV" onchange='SetUsed()' name="Source Version">
+
+                                        </select>
                                     </td>
                                     <td>
                                         <select id="DTV" onchange='Find(document.getElementById("DTV").value)' name="target Version">
@@ -213,7 +223,7 @@
                             </div>
                             <div style="font-size: 16px;">
                                 <div style="font-size: 20px; margin-top: 30px;"><a style="color: #EEEEEE; cursor:default;" href="#guide">Guide</a>
-                                    <div class="headerDescription">Instructions and help with this tool</i></div>
+                                    <div class="headerDescription">Instructions, Infos and help with this tool</i></div>
                                     <div class="topicContainer">
                                         <div class="tip">
                                             <div class="tipHeader">
@@ -224,6 +234,19 @@
                                             <i>(About 2GB RAM is getting used when downgrading Beat Saber)</i>
                                         </div>
                                         <div class="guideHeader"><a style="font-size: 20px;" href="Guide.html" target="_blank">Follow the guide here to learn how to downgrade</a></div>
+                                        <div class="guideHeader">How is this tool not piracy?</div>
+                                        <div class="guideSteps">
+                                            <div style="font-weight: bold;">First of the question: What am I downloading from the Patches section above?</div>
+                                            <br/>
+                                            You are downloading a binary difference between the purchased unmodified Beat Saber version you have and the unmodified Beat Saber Version you want to downgrade too.
+                                            <br/>
+                                            Stored in those files is how to rearrange the bytes of the APK so it'll be the older version.
+                                            <br/>
+                                            <br/>
+                                            <div style="font-weight: bold;">So is this piracy?</div>
+                                            <br/>
+                                            No. You're not downloading any game code. Those patches will only work (aka give you a downgraded APK) if they get used with a legally purchased version of Beat Saber
+                                        </div>
                                         <div class="guideHeader">Downgrade entirely on your Android Device</div>
                                         <div class="guideSteps">
                                             <i class="headerDescription">Note: This may only work if you use Microsoft Edge which you can download <a href="https://m.apkpure.com/de/microsoft-edge-preview/com.microsoft.emmx">here</a> and install just like the APK Export APK</i>
@@ -271,10 +294,26 @@
                                         <div class="guideSteps">
                                             This means you have a version of your app installed which is newer than the one you want to install. Simply uninstall your app before trying to install the downgraded apk (Note: without creating an Game Data Backup in the apps section of Sidequest first you may loose game progress)
                                         </div>
+
+                                        <div class="guideHeader"><code>Source checksum mismatch - patch is not meant for this APK. [...]</code></div>
+                                        <div class="guideSteps">
+                                            First make sure you haven't tried to mod your game. If this is the case uninstall Beat Saber on your Quest and download it again. Then make a new backup and try again. Otherwise just try backing up the APK again.
+                                        </div>
+                                        <div class="guideHeader"><code>Premature end of stream missing 1 byte</code> on Sidequest or ADB</div>
+                                        <div class="guideSteps">
+                                            Make sure you haven't checked skip verification as this will skip any checks of your APK, Patch and downgraded APK. This error usually means the downgraded APK is corrupted.
+                                        </div>
+                                        <div class="guideHeader"><code>Unknown patch format</code></div>
+                                        <div class="guideSteps">
+                                            Usually this means that your browser doesn't work with the downgrader (so try some different browsers)
+                                        </div>
+                                        <div class="guideHeader"><code>Array buffer allocation failed</code></div>
+                                        <div class="guideSteps">
+                                            This error usually occurs on opera and indicates that your device has too little ram available
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                                
                         </div>
                         <br/>
                         <div>
@@ -338,14 +377,22 @@
         */
         
         function ShowAllPatches() {
+            DSVSet = false;
             document.getElementById("patches").innerHTML = ""
             var tvs = []
+            var svs = []
             downgrades["versions"].forEach(element => {
                 if(!tvs.includes(RemoveDotZero(element.TV))) tvs.push(RemoveDotZero(element.TV))
+                if(!svs.includes(RemoveDotZero(element.SV))) svs.push(RemoveDotZero(element.SV))
                 var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
                 document.getElementById("patches").innerHTML += GetFormatted(element, ram)
             });
             document.getElementById("DTV").innerHTML = ""
+            document.getElementById("DSV").innerHTML = ""
+            svs.sort();
+            svs.forEach((v) => {
+                document.getElementById("DSV").innerHTML += FormatVersionHTML(v)
+            })
             tvs.sort();
             tvs.forEach((v) => {
                 document.getElementById("DTV").innerHTML += FormatVersionHTML(v)
@@ -357,11 +404,18 @@
 
         var path = []
 
+        var DSVSet = false;
+
+        function SetUsed() {
+            DSVSet = true;
+            Find(document.getElementById("DTV").value)
+        }
+
         function Find (targetversion) {
             path = []
             document.getElementById("patches").innerHTML = "";
             console.log("Trying to find downgrades to " + targetversion)
-            if(RecursiveFind("N/A", targetversion, true)) {
+            if(RecursiveFind(document.getElementById("DSV").value, targetversion, true, DSVSet)) {
                 path.forEach(cpath => {
                     
                     console.log("path found: ")
@@ -381,12 +435,12 @@
         }
 
         var cpath = []
-        function RecursiveFind(version, targetVersion, isroot)
+        function RecursiveFind(version, targetVersion, isroot, SVNeeded)
         {
             var found = false;
             downgrades["versions"].every((v, i) => {
                 if(isroot) cpath = []
-                if(isroot || (!isroot && RemoveDotZero(version) == RemoveDotZero(v.SV))) {
+                if(isroot && !SVNeeded || isroot && RemoveDotZero(version) == RemoveDotZero(v.SV) || (!isroot && RemoveDotZero(version) == RemoveDotZero(v.SV))) {
                     cpath.push(v);
                     if (RemoveDotZero(v.TV) == RemoveDotZero(targetVersion))
                     {
@@ -395,7 +449,7 @@
                         if(isroot) CheckPaths(cpath)
                         return isroot;
                     }
-                    if(RecursiveFind(v.TV, targetVersion, false))
+                    if(RecursiveFind(v.TV, targetVersion, false, SVNeeded))
                     {
                         found = true;
                         if(isroot) CheckPaths(cpath)
