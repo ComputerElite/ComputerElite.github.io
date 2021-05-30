@@ -43,7 +43,7 @@
                 var category = url.searchParams.get("category")
                 if(category == null || category == "") category = "memes" 
                 var index = url.searchParams.get("index")
-                if(index == null || index == "") index = Math.round(Math.random() * (urls[category].length - 1))
+                if(index == null || index == "") index = (new Date()).getTime() % urls[category].length
                 var tmptarget = url.searchParams.get("target")
                 console.log("param: " + category + "[" + index + "]")
                 var params = urls[category][index]
