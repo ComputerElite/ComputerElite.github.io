@@ -18,15 +18,18 @@
             // URL e. g.
             // https://computerElite.github.io/redirect.html?target=https://www.youtube.com/watch?v=LDU_Txk06tM&start=100&timeout=10000&aftertimeout=https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
-            const urls = [
-                {start: 59, id: "LDU_Txk06tM", timeout: 6000},
-                {start: 0, id: "fC7oUOUEEi4", timeout: 6000},
-                {start: 10, id: "0xzN6FM5x_E", timeout: 2000},
-                {start: 13, id: "A_BlNA7bBxo", timeout: 7000},
-                {start: 548, id: "L2W8PJuPcc4", timeout: 14000},
-                {start: 0, id: "BeG5FqTpl9U", timeout: 10000},
-                {start: 0, id: "J-fXTRHApRc", timeout: 68000},
-            ]
+            const urls = {
+                "memes": [
+                    {start: 59, id: "LDU_Txk06tM", timeout: 6000},
+                    {start: 0, id: "fC7oUOUEEi4", timeout: 6000},
+                    {start: 10, id: "0xzN6FM5x_E", timeout: 2000},
+                    {start: 13, id: "A_BlNA7bBxo", timeout: 7000},
+                    {start: 548, id: "L2W8PJuPcc4", timeout: 14000},
+                    {start: 0, id: "BeG5FqTpl9U", timeout: 10000},
+                    {start: 0, id: "J-fXTRHApRc", timeout: 6800},
+                    {start: 15, id: "KmtzQCSh6xk", timeout: 7500}
+                ]
+            }
             var url = new URL(window.location.href)
             
             var target = url.searchParams.get("target")
@@ -37,8 +40,13 @@
             var length = url.searchParams.get("length")
             if(url.searchParams.get("random") != null) {
                 console.log("getting random redirect")
+                var category = url.searchParams.get("category")
+                if(category == null || category == "") category = "memes" 
+                var index = url.searchParams.get("index")
+                if(index == null || index == "") index = Math.round(Math.random() * (urls[category].length - 1))
                 var tmptarget = url.searchParams.get("target")
-                var params = urls[Math.round(Math.random() * (urls.length - 1))]
+                console.log("param: " + category + "[" + index + "]")
+                var params = urls[category][index]
                 timeout = params.timeout;
                 aftertimeout = tmptarget
                 start = params.start
@@ -111,7 +119,7 @@
                     if(timeout != null) {
                         console.log("opening " + aftertimeout + " in " + timeout + " ms")
                         setTimeout(() => {
-                            if(target == "self") {
+                            if(aftertimeout == "self") {
                                 document.location.href = window.location.href
                             } else {
                                 window.location.href = aftertimeout
