@@ -393,6 +393,7 @@
             document.getElementById("DTV").innerHTML = ""
             document.getElementById("DSV").innerHTML = ""
             svs.sort();
+            svs.reverse();
             svs.forEach((v) => {
                 document.getElementById("DSV").innerHTML += FormatVersionHTML(v)
             })
