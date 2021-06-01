@@ -48,7 +48,7 @@ function SetImage(id) {
                 } catch {}
                 lastSongKey = json["key"]
             })
-        })
+        }).catch((err) => {})
     }
     if(id != lastID || got404) {
         fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
