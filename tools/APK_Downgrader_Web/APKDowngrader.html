@@ -361,6 +361,10 @@
         if(InIframe()) {
             document.location.href = "../../redirect.html"
         }
+
+        if(referrer.includes("bslegacy.com")) {
+            console.log("Hello guy redirected from BSLG")
+        }
         
         /*
         // testing
