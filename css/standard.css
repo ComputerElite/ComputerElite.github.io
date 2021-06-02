@@ -1,6 +1,12 @@
 body {
     color: #EEEEEE;
+    background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
     background-color: #202225;
+}
+
+html {
+    height: auto;
+    min-height: 100%;
 }
 
 body, table, input {
