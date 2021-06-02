@@ -220,10 +220,62 @@ setInterval(function() {
                 stats["mpGameIdShown"] = json["mpGameIdShown"]
             }
             
-            setAll()
+            if(json["connected"] != undefined && !json["connetced"]) {
+                basicSetNotConnected()
+            } else {
+                setAll()
+            }
         })
     })
 }, rate)
+
+function basicSetNotConnected() {
+    try {
+        SetPercentage(1.0)
+    } catch {}
+    try {
+        songName.innerHTML = format("Quest disconnected")
+    } catch {}
+    try {
+        songAuthor.innerHTML = format("")
+    } catch {}
+    try {
+        mapper.innerHTML = format("")
+    } catch {}
+    try {
+        diff.innerHTML = intToDiff(4)
+    } catch {}
+    try {
+        combo.innerHTML = format(0, 1)
+    } catch {}
+    try {
+        score.innerHTML = format(AddComma(0), 1)
+    } catch {}
+    try {
+        rank.innerHTML = format("SS", 2)
+    } catch {}
+    try {
+        percentage.innerHTML = format(trim(100)) + " %"
+    } catch {}
+    try {
+        songSub.innerHTML = format(0)
+    } catch {}
+    try {
+        njs.innerHTML = format(trim(0))
+    } catch {}
+    try {
+        bpm.innerHTML = format(trim(0), 1)
+    } catch {}
+    try {
+        mpCode.innerHTML = "not in lobby"
+    } catch {}
+    try {
+        mpCodeContainer.style.display = "none"
+    } catch {}
+    try {
+        updateTime(10, 5)
+    } catch {}
+}
 
 function setAll() {
     try {
