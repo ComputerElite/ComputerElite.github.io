@@ -220,7 +220,7 @@ setInterval(function() {
                 stats["mpGameIdShown"] = json["mpGameIdShown"]
             }
             
-            if(json["connected"] != undefined && !json["connetced"]) {
+            if(json["connected"] != undefined && !json["connected"]) {
                 basicSetNotConnected()
             } else {
                 setAll()
