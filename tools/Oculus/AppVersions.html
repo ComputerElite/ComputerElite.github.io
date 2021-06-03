@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oculus API App Versions</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Oculus API App Versions" />
+        <meta property="og:description" content="A page to get downloads for various Oculus apps" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/AppVersions.html" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+        <style>
+            td {
+                padding: 10px;
+            }
+    
+            .item {
+                flex: 1;
+                width: 25%;
+                word-wrap: break-word;
+                padding: 3px;
+            }
+            </style>
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; background-color: #2F3136; padding: 10px;">
+                <div style="font-size: 24px; text-align: center;">Oculus API App Versions</div>
+                <div style="font-size: 15px; text-align: center; color: #888;">
+                    Get download links for various Oculus Quest apps
+                </div>
+                
+
+
+                <table style="padding: 10px; width: 40%; margin: auto; margin-top: 40px;">
+                    <tr><td>App id (the numbers in the oculus store link)</td><td><input type="text" value="2448060205267927" id="appid" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
+                </table>
+
+                <div style="font-size: 22px; text-align: center; font-weight: bold;">Versions</div>
+                <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                    <div class="item">Version</div>
+                    <div class="item">Changelog</div>
+                    <div class="item">id</div>
+                </div>
+                <div id="versions" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+
+                </div>
+                
+
+                <div class="guideHeader">Is this legal?</div>
+                <div class="guideSteps">
+                    I cannot give an answer on that. But it uses Oculus public API and official download servers (for which you need to own the app and be logged in on <a href="https://www.oculus.com/">oculus.com</a> to download the app) to get all the information.
+                    <br/>
+                    So if you ask me I'd say yes, it is legal.
+                </div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script>
+            function Search() {
+                document.getElementById("versions").innerHTML = "requesting"
+                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${document.getElementById("appid").value}"}&doc_id=1586217024733717`).then((res) => {
+                    document.getElementById("versions").innerHTML = ""
+                    res.data.node.supportedBinaries.edges.forEach(element => {
+                        document.getElementById("versions").innerHTML += GetFormatted({
+                            download: "https://securecdn.oculus.com/binaries/download/?id=" + element.node.id,
+                            version: element.node.version,
+                            changelog: element.node.changeLog,
+                            id: element.node.id
+                        })
+                    })
+                })
+            }
+
+            function GetFormatted(element) {
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download>
+                            <div class="item">${element.version}</div>
+                            <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
+                            <div class="item">${element.id}</div>
+                        </a>
+                        <div style='width: 90%; margin-left: auto; margin-right: auto;'><hr></div>`
+            }
+
+            function PostRequest(url, body) {
+                return new Promise((resolve, reject) => {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", url, true);
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState == XMLHttpRequest.DONE) {
+                            resolve(JSON.parse(xhr.responseText))
+                        }
+                    }
+                    xhr.setRequestHeader("sec-fetch-site", "cross-site")
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(body);
+                })
+            }
+        </script>
+    </body>
+</html>
