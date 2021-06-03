@@ -30,11 +30,11 @@
                     Get download links for all Oculus Quest apps
                 </div>
 
-                <table style="padding: 10px; width: 40%; margin: auto; margin-top: 40px;">
+                <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
                     <tr><td>App id (the numbers in the oculus store link)</td><td><input type="text" value="2448060205267927" id="appid" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
                 </table>
 
-                <div style="font-size: 22px; text-align: center; font-weight: bold;">Versions</div>
+                <div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
                 <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                     <div class="item">Version</div>
                     <div class="item">Changelog</div>
@@ -63,6 +63,7 @@
                 document.getElementById("versions").innerHTML = "requesting"
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${document.getElementById("appid").value}"}&doc_id=1586217024733717`).then((res) => {
                     document.getElementById("versions").innerHTML = ""
+                    document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         document.getElementById("versions").innerHTML += GetFormatted({
                             download: "https://securecdn.oculus.com/binaries/download/?id=" + element.node.id,
@@ -92,7 +93,6 @@
                             resolve(JSON.parse(xhr.responseText))
                         }
                     }
-                    xhr.setRequestHeader("sec-fetch-site", "cross-site")
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send(body);
                 })
