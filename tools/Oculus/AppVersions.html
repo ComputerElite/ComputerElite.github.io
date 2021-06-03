@@ -73,6 +73,13 @@
             const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
 
+            var url = new URL(window.location.href);
+            var id = url.searchParams.get("id");
+
+            if(id != undefined && id != "") {
+                SearchVersions(id)
+            }
+
             function Search() {
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = "requesting"
