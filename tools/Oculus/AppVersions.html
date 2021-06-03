@@ -31,19 +31,21 @@
                 </div>
 
                 <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
-                    <tr><td>App id (the numbers in the oculus store link)</td><td><input type="text" value="2448060205267927" id="appid" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
+                    <tr><td>Headset</td><td><select id="headset">
+                        <option value="MONTEREY">Quest 1/2</option>
+                        <option value="RIFT">Rift</option>
+                    </select></td></tr>
+                    <tr><td>Search term for app</td><td><input type="text" value="Beat Saber" id="searchTerm" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
                 </table>
-
-                <div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
-                <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
-                    <div class="item">Version</div>
-                    <div class="item">Changelog</div>
-                    <div class="item">id</div>
+                <div id="resultContainer">
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px;">
+                            <table style="width: fit-content; margin: auto;">
+                                <tr><td><img src="../../assets/CE_512px.png" width="100px" height="100px"></td><td>Please search</td></tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div id="versions" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
-
-                </div>
-                
 
                 <div class="guideHeader">Is this legal?</div>
                 <div class="guideSteps">
@@ -59,9 +61,41 @@
         </div>
         <script src="../../js/standard.js"></script>
         <script>
+            const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
+                    <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                        <div class="item">Version</div>
+                        <div class="item">Changelog</div>
+                        <div class="item">id</div>
+                    </div>
+                    <div id="versions" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+
+                    </div>`
+            const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
+                    </div>`
+
             function Search() {
+                document.getElementById("resultContainer").innerHTML = storeSkeleton
+                document.getElementById("apps").innerHTML = "requesting"
+                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                    res.data.viewer.contextual_search.all_category_results.forEach(cat => {
+                        if(cat.name == "APPS") {
+                            document.getElementById("apps").innerHTML = ""
+                            cat.search_results.nodes.forEach(element => {
+                                document.getElementById("apps").innerHTML += GetResultFormatted({
+                                    imgsrc: element.target_object.cover_square_image.uri,
+                                    name: element.target_object.display_name,
+                                    id: element.target_object.id
+                                })
+                            })
+                        }
+                    })
+                })
+            }
+
+            function SearchVersions(id) {
+                document.getElementById("resultContainer").innerHTML = versionSkeleton
                 document.getElementById("versions").innerHTML = "requesting"
-                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${document.getElementById("appid").value}"}&doc_id=1586217024733717`).then((res) => {
+                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     document.getElementById("versions").innerHTML = ""
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
@@ -70,18 +104,28 @@
                             version: element.node.version,
                             changelog: element.node.changeLog,
                             id: element.node.id
-                        })
+                        }, res.data.node.displayName)
                     })
                 })
             }
 
-            function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download>
+            
+
+            function GetFormatted(element, app) {
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download="${app}_${element.version}">
                             <div class="item">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
                         </a>
                         <div style='width: 90%; margin-left: auto; margin-right: auto;'><hr></div>`
+            }
+
+            function GetResultFormatted(element) {
+                return `<a style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')">
+                            <table style="width: fit-content; margin: auto;">
+                                <tr><td><img src="${element.imgsrc}" width="100px" height="100px"></td><td>${element.name}</td></tr>
+                            </table>
+                        </a>`
             }
 
             function PostRequest(url, body) {
