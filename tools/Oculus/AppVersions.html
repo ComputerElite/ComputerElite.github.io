@@ -33,7 +33,7 @@
                 <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
                     <tr><td>Headset</td><td><select id="headset">
                         <option value="MONTEREY">Quest 1/2</option>
-                        <option value="RIFT">Rift</option>
+                        <option value="RIFT">Rift (downloads not working)</option>
                     </select></td></tr>
                     <tr><td>Search term for app</td><td><input type="text" value="Beat Saber" id="searchTerm" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
                 </table>
@@ -73,6 +73,8 @@
             const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
 
+                    const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
+
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
 
@@ -82,7 +84,7 @@
 
             function Search() {
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
-                document.getElementById("apps").innerHTML = "requesting"
+                document.getElementById("apps").innerHTML = loader
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
                     res.data.viewer.contextual_search.all_category_results.forEach(cat => {
                         if(cat.name == "APPS") {
@@ -101,7 +103,7 @@
 
             function SearchVersions(id) {
                 document.getElementById("resultContainer").innerHTML = versionSkeleton
-                document.getElementById("versions").innerHTML = "requesting"
+                document.getElementById("versions").innerHTML = loader
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     document.getElementById("versions").innerHTML = ""
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
@@ -113,6 +115,8 @@
                             id: element.node.id
                         }, res.data.node.displayName)
                     })
+                }).catch(err => {
+                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center;'>An error occured. Please try again later.</div>"
                 })
             }
 
@@ -139,6 +143,9 @@
                 return new Promise((resolve, reject) => {
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", url, true);
+                    xhr.onerror = (err) => {
+                        reject(err)
+                    }
                     xhr.onreadystatechange = () => {
                         if (xhr.readyState == XMLHttpRequest.DONE) {
                             resolve(JSON.parse(xhr.responseText))
