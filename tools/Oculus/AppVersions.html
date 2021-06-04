@@ -20,7 +20,7 @@
                 word-wrap: break-word;
                 padding: 3px;
             }
-            </style>
+        </style>
     </head>
     <body>
         <div style="padding-top: 10px; width: 100%; display: flex;">
@@ -35,7 +35,7 @@
                         <option value="MONTEREY">Quest 1/2</option>
                         <option value="RIFT">Rift (downloads not working)</option>
                     </select></td></tr>
-                    <tr><td>Search term for app</td><td><input type="text" value="Beat Saber" id="searchTerm" spellcheck="false"></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
+                    <tr><td>Search term for app</td><td><input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
                 </table>
                 <div id="resultContainer">
                     <div style="display: flex; flex-wrap: wrap;">
@@ -86,6 +86,7 @@
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                    document.getElementById("apps").innerHTML = ""
                     res.data.viewer.contextual_search.all_category_results.forEach(cat => {
                         if(cat.name == "APPS") {
                             document.getElementById("apps").innerHTML = ""
@@ -98,6 +99,11 @@
                             })
                         }
                     })
+                    if(document.getElementById("apps").innerHTML == "") {
+                        document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                    }
+                }).catch(err => {
+                    document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
                 })
             }
 
@@ -115,8 +121,11 @@
                             id: element.node.id
                         }, res.data.node.displayName)
                     })
+                    if(document.getElementById("versions").innerHTML == "") {
+                        document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                    }
                 }).catch(err => {
-                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center;'>An error occured. Please try again later.</div>"
+                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
                 })
             }
 
