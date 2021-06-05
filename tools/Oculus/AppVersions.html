@@ -31,11 +31,34 @@
                 </div>
 
                 <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
-                    <tr><td>Headset</td><td><select id="headset">
-                        <option value="MONTEREY">Quest 1/2</option>
-                        <option value="RIFT">Rift (downloads not working)</option>
-                    </select></td></tr>
-                    <tr><td>Search term for app</td><td><input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'></td><td><input type="button" value="Search" onclick="Search()"></td></tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="beta">
+                            <div style="display: inline;">Show latest beta</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Headset
+                        </td>
+                            <td>
+                                <select id="headset">
+                                <option value="MONTEREY">Quest 1/2</option>
+                                <option value="RIFT">Rift (downloads not working)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Search term for app
+                        </td>
+                        <td>
+                            <input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
+                        </td>
+                        <td>
+                            <input type="button" value="Search" onclick="Search()">
+                        </td>
+                    </tr>
                 </table>
                 <div id="resultContainer">
                     <div style="display: flex; flex-wrap: wrap;">
@@ -65,6 +88,8 @@
         </div>
         <script src="../../js/standard.js"></script>
         <script>
+            var showingVersions = false
+            var showedid = ""
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
                     <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                         <div class="item">Version</div>
@@ -87,6 +112,7 @@
             }
 
             function Search() {
+                showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
@@ -111,23 +137,64 @@
                 })
             }
 
+            document.getElementById("beta").onchange = (e) => {
+                if(showingVersions) SearchVersions(showedid)
+            }
+
             function SearchVersions(id) {
+                showedid = id
+                showingVersions = true;
                 document.getElementById("resultContainer").innerHTML = versionSkeleton
                 document.getElementById("versions").innerHTML = loader
+                var versions = []
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
-                    document.getElementById("versions").innerHTML = ""
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
-                        document.getElementById("versions").innerHTML += GetFormatted({
-                            download: "https://securecdn.oculus.com/binaries/download/?id=" + element.node.id,
+                        versions.push({
+                            download: "https://secur    ecdn.oculus.com/binaries/download/?id=" + element.node.id,
                             version: element.node.version,
                             changelog: element.node.changeLog,
-                            id: element.node.id
-                        }, res.data.node.displayName)
+                            id: element.node.id,
+                            name: res.data.node.displayName
+                        })
                     })
-                    if(document.getElementById("versions").innerHTML == "") {
-                        document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                    if(document.getElementById("beta").checked) {
+                        PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
+                            res.data.node.release_channels.nodes.forEach(element => {
+                                var contained = false;
+                                versions.forEach(e => {
+                                    if(e.id == element.latest_supported_binary.id) {
+                                        contained = true;
+                                    }
+                                })
+                                if(!contained) {
+                                    versions.unshift({
+                                        download: "https://securecdn.oculus.com/binaries/download/?id=" + element.latest_supported_binary.id,
+                                        version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
+                                        changelog: "N/A",
+                                        id: element.latest_supported_binary.id
+                                    })
+                                }
+                            })
+                            document.getElementById("versions").innerHTML = ""
+                            versions.forEach(e => {
+                                document.getElementById("versions").innerHTML += GetFormatted(e)
+                            })
+                            if(document.getElementById("versions").innerHTML == "") {
+                                document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                            }
+                        })
+                    } else {
+                        document.getElementById("versions").innerHTML = ""
+                        versions.forEach(e => {
+                            document.getElementById("versions").innerHTML += GetFormatted(e)
+                        })
+                        if(document.getElementById("versions").innerHTML == "") {
+                            document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                        }
                     }
+                    
+                    
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
                 })
@@ -135,8 +202,8 @@
 
             
 
-            function GetFormatted(element, app) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download="${app}_${element.version}">
+            function GetFormatted(element) {
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download>
                             <div class="item">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
