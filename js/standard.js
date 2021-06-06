@@ -13,6 +13,29 @@ function MakeJSONGetRequest(url) {
     return JSON.parse(MakeTextGetRequest(url));
 }
 
+function MakeTextGetRequestAsync(url) {
+    return new Promise((resolve, reject) => {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, false);
+        request.send(null);
+        if (request.status == 200) {
+            resolve(request.responseText);
+        } else {
+            reject("Something went wrong: " + request.status);
+        }
+    })
+}
+
+function MakeJSONGetRequestAsync(url) {
+    return new Promise((resolve, reject) => {
+        MakeTextGetRequestAsync(url).then(res => {
+            resolve(JSON.parse(res))
+        }).catch(err => [
+            reject(err)
+        ])
+    });
+}
+
 function InIframe () {
     var inFrame = false;
     try {

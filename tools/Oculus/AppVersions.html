@@ -60,6 +60,9 @@
                         </td>
                     </tr>
                 </table>
+                <div id="notesContainer" style="margin-bottom: 50px;">
+
+                </div>
                 <div id="resultContainer">
                     <div style="display: flex; flex-wrap: wrap;">
                         <div style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px;">
@@ -112,6 +115,7 @@
             }
 
             function Search() {
+                document.getElementById("notesContainer").innerHTML = "";
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
@@ -142,6 +146,7 @@
             }
 
             function SearchVersions(id) {
+                document.getElementById("notesContainer").innerHTML = "";
                 showedid = id
                 showingVersions = true;
                 document.getElementById("resultContainer").innerHTML = versionSkeleton
@@ -197,6 +202,13 @@
                     
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
+                })
+                MakeJSONGetRequestAsync("AppNotes/index.json").then(res => {
+                    if(res.includes(id)) {
+                        MakeTextGetRequestAsync(`AppNotes/${id}.html`).then(res => {
+                            document.getElementById("notesContainer").innerHTML = res
+                        })
+                    }
                 })
             }
 
