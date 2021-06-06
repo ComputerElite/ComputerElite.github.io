@@ -73,6 +73,11 @@
                     </div>
                 </div>
 
+                <div id="contextMenu" class="contextMenu">
+                    <div class="contextMenuItem" onclick="navigator.clipboard.writeText(forClipboard)">Copy id</div>
+                    <div class="contextMenuItem" onclick="SetClipboardLink()">Copy link</div>
+                </div>
+
                 <div class="guideHeader">How do I use this?</div>
                 <div class="guideSteps" id="instructions">
                     Log in on  <a href="https://www.oculus.com/">oculus.com</a>, search for an app, click on it, click on the version your want to download and you got yourself an apk you can install.
@@ -91,6 +96,7 @@
         </div>
         <script src="../../js/standard.js"></script>
         <script>
+            var menu = document.getElementById("contextMenu")
             var showingVersions = false
             var showedid = ""
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
@@ -112,6 +118,35 @@
 
             if(id != undefined && id != "") {
                 SearchVersions(id)
+            }
+
+            var menuOpen = false;
+
+            document.onclick = (e) => {
+                menu.style.display = "none"
+            }
+
+            var forClipboard = ""
+            var isVersion = false;
+
+            function SetClipboardLink() {
+                navigator.clipboard.writeText(isVersion ? GetDownloadLink(forClipboard) : window.location.href.split('?')[0] + "?id=" + forClipboard)
+            }
+
+            function SetupContextMenu(e, id, version) {
+                if(menuOpen && forClipboard == id) {
+                    menuOpen = false
+                    menu.style.display = "none"
+                } else {
+                    isVersion = version
+                    forClipboard = id
+                    menuOpen = true
+                    menu.style.display = "block"
+                    menu.style.top = mouseY(event) + 'px';  
+                    menu.style.left = mouseX(event) + 'px';
+                    return false
+                }
+                
             }
 
             function Search() {
@@ -141,6 +176,10 @@
                 })
             }
 
+            function GetDownloadLink(id) {
+                return "https://securecdn.oculus.com/binaries/download/?id=" + id
+            }
+
             document.getElementById("beta").onchange = (e) => {
                 if(showingVersions) SearchVersions(showedid)
             }
@@ -156,7 +195,7 @@
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         versions.push({
-                            download: "https://secur    ecdn.oculus.com/binaries/download/?id=" + element.node.id,
+                            download: GetDownloadLink(element.node.id),
                             version: element.node.version,
                             changelog: element.node.changeLog,
                             id: element.node.id,
@@ -174,7 +213,7 @@
                                 })
                                 if(!contained) {
                                     versions.unshift({
-                                        download: "https://securecdn.oculus.com/binaries/download/?id=" + element.latest_supported_binary.id,
+                                        download: GetDownloadLink(element.latest_supported_binary.id),
                                         version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
                                         changelog: "N/A",
                                         id: element.latest_supported_binary.id
@@ -215,7 +254,7 @@
             
 
             function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" download>
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
@@ -224,7 +263,7 @@
             }
 
             function GetResultFormatted(element) {
-                return `<a style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')">
+                return `<a style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
                             <table style="width: fit-content; margin: auto;" class="defTextColor">
                                 <tr><td><img src="${element.imgsrc}" width="100px" height="100px"></td><td>${element.name}</td></tr>
                             </table>
