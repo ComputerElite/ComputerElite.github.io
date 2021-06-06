@@ -261,7 +261,7 @@
             }
 
             function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
