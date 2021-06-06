@@ -195,7 +195,6 @@
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         versions.push({
-                            download: GetDownloadLink(element.node.id),
                             version: element.node.version,
                             changelog: element.node.changeLog,
                             id: element.node.id,
@@ -213,7 +212,6 @@
                                 })
                                 if(!contained) {
                                     versions.unshift({
-                                        download: GetDownloadLink(element.latest_supported_binary.id),
                                         version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
                                         changelog: "N/A",
                                         id: element.latest_supported_binary.id
@@ -251,10 +249,19 @@
                 })
             }
 
-            
+            function DownloadAPK(id) {
+                var link = GetDownloadLink(id)
+                fetch(link, {mode: 'no-cors'}).then((red) => {
+                    if(res.status == 404) throw new Error("404")
+                    window.open(link, "_blank")
+                }).catch(err => {
+                    alert("Unable to start download. Are you logged in on Oculus.com and own the game? Please log in.")
+                    window.open("https://securecdn.oculus.com", "_blank")
+                })
+            }
 
             function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
