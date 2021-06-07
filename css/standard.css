@@ -10,16 +10,16 @@ html {
 }
 
 body, table, input {
-    font-size: 14px;
+    font-size: 14vw;
     font-family: 'Open Sans';
 }
 
 .contextMenu {
-    font-size: 16px;
+    font-size: 16vw;
     display: none;
     background-color: #444;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 5vw;
+    padding: 5vw;
     position: absolute;
     opacity: 0.9;
 }
@@ -27,8 +27,8 @@ body, table, input {
 .contextMenuItem {
     position: relative;
     background-color: #444;
-    margin-top: 2px;
-    padding: 5px;
+    margin-top: 2vw;
+    padding: 5vw;
 }
 
 .contextMenuItem:hover {
@@ -40,8 +40,8 @@ body, table, input {
 }
 
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16vw solid #f3f3f3; /* Light grey */
+    border-top: 16vw solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 2s linear infinite;
   }
@@ -64,15 +64,15 @@ a:visited
 input[type='file']
 {
     background-color: #00000023;
-    padding-right: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;  
+    padding-right: 5vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    padding-left: 5vw;  
     width: 100%;
 }
 
 input[type='checkbox'] {
-    padding: 5px;
+    padding: 5vw;
     border: none;
     color: #EEEEEE;
     background-color: #202225;
@@ -80,7 +80,7 @@ input[type='checkbox'] {
 
 input[type='text']
 {
-    padding: 5px;
+    padding: 5vw;
     width: 100%;
     border: none;
     color: #EEEEEE;
@@ -96,76 +96,76 @@ input[type='text']
 }
 
 code {
-    padding: 5px;
-    border-radius: 3px;
+    padding: 5vw;
+    border-radius: 3vw;
     background-color: #202225;
-    border: 1px solid black;
+    border: 1vw solid black;
 }
 
 .headerDescription {
-    font-size: 11px;
+    font-size: 11vw;
     color: #888;
-    margin-bottom: 10px;
-    padding-left: 20px;
+    margin-bottom: 10vw;
+    padding-left: 20vw;
 }
 
 .tip {
     background-color: #36632898;
-    padding: 10px;
-    font-size: 14px;
-    border-left: 5px solid #5fc456;
-    margin-left: 10px;
+    padding: 10vw;
+    font-size: 14vw;
+    border-left: 5vw solid #5fc456;
+    margin-left: 10vw;
     color: #73c46c;
 }
 
 .tipHeader {
-    font-size: 16px;
+    font-size: 16vw;
     color: #5fc456;
-    margin-bottom: 10px;
+    margin-bottom: 10vw;
 }
 
 .guideHeader {
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 16vw;
+    margin-top: 10vw;
 }
 
 .guideSteps {
-    font-size: 14px;
-    margin-top: 5px;
-    padding-left: 10px;
+    font-size: 14vw;
+    margin-top: 5vw;
+    padding-left: 10vw;
     line-height: 1.5;
 }
 
 .topicContainer {
-    padding-left: 10px;
+    padding-left: 10vw;
 }
 
 .info {
     background-color: #a1870498;
-    padding: 10px;
-    font-size: 14px;
-    border-left: 5px solid #c7c700;
-    margin-left: 10px;
+    padding: 10vw;
+    font-size: 14vw;
+    border-left: 5vw solid #c7c700;
+    margin-left: 10vw;
     color: #f8ffb4;
 }
 
 .infoHeader {
-    font-size: 16px;
+    font-size: 16vw;
     color: #ffff00;
-    margin-bottom: 10px;
+    margin-bottom: 10vw;
 }
 
 .warning {
     background-color: #49121298;
-    padding: 10px;
-    font-size: 14px;
-    border-left: 5px solid #c70000;
-    margin-left: 10px;
+    padding: 10vw;
+    font-size: 14vw;
+    border-left: 5vw solid #c70000;
+    margin-left: 10vw;
     color: #ffb4b4;
 }
 
 .warningHeader {
-    font-size: 16px;
+    font-size: 16vw;
     color: #c70000;
-    margin-bottom: 10px;
+    margin-bottom: 10vw;
 }
