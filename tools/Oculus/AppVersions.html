@@ -250,23 +250,26 @@
             }
 
             function DownloadAPK(id) {
+                window.open(link, "_blank")
+                /* Header on oculus side not set
                 var link = GetDownloadLink(id)
                 var xhr = new XMLHttpRequest();
                 xhr.open("HEAD", link, true);
                 xhr.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
                         //Success
-                        if(this.status == 200) window.open(link, "_blank")
-                        else {
-                            if(confirm("Unable to start download. Are you logged in on Oculus.com and own the game? If you think this detection is wrong press cancle")) {
-                                window.open("https://oculus.com", "_blank")
-                            } else {
-                                window.open(link, "_blank")
-                            }
-                        }
+                        window.open(link, "_blank")
                     }
                 };
+                xhr.onerror = (err) => {
+                    if(confirm("Unable to start download. Are you logged in on Oculus.com and own the game? If you think this detection is wrong press cancle")) {
+                        window.open("https://oculus.com", "_blank")
+                    } else {
+                        window.open(link, "_blank")
+                    }
+                }
                 xhr.send();
+                */
             }
 
             function GetFormatted(element) {
