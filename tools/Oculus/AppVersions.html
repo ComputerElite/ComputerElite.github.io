@@ -251,24 +251,22 @@
 
             function DownloadAPK(id) {
                 var link = GetDownloadLink(id)
-                console.log("requesting " + link)
                 var xhr = new XMLHttpRequest();
-                xhr.open("HEAD", link, true); // Notice "HEAD" instead of "GET",
-                                            //  to get only the header
+                xhr.open("HEAD", link, true);
                 xhr.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
                         //Success
-                        window.open(link, "_blank")
+                        if(this.status == 200) window.open(link, "_blank")
+                        else {
+                            if(confirm("Unable to start download. Are you logged in on Oculus.com and own the game? If you think this detection is wrong press cancle")) {
+                                window.open("https://oculus.com", "_blank")
+                            } else {
+                                window.open(link, "_blank")
+                            }
+                        }
                     }
                 };
-                xhr.onerror = (err) => {
-                    if(confirm("Unable to start download. Are you logged in on Oculus.com and own the game? If you think this detection is wrong press cancle")) {
-                        window.open("https://oculus.com", "_blank")
-                    } else {
-                        window.open(link, "_blank")
-                    }
-                }
-                xhr.send();s
+                xhr.send();
             }
 
             function GetFormatted(element) {
