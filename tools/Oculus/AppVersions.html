@@ -6,6 +6,7 @@
         <meta property="og:title" content="Oculus API App Versions" />
         <meta property="og:description" content="A page to get downloads for various Oculus apps" />
         <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/AppVersions.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
@@ -252,6 +253,13 @@
             function DownloadAPK(id) {
                 var link = GetDownloadLink(id)
                 window.open(link, "_blank")
+                /* Only available for plugins apparently
+                browser.downloads.download({
+                    url: link
+                }).then(res => {
+                    console.log(res)
+                })
+                */
                 /* Header on oculus side not set
                 var link = GetDownloadLink(id)
                 var xhr = new XMLHttpRequest();
