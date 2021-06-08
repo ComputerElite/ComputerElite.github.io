@@ -21,7 +21,7 @@ body, table, input {
     padding: 5px;
     position: absolute;
     opacity: 0.9;
-    display: block;
+    display: none;
 }
 .contextMenu {
     font-size: 16px;
