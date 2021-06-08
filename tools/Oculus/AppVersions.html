@@ -23,7 +23,7 @@
             }
         </style>
     </head>
-    <body>
+    <body onmousemove="UpdateMousePos(event)">
         <div style="padding-top: 10px; width: 100%; display: flex;">
             <div style="flex: 1; background-color: #2F3136; padding: 10px;">
                 <div style="font-size: 24px; text-align: center;">Oculus API App Versions</div>
@@ -78,6 +78,9 @@
                     <div class="contextMenuItem" onclick="navigator.clipboard.writeText(forClipboard)">Copy id</div>
                     <div class="contextMenuItem" onclick="SetClipboardLink()">Copy link</div>
                 </div>
+                <div id="tooltip" class="tooltip">
+                    tooltip
+                </div>
 
                 <div class="guideHeader">How do I use this?</div>
                 <div class="guideSteps" id="instructions">
@@ -98,6 +101,7 @@
         <script src="../../js/standard.js"></script>
         <script>
             var menu = document.getElementById("contextMenu")
+            var tooltip = document.getElementById("tooltip")
             var showingVersions = false
             var showedid = ""
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
@@ -150,6 +154,34 @@
                 
             }
 
+            var x = 0
+            var y = 0
+            var inElement = false
+            var lastText = "";
+            function ShowTooltip(e, text) {
+                inElement = true;
+                lastText = text
+                mouseX(e)
+                setTimeout(() => {
+                    if(inElement && lastText == text) {
+                        tooltip.innerHTML = text
+                        tooltip.style.display = "block"
+                        tooltip.style.top = y + 'px';  
+                        tooltip.style.left = (x + 15) + 'px';
+                    }
+                }, 500)
+            }
+
+            function UpdateMousePos(e) {
+                x = mouseX(e)
+                y = mouseY(e)
+            }
+
+            function HideTooltip(e, text) {
+                inElement = false;
+                tooltip.style.display = "none"
+            }
+
             function Search() {
                 document.getElementById("notesContainer").innerHTML = "";
                 showingVersions = false;
@@ -199,7 +231,7 @@
                             version: element.node.version,
                             changelog: element.node.changeLog,
                             id: element.node.id,
-                            name: res.data.node.displayName
+                            code: element.node.versionCode
                         })
                     })
                     if(document.getElementById("beta").checked) {
@@ -215,7 +247,8 @@
                                     versions.unshift({
                                         version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
                                         changelog: "N/A",
-                                        id: element.latest_supported_binary.id
+                                        id: element.latest_supported_binary.id,
+                                        code: element.latest_supported_binary.versionCode
                                     })
                                 }
                             })
@@ -283,7 +316,7 @@
 
             function GetFormatted(element) {
                 return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
-                            <div class="item">${element.version}</div>
+                            <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}')">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
                         </a>
@@ -307,7 +340,11 @@
                     }
                     xhr.onreadystatechange = () => {
                         if (xhr.readyState == XMLHttpRequest.DONE) {
-                            resolve(JSON.parse(xhr.responseText))
+                            if(xhr.status == 200) {
+                                resolve(JSON.parse(xhr.responseText))
+                            } else {
+                                reject(xhr.responseText)
+                            }
                         }
                     }
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

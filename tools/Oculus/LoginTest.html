@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oculus API App Versions</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Oculus API App Versions" />
+        <meta property="og:description" content="A page to get downloads for various Oculus apps" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/AppVersions.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+            td {
+                padding: 10px;
+            }
+    
+            .item {
+                flex: 1;
+                width: 25%;
+                word-wrap: break-word;
+                padding: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; background-color: #2F3136; padding: 10px;">
+                <div style="font-size: 24px; text-align: center;">Oculus API Login test</div>
+                <div style="font-size: 15px; text-align: center; color: #888;">
+                    Only works with oculus accounts
+                </div>
+
+                <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
+                    <tr>
+                        <td>
+                            EMail
+                        </td>
+                        <td>
+                            <input type="email" id="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            password
+                        </td>
+                        <td>
+                            <input type="password" id="pswd">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="2fatext">2-fa code (needed later)</div>
+                        </td>
+                        <td>
+                            <input type="number" id="2fa">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="verify" value="verify">
+                        </td>
+                    </tr>
+                </table>
+                <div id="resText">
+                    response text
+                </div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script>
+            var passwordText = document.getElementById("pswd")
+            var emailText = document.getElementById("email")
+            var codeText = document.getElementById("2fa")
+            var verifyButton = document.getElementById("verify")
+            var text = document.getElementById("resText")
+
+            verifyButton.onclick = (e) => {
+                PostRequest("https://graph.oculus.com/login", `email=${emailText.value}&password=${passwordText.value}&access_token=OC|660728964057742|&lsd=unknown&jazoest=unknown`).then(res => {
+                    text.innerHTML = "Login OK: " + res
+                }).catch(err => {
+                    text.innerHTML = "Request failed: " + err
+                })
+            }
+
+            function PostRequest(url, body) {
+                return new Promise((resolve, reject) => {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", url, true);
+                    xhr.onerror = (err) => {
+                        reject(err)
+                    }
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState == XMLHttpRequest.DONE) {
+                            if(xhr.status == 200) {
+                                resolve(xhr.responseText)
+                            } else {
+                                reject(xhr.responseText)
+                            }
+                            
+                        }
+                    }
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(body);
+                })
+            }
+        </script>
+    </body>
+</html>
