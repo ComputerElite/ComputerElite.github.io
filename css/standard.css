@@ -87,6 +87,14 @@ input[type='checkbox'] {
     background-color: #202225;
 }
 
+textarea {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    color: #EEEEEE;
+    background-color: #202225;
+}
+
 input[type='text']
 {
     padding: 5px;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oculus API App Versions</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Oculus API App Versions" />
+        <meta property="og:description" content="A page to get downloads for various Oculus apps" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/AppVersions.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+            td {
+                padding: 10px;
+            }
+    
+            input[type="text"] {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; background-color: #2F3136; padding: 10px;">
+                <div style="font-size: 24px; text-align: center;">Oculus GraphQL Requester</div>
+                <div style="font-size: 15px; text-align: center; color: #888;">
+                    Make requests to oculus GraphQL with the default store token
+                </div>
+
+                <table style="padding: 10px; margin: auto; width: 100%;">
+                    <tr>
+                        <td>
+                            DocumentId
+                        </td>
+                        <td>
+                            <input type='text' value="" id="doc" spellcheck="false" onkeydown='if(event.keyCode == 13) Request()'>
+                        </td>
+                        <td>
+                            <input type="button" value="Request" onclick="Request()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Presets
+                        </td>
+                        <td>
+                            <select id="preset" onchange="ChangePreset(this.value)">
+                                <option value="STORE">Store search</option>
+                                <option value="VERSIONS">Version list</option>
+                                <option value="LATESTVERSION">latest version</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Variables
+                        </td>
+                        <td>
+                            <textarea id="vars" style="height: 300px;"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div>Result</div>
+                <div id="resultContainer">
+                    <textarea id="vars" style="height: fit-content;" readonly></textarea>
+                </div>
+                
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script>
+            var docid = document.getElementById("doc");
+            var variables = document.getElementById("vars");
+            var output = document.getElementById("resultContainer");
+            const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
+            const resultSkeleton = (content, rows) => `<textarea id="vars" style="height: fit-content;" rows="${rows}" readonly>${content}</textarea>`
+            
+            function Request() {
+                output.innerHTML = loader
+                var requestVars = `access_token=OC|1317831034909742|&variables=${variables.value}&doc_id=${docid.value}`
+                console.log(`requesting with vars: ${requestVars}`)
+                PostRequest("https://graph.oculus.com/graphql", requestVars).then((res) => {
+                    var parsed = JSON.stringify(res, null, 4);
+                    console.log("parsed data: " + parsed)
+                    output.innerHTML = resultSkeleton(parsed, parsed.split("\n").length + 1)
+                }).catch(err => {
+                    output.innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later. Check console and network tab for more info</div>"
+                })
+            }
+
+            const presets = {
+                STORE: {
+                    docId: "4446310405385365",
+                    vars: `{"query":"YourQuery","hmdType":"MONTEREY","firstSearchResultItems":100}`
+                },
+                VERSIONS: {
+                    docId: "1586217024733717",
+                    vars: `{"id":"appId"}`
+                },
+                LATESTVERSION: {
+                    docId: "5373392672732392",
+                    vars: `{"itemId":"appId","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }`
+                }
+            }
+
+            function ChangePreset(name) {
+                if(presets[name] != undefined) {
+                    var preset = presets[name]
+                    docid.value = preset.docId
+                    variables.value = preset.vars
+                }
+            }
+
+            function PostRequest(url, body) {
+                return new Promise((resolve, reject) => {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", url, true);
+                    xhr.onerror = (err) => {
+                        reject(err)
+                    }
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState == XMLHttpRequest.DONE) {
+                            if(xhr.status == 200) {
+                                resolve(JSON.parse(xhr.responseText))
+                            } else {
+                                reject(xhr.responseText)
+                            }
+                        }
+                    }
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(body);
+                })
+            }
+        </script>
+    </body>
+</html>
