@@ -223,13 +223,17 @@
                 if(showingVersions) SearchVersions(showedid)
             }
 
+            var versions = []
+            var finished = 0
+
             function SearchVersions(id) {
                 document.getElementById("notesContainer").innerHTML = "";
                 showedid = id
                 showingVersions = true;
                 document.getElementById("resultContainer").innerHTML = versionSkeleton
                 document.getElementById("versions").innerHTML = loader
-                var versions = []
+                versions = []
+                finished = 0
                 PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
                     res.data.node.supportedBinaries.edges.forEach(element => {
@@ -240,6 +244,39 @@
                             code: element.node.versionCode
                         })
                     })
+                    UpdateVersions()
+                    
+
+                    //////CACHE
+                    MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
+                        if(res.includes(id)) {
+                            console.log("Requesting cached data for " + id)
+                            MakeJSONGetRequestAsync(`OlderAppVersions/${id}.json`).then(res => {
+                                res.data.node.supportedBinaries.edges.forEach(element => {
+                                    var contained = false;
+                                    versions.forEach(e => {
+                                        if(e.id == element.node.id) {
+                                            contained = true;
+                                        }
+                                    })
+                                    if(!contained) {
+                                        versions.push({
+                                            version: element.node.version,
+                                            changelog: element.node.changeLog,
+                                            id: element.node.id,
+                                            code: element.node.versionCode
+                                        })
+                                    }
+                                })
+                                UpdateVersions()
+                                console.log("Requested cache for " + id)
+                            })
+                        } else {
+                            UpdateVersions()
+                        }
+                    }).catch(err => UpdateVersions())
+
+                    //////BETA
                     if(document.getElementById("beta").checked) {
                         PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
                             res.data.node.release_channels.nodes.forEach(element => {
@@ -258,28 +295,16 @@
                                     })
                                 }
                             })
-                            document.getElementById("versions").innerHTML = ""
-                            versions.forEach(e => {
-                                document.getElementById("versions").innerHTML += GetFormatted(e)
-                            })
-                            if(document.getElementById("versions").innerHTML == "") {
-                                document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
-                            }
-                        })
+                            UpdateVersions()
+                        }).catch(err => UpdateVersions())
                     } else {
-                        document.getElementById("versions").innerHTML = ""
-                        versions.forEach(e => {
-                            document.getElementById("versions").innerHTML += GetFormatted(e)
-                        })
-                        if(document.getElementById("versions").innerHTML == "") {
-                            document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
-                        }
+                        UpdateVersions()
                     }
-                    
-                    
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
                 })
+
+                //Request extra app info
                 MakeJSONGetRequestAsync("AppNotes/index.json").then(res => {
                     if(res.includes(id)) {
                         MakeTextGetRequestAsync(`AppNotes/${id}.html`).then(res => {
@@ -287,6 +312,17 @@
                         })
                     }
                 })
+            }
+
+            function UpdateVersions() {
+                finished++
+                document.getElementById("versions").innerHTML = finished != 3 ? loader : ""
+                versions.forEach(e => {
+                    document.getElementById("versions").innerHTML += GetFormatted(e)
+                })
+                if(document.getElementById("versions").innerHTML == "") {
+                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                }
             }
 
             function DownloadAPK(id) {
