@@ -190,14 +190,14 @@ code {
 .attention {
     background-color: #49411298;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     border-left: 5px solid #fbff00;
     margin-left: 10px;
     color: #ffd900;
 }
 
 .attentionHeader {
-    font-size: 16px;
+    font-size: 18px;
     color: #fbff00;
     margin-bottom: 10px;
 }
