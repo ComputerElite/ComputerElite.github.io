@@ -302,6 +302,7 @@
                     }
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
+                    console.log(err)
                 })
 
                 //Request extra app info
@@ -314,8 +315,30 @@
                 })
             }
 
+            function SortByVersion(versions) {
+                var outp = []
+                var c = {}
+                var ite = versions.length
+                for(let it = 0; it < ite; it++) {
+                    c = versions[0]
+                    var ci = 0
+                    for(let i = 0; i < versions.length; i++) {
+                        try {
+                            if(compareVersions(c.version, ">", versions[i].version)) {
+                                c = versions[i]
+                                ci = i
+                            }
+                        } catch (err) {console.log(err)}
+                    }
+                    versions.splice(ci, 1)
+                    outp.unshift(c)
+                }
+                return outp
+            }
+
             function UpdateVersions() {
                 finished++
+                versions = SortByVersion(versions)
                 document.getElementById("versions").innerHTML = finished != 3 ? loader : ""
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e)
