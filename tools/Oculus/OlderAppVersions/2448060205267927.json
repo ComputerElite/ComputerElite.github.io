@@ -1,1 +1,1641 @@
-{"data":{"node":{"__typename":"ReleaseChannel","application":{"__typename":"Application","id":"2448060205267927","organization":{"viewer_role":null,"id":"1682979888680853"},"is_concept":false,"primary_binaries":{"edges":[{"node":{"__typename":"AndroidBinary","id":"5612368968837019","platform":"ANDROID_6DOF","version":"1.16.2","version_code":218,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5612368968837019","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRcKZPrpP6Ex-7izqTE-l3vqAAdZ55zjutLC0VXqptogeAUccKyj5-Uz3cVURNlLqSz53WFoZ9QQ7JZW-oeBIQSw"},{"node":{"__typename":"AndroidBinary","id":"5606373649436551","platform":"ANDROID_6DOF","version":"1.16.2","version_code":217,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5606373649436551","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRlcV3I0R9eLFg899welOsb9BLof8fXT2M6V79TQ4B0m2nG21CCydcZwycf3t5O9s9WEYRckIZ7TAqwdsNSeINGA"},{"node":{"__typename":"AndroidBinary","id":"5572200776187172","platform":"ANDROID_6DOF","version":"1.16.0","version_code":216,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5572200776187172","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRcSptNHZWJuiHJp5osfw6DbCeINlVKT_35M0nlOKmdroTTE2OAczjF7009cAkq4NGHvtRTLrBbOUyj9bAr5G0OQ"},{"node":{"__typename":"AndroidBinary","id":"5571299309610652","platform":"ANDROID_6DOF","version":"1.16.1","version_code":215,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5571299309610652","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHR5Wn-RdAVlBgiHYxN9rzqH1xJ9mzkJMVi2CDek5b5R-4B5s1d6vYdOsipq7l1ODDmSFY5euutifcfMxRVu7gBoQ"},{"node":{"__typename":"AndroidBinary","id":"5562058760534707","platform":"ANDROID_6DOF","version":"1.16.0","version_code":214,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5562058760534707","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRCiAaY7KE8ioSunCv-919Ev-Rpxz4UilddOdWempgWspQa7WEpB9zBHZsb1A_iEcN3HJdLuP6ae3-4APNI5li8Q"},{"node":{"__typename":"AndroidBinary","id":"5561020843971832","platform":"ANDROID_6DOF","version":"1.16.0","version_code":213,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5561020843971832","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRjHr_aeMYXmpIkspQ62Y1I_PQ3Zd5NQcCx3G2OP4nJFx1SliqHgp53vO8nLOIKWA-u8uRrz6Gh_W0h1m3inNN2w"},{"node":{"__typename":"AndroidBinary","id":"5555998114474105","platform":"ANDROID_6DOF","version":"1.16.0","version_code":212,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5555998114474105","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRZvqn1aBjDcph3rCHY5AZytb28Tem9WAjGtVZ9p9Vd4Fx9PrxbapsCS0N_6fBc5RzxVfy6LQ1oQ8Zd2FD4Z8EYg"},{"node":{"__typename":"AndroidBinary","id":"5554933601247223","platform":"ANDROID_6DOF","version":"1.16.0","version_code":211,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5554933601247223","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRws6oGJJ-VbREQW4gXg0GM8NeHMK0Rog4tiEBd1dgIPIlWvHwFMsJ29cpAge6-_VujpX3pftxQNxOpDCm3cwxOA"},{"node":{"__typename":"AndroidBinary","id":"5541757815898135","platform":"ANDROID_6DOF","version":"1.16.0","version_code":210,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5541757815898135","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHREhJpyGIDMeV1GFL47dRJRNKs_LUinrINz6BYHjPmMyiWlqbOgOJWUGZVy08vqLKVjBUM7a96Slrwa32KouXJ4g"},{"node":{"__typename":"AndroidBinary","id":"5535777006496216","platform":"ANDROID_6DOF","version":"1.16.0","version_code":204,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5535777006496216","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRxmpYjOmmosjo0fvAyNEPpmHFKS7d9gCC1faJqqcYgxWOTRPlWDz8umTasuS7IkIPzFPxdgEjsxaQ0CzSg8NRcg"},{"node":{"__typename":"AndroidBinary","id":"5527707253969858","platform":"ANDROID_6DOF","version":"1.16.0","version_code":203,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5527707253969858","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHR_nuRTJx5hBzLfWdLiaXq69zmadNGO5RUPwtxGD6t3DoCqbKIHWk6mhGq5eBteVhA-ATG20UcioiiJegfGIs4mA"},{"node":{"__typename":"AndroidBinary","id":"5504962366244347","platform":"ANDROID_6DOF","version":"1.16.0","version_code":202,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5504962366244347","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRVLLtGSs3fALGzfRqGoZVhHbx5d8T1BXiXcUgWxTY_tz_bczdbtu2_HhGB-J0XW6FgXGreLH6A3c2HT8q1hN9RQ"},{"node":{"__typename":"AndroidBinary","id":"5499436820130235","platform":"ANDROID_6DOF","version":"1.16.0","version_code":201,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5499436820130235","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRMYxy1B5oR-EfZIV1KDHjaIhGukh2kwQS41eXjB1ShXyASVK4Z0GkxnQC8-AGePdEAmLDtKvGg4-wADLuwwJHDQ"},{"node":{"__typename":"AndroidBinary","id":"5469015993172318","platform":"ANDROID_6DOF","version":"1.15.0","version_code":200,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5469015993172318","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRLVlbHzLlZ4jr7buVq_ac_EgLGYKwtmJVUd97_A29pHvea4s3BF5Lh-DGfVInBpSCcTDwSXrO2WlkCH8xdAmnpw"},{"node":{"__typename":"AndroidBinary","id":"5401288156611769","platform":"ANDROID_6DOF","version":"1.15.0","version_code":199,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5401288156611769","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRrbc__Wdrcgz9gSIZ41ByqF_EuZZ6W6ixow0TczHMiZlFryE9pQfDov60VEqp_jioJ4VzvbqFUCIHvIxrmeMEQA"},{"node":{"__typename":"AndroidBinary","id":"5400690720004846","platform":"ANDROID_6DOF","version":"1.15.0","version_code":198,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5400690720004846","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRIKM2quz6N8k69Pax2RtBGsd3PfICVdHTCHquD6ev7rWXTznNwze1xMTWWFmuTP89veppMXCH6neK7aH7l5zaqw"},{"node":{"__typename":"AndroidBinary","id":"5368334923240426","platform":"ANDROID_6DOF","version":"1.14.0","version_code":197,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5368334923240426","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRmT7B5Oef90k99sTmsWIqP2xyPcqmly5YfAnSHEH9WYbc2qJ9j4MZwPlWM2RwhTzAO_RInm_t3Sg3YuqdzTMXOg"},{"node":{"__typename":"AndroidBinary","id":"5355492097858042","platform":"ANDROID_6DOF","version":"1.15.0","version_code":196,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5355492097858042","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRJA12h7lhaP2T_v6Jv5LrhsW6w19igim6YbilNZBEmJZ1SpCGlzZzqEo0Q-skKYbxIcYNELC-8IXzZcrxsg5N1A"},{"node":{"__typename":"AndroidBinary","id":"5347241778683074","platform":"ANDROID_6DOF","version":"1.15.0","version_code":195,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5347241778683074","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRHoJdCc7w58OQUVLP4zsVjRrUnXw8Wxgr4rCbwqw9kHjEYZkqCUl1fJQoLbZq1bPUjLfAqE_gAauOvKwdS25Y9A"},{"node":{"__typename":"AndroidBinary","id":"5345640465509872","platform":"ANDROID_6DOF","version":"1.15.0","version_code":194,"uri":"https:\/\/securecdn.oculus.com\/binaries\/download\/?id=5345640465509872","__isAppBinary":"AndroidBinary","binary_test_results":{"edges":[]},"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary"},"cursor":"AQHRqhllBnvPtfljY9Hg13ndjaDwhoEgQqwkVhhnTs6KFxbvdifcU7VETuWN2ahrQtcsjXIBeeSA_YBCeuSGw0KS5Q"}],"page_info":{"end_cursor":"AQHRtiFX1tVFlSLD8hiJis4FLcmMHW3pB0PYHaGtt-y2Uxqwg73-g3lt7uH6snEHUU8Rtd0eteqMcJrlWZqd6OoCVg","has_next_page":true}},"platform":"ANDROID_6DOF"},"channel_name":"LIVE","id":"703449633385683","group":"PRIMARY","latest_supported_binary":{"__typename":"AndroidBinary","id":"5612368968837019","version_code":218,"asset_files":{"count":71},"obb_binary":null,"__isAppBinaryWithFileAsset":"AndroidBinary","__isAppBinary":"AndroidBinary","version":"1.16.2","binary_application":{"__typename":"Application","id":"2448060205267927","display_name":"Beat Saber"}},"binaries":{"edges":[{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"},{"channel_name":"v1.16.2_test","id":"1470777173259417"}]},"change_log":"- New option to disable mirror effect.\n- Startup and scene transitions time optimizations.\n- Various small fixes and visual tweaks.","created_date":1622815916,"id":"5612368968837019","version":"1.16.2","version_code":218,"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRTOi0xZwGaojmeac8lfeuKiWifb83KLSlZ7zjbERuiT6xCnzTItYF63_phaROVRXgWccRBKJiAMnhak9HhdfXyw"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Improved startup times.\n- Performance tweaks.","created_date":1622109833,"id":"5571299309610652","version":"1.16.1","version_code":215,"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR6ULt-llu6XtIbCRSStSMO-Rw8Nch_CffJG-GtRazdFFXjQyCv5hwHgywK5vs0QbAyZLlQt6fqqCycW6NN48JnA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Interscope Mixtape is here! It comes with 7 new songs which are now available for purchase as additional content to the game.\n- Materials with lightmaps support in environments.\n- Mirror reflections on Quest.\n- Music loudness correction.\n- Visual tweaks and fixes.\n","created_date":1621938216,"id":"5561020843971832","version":"1.16.0","version_code":213,"obb_binary":null,"asset_files":{"count":71},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRGckhI7FhzZ82VOZlIILBgid8VIVaDgaYao11Fi46ObLHOurKTVOcpb-Y-58EFxEXpjB86dIAUIqalx8vO4aA4g"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Added support for Japanese, Korean, Spanish, French and German language.\n- Small visual tweaks and fixes.","created_date":1619192171,"id":"5401288156611769","version":"1.15.0","version_code":199,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRlqh4FajbaR0ZZKmnKAzU39n7kUneMn3sEl8Qj5-P-P84pnxnhLberkHDIKfqzY0t2hk66HltN2UQN6b4yyOcuA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":" - Original Soundtrack Vol. 4 with 4 free new songs.\n - Performance tweaks.","created_date":1615918877,"id":"5211037672303486","version":"1.14.0","version_code":184,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRXNJBSPORQkii_3Lv9I1CGiJF7LGR3zIvl6EHp7zBJ-dLmD90RZqLetrl6WzUT_XdWW8hg3XkoiRwR6gajZdnCg"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Adjusted avatar\u2019s hand movement limits in multiplayer result screen.","created_date":1615456273,"id":"5187860121287908","version":"1.13.5","version_code":178,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRljNMHAnoYy-UcJ_scUKg9ZL1iuLYFyGqEPF-9WzKkGyFGYfMsC7pCLXm-DVSg-tD5ACKzlKTIGnn-dPdw9AVQg"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- New multiplayer results screen\n- New badges after playing a multiplayer match\n- New gameplay modifiers\n- New main menu UI and music\n- Custom colors for other players in multiplayer\n- Updated lighting system\n- Fixed color profiles\n- Added Dash support\n- Various tweaks and fixes\n","created_date":1614926225,"id":"5162268633847057","version":"1.13.4","version_code":175,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR1sXBNQo7MC1Jl9RFN5WEamP1_tfEz_Zor6hg5KF9mnqS_-Uj5Ll25yDSEsBIP8MwoUdk7PkoBTeTLXULqRXfag"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Changed No Fail modifier to apply 0.5x multiplier only after you deplete all the energy.\n- Added toggle to enable Joinable Oculus Rich Presence in multiplayer (allows other users to launch the game directly onto your private server).\n- Added Oculus Group launch (allows you to launch directly into multiplayer with your friends from Oculus party).\n- 90hz on Quest 2\n- Obstacles are now visible also for other players in multiplayer.\n- Brought back Player Statistics (including Online stats) into Help\/How to Play screen.\n- Fixed fireworks in Results screen\n- Fixed player height detector to correctly calculate player height in game.\n- Visual tweaks and other small fixes.","created_date":1611022692,"id":"4954569241283665","version":"1.13.2","version_code":157,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRJESkc9l0az3h9LWb3mOHtI_M7h58IDZSI1KzsQx0xOfQWse6wuuvpiv3et267p2In3n1wYxuuxGRCXSeiLAqUA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"BTS Music Pack is here! It comes with 12 new songs which are now available for purchase as additional content to the game.\n","created_date":1605032348,"id":"4659468397460419","version":"1.13.0","version_code":147,"obb_binary":null,"asset_files":{"count":64},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRCIpSTmUgqx93ofyChGkDTiCYC-5gexN7eeTRvHf5FBoZni6AjHo974tzpqIQvLH4m3zRN1D_0fONxPk8tzVzBQ"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Fixed an issue with room settings which caused notes to rotate incorrectly and walls to incorrectly collide with the player.\n- Set max speed in Practice mode back to 200\u0025.\n- Fixed an issue with the rotation settings for the right saber.\n- Fixed an issue when the game would not launch correctly from Oculus Destinations (challenges and leaderboards).\n- Fixed some text issues in Campaign screen.\n- Fixed some rare issues in the Multiplayer lobby related to the UI disappearing and the Ready button not responding.","created_date":1603055167,"id":"4559541844119742","version":"1.12.2","version_code":131,"obb_binary":null,"asset_files":{"count":52},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR2qa7wa7o5AjoeroLiiCj1LNx7cHGc-hrZUp9M7f_AYJtXZqRkiGr_AcDJejiVk5mD1RapVPt75jFgLsS6vs3VQ"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Added Online multiplayer mode (Quick play or Private server).\n- New arena-like environment specially crafted for use in multiplayer.\n- Avatars with customization available in multiplayer.\n- Menu visual overhaul with curved screen design.\n- Added adjustable Note Jump Offset into Player Options.\n- Added Adaptive SFX into Player Options.\n- Added Hide note spawning effect into Player options.\n- New lights.\n- Arrow displaying directions from which notes are coming from in 360\/90 degree levels is now replaced with multiple arrows that may display multiple active directions at the same time.\n- Player statistics pane temporarily removed.\n- Various fixes and tweaks.","created_date":1602265859,"id":"4518179181589342","version":"1.12.1","version_code":125,"obb_binary":null,"asset_files":{"count":52},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRRhkfV2cFCd3_ZdJ8RbTtWylXe3Im5yLwDPgZshQ6uAoJEEa5nGrvfAuUmCwUu7Ujue5-qmHoodXPJbwLdtL9qw"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"-Fixed colors in Linkin Park environment.\n-Updated Linkin Park cover art.","created_date":1597771764,"id":"4255167467890516","version":"1.11.1","version_code":116,"obb_binary":null,"asset_files":{"count":52},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR9JdUAwoAVC7ZWU0VWPsg6DYT4Mikj5YEePuzYS_4fLcEV8n66uU-vQN3pvChzVaCdn_lNeVPf6cXut09vTAYmQ"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Linkin Park Music Pack is here! It comes with 11 new songs which are now available for purchase as additional content to the game.","created_date":1597249259,"id":"4225778460829417","version":"1.11.0","version_code":114,"obb_binary":null,"asset_files":{"count":52},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRUTVNztS4brxvFXMO-FjxEFFTI0f7TT6gySyG185Y8ZsWXvFVNTpwvevDMmAmnvakq9wmjQWC9kMhWwcrLj8OiA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Added 10 new 360\/90 degree beatmaps and 26 new One Saber beatmaps.\n- Fixed controller's button mapping caused by incorrectly detected Oculus Rift device.\n- Fixed displaying invalid player name in leaderboards.\n- Fixed issue when sometimes grid in beatmap level editor was not shown.\n- Fixed bug causing losing audio and cover image files when saving project in beatmap level editor.","created_date":1590097645,"id":"3870629856344281","version":"1.10.0","version_code":106,"obb_binary":null,"asset_files":{"count":41},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRVqMKfl3yYciGw53Gdv-iI1gdmV32V8_Zjb_AlQ_QH28hQ8b4IfYiq3STY9_RbXLDP0I4oA8s5PLi7UaV5lkrYA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Fixed rare bug where submitted score was put in incorrect leaderboard.\n- Fixed selecting new songs from main menu.\n- Fixed issues when using Oculus Link.","created_date":1588173437,"id":"3783813311692603","version":"1.9.1","version_code":104,"obb_binary":null,"asset_files":{"count":41},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRhbVb9HG4Dr-XJhS6i0NihDyeorHbRqaS0USqHMAEJfEpMuLbiOTsj_mwCAXMlaWGZexSsC2qtVtQz7BL0WZYew"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Added FitBeat, our free new song.","created_date":1586285753,"id":"3707113366029265","version":"1.9.0","version_code":101,"obb_binary":null,"asset_files":{"count":41},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRmsxZMU1KoDSYzaGxiRL4ULzOij2UTwvxisAbAQg5799LARu-j0clmDRJcaYuC_CWORz3rCe3l4xuUkzJgCU10w"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Timbaland Music Pack is here! It comes with 5 new songs which are now available for purchase as additional content to the game.\n\nThis update also comes with:\n- Basic Rich Presence functionality (shows more info about the game being played in Friends list).\n- Mixed reality capture integration improvements.\n- Added trail intensity into Player Settings.\n- Fixed height measurement.\n- Better alignment of cubes with \"almost the same\" cut direction.\n- Various tweaks and fixes.","created_date":1585164863,"id":"3662720260468576","version":"1.8.0","version_code":98,"obb_binary":null,"asset_files":{"count":41},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR-Bn6TYtXBdju8U2bswyecwZwJlblF46Sg9dTnfDGC-8szP0Co0GLekRhd6MuOHFaPPA14v7MloB5rFl7EAmHWg"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Added 3 free new tracks by Camellia.\n- Grouped together all Camellia songs into one pack.\n- Added button to clear local leaderboards in Party mode.","created_date":1580238867,"id":"3476662335741037","version":"1.7.0","version_code":84,"obb_binary":null,"asset_files":{"count":36},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRIqKn0ZWBBV9jv-R8hDKo_e-essFChiaeVfh-7jWHdKAYHmzKNYHVHVn6m2yuCp_CK8HXBPJlE1kVoLuVRyHUVA"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Fixed saving player data after finishing level.","created_date":1578769187,"id":"3423931627680775","version":"1.6.3","version_code":79,"obb_binary":null,"asset_files":{"count":36},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRF1Z8lOP6AFnkXU65B-O9qbuk3VoKFYwjX3EoUO2jQ-HsZcoqMrGW9GIZsnT5Xv63JJInZzzR0eb_5s3V68B13g"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"- Fixed bug when some notes were spawned incorrectly in 360\/90 degree levels.\n- Tweaked settings for controller position and rotation offset.","created_date":1578597258,"id":"3417445391662732","version":"1.6.2","version_code":77,"obb_binary":null,"asset_files":{"count":36},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRz9ilxvlf_T7gjtK_G7OtDPn26_AnRK5ijGB0QPnjUhB4wNje5buOMds_TDdp97_qiuSA9DulkMH1QmIweZ1lzg"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"This is just a small hotfix addressing some issues we found in the game.\n\n- Improved automatic sound effects volume.\n- Fixed rotation of controllers in pause menu in 360\/90 degree levels.\n- Fixed wrong rotation of first notes in practice mode in 360\/90 degree levels.\n- Disabled chevron if static lights option is turned on in 360\/90 degree levels.\n- Improved performance across the gameplay.\n- Added better \"no favorites\" info to level selection.\n- Fixed double up note in Glide beatmaps.\n- Various tweaks and fixes.","created_date":1578338111,"id":"3407979209276017","version":"1.6.1","version_code":76,"obb_binary":null,"asset_files":{"count":36},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHR52CDufTxfWLa4LTZ06-951nt2Rb3RukRRh0nBN-trqm-KpAgf2-tKCgPSIeLr2lfSbp4mzY43dYeRro2jMy6Yw"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Green Day Music Pack is here! It features six of the band's most iconic hits & new singles. \n\nThis update also comes with:\n- Brand new 360 and 90 Degree Levels.\n- Adaptive SFX volume.\n- Automatic player height detection.\n- UI improvements.\n- Graphics improvements.\n- Various tweaks and fixes.","created_date":1576173743,"id":"3329287150478557","version":"1.6.0","version_code":75,"obb_binary":null,"asset_files":{"count":36},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHROpXcWwCs1cdYaW9rBGSS2kwZqskOd-_oMpiD3K_cNb40UmOjym_DCg1AuuLJSzHgNqto3bcPltSjTcrt22liRQ"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Rocket League x Monstercat Music Pack is here! It comes with 6 new songs which are now available for purchase as additional content to the game.","created_date":1572623189,"id":"3192489860824954","version":"1.5.0","version_code":71,"obb_binary":null,"asset_files":{"count":30},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRcHDISUHwEl7x9iDn2T0l4R85mL0_sZ6JGVdpUrBsLvqRgGcVrOi3JIQ8lk56es1iIQSlZllXAbPySw35KcTKtw"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"Fix DLC file for Feint - \"We Won't Be Alone (feat. Laura Brehm)\"","created_date":1570878339,"id":"3128643817209559","version":"1.4.3","version_code":68,"obb_binary":null,"asset_files":{"count":24},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"},{"node":{"__typename":"AndroidBinary","__isAppBinary":"AndroidBinary","binary_application":{"__typename":"Application","id":"2448060205267927","is_concept":false},"binary_release_channels":{"nodes":[{"channel_name":"LIVE","id":"703449633385683"}]},"change_log":"","created_date":1570707786,"id":"3122840281123246","version":"1.4.2","version_code":67,"obb_binary":null,"asset_files":{"count":24},"debug_symbols":{"count":0},"__isAppBinaryWithFileAsset":"AndroidBinary","binary_test_results":{"edges":[]}},"cursor":"AQHRwIeD0xLqLrqivr6rFXOfI8TSU2086BtCBELMKa8TnS1g_bPKWowrkalFA7vVydmGDO4RYt4T1Aw9YkvpN-T--g"}],"page_info":{"end_cursor":"AQHRX3d8fET-xkHQ3JyZyvVViI9xT8mi2ff_RWvC0ngJ0ua6dUUZG9Y4i9jIbUYLYxt5EtFQdDukdD4x3xjGjIE65g","has_next_page":true}},"subscribedCustomers":{"nodes":[]},"pendingCustomers":{"nodes":[]},"userlists":{"edges":[]},"description":"","is_internal":false,"is_public":false}},"errors":[{"message":"A GraphQL error field_exception occured. Check server logs for details.","severity":"ERROR","path":["node","application","organization","viewer_role"]}]}
+{
+    "data": {
+        "node": {
+            "__typename": "ReleaseChannel",
+            "application": {
+                "__typename": "Application",
+                "id": "2448060205267927",
+                "organization": {
+                    "viewer_role": null,
+                    "id": "1682979888680853"
+                },
+                "is_concept": false,
+                "primary_binaries": {
+                    "edges": [
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5612368968837019",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.2",
+                                "version_code": 218,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5612368968837019",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRcKZPrpP6Ex-7izqTE-l3vqAAdZ55zjutLC0VXqptogeAUccKyj5-Uz3cVURNlLqSz53WFoZ9QQ7JZW-oeBIQSw"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5606373649436551",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.2",
+                                "version_code": 217,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5606373649436551",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRlcV3I0R9eLFg899welOsb9BLof8fXT2M6V79TQ4B0m2nG21CCydcZwycf3t5O9s9WEYRckIZ7TAqwdsNSeINGA"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5572200776187172",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 216,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5572200776187172",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRcSptNHZWJuiHJp5osfw6DbCeINlVKT_35M0nlOKmdroTTE2OAczjF7009cAkq4NGHvtRTLrBbOUyj9bAr5G0OQ"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5571299309610652",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.1",
+                                "version_code": 215,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5571299309610652",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHR5Wn-RdAVlBgiHYxN9rzqH1xJ9mzkJMVi2CDek5b5R-4B5s1d6vYdOsipq7l1ODDmSFY5euutifcfMxRVu7gBoQ"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5562058760534707",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 214,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5562058760534707",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRCiAaY7KE8ioSunCv-919Ev-Rpxz4UilddOdWempgWspQa7WEpB9zBHZsb1A_iEcN3HJdLuP6ae3-4APNI5li8Q"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5561020843971832",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 213,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5561020843971832",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRjHr_aeMYXmpIkspQ62Y1I_PQ3Zd5NQcCx3G2OP4nJFx1SliqHgp53vO8nLOIKWA-u8uRrz6Gh_W0h1m3inNN2w"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5555998114474105",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 212,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5555998114474105",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRZvqn1aBjDcph3rCHY5AZytb28Tem9WAjGtVZ9p9Vd4Fx9PrxbapsCS0N_6fBc5RzxVfy6LQ1oQ8Zd2FD4Z8EYg"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5554933601247223",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 211,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5554933601247223",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 71
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRws6oGJJ-VbREQW4gXg0GM8NeHMK0Rog4tiEBd1dgIPIlWvHwFMsJ29cpAge6-_VujpX3pftxQNxOpDCm3cwxOA"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5541757815898135",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 210,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5541757815898135",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHREhJpyGIDMeV1GFL47dRJRNKs_LUinrINz6BYHjPmMyiWlqbOgOJWUGZVy08vqLKVjBUM7a96Slrwa32KouXJ4g"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5535777006496216",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 204,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5535777006496216",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRxmpYjOmmosjo0fvAyNEPpmHFKS7d9gCC1faJqqcYgxWOTRPlWDz8umTasuS7IkIPzFPxdgEjsxaQ0CzSg8NRcg"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5527707253969858",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 203,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5527707253969858",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHR_nuRTJx5hBzLfWdLiaXq69zmadNGO5RUPwtxGD6t3DoCqbKIHWk6mhGq5eBteVhA-ATG20UcioiiJegfGIs4mA"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5504962366244347",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 202,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5504962366244347",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRVLLtGSs3fALGzfRqGoZVhHbx5d8T1BXiXcUgWxTY_tz_bczdbtu2_HhGB-J0XW6FgXGreLH6A3c2HT8q1hN9RQ"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5499436820130235",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.16.0",
+                                "version_code": 201,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5499436820130235",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRMYxy1B5oR-EfZIV1KDHjaIhGukh2kwQS41eXjB1ShXyASVK4Z0GkxnQC8-AGePdEAmLDtKvGg4-wADLuwwJHDQ"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5469015993172318",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 200,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5469015993172318",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRLVlbHzLlZ4jr7buVq_ac_EgLGYKwtmJVUd97_A29pHvea4s3BF5Lh-DGfVInBpSCcTDwSXrO2WlkCH8xdAmnpw"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5401288156611769",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 199,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5401288156611769",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRrbc__Wdrcgz9gSIZ41ByqF_EuZZ6W6ixow0TczHMiZlFryE9pQfDov60VEqp_jioJ4VzvbqFUCIHvIxrmeMEQA"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5400690720004846",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 198,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5400690720004846",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRIKM2quz6N8k69Pax2RtBGsd3PfICVdHTCHquD6ev7rWXTznNwze1xMTWWFmuTP89veppMXCH6neK7aH7l5zaqw"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5368334923240426",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.14.0",
+                                "version_code": 197,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5368334923240426",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRmT7B5Oef90k99sTmsWIqP2xyPcqmly5YfAnSHEH9WYbc2qJ9j4MZwPlWM2RwhTzAO_RInm_t3Sg3YuqdzTMXOg"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5355492097858042",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 196,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5355492097858042",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRJA12h7lhaP2T_v6Jv5LrhsW6w19igim6YbilNZBEmJZ1SpCGlzZzqEo0Q-skKYbxIcYNELC-8IXzZcrxsg5N1A"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5347241778683074",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 195,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5347241778683074",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRHoJdCc7w58OQUVLP4zsVjRrUnXw8Wxgr4rCbwqw9kHjEYZkqCUl1fJQoLbZq1bPUjLfAqE_gAauOvKwdS25Y9A"
+                        },
+                        {
+                            "node": {
+                                "__typename": "AndroidBinary",
+                                "id": "5345640465509872",
+                                "platform": "ANDROID_6DOF",
+                                "version": "1.15.0",
+                                "version_code": 194,
+                                "uri": "https://securecdn.oculus.com/binaries/download/?id=5345640465509872",
+                                "__isAppBinary": "AndroidBinary",
+                                "binary_test_results": {
+                                    "edges": []
+                                },
+                                "obb_binary": null,
+                                "asset_files": {
+                                    "count": 64
+                                },
+                                "debug_symbols": {
+                                    "count": 0
+                                },
+                                "__isAppBinaryWithFileAsset": "AndroidBinary"
+                            },
+                            "cursor": "AQHRqhllBnvPtfljY9Hg13ndjaDwhoEgQqwkVhhnTs6KFxbvdifcU7VETuWN2ahrQtcsjXIBeeSA_YBCeuSGw0KS5Q"
+                        }
+                    ],
+                    "page_info": {
+                        "end_cursor": "AQHRtiFX1tVFlSLD8hiJis4FLcmMHW3pB0PYHaGtt-y2Uxqwg73-g3lt7uH6snEHUU8Rtd0eteqMcJrlWZqd6OoCVg",
+                        "has_next_page": true
+                    }
+                },
+                "platform": "ANDROID_6DOF"
+            },
+            "channel_name": "LIVE",
+            "id": "703449633385683",
+            "group": "PRIMARY",
+            "latest_supported_binary": {
+                "__typename": "AndroidBinary",
+                "id": "5612368968837019",
+                "version_code": 218,
+                "asset_files": {
+                    "count": 71
+                },
+                "obb_binary": null,
+                "__isAppBinaryWithFileAsset": "AndroidBinary",
+                "__isAppBinary": "AndroidBinary",
+                "version": "1.16.2",
+                "binary_application": {
+                    "__typename": "Application",
+                    "id": "2448060205267927",
+                    "display_name": "Beat Saber"
+                }
+            },
+            "binaries": {
+                "edges": [
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    },
+                                    {
+                                        "channel_name": "v1.16.2_test",
+                                        "id": "1470777173259417"
+                                    }
+                                ]
+                            },
+                            "change_log": "- New option to disable mirror effect.\n- Startup and scene transitions time optimizations.\n- Various small fixes and visual tweaks.",
+                            "created_date": 1622815916,
+                            "id": "5612368968837019",
+                            "version": "1.16.2",
+                            "version_code": 218,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 71
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRTOi0xZwGaojmeac8lfeuKiWifb83KLSlZ7zjbERuiT6xCnzTItYF63_phaROVRXgWccRBKJiAMnhak9HhdfXyw"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Improved startup times.\n- Performance tweaks.",
+                            "created_date": 1622109833,
+                            "id": "5571299309610652",
+                            "version": "1.16.1",
+                            "version_code": 215,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 71
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR6ULt-llu6XtIbCRSStSMO-Rw8Nch_CffJG-GtRazdFFXjQyCv5hwHgywK5vs0QbAyZLlQt6fqqCycW6NN48JnA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Interscope Mixtape is here! It comes with 7 new songs which are now available for purchase as additional content to the game.\n- Materials with lightmaps support in environments.\n- Mirror reflections on Quest.\n- Music loudness correction.\n- Visual tweaks and fixes.\n",
+                            "created_date": 1621938216,
+                            "id": "5561020843971832",
+                            "version": "1.16.0",
+                            "version_code": 213,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 71
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRGckhI7FhzZ82VOZlIILBgid8VIVaDgaYao11Fi46ObLHOurKTVOcpb-Y-58EFxEXpjB86dIAUIqalx8vO4aA4g"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Added support for Japanese, Korean, Spanish, French and German language.\n- Small visual tweaks and fixes.",
+                            "created_date": 1619192171,
+                            "id": "5401288156611769",
+                            "version": "1.15.0",
+                            "version_code": 199,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRlqh4FajbaR0ZZKmnKAzU39n7kUneMn3sEl8Qj5-P-P84pnxnhLberkHDIKfqzY0t2hk66HltN2UQN6b4yyOcuA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": " - Original Soundtrack Vol. 4 with 4 free new songs.\n - Performance tweaks.",
+                            "created_date": 1615918877,
+                            "id": "5211037672303486",
+                            "version": "1.14.0",
+                            "version_code": 184,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRXNJBSPORQkii_3Lv9I1CGiJF7LGR3zIvl6EHp7zBJ-dLmD90RZqLetrl6WzUT_XdWW8hg3XkoiRwR6gajZdnCg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Adjusted avatar’s hand movement limits in multiplayer result screen.",
+                            "created_date": 1615456273,
+                            "id": "5187860121287908",
+                            "version": "1.13.5",
+                            "version_code": 178,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRljNMHAnoYy-UcJ_scUKg9ZL1iuLYFyGqEPF-9WzKkGyFGYfMsC7pCLXm-DVSg-tD5ACKzlKTIGnn-dPdw9AVQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- New multiplayer results screen\n- New badges after playing a multiplayer match\n- New gameplay modifiers\n- New main menu UI and music\n- Custom colors for other players in multiplayer\n- Updated lighting system\n- Fixed color profiles\n- Added Dash support\n- Various tweaks and fixes\n",
+                            "created_date": 1614926225,
+                            "id": "5162268633847057",
+                            "version": "1.13.4",
+                            "version_code": 175,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR1sXBNQo7MC1Jl9RFN5WEamP1_tfEz_Zor6hg5KF9mnqS_-Uj5Ll25yDSEsBIP8MwoUdk7PkoBTeTLXULqRXfag"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Changed No Fail modifier to apply 0.5x multiplier only after you deplete all the energy.\n- Added toggle to enable Joinable Oculus Rich Presence in multiplayer (allows other users to launch the game directly onto your private server).\n- Added Oculus Group launch (allows you to launch directly into multiplayer with your friends from Oculus party).\n- 90hz on Quest 2\n- Obstacles are now visible also for other players in multiplayer.\n- Brought back Player Statistics (including Online stats) into Help/How to Play screen.\n- Fixed fireworks in Results screen\n- Fixed player height detector to correctly calculate player height in game.\n- Visual tweaks and other small fixes.",
+                            "created_date": 1611022692,
+                            "id": "4954569241283665",
+                            "version": "1.13.2",
+                            "version_code": 157,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRJESkc9l0az3h9LWb3mOHtI_M7h58IDZSI1KzsQx0xOfQWse6wuuvpiv3et267p2In3n1wYxuuxGRCXSeiLAqUA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "BTS Music Pack is here! It comes with 12 new songs which are now available for purchase as additional content to the game.\n",
+                            "created_date": 1605032348,
+                            "id": "4659468397460419",
+                            "version": "1.13.0",
+                            "version_code": 147,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 64
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRCIpSTmUgqx93ofyChGkDTiCYC-5gexN7eeTRvHf5FBoZni6AjHo974tzpqIQvLH4m3zRN1D_0fONxPk8tzVzBQ"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Fixed an issue with room settings which caused notes to rotate incorrectly and walls to incorrectly collide with the player.\n- Set max speed in Practice mode back to 200%.\n- Fixed an issue with the rotation settings for the right saber.\n- Fixed an issue when the game would not launch correctly from Oculus Destinations (challenges and leaderboards).\n- Fixed some text issues in Campaign screen.\n- Fixed some rare issues in the Multiplayer lobby related to the UI disappearing and the Ready button not responding.",
+                            "created_date": 1603055167,
+                            "id": "4559541844119742",
+                            "version": "1.12.2",
+                            "version_code": 131,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 52
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR2qa7wa7o5AjoeroLiiCj1LNx7cHGc-hrZUp9M7f_AYJtXZqRkiGr_AcDJejiVk5mD1RapVPt75jFgLsS6vs3VQ"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Added Online multiplayer mode (Quick play or Private server).\n- New arena-like environment specially crafted for use in multiplayer.\n- Avatars with customization available in multiplayer.\n- Menu visual overhaul with curved screen design.\n- Added adjustable Note Jump Offset into Player Options.\n- Added Adaptive SFX into Player Options.\n- Added Hide note spawning effect into Player options.\n- New lights.\n- Arrow displaying directions from which notes are coming from in 360/90 degree levels is now replaced with multiple arrows that may display multiple active directions at the same time.\n- Player statistics pane temporarily removed.\n- Various fixes and tweaks.",
+                            "created_date": 1602265859,
+                            "id": "4518179181589342",
+                            "version": "1.12.1",
+                            "version_code": 125,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 52
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRRhkfV2cFCd3_ZdJ8RbTtWylXe3Im5yLwDPgZshQ6uAoJEEa5nGrvfAuUmCwUu7Ujue5-qmHoodXPJbwLdtL9qw"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "-Fixed colors in Linkin Park environment.\n-Updated Linkin Park cover art.",
+                            "created_date": 1597771764,
+                            "id": "4255167467890516",
+                            "version": "1.11.1",
+                            "version_code": 116,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 52
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR9JdUAwoAVC7ZWU0VWPsg6DYT4Mikj5YEePuzYS_4fLcEV8n66uU-vQN3pvChzVaCdn_lNeVPf6cXut09vTAYmQ"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Linkin Park Music Pack is here! It comes with 11 new songs which are now available for purchase as additional content to the game.",
+                            "created_date": 1597249259,
+                            "id": "4225778460829417",
+                            "version": "1.11.0",
+                            "version_code": 114,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 52
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRUTVNztS4brxvFXMO-FjxEFFTI0f7TT6gySyG185Y8ZsWXvFVNTpwvevDMmAmnvakq9wmjQWC9kMhWwcrLj8OiA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Added 10 new 360/90 degree beatmaps and 26 new One Saber beatmaps.\n- Fixed controller's button mapping caused by incorrectly detected Oculus Rift device.\n- Fixed displaying invalid player name in leaderboards.\n- Fixed issue when sometimes grid in beatmap level editor was not shown.\n- Fixed bug causing losing audio and cover image files when saving project in beatmap level editor.",
+                            "created_date": 1590097645,
+                            "id": "3870629856344281",
+                            "version": "1.10.0",
+                            "version_code": 106,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 41
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRVqMKfl3yYciGw53Gdv-iI1gdmV32V8_Zjb_AlQ_QH28hQ8b4IfYiq3STY9_RbXLDP0I4oA8s5PLi7UaV5lkrYA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Fixed rare bug where submitted score was put in incorrect leaderboard.\n- Fixed selecting new songs from main menu.\n- Fixed issues when using Oculus Link.",
+                            "created_date": 1588173437,
+                            "id": "3783813311692603",
+                            "version": "1.9.1",
+                            "version_code": 104,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 41
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRhbVb9HG4Dr-XJhS6i0NihDyeorHbRqaS0USqHMAEJfEpMuLbiOTsj_mwCAXMlaWGZexSsC2qtVtQz7BL0WZYew"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Added FitBeat, our free new song.",
+                            "created_date": 1586285753,
+                            "id": "3707113366029265",
+                            "version": "1.9.0",
+                            "version_code": 101,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 41
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRmsxZMU1KoDSYzaGxiRL4ULzOij2UTwvxisAbAQg5799LARu-j0clmDRJcaYuC_CWORz3rCe3l4xuUkzJgCU10w"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Timbaland Music Pack is here! It comes with 5 new songs which are now available for purchase as additional content to the game.\n\nThis update also comes with:\n- Basic Rich Presence functionality (shows more info about the game being played in Friends list).\n- Mixed reality capture integration improvements.\n- Added trail intensity into Player Settings.\n- Fixed height measurement.\n- Better alignment of cubes with \"almost the same\" cut direction.\n- Various tweaks and fixes.",
+                            "created_date": 1585164863,
+                            "id": "3662720260468576",
+                            "version": "1.8.0",
+                            "version_code": 98,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 41
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR-Bn6TYtXBdju8U2bswyecwZwJlblF46Sg9dTnfDGC-8szP0Co0GLekRhd6MuOHFaPPA14v7MloB5rFl7EAmHWg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Added 3 free new tracks by Camellia.\n- Grouped together all Camellia songs into one pack.\n- Added button to clear local leaderboards in Party mode.",
+                            "created_date": 1580238867,
+                            "id": "3476662335741037",
+                            "version": "1.7.0",
+                            "version_code": 84,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 36
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRIqKn0ZWBBV9jv-R8hDKo_e-essFChiaeVfh-7jWHdKAYHmzKNYHVHVn6m2yuCp_CK8HXBPJlE1kVoLuVRyHUVA"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Fixed saving player data after finishing level.",
+                            "created_date": 1578769187,
+                            "id": "3423931627680775",
+                            "version": "1.6.3",
+                            "version_code": 79,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 36
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRF1Z8lOP6AFnkXU65B-O9qbuk3VoKFYwjX3EoUO2jQ-HsZcoqMrGW9GIZsnT5Xv63JJInZzzR0eb_5s3V68B13g"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "- Fixed bug when some notes were spawned incorrectly in 360/90 degree levels.\n- Tweaked settings for controller position and rotation offset.",
+                            "created_date": 1578597258,
+                            "id": "3417445391662732",
+                            "version": "1.6.2",
+                            "version_code": 77,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 36
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRz9ilxvlf_T7gjtK_G7OtDPn26_AnRK5ijGB0QPnjUhB4wNje5buOMds_TDdp97_qiuSA9DulkMH1QmIweZ1lzg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "This is just a small hotfix addressing some issues we found in the game.\n\n- Improved automatic sound effects volume.\n- Fixed rotation of controllers in pause menu in 360/90 degree levels.\n- Fixed wrong rotation of first notes in practice mode in 360/90 degree levels.\n- Disabled chevron if static lights option is turned on in 360/90 degree levels.\n- Improved performance across the gameplay.\n- Added better \"no favorites\" info to level selection.\n- Fixed double up note in Glide beatmaps.\n- Various tweaks and fixes.",
+                            "created_date": 1578338111,
+                            "id": "3407979209276017",
+                            "version": "1.6.1",
+                            "version_code": 76,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 36
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHR52CDufTxfWLa4LTZ06-951nt2Rb3RukRRh0nBN-trqm-KpAgf2-tKCgPSIeLr2lfSbp4mzY43dYeRro2jMy6Yw"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Green Day Music Pack is here! It features six of the band's most iconic hits & new singles. \n\nThis update also comes with:\n- Brand new 360 and 90 Degree Levels.\n- Adaptive SFX volume.\n- Automatic player height detection.\n- UI improvements.\n- Graphics improvements.\n- Various tweaks and fixes.",
+                            "created_date": 1576173743,
+                            "id": "3329287150478557",
+                            "version": "1.6.0",
+                            "version_code": 75,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 36
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHROpXcWwCs1cdYaW9rBGSS2kwZqskOd-_oMpiD3K_cNb40UmOjym_DCg1AuuLJSzHgNqto3bcPltSjTcrt22liRQ"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Rocket League x Monstercat Music Pack is here! It comes with 6 new songs which are now available for purchase as additional content to the game.",
+                            "created_date": 1572623189,
+                            "id": "3192489860824954",
+                            "version": "1.5.0",
+                            "version_code": 71,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 30
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRcHDISUHwEl7x9iDn2T0l4R85mL0_sZ6JGVdpUrBsLvqRgGcVrOi3JIQ8lk56es1iIQSlZllXAbPySw35KcTKtw"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "Fix DLC file for Feint - \"We Won't Be Alone (feat. Laura Brehm)\"",
+                            "created_date": 1570878339,
+                            "id": "3128643817209559",
+                            "version": "1.4.3",
+                            "version_code": 68,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 24
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1570226022,
+                            "id": "3106430746097533",
+                            "version": "1.4.1",
+                            "version_code": 65
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1570188835,
+                            "id": "3105039456236662",
+                            "version": "1.4.0",
+                            "version_code": 64
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1568385463,
+                            "id": "3046097678797507",
+                            "version": "1.3.0p2",
+                            "version_code": 58
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1567208014,
+                            "id": "3009200905820518",
+                            "version": "1.3.0p1",
+                            "version_code": 54
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1567003296,
+                            "id": "3002914536449155",
+                            "version": "1.3.0",
+                            "version_code": 52
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1564066380,
+                            "id": "2911106545629955",
+                            "version": "1.2.0",
+                            "version_code": 47
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1559778811,
+                            "id": "2777944918946119",
+                            "version": "1.1.0",
+                            "version_code": 45
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1559734601,
+                            "id": "2776427622431182",
+                            "version": "1.0.2",
+                            "version_code": 44
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1558993661,
+                            "id": "2754844901256121",
+                            "version": "1.0.1",
+                            "version_code": 37
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "N/A",
+                            "created_date": 1558993661,
+                            "id": "2727942383946373",
+                            "version": "1.0.0",
+                            "version_code": 33
+                        },
+                        "cursor": "AQHRQ7X3UTeDid6Cnbre_hna9Ugy6pMyhXTWzw9bfuawhYH9EfwKBE2uFIV1aHsFigiY__zfXfanLw2-Cv_Bt1MnQg"
+                    },
+                    {
+                        "node": {
+                            "__typename": "AndroidBinary",
+                            "__isAppBinary": "AndroidBinary",
+                            "binary_application": {
+                                "__typename": "Application",
+                                "id": "2448060205267927",
+                                "is_concept": false
+                            },
+                            "binary_release_channels": {
+                                "nodes": [
+                                    {
+                                        "channel_name": "LIVE",
+                                        "id": "703449633385683"
+                                    }
+                                ]
+                            },
+                            "change_log": "",
+                            "created_date": 1570707786,
+                            "id": "3122840281123246",
+                            "version": "1.4.2",
+                            "version_code": 67,
+                            "obb_binary": null,
+                            "asset_files": {
+                                "count": 24
+                            },
+                            "debug_symbols": {
+                                "count": 0
+                            },
+                            "__isAppBinaryWithFileAsset": "AndroidBinary",
+                            "binary_test_results": {
+                                "edges": []
+                            }
+                        },
+                        "cursor": "AQHRwIeD0xLqLrqivr6rFXOfI8TSU2086BtCBELMKa8TnS1g_bPKWowrkalFA7vVydmGDO4RYt4T1Aw9YkvpN-T--g"
+                    }
+                ],
+                "page_info": {
+                    "end_cursor": "AQHRX3d8fET-xkHQ3JyZyvVViI9xT8mi2ff_RWvC0ngJ0ua6dUUZG9Y4i9jIbUYLYxt5EtFQdDukdD4x3xjGjIE65g",
+                    "has_next_page": true
+                }
+            },
+            "subscribedCustomers": {
+                "nodes": []
+            },
+            "pendingCustomers": {
+                "nodes": []
+            },
+            "userlists": {
+                "edges": []
+            },
+            "description": "",
+            "is_internal": false,
+            "is_public": false
+        }
+    },
+    "errors": [
+        {
+            "message": "A GraphQL error field_exception occured. Check server logs for details.",
+            "severity": "ERROR",
+            "path": [
+                "node",
+                "application",
+                "organization",
+                "viewer_role"
+            ]
+        }
+    ]
+}
