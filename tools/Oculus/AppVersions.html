@@ -100,7 +100,7 @@
                 </div>
                 <br/>
                 <div style="text-align: center; font-size: 11px; color: #888;">
-                    API requests found by Lillie. Page by ComputerElite
+                    API found by nyamimi, requests found by Lillie, page by ComputerElite
                 </div>
             </div>
         </div>
@@ -225,6 +225,7 @@
 
             var versions = []
             var finished = 0
+            var required = 2;
 
             function SearchVersions(id) {
                 document.getElementById("notesContainer").innerHTML = "";
@@ -234,17 +235,35 @@
                 document.getElementById("versions").innerHTML = loader
                 versions = []
                 finished = 0
-                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
-                    document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.displayName}`
-                    res.data.node.supportedBinaries.edges.forEach(element => {
-                        versions.push({
-                            version: element.node.version,
-                            changelog: element.node.changeLog,
-                            id: element.node.id,
-                            code: element.node.versionCode
-                        })
+                required = 2
+                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"applicationID":"${id}"}&doc_id=3828663700542720`).then((res) => {
+                    required = 2 + res.data.node.release_channels.nodes.length
+                    res.data.node.release_channels.nodes.forEach(channel => {
+
+                        var channelname = channel.channel_name
+                        console.log("adding releases in " + channelname)
+                        PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"releaseChannelID":"${channel.id}"}&doc_id=3973666182694273`).then((res) => {
+                            document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.latest_supported_binary.binary_application.display_name}`
+                            res.data.node.binaries.edges.forEach(element => {
+                                var contained = false;
+                                versions.forEach(e => {
+                                    if(e.id == element.node.id) {
+                                        contained = true;
+                                    }
+                                })
+                                if(!contained) {
+                                    versions.push({
+                                        version: element.node.version,
+                                        changelog: element.node.change_log,
+                                        id: element.node.id,
+                                        code: element.node.version_code,
+                                        channelname: channelname
+                                    })
+                                }
+                            })
+                        });
+                        UpdateVersions()
                     })
-                    UpdateVersions()
                     
 
                     //////CACHE
@@ -252,7 +271,7 @@
                         if(res.includes(id)) {
                             console.log("Requesting cached data for " + id)
                             MakeJSONGetRequestAsync(`OlderAppVersions/${id}.json`).then(res => {
-                                res.data.node.supportedBinaries.edges.forEach(element => {
+                                res.data.node.binaries.edges.forEach(element => {
                                     var contained = false;
                                     versions.forEach(e => {
                                         if(e.id == element.node.id) {
@@ -262,14 +281,14 @@
                                     if(!contained) {
                                         versions.push({
                                             version: element.node.version,
-                                            changelog: element.node.changeLog,
+                                            changelog: element.node.change_log,
                                             id: element.node.id,
-                                            code: element.node.versionCode
+                                            code: element.node.version_code,
+                                            channelname: "From cache"
                                         })
                                     }
                                 })
                                 UpdateVersions()
-                                console.log("Requested cache for " + id)
                             })
                         } else {
                             UpdateVersions()
@@ -277,6 +296,7 @@
                     }).catch(err => UpdateVersions())
 
                     //////BETA
+                    console.log("Adding betas (if checked)")
                     if(document.getElementById("beta").checked) {
                         PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
                             res.data.node.release_channels.nodes.forEach(element => {
@@ -336,10 +356,11 @@
                 return outp
             }
 
-            function UpdateVersions() {
-                finished++
+            function UpdateVersions(add = true) {
+                if(add) finished++
+                console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
-                document.getElementById("versions").innerHTML = finished != 3 ? loader : ""
+                document.getElementById("versions").innerHTML = finished != required ? loader : ""
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e)
                 })
@@ -381,7 +402,7 @@
 
             function GetFormatted(element) {
                 return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
-                            <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}')">${element.version}</div>
+                            <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>release channel: ${element.channelname}')">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
                         </a>
