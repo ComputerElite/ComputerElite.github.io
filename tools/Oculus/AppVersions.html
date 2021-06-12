@@ -261,39 +261,47 @@
                                     })
                                 }
                             })
+                            UpdateVersions()
                         });
-                        UpdateVersions()
+                        
                     })
                     
 
-                    //////CACHE
-                    MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
-                        if(res.includes(id)) {
-                            console.log("Requesting cached data for " + id)
-                            MakeJSONGetRequestAsync(`OlderAppVersions/${id}.json`).then(res => {
-                                res.data.node.binaries.edges.forEach(element => {
-                                    var contained = false;
-                                    versions.forEach(e => {
-                                        if(e.id == element.node.id) {
-                                            contained = true;
-                                        }
-                                    })
-                                    if(!contained) {
-                                        versions.push({
-                                            version: element.node.version,
-                                            changelog: element.node.change_log,
-                                            id: element.node.id,
-                                            code: element.node.version_code,
-                                            channelname: "From cache"
+                    var loop = setInterval(() => {
+                        //////CACHE
+                        if(finished == required - 1) {
+                            MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
+                                if(res.includes(id)) {
+                                    console.log("Requesting cached data for " + id)
+                                    MakeJSONGetRequestAsync(`OlderAppVersions/${id}.json`).then(res => {
+                                        res.data.node.binaries.edges.forEach(element => {
+                                            var contained = false;
+                                            versions.forEach(e => {
+                                                if(e.id == element.node.id) {
+                                                    contained = true;
+                                                }
+                                            })
+                                            if(!contained) {
+                                                versions.push({
+                                                    version: element.node.version,
+                                                    changelog: element.node.change_log,
+                                                    id: element.node.id,
+                                                    code: element.node.version_code,
+                                                    channelname: "From cache"
+                                                })
+                                            }
                                         })
-                                    }
-                                })
-                                UpdateVersions()
-                            })
+                                        UpdateVersions()
+                                    })
+                                } else {
+                                    UpdateVersions()
+                                }
+                            }).catch(err => UpdateVersions())
+                            clearInterval(loop)
                         } else {
-                            UpdateVersions()
+                            console.log("Delaying cache request until remaining completed")
                         }
-                    }).catch(err => UpdateVersions())
+                    }, 10)
 
                     //////BETA
                     console.log("Adding betas (if checked)")
