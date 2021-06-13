@@ -45,7 +45,7 @@
                             <td>
                                 <select id="headset">
                                 <option value="MONTEREY">Quest</option>
-                                <option value="RIFT">Rift (downloads not working)</option>
+                                <option value="RIFT">Rift (downloads working via seperate program)</option>
                             </select>
                         </td>
                     </tr>
@@ -63,6 +63,14 @@
                 </table>
                 <div id="notesContainer" style="margin-bottom: 50px;">
 
+                </div>
+                <div id="progress" style="visibility: visible; width: 100%;">
+                    Rift download progress
+                    <div style="background-color: #888; width: 100%;">
+                        <div id="progressBar" style="background-color: #00ff22; width: 50%; height: 10px;">
+                        </div>
+                    </div>
+                    <div id="file">Downloading testfile.test (0.0MB)</div>
                 </div>
                 <div id="resultContainer">
                     <div style="display: flex; flex-wrap: wrap;">
@@ -105,8 +113,11 @@
             </div>
         </div>
         <script src="../../js/standard.js"></script>
+        <script src="../../js/jszip.js"></script>
         <script>
             var menu = document.getElementById("contextMenu")
+            var progressBar = document.getElementById("progressBar")
+            var progressText = document.getElementById("file")
             var tooltip = document.getElementById("tooltip")
             var showingVersions = false
             var showedid = ""
@@ -228,6 +239,7 @@
             var required = 2;
 
             function SearchVersions(id) {
+                var headset = document.getElementById("headset").value
                 document.getElementById("notesContainer").innerHTML = "";
                 showedid = id
                 showingVersions = true;
@@ -246,6 +258,7 @@
                             document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.latest_supported_binary.binary_application.display_name}`
                             res.data.node.binaries.edges.forEach(element => {
                                 var contained = false;
+                                if(element.node.__typename == "PCBinary") headset = "RIFT"
                                 versions.forEach(e => {
                                     if(e.id == element.node.id) {
                                         contained = true;
@@ -261,7 +274,7 @@
                                     })
                                 }
                             })
-                            UpdateVersions()
+                            UpdateVersions(true, headset)
                         });
                         
                     })
@@ -291,12 +304,12 @@
                                                 })
                                             }
                                         })
-                                        UpdateVersions()
+                                        UpdateVersions(true, headset)
                                     })
                                 } else {
-                                    UpdateVersions()
+                                    UpdateVersions(true, headset)
                                 }
-                            }).catch(err => UpdateVersions())
+                            }).catch(err => UpdateVersions(true, headset))
                             clearInterval(loop)
                         } else {
                             console.log("Delaying cache request until remaining completed")
@@ -323,10 +336,10 @@
                                     })
                                 }
                             })
-                            UpdateVersions()
-                        }).catch(err => UpdateVersions())
+                            UpdateVersions(true, headset)
+                        }).catch(err => UpdateVersions(true, headset))
                     } else {
-                        UpdateVersions()
+                        UpdateVersions(true, headset)
                     }
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
@@ -364,52 +377,49 @@
                 return outp
             }
 
-            function UpdateVersions(add = true) {
+            function UpdateVersions(add = true, HeadsetName) {
                 if(add) finished++
                 console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
                 document.getElementById("versions").innerHTML = finished != required ? loader : ""
                 versions.forEach(e => {
-                    document.getElementById("versions").innerHTML += GetFormatted(e)
+                    document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
                 if(document.getElementById("versions").innerHTML == "") {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
                 }
             }
 
-            function DownloadAPK(id) {
-                var link = GetDownloadLink(id)
-                window.open(link, "_blank")
-                /* Only available for plugins apparently
-                browser.downloads.download({
-                    url: link
-                }).then(res => {
-                    console.log(res)
+            function DownloadBytes(url) {
+                return new Promise((resolve, reject) => {
+                    var request = new XMLHttpRequest();
+                    request.open('GET', url, false);
+                    request.onreadystatechange = (e) => {
+                        console.log(request.readyState)
+                        if(request.readyState === XMLHttpRequest.DONE) {
+                            if (request.status == 200) {
+                                resolve(request.response);
+                            } else {
+                                reject("Something went wrong: " + request.status);
+                            }
+                        }
+                    }
+                    request.send(null);
                 })
-                */
-                /* Header on oculus side not set
-                var link = GetDownloadLink(id)
-                var xhr = new XMLHttpRequest();
-                xhr.open("HEAD", link, true);
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == this.DONE) {
-                        //Success
-                        window.open(link, "_blank")
-                    }
-                };
-                xhr.onerror = (err) => {
-                    if(confirm("Unable to start download. Are you logged in on Oculus.com and own the game? If you think this detection is wrong press cancle")) {
-                        window.open("https://oculus.com", "_blank")
-                    } else {
-                        window.open(link, "_blank")
-                    }
-                }
-                xhr.send();
-                */
             }
 
-            function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="DownloadAPK(${element.id})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
+            function Download(id, isRift) {
+                var link = GetDownloadLink(id)
+                if(isRift) {
+                    alert("Please download the rift downgrader to downgrade rift apps. I'll redirect you after this message has been closed.")
+                    window.open("https://github.com/ComputerElite/Rift-downgrader/releases/latest", "_blank")
+                } else {
+                    window.open(link, "_blank")
+                }
+            }
+
+            function GetFormatted(element, isRift) {
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="Download(${element.id}, ${isRift})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>release channel: ${element.channelname}')">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
