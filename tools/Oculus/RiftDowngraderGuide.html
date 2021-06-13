@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Guide to obtain your Oculus Token</title>
+        <title>Rift downgrader guide</title>
         <meta property="og:site_name" content="ComputerElite">
-        <meta property="og:title" content="Guide to obtain your Oculus Token" />
+        <meta property="og:title" content="Rift downgrader guide" />
         <meta property="og:description" content="For Rift downgrader and other applications" />
-        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/ObtainToken.html" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/RiftDowngraderGuide.html" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
@@ -38,45 +38,37 @@
             <div style="flex: 1; flex-grow: 0; text-align: center;">
                 <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;">
                     <div style=" padding: 10px;">
-                        <div style="font-size: 24px;">Guide to obtain your Oculus Token</div>
-                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Rift-downgrader/">Rift downgrader</a> and other applications</div>
+                        <div style="font-size: 24px;">Guide for Rift downgrader</div>
+                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Rift-downgrader/">Rift downgrader</a></div>
                     </div>
                     <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Info: Is this tool piracy?</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
                         No. You're downloading from Oculus servers and those check that you own the game
                     </div>
-                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Important</div>
+                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Important info about tokens</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
-                        Your token is something private. Everyone who has it can download apps, send messages, ... with your name.
+                        Your token is something private. Anyone who has it can download apps, send messages, ... with your name.
                         <br/>But then the question comes why do I give it Rift downgrader? Rift downgrader needs to authenticate the download with oculus so it needs your token. After you entered the token it gets stored locally on your PC and ONLY shared with an official tool by Oculus to download rift apps.
                     </div>
-                    <div class="header">Step 1: Sign in</div>
+                    <div class="header">Download the tool</div>
                     <div class="step">
-                        Open <a href="https://oculus.com">oculus.com</a> and sign into your Oculus/Facebook account.
+                        You can download the latest release from <a href="https://github.com/ComputerElite/Rift-downgrader/releases/latest">here</a>. Download the zip, extract it and run the program.
                     </div>
-                    <div class="header">Step 2: Open developer tools</div>
+                    <div class="header">Downgrade Beat Saber</div>
                     <div class="step">
-                        On <a href="https://oculus.com">oculus.com</a> hit ctrl + shift + i and go to the network tab (1, 2)
+                        In the menu choose option 1. Then type in the version you want and hit enter. Hit enter again to confirm the version you choose. You may get a message saying that an access_token is needed. Follow the guide <a href="ObtainToken.html">here</a> to obtain it. and the download should now start.
                     </div>
-                    <div class="image">
-                        <img src="Steps/Step2.png" width="100%">
-                    </div>
-                    <div class="header">Step 3: Reload the page and filter for graphql</div>
+                    <div class="header">Downgrade any other game</div>
                     <div class="step">
-                        Reload the page next to your address bar (1).<br/>
-                        Then in the network tab type <code>graphql</code> into the filter box (2).
+                        In the menu choose option 2. Then type in the app you want do downgrade (you may need to type the full name if you didn't already) and hit enter. Type in the version you want and hit enter. Hit enter again to confirm the version you choose. You may get a message saying that an access_token is needed. Follow the guide <a href="ObtainToken.html">here</a> to obtain it. The download should now start.
                     </div>
-                    <div class="image">
-                        <img src="Steps/Step3.png" width="100%">
-                    </div>
-                    <div class="header">Step 4: Copy the access_token</div>
+                    <div class="header">Launch your downgraded games</div>
                     <div class="step">
-                        Rnext click the last request (1) and open the headers tab (2). Then scroll down and search for a label named <code>access_token</code>. Copy the text after that (3).
-                        <br/>
-                        You can then paste this token with ctrl + v into the Rift downgrader.
+                        In the menu choose option 3. You can then type in the game you want and cofirm with enter. After that type the version you want to launch and your game should start.
                     </div>
-                    <div class="image">
-                        <img src="Steps/Step4.png" width="100%">
+                    <div class="header">Update your access_token</div>
+                    <div class="step">
+                        In the menu choose option 4 and follow the provided steps.
                     </div>
                 </div>
                 
