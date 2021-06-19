@@ -6,7 +6,6 @@
     </head>
     <body>
         Yeah so it load Something
-        <script src="../js/standard.js"></script>
         <script>
             var url = new URL(window.location.href);
             var uri = url.searchParams.get("uri");
@@ -24,6 +23,7 @@
                 console.log("replacing with " + replacement)
                 html = html.replace(match[0], replacement)
             }
+
             const scriptReg = /<script( src=".+?")?>.*?<\/script>/gs
             const headStart = html.indexOf("<head>") + 6
             var scripts = []
@@ -32,6 +32,8 @@
                 scripts.push(match[0]);
                 console.log("moved script " + match[0] + " into head")
             }
+
+            
 
             document.documentElement.innerHTML = html
             const srcRegex = /src=".+?"/gs
@@ -56,6 +58,21 @@
                     absolute += "/" + relativeUri
                 }
                 return absolute
+            }
+
+            function InsertString(toInsert, position, text) {
+                return [text.slice(0, position), toInsert, text.slice(position)].join('')
+            }
+
+            function MakeTextGetRequest(url) {
+                var request = new XMLHttpRequest();
+                request.open('GET', url, false);
+                request.send(null);
+                if (request.status == 200) {
+                    return request.responseText;
+                } else {
+                    return "Something went wrong: " + request.status;
+                }
             }
         </script>
     </body>
