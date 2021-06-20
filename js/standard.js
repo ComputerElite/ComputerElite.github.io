@@ -110,3 +110,12 @@ function compareVersions(v1, comparator, v2) {
     }
     return eval('0' + comparator + cmp);
 }
+
+function AddZeroToNumber(number, length = 2) {
+    return ('000000000000000000' + number).slice(-length)
+}
+
+function UnixToDataAndTime(timestamp) {
+    var date = new Date(timestamp * 1000);
+    return AddZeroToNumber(date.getDate()) + "." + AddZeroToNumber(date.getMonth()) + "." + AddZeroToNumber(date.getFullYear(), 4) + " " + AddZeroToNumber(date.getHours()) + ":" + AddZeroToNumber(date.getMinutes()) + ":" + AddZeroToNumber(date.getSeconds())
+}

@@ -264,7 +264,8 @@
                                         changelog: element.node.change_log,
                                         id: element.node.id,
                                         code: element.node.version_code,
-                                        channelname: channelname
+                                        channelname: channelname,
+                                        createdate: element.node.created_date
                                     })
                                 }
                             })
@@ -294,7 +295,8 @@
                                                     changelog: element.node.change_log,
                                                     id: element.node.id,
                                                     code: element.node.version_code,
-                                                    channelname: "From cache"
+                                                    channelname: "From cache",
+                                                    createdate: element.node.created_date
                                                 })
                                             }
                                         })
@@ -414,7 +416,7 @@
 
             function GetFormatted(element, isRift) {
                 return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="Download(${element.id}, ${isRift})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
-                            <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>release channel: ${element.channelname}')">${element.version}</div>
+                            <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>release channel: ${element.channelname}<br/>upload date: ${element.createdate ? UnixToDataAndTime(element.createdate) : "N/A"}')">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
                         </a>
