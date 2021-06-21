@@ -43,11 +43,15 @@
             <div>All items</div>
             <div id="itemContainer">fetching</div>
         </div>
+        <div id="bodyItemContainer">
+
+        </div>
         
         <script src="../../../js/standard.js"></script>
         <script>
             //<script src="../pulling.js"><///script>
             const itemContainer = document.getElementById("itemContainer")
+            const sidebar = document.getElementById("itemSidebar")
             var parts = [];
 
             var fetched = 0;
@@ -88,6 +92,8 @@
                 console.log(lastX + ", " + lastY)
                 console.log("setting drag of " + element.id + " to 1")
                 element.setAttribute("drag", "1")
+                var inSidebar = IsElementOutOfSidebar(parent)
+                parent.setAttribute("inSidebar", inSidebar ? "1" : "0")
             }
 
             function GetEventSrc(e) {
@@ -103,11 +109,51 @@
             function MoveElement(e) {
                 var parent = GetEventSrc(e)
                 if(parent.getAttribute("drag") != 1) return
+                console.log(e.offsetX + ", " + e.offsetY)
+                console.log(parent.style.left + ", " + parent.style.top)
+                parent.style.left = parseInt((parent.style.left.replace("px", "") || 0)) + e.offsetX - 20 + "px"
+                parent.style.top = parseInt((parent.style.top.replace("px", "") || 0)) + e.offsetY - 20 + "px"
+                console.log(parent.style.left + ", " + parent.style.top)
+                var inSidebar = IsElementInOfSidebar(parent)
+                if(inSidebar && parent.getAttribute("inSidebar") == 0) {
+                    parent.style.left = "0px"
+                    parent.style.top = "0px"
+                    MoveElementIntoOtherDiv(parent, "itemContainer")
+                } else if (!inSidebar && parent.getAttribute("inSidebar") == 1) {
+                    parent.style.left = "0px"
+                    parent.style.top = "0px"
+                    MoveElementIntoOtherDiv(parent, "bodyItemContainer")
+                }
+                parent.setAttribute("inSidebar", inSidebar ? "1" : "0")
+            }
+
+            function MoveElementIntoOtherDiv(element, destinationDiv) {
+                var dest = document.getElementById(destinationDiv)
+                element.parentNode.removeChild(element)
+                dest.appendChild(element)
                 
-                parent.style.left = e.offsetX + "px"
-                parent.style.top = e.offsetY + "px"
-                lastX = left
-                lastY = top
+            }
+
+            function IsElementInOfSidebar(element) {
+                if(getOffsetLeft(element) < (document.body.clientWidth - getSidebarWidth())) {
+                    console.log("element is out of sidebar")
+                    return false;
+                }
+                return true
+            }
+
+            function getOffsetLeft(elem)
+            {
+                return elem.getBoundingClientRect().left;
+            }
+
+            function getOffsetTop(elem)
+            {
+                return elem.getBoundingClientRect().top;
+            }
+
+            function getSidebarWidth() {
+                return sidebar.clientWidth
             }
 
             function GetFormattedPart(part) {
