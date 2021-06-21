@@ -30,51 +30,51 @@
         <div style="display: flex; margin-bottom: 10px; position: absolute; bottom: 10px; left: 10px; flex-direction: column-reverse;">
             <div style="display: flex; position: absolute; bottom: 10px; left: 10px; flex: 1;">
                 <div style="flex: 1;">
-                    <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="default.png" id="cover">
+                    <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="default.png" class="cover">
                 </div>
                 <div style="flex: 1; flex-shrink: 0; white-space: nowrap; margin-left: 160px;">
-                    <div class="item" style="font-size: 120%; font-weight: bold; display: inline;">BSR: <div style="display: inline;" id="key"></div></div>
-                    <div class="item" style="font-size: 120%; font-weight: bold;" id="mapper">Mapper</div>
-                    <div class="item" style="font-size: 130%; font-weight: bold;" id="songAuthor">Song Author</div>
-                    <div class="item" style="font-size: 190%; font-weight: bold;" id="songName">Song name</div>
+                    <div class="item" style="font-size: 120%; font-weight: bold; display: inline;">BSR: <div style="display: inline;" class="key"></div></div>
+                    <div class="item" style="font-size: 120%; font-weight: bold;" class="mapper">Mapper</div>
+                    <div class="item" style="font-size: 130%; font-weight: bold;" class="songAuthor">Song Author</div>
+                    <div class="item" style="font-size: 190%; font-weight: bold;" class="songName">Song name</div>
                 </div>
             </div>
             <div style="flex: 1; margin-bottom: 165px; white-space: nowrap; font-size: 16px; display: inline; margin-left: 10px; font-weight: bold;">
-                <div class="item" id="customText" style="display: inline;"></div>
-                <div id="mpCodeContainer" class="item">Mp lobby: <div id="mpCode" style="display: inline;"></div></div>
-                <div class="item" id="preKeyContainer">Pre-BSR: <div id="preKey" style="display: inline;"></div></div>
-                <div class="item"style="font-size: 5px; padding: 2px; border-radius: 2px;" id="williamGayContainer">William Gay</div>
-                <div class="item" style="font-size: 5px; padding: 2px; border-radius: 2px; " id="pinkCuteContainer">Pink Cute</div>
+                <div class="item" class="customText" style="display: inline;"></div>
+                <div class="mpCodeContainer" class="item">Mp lobby: <div class="mpCode" style="display: inline;"></div></div>
+                <div class="item" class="preKeyContainer">Pre-BSR: <div class="preKey" style="display: inline;"></div></div>
+                <div class="item"style="font-size: 5px; padding: 2px; border-radius: 2px;" class="williamGayContainer">William Gay</div>
+                <div class="item" style="font-size: 5px; padding: 2px; border-radius: 2px; " class="pinkCuteContainer">Pink Cute</div>
             </div>
         </div>
         <div style="position: absolute; top: -5px; right: 0px; left: 0px; background: #33333388; margin: auto; width: min-content; padding: 5px; border-radius: 5px;">
             <div style="display: flex; text-align: center; white-space: nowrap; font-weight: bold; font-size: 20px;">
                 <div style="flex: 1;" style="display: inline;">
-                    <div id="timePlayed" style="display: inline;"></div>/<div id="totalTime" style="display: inline;"></div>
+                    <div class="timePlayed" style="display: inline;"></div>/<div class="totalTime" style="display: inline;"></div>
                 </div>
                 <div style="flex: 1; margin-left: 20px;">
-                    <div id="score"></div>
+                    <div class="score"></div>
                 </div>
                 <div style="flex: 1; margin-left: 20px;">
-                    <div id="percentage"></div>
+                    <div class="percentage"></div>
                 </div>
                 <div style="flex: 1; margin-left: 20px;">
-                    <div id="combo"></div>
+                    <div class="combo"></div>
                 </div>
                 <div style="flex: 1; margin-left: 20px;">
-                    <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px; padding: 2px; border-radius: 2px; " id="eraCuteContainer">Era Cute</div>
+                    <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px; padding: 2px; border-radius: 2px; " class="eraCuteContainer">Era Cute</div>
                 </div>
             </div>
         </div>
-        <div id="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
-            <div id="energybar" style="height: 100%; width: 100%; background: #EEEEEE; border-radius: 2px;">
+        <div class="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
+            <div class="energybar" style="height: 100%; width: 100%; background: #EEEEEE; border-radius: 2px;">
             </div>
         </div>
         <script src="pulling.js"></script>
         <script>
             function updateTime(total, played) {
-                timePlayed.innerHTML = ToElapsed(played)
-                totalTime.innerHTML = ToElapsed(total)
+                UpdateAllFieldsOfName("timePlayed", played)
+                UpdateAllFieldsOfName("totalTime", total)
             }
         </script>
         

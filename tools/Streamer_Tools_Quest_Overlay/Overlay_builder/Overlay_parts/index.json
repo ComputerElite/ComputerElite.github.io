@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Song_1",
+        "id": "song_1",
+        "filename": "Song_1.html"
+    },
+    {
+        "name": "Song_2",
+        "id": "song_2",
+        "filename": "Song_2.html"
+    },
+    {
+        "name": "Song_3",
+        "id": "song_3",
+        "filename": "Song_3.html"
+    },
+    {
+        "name": "Progress_1",
+        "id": "progress_1",
+        "filename": "Progress_1.html"
+    },
+    {
+        "name": "Custom text",
+        "id": "customtext_1",
+        "filename": "CustomText.html"
+    }
+]

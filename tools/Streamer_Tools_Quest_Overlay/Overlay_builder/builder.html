@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Streamer Tools Overlay Builder</title>
+            <meta property="og:site_name" content="ComputerElite">
+            <meta property="og:title" content="Streamer Tools Overlay buider" />
+            <meta property="og:description" content="Build your own Overlays for Streamer tools with a simple web editor" />
+            <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/builder.html" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+            <link href="../../../css/standard.css" type="text/css" rel="stylesheet">
+            <link rel="icon" href="../../../assets/CE_64px.png" type="image/x-icon">
+            <style>
+                body {
+                    background-color: #000000FF;
+                    background-image: none;
+                    z-index: -2;
+                }
+
+                .movableItem {
+                    z-index: 0;
+                    margin-bottom: 20px;
+                    user-select: none;
+                    background-color: #111111;
+                    padding: 10px;
+                }
+
+                #itemSidebar {
+                    padding: 10px;
+                    position: fixed;
+                    overflow-y: scroll;
+                    right: 0px;
+                    height: 90%;
+                    top: auto;
+                    bottom: auto;
+                    background-color: #222222;
+                    width: fit-content;
+                }
+            </style>
+    </head>
+    <body onmousemove="UpdateMousePos(event)">
+        <div id="itemSidebar">
+            <div>All items</div>
+            <div id="itemContainer">fetching</div>
+        </div>
+        
+        <script src="../../../js/standard.js"></script>
+        <script>
+            //<script src="../pulling.js"><///script>
+            const itemContainer = document.getElementById("itemContainer")
+            var parts = [];
+
+            var fetched = 0;
+            var total = 0;
+
+            fetch("Overlay_parts/index.json").then(res => {
+                itemContainer.innerHTML = "<hr>"
+                res.json().then(json => {
+                    total = json.length
+                    json.forEach(part => {
+                        fetch("Overlay_parts/" + part.filename).then(res => {
+                            res.text().then(html => {
+                                fetched++;
+                                part.html = html
+                                parts.push(part)
+                                itemContainer.innerHTML += GetFormattedPart(part)
+                                Setup()
+                            })
+                        })
+                    })
+                })
+            })
+
+            function Setup() {
+                if(fetched != total) return
+                console.log("setting up all elements")
+                Array.prototype.forEach.call(document.getElementsByClassName("movableItem"), e => {
+                    e.addEventListener("mousedown", SetMoveTrue)
+                    e.addEventListener("mouseup", SetMoveFalse)
+                    e.addEventListener("mousemove", MoveElement)
+                })
+            }
+
+            function SetMoveTrue(e) {
+                var element = GetEventSrc(e)
+                lastX = element.style.left.replace("px", "") || 0
+                lastY = element.style.top.replace("px", "") || 0
+                console.log(lastX + ", " + lastY)
+                console.log("setting drag of " + element.id + " to 1")
+                element.setAttribute("drag", "1")
+            }
+
+            function GetEventSrc(e) {
+                return document.getElementById((e.target || e.srcElement).id).parentElement;
+            }
+
+            function SetMoveFalse(e) {
+                var element = GetEventSrc(e)
+                console.log("setting drag of " + element.id + " to 0")
+                element.setAttribute("drag", "0")
+            }
+            
+            function MoveElement(e) {
+                var parent = GetEventSrc(e)
+                if(parent.getAttribute("drag") != 1) return
+                
+                parent.style.left = e.offsetX + "px"
+                parent.style.top = e.offsetY + "px"
+                lastX = left
+                lastY = top
+            }
+
+            function GetFormattedPart(part) {
+                return `<div style="width: fit-content; height: fit-content;"><div style="font-weight: bold; font-size: 18px;">${part.name}</div><br/><div style="font-weight: bold; position: relative;">${part.html}<div id="${part.id}" class="movableItem" style="position: absolute; left: 0; top: 0; background-color: #00000000; width: 100%; height: 100%; z-index: 1;"></div></div><hr></div>`
+            }
+
+            var x = 0
+            var y = 0
+            var lastX = 0
+            var lastY = 0
+
+            function UpdateMousePos(e) {
+                x = mouseX(e)
+                y = mouseY(e)
+            }
+        </script>
+    </body>
+</html>

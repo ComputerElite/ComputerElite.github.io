@@ -35,23 +35,23 @@ function SetImage(id) {
         fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
                 try {
-                    key.innerHTML = json["key"]
+                    UpdateAllFieldsOfName("key", json["key"])
                 } catch {}
                 
                 try {
                     if(lastSongKey != "") {
                         try {
-                            prekeyContainer.style.display = "inline"
+                            UpdateAllFieldsOfNameHidden("prekeyContainer", false)
                         } catch {}
                     }
-                    prekey.innerHTML = lastSongKey
+                    prekey = lastSongKey
                 } catch {}
                 lastSongKey = json["key"]
             })
         }).catch((err) => {})
     } else if(useLocalhost && stats["fetchedKey"]) {
         try {
-            key.innerHTML = stats["key"]
+            UpdateAllFieldsOfName("key", stats["key"])
         } catch {}
         lastSongKey = stats["key"]
     }
@@ -59,49 +59,49 @@ function SetImage(id) {
         fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
             res.text().then((base64) => {
                 if(res.status == 404) {
-                    cover.src = "default.png"
+                    UpdateAllFieldsOfNameSrc("cover", "default.png")
                     got404 = true;
                 } else {
-                    cover.src = base64
+                    UpdateAllFieldsOfNameSrc("cover", base64)
                     got404 = false;
                 }
             })
         }).catch((err) => {
             // Fallback to default cover
             got404 = true
-            cover.src = "default.png"
+            UpdateAllFieldsOfNameSrc("cover", "default.png")
         })
     }
     lastID = id
 }
 
 
-var bar = document.getElementById("energybar")
-var barContainer = document.getElementById("energybarContainer")
-var songName = document.getElementById("songName")
-var songAuthor = document.getElementById("songAuthor")
-var mapper = document.getElementById("mapper")
-var diff = document.getElementById("diff")
-var combo = document.getElementById("combo")
-var score = document.getElementById("score")
-var cover = document.getElementById("cover")
-var key = document.getElementById("key")
-var rank = document.getElementById("rank")
-var percentage = document.getElementById("percentage")
-var songSub = document.getElementById("songSub")
-var njs = document.getElementById("njs")
-var bpm = document.getElementById("bpm")
-var timePlayed = document.getElementById("timePlayed")
-var totalTime = document.getElementById("totalTime")
-var mpCode = document.getElementById("mpCode")
-var mpCodeContainer = document.getElementById("mpCodeContainer")
-var prekey = document.getElementById("preKey")
-var prekeyContainer = document.getElementById("preKeyContainer")
-var customTextContainer = document.getElementById("customText")
+// var bar = document.getElementById("energybar")
+// var barContainer = document.getElementById("energybarContainer")
+// var songName = document.getElementById("songName")
+// var songAuthor = document.getElementById("songAuthor")
+// var mapper = document.getElementById("mapper")
+// var diff = document.getElementById("diff")
+// var combo = document.getElementById("combo")
+// var score = document.getElementById("score")
+// var cover = document.getElementById("cover")
+// var key = document.getElementById("key")
+// var rank = document.getElementById("rank")
+// var percentage = document.getElementById("percentage")
+// var songSub = document.getElementById("songSub")
+// var njs = document.getElementById("njs")
+// var bpm = document.getElementById("bpm")
+// var timePlayed = document.getElementById("timePlayed")
+// var totalTime = document.getElementById("totalTime")
+// var mpCode = document.getElementById("mpCode")
+// var mpCodeContainer = document.getElementById("mpCodeContainer")
+// var prekey = document.getElementById("preKey")
+// var prekeyContainer = document.getElementById("preKeyContainer")
+// var customTextContainer = document.getElementById("customText")
 
-var williamGayContainer = document.getElementById("williamGayContainer")
-var pinkCuteContainer = document.getElementById("pinkCuteContainer")
-var eraCuteContainer = document.getElementById("eraCuteContainer")
+// var williamGayContainer = document.getElementById("williamGayContainer")
+// var pinkCuteContainer = document.getElementById("pinkCuteContainer")
+// var eraCuteContainer = document.getElementById("eraCuteContainer")
 
 var url_string = window.location.href
 var url = new URL(url_string);
@@ -130,33 +130,33 @@ if(long != null) {
 var williamGay = url.searchParams.get("williamgay")
 if(williamGay != null) {
     try {
-        williamGayContainer.style.display = "block"
+        UpdateAllFieldsOfNameHidden("williamGayContainer", false)
     } catch {}
 } else {
     try {
-        williamGayContainer.style.display = "none"
+        UpdateAllFieldsOfNameHidden("williamGayContainer", true)
     } catch {}
 }
 
 var eraCute = url.searchParams.get("eracute")
 if(eraCute != null) {
     try {
-        eraCuteContainer.style.display = "block"
+        UpdateAllFieldsOfNameHidden("eraCuteContainer", false)
     } catch {}
 } else {
     try {
-        eraCuteContainer.style.display = "none"
+        UpdateAllFieldsOfNameHidden("eraCuteContainer", true)
     } catch {}
 }
 
 var pinkCute = url.searchParams.get("pinkcute")
 if(pinkCute != null) {
     try {
-        pinkCuteContainer.style.display = "block"
+        UpdateAllFieldsOfNameHidden("pinkCuteContainer", false)
     } catch {}
 } else {
     try {
-        pinkCuteContainer.style.display = "none"
+        UpdateAllFieldsOfNameHidden("pinkCuteContainer", true)
     } catch {}
 }
 
@@ -174,11 +174,11 @@ else showenergyBar = false
 var customText = url.searchParams.get("customtext");
 if(customText != null && customText != "") {
     try {
-        customTextContainer.innerHTML = customText
+        UpdateAllFieldsOfName("customTextContainer", customText)
     } catch {}
 } else {
     try {
-        customTextContainer.style.display = "none"
+        UpdateAllFieldsOfNameHidden("customTextContainer", true)
     } catch {}
 }
 
@@ -197,7 +197,7 @@ var useLocalhost = false;
 const localip = 'http://localhost:53510/api/raw';
 
 try {
-    prekeyContainer.style.display = "none"
+    UpdateAllFieldsOfNameHidden("prekeyContainer", true)
 } catch {}
 
 fetch(localip).then((res) => {
@@ -234,48 +234,72 @@ setInterval(function() {
     })
 }, rate)
 
+function UpdateAllFieldsOfName(name, innerHTML) {
+    Array.prototype.forEach.call(document.getElementsByClassName(name), e => {
+        e.innerHTML = innerHTML;
+    })
+}
+
+function UpdateAllFieldsOfNameHidden(name, hidden) {
+    Array.prototype.forEach.call(document.getElementsByClassName(name), e => {
+        e.style.visibility = hidden ? "hidden" : "visible"
+    })
+}
+
+function UpdateAllFieldsOfStokeDashOffset(name, offset) {
+    Array.prototype.forEach.call(document.getElementsByClassName(name), e => {
+        e.style.strokeDashoffset = offset
+    })
+}
+
+function UpdateAllFieldsOfNameSrc(name, src) {
+    Array.prototype.forEach.call(document.getElementsByClassName(name), e => {
+        e.src = src
+    })
+}
+
 function basicSetNotConnected() {
     try {
         SetPercentage(1.0)
     } catch {}
     try {
-        songName.innerHTML = format("Quest disconnected")
+        UpdateAllFieldsOfName("songName", format("Quest disconnected"))
     } catch {}
     try {
-        songAuthor.innerHTML = format("")
+        UpdateAllFieldsOfName("songAuthor", format(""))
     } catch {}
     try {
-        mapper.innerHTML = format("")
+        UpdateAllFieldsOfName("mapper", format(""))
     } catch {}
     try {
-        diff.innerHTML = intToDiff(4)
+        UpdateAllFieldsOfName("diff", intToDiff(4))
     } catch {}
     try {
-        combo.innerHTML = format(0, 1)
+        UpdateAllFieldsOfName("combo", format(0, 1))
     } catch {}
     try {
-        score.innerHTML = format(AddComma(0), 1)
+        UpdateAllFieldsOfName("score", format(AddComma(0), 1))
     } catch {}
     try {
-        rank.innerHTML = format("SS", 2)
+        UpdateAllFieldsOfName("rank", format("SS", 2))
     } catch {}
     try {
-        percentage.innerHTML = format(trim(100)) + " %"
+        UpdateAllFieldsOfName("percentage", format(trim(100)) + " %")
     } catch {}
     try {
-        songSub.innerHTML = format(0)
+        UpdateAllFieldsOfName("songSub", format(0))
     } catch {}
     try {
-        njs.innerHTML = format(trim(0))
+        UpdateAllFieldsOfName("njs", format(trim(0)))
     } catch {}
     try {
-        bpm.innerHTML = format(trim(0), 1)
+        UpdateAllFieldsOfName("bpm", format(trim(0), 1))
     } catch {}
     try {
-        mpCode.innerHTML = "not in lobby"
+        UpdateAllFieldsOfName("mpCode", "not in lobby")
     } catch {}
     try {
-        mpCodeContainer.style.display = "none"
+        UpdateAllFieldsOfNameHidden("mpCodeContainer", true)
     } catch {}
     try {
         updateTime(10, 5)
@@ -287,58 +311,58 @@ function setAll() {
         SetPercentage(stats["energy"])
     } catch {}
     try {
-        songName.innerHTML = format(stats["levelName"])
+        UpdateAllFieldsOfName("songName", format(stats["levelName"]))
     } catch {}
     try {
-        songAuthor.innerHTML = format(stats["songAuthor"])
+        UpdateAllFieldsOfName("songAuthor", format(stats["songAuthor"]))
     } catch {}
     try {
-        mapper.innerHTML = format(stats["levelAuthor"])
+        UpdateAllFieldsOfName("mapper", format(stats["levelAuthor"]))
     } catch {}
     try {
-        diff.innerHTML = intToDiff(stats["difficulty"])
+        UpdateAllFieldsOfName("diff", intToDiff(stats["difficulty"]))
     } catch {}
     try {
-        combo.innerHTML = format(stats["combo"], 1)
+        UpdateAllFieldsOfName("combo", format(stats["combo"], 1))
     } catch {}
     try {
-        score.innerHTML = format(AddComma(stats["score"]), 1)
+        UpdateAllFieldsOfName("score", format(AddComma(stats["score"]), 1))
     } catch {}
     try {
-        rank.innerHTML = format(stats["rank"], 2)
+        UpdateAllFieldsOfName("rank", format(stats["rank"], 2))
     } catch {}
     try {
-        percentage.innerHTML = format(trim(stats["accuracy"] * 100)) + " %"
+        UpdateAllFieldsOfName("percentage", format(trim(stats["accuracy"] * 100)) + " %")
     } catch {}
     try {
         SetImage(stats["id"])
     } catch {}
     try {
-        songSub.innerHTML = format(stats["levelSubName"])
+        UpdateAllFieldsOfName("songSub", format(stats["levelSubName"]))
     } catch {}
     try {
-        njs.innerHTML = format(trim(stats["njs"]))
+        UpdateAllFieldsOfName("njs", format(trim(stats["njs"])))
     } catch {}
     try {
-        bpm.innerHTML = format(trim(stats["bpm"]), 1)
+        UpdateAllFieldsOfName("bpm", format(trim(stats["bpm"]), 1))
     } catch {}
     try {
         if(stats["location"] == 2 || stats["location"] == 5) {
             // Is in mp lobby or song
             if(stats["mpGameIdShown"] && showmpcode || alwaysshowmpcode) {
-                mpCode.innerHTML = format(stats["mpGameId"])
+                UpdateAllFieldsOfName("mpCode", format(stats["mpGameId"]))
             } else {
-                mpCode.innerHTML = "*****"
+                UpdateAllFieldsOfName("mpCode", "*****")
             }
         } else {
-            mpCode.innerHTML = "not in lobby"
+            UpdateAllFieldsOfName("mpCode", "not in lobby")
         }
     } catch {}
     try {
         if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
-            mpCodeContainer.style.display = "block"
+            UpdateAllFieldsOfNameHidden("barContainer", false)
         } else {
-            mpCodeContainer.style.display = "none"
+            UpdateAllFieldsOfNameHidden("barContainer", true)
         }
     } catch {}
     try {
@@ -347,7 +371,7 @@ function setAll() {
 
     try {
         if(!showenergyBar) {
-            barContainer.style.display = "none"
+            UpdateAllFieldsOfNameHidden("barContainer", true)
         }
     } catch {}
     try {

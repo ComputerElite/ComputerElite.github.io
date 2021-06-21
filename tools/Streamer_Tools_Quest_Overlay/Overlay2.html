@@ -20,40 +20,40 @@
     <body>
         <div style="display: flex; margin-bottom: 10px;">
             <div style="flex: 1; position: relative;">
-                <img style="width: 100px; height: 100px;" src="default.png" id="cover">
+                <img style="width: 100px; height: 100px;" src="default.png" class="cover">
                 <svg style="position: absolute; width: 100px; height: 100px; left: 0px; top: 0px; transform: rotate(-90deg)">
                     <circle cx="50" cy="50" r="45" opacity="0.3" stroke-width="6" fill="#222222"></circle>
                     <circle cx="50" cy="50" r="45" stroke="#666666" opacity="0.8" stroke-width="6" fill="transparent"></circle>
-                    <circle cx="50" cy="50" r="45" stroke="#FFFFFF" opacity="1.0" stroke-width="4" id="progress" fill="transparent" stroke-dasharray=282 stroke-dashoffset=280></circle>
+                    <circle cx="50" cy="50" r="45" stroke="#FFFFFF" opacity="1.0" stroke-width="4" class="progress" fill="transparent" stroke-dasharray=282 stroke-dashoffset=280></circle>
                 </svg>
-                <div id="timePlayed" style="position: absolute; width: 100%; height: 100%; text-align: center; top: 40px;">3:14</div>
+                <div class="timePlayed" style="position: absolute; width: 100%; height: 100%; text-align: center; top: 40px;">3:14</div>
             </div>
             <div style="flex: 16; margin-left: 10px;">
-                <div style="font-size: 170%; font-weight: bold; display: inline;"><div style="font-size: 100%; font-weight: bold; display: inline;" id="songName">Song name</div> (<div style="font-size: 100%; font-weight: bold; display: inline;" id="songSub"></div>)</div>
-                <div style="font-size: 125%;"><div style="font-size: 100%; display: inline;" id="songAuthor">Song Author</div> [<div style="font-size: 100%; display: inline;" id="mapper">Mapper</div>]</div>
+                <div style="font-size: 170%; font-weight: bold; display: inline;"><div style="font-size: 100%; font-weight: bold; display: inline;" class="songName">Song name</div> (<div style="font-size: 100%; font-weight: bold; display: inline;" class="songSub"></div>)</div>
+                <div style="font-size: 125%;"><div style="font-size: 100%; display: inline;" class="songAuthor">Song Author</div> [<div style="font-size: 100%; display: inline;" class="mapper">Mapper</div>]</div>
                 <div style="margin-top: 5px;">
-                    <div style="font-size: 110%; background-color: #EEEEEE; color: #000000; border-radius: 4px; padding: 1px; padding-left: 5px; padding-right: 5px; margin-top: 20px; width: min-content; font-weight: bold; display: inline;" id="diff">diff</div>
-                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" id="bpm"></div> BPM</div>
-                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" id="njs"></div> NJS</div>
+                    <div style="font-size: 110%; background-color: #EEEEEE; color: #000000; border-radius: 4px; padding: 1px; padding-left: 5px; padding-right: 5px; margin-top: 20px; width: min-content; font-weight: bold; display: inline;" class="diff">diff</div>
+                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" class="bpm"></div> BPM</div>
+                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" class="njs"></div> NJS</div>
                 </div>
-                <div id="mpCodeContainer" style="font-size: 80%; margin-top: 3px;">Mp lobby: <div style="display: inline;" id="mpCode">*****</div></div>
+                <div class="mpCodeContainer" style="font-size: 80%; margin-top: 3px;">Mp lobby: <div style="display: inline;" class="mpCode">*****</div></div>
             </div>
         </div>
-        <div style="font-size: 190%; font-weight: bold;" id="score">Score</div>
-        <div style="font-size: 130%; display: inline;" id="combo">Combo</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;">Combo</div>
+        <div style="font-size: 190%; font-weight: bold;" class="score">Score</div>
+        <div style="font-size: 130%; display: inline;" class="combo">Combo</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;">Combo</div>
         <br/>
-        <div style="font-size: 130%; display: inline;" id="rank">Rank</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;" id="percentage"></div>
+        <div style="font-size: 130%; display: inline;" class="rank">Rank</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;" class="percentage"></div>
         <br/>
-        <div style="display: inline; font-size: 100%; color: #999999;" id="customText"></div>
+        <div style="display: inline; font-size: 100%; color: #999999;" class="customText"></div>
 
-        <div style="font-size: 5px; position: absolute; top: 0px; right: 0px;" id="williamGayContainer">William Gay</div>
-        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 0px;" id="pinkCuteContainer">Pink Cute</div>
-        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px;" id="eraCuteContainer">Era Cute</div>
+        <div style="font-size: 5px; position: absolute; top: 0px; right: 0px;" class="williamGayContainer">William Gay</div>
+        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 0px;" class="pinkCuteContainer">Pink Cute</div>
+        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px;" class="eraCuteContainer">Era Cute</div>
         <script src="pulling.js"></script>
         <script>
             function updateTime(total, played) {
-                timePlayed.innerHTML = ToElapsed(played)
-                document.getElementById("progress").style.strokeDashoffset = 282 - played / total * 282
+                UpdateAllFieldsOfName("timePlayed", ToElapsed(played))
+                UpdateAllFieldsOfStokeDashOffset("progress", 282 - played / total * 282)
             }
         </script>
     </body>
