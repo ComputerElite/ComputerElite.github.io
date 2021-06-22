@@ -40,18 +40,25 @@
             </style>
     </head>
     <body onmousemove="UpdateMousePos(event)">
-        <div id="sidebarOpener" style="background-color: #222222; width: fit-content; right: 0px; padding: 5px; position: absolute; cursor: pointer;" onclick="Preview()">
+        <div id="sidebarOpener" style="background-color: #222222; width: fit-content; right: 0px; padding: 5px; position: absolute; cursor: pointer;" onclick="previewOn = false; Preview()">
             &lt
         </div>
         <div id="itemSidebar">
             <div>All items</div>
-            <input value="Hide" type="button" onclick="Preview()">
-            <input value="Save" type="button" onclick="Save()">
-            <input value="Preview" type="button" onclick="Preview(true)">
+            <div class="customButton" onclick="Preview()">Preview</div>
+            <div class="customButton" onclick="Save()">Load/Save</div>
+            <div class="customButton" onclick="Preview(true)">Preview</div>
             <div id="itemContainer">fetching</div>
         </div>
-        <div id="bodyItemContainer">
-
+        
+        <div id="bodyItemContainer"></div>
+        
+        <div id="popup" style="position: fixed; top: 10px; background-color: #222222; padding: 10px; width: 60%;">
+            <div class="customButton" onclick="popup.style.visibility = 'hidden'">X</div>
+            <input type="text" style="border: #111111 solid 1px; background-color: #333333; border-radius: 5px; width: fit-content; width: 99%;" value="[]" id="jsonSaveText">
+            <div class="customButton" id="copyButton" onclick="CopySaveText()">Copy</div>
+            <div class="customButton" id="loadButton" onclick="Load(JSON.parse(jsonSaveText.value))">Load</div>
+            <div class="customButton" id="loadButton" onclick="Load(JSON.parse(jsonSaveText.value), true)">Load in editor</div>
         </div>
         <script src="../pulling.js"></script>
         <script src="../../../js/standard.js"></script>
@@ -60,6 +67,9 @@
             const itemContainer = document.getElementById("itemContainer")
             const sidebar = document.getElementById("itemSidebar")
             const bodyItemContainer = document.getElementById("bodyItemContainer")
+            const jsonSaveText = document.getElementById("jsonSaveText")
+            const popup = document.getElementById("popup")
+            popup.style.visibility = "hidden"
             var parts = [];
 
             var fetched = 0;
@@ -102,10 +112,6 @@
             function Setup(load) {
                 if(fetched != total) return
                 if(load) {
-                    console.log(loadJson)
-                    sidebar.style.visibility = "hidden"
-                    sidebarShown = false;
-                    document.getElementById("sidebarOpener").style.visibility = "hidden"
                     Load(loadJson)
                     return;
                 }
@@ -161,7 +167,15 @@
                         id: p.lastChild.className.split(" ")[1]
                     })
                 }
-                console.log(JSON.stringify(toSave))
+                jsonSaveText.value = JSON.stringify(toSave)
+                popup.style.visibility = "visible"
+            }
+
+            function CopySaveText() {
+                console.log("copying")
+                navigator.clipboard.writeText(jsonSaveText.value).then(() => {
+                    console.log("copied " + jsonSaveText.value)
+                })
             }
 
             function StartJs() {
@@ -172,13 +186,26 @@
                 enabled = false
             }
 
-            function Load(json) {
+            function Load(json, asEditor = false) {
+                console.log(loadJson)
+                if(!asEditor) document.getElementById("sidebarOpener").style.visibility = "hidden"
+                sidebar.style.visibility = "hidden"
+                sidebarShown = false;
+                popup.style.visibility = "hidden"
+                bodyItemContainer.innerHTML = ""
                 json.forEach(p => {
                     parts.forEach(pp => {
                         if(p.id == pp.id) {
                             var ele = htmlToElement(GetFormattedPart(pp)).childNodes[2]
+                            if(asEditor) {
+                                ele.addEventListener("mousedown", SetMoveTrue)
+                                ele.addEventListener("mouseup", SetMoveFalse)
+                                ele.addEventListener("mouseleave", SetMoveFalse)
+                                ele.addEventListener("mousemove", MoveElement)
+                            }
                             ele.style.left = p.left
                             ele.style.top = p.top
+                            ele.style.position = "absolute"
                             bodyItemContainer.appendChild(ele)
                         }
                     })
@@ -217,6 +244,7 @@
 
             function MoveElementIntoOtherDiv(element, destinationDiv) {
                 var dest = document.getElementById(destinationDiv)
+                element.style.position = "absolute"
                 element.parentNode.removeChild(element)
                 dest.appendChild(element)
             }
