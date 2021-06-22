@@ -77,8 +77,7 @@
                     "IsEntryPoint": false
                 }
             ]
-        }
-        ,
+        },
         {
             "Name": "FPS_Chart",
             "downloaded": false,
@@ -106,6 +105,62 @@
                 {
                     "URL": "https://computerelite.github.io/js/plotly.min.js",
                     "Path": "js/plotly.min.js",
+                    "IsEntryPoint": false
+                }
+            ]
+        },
+        {
+            "Name": "Overlay_builder",
+            "downloaded": false,
+            "downloads": [
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/builder.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/builder.html",
+                    "IsEntryPoint": true
+                },
+                {
+                    "URL": "https://computerelite.github.io/css/standard.css",
+                    "Path": "css/standard.css",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/pulling.js",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/js/standard.js",
+                    "Path": "js/standard.js",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/index.json",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/index.json",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/CustomText.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/CustomText.html",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Progress_1.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Progress_1.html",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_1.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_1.html",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_2.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_2.html",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_3.html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_3.html",
                     "IsEntryPoint": false
                 }
             ]

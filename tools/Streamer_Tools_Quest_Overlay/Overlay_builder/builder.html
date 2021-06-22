@@ -40,23 +40,35 @@
             </style>
     </head>
     <body onmousemove="UpdateMousePos(event)">
+        <div id="sidebarOpener" style="background-color: #222222; width: fit-content; right: 0px; padding: 5px; position: absolute; cursor: pointer;" onclick="Preview()">
+            &lt
+        </div>
         <div id="itemSidebar">
             <div>All items</div>
+            <input value="Hide" type="button" onclick="Preview()">
+            <input value="Save" type="button" onclick="Save()">
+            <input value="Preview" type="button" onclick="Preview(true)">
             <div id="itemContainer">fetching</div>
         </div>
         <div id="bodyItemContainer">
 
         </div>
-        
+        <script src="../pulling.js"></script>
         <script src="../../../js/standard.js"></script>
         <script>
-            //<script src="../pulling.js"><///script>
+            enabled = false
             const itemContainer = document.getElementById("itemContainer")
             const sidebar = document.getElementById("itemSidebar")
+            const bodyItemContainer = document.getElementById("bodyItemContainer")
             var parts = [];
 
             var fetched = 0;
             var total = 0;
+
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var loadJson = url.searchParams.get("load")
+            if(loadJson) loadJson = JSON.parse(loadJson)
 
             fetch("Overlay_parts/index.json").then(res => {
                 itemContainer.innerHTML = "<hr>"
@@ -69,7 +81,7 @@
                                 part.html = html
                                 parts.push(part)
                                 itemContainer.innerHTML += GetFormattedPart(part)
-                                Setup()
+                                Setup(loadJson)
                             })
                         })
                     })
@@ -78,15 +90,26 @@
 
             function ReAddAllParts() {
                 console.log("readding all parts")
-                itemContainer.innerHTML = ""
+                itemContainer.innerHTML = "<hr>"
                 parts.forEach(p => {
                     itemContainer.innerHTML += GetFormattedPart(p)
                 })
                 Setup()
             }
 
-            function Setup() {
+            var sidebarShown = true
+
+            function Setup(load) {
                 if(fetched != total) return
+                if(load) {
+                    console.log(loadJson)
+                    sidebar.style.visibility = "hidden"
+                    sidebarShown = false;
+                    document.getElementById("sidebarOpener").style.visibility = "hidden"
+                    Load(loadJson)
+                    return;
+                }
+                
                 console.log("setting up all elements")
                 Array.prototype.forEach.call(document.getElementsByClassName("movableItem"), e => {
                     e.addEventListener("mousedown", SetMoveTrue)
@@ -94,13 +117,14 @@
                     e.addEventListener("mouseleave", SetMoveFalse)
                     e.addEventListener("mousemove", MoveElement)
                 })
+                
             }
 
             function SetMoveTrue(e) {
                 var element = GetEventSrc(e)
                 element.setAttribute("drag", "1")
                 var inSidebar = IsElementInSidebar(element)
-                element.setAttribute("inSidebar", inSidebar ? "1" : "0")
+                if(sidebarShown) element.setAttribute("inSidebar", inSidebar ? "1" : "0")
             }
 
             function GetEventSrc(e) {
@@ -111,6 +135,63 @@
                 var element = GetEventSrc(e)
                 element.setAttribute("drag", "0")
             }
+
+            var previewOn = false;
+            function Preview(startPreview) {
+                if(!previewOn && !startPreview) {
+                    sidebar.style.visibility = 'visible';
+                    sidebarShown = true;
+                    StopJs()
+                } else {
+                    sidebar.style.visibility = 'hidden';
+                    sidebarShown = false;
+                    if(startPreview) StartJs()
+                }
+                
+            }
+
+            function Save() {
+                var toSave = []
+                for(let i = 0; i < bodyItemContainer.children.length; i++) {
+                    var p = bodyItemContainer.children.item(i)
+                    console.log(p)
+                    toSave.push({
+                        left: p.style.left,
+                        top: p.style.top,
+                        id: p.lastChild.className.split(" ")[1]
+                    })
+                }
+                console.log(JSON.stringify(toSave))
+            }
+
+            function StartJs() {
+                enabled = true
+            }
+
+            function StopJs() {
+                enabled = false
+            }
+
+            function Load(json) {
+                json.forEach(p => {
+                    parts.forEach(pp => {
+                        if(p.id == pp.id) {
+                            var ele = htmlToElement(GetFormattedPart(pp)).childNodes[2]
+                            ele.style.left = p.left
+                            ele.style.top = p.top
+                            bodyItemContainer.appendChild(ele)
+                        }
+                    })
+                })
+                StartJs()
+            }
+
+            function htmlToElement(html) {
+                var template = document.createElement('template');
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
             
             function MoveElement(e) {
                 var parent = GetEventSrc(e)
@@ -118,20 +199,20 @@
                 parent.style.left = parseInt((parent.style.left.replace("px", "") || 0)) + e.offsetX - (parent.clientWidth / 2 < 50 ? parent.clientWidth : 50) + "px"
                 parent.style.top = parseInt((parent.style.top.replace("px", "") || 0)) + e.offsetY - (parent.clientHeight / 2) + "px"
                 var inSidebar = IsElementInSidebar(parent)
-                if(inSidebar && parent.getAttribute("inSidebar") == 0) {
+                if(inSidebar && parent.getAttribute("inSidebar") == 0 && sidebarShown) {
                     parent.style.left = "0px"
                     parent.style.top = "0px"
                     MoveElementIntoOtherDiv(parent, "itemContainer")
                     ReAddAllParts();
-                } else if (!inSidebar && parent.getAttribute("inSidebar") == 1) {
+                } else if (!inSidebar && parent.getAttribute("inSidebar") == 1 && sidebarShown) {
                     parent.style.left = document.body.clientWidth - getSidebarWidth() + parseInt((parent.style.left.replace("px", "") || 0)) + "px"
                     console.log(y)
-                    parent.style.top = y - 20 + "px"
+                    parent.style.top = (y - 20) + "px"
                     console.log("new left: " + parent.style.left)
                     MoveElementIntoOtherDiv(parent, "bodyItemContainer")
                     ReAddAllParts()
                 }
-                parent.setAttribute("inSidebar", inSidebar ? "1" : "0")
+                if(sidebarShown) parent.setAttribute("inSidebar", inSidebar ? "1" : "0")
             }
 
             function MoveElementIntoOtherDiv(element, destinationDiv) {

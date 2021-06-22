@@ -211,8 +211,16 @@ fetch(localip).then((res) => {
 var stats = {}
 
 var firstRequest = true
+var enabled = true
+var alreadyDisabled = false
 
-setInterval(function() {
+var pullingLoop = setInterval(function() {
+    if(!enabled) {
+        if(!alreadyDisabled) basicSetNotConnected();
+        alreadyDisabled = true
+        return
+    }
+    alreadyDisabled = false
     fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":53502/data").then((response) => {
         response.json().then((json) => {
             //console.log(stats)

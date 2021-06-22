@@ -35,7 +35,7 @@
                 Always show mp code if shown in game <input type="checkbox" id="alwaysmpcode">
                 <br/>
 
-                <div class="warning" style="margin-top: 10px;"><a class="warningHeader" href="#" id="downloadIt">Download all overlays here since they probably don't work in your browser</a> or <a href="https://github.com/ComputerElite/streamer-tools-client">download the client to which the overlay connects to</a></div>
+                <div class="warning" style="margin-top: 10px;"><a href="https://github.com/ComputerElite/streamer-tools-client">download the client to which the overlay connects to as they won't work in your browser only</a></div>
                 
 
                 <div style="font-size: 16px; line-height: 2; margin-top: 10px">
@@ -44,6 +44,8 @@
                     <a id="overlay2" href="#">Recreation of Overlay by reselim</a>
                     <br/>
                     <a id="overlay3" href="#">Recreation of Overlay which bandoot uses</a>
+                    <br/>
+                    <a id="overlayBuilder" href="#">Overlay builder</a>
                 </div>
                 
                 
@@ -53,19 +55,23 @@
         <script src="../../js/jszip.js"></script>
         <script>
             document.getElementById("overlay1").onclick = function() {
-                openOverlay(1)
+                window.open("Overlay1.html" + GetArgs(), "_self")
             }
 
             document.getElementById("overlay2").onclick = function() {
-                openOverlay(2)
+                window.open("Overlay2.html" + GetArgs(), "_self")
             }
 
             document.getElementById("overlay3").onclick = function() {
-                openOverlay(3)
+                window.open("Overlay3.html" + GetArgs(), "_self")
             }
 
-            function openOverlay(number) {
-                window.open("Overlay" + number + ".html?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value + (document.getElementById("dontenergy").checked ? "&dontshowenergy" : "") + (document.getElementById("dontmpcode").checked ? "&dontshowmpcode" : "") + (document.getElementById("alwaysmpcode").checked ? "&alwaysshowmpcode" : "") + (document.getElementById("custom").value != "" ? "&customtext=" + document.getElementById("custom").value : ""), "_self")
+            document.getElementById("overlayBuilder").onclick = function() {
+                window.open("Overlay_builder/builder.html" + GetArgs(), "_self")
+            }
+
+            function GetArgs() {
+                return "?ip=" + document.getElementById("ip").value + "&updaterate=" + document.getElementById("rate").value + "&decimals=" + document.getElementById("decimals").value + (document.getElementById("dontenergy").checked ? "&dontshowenergy" : "") + (document.getElementById("dontmpcode").checked ? "&dontshowmpcode" : "") + (document.getElementById("alwaysmpcode").checked ? "&alwaysshowmpcode" : "") + (document.getElementById("custom").value != "" ? "&customtext=" + document.getElementById("custom").value : "")
             }
 
             document.getElementById("downloadIt").onclick = function() {
