@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bouncing logo</title>
+        <style>
+            html {
+                background-color: #000000;
+                height: 100%;
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: hidden;
+            }
+
+            img {
+                position: absolute;
+            }
+
+            body {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="../assets/CE_512px.png" id="logo">
+        <script>
+            const logo = document.getElementById("logo")
+            var url = new URL(window.location.href)
+            var speed = url.searchParams.get("speed")
+            if(!speed) speed = 100
+            speed = speed / 100.0
+            var src = url.searchParams.get("src")
+            if(!src) src = "../assets/CE_512px.png"
+            logo.src = src
+
+            var imgWidth = 0
+            var imgHeight = 0
+            var currentHue = 0
+
+            var direction = {
+                h: 1,
+                v: 1
+            }
+
+            logo.onload = () => {
+                imgWidth = logo.width
+                imgHeight = logo.height
+            }
+
+            setInterval(() => {
+                var left = GetNumberFromPx(logo.style.left)
+                var top = GetNumberFromPx(logo.style.top)
+                var collided = false
+                //console.log(top)
+                if(left <= 0) {direction.h = 1; collided = true}
+                else if(left + imgWidth >= document.body.clientWidth) {direction.h = -1; collided = true}
+                if(top < 0) {direction.v = 1; collided = true}
+                else if(top + imgHeight > document.body.clientHeight) {direction.v = -1; collided = true}
+                if(collided) {
+                    currentHue += 100
+                    logo.style.filter = "hue-rotate(" + currentHue + "deg)"
+                }
+                logo.style.left = (left + speed * direction.h) + "px"
+                logo.style.top = (top + speed * direction.v) + "px"
+            }, 10)
+
+            function GetNumberFromPx(input) {
+                return parseFloat(input.replace("px", "")) || 0
+            }
+        </script>
+    </body>
+</html>
