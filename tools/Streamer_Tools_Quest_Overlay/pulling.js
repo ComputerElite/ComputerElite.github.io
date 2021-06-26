@@ -172,7 +172,7 @@ if(showenergyBar == null) showenergyBar = true;
 else showenergyBar = false
 
 var customText = url.searchParams.get("customtext");
-if(customText != null && customText != "") {
+if(!customText) {
     try {
         UpdateAllFieldsOfName("customTextContainer", customText)
     } catch {}
@@ -182,9 +182,7 @@ if(customText != null && customText != "") {
     } catch {}
 }
 
-if(ip == null || ip == "") {
-    ip = prompt("Please enter your Quests IP:", "192.168.x.x");
-}
+if(!ip) ip = prompt("Please enter your Quests IP:", "192.168.x.x");
 if(rate == null) rate = 100
 if(decimals == null) decimals = 2
 console.log("update rate: " + rate)
