@@ -52,7 +52,7 @@
                 var top = GetNumberFromPx(logo.style.top)
                 var collided = false
                 //console.log(top)
-                if(left <= 0) {direction.h = 1; collided = true}
+                if(left < 0) {direction.h = 1; collided = true}
                 else if(left + imgWidth >= document.body.clientWidth) {direction.h = -1; collided = true}
                 if(top < 0) {direction.v = 1; collided = true}
                 else if(top + imgHeight > document.body.clientHeight) {direction.v = -1; collided = true}
