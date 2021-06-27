@@ -29,12 +29,12 @@
             if(!speed) speed = 200
             speed = speed / 100.0
             var width = url.searchParams.get("width")
-            if(width == "") width = "auto"
             var height = url.searchParams.get("height")
-            if(height == "") height = "auto"
             var src = url.searchParams.get("src")
             if(!src) src = "../assets/CE_512px.png"
             logo.src = src
+
+            var noHue = url.searchParams.get("nohue") == null ? false : true
 
             var imgWidth = 0
             var imgHeight = 0
@@ -61,7 +61,7 @@
                 else if(left + imgWidth >= document.body.clientWidth) {direction.h = -1; collided = true}
                 if(top < 0) {direction.v = 1; collided = true}
                 else if(top + imgHeight > document.body.clientHeight) {direction.v = -1; collided = true}
-                if(collided) {
+                if(collided && !noHue) {
                     currentHue += 100
                     currentHue = currentHue % 360
                     logo.style.filter = "hue-rotate(" + currentHue + "deg)"
