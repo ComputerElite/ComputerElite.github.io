@@ -23,7 +23,7 @@
     <body>
         <img src="../assets/CE_512px.png" id="logo">
         <script>
-            const logo = document.getElementById("logo")
+            var logo = document.getElementById("logo")
             var url = new URL(window.location.href)
             var speed = url.searchParams.get("speed")
             if(!speed) speed = 200
@@ -31,13 +31,61 @@
             var width = url.searchParams.get("width")
             var height = url.searchParams.get("height")
             var src = url.searchParams.get("src")
-            if(!src) src = "../assets/CE_512px.png"
-            logo.src = src
+            if(src.includes("watch?v=")) {
+                document.body.removeChild(logo)
+                var player = document.createElement("div")
+                player.id = "logo"
+                document.body.appendChild(player)
+                logo = player
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            } else {
+                if(!src) src = "../assets/CE_512px.png"
+                logo.src = src
+            }
+
+            var videoPlayer
+            var imgWidth = 0
+            var imgHeight = 0
+            function onYouTubeIframeAPIReady() {
+                videoPlayer = new YT.Player('logo', {
+                playerVars: { 
+                    'autoplay': 1,
+                    'controls': 0
+                },
+                videoId: src.substring(32, src.length),
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+                });
+                logo = document.getElementById("logo")
+                logo.style.position = "absolute"
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+                if(height != "" && height != null) logo.height = height
+                if(width != "" && width != null) logo.width = width
+                imgWidth = parseInt(logo.width)
+                imgHeight = parseInt(logo.height)
+            }
+
+            var done = false;
+            var setup = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PAUSED) {
+                    videoPlayer.playVideo()
+                }
+            }
+
+
+            
 
             var noHue = url.searchParams.get("nohue") == null ? false : true
 
-            var imgWidth = 0
-            var imgHeight = 0
             var currentHue = 0
 
             var direction = {
@@ -48,8 +96,8 @@
             logo.onload = () => {
                 if(height != "" && height != null) logo.height = height
                 if(width != "" && width != null)logo.width = width
-                imgWidth = logo.width
-                imgHeight = logo.height
+                imgWidth = parseInt(logo.width)
+                imgHeight = parseInt(logo.height)
             }
 
             setInterval(() => {
@@ -68,6 +116,8 @@
                 }
                 logo.style.left = (left + speed * direction.h) + "px"
                 logo.style.top = (top + speed * direction.v) + "px"
+                console.log(logo.style.left + ", " + logo.style.top)
+                console.log("")
             }, 10)
 
             function GetNumberFromPx(input) {
