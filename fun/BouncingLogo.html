@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bouncing logo</title>
         <style>
             html {
                 background-color: #000000;
@@ -27,8 +26,12 @@
             const logo = document.getElementById("logo")
             var url = new URL(window.location.href)
             var speed = url.searchParams.get("speed")
-            if(!speed) speed = 100
+            if(!speed) speed = 200
             speed = speed / 100.0
+            var width = url.searchParams.get("width")
+            if(width == "") width = "auto"
+            var height = url.searchParams.get("height")
+            if(height == "") height = "auto"
             var src = url.searchParams.get("src")
             if(!src) src = "../assets/CE_512px.png"
             logo.src = src
@@ -43,6 +46,8 @@
             }
 
             logo.onload = () => {
+                if(height != "" && height != null) logo.height = height
+                if(width != "" && width != null)logo.width = width
                 imgWidth = logo.width
                 imgHeight = logo.height
             }
@@ -58,6 +63,7 @@
                 else if(top + imgHeight > document.body.clientHeight) {direction.v = -1; collided = true}
                 if(collided) {
                     currentHue += 100
+                    currentHue = currentHue % 360
                     logo.style.filter = "hue-rotate(" + currentHue + "deg)"
                 }
                 logo.style.left = (left + speed * direction.h) + "px"
