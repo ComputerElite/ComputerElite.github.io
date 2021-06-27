@@ -31,6 +31,7 @@
             var width = url.searchParams.get("width")
             var height = url.searchParams.get("height")
             var src = url.searchParams.get("src")
+            if(!src) src = "../assets/CE_512px.png"
             if(src.includes("watch?v=")) {
                 document.body.removeChild(logo)
                 var player = document.createElement("div")
@@ -42,7 +43,6 @@
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             } else {
-                if(!src) src = "../assets/CE_512px.png"
                 logo.src = src
             }
 
@@ -104,7 +104,6 @@
                 var left = GetNumberFromPx(logo.style.left)
                 var top = GetNumberFromPx(logo.style.top)
                 var collided = false
-                //console.log(top)
                 if(left < 0) {direction.h = 1; collided = true}
                 else if(left + imgWidth >= document.body.clientWidth) {direction.h = -1; collided = true}
                 if(top < 0) {direction.v = 1; collided = true}
@@ -116,8 +115,6 @@
                 }
                 logo.style.left = (left + speed * direction.h) + "px"
                 logo.style.top = (top + speed * direction.v) + "px"
-                console.log(logo.style.left + ", " + logo.style.top)
-                console.log("")
             }, 10)
 
             function GetNumberFromPx(input) {
