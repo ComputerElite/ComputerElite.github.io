@@ -3,7 +3,7 @@
     <head>
         <title>Oculus API App Versions</title>
         <meta property="og:site_name" content="ComputerElite">
-        <meta property="og:title" content="Oculus API App Versions" />
+        <meta property="og:title" content="Oculus API App Versions BETA" />
         <meta property="og:description" content="A page to get downloads for various Oculus apps" />
         <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/AppVersions.html" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,12 +32,6 @@
                 </div>
 
                 <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="beta">
-                            <div style="display: inline;">Show latest beta</div>
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             Headset
@@ -85,8 +79,8 @@
                     <div class="tipHeader">
                         How to possibly fix <code>An Error occured</code>
                     </div>
-                        I'm still investigating how to fix the issue if it even is fixable.
-                        In the meantime you can install a extension to your browser and enable it while you're using the site by clicking on the C its menu: https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf . Make sure to disable it again via it's menu as it breaks some sites like YouTube.
+                        I'm still investigating how to fix the issue if it even is fixable.<br/>
+                        In the meantime you can install <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">this extension</a> to your browser and enable it while you're using the site by clicking on the C its menu. Make sure to disable it again via it's menu as it breaks some sites like YouTube.
                 </div>
                 <div class="guideHeader">How do I use this?</div>
                 <div class="guideSteps" id="instructions">
@@ -205,7 +199,7 @@
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                PostRequest("https://cors-anywhere.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
                     document.getElementById("apps").innerHTML = ""
                     res.data.viewer.contextual_search.all_category_results.forEach(cat => {
                         if(cat.name == "APPS") {
@@ -237,7 +231,7 @@
 
             var versions = []
             var finished = 0
-            var required = 2;
+            var required = 1;
 
             function SearchVersions(id) {
                 var headset = document.getElementById("headset").value
@@ -248,14 +242,14 @@
                 document.getElementById("versions").innerHTML = loader
                 versions = []
                 finished = 0
-                required = 2
-                PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"applicationID":"${id}"}&doc_id=3828663700542720`).then((res) => {
-                    required = 2 + res.data.node.release_channels.nodes.length
+                required = 1
+                PostRequest("https://cors-anywhere.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"applicationID":"${id}"}&doc_id=3828663700542720`).then((res) => {
+                    required = 1 + res.data.node.release_channels.nodes.length
                     res.data.node.release_channels.nodes.forEach(channel => {
 
                         var channelname = channel.channel_name
                         console.log("adding releases in " + channelname)
-                        PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"releaseChannelID":"${channel.id}"}&doc_id=3973666182694273`).then((res) => {
+                        PostRequest("https://cors-anywhere.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"releaseChannelID":"${channel.id}"}&doc_id=3973666182694273`).then((res) => {
                             document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.latest_supported_binary.binary_application.display_name}`
                             res.data.node.binaries.edges.forEach(element => {
                                 var contained = false;
@@ -320,6 +314,7 @@
                     }, 10)
 
                     //////BETA
+                    /*
                     console.log("Adding betas (if checked)")
                     if(document.getElementById("beta").checked) {
                         PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
@@ -344,6 +339,7 @@
                     } else {
                         UpdateVersions(true, headset)
                     }
+                    */
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
