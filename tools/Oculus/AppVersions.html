@@ -81,7 +81,13 @@
                 <div id="tooltip" class="tooltip">
                     tooltip
                 </div>
-
+                <div class="tip" style="margin-top: 20px; width: fit-content;">
+                    <div class="tipHeader">
+                        How to possibly fix <code>An Error occured</code>
+                    </div>
+                        I'm still investigating how to fix the issue if it even is fixable.<br/>
+                        In the meantime you can install <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">this extension</a> to your browser and enable it while you're using the site by clicking on the C its menu. Make sure to disable it again via it's menu as it breaks some sites like YouTube.
+                </div>
                 <div class="guideHeader">How do I use this?</div>
                 <div class="guideSteps" id="instructions">
                     Log in on <a href="https://www.oculus.com/">oculus.com</a>, search for an app, click on it, click on the version your want to download and you got yourself an apk you can install.
@@ -127,7 +133,8 @@
             const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
 
-                    const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
+            const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
+            const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for a possible fix</div>`
 
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
@@ -216,7 +223,7 @@
                         document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
                     }
                 }).catch(err => {
-                    document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
+                    document.getElementById("apps").innerHTML = ErrorMSG
                 })
             }
 
@@ -338,7 +345,7 @@
                         UpdateVersions(true, headset)
                     }
                 }).catch(err => {
-                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Please try again later.</div>"
+                    document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
                 })
 
