@@ -359,7 +359,7 @@
                     var ci = 0
                     for(let i = 0; i < versions.length; i++) {
                         try {
-                            if(compareVersions(c.version, ">", versions[i].version)) {
+                            if(c.code > versions[i].code) {
                                 c = versions[i]
                                 ci = i
                             }
