@@ -84,7 +84,7 @@
                 output.innerHTML = loader
                 var requestVars = `access_token=OC|1317831034909742|&variables=${variables.value}&doc_id=${docid.value}`
                 console.log(`requesting with vars: ${requestVars}`)
-                PostRequest("https://graph.oculus.com/graphql", requestVars).then((res) => {
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", requestVars).then((res) => {
                     var parsed = JSON.stringify(res, null, 4);
                     console.log("parsed data: " + parsed)
                     output.innerHTML = resultSkeleton(parsed, parsed.split("\n").length + 1)
