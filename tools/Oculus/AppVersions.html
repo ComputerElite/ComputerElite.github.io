@@ -198,7 +198,7 @@
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=2983924295012880`).then((res) => {
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=2983924295012880`).then((res) => {
                     document.getElementById("apps").innerHTML = ""
                     res.data.application_search.results.edges.forEach(element => {
                             document.getElementById("apps").innerHTML += GetResultFormatted({
@@ -221,7 +221,7 @@
 
             var versions = []
             var finished = 0
-            var required = 1;
+            var required = 2;
 
             function SearchVersions(id) {
                 var headset = document.getElementById("headset").value
@@ -232,7 +232,7 @@
                 document.getElementById("versions").innerHTML = loader
                 versions = []
                 finished = 0
-                required = 1
+                required = 2
                 PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         versions.push({
@@ -244,8 +244,15 @@
                             createdate: 0
                         })
                     })
-                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
-                        
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
+                        res.data.node.primary_binaries.nodes.forEach(element => {
+                            for(let i = 0; i < versions.length; i++) {
+                                if(versions[i].id == element.id) {
+                                    versions[i].createdate = element.created_date
+                                }
+                            }
+                        })
+                        UpdateVersions(true, headset)
                     })
 
                     var loop = setInterval(() => {
@@ -352,7 +359,7 @@
                 if(add) finished++
                 console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
-                document.getElementById("versions").innerHTML = finished != required ? loader : ""
+                document.getElementById("versions").innerHTML = finished < required ? loader : ""
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
