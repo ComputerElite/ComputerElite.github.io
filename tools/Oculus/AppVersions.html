@@ -127,6 +127,7 @@
 
             const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
             const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for more info</div>`
+            var access_token = "OC|752908224809889|"
 
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
@@ -197,7 +198,7 @@
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
                     res.data.application_search.results.edges.forEach(element => {
@@ -250,7 +251,7 @@
                 versions = []
                 finished = 0
                 required = 2
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         versions.push({
                             version: element.node.version,
@@ -261,7 +262,7 @@
                             createdate: 0
                         })
                     })
-                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
                         res.data.node.primary_binaries.nodes.forEach(element => {
                             for(let i = 0; i < versions.length; i++) {
                                 if(versions[i].id == element.id) {
