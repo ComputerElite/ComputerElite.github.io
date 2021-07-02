@@ -25,7 +25,7 @@
             <div style="flex: 1; background-color: #2F3136; padding: 10px;">
                 <div style="font-size: 24px; text-align: center;">Oculus GraphQL Requester</div>
                 <div style="font-size: 15px; text-align: center; color: #888;">
-                    Make requests to oculus GraphQL with the default store token
+                    Make requests to oculus GraphQL with the default store token. Not everything may work atm
                 </div>
 
                 <table style="padding: 10px; margin: auto; width: 100%;">
@@ -53,6 +53,7 @@
                                 <option value="RELEASES">Releases</option>
                                 <option value="RELEASECHANNELS">Release channels</option>
                                 <option value="ALLAPPS">All apps</option>
+                                <option value="ALLREVISIONS">All app Revisions</option>
                             </select>
                         </td>
                     </tr>
@@ -121,6 +122,10 @@
                 ALLAPPS: {
                     docId: "3821696797949516",
                     vars: `{"sectionId":"1888816384764129","sortOrder":null,"sectionItemCount":24,"sectionCursor":null,"hmdType":"MONTEREY"}`
+                },
+                ALLREVISIONS: {
+                    docId: "2885322071572384",
+                    vars: `{"appId":"2448060205267927"}`
                 }
             }
 
