@@ -98,7 +98,7 @@
                     <div class="attentionHeader" style="font-size: 16px;">
                         What to do when getting <code>An Error occured</code>
                     </div>
-                        Please contact ComputerElite via Discord and bring some time as well
+                        Try again in 10 minutes or so. If the issue still persists contact ComputerElite via Discord. if you came here to download version 1.13.2 of Beat Saber you can download it <a href="https://securecdn.oculus.com/binaries/download/?id=4954569241283665">here</a> after logging in on oculus.com
                 </div>
                 <div style="text-align: center; font-size: 11px; color: #888;">
                     API found by nyamimi, requests found by Lillie, page by ComputerElite
@@ -121,13 +121,12 @@
                         <div class="item">id</div>
                     </div>
                     <div id="versions" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
-
                     </div>`
             const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
 
             const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
-            const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for a possible fix</div>`
+            const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for more info</div>`
 
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
