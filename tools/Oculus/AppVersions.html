@@ -198,19 +198,14 @@
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=2983924295012880`).then((res) => {
                     document.getElementById("apps").innerHTML = ""
-                    res.data.viewer.contextual_search.all_category_results.forEach(cat => {
-                        if(cat.name == "APPS") {
-                            document.getElementById("apps").innerHTML = ""
-                            cat.search_results.nodes.forEach(element => {
-                                document.getElementById("apps").innerHTML += GetResultFormatted({
-                                    imgsrc: element.target_object.cover_square_image.uri,
-                                    name: element.target_object.display_name,
-                                    id: element.target_object.id
-                                })
+                    res.data.application_search.results.edges.forEach(element => {
+                            document.getElementById("apps").innerHTML += GetResultFormatted({
+                                imgsrc: element.node.cover_square_image.uri,
+                                name: element.node.display_name,
+                                id: element.node.id
                             })
-                        }
                     })
                     if(document.getElementById("apps").innerHTML == "") {
                         document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
@@ -238,38 +233,22 @@
                 versions = []
                 finished = 0
                 required = 1
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"applicationID":"${id}"}&doc_id=3828663700542720`).then((res) => {
-                    required = 1 + res.data.node.release_channels.nodes.length
-                    res.data.node.release_channels.nodes.forEach(channel => {
-
-                        var channelname = channel.channel_name
-                        console.log("adding releases in " + channelname)
-                        PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"releaseChannelID":"${channel.id}"}&doc_id=3973666182694273`).then((res) => {
-                            document.getElementById("versionHeader").innerHTML = `Versions for ${res.data.node.latest_supported_binary.binary_application.display_name}`
-                            res.data.node.binaries.edges.forEach(element => {
-                                var contained = false;
-                                if(element.node.__typename == "PCBinary") headset = "RIFT"
-                                versions.forEach(e => {
-                                    if(e.id == element.node.id) {
-                                        contained = true;
-                                    }
-                                })
-                                if(!contained) {
-                                    versions.push({
-                                        version: element.node.version,
-                                        changelog: element.node.change_log,
-                                        id: element.node.id,
-                                        code: element.node.version_code,
-                                        channelname: channelname,
-                                        createdate: element.node.created_date
-                                    })
-                                }
-                            })
-                            UpdateVersions(true, headset)
-                        });
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
+                    res.data.node.supportedBinaries.edges.forEach(element => {
+                        versions.push({
+                            version: element.node.version,
+                            changelog: element.node.changeLog,
+                            id: element.node.id,
+                            code: element.node.versionCode,
+                            channelname: "From cache",
+                            createdate: 0
+                        })
+                    })
+                    /*
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|752908224809889|&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                         
                     })
-                    
+                    */
 
                     var loop = setInterval(() => {
                         //////CACHE

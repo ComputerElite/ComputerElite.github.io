@@ -82,7 +82,7 @@
             
             function Request() {
                 output.innerHTML = loader
-                var requestVars = `access_token=OC|1317831034909742|&variables=${variables.value}&doc_id=${docid.value}`
+                var requestVars = `access_token=OC|752908224809889|&variables=${variables.value}&doc_id=${docid.value}`
                 console.log(`requesting with vars: ${requestVars}`)
                 PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", requestVars).then((res) => {
                     var parsed = JSON.stringify(res, null, 4);
@@ -95,7 +95,7 @@
 
             const presets = {
                 STORE: {
-                    docId: "4446310405385365",
+                    docId: "2983924295012880",
                     vars: `{"query":"YourQuery","hmdType":"MONTEREY","firstSearchResultItems":100}`
                 },
                 VERSIONS: {
