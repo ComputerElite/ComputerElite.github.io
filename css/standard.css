@@ -209,3 +209,11 @@ code {
     color: #fbff00;
     margin-bottom: 10px;
 }
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.zoom {
+    transition: transform .6s;
+}

@@ -424,7 +424,7 @@
             }
 
             function GetResultFormatted(element) {
-                return `<a style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
+                return `<a class="zoom" style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
                             <table style="width: fit-content; margin: auto;" class="defTextColor">
                                 <tr><td><img src="${element.imgsrc}" width="100px" height="100px"></td><td>${element.name}</td></tr>
                             </table>
