@@ -251,29 +251,7 @@
                 versions = []
                 finished = 0
                 required = 2
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
-                    res.data.node.supportedBinaries.edges.forEach(element => {
-                        versions.push({
-                            version: element.node.version,
-                            changelog: element.node.changeLog,
-                            id: element.node.id,
-                            code: element.node.versionCode,
-                            channelname: "From cache",
-                            createdate: 0
-                        })
-                    })
-                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
-                        res.data.node.primary_binaries.nodes.forEach(element => {
-                            for(let i = 0; i < versions.length; i++) {
-                                if(versions[i].id == element.id) {
-                                    versions[i].createdate = element.created_date
-                                }
-                            }
-                        })
-                        UpdateVersions(true, headset)
-                    })
-
-                    var loop = setInterval(() => {
+                var loop = setInterval(() => {
                         //////CACHE
                         if(finished == required - 1) {
                             MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
@@ -309,6 +287,27 @@
                             console.log("Delaying cache request until remaining completed")
                         }
                     }, 10)
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
+                    res.data.node.supportedBinaries.edges.forEach(element => {
+                        versions.push({
+                            version: element.node.version,
+                            changelog: element.node.changeLog,
+                            id: element.node.id,
+                            code: element.node.versionCode,
+                            channelname: "From cache",
+                            createdate: 0
+                        })
+                    })
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
+                        res.data.node.primary_binaries.nodes.forEach(element => {
+                            for(let i = 0; i < versions.length; i++) {
+                                if(versions[i].id == element.id) {
+                                    versions[i].createdate = element.created_date
+                                }
+                            }
+                        })
+                        UpdateVersions(true, headset)
+                    })
 
                     //////BETA
                     /*
@@ -340,6 +339,7 @@
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
+                    finished = required - 1
                 })
 
                 //Request extra app info
