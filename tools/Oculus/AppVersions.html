@@ -98,7 +98,7 @@
                     <div class="attentionHeader" style="font-size: 16px;">
                         What to do when getting <code>An Error occured</code>
                     </div>
-                        Try again in 10 minutes or so. If the issue still persists contact ComputerElite via Discord. if you came here to download version 1.13.2 of Beat Saber you can download it <a href="https://securecdn.oculus.com/binaries/download/?id=4954569241283665">here</a> after logging in on oculus.com
+                        Try again in 10 minutes or so. If the issue still persists contact ComputerElite via Discord. if you came here to download version 1.13.2 of Beat Saber you can download it <a href="https://securecdn.oculus.com/binaries/download/?id=4954569241283665">here</a> after logging in on <a href="https://oculus.com">oculus.com</a>.
                 </div>
                 <div style="text-align: center; font-size: 11px; color: #888;">
                     API found by nyamimi, requests found by Lillie, page by ComputerElite
@@ -431,12 +431,22 @@
                         </a>`
             }
 
-            function PostRequest(url, body) {
+            function PostRequest(url, body, SetDNT = false) {
                 return new Promise((resolve, reject) => {
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", url, true);
                     xhr.onerror = (err) => {
-                        reject(err)
+                        if(!SetDNT) {
+                            console.log("failed request. Trying again with different headers")
+                            PostRequest(url, bods, true).then(res => {
+                                resolve(res)
+                            }).catch(err => {
+                                reject(err)
+                            })
+                        } else {
+                            reject(err)
+                        }
+                        
                     }
                     xhr.onreadystatechange = () => {
                         if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -447,6 +457,7 @@
                             }
                         }
                     }
+                    xhr.setRequestHeader('setdnt', SetDNT ? '1' : '0')
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send(body);
                 })
