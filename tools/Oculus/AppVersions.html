@@ -114,7 +114,7 @@
             var tooltip = document.getElementById("tooltip")
             var showingVersions = false
             var showedid = ""
-            var setDNT = "1"
+            //var setDNT = "1"
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
                     <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                         <div class="item">Version</div>
@@ -231,7 +231,7 @@
                     }
                 }).catch(err => {
                     document.getElementById("apps").innerHTML = ErrorMSG
-                    setDNT = setDNT == "1" ? "0" : "1"
+                    ReportIssue()
                 })
             }
 
@@ -342,7 +342,7 @@
                     document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
                     finished = required - 1
-                    setDNT = setDNT == "1" ? "0" : "1"
+                    ReportIssue()
                 })
 
                 //Request extra app info
@@ -434,6 +434,16 @@
                         </a>`
             }
 
+
+            var issueReported = false
+            function ReportIssue() {
+                if(issueReported) return;
+                issueReported = true;
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
+                    alert(res.msg)
+                })
+            }
+
             function PostRequest(url, body) {
                 return new Promise((resolve, reject) => {
                     var xhr = new XMLHttpRequest();
@@ -450,7 +460,7 @@
                             }
                         }
                     }
-                    xhr.setRequestHeader('setdnt', setDNT)
+                    //xhr.setRequestHeader('setdnt', setDNT)
                     //xhr.setRequestHeader('TE', 'Trailers')
                     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.send(body);
