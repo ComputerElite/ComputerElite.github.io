@@ -216,7 +216,6 @@
                     document.getElementById("apps").innerHTML = ""
                     res.data.viewer.contextual_search.all_category_results.forEach(cat => {
                         if(cat.name == "APPS" || cat.name == "CONCEPT") {
-                            document.getElementById("apps").innerHTML = ""
                             cat.search_results.nodes.forEach(element => {
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
                                     imgsrc: element.target_object.cover_square_image.uri,
