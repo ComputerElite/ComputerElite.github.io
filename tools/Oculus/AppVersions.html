@@ -122,6 +122,10 @@
                         <div class="item">id</div>
                     </div>
                     <div id="versions" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+                    </div>
+                    
+                    <div style="font-size: 22px; text-align: center; font-weight: bold;" id="dlcsHeader">DLCs</div>
+                    <div style="display: flex; flex-wrap: wrap;" id="dlcs">
                     </div>`
             const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
@@ -249,6 +253,7 @@
                 showingVersions = true;
                 document.getElementById("resultContainer").innerHTML = versionSkeleton
                 document.getElementById("versions").innerHTML = loader
+                document.getElementById("dlcs").innerHTML = loader
                 versions = []
                 finished = 0
                 required = 2
@@ -299,16 +304,6 @@
                             createdate: 0
                         })
                     })
-                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"applicationID":"${id}"}&doc_id=2885322071572384`).then((res) => {
-                        res.data.node.primary_binaries.nodes.forEach(element => {
-                            for(let i = 0; i < versions.length; i++) {
-                                if(versions[i].id == element.id) {
-                                    versions[i].createdate = element.created_date
-                                }
-                            }
-                        })
-                        UpdateVersions(true, headset)
-                    })
 
                     //////BETA
                     /*
@@ -337,11 +332,26 @@
                         UpdateVersions(true, headset)
                     }
                     */
+                   UpdateVersions(true, headset)
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
                     finished = required - 1
                     ReportIssue()
+                })
+                var dlcs = document.getElementById("dlcs")
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}","first": 100}&doc_id=3998937106836519`).then((res) => {
+                    dlcs.innerHTML = ""
+                    res.data.node.latest_supported_binary.firstIapItems.edges.forEach(dlc => {
+                        if(dlc.node.latest_supported_asset_file != undefined) {
+                            dlcs.innerHTML += GetDlcFormatted({
+                                id: dlc.node.latest_supported_asset_file.id,
+                                name: dlc.node.display_name
+                            }, headset == "RIFT")
+                        }
+                        
+                    })
+                    if(dlcs.innerHTML == "") dlcs.innerHTML = "<div style='flex:1;'>None</div>"
                 })
 
                 //Request extra app info
@@ -430,6 +440,12 @@
                             <table style="width: fit-content; margin: auto;" class="defTextColor">
                                 <tr><td><img src="${element.imgsrc}" width="100px" height="100px"></td><td>${element.name}</td></tr>
                             </table>
+                        </a>`
+            }
+
+            function GetDlcFormatted(element, isRift) {
+                return `<a class="zoom defTextColor" style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('Download(${element.id}, ${isRift})')" oncontextmenu="return SetupContextMenu(event, '${element.id}', true);">
+                            ${element.name}
                         </a>`
             }
 
