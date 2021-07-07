@@ -444,7 +444,7 @@
             }
 
             function GetDlcFormatted(element, isRift) {
-                return `<a class="zoom defTextColor" style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('Download(${element.id}, ${isRift})')" oncontextmenu="return SetupContextMenu(event, '${element.id}', true);">
+                return `<a class="zoom defTextColor" style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="Download(${element.id}, ${isRift})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true);">
                             ${element.name}
                         </a>`
             }
