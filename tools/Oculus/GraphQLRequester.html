@@ -31,12 +31,6 @@
                 <table style="padding: 10px; margin: auto; width: 100%;">
                     <tr>
                         <td>
-                            DocumentId
-                        </td>
-                        <td>
-                            <input type='text' value="" id="doc" spellcheck="false" onkeydown='if(event.keyCode == 13) Request()'>
-                        </td>
-                        <td>
                             <input type="button" value="Request" onclick="Request()">
                         </td>
                     </tr>
@@ -59,10 +53,10 @@
                     </tr>
                     <tr>
                         <td>
-                            Variables
+                            body
                         </td>
                         <td>
-                            <textarea id="vars" style="height: 300px;"></textarea>
+                            <textarea id="body" style="height: 300px;" onkeydown='if(event.keyCode == 13) Request()'></textarea>
                         </td>
                     </tr>
                 </table>
@@ -75,17 +69,15 @@
         </div>
         <script src="../../js/standard.js"></script>
         <script>
-            var docid = document.getElementById("doc");
-            var variables = document.getElementById("vars");
+            var body = document.getElementById("body");
             var output = document.getElementById("resultContainer");
             const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
             const resultSkeleton = (content, rows) => `<textarea id="vars" style="height: fit-content;" rows="${rows}" readonly>${content}</textarea>`
             
             function Request() {
                 output.innerHTML = loader
-                var requestVars = `access_token=OC|752908224809889|&variables=${variables.value}&doc_id=${docid.value}`
-                console.log(`requesting with vars: ${requestVars}`)
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", requestVars).then((res) => {
+                console.log(`requesting with vars: ${body.value}`)
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", body.value).then((res) => {
                     var parsed = JSON.stringify(res, null, 4);
                     console.log("parsed data: " + parsed)
                     output.innerHTML = resultSkeleton(parsed, parsed.split("\n").length + 1)
@@ -132,8 +124,7 @@
             function ChangePreset(name) {
                 if(presets[name] != undefined) {
                     var preset = presets[name]
-                    docid.value = preset.docId
-                    variables.value = preset.vars
+                    body.value = `access_token=OC|752908224809889|&variables=${preset.vars}&doc_id=${preset.docId}`
                 }
             }
 

@@ -1,5 +1,65 @@
 [
     {
+        "name": "Combo_1",
+        "id": "combo_1",
+        "filename": "Combo_1.html"
+    },
+    {
+        "name": "CustomText",
+        "id": "customtext",
+        "filename": "CustomText.html"
+    },
+    {
+        "name": "MPCode_1",
+        "id": "mpcode_1",
+        "filename": "MPCode_1.html"
+    },
+    {
+        "name": "Progress_1",
+        "id": "progress_1",
+        "filename": "Progress_1.html"
+    },
+    {
+        "name": "Rank_1",
+        "id": "rank_1",
+        "filename": "Rank_1.html"
+    },
+    {
+        "name": "Score_1",
+        "id": "score_1",
+        "filename": "Score_1.html"
+    },
+    {
+        "name": "SongArtist_1",
+        "id": "songartist_1",
+        "filename": "SongArtist_1.html"
+    },
+    {
+        "name": "SongDiff_1",
+        "id": "songdiff_1",
+        "filename": "SongDiff_1.html"
+    },
+    {
+        "name": "SongDiff_2",
+        "id": "songdiff_2",
+        "filename": "SongDiff_2.html"
+    },
+    {
+        "name": "SongKey_1",
+        "id": "songkey_1",
+        "filename": "SongKey_1.html"
+    },
+    {
+        "name": "SongMapper_1",
+        "id": "songmapper_1",
+        "filename": "SongMapper_1.html"
+    },
+    {
+        "name": "SongName_1",
+        "id": "songname_1",
+        "filename": "SongName_1.html"
+    },
+    {
         "name": "Song_1",
         "id": "song_1",
         "filename": "Song_1.html"
@@ -13,15 +73,5 @@
         "name": "Song_3",
         "id": "song_3",
         "filename": "Song_3.html"
-    },
-    {
-        "name": "Health",
-        "id": "progress_1",
-        "filename": "Progress_1.html"
-    },
-    {
-        "name": "Custom text",
-        "id": "customtext_1",
-        "filename": "CustomText.html"
     }
 ]
