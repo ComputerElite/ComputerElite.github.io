@@ -244,7 +244,7 @@
 
             var versions = []
             var finished = 0
-            var required = 2;
+            var required = 3;
 
             function SearchVersions(id) {
                 var headset = document.getElementById("headset").value
@@ -256,7 +256,7 @@
                 document.getElementById("dlcs").innerHTML = loader
                 versions = []
                 finished = 0
-                required = 2
+                required = 3
                 var loop = setInterval(() => {
                         //////CACHE
                         if(finished == required - 1) {
@@ -306,32 +306,26 @@
                     })
 
                     //////BETA
-                    /*
-                    console.log("Adding betas (if checked)")
-                    if(document.getElementById("beta").checked) {
-                        PostRequest("https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
-                            res.data.node.release_channels.nodes.forEach(element => {
-                                var contained = false;
-                                versions.forEach(e => {
-                                    if(e.id == element.latest_supported_binary.id) {
-                                        contained = true;
-                                    }
-                                })
-                                if(!contained) {
-                                    versions.unshift({
-                                        version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
-                                        changelog: "N/A",
-                                        id: element.latest_supported_binary.id,
-                                        code: element.latest_supported_binary.versionCode
-                                    })
+                    console.log("Adding betas")
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
+                        res.data.node.release_channels.nodes.forEach(element => {
+                            var contained = false;
+                            versions.forEach(e => {
+                                if(e.id == element.latest_supported_binary.id) {
+                                    contained = true;
                                 }
                             })
-                            UpdateVersions(true, headset)
-                        }).catch(err => UpdateVersions(true, headset))
-                    } else {
+                            if(!contained) {
+                                versions.unshift({
+                                    version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
+                                    changelog: "N/A",
+                                    id: element.latest_supported_binary.id,
+                                    code: element.latest_supported_binary.versionCode
+                                })
+                            }
+                        })
                         UpdateVersions(true, headset)
-                    }
-                    */
+                    }).catch(err => UpdateVersions(true, headset))
                    UpdateVersions(true, headset)
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = ErrorMSG
@@ -353,6 +347,33 @@
                     })
                     if(dlcs.innerHTML == "") dlcs.innerHTML = "<div style='flex:1;'>None</div>"
                 })
+
+                //BETA
+                /*
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
+                    res.data.node.release_channels.nodes.forEach(element => {
+                        var contained = false;
+                        console.log(element.channel_name)
+                        versions.forEach(e => {
+                            if(e.id == element.latest_supported_binary.id) {
+                                contained = true;
+                            }
+                        })
+                        if(!contained) {
+                            versions.push({
+                                version: element.latest_supported_binary.version,
+                                changelog: "N/A build from " + element.channel_name,
+                                id: element.latest_supported_binary.id,
+                                code: element.node.versionCode,
+                                channelname: element.channel_name,
+                                createdate: 0
+                            })
+                        }
+                    })
+                    UpdateVersions(true, headset)
+                }).catch(err => UpdateVersions(true, headset))
+                */
+
 
                 //Request extra app info
                 MakeJSONGetRequestAsync("AppNotes/index.json").then(res => {
