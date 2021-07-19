@@ -206,7 +206,8 @@
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"query":"${document.getElementById("searchTerm").value}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                var searchTerm = document.getElementById("searchTerm").value
+                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
                     res.data.application_search.results.edges.forEach(element => {
@@ -237,10 +238,10 @@
                     }
                 }).catch(err => {
                     MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
-                        document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. All cached apps are being showed</div>`
+                        document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. <i>(Basic)</i> Search has run on cached apps</div>`
                         document.getElementById("apps").innerHTML = ""
                         res.forEach(element => {
-                            if(element.headset != document.getElementById("headset").value) return
+                            if(element.headset != document.getElementById("headset").value || !element.name.toLowerCase().includes(searchTerm.toLowerCase())) return
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
                                     imgsrc: element.img,
                                     name: element.name,
