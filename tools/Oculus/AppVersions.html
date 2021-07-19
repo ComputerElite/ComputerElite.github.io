@@ -127,7 +127,9 @@
                     <div style="font-size: 22px; text-align: center; font-weight: bold;" id="dlcsHeader">DLCs</div>
                     <div style="display: flex; flex-wrap: wrap;" id="dlcs">
                     </div>`
-            const storeSkeleton = `<div style="display: flex; flex-wrap: wrap;" id="apps">
+            const storeSkeleton = `<div id="appsinfo" style="font-size: 22px; text-align: center; font-weight: bold;">
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap;" id="apps">
                     </div>`
 
             const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
@@ -233,7 +235,20 @@
                         document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
                     }
                 }).catch(err => {
-                    document.getElementById("apps").innerHTML = ErrorMSG
+                    MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
+                        document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. All cached apps are being showed</div>`
+                        document.getElementById("apps").innerHTML = ""
+                        res.forEach(element => {
+                            if(element.headset != document.getElementById("headset").value) return
+                                document.getElementById("apps").innerHTML += GetResultFormatted({
+                                    imgsrc: element.img,
+                                    name: element.name,
+                                    id: element.id
+                                })
+                            })
+                    }).catch(err => {
+                        document.getElementById("apps").innerHTML = ErrorMSG
+                    })
                     ReportIssue()
                 })
             }
@@ -245,9 +260,11 @@
             var versions = []
             var finished = 0
             var required = 3;
+            var failed = false
 
             function SearchVersions(id) {
                 var headset = document.getElementById("headset").value
+                failed = false
                 document.getElementById("notesContainer").innerHTML = "";
                 showedid = id
                 showingVersions = true;
@@ -261,9 +278,18 @@
                         //////CACHE
                         if(finished == required - 1) {
                             MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
-                                if(res.includes(id)) {
+                                var contained = false
+                                for(let i = 0; i < res.length; i++)
+                                {
+                                    if(res[i].id == id) {
+                                        contained = true
+                                        break;
+                                    }
+                                }
+                                if(contained) {
                                     console.log("Requesting cached data for " + id)
                                     MakeJSONGetRequestAsync(`OlderAppVersions/${id}.json`).then(res => {
+                                        if(failed) document.getElementById("versionHeader").innerHTML = "Versions for " + res.data.node.appName
                                         res.data.node.binaries.edges.forEach(element => {
                                             var contained = false;
                                             versions.forEach(e => {
@@ -304,6 +330,7 @@
                             createdate: 0
                         })
                     })
+                    document.getElementById("versionHeader").innerHTML = "Versions for " + res.data.node.displayName
 
                     //////BETA
                     console.log("Adding betas")
@@ -330,6 +357,7 @@
                 }).catch(err => {
                     document.getElementById("versions").innerHTML = ErrorMSG
                     console.log(err)
+                    failed = true
                     finished = required - 1
                     ReportIssue()
                 })
@@ -346,6 +374,8 @@
                         
                     })
                     if(dlcs.innerHTML == "") dlcs.innerHTML = "<div style='flex:1;'>None</div>"
+                }).catch(err => {
+                    dlcs.innerHTML = `<div style="font-size: 22px; text-align: center; font-weight: bold; width: 100%; margin-bottom: 30px;">Request to Oculus failed. DLCs haven't been cached</div>`
                 })
 
                 //BETA
@@ -410,12 +440,12 @@
                 if(add) finished++
                 console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
-                document.getElementById("versions").innerHTML = finished < required ? loader : ""
+                document.getElementById("versions").innerHTML = finished < required ? loader : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" : "")
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
                 if(document.getElementById("versions").innerHTML == "") {
-                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                    document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found" + (failed ? ". Request to Oculus failed and no cached data does exist." : "") + "</div>"
                 }
             }
 
@@ -477,11 +507,14 @@
                 issueReported = true;
                 PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
                     alert(res.msg)
+                }).catch(res => {
+                    alert("Reporting to Server failed! It may have stopped working.")
                 })
             }
 
             function PostRequest(url, body) {
                 return new Promise((resolve, reject) => {
+                    //reject("")
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", url, true);
                     xhr.onerror = (err) => {
