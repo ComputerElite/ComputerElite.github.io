@@ -108,6 +108,7 @@
         <script src="../../js/standard.js"></script>
         <script src="../../js/jszip.js"></script>
         <script>
+            var noProxyEmulation = false
             var menu = document.getElementById("contextMenu")
             var progressBar = document.getElementById("progressBar")
             var progressText = document.getElementById("file")
@@ -516,7 +517,7 @@
 
             function PostRequest(url, body) {
                 return new Promise((resolve, reject) => {
-                    //reject("")
+                    if(noProxyEmulation) reject("")
                     var xhr = new XMLHttpRequest();
                     xhr.open("POST", url, true);
                     xhr.onerror = (err) => {
