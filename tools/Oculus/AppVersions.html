@@ -506,9 +506,11 @@
                 if(issueReported) return;
                 issueReported = true;
                 PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
+                    console.log(res.msg)
                     alert(res.msg)
                 }).catch(res => {
                     //alert("Reporting to Server failed! It may have stopped working.")
+                    console.log("Reporting to Server failed! It may have stopped working.")
                 })
             }
 
