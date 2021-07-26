@@ -132,6 +132,7 @@
             var tooltip = document.getElementById("tooltip")
             var showingVersions = false
             var showedid = ""
+            var requestUrl = "https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql"
             //var setDNT = "1"
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
                     <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
@@ -224,7 +225,7 @@
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
                 var searchTerm = document.getElementById("searchTerm").value
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                PostRequest(requestUrl, `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
                     res.data.application_search.results.edges.forEach(element => {
@@ -338,7 +339,7 @@
                             console.log("Delaying cache request until remaining completed")
                         }
                     }, 10)
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
+                PostRequest(requestUrl, `access_token=${access_token}&variables={"id":"${id}"}&doc_id=1586217024733717`).then((res) => {
                     res.data.node.supportedBinaries.edges.forEach(element => {
                         versions.push({
                             version: element.node.version,
@@ -353,7 +354,7 @@
 
                     //////BETA
                     console.log("Adding betas")
-                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
+                    PostRequest(requestUrl, `access_token=OC|1317831034909742|&variables={"itemId":"${id}","first":5,"last":null,"after":null,"before":null,"forward":true,"ordering":null,"ratingScores":null,"hmdType":"MONTEREY" }&doc_id=5373392672732392`).then((res) => {
                         res.data.node.release_channels.nodes.forEach(element => {
                             var contained = false;
                             versions.forEach(e => {
@@ -381,7 +382,7 @@
                     ReportIssue()
                 })
                 var dlcs = document.getElementById("dlcs")
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql", `access_token=${access_token}&variables={"id":"${id}","first": 100}&doc_id=3998937106836519`).then((res) => {
+                PostRequest(requestUrl, `access_token=${access_token}&variables={"id":"${id}","first": 100}&doc_id=3998937106836519`).then((res) => {
                     dlcs.innerHTML = ""
                     res.data.node.latest_supported_binary.firstIapItems.edges.forEach(dlc => {
                         if(dlc.node.latest_supported_asset_file != undefined) {
