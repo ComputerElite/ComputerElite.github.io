@@ -162,6 +162,13 @@
                 SearchVersions(id)
             }
 
+            var query = url.searchParams.get("query");
+
+            if(query != undefined && query != "") {
+                document.getElementById("searchTerm").value = query
+                Search()
+            }
+
             var menuOpen = false;
 
             document.onclick = (e) => {
