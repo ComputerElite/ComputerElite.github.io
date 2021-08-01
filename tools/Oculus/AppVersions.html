@@ -113,6 +113,13 @@
                 </div>
                 <div class="tip" style="margin-top: 20px; width: fit-content;">
                     <div class="tipHeader">
+                        How might I be able to download obb files?
+                    </div>
+                    It's a bit tricky. First you need to follow <a href="ObtainToken.html">this guide</a> to obtain your access_token. Then on this site press F12 and go into the <code>console</code> tab. In there write <code>access_token = "YourToken"</code> where you replace <code>YourToken</code> with the token you obtained by following the guide. Then hit enter and select any app version you want do download. If obb files are needed there's a good chance they'll download. However if they don't then you can use <a href="https://github.com/ComputerElite/Rift-downgrader">Rift Downgrader</a> to download both the apkand obb files.<br>
+                    Note: You'll have to do this every time you reload the site
+                </div>
+                <div class="tip" style="margin-top: 20px; width: fit-content;">
+                    <div class="tipHeader">
                         Why do I get <code>Request to Oculus failed</code>
                     </div>
                     This is not your fault. This shown up when my proxy server (which makes you able to do requests to Oculus) is shut down. Currently it has reached the maximum runtime for this month. While this happens all cached data will be used so you can continue to use this site.
@@ -331,7 +338,8 @@
                                                     id: element.node.id,
                                                     code: element.node.version_code,
                                                     channelname: "From cache",
-                                                    createdate: element.node.created_date
+                                                    createdate: element.node.created_date,
+                                                    appid: id
                                                 })
                                             }
                                         })
@@ -354,7 +362,8 @@
                             id: element.node.id,
                             code: element.node.versionCode,
                             channelname: "From cache",
-                            createdate: 0
+                            createdate: 0,
+                            appid: id
                         })
                     })
                     document.getElementById("versionHeader").innerHTML = "Versions for " + res.data.node.displayName
@@ -374,7 +383,8 @@
                                     version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
                                     changelog: "N/A",
                                     id: element.latest_supported_binary.id,
-                                    code: element.latest_supported_binary.versionCode
+                                    code: element.latest_supported_binary.versionCode,
+                                    appid: id
                                 })
                             }
                         })
@@ -494,18 +504,25 @@
                 })
             }
 
-            function Download(id, isRift) {
+            function Download(id, isRift, appid, versioncode) {
                 var link = GetDownloadLink(id)
                 if(isRift) {
                     alert("Please download the rift downgrader to downgrade rift apps. I'll redirect you after this message has been closed.")
                     window.open("https://github.com/ComputerElite/Rift-downgrader/releases/latest", "_blank")
                 } else {
+                    PostRequest(requestUrl, `doc=query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { id package_name asset_files { edges { node { ... on AssetFile { id file_name metadata asset_file_type uri size is_required iap_item { is_viewer_entitled } } } } } } } } }}&variables={"params":{"app_params":[{"app_id":"${appid}","version_code":"${versioncode}"}]}}&access_token=${access_token}`).then(res => {
+                        res.data.app_binary_info.info.forEach(e => {
+                            e.asset_files.edges.forEach(e => {
+                                if(e.node.is_required) window.open(e.node.uri, "_blank")
+                            })
+                        })
+                    })
                     window.open(link, "_blank")
                 }
             }
 
             function GetFormatted(element, isRift) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="Download(${element.id}, ${isRift})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
+                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="Download(${element.id}, ${isRift}, ${element.appid}, ${element.code})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>upload date: ${element.createdate ? UnixToDataAndTime(element.createdate) : "N/A"}')">${element.version}</div>
                             <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
