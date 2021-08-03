@@ -3,58 +3,80 @@
         <title>Streamer Tools Viewer Quest Overlay</title>
         <meta property="og:site_name" content="ComputerElite">
         <meta property="og:title" content="Streamer Tools Viewer Quest Overlay" />
-        <meta property="og:description" content="An overlay for Streamer Tools Viewer for Beat Saber on Quest. Recreation of the one by reselim" />
-        <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay2.html" />
+        <meta property="og:description" content="An overlay for Streamer Tools Viewer for Beat Saber on Quest. Recreation of Bandoots one" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay3.html" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
         <style>
             body {
-                background-color: #000000FF;
+                background-color: #00000000;
                 background-image: none;
                 padding: 20px;
                 letter-spacing: 2px;
             }
+
+            .item {
+                background-color: #33333388;
+                border-radius: 5px;
+                padding: 3px;
+                margin-top: 5px;
+                width: min-content;
+                font-size: 100%;
+            }
         </style>
     </head>
     <body>
-        <div style="display: flex; margin-bottom: 10px;">
-            <div style="flex: 1; position: relative;">
-                <img style="width: 100px; height: 100px;" src="default.png" class="cover">
-                <svg style="position: absolute; width: 100px; height: 100px; left: 0px; top: 0px; transform: rotate(-90deg)">
-                    <circle cx="50" cy="50" r="45" opacity="0.3" stroke-width="6" fill="#222222"></circle>
-                    <circle cx="50" cy="50" r="45" stroke="#666666" opacity="0.8" stroke-width="6" fill="transparent"></circle>
-                    <circle cx="50" cy="50" r="45" stroke="#FFFFFF" opacity="1.0" stroke-width="4" class="progress" fill="transparent" stroke-dasharray=282 stroke-dashoffset=280></circle>
-                </svg>
-                <div class="timePlayed" style="position: absolute; width: 100%; height: 100%; text-align: center; top: 40px;">3:14</div>
-            </div>
-            <div style="flex: 16; margin-left: 10px;">
-                <div style="font-size: 170%; font-weight: bold; display: inline;"><div style="font-size: 100%; font-weight: bold; display: inline;" class="songName">Song name</div> (<div style="font-size: 100%; font-weight: bold; display: inline;" class="songSub"></div>)</div>
-                <div style="font-size: 125%;"><div style="font-size: 100%; display: inline;" class="songAuthor">Song Author</div> [<div style="font-size: 100%; display: inline;" class="mapper">Mapper</div>]</div>
-                <div style="margin-top: 5px;">
-                    <div style="font-size: 110%; background-color: #EEEEEE; color: #000000; border-radius: 4px; padding: 1px; padding-left: 5px; padding-right: 5px; margin-top: 20px; width: min-content; font-weight: bold; display: inline;" class="diff">diff</div>
-                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" class="bpm"></div> BPM</div>
-                    <div style="display: inline; font-size: 87%;"><div style="display: inline;" class="njs"></div> NJS</div>
+        <div style="display: flex; margin-bottom: 10px; position: absolute; bottom: 10px; left: 10px; flex-direction: column-reverse;">
+            <div style="display: flex; position: absolute; bottom: 10px; left: 10px; flex: 1;">
+                <div style="flex: 1;">
+                    <img style="bottom: 0px; position: absolute; width: 150px; height: 150px; border-radius: 10px;" src="default.png" class="cover">
                 </div>
-                <div class="mpCodeContainer" style="font-size: 80%; margin-top: 3px;">Mp lobby: <div style="display: inline;" class="mpCode">*****</div></div>
+                <div style="flex: 1; flex-shrink: 0; white-space: nowrap; margin-left: 160px;">
+                    <div style="font-size: 120%; font-weight: bold; display: inline;">BSR: <div style="display: inline;" class="key"></div></div>
+                    <div style="font-size: 120%; font-weight: bold;" class="mapper item">Mapper</div>
+                    <div style="font-size: 130%; font-weight: bold;" class="songAuthor item">Song Author</div>
+                    <div style="font-size: 190%; font-weight: bold;" class="songName item">Song name</div>
+                </div>
+            </div>
+            <div style="flex: 1; margin-bottom: 165px; white-space: nowrap; font-size: 16px; display: inline; margin-left: 10px; font-weight: bold;">
+                <div class="customText item" style="display: inline;"></div>
+                <div class="mpCodeContainer item" >Mp lobby: <div class="mpCode" style="display: inline;"></div></div>
+                <div class="preKeyContainer item">Pre-BSR: <div class="preKey" style="display: inline;"></div></div>
+                <div style="font-size: 5px; padding: 2px; border-radius: 2px;" class="williamGayContainer item">William Gay</div>
+                <div style="font-size: 5px; padding: 2px; border-radius: 2px; " class="pinkCuteContainer item">Pink Cute</div>
             </div>
         </div>
-        <div style="font-size: 190%; font-weight: bold;" class="score">Score</div>
-        <div style="font-size: 130%; display: inline;" class="combo">Combo</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;">Combo</div>
-        <br/>
-        <div style="font-size: 130%; display: inline;" class="rank">Rank</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;" class="percentage"></div>
-        <br/>
-        <div style="display: inline; font-size: 100%; color: #999999;" class="customText"></div>
-
-        <div style="font-size: 5px; position: absolute; top: 0px; right: 0px;" class="williamGayContainer">William Gay</div>
-        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 0px;" class="pinkCuteContainer">Pink Cute</div>
-        <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px;" class="eraCuteContainer">Era Cute</div>
+        <div style="position: absolute; top: -5px; right: 0px; left: 0px; background: #33333388; margin: auto; width: min-content; padding: 5px; border-radius: 5px;">
+            <div style="display: flex; text-align: center; white-space: nowrap; font-weight: bold; font-size: 20px;">
+                <div style="flex: 1;" style="display: inline;">
+                    <div class="timePlayed" style="display: inline;"></div>/<div class="totalTime" style="display: inline;"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div class="score"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div class="percentage"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div class="combo"></div>
+                </div>
+                <div style="flex: 1; margin-left: 20px;">
+                    <div style="font-size: 5px; position: absolute; bottom: 0px; right: 50px; padding: 2px; border-radius: 2px; " class="eraCuteContainer">Era Cute</div>
+                </div>
+            </div>
+        </div>
+        <div class="energybarContainer" style="width: 30%; height: 2%; position: absolute; background-color: #33333388; border-radius: 3px; margin: auto; top: 0px; left: 100px; padding: 1px;">
+            <div class="energybar" style="height: 100%; width: 100%; background: #EEEEEE; border-radius: 2px;">
+            </div>
+        </div>
         <script src="pulling.js"></script>
         <script>
             function updateTime(total, played) {
-                UpdateAllFieldsOfName("timePlayed", ToElapsed(played))
-                UpdateAllFieldsOfStokeDashOffset("progress", 282 - played / total * 282)
+                UpdateAllFieldsOfName("timePlayed", played)
+                UpdateAllFieldsOfName("totalTime", total)
             }
         </script>
+        
     </body>
 </html>

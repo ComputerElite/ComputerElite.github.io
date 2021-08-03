@@ -43,8 +43,12 @@ function SetImage(id) {
                         try {
                             UpdateAllFieldsOfNameHidden("prekeyContainer", false)
                         } catch {}
+                    } else {
+                        try {
+                            UpdateAllFieldsOfNameHidden("prekeyContainer", true)
+                        } catch {}
                     }
-                    prekey = lastSongKey
+                    UpdateAllFieldsOfName("preKey", lastSongKey)
                 } catch {}
                 lastSongKey = json["key"]
             })
@@ -53,6 +57,16 @@ function SetImage(id) {
         try {
             UpdateAllFieldsOfName("key", stats["key"])
         } catch {}
+        if(lastSongKey != "") {
+            try {
+                UpdateAllFieldsOfNameHidden("prekeyContainer", false)
+            } catch {}
+        } else {
+            try {
+                UpdateAllFieldsOfNameHidden("prekeyContainer", true)
+            } catch {}
+        }
+        UpdateAllFieldsOfName("preKey", lastSongKey)
         lastSongKey = stats["key"]
     }
     if(id != lastID || got404) {
@@ -366,9 +380,9 @@ function setAll() {
     } catch {}
     try {
         if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
-            UpdateAllFieldsOfNameHidden("barContainer", false)
+            UpdateAllFieldsOfNameHidden("mpCodeContainer", false)
         } else {
-            UpdateAllFieldsOfNameHidden("barContainer", true)
+            UpdateAllFieldsOfNameHidden("mpCodeContainer", true)
         }
     } catch {}
     try {
