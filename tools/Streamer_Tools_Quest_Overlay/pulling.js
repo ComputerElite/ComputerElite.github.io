@@ -386,7 +386,7 @@ function setAll() {
         }
     } catch {}
     try {
-        updateTime(stats["endTime"], stats["time"])
+        updateTime(ToElapsed(stats["endTime"]), ToElapsed(stats["time"]))
     } catch {}
 
     try {
