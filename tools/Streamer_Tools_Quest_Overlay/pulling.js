@@ -413,3 +413,7 @@ function ToElapsed(input) {
     var timeString = date.toISOString().substr(14, 5);
     return timeString
 }
+
+function unformatTime(timeString) {
+    return parseInt(timeString.split(":")[0]) * 60 + parseInt(timeString.split(":")[1])
+}
