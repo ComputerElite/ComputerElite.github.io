@@ -387,7 +387,7 @@ function setAll() {
     } catch {}
     try {
         updateTime(ToElapsed(stats["endTime"]), ToElapsed(stats["time"]))
-    } catch {}
+    } catch (e) { console.log("ya idiot: " + e)}
 
     try {
         if(!showenergyBar) {
