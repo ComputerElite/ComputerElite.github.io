@@ -52,7 +52,7 @@
         <script src="pulling.js"></script>
         <script>
             function updateTime(total, played) {
-                UpdateAllFieldsOfName("timePlayed", ToElapsed(played))
+                UpdateAllFieldsOfName("timePlayed", played)
                 UpdateAllFieldsOfStokeDashOffset("progress", 282 - unformatTime(played) / unformatTime(total) * 282)
             }
         </script>
