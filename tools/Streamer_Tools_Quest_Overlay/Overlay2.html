@@ -53,7 +53,7 @@
         <script>
             function updateTime(total, played) {
                 UpdateAllFieldsOfName("timePlayed", ToElapsed(played))
-                UpdateAllFieldsOfStokeDashOffset("progress", 282 - played / total * 282)
+                UpdateAllFieldsOfStokeDashOffset("progress", 282 - unformatTime(played) / unformatTime(total) * 282)
             }
         </script>
     </body>
