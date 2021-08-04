@@ -31,11 +31,11 @@ var lastSongKey = "";
 var got404 = false;
 
 function SetImage(id) {
-    if(id.startsWith("custom_level_") && id != lastID) {
-        fetch("https://beatsaver.com/api/maps/by-hash/" + id.replace("custom_level_", "")).then((result) => {
+    if(id.startsWith("custom_level_") && id != lastID && !useLocalhost && !stats["fetchedKey"]) {
+        fetch("https://api.beatmaps.io/maps/hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
                 try {
-                    UpdateAllFieldsOfName("key", json["key"])
+                    UpdateAllFieldsOfName("key", json["versions"][0]["key"])
                 } catch {}
                 
                 try {
@@ -50,7 +50,7 @@ function SetImage(id) {
                     }
                     UpdateAllFieldsOfName("preKey", lastSongKey)
                 } catch {}
-                lastSongKey = json["key"]
+                lastSongKey = json["versions"][0]["key"]
             })
         }).catch((err) => {})
     } else if(useLocalhost && stats["fetchedKey"]) {
