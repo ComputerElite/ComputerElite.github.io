@@ -322,7 +322,7 @@ function basicSetNotConnected() {
         UpdateAllFieldsOfNameHidden("mpCodeContainer", true)
     } catch {}
     try {
-        updateTime(10, 5)
+        updateTime(ToElapsed(10), ToElapsed(5))
     } catch {}
 }
 
