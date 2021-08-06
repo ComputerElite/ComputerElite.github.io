@@ -138,6 +138,7 @@
 
             function SetMoveFalse(e) {
                 var element = GetEventSrc(e)
+                element.style.border = ""
                 element.setAttribute("drag", "0")
             }
 
@@ -152,7 +153,6 @@
                     sidebarShown = false;
                     if(startPreview) StartJs()
                 }
-                
             }
 
             function Save() {
@@ -222,6 +222,7 @@
             function MoveElement(e) {
                 var parent = GetEventSrc(e)
                 if(parent.getAttribute("drag") != 1) return
+                if(parent.parentElement.id == "bodyItemContainer") parent.style.border = "1px solid red"
                 parent.style.left = parseInt((parent.style.left.replace("px", "") || 0)) + e.offsetX - (parent.clientWidth / 2 < 50 ? parent.clientWidth : 50) + "px"
                 parent.style.top = parseInt((parent.style.top.replace("px", "") || 0)) + e.offsetY - (parent.clientHeight / 2) + "px"
                 var inSidebar = IsElementInSidebar(parent)
