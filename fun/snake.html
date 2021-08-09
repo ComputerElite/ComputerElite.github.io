@@ -8,9 +8,11 @@
         </style>
     </head>
     <body>
-        
+        <script src="../js/libsnake.js"></script>
         <script>
             var queue = []
+            var oldqueue = []
+            
             
             var url = new URL(window.location.href)
             var width = url.searchParams.get("width")
@@ -54,12 +56,14 @@
             
             SetCharacterOnDisplay(ApplePos.x, ApplePos.y, "O")
             UpdateDisplay()
+            Setup()
 
 
             document.onkeydown = function (e) {
                 //console.log(e.code)
                 queue.push(e.code)
                 e.preventDefault();
+                Process(e.code)
             }
 
             function AddVector2(v1, v2) {
@@ -87,65 +91,75 @@
             function UpdateDisplay() {
                 document.body.innerHTML = "score: " + Score + "<br>" + display
             }
-            
-            setInterval(() => {
-                if(!running) {
-                    display = "rip"
+
+            var current = 0
+
+            function Destroy() {
+                clearInterval(current)
+            }
+
+            function Setup() {
+                current = setInterval(() => {
+                    if(!running) {
+                        display = "rip"
+                        UpdateDisplay()
+                        return
+                    }
+                    if (queue.length != 0)
+                    {
+                        if (queue[0] == 'KeyW' || queue[0] == "ArrowUp") direction = 3;
+                        if (queue[0] == 'KeyA' || queue[0] == "ArrowLeft") direction = 2;
+                        if (queue[0] == 'KeyS' || queue[0] == "ArrowDown") direction = 1;
+                        if (queue[0] == 'KeyD' || queue[0] == "ArrowRight") direction = 0;
+                        //console.log(direction)
+                        queue.splice(0, 1);
+                    }
+                    if (direction == 0) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(1, 0)));
+                    else if (direction == 1) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, 1)));
+                    else if (direction == 2) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(-1, 0)));
+                    else if (direction == 3) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, -1)));
+                    if (previousPositions.length > snakeLength) previousPositions.splice(previousPositions.length - 1, 1);
+                    if (previousPositions[0].x < 0) previousPositions[0].x = width - 1;
+                    if (previousPositions[0].y < 0) previousPositions[0].y = height - 1;
+                    if (previousPositions[0].x >= width) previousPositions[0].x = 0;
+                    if (previousPositions[0].y >= height) previousPositions[0].y = 0;
+
+                    SetCharacterOnDisplay(previousPositions[0].x, previousPositions[0].y, "=")
+                    SetCharacterOnDisplay(previousPositions[previousPositions.length - 1].x, previousPositions[previousPositions.length - 1].y, " ")
+
+
+                    for (let i = 1; i < previousPositions.length; i++) if (previousPositions[i].x == previousPositions[0].x && previousPositions[i].y == previousPositions[0].y)
+                        {
+                            running = false;
+                            break;
+                        }
+                    if (previousPositions[0].x == ApplePos.x && previousPositions[0].y == ApplePos.y)
+                    {
+                        snakeLength++;
+                        Score++;
+                        console.log(Score)
+
+                        if (snakeLength - 1 == width * height)
+                        {
+                            running = false;
+                            won = true;
+                        }
+
+                        var PosTaken = true;
+                        while (PosTaken)
+                        {
+                            ApplePos = GetRandomVector(width, height);
+                            PosTaken = false;
+                            for (let i = 0; i < previousPositions.length; i++) if (previousPositions[i].x == ApplePos.x && previousPositions[i].y == ApplePos.y) { PosTaken = true; break; }
+                        }
+
+                        SetCharacterOnDisplay(ApplePos.x, ApplePos.y, "O")
+                    }
                     UpdateDisplay()
-                    return
-                }
-                if (queue.length != 0)
-                {
-                    if (queue[0] == 'KeyW' || queue[0] == "ArrowUp") direction = 3;
-                    if (queue[0] == 'KeyA' || queue[0] == "ArrowLeft") direction = 2;
-                    if (queue[0] == 'KeyS' || queue[0] == "ArrowDown") direction = 1;
-                    if (queue[0] == 'KeyD' || queue[0] == "ArrowRight") direction = 0;
-                    //console.log(direction)
-                    queue.splice(0, 1);
-                }
-                if (direction == 0) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(1, 0)));
-                else if (direction == 1) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, 1)));
-                else if (direction == 2) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(-1, 0)));
-                else if (direction == 3) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, -1)));
-                if (previousPositions.length > snakeLength) previousPositions.splice(previousPositions.length - 1, 1);
-                if (previousPositions[0].x < 0) previousPositions[0].x = width - 1;
-                if (previousPositions[0].y < 0) previousPositions[0].y = height - 1;
-                if (previousPositions[0].x >= width) previousPositions[0].x = 0;
-                if (previousPositions[0].y >= height) previousPositions[0].y = 0;
-
-                SetCharacterOnDisplay(previousPositions[0].x, previousPositions[0].y, "=")
-                SetCharacterOnDisplay(previousPositions[previousPositions.length - 1].x, previousPositions[previousPositions.length - 1].y, " ")
-
-
-                for (let i = 1; i < previousPositions.length; i++) if (previousPositions[i].x == previousPositions[0].x && previousPositions[i].y == previousPositions[0].y)
-                    {
-                        running = false;
-                        break;
-                    }
-                if (previousPositions[0].x == ApplePos.x && previousPositions[0].y == ApplePos.y)
-                {
-                    snakeLength++;
-                    Score++;
-                    console.log(Score)
-
-                    if (snakeLength - 1 == width * height)
-                    {
-                        running = false;
-                        won = true;
-                    }
-
-                    var PosTaken = true;
-                    while (PosTaken)
-                    {
-                        ApplePos = GetRandomVector(width, height);
-                        PosTaken = false;
-                        for (let i = 0; i < previousPositions.length; i++) if (previousPositions[i].x == ApplePos.x && previousPositions[i].y == ApplePos.y) { PosTaken = true; break; }
-                    }
-
-                    SetCharacterOnDisplay(ApplePos.x, ApplePos.y, "O")
-                }
-                UpdateDisplay()
-            }, speed)
+                }, speed)
+            }
+            
+            
         </script>
     </body>
 </html>
