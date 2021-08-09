@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                font-family: Consolas;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script>
+            var queue = []
+            
+            var url = new URL(window.location.href)
+            var width = url.searchParams.get("width")
+            if(!width) width = 88
+            var height = url.searchParams.get("height")
+            if(!height) height = 40
+            var speed = url.searchParams.get("speed")
+            if(!speed) speed = 100
+
+            String.prototype.replaceAt = function(index, replacement) {
+                return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+            }
+
+            var previousPositions = [];
+            previousPositions.splice(0, 0, {x: 0,y:0});
+
+            // 0 = right, 1 = down, 2 = left, 3 = up
+            var direction = 0;
+            var Score = 0;
+            var display = ""
+            var snakeLength = url.searchParams.get("snakelength")
+            if(!snakeLength) snakeLength = 2
+            var running = true
+            var ApplePos = GetRandomVector(width, height)
+            
+            for (let i = 0; i < height + 2; i++)
+            {
+                for (let ii = 0; ii < width + 2; ii++)
+                {
+                    if (i == 0 || i == height + 1)
+                    {
+                        display += "-"
+                    }
+                    else
+                    {
+                        display += (ii != 0 && ii != width + 1) ? "&nbsp;" : "|";
+                    }
+                }
+                display += "<br>"
+            }
+            
+            SetCharacterOnDisplay(ApplePos.x, ApplePos.y, "O")
+            UpdateDisplay()
+
+
+            document.onkeydown = function (e) {
+                //console.log(e.code)
+                queue.push(e.code)
+            }
+
+            function AddVector2(v1, v2) {
+                return {x: (v1.x + v2.x), y: (v1.y + v2.y)}
+            }
+
+            function GetRandomNumber(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            function GetRandomVector(maxx, maxy) {
+                return NewVector(GetRandomNumber(maxx), GetRandomNumber(maxy))
+            }
+
+            function NewVector(x, y) {
+                return {x: x, y: y}
+            }
+
+            function SetCharacterOnDisplay(x,y,character) {
+                var d = display.replace(/&nbsp;/g, " ").split("<br>")
+                d[y + 1] = d[y + 1].replaceAt(x + 1, character)
+                display = d.join("<br>").replace(/ /g, "&nbsp;")
+            }
+
+            function UpdateDisplay() {
+                document.body.innerHTML = "score: " + Score + "<br>" + display
+            }
+            
+            setInterval(() => {
+                if(!running) {
+                    display = "rip"
+                    UpdateDisplay()
+                    return
+                }
+                if (queue.length != 0)
+                {
+                    if (queue[0] == 'KeyW' || queue[0] == "ArrowUp") direction = 3;
+                    if (queue[0] == 'KeyA' || queue[0] == "ArrowLeft") direction = 2;
+                    if (queue[0] == 'KeyS' || queue[0] == "ArrowDown") direction = 1;
+                    if (queue[0] == 'KeyD' || queue[0] == "ArrowRight") direction = 0;
+                    //console.log(direction)
+                    queue.splice(0, 1);
+                }
+                if (direction == 0) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(1, 0)));
+                else if (direction == 1) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, 1)));
+                else if (direction == 2) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(-1, 0)));
+                else if (direction == 3) previousPositions.splice(0, 0, AddVector2(previousPositions[0], NewVector(0, -1)));
+                if (previousPositions.length > snakeLength) previousPositions.splice(previousPositions.length - 1, 1);
+                if (previousPositions[0].x < 0) previousPositions[0].x = width - 1;
+                if (previousPositions[0].y < 0) previousPositions[0].y = height - 1;
+                if (previousPositions[0].x >= width) previousPositions[0].x = 0;
+                if (previousPositions[0].y >= height) previousPositions[0].y = 0;
+
+                SetCharacterOnDisplay(previousPositions[0].x, previousPositions[0].y, "=")
+                SetCharacterOnDisplay(previousPositions[previousPositions.length - 1].x, previousPositions[previousPositions.length - 1].y, " ")
+
+
+                for (let i = 1; i < previousPositions.length; i++) if (previousPositions[i].x == previousPositions[0].x && previousPositions[i].y == previousPositions[0].y)
+                    {
+                        running = false;
+                        break;
+                    }
+                if (previousPositions[0].x == ApplePos.x && previousPositions[0].y == ApplePos.y)
+                {
+                    snakeLength++;
+                    Score++;
+                    console.log(Score)
+
+                    if (snakeLength - 1 == width * height)
+                    {
+                        running = false;
+                        won = true;
+                    }
+
+                    var PosTaken = true;
+                    while (PosTaken)
+                    {
+                        ApplePos = GetRandomVector(width, height);
+                        PosTaken = false;
+                        for (let i = 0; i < previousPositions.length; i++) if (previousPositions[i].x == ApplePos.x && previousPositions[i].y == ApplePos.y) { PosTaken = true; break; }
+                    }
+
+                    SetCharacterOnDisplay(ApplePos.x, ApplePos.y, "O")
+                }
+                UpdateDisplay()
+            }, speed)
+        </script>
+    </body>
+</html>
