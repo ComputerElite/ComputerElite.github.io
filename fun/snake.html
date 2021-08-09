@@ -4,6 +4,8 @@
         <style>
             html {
                 font-family: Consolas;
+                background-color: #000000;
+                color: #FFFFFF;
             }
         </style>
     </head>
@@ -89,7 +91,7 @@
             }
 
             function UpdateDisplay() {
-                document.body.innerHTML = "score: " + Score + "<br>" + display
+                document.body.innerHTML = "score: " + Score + "<br>" + display.replace(/=/g, "<span style='color: green'>=</span>").replace(/O/g, "<span style='color: red'>O</span>")
             }
 
             var current = 0

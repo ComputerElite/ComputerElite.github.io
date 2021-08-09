@@ -17,7 +17,7 @@ function Process(keycode) {
     if(a.length > 11) a.splice(0, 1)
     if(arrayCompare(a, important))
     {
-        console.log("loggers")
+        console.log("cheater")
         speed /= 1.3
         Destroy()
         Setup()
