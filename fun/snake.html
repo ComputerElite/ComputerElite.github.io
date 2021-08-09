@@ -59,6 +59,7 @@
             document.onkeydown = function (e) {
                 //console.log(e.code)
                 queue.push(e.code)
+                e.preventDefault();
             }
 
             function AddVector2(v1, v2) {
