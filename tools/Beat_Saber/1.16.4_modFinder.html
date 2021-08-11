@@ -95,6 +95,7 @@
                             if (!res.ok) {
                                 modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
                                 reject()
+                                return
                             }
                             console.log(json)
                             todo = json.items.length
@@ -122,6 +123,7 @@
                                     if (!res.ok) {
                                         modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
                                         reject()
+                                        return
                                     }
                                     res.json().then(json2 => {
                                         var mod = {
@@ -137,13 +139,16 @@
                                                     mod.site = json2[i].html_url
                                                 }
                                             })
-                                            if(mod.name == e.name) break
+                                            if(mod.name) {
+                                                if(mod.name) mods.push(mod)
+                                                UpdateMods()
+                                                done++
+                                                console.log(json)
+                                                if(done == todo) resolve()
+                                                return
+                                            }
                                         }
-                                        if(mod.name) mods.push(mod)
-                                        UpdateMods()
-                                        done++
-                                        console.log(json)
-                                        if(done == todo) resolve()
+                                        
                                     })
                                 })
                             })
