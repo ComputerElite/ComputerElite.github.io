@@ -94,6 +94,7 @@
                         res.json().then(json => {
                             if (!res.ok) {
                                 modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
+                                reject()
                             }
                             console.log(json)
                             todo = json.items.length
@@ -120,6 +121,7 @@
                                 fetch(e.releases_url.replace("{/id}", "")).then(res => {
                                     if (!res.ok) {
                                         modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
+                                        reject()
                                     }
                                     res.json().then(json2 => {
                                         var mod = {
