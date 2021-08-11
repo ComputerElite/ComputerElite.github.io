@@ -106,10 +106,6 @@
         <script>
             var mods = []
             var badmods = [
-                {
-                    repo: "BeatSaber-Quest-Codegen",
-                    publisher: "sc2ad"
-                }
             ]
             const modsContainer = document.getElementById("mods")
             fetch("https://api.github.com/search/repositories?q=quest+beat+saber+language:c%2B%2B&sort=updated").then(res => {
