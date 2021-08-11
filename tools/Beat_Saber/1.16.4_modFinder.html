@@ -110,6 +110,7 @@
             const modsContainer = document.getElementById("mods")
 
             AddMods("beat saber")
+            AddMods("quest beat saber")
             
             function AddMods(query) {
                 fetch(`https://api.github.com/search/repositories?q=${query.replace(/ /g, "+")}+language:c%2B%2B&sort=updated`).then(res => {
