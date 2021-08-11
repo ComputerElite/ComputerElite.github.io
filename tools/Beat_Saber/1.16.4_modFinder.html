@@ -91,6 +91,7 @@
                             <div class="item">Mod publisher</div>
                             <div class="item">Repository</div>
                             <div class="item">Download mod</div>
+                            <div class="item">mod version</div>
                         </a>
                         <div id="mods" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
                             Loading
@@ -124,6 +125,7 @@
                         for(let ii = 0; ii < mods.length; ii++) {
                             if(mods[ii].repo == e.name && mods[ii].publisher == e.owner.login) return
                         }
+                        if(e.archived) return
                         fetch(e.releases_url.replace("{/id}", "")).then(res => {
                             res.json().then(json2 => {
                                 var mod = {
@@ -135,9 +137,10 @@
                                         if(e.name.endsWith(".qmod")) {
                                             mod.download = e.browser_download_url
                                             mod.name = e.name
+                                            mod.version = json2[i].tag_name
                                         }
                                     })
-                                    if(mod.name) break
+                                    if(mod.name == e.name) break
                                 }
                                 if(mod.name) mods.push(mod)
                                 UpdateMods()
@@ -165,9 +168,10 @@
 
             function GetFormatted(element) {
                 return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;">
-                            <div class="item" style="cursor: pointer; color: #30A2EC;" onclick="window.location.href = 'https://github.com/${element.publisher}'">${element.publisher}</div>
-                            <div class="item" style="cursor: pointer; color: #30A2EC;" onclick="window.location.href = 'https://github.com/${element.publisher}/${element.repo}'">${element.repo}</div>
-                            <div class="item" style="cursor: pointer; color: #30A2EC;" onclick="window.location.href = '${element.download}'">${element.name}</div>
+                            <div class="item"><a href="https://github.com/${element.publisher}">${element.publisher}</a></div>
+                            <div class="item"><a href="https://github.com/${element.publisher}/${element.repo}">${element.repo}</a></div>
+                            <div class="item"><a href="${element.download}">${element.name}</a></div>
+                            <div class="item">${element.version}</div>
                         </a>`
             }
             
