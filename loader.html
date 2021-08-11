@@ -24,14 +24,16 @@
 
             
 
-            const scriptReg = /<script( src=".+?")?>.*?<\/script>/gs
+            const scriptReg = /<script( src=".+?")?((\/>)|(>.*?<\/script>))/gs
             const headStart = html.indexOf("<head>") + 6
             var scripts = []
             while ((match = scriptReg.exec(html)) !== null) {
-                html = html.replace(match[0], "")
                 scripts.push(match[0]);
                 console.log("moved script " + match[0] + " into head")
             }
+            scripts.forEach(s => {
+                html = html.replace(s, "")
+            })
 
             
 
