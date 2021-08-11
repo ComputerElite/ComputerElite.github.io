@@ -76,7 +76,8 @@
                         <div class="attentionHeader">
                             Info
                         </div>
-                        These mods are not verified. This site simply shows what mods it can find on GitHub in the new qmod format (Beat Saber 1.16.4 +). These mods <i>can</i> be unstable. Use at own risk. You may not get support with all mods.
+                        These mods are not verified. This site simply shows what mods it can find on GitHub in the new qmod format (Beat Saber 1.16.4 +). These mods <i>can</i> be unstable. Use at own risk. You may not get support with all mods.<br>
+                        Do not reload the page too often as that'll create rate limits not allowing you to use this site for about an hour
                     </div>
                 </div>
             </div>
@@ -115,10 +116,9 @@
                 res.json().then(json => {
                     console.log(json)
                     json.items.forEach(e => {
-                        if(badmods.includes({
-                            repo: e.name,
-                            publisher: e.owner.login
-                        })) return
+                        for(let ii = 0; ii < badmods.length; ii++) {
+                            if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) return
+                        }
                         fetch(e.releases_url.replace("{/id}", "")).then(res => {
                             res.json().then(json2 => {
                                 var mod = {
@@ -138,8 +138,12 @@
                                 UpdateMods()
                                 console.log(json)
                             })
+                        }).catch(err => {
+                            modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
                         })
                     })
+                }).catch(err => {
+                    modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
                 })
             })
 
@@ -148,6 +152,9 @@
                 mods.forEach(e => {
                     modsContainer.innerHTML += GetFormatted(e)
                 })
+                if(modsContainer.innerHTML == ""){
+                    modsContainer.innerHTML = "No mods or error"
+                }
             }
 
             function GetFormatted(element) {
