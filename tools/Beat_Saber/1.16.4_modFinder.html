@@ -120,7 +120,7 @@
                                                     mod.download = e.browser_download_url
                                                     mod.name = e.name
                                                     mod.version = json2[i].tag_name
-                                                    mod.site = e.html_url
+                                                    mod.site = json2[i].html_url
                                                 }
                                             })
                                             if(mod.name == e.name) break
