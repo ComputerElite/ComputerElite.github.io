@@ -84,61 +84,63 @@
                     var todo = 0
                     var done = 0
                     fetch(`https://api.github.com/search/repositories?q=${query.replace(/ /g, "+")}+language:c%2B%2B&sort=updated`).then(res => {
-                    res.json().then(json => {
-                        console.log(json)
-                        todo = json.items.length
-                        json.items.forEach(e => {
-                            for(let ii = 0; ii < badmods.length; ii++) {
-                                if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) {
+                        res.json().then(json => {
+                            console.log(json)
+                            todo = json.items.length
+                            json.items.forEach(e => {
+                                for(let ii = 0; ii < badmods.length; ii++) {
+                                    if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) {
+                                        done++
+                                        if(done == todo) resolve()
+                                        return;
+                                    }
+                                }
+                                for(let ii = 0; ii < mods.length; ii++) {
+                                    if(mods[ii].repo == e.name && mods[ii].publisher == e.owner.login) {
+                                        done++
+                                        if(done == todo) resolve()
+                                        return;
+                                    }
+                                }
+                                if(e.archived) {
                                     done++
                                     if(done == todo) resolve()
                                     return;
                                 }
-                            }
-                            for(let ii = 0; ii < mods.length; ii++) {
-                                if(mods[ii].repo == e.name && mods[ii].publisher == e.owner.login) {
-                                    done++
-                                    if(done == todo) resolve()
-                                    return;
-                                }
-                            }
-                            if(e.archived) {
-                                done++
-                                if(done == todo) resolve()
-                                return;
-                            }
-                            fetch(e.releases_url.replace("{/id}", "")).then(res => {
-                                res.json().then(json2 => {
-                                    var mod = {
-                                        repo: e.name,
-                                        publisher: e.owner.login
-                                    }
-                                    for(let i = 0; i < json2.length; i++) {
-                                        json2[i].assets.forEach(e => {
-                                            if(e.name.endsWith(".qmod")) {
-                                                mod.download = e.browser_download_url
-                                                mod.name = e.name
-                                                mod.version = json2[i].tag_name
-                                            }
-                                        })
-                                        if(mod.name == e.name) break
-                                    }
-                                    if(mod.name) mods.push(mod)
-                                    UpdateMods()
-                                    done++
-                                    console.log(json)
-                                    if(done == todo) resolve()
+                                fetch(e.releases_url.replace("{/id}", "")).then(res => {
+                                    res.json().then(json2 => {
+                                        var mod = {
+                                            repo: e.name,
+                                            publisher: e.owner.login
+                                        }
+                                        for(let i = 0; i < json2.length; i++) {
+                                            json2[i].assets.forEach(e => {
+                                                if(e.name.endsWith(".qmod")) {
+                                                    mod.download = e.browser_download_url
+                                                    mod.name = e.name
+                                                    mod.version = json2[i].tag_name
+                                                }
+                                            })
+                                            if(mod.name == e.name) break
+                                        }
+                                        if(mod.name) mods.push(mod)
+                                        UpdateMods()
+                                        done++
+                                        console.log(json)
+                                        if(done == todo) resolve()
+                                    })
+                                }).catch(err => {
+                                    modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
+                                    reject()
                                 })
-                            }).catch(err => {
-                                modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
-                                reject()
                             })
+                        }).catch(err => {
+                            modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
+                            reject()
                         })
-                    }).catch(err => {
-                        modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
-                        reject()
+                        
+                    
                     })
-                
                 })
             }
 
