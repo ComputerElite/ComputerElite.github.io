@@ -23,9 +23,10 @@
 
         .item {
             flex: 1;
-            width: 25%;
+            width: 24%;
             word-wrap: break-word;
             padding: 3px;
+            display: inline;
         }
         </style>
     </head>
@@ -119,6 +120,7 @@
                                                     mod.download = e.browser_download_url
                                                     mod.name = e.name
                                                     mod.version = json2[i].tag_name
+                                                    mod.site = e.html_url
                                                 }
                                             })
                                             if(mod.name == e.name) break
@@ -138,8 +140,6 @@
                             modsContainer.innerHTML = "Error: " + err.status + ". please try again later (reccomemnded: 1 hour)"
                             reject()
                         })
-                        
-                    
                     })
                 })
             }
@@ -155,11 +155,11 @@
             }
 
             function GetFormatted(element) {
-                return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;">
+                return `<div style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;">
                             <div class="item"><a href="https://github.com/${element.publisher}">${element.publisher}</a></div>
                             <div class="item"><a href="https://github.com/${element.publisher}/${element.repo}">${element.repo}</a></div>
                             <div class="item"><a href="${element.download}">${element.name}</a></div>
-                            <div class="item">${element.version}</div>
+                            <div class="item"><a href="${element.site}">${element.version}</a></div>
                         </a>`
             }
             
