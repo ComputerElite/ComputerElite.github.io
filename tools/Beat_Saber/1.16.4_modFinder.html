@@ -100,10 +100,10 @@
                             console.log(json)
                             todo = json.items.length
                             json.items.forEach(e => {
-                                console.log(done + ", " + todo)
                                 for(let ii = 0; ii < badmods.length; ii++) {
                                     if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) {
                                         done++
+                                        console.log(done + ", " + todo)
                                         if(done == todo) resolve()
                                         return;
                                     }
@@ -111,12 +111,14 @@
                                 for(let ii = 0; ii < mods.length; ii++) {
                                     if(mods[ii].repo == e.name && mods[ii].publisher == e.owner.login) {
                                         done++
+                                        console.log(done + ", " + todo)
                                         if(done == todo) resolve()
                                         return;
                                     }
                                 }
                                 if(e.archived) {
                                     done++
+                                    console.log(done + ", " + todo)
                                     if(done == todo) resolve()
                                     return;
                                 }
@@ -132,6 +134,7 @@
                                             publisher: e.owner.login
                                         }
                                         done++
+                                        console.log(done + ", " + todo)
                                         for(let i = 0; i < json2.length; i++) {
                                             json2[i].assets.forEach(e => {
                                                 if(e.name.endsWith(".qmod")) {
