@@ -136,6 +136,7 @@
                                         done++
                                         console.log(done + ", " + todo)
                                         for(let i = 0; i < json2.length; i++) {
+                                            if(json2[i].prerelease) continue
                                             json2[i].assets.forEach(e => {
                                                 if(e.name.endsWith(".qmod")) {
                                                     mod.download = e.browser_download_url
