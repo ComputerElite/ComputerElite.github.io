@@ -131,6 +131,7 @@
                                             repo: e.name,
                                             publisher: e.owner.login
                                         }
+                                        done++
                                         for(let i = 0; i < json2.length; i++) {
                                             json2[i].assets.forEach(e => {
                                                 if(e.name.endsWith(".qmod")) {
@@ -140,17 +141,17 @@
                                                     mod.site = json2[i].html_url
                                                 }
                                             })
-                                            done++
+                                            
                                             if(mod.name) {
                                                 if(mod.name) mods.push(mod)
                                                 UpdateMods()
                                                 
+                                                return
                                                 console.log(json)
                                             }
                                             if(done == todo) resolve()
-                                            return
                                         }
-                                        
+                                        if(done == todo) resolve()
                                     })
                                 })
                             })
