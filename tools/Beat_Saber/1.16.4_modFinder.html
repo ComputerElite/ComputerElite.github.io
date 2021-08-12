@@ -139,14 +139,17 @@
                                                     mod.site = json2[i].html_url
                                                 }
                                             })
+                                            done++
                                             if(mod.name) {
                                                 if(mod.name) mods.push(mod)
                                                 UpdateMods()
-                                                done++
+                                                
                                                 console.log(json)
                                                 if(done == todo) resolve()
-                                                return
+                                                
                                             }
+                                            
+                                            return
                                         }
                                         
                                     })
