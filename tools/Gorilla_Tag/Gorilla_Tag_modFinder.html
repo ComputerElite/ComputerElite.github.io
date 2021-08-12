@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gorilla Tag mods finder</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Gorilla mods finder" />
+        <meta property="og:description" content="Find unverified Gorilla Tag mods" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Gorilla_Tag/Gorilla_Tag_modFinder.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+        td {
+            padding: 10px;
+        }
+
+        .os {
+            font-size: 16px;
+            color: #EEE;
+        }
+
+        .item {
+            flex: 1;
+            width: 24%;
+            word-wrap: break-word;
+            padding: 3px;
+            display: inline;
+        }
+        </style>
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;">
+                    <div style=" padding: 10px;">
+                        <div style="font-size: 24px;">Gorilla Tag Mod finder</div>
+                    </div>
+                    <div class="attention" style="width: fit-content; margin: auto;">
+                        <div class="attentionHeader">
+                            Info
+                        </div>
+                        These mods are not verified. This site simply shows what mods it can find on GitHub in the qmod format (Gorilla Tag mods). These mods <i>can</i> be unstable. Use at own risk. You may not get support with all mods.<br>
+                        Do not reload the page too often as that'll create rate limits not allowing you to use this site for about an hour
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Mods</div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/" target="_blank">GitHub</a></div>
+                        <br/>
+                        <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                            <div class="item">Mod publisher</div>
+                            <div class="item">Repository</div>
+                            <div class="item">Download mod</div>
+                            <div class="item">mod version</div>
+                        </a>
+                        <div id="mods" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+                            Loading
+                        </div>
+                        <br/>
+                    </div>
+                    <div class="attention" style="width: fit-content; margin: auto;">
+                        <div class="attentionHeader">
+                            Help! I get <code>Error: 403. Please try again later (reccommended: 1 hour)</code>
+                        </div>
+                        After a certain amount of requests to GitHub, GitHub rejects all your requests for a set period of time. The only thing to do here is waiting.
+                    </div>
+                    <div style="text-align: center; font-size: 11px; color: #888; margin-top: 20px; padding: 10px;">
+                        This does only check the file extension to be <code>.qmod</code>. This does not mean the mod is stable.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var mods = []
+            var badmods = [
+            ]
+            const modsContainer = document.getElementById("mods")
+
+            AddMods("gorilla tag").then(() => {
+                AddMods("gorillatag")
+            })
+            
+            
+            function AddMods(query) {
+                return new Promise((resolve, reject) => {
+                    var todo = 0
+                    var done = 0
+                    fetch(`https://api.github.com/search/repositories?q=${query.replace(/ /g, "+")}+language:c%2B%2B&sort=updated`).then(res => {
+                        res.json().then(json => {
+                            if (!res.ok) {
+                                modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
+                                reject()
+                                return
+                            }
+                            console.log(json)
+                            todo = json.items.length
+                            json.items.forEach(e => {
+                                for(let ii = 0; ii < badmods.length; ii++) {
+                                    if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) {
+                                        done++
+                                        console.log(done + ", " + todo)
+                                        if(done == todo) resolve()
+                                        return;
+                                    }
+                                }
+                                for(let ii = 0; ii < mods.length; ii++) {
+                                    if(mods[ii].repo == e.name && mods[ii].publisher == e.owner.login) {
+                                        done++
+                                        console.log(done + ", " + todo)
+                                        if(done == todo) resolve()
+                                        return;
+                                    }
+                                }
+                                if(e.archived) {
+                                    done++
+                                    console.log(done + ", " + todo)
+                                    if(done == todo) resolve()
+                                    return;
+                                }
+                                fetch(e.releases_url.replace("{/id}", "")).then(res => {
+                                    if (!res.ok) {
+                                        modsContainer.innerHTML = "Error: " + res.status + ". Please try again later (reccommended: 1 hour)"
+                                        reject()
+                                        return
+                                    }
+                                    res.json().then(json2 => {
+                                        var mod = {
+                                            repo: e.name,
+                                            publisher: e.owner.login
+                                        }
+                                        done++
+                                        console.log(done + ", " + todo)
+                                        for(let i = 0; i < json2.length; i++) {
+                                            if(json2[i].prerelease) continue
+                                            json2[i].assets.forEach(e => {
+                                                if(e.name.endsWith(".qmod")) {
+                                                    mod.download = e.browser_download_url
+                                                    mod.name = e.name
+                                                    mod.version = json2[i].tag_name
+                                                    mod.site = json2[i].html_url
+                                                }
+                                            })
+                                            
+                                            if(mod.name) {
+                                                if(mod.name) mods.push(mod)
+                                                UpdateMods()
+                                                
+                                                return
+                                                console.log(json)
+                                            }
+                                            if(done == todo) resolve()
+                                        }
+                                        if(done == todo) resolve()
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            }
+
+            function UpdateMods() {
+                modsContainer.innerHTML = ""
+                mods.forEach(e => {
+                    modsContainer.innerHTML += GetFormatted(e)
+                })
+                if(modsContainer.innerHTML == ""){
+                    modsContainer.innerHTML = "No mods or error"
+                }
+            }
+
+            function GetFormatted(element) {
+                return `<div style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;">
+                            <div class="item"><a href="https://github.com/${element.publisher}">${element.publisher}</a></div>
+                            <div class="item"><a href="https://github.com/${element.publisher}/${element.repo}">${element.repo}</a></div>
+                            <div class="item"><a href="${element.download}">${element.name}</a></div>
+                            <div class="item"><a href="${element.site}">${element.version}</a></div>
+                        </a>`
+            }
+            
+        </script>
+    </body>
+</html>
