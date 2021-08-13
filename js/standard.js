@@ -146,26 +146,6 @@ function UnixToDataAndTime(timestamp) {
 
 
 /// Testing of personal-ish project. Will only track me as it posts to localhost or everony crazy enough to have my not published analytics server running on their PC
-const analyticsVersion = "1.0"
-var analytic = {
-    analyticsVersion: analyticsVersion,
-    fullUri: window.location.href,
-    sideOpen: Math.floor(Date.now() / 1000),
-    sideClose: 0,
-    referrer: document.referrer
-}
-
-var sent = false
-
-window.onbeforeunload = SendAnalytics
-window.onunload = SendAnalytics
-
-function SendAnalytics() {
-    if(sent) return
-    sent = true
-    analytic.sideClose = Math.floor(Date.now() / 1000)
-    fetch("http://localhost:502/analytics", {
-        method: "POST",
-        body: JSON.stringify(analytic)
-    })
-}
+var o = document.createElement("script")
+o.src = "http://localhost:502/analytics.js"
+document.head.appendChild(o)
