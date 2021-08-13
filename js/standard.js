@@ -164,7 +164,7 @@ function SendAnalytics() {
     if(sent) return
     sent = true
     analytic.sideClose = Math.floor(Date.now() / 1000)
-    fetch("localhost:502/analytics", {
+    fetch("http://localhost:502/analytics", {
         method: "POST",
         body: JSON.stringify(analytic)
     })
