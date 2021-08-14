@@ -141,11 +141,3 @@ function UnixToDataAndTime(timestamp) {
     var date = new Date(timestamp * 1000);
     return AddZeroToNumber(date.getDate()) + "." + AddZeroToNumber(date.getMonth()) + "." + AddZeroToNumber(date.getFullYear(), 4) + " " + AddZeroToNumber(date.getHours()) + ":" + AddZeroToNumber(date.getMinutes()) + ":" + AddZeroToNumber(date.getSeconds())
 }
-
-
-
-
-/// Testing of personal-ish project. Will only track me as it posts to localhost or everony crazy enough to have my not published analytics server running on their PC
-var o = document.createElement("script")
-o.src = "http://localhost:502/analytics.js"
-document.head.appendChild(o)
