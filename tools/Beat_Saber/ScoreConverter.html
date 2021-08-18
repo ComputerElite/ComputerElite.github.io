@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beat Saber Score converter</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Beat Saber Score Converter" />
+        <meta property="og:description" content="Convert your old Beat Saber scores" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Beat_Saber/ScoreConverter.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body>
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;">
+                    <div style=" padding: 10px;">
+                        <div style="font-size: 24px;">Beat Saber Score Converter</div>
+                    </div>
+                    <div class="info" style="width: fit-content; margin: auto;">
+                        <div class="infoHeader">
+                            Usage
+                        </div>
+                        Paste your score file into the box below. Then click somewhere else and your scores will be converted. Simply copy paste all back into the file and you're good to go
+                    </div>
+                    <textarea id="json" style="width: 90%; height: 1000px;"></textarea>
+                </div>
+            </div>
+        
+        <script>
+            const json = document.getElementById("json")
+            json.onchange = function() {
+                const scriptReg = /Questcustom_level_[0-9a-fA-F]{40}/gs
+                var scripts = []
+                while ((match = scriptReg.exec(json.value)) !== null) {
+                    scripts.push(match[0]);
+                    console.log("moved script " + match[0] + " into head")
+                }
+                scripts.forEach(s => {
+                    json.value = json.value.replace(s, "Questcustom_level_" + s.substr(18, 40).toUpperCase())
+                })
+            }
+        </script>
+    </body>
+</html>
