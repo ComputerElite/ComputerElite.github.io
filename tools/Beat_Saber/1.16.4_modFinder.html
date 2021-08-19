@@ -160,12 +160,9 @@
                                             if(mod.name) {
                                                 if(mod.name) mods.push(mod)
                                                 UpdateMods()
-                                                
+                                                if(done == todo) resolve()
                                                 return
-                                                console.log(json)
                                             }
-                                            
-                                            if(done == todo) resolve()
                                         }
                                         if(done == todo) resolve()
                                     })
