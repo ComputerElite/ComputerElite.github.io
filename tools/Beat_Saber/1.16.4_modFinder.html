@@ -156,7 +156,7 @@
                                                     mod.site = json2[i].html_url
                                                 }
                                             })
-                                            
+                                            searchedMods.push(mod)
                                             if(mod.name) {
                                                 if(mod.name) mods.push(mod)
                                                 UpdateMods()
@@ -164,7 +164,7 @@
                                                 return
                                                 console.log(json)
                                             }
-                                            searchedMods.push(mod)
+                                            
                                             if(done == todo) resolve()
                                         }
                                         if(done == todo) resolve()
