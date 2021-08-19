@@ -79,10 +79,13 @@
             var mods = []
             var badmods = [
             ]
+            var searchedMods = []
             const modsContainer = document.getElementById("mods")
 
             AddMods("beat saber").then(() => {
-                AddMods("beatsaber")
+                AddMods("beatsaber").then(() => {
+                    AddMods("quest songs")
+                })
             })
             
             
@@ -102,6 +105,14 @@
                             json.items.forEach(e => {
                                 for(let ii = 0; ii < badmods.length; ii++) {
                                     if(badmods[ii].repo == e.name && badmods[ii].publisher == e.owner.login) {
+                                        done++
+                                        console.log(done + ", " + todo)
+                                        if(done == todo) resolve()
+                                        return;
+                                    }
+                                }
+                                for(let ii = 0; ii < searchedMods.length; ii++) {
+                                    if(searchedMods[ii].repo == e.name && searchedMods[ii].publisher == e.owner.login) {
                                         done++
                                         console.log(done + ", " + todo)
                                         if(done == todo) resolve()
@@ -153,6 +164,7 @@
                                                 return
                                                 console.log(json)
                                             }
+                                            searchedMods.push(mod)
                                             if(done == todo) resolve()
                                         }
                                         if(done == todo) resolve()
