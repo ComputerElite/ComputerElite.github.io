@@ -44,6 +44,8 @@
         <br/>
         <div style="font-size: 130%; display: inline;" class="rank">Rank</div><div style="display: inline; font-size: 90%; color: #999999; margin-left: 5px;" class="percentage"></div>
         <br/>
+        <div style="font-size: 130%; display: inline;" class="fps">FPS</div>
+        <br/>
         <div style="display: inline; font-size: 100%; color: #999999;" class="customText"></div>
 
         <div style="font-size: 5px; position: absolute; top: 0px; right: 0px;" class="williamGayContainer">William Gay</div>
@@ -54,6 +56,10 @@
             function updateTime(total, played) {
                 UpdateAllFieldsOfName("timePlayed", played)
                 UpdateAllFieldsOfStokeDashOffset("progress", 282 - unformatTime(played) / unformatTime(total) * 282)
+            }
+
+            function SetFPS(fps, wdh) {
+                document.getElementById("fps").innerHTML = fps
             }
         </script>
     </body>
