@@ -19,12 +19,6 @@ function intToDiff(diff) {
     return "Unknown";
 }
 
-function SetPercentage(percentage) {
-    try {
-        bar.style.width = (percentage * 100) + "%"
-    } catch {}
-}
-
 
 var lastID = "";
 var lastSongKey = "";

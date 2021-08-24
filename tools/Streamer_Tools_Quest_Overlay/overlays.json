@@ -57,11 +57,11 @@
         {
             "Name": "Bandoot_Overlay",
             "downloaded": false,
-            "versionCode": 9,
+            "versionCode": 10,
             "downloads": [
                 {
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay3.html",
-                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay23html",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay3.html",
                     "IsEntryPoint": true
                 },
                 {
