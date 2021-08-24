@@ -77,9 +77,10 @@
                 UpdateAllFieldsOfName("totalTime", total)
             }
 
-            const energybar =  document.getElementById("energybar")
             function UpdateEnergy(energy) {
-                energybar.style.width = `${energy * 100}%`
+                Array.prototype.forEach.call(document.getElementsByClassName("energybar"), energybar => {
+                    energybar.style.width = `${energy * 100}%`
+                })
             }
         </script>
         

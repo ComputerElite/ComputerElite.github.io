@@ -29,8 +29,10 @@ function SetPercentage(percentage) {
 var lastID = "";
 var lastSongKey = "";
 var got404 = false;
+var coverFetched = false
 
 function SetImage(id) {
+    if(id != lastID) coverFetched = false
     if(id.startsWith("custom_level_") && id != lastID && !useLocalhost && !stats["fetchedKey"]) {
         fetch("https://api.beatmaps.io/maps/hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
@@ -69,15 +71,16 @@ function SetImage(id) {
         UpdateAllFieldsOfName("preKey", lastSongKey)
         lastSongKey = stats["key"]
     }
-    if((id != lastID || got404) && stats["coverFetchable"]) {
+    if((id != lastID || got404 || !coverFetched) && (stats["coverFetchable"] && !useLocalhost || stats["coverFetchableLocalhost"] && useLocalhost)) {
         fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
             res.text().then((base64) => {
-                if(res.status == 404) {
+                if(res.status != 200) {
                     UpdateAllFieldsOfNameSrc("cover", "default.png")
                     got404 = true;
                 } else {
                     UpdateAllFieldsOfNameSrc("cover", base64)
                     got404 = false;
+                    coverFetched = true
                 }
             })
         }).catch((err) => {
@@ -387,7 +390,7 @@ function setAll() {
     } catch {}
     try {
         updateTime(ToElapsed(stats["endTime"]), ToElapsed(stats["time"]))
-    } catch (e) { console.log("ya idiot: " + e)}
+    } catch {}
 
     try {
         if(!showenergyBar) {

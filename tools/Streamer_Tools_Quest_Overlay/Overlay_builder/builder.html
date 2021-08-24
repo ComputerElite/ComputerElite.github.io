@@ -155,6 +155,12 @@
                 }
             }
 
+            function UpdateEnergy(energy) {
+                Array.prototype.forEach.call(document.getElementsByClassName("energybar"), energybar => {
+                    energybar.style.width = `${energy * 100}%`
+                })
+            }
+
             function Save() {
                 var toSave = []
                 for(let i = 0; i < bodyItemContainer.children.length; i++) {
