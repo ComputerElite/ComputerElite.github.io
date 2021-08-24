@@ -42,7 +42,12 @@
             <div class="energybar" style="height: 100%; width: 100%; background: #00FFFF; border-radius: 2px;">
             </div>
         </div>
-
+        <script>
+            const energybar =  document.getElementById("energybar")
+            function UpdateEnergy(energy) {
+                energybar.style.width = `${energy * 100}%`
+            }
+        </script>
         
         <script src="pulling.js"></script>
     </body>

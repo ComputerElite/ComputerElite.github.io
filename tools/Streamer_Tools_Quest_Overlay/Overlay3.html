@@ -76,6 +76,11 @@
                 UpdateAllFieldsOfName("timePlayed", played)
                 UpdateAllFieldsOfName("totalTime", total)
             }
+
+            const energybar =  document.getElementById("energybar")
+            function UpdateEnergy(energy) {
+                energybar.style.width = `${energy * 100}%`
+            }
         </script>
         
     </body>

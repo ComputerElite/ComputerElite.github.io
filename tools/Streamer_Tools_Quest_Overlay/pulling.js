@@ -69,7 +69,7 @@ function SetImage(id) {
         UpdateAllFieldsOfName("preKey", lastSongKey)
         lastSongKey = stats["key"]
     }
-    if(id != lastID || got404) {
+    if((id != lastID || got404) && stats["coverFetchable"]) {
         fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
             res.text().then((base64) => {
                 if(res.status == 404) {
@@ -396,6 +396,9 @@ function setAll() {
     } catch {}
     try {
         SetFPS(stats["fps"], chartwidth)
+    } catch {}
+    try {
+        UpdateEnergy(stats["energy"])
     } catch {}
 }
 
