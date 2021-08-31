@@ -57,8 +57,8 @@ body, table, input {
 }
 
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
     border-radius: 50%;
     animation: spin 2s linear infinite;
   }
@@ -216,4 +216,12 @@ code {
 
 .zoom {
     transition: transform .6s;
+}
+
+.darken:hover {
+    filter: brightness(80%);
+}
+
+.darken {
+    transition: filter .6s;
 }

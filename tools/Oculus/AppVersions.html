@@ -14,119 +14,125 @@
             td {
                 padding: 10px;
             }
-    
+
+            html {
+                background-color: #111111;
+            }
+
             .item {
                 flex: 1;
                 width: 25%;
                 word-wrap: break-word;
                 padding: 3px;
             }
+
+            hr {
+                border-color: #2c2c2c;
+            }
         </style>
     </head>
     <body onmousemove="UpdateMousePos(event)">
-        <div style="padding-top: 10px; width: 100%; display: flex;">
-            <div style="flex: 1; background-color: #2F3136; padding: 10px;">
-                <div style="font-size: 24px; text-align: center;">Oculus API App Versions</div>
-                <div style="font-size: 15px; text-align: center; color: #888;">
-                    Get download links for all Oculus apps
-                </div>
+        <div style="flex: 1; background-color: #111111; padding: 10px;">
+            <div style="font-size: 24px; text-align: center;">Oculus API App Versions</div>
+            <div style="font-size: 15px; text-align: center; color: #888;">
+                Get download links for all Oculus apps
+            </div>
 
-                <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
-                    <tr>
+            <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
+                <tr>
+                    <td>
+                        Headset
+                    </td>
                         <td>
-                            Headset
-                        </td>
-                            <td>
-                                <select id="headset">
-                                <option value="MONTEREY">Quest</option>
-                                <option value="RIFT">Rift (downloads working via seperate program)</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Search term for app
-                        </td>
-                        <td>
-                            <input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
-                        </td>
-                        <td>
-                            <input type="button" value="Search" onclick="Search()">
-                        </td>
-                    </tr>
-                </table>
-                <div id="notesContainer" style="margin-bottom: 50px;">
+                            <select id="headset">
+                            <option value="MONTEREY">Quest</option>
+                            <option value="RIFT">Rift (downloads working via seperate program)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Search term for app
+                    </td>
+                    <td>
+                        <input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
+                    </td>
+                    <td>
+                        <input type="button" value="Search" onclick="Search()">
+                    </td>
+                </tr>
+            </table>
+            <div id="notesContainer" style="margin-bottom: 50px;">
 
-                </div>
-                <div id="resultContainer">
-                    <div style="display: flex; flex-wrap: wrap;">
-                        <div style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px;">
-                            <table style="width: fit-content; margin: auto;">
-                                <tr><td><img src="../../assets/CE_512px.png" width="100px" height="100px"></td><td>Please search</td></tr>
-                            </table>
-                        </div>
+            </div>
+            <div id="resultContainer">
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div style="flex: 1; font-size: 18px; padding: 5px; margin: 5px;">
+                        <table style="width: fit-content; margin: auto;">
+                            <tr><td><img src="../../assets/CE_512px.png" width="100px" height="100px"></td><td>Please search</td></tr>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div id="contextMenu" class="contextMenu">
-                    <div class="contextMenuItem" onclick="navigator.clipboard.writeText(forClipboard)">Copy id</div>
-                    <div class="contextMenuItem" onclick="SetClipboardLink()">Copy link</div>
-                </div>
-                <div id="tooltip" class="tooltip">
-                    tooltip
-                </div>
-                <div class="guideHeader">How do I use this?</div>
-                <div class="guideSteps" id="instructions">
-                    Log in on <a href="https://www.oculus.com/">oculus.com</a>, search for an app, click on it, click on the version your want to download and you got yourself an apk you can install.
-                    <br>
-                    Alternatively you can watch <a href="https://www.youtube.com/watch?v=hasWgfcnf94">this video guide by Cas and Chary VR</a>. But make sure you have devloper mode enabled as this is a requirement to install apps.
-                    <div class="tip" style="margin-top: 20px; width: fit-content;">
-                        <div class="tipHeader">
-                            Info
-                        </div>
-                        If you get an Error saying "Error the site could not be found" then you're most likely not logged in on <a href="https://www.oculus.com/">oculus.com</a> (in this browser). If you are 100% sure you own the app and are signed in try a different browser like Microsoft Edge or Firefox. Otherwise you don't own the app you're trying to download.
+            <div id="contextMenu" class="contextMenu">
+                <div class="contextMenuItem" onclick="navigator.clipboard.writeText(forClipboard)">Copy id</div>
+                <div class="contextMenuItem" onclick="SetClipboardLink()">Copy link</div>
+            </div>
+            <div id="tooltip" class="tooltip">
+                tooltip
+            </div>
+            <div class="guideHeader">How do I use this?</div>
+            <div class="guideSteps" id="instructions">
+                Log in on <a href="https://www.oculus.com/">oculus.com</a>, search for an app, click on it, click on the version your want to download and you got yourself an apk you can install.
+                <br>
+                Alternatively you can watch <a href="https://www.youtube.com/watch?v=hasWgfcnf94">this video guide by Cas and Chary VR</a>. But make sure you have devloper mode enabled as this is a requirement to install apps.
+                <div class="tip" style="margin-top: 20px; width: fit-content;">
+                    <div class="tipHeader">
+                        Info
                     </div>
+                    If you get an Error saying "Error the site could not be found" then you're most likely not logged in on <a href="https://www.oculus.com/">oculus.com</a> (in this browser). If you are 100% sure you own the app and are signed in try a different browser like Microsoft Edge or Firefox. Otherwise you don't own the app you're trying to download.
                 </div>
-                <div class="guideHeader">Is this legal?</div>
-                <div class="guideSteps">
-                    I cannot give an 100% correct answer on that. But it uses Oculus public API and official download servers (for which you need to own the app and be logged in on <a href="https://www.oculus.com/">oculus.com</a> to download the app) to get all the information.
-                    <br/>
-                    So if you ask me I'd say yes, it is legal.
-                </div>
+            </div>
+            <div class="guideHeader">Is this legal?</div>
+            <div class="guideSteps">
+                I cannot give an 100% correct answer on that. But it uses Oculus public API and official download servers (for which you need to own the app and be logged in on <a href="https://www.oculus.com/">oculus.com</a> to download the app) to get all the information.
                 <br/>
-                <div class="attention" style="margin-top: 20px; width: fit-content; font-size: 14px;">
-                    <div class="attentionHeader" style="font-size: 16px;">
-                        The APK fails to install on Sidequest and says <code>SAFESIDE</code> or is stuck on <code>Checking APK against blacklist</code>
-                    </div>
-                    First download <a href="InstallAPK.bat" download="InstallAPK.bat">this file</a> (your browser may flag this as a virus but it isn't. You can check the code <a href="InstallAPK.bat">here</a>). Then open the file, connect your quest and drag and drop the apk you downloaded into the window and press enter. The apk should get installed.
-                    <br/><i>do all of this while your quest is plugged in. If you have any issues feel free to ask on the <a href="https://discord.gg/MrwMx5e">Beat Saber legacy group</a> Discord Server</i>
-                    <br/>
-                    <br/>Note: This will <b>NOT</b> make Sidequest able to install the APK. It'll install the APK without Sidequest
-                    <br/>
-                    <br/>Sidequest does not want to remove some apps from their blacklist because quote: "We are unable to provide support for apps that are not listed on SideQuest."
+                So if you ask me I'd say yes, it is legal.
+            </div>
+            <br/>
+            <div class="attention" style="margin-top: 20px; width: fit-content; font-size: 14px;">
+                <div class="attentionHeader" style="font-size: 16px;">
+                    The APK fails to install on Sidequest and says <code>SAFESIDE</code> or is stuck on <code>Checking APK against blacklist</code>
                 </div>
-                <div class="attention" style="margin-top: 20px; width: fit-content; font-size: 14px;">
-                    <div class="attentionHeader" style="font-size: 16px;">
-                        What to do when getting <code>An Error occured</code>
-                    </div>
-                        Try again in 10 minutes or so. If the issue still persists contact ComputerElite via Discord. if you came here to download version 1.13.2 of Beat Saber you can download it <a href="https://securecdn.oculus.com/binaries/download/?id=4954569241283665">here</a> after logging in on <a href="https://oculus.com">oculus.com</a>.
+                First download <a href="InstallAPK.bat" download="InstallAPK.bat">this file</a> (your browser may flag this as a virus but it isn't. You can check the code <a href="InstallAPK.bat">here</a>). Then open the file, connect your quest and drag and drop the apk you downloaded into the window and press enter. The apk should get installed.
+                <br/><i>do all of this while your quest is plugged in. If you have any issues feel free to ask on the <a href="https://discord.gg/MrwMx5e">Beat Saber legacy group</a> Discord Server</i>
+                <br/>
+                <br/>Note: This will <b>NOT</b> make Sidequest able to install the APK. It'll install the APK without Sidequest
+                <br/>
+                <br/>Sidequest does not want to remove some apps from their blacklist because quote: "We are unable to provide support for apps that are not listed on SideQuest."
+            </div>
+            <div class="attention" style="margin-top: 20px; width: fit-content; font-size: 14px;">
+                <div class="attentionHeader" style="font-size: 16px;">
+                    What to do when getting <code>An Error occured</code>
                 </div>
-                <div class="tip" style="margin-top: 20px; width: fit-content;">
-                    <div class="tipHeader">
-                        How might I be able to download obb files?
-                    </div>
-                    It's a bit tricky. First you need to follow <a href="ObtainToken.html">this guide</a> to obtain your access_token. Then on this site press F12 and go into the <code>console</code> tab. In there write <code>access_token = "YourToken"</code> where you replace <code>YourToken</code> with the token you obtained by following the guide. Then hit enter and select any app version you want do download. If obb files are needed there's a good chance they'll download. However if they don't then you can use <a href="https://github.com/ComputerElite/Rift-downgrader">Rift Downgrader</a> to download both the apkand obb files.<br>
-                    Note: You'll have to do this every time you reload the site
+                    Try again in 10 minutes or so. If the issue still persists contact ComputerElite via Discord. if you came here to download version 1.13.2 of Beat Saber you can download it <a href="https://securecdn.oculus.com/binaries/download/?id=4954569241283665">here</a> after logging in on <a href="https://oculus.com">oculus.com</a>.
+            </div>
+            <div class="tip" style="margin-top: 20px; width: fit-content;">
+                <div class="tipHeader">
+                    How might I be able to download obb files?
                 </div>
-                <div class="tip" style="margin-top: 20px; width: fit-content;">
-                    <div class="tipHeader">
-                        Why do I get <code>Request to Oculus failed</code>
-                    </div>
-                    This is not your fault. This shown up when my proxy server (which makes you able to do requests to Oculus) is shut down. Currently it has reached the maximum runtime for this month. While this happens all cached data will be used so you can continue to use this site.
+                It's a bit tricky. First you need to follow <a href="ObtainToken.html">this guide</a> to obtain your access_token. Then on this site press F12 and go into the <code>console</code> tab. In there write <code>access_token = "YourToken"</code> where you replace <code>YourToken</code> with the token you obtained by following the guide. Then hit enter and select any app version you want do download. If obb files are needed there's a good chance they'll download. However if they don't then you can use <a href="https://github.com/ComputerElite/Rift-downgrader">Rift Downgrader</a> to download both the apkand obb files.<br>
+                Note: You'll have to do this every time you reload the site
+            </div>
+            <div class="tip" style="margin-top: 20px; width: fit-content;">
+                <div class="tipHeader">
+                    Why do I get <code>Request to Oculus failed</code>
                 </div>
-                <div style="text-align: center; font-size: 11px; color: #888;">
-                    API found by nyamimi, requests found by Lillie, page by ComputerElite
-                </div>
+                This is not your fault. This shown up when my proxy server (which makes you able to do requests to Oculus) is shut down. Currently it has reached the maximum runtime for this month. While this happens all cached data will be used so you can continue to use this site.
+            </div>
+            <div style="text-align: center; font-size: 11px; color: #888;">
+                API found by nyamimi, requests found by Lillie, page by ComputerElite
             </div>
         </div>
         <script src="../../js/standard.js"></script>
@@ -155,10 +161,10 @@
                     </div>`
             const storeSkeleton = `<div id="appsinfo" style="font-size: 22px; text-align: center; font-weight: bold;">
                     </div>
-                    <div style="display: flex; flex-wrap: wrap;" id="apps">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: flex-start;" id="apps">
                     </div>`
 
-            const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
+            const loader = `<div class="loader" style="width: 50px; height: 50px; margin: auto;"></div>`
             const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for more info</div>`
             var access_token = "OC|752908224809889|"
 
@@ -258,7 +264,7 @@
                         if(cat.name == "APPS" || cat.name == "CONCEPT") {
                             cat.search_results.nodes.forEach(element => {
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
-                                    imgsrc: element.target_object.cover_square_image.uri,
+                                    imgsrc: element.target_object.cover_landscape_image.uri,
                                     name: element.target_object.display_name,
                                     id: element.target_object.id
                                 })
@@ -531,9 +537,9 @@
             }
 
             function GetResultFormatted(element) {
-                return `<a class="zoom" style="flex: 1; background-color: #222222; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
+                return `<a class="darken" style="flex: 0; background-color: #22222200; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer; text-align: left;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
                             <table style="width: fit-content; margin: auto;" class="defTextColor">
-                                <tr><td><img src="${element.imgsrc}" width="100px" height="100px"></td><td>${element.name}</td></tr>
+                                <tr><td><img src="${element.imgsrc}" style="max-height: 250px; max-width: 600px;" onerror="if (this.src != '../../assets/ImageNotAvailable.png') this.src = '../../assets/ImageNotAvailable.png'"></td></tr><tr><td>${element.name}</td></tr>
                             </table>
                         </a>`
             }
