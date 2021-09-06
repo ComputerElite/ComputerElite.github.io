@@ -56,6 +56,7 @@
             <div class="customButton" onclick="popup.style.visibility = 'hidden'">X</div>
             <input type="text" style="border: #111111 solid 1px; background-color: #333333; border-radius: 5px; width: fit-content; width: 99%;" value="[]" id="jsonSaveText">
             <div class="customButton" id="copyButton" onclick="CopySaveText()">Copy</div>
+            <div class="customButton" id="copyButton" onclick="CopySaveTextUrl()">Copy URL with built overlay</div>
             <div class="customButton" id="loadButton" onclick="Load(JSON.parse(jsonSaveText.value))">Load</div>
             <div class="customButton" id="loadButton" onclick="Load(JSON.parse(jsonSaveText.value), true)">Load in editor</div>
         </div>
@@ -79,23 +80,40 @@
             var loadJson = url.searchParams.get("load")
             if(loadJson) loadJson = JSON.parse(loadJson)
 
-            fetch("Overlay_parts/index.json").then(res => {
-                itemContainer.innerHTML = "<hr>"
-                res.json().then(json => {
-                    total = json.length
-                    json.forEach(part => {
-                        fetch("Overlay_parts/" + part.filename).then(res => {
-                            res.text().then(html => {
-                                fetched++;
-                                part.html = html
-                                parts.push(part)
-                                itemContainer.innerHTML += GetFormattedPart(part)
-                                Setup(loadJson)
+            document.onkeydown = function (e) {
+                if(e.code == "KeyE") {
+                    if(confirm("Do you really want to edit your currently loaded overlay?"))
+                    {
+                        Setup()
+                        StopJs()
+                        Load(loadJson, true)
+                        sidebarShown = true
+                        sidebar.style.visibility = "visible"
+                    }
+                }
+            }
+            
+            Start()
+            function Start() {
+                fetch("Overlay_parts/index.json").then(res => {
+                    itemContainer.innerHTML = "<hr>"
+                    res.json().then(json => {
+                        total = json.length
+                        json.forEach(part => {
+                            fetch("Overlay_parts/" + part.filename).then(res => {
+                                res.text().then(html => {
+                                    fetched++;
+                                    part.html = html
+                                    parts.push(part)
+                                    itemContainer.innerHTML += GetFormattedPart(part)
+                                    Setup(loadJson)
+                                })
                             })
                         })
                     })
                 })
-            })
+            }
+            
 
             function ReAddAllParts() {
                 console.log("readding all parts")
@@ -108,10 +126,10 @@
 
             var sidebarShown = true
 
-            function Setup(load) {
+            function Setup(load, asEditor = false) {
                 if(fetched != total) return
                 if(load) {
-                    Load(loadJson)
+                    Load(loadJson, asEditor)
                     return;
                 }
                 
@@ -180,6 +198,18 @@
                 console.log("copying")
                 navigator.clipboard.writeText(jsonSaveText.value).then(() => {
                     console.log("copied " + jsonSaveText.value)
+                    alert("copied")
+                })
+            }
+
+            function CopySaveTextUrl() {
+                var url = new URL(window.location.href)
+                if(url.searchParams.has("load")) url.searchParams.delete("load")
+                url.searchParams.append("load", jsonSaveText.value)
+                console.log("copying")
+                navigator.clipboard.writeText(url.toString()).then(() => {
+                    console.log("copied " + jsonSaveText.value)
+                    alert("copied")
                 })
             }
 
@@ -215,7 +245,7 @@
                         }
                     })
                 })
-                StartJs()
+                if(!asEditor) StartJs()
             }
 
             function htmlToElement(html) {
