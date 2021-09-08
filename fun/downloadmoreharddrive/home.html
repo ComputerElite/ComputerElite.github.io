@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DownloadMoreHardDrive.com - Cloud storage 2.0</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="font-awesome.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div style="position: fixed; background-color: #73A977; width: 100%; height: 80px; display: flex; flex-direction: column; justify-content: center; padding-left: 10px; top: 0px; z-index: 5;">
+            <div style="display: flex; flex-direction: row-reverse; padding-right: 40px;">
+                <a href="#contact" class="navItem">Contact</a>
+                <a href="#download" class="navItem">Download</a>
+                <a href="#home" class="navItem">Home</a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 140px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <section id="home"></section>
+                <div class="attract">Download more Hard Drive!</div>
+                <div class="bold">Instant, Fast, FREE</div>
+                <a href="#download"><img src="banner.png"></a>
+            </div>
+            <div style="background-color: #FFFFFF; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; padding-bottom: 40px;">
+                <section id="download"></section>
+                <div class="header">Download</div>
+                <div class="headerLine"></div>
+                <div style="color: #3a2c2c;">Please select the amount of Hard Drive storage space you'd want to download. One cannot download simply to much Hard Drive storage space.</div>
+                <div class="offerContainer">
+                    <div class="offer"><div style="background-image: url('hdd1.png');" class="cover"></div></div>
+                    <div class="offerName">1TB</div>
+                    <div class="offerDesc">7200 rpm</div>
+                    <div class="offerButton">Select Plan</div>
+                </div>
+                <div class="offerContainer">
+                    <div class="offer"><div style="background-image: url('hdd2.png');" class="cover"></div></div>
+                    <div class="offerName">4TB</div>
+                    <div class="offerDesc">7200 rpm</div>
+                    <div class="offerButton">Select Plan</div>
+                </div>
+                <div class="offerContainer">
+                    <div class="offer"><div style="background-image: url('hdd3.png');" class="cover"></div></div>
+                    <div class="offerName">12TB</div>
+                    <div class="offerDesc">7200 rpm</div>
+                    <div class="offerButton">Select Plan</div>
+                </div>
+                <div class="offerContainer">
+                    <div class="offer"><div style="background-image: url('hdd4.png');" class="cover"></div></div>
+                    <div class="offerName">32TB</div>
+                    <div class="offerDesc">7200 rpm</div>
+                    <div class="offerButton">Select Plan</div>
+                </div>
+                
+            </div>
+
+            <div style="background-color: #222222; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; color: #FFFFFF; padding-bottom: 40px;">
+                <section id="contact"></section>
+                <div class="header">Contact us</div>
+                <div class="headerLine"></div>
+                <div style="width: 600px;">
+                    What this site gives you ask? Download more Hard does exactly what it does. Our Website gives you the ability to 'Download more Hard Drive' at no cost! Just select the amount you need and download! Your storage capacity will increase instantly!
+                </div>
+                <div style="width: 400px; margin-top: 10px; font-size: 14px;">
+                    You can call us with this <i>real</i> phone number or not email us!
+                </div>
+                <div style="margin-top: 40px;">
+                    <img src="phone.svg" style="filter: invert();" width="40px" height="40px">
+                    <div>18800-DOWNLOAD-MORE-HARD-DRIVE</div>
+                </div>
+                <div style="margin-top: 40px;">
+                    &copy; Copyright 2021 The Rights, all the Hard Drives
+                </div>
+                <div style="margin-top: 10px;">
+                    This isn't a scam, there isn't a virus, it's just a joke website. Made in jest, keep smiling
+                </div>
+            </div>
+        </div>
+        <script>
+            Array.prototype.forEach.call(document.getElementsByClassName("offerButton"), e => {
+                e.onclick = function() { document.location.href = "download.html" }
+            })
+        </script>
+    </body>
+</html>

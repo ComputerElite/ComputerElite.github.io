@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DownloadMoreHardDrive.com - Cloud storage 2.0</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="font-awesome.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div style="position: fixed; background-color: #73A977; width: 100%; height: 80px; display: flex; flex-direction: column; justify-content: center; padding-left: 10px; top: 0px; z-index: 5;">
+            <div style="display: flex; flex-direction: row-reverse; padding-right: 40px;">
+                <a href="#contact" class="navItem">Contact</a>
+                <a href="#download" class="navItem">Download</a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 140px;">
+            <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+                <section id="download"></section>
+                <div class="header">Download</div>
+                <div class="headerLine"></div>
+                <div id="funnyText"></div>
+                <svg style="width: 200px; height: 200px; transform: rotate(-220deg)">
+                    <circle cx="100" cy="100" r="95" stroke="#87CEEB" opacity="1.0" stroke-width="10" id="progress" fill="transparent" stroke-dasharray=597 stroke-dashoffset=596></circle>
+                </svg>
+                <div class="attract" style="margin-top: -20px;" id="percentage">0%</div>
+                <div class="offerButton" id="startDownload">Download</div>
+            </div>
+            <div style="background-color: #FFFFFF; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; padding-bottom: 40px; margin-top: 50%;">
+                <div class="header">Disclaimer</div>
+                <div class="headerLine"></div>
+                <div style="margin-top: 10px;">
+                    This isn't a scam, there isn't a virus, it's just a joke website. Made in jest, keep smiling
+                </div>
+            </div>
+
+            <div style="background-color: #222222; width: 100%; display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; color: #FFFFFF; padding-bottom: 40px;">
+                <section id="contact"></section>
+                <div class="header">Contact us</div>
+                <div class="headerLine"></div>
+                <div style="width: 400px; margin-top: 10px; font-size: 14px;">
+                    You can call us with this <i>real</i> phone number or not email us!
+                </div>
+                <div style="margin-top: 40px;">
+                    <img src="phone.svg" style="filter: invert();" width="40px" height="40px">
+                    <div>18800-DOWNLOAD-MORE-HARD-DRIVE</div>
+                </div>
+                <div style="margin-top: 40px;">
+                    &copy; Copyright 2021 The Rights, all the Hard Drives
+                </div>
+                <div style="margin-top: 10px;">
+                    This isn't a scam, there isn't a virus, it's just a joke website. Made in jest, keep smiling
+                </div>
+            </div>
+        </div>
+        <script>
+            var percentage = 0
+            document.getElementById("startDownload").onclick = function() {
+                percentage = 0
+                var inter = setInterval(() => {
+                    percentage++
+                    if(percentage >= 100) {
+                        document.getElementById("funnyText").innerHTML = "Your Hard Drive Plan has been downloaded. For more info check <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>here</a>"
+                        clearInterval(inter)
+                    } else if(percentage > 70) {
+                        document.getElementById("funnyText").innerHTML = "Installing Hard Drives"
+                    } else if(percentage > 40) {
+                        document.getElementById("funnyText").innerHTML = "Finding Hard Drives on the Internez"
+                    } else {
+                        document.getElementById("funnyText").innerHTML = "Trying to empty servers"
+                    }
+                    updatePercentage()
+                }, 100);
+            }
+
+            function updatePercentage() {
+                document.getElementById("progress").style.strokeDashoffset = 427 - 427 * (percentage / 100.0) + 170
+                document.getElementById("percentage").innerHTML = percentage + "%"
+            }
+        </script>
+    </body>
+</html>
