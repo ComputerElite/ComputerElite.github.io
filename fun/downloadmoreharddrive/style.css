@@ -99,6 +99,10 @@ body {
     opacity: 1;
 }
 
+a {
+    color: #35B4F1;
+}
+
 .cover {
     background-size: cover;
     width: 100%;

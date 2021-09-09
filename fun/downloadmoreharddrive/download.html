@@ -5,17 +5,21 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="font-awesome.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
-        <div style="position: fixed; background-color: #73A977; width: 100%; height: 80px; display: flex; flex-direction: column; justify-content: center; padding-left: 10px; top: 0px; z-index: 5;">
-            <div style="display: flex; flex-direction: row-reverse; padding-right: 40px;">
+    <body style="background-color: #EEEEEE;">
+        <div style="position: fixed; background-color: #73A977; width: 100%; height: 80px; display: flex; flex-direction: row; justify-content: space-between; padding-left: 10px; top: 0px; z-index: 5;">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" height="60px">
+            </div>
+            <div style="display: flex; flex-direction: row-reverse; padding-right: 40px; justify-content: center; align-items: center;">
                 <a href="#contact" class="navItem">Contact</a>
-                <a href="#download" class="navItem">Download</a>
+                <a href="home.html#download" class="navItem">Download</a>
+                <a href="home.html" class="navItem">Home</a>
             </div>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 140px;">
+        <div style="display: flex; flex-direction: column; align-items: center; padding-top: 140px; background-color: #EEEEEE;">
             <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
                 <section id="download"></section>
-                <div class="header">Download</div>
+                <div class="attract">Download</div>
                 <div class="headerLine"></div>
                 <div id="funnyText"></div>
                 <svg style="width: 200px; height: 200px; transform: rotate(-220deg)">
@@ -62,8 +66,12 @@
                         clearInterval(inter)
                     } else if(percentage > 70) {
                         document.getElementById("funnyText").innerHTML = "Installing Hard Drives"
+                    } else if(percentage > 69) {
+                        document.getElementById("funnyText").innerHTML = "Hard Drives contain personal data. Continuing."
                     } else if(percentage > 40) {
-                        document.getElementById("funnyText").innerHTML = "Finding Hard Drives on the Internez"
+                        document.getElementById("funnyText").innerHTML = "Checking if found Hard Drives are formatted"
+                    } else if(percentage > 20) {
+                        document.getElementById("funnyText").innerHTML = "Checking if Hard Drives are available"
                     } else {
                         document.getElementById("funnyText").innerHTML = "Trying to empty servers"
                     }
