@@ -7,7 +7,7 @@
     </head>
     <body style="background-color: #EEEEEE;">
         <div style="position: fixed; background-color: #73A977; width: 100%; height: 80px; display: flex; flex-direction: row; justify-content: space-between; padding-left: 10px; top: 0px; z-index: 5;">
-            <div style="display: flex; align-items: center;">
+            <div style="display: flex; align-items: center; padding-left: 80px;">
                 <img src="logo.png" height="60px">
             </div>
             <div style="display: flex; flex-direction: row-reverse; padding-right: 40px; justify-content: center; align-items: center;">
@@ -22,7 +22,7 @@
                 <div class="attract">Download</div>
                 <div class="headerLine"></div>
                 <div id="funnyText"></div>
-                <svg style="width: 200px; height: 200px; transform: rotate(-220deg)">
+                <svg style="width: 200px; height: 200px; transform: rotate(-220deg); margin-top: 20px;">
                     <circle cx="100" cy="100" r="95" stroke="#87CEEB" opacity="1.0" stroke-width="10" id="progress" fill="transparent" stroke-dasharray=597 stroke-dashoffset=596></circle>
                 </svg>
                 <div class="attract" style="margin-top: -20px;" id="percentage">0%</div>
@@ -57,13 +57,13 @@
         </div>
         <script>
             var percentage = 0
-            document.getElementById("startDownload").onclick = function() {
+            var maxPer = 100
+            document.getElementById("startDownload").onclick = async function() {
                 percentage = 0
-                var inter = setInterval(() => {
+                while(percentage < maxPer) {
                     percentage++
                     if(percentage >= 100) {
                         document.getElementById("funnyText").innerHTML = "Your Hard Drive Plan has been downloaded. For more info check <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>here</a>"
-                        clearInterval(inter)
                     } else if(percentage > 70) {
                         document.getElementById("funnyText").innerHTML = "Installing Hard Drives"
                     } else if(percentage > 69) {
@@ -76,8 +76,11 @@
                         document.getElementById("funnyText").innerHTML = "Trying to empty servers"
                     }
                     updatePercentage()
-                }, 100);
+                    await timer(80 + Math.random() * 100)
+                }
             }
+
+            function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
 
             function updatePercentage() {
                 document.getElementById("progress").style.strokeDashoffset = 427 - 427 * (percentage / 100.0) + 170
