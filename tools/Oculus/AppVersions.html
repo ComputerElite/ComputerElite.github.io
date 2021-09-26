@@ -387,7 +387,7 @@
                             if(!contained) {
                                 versions.unshift({
                                     version: "[" + element.channel_name + "] " + element.latest_supported_binary.version,
-                                    changelog: "N/A",
+                                    changelog: "Changelog not available",
                                     id: element.latest_supported_binary.id,
                                     code: element.latest_supported_binary.versionCode,
                                     appid: id
@@ -530,7 +530,7 @@
             function GetFormatted(element, isRift) {
                 return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%; cursor: pointer;" onclick="Download(${element.id}, ${isRift}, ${element.appid}, ${element.code})" oncontextmenu="return SetupContextMenu(event, '${element.id}', true)" download>
                             <div class="item" onmouseover="UpdateMousePos(event)" onmouseupdate onmouseleave="HideTooltip()" onmouseenter="ShowTooltip(event, 'Version code: ${element.code}<br/>upload date: ${element.createdate ? UnixToDataAndTime(element.createdate) : "N/A"}')">${element.version}</div>
-                            <div class="item">${element.changelog.replace("\n", "<br/>")}</div>
+                            <div class="item">${element.changelog == "N/A" ? "Changelog not available" : element.changelog.replace("\n", "<br/>")}</div>
                             <div class="item">${element.id}</div>
                         </a>
                         <div style='width: 90%; margin-left: auto; margin-right: auto;'><hr></div>`
