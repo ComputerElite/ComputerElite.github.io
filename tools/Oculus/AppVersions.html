@@ -166,6 +166,12 @@
 
             const loader = `<div class="loader" style="width: 50px; height: 50px; margin: auto;"></div>`
             const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for more info</div>`
+            const RequestFailedError = `<div class="tip" style="margin-top: 20px; width: fit-content; margin-bottom: 20px;">
+                                            <div class="tipHeader">
+                                                Why do I get <code>Request to Oculus failed</code>
+                                            </div>
+                                            This is not your fault. This shown up when my proxy server (which makes you able to do requests to Oculus) is shut down. Currently it has reached the maximum runtime for this month. While this happens all cached data will be used so you can continue to use this site.
+                                        </div>`
             var access_token = "OC|752908224809889|"
 
             var url = new URL(window.location.href);
@@ -276,7 +282,7 @@
                     }
                 }).catch(err => {
                     MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
-                        document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. <i>(Basic)</i> Search has run on cached apps</div>`
+                        document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. <i>(Basic)</i> Search has run on cached apps</div>` + RequestFailedError
                         document.getElementById("apps").innerHTML = ""
                         res.forEach(element => {
                             if(element.headset != document.getElementById("headset").value || !element.name.toLowerCase().includes(searchTerm.toLowerCase())) return
@@ -483,7 +489,7 @@
                 if(add) finished++
                 console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
-                document.getElementById("versions").innerHTML = finished < required ? loader : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" : "")
+                document.getElementById("versions").innerHTML = finished < required ? loader : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" + RequestFailedError : "")
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
