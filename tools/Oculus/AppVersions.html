@@ -493,7 +493,7 @@
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
-                document.getElementById("versions").innerHTML += finished < required ? "" : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" + RequestFailedError : "")
+                document.getElementById("versions").innerHTML += finished < required ? "" : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data is being shown.</div>" + RequestFailedError : "")
                 if(document.getElementById("versions").innerHTML == "") {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found" + (failed ? ". Request to Oculus failed and no cached data does exist." : "") + "</div>"
                 }
