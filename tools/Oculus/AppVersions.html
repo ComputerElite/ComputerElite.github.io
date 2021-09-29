@@ -159,10 +159,10 @@
                     <div style="font-size: 22px; text-align: center; font-weight: bold;" id="dlcsHeader">DLCs</div>
                     <div style="display: flex; flex-wrap: wrap;" id="dlcs">
                     </div>`
-            const storeSkeleton = `<div id="appsinfo" style="font-size: 22px; text-align: center; font-weight: bold;">
-                    </div>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: flex-start;" id="apps">
-                    </div>`
+            const storeSkeleton =  `<div style="display: flex; flex-wrap: wrap; justify-content: flex-start;" id="apps">
+                                    </div>
+                                    <div id="appsinfo" style="font-size: 22px; text-align: center; font-weight: bold;">
+                                    </div>`
 
             const loader = `<div class="loader" style="width: 50px; height: 50px; margin: auto;"></div>`
             const ErrorMSG = `<div style='font-size: 24px; text-align: center; flex: 1;'>An error occured. Check below for more info</div>`
@@ -489,10 +489,11 @@
                 if(add) finished++
                 console.log(finished + " out of " + required + " tasks finished")
                 versions = SortByVersion(versions)
-                document.getElementById("versions").innerHTML = finished < required ? loader : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" + RequestFailedError : "")
+                document.getElementById("versions").innerHTML = finished < required ? loader : ""
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                 })
+                document.getElementById("versions").innerHTML += finished < required ? "" : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data will be shown.</div>" + RequestFailedError : "")
                 if(document.getElementById("versions").innerHTML == "") {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found" + (failed ? ". Request to Oculus failed and no cached data does exist." : "") + "</div>"
                 }
