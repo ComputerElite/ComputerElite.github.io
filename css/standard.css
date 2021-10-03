@@ -1,6 +1,6 @@
 body {
     color: #EEEEEE;
-    background-color: #202225;
+    background-color: #bd3f00;
 }
 
 html {
@@ -224,4 +224,24 @@ code {
 
 .darken {
     transition: filter .6s;
+}
+
+.step {
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.header {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: underline;
+    margin-top: 40px;
+}
+
+.image {
+    padding: 10px;
 }

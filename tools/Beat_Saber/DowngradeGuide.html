@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beat Saber downgrade guide</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Beat Saber downgrade guide" />
+        <meta property="og:description" content="A guide for downgrading Beat Saber and settings up BMBF" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Beat_Saber/DowngradeGuide.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body>
+        <div style="width: 90%; margin: auto; padding: 10px; background-color: rgb(47,49,54);">
+            <div style="padding: 10px;">
+                <div style="font-size: 24px;">Guide for Beat Saber downgrading</div>
+                <div class="headerDescription">A guide for downgrading Beat Saber and settings up BMBF</div>
+            </div>
+            <div class="tip" style="width: 80%; margin-bottom: 20px;">
+                <div class="tipHeader">
+                    Prequesites
+                </div>
+                1. You got Beat Saber bought on your <b>Quest</b>
+                <br>
+                2. You got a PC
+            </div>
+            <div class="header">First downgrade your game</div>
+            <div class="step">
+                Head to <a href="https://computerelite.github.io/tools/Oculus/AppVersions.html?id=2448060205267927">the downgrading site</a> and download any version you want.
+                <br><b>If you get page not found then log in on <a href="https://oculus.com">oculus.com</a> with your account which owns Beat Saber</b>
+                <br>Then install the apk you downloaded via Sidequest.
+            </div>
+            <div class="header">Now pick the version specific guide</div>
+            <div class="step">
+                <b>Downgraded to 1.16.4 and up?</b>
+                <br>You are good to go. You no longer need to follow this guide.
+                <br>
+                <br>
+                <b>Downgraded to 1.12.1 - 1.13.2?</b>
+                <br>head to <a href="#2">this section</a> and follow it
+                <br>
+                <br>
+                <b>on any other version?</b>
+                <br>Follow the steps below
+            </div>
+            <div class="header">everything other version</div>
+            <div class="step">
+                <div class="attention" style="width: 80%; margin-bottom: 20px;">
+                    <div class="attentionHeader">
+                        Important info
+                    </div>
+                    You won't be able to load songs via BMBF as neither does BMBF support song loading nor do any mods exists to load them at the time of writing.
+                    <br>
+                    You probably won't be able to find mods for the version you have as well because the mods will need to be in the qmod format.
+                </div>
+                If you do not want to mod simply stop following the guide gere
+                Download and install the latest BMBF version from <a href="https://bmbf.dev/stable">bmbf.dev/stable</a>
+                <br>
+                You can then follow the BMBF setup. For that simply open BMBF and follow all the steps.
+                <div style="font-size: 24px; margin-top: 20px; font-weight: bold;">You are now ready to play</div>
+            </div>
+            <div style="height: 100px;"></div>
+            <section id="2"></section>
+            <div class="header">Backing up your old BMBF installation. Skip if you didn't mod before</div>
+            <div class="step">
+                Open Sidequest on your PC and click the folder icon at the top right.
+                <br>Click the save icon next to <code>BMBFData</code> and save it to some safe location.
+                <br>Afterwards press the <code>X</code> next to <code>BMBFData</code> to delete it
+            </div>
+            <div class="header">Installing BMBF</div>
+            <div class="step">
+                Install the BMBF version for your game version from <a href="https://bmbf.dev/stable">bmbf.dev/stable</a>.
+                <br>e. g. the release with <code>Update to Beat Saber v1.13.2</code> as title
+                <br>Open BMBF in your Quest and follow the modding process
+            </div>
+            <div class="header">Restoring songs (WIP)</div>
+            <div class="step">
+                In Sidequest click the folder icon and go to <code>ModData/Mods/SongLoader</code> and save <code>Customlevels</code>
+                <br>Then open the saved folder. You will need to rename every folder to it's hash. A tool for this may be created soon.
+                <br>After you're done open <code>BMBFData/CustomSongs</code> in Sidequest and drag and drop every renamed folder from the backup into Sidequest. Finally hit reload songs folder in the tools tab of BMBF to load all songs and sync your game.
+            </div>
+            
+        </div>
+    </body>
+</html>
