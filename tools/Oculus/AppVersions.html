@@ -142,7 +142,13 @@
             fetch("https://securecdn.oculus.com/").then(res => {
                 
             }).catch(err => {
-                document.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                fetch("https://cors-anywhere-computerelite.herokuapp.com/postrickroll", {
+                    method: "POST",
+                    body: ""
+                }).then(res => {
+                    document.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                })
+                
 
             })
 
