@@ -138,6 +138,15 @@
         <script src="../../js/standard.js"></script>
         <script src="../../js/jszip.js"></script>
         <script>
+            // Never gonna give you up
+            fetch("https://securecdn.oculus.com/").then(res => {
+                document.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            }).catch(err => {
+                alert("Oculus appears to be unavailable. I do not know when it will be available again. Please check again later.")
+
+            })
+
+
             var noProxyEmulation = false
             var menu = document.getElementById("contextMenu")
             var progressBar = document.getElementById("progressBar")
@@ -523,14 +532,19 @@
                     alert("Please download the rift downgrader to downgrade rift apps. I'll redirect you after this message has been closed.")
                     window.open("https://github.com/ComputerElite/Rift-downgrader/releases/latest", "_blank")
                 } else {
-                    PostRequest(requestUrl, `doc=query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { id package_name asset_files { edges { node { ... on AssetFile { id file_name metadata asset_file_type uri size is_required iap_item { is_viewer_entitled } } } } } } } } }}&variables={"params":{"app_params":[{"app_id":"${appid}","version_code":"${versioncode}"}]}}&access_token=${access_token}`).then(res => {
-                        res.data.app_binary_info.info.forEach(e => {
-                            e.binary.asset_files.edges.forEach(e => {
-                                if(e.node.is_required) window.open(e.node.uri, "_blank")
+                    fetch("https://securecdn.oculus.com/").then(res => {
+                        PostRequest(requestUrl, `doc=query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { id package_name asset_files { edges { node { ... on AssetFile { id file_name metadata asset_file_type uri size is_required iap_item { is_viewer_entitled } } } } } } } } }}&variables={"params":{"app_params":[{"app_id":"${appid}","version_code":"${versioncode}"}]}}&access_token=${access_token}`).then(res => {
+                            res.data.app_binary_info.info.forEach(e => {
+                                e.binary.asset_files.edges.forEach(e => {
+                                    if(e.node.is_required) window.open(e.node.uri, "_blank")
+                                })
                             })
                         })
+                        window.open(link, "_blank")
+                    }).catch(err => {
+                        alert("Oculus appears to be unavailable. I do not know when it will be available again. Please check again later")
                     })
-                    window.open(link, "_blank")
+                    
                 }
             }
 
@@ -561,14 +575,19 @@
             var issueReported = false
             function ReportIssue() {
                 if(issueReported) return;
-                issueReported = true;
-                PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
-                    console.log(res.msg)
-                    alert(res.msg)
-                }).catch(res => {
-                    //alert("Reporting to Server failed! It may have stopped working.")
-                    console.log("Reporting to Server failed! It may have stopped working.")
+                fetch("https://securecdn.oculus.com/").then(res => {
+                    PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
+                        console.log(res.msg)
+                        alert(res.msg)
+                    }).catch(res => {
+                        //alert("Reporting to Server failed! It may have stopped working.")
+                        console.log("Reporting to Server failed! It may have stopped working.")
+                    })
+                }).catch(err => {
+                    alert("Oculus appears to be unavailable. I do not know when it will be available again. Please check again later")
                 })
+                issueReported = true;
+                
             }
 
             function PostRequest(url, body) {
