@@ -139,6 +139,7 @@
         <script src="../../js/jszip.js"></script>
         <script>
             // Never gonna give you up
+//*
             fetch("https://securecdn.oculus.com/").then(res => {
                 
             }).catch(err => {
@@ -148,6 +149,7 @@
                 }).then(res => {
                     document.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 })
+*/
                 
 
             })
@@ -538,7 +540,7 @@
                     alert("Please download the rift downgrader to downgrade rift apps. I'll redirect you after this message has been closed.")
                     window.open("https://github.com/ComputerElite/Rift-downgrader/releases/latest", "_blank")
                 } else {
-                    fetch("https://securecdn.oculus.com/").then(res => {
+                    
                         PostRequest(requestUrl, `doc=query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { id package_name asset_files { edges { node { ... on AssetFile { id file_name metadata asset_file_type uri size is_required iap_item { is_viewer_entitled } } } } } } } } }}&variables={"params":{"app_params":[{"app_id":"${appid}","version_code":"${versioncode}"}]}}&access_token=${access_token}`).then(res => {
                             res.data.app_binary_info.info.forEach(e => {
                                 e.binary.asset_files.edges.forEach(e => {
@@ -547,9 +549,6 @@
                             })
                         })
                         window.open(link, "_blank")
-                    }).catch(err => {
-                        alert("Oculus appears to be unavailable. I do not know when it will be available again. Please check again later")
-                    })
                     
                 }
             }
