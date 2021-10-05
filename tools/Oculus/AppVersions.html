@@ -566,7 +566,7 @@
             var issueReported = false
             function ReportIssue() {
                 if(issueReported) return;
-                fetch("https://securecdn.oculus.com/").then(res => {
+                
                     PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
                         console.log(res.msg)
                         alert(res.msg)
@@ -574,9 +574,7 @@
                         //alert("Reporting to Server failed! It may have stopped working.")
                         console.log("Reporting to Server failed! It may have stopped working.")
                     })
-                }).catch(err => {
-                    alert("Oculus appears to be unavailable. I do not know when it will be available again. Please check again later")
-                })
+                
                 issueReported = true;
                 
             }
