@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beat Saber Mod Versions</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Beat Saber Mod Versions" />
+        <meta property="og:description" content="Display mods for various game versions" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Beat_Saber/questmods.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+        td {
+            padding: 10px;
+        }
+
+        .os {
+            font-size: 16px;
+            color: #EEE;
+        }
+
+        .item {
+            flex: 1;
+            width: 24%;
+            word-wrap: break-word;
+            padding: 3px;
+            display: inline;
+        }
+        </style>
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;" class="bigBox">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Beat Saber Mod Versions</div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json" target="_blank">BMBF Manager</a></div>
+                        <br/>
+                        <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                            Game Version:
+                            <select id="gameversion">
+                                <option value=""></option>
+                            </select>
+                        </a>
+                        <table id="mods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 20%;">Creator(s)</th>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            
+                        </table>
+                        <br/>
+                    </div>
+                    <div style="padding: 5px;">
+                        Page by ComputerElite
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var org = {}
+            var gameVersions = {}
+            const mods = document.getElementById("mods")
+            const gameversion = document.getElementById("gameversion")
+
+            PullMods()
+
+            function PullMods() {
+                fetch("https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json").then(res => {
+                    res.json().then(json => {
+                        org = json
+                        SortByGameVersion()
+                    })
+                })
+            }
+
+            function SortByGameVersion() {
+                gameVersions = {}
+                org.mods.forEach(mod => {
+                    var addedGameVersions = []
+                    mod.downloads.forEach(download => {
+                        download.gameversion.forEach(version => {
+                            if(!addedGameVersions.includes(version) && (gameVersions[version] == undefined || gameVersions[version].addedmods == undefined || !gameVersions[version].addedmods.includes(mod.id))) {
+                                addedGameVersions.push(version)
+                                if(gameVersions[version] == undefined) gameVersions[version] = {mods: [], addedmods: []}
+                                gameVersions[version].addedmods.push(mod.ModID)
+                                //console.log(gameVersions[version].addedmods)
+                                gameVersions[version].mods.push({
+                                    name: mod.name,
+                                    details: mod.details,
+                                    creator: mod.creator,
+                                    ModID: mod.ModID,
+                                    version: download.modversion,
+                                    download: download.download
+                                })
+                            }
+                        })
+                    })
+                });
+                gameversion.innerHTML = "";
+                for (const [key, value] of Object.entries(gameVersions)) {
+                    gameversion.innerHTML += `<option value="${key}">${key}</option>`
+                    gameVersions[key].mods.sort(function(a, b) {
+                        if(a.name < b.name) return -1
+                        if(b.name < a.name) return 1
+                        return 0
+                    })
+                }
+                Display(gameversion.value)
+            }
+
+            gameversion.onchange = () => {
+                Display(gameversion.value)
+            }
+
+            function Display(gameversion) {
+                var m = `<tr>
+                                <th style="width: 20%;">Creator(s)</th>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>`;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].mods.forEach(mod => {
+                    m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                                <td>${mod.creator.join(", ")}</td>
+                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
+                                <td>${mod.version}</td>
+                            </tr>`
+                })
+                mods.innerHTML = m
+            }
+        </script>
+    </body>
+</html>

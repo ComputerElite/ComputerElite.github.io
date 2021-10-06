@@ -22,6 +22,26 @@ body, table, input {
     cursor: pointer; 
 }
 
+.bigBox {
+    background-color: #111111;
+}
+
+hr {
+    border-color: #2c2c2c;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hrColorTr {
+    border-bottom: 1px solid #2c2c2c;
+}
+
+table {
+    border-collapse: collapse;
+}
+
 .tooltip {
     font-size: 16px;
     background-color: #444;
