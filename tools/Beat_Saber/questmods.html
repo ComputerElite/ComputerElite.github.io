@@ -44,6 +44,15 @@
                                 <option value=""></option>
                             </select>
                         </a>
+                        <h2>Core Mods</h2>
+                        <table id="coremods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            
+                        </table>
+                        <h2>Mods</h2>
                         <table id="mods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
                             <tr>
                                 <th style="width: 20%;">Creator(s)</th>
@@ -62,8 +71,10 @@
         </div>
         <script>
             var org = {}
+            var coreOrg = {}
             var gameVersions = {}
             const mods = document.getElementById("mods")
+            const coremods = document.getElementById("coremods")
             const gameversion = document.getElementById("gameversion")
 
             PullMods()
@@ -75,6 +86,28 @@
                         SortByGameVersion()
                     })
                 })
+                fetch("https://raw.githubusercontent.com/BMBF/resources/master/com.beatgames.beatsaber/core-mods.json").then(res => {
+                    res.json().then(json => {
+                        coreOrg = json
+                        SortByGameVersionCore()
+                    })
+                })
+            }
+
+            function SortByGameVersionCore() {
+                for (const [key, value] of Object.entries(coreOrg)) {
+                    value.mods.forEach(mod => {
+                        if(gameVersions[key] == undefined) gameVersions[key] = {mods: [], addedmods: [], coremods: []}
+                        gameVersions[key].coremods.push({
+                            name: mod.id,
+                            ModID: mod.id,
+                            version: mod.version,
+                            download: mod.downloadLink
+                        })
+                    })
+                }
+                AddGameVersions()
+                Display(gameversion.value)
             }
 
             function SortByGameVersion() {
@@ -85,7 +118,7 @@
                         download.gameversion.forEach(version => {
                             if(!addedGameVersions.includes(version) && (gameVersions[version] == undefined || gameVersions[version].addedmods == undefined || !gameVersions[version].addedmods.includes(mod.id))) {
                                 addedGameVersions.push(version)
-                                if(gameVersions[version] == undefined) gameVersions[version] = {mods: [], addedmods: []}
+                                if(gameVersions[version] == undefined) gameVersions[version] = {mods: [], addedmods: [], coremods: []}
                                 gameVersions[version].addedmods.push(mod.ModID)
                                 gameVersions[version].mods.push({
                                     name: mod.name,
@@ -99,16 +132,32 @@
                         })
                     })
                 });
-                gameversion.innerHTML = "";
+                AddGameVersions()
+                Display(gameversion.value)
+            }
+
+            function AddGameVersions() {
+                var gameversions = []
+                gameversion.innerHTML = ""
                 for (const [key, value] of Object.entries(gameVersions)) {
-                    gameversion.innerHTML += `<option value="${key}">${key}</option>`
+                    
+                    gameversions.push(key)
                     gameVersions[key].mods.sort(function(a, b) {
                         if(a.name < b.name) return -1
                         if(b.name < a.name) return 1
                         return 0
                     })
+                    gameVersions[key].coremods.sort(function(a, b) {
+                        if(a.name < b.name) return -1
+                        if(b.name < a.name) return 1
+                        return 0
+                    })
                 }
-                Display(gameversion.value)
+                gameversions.sort()
+                gameversions.reverse()
+                gameversions.forEach(key => {
+                    gameversion.innerHTML += `<option value="${key}">${key}</option>`
+                })
             }
 
             gameversion.onchange = () => {
@@ -116,6 +165,8 @@
             }
 
             function Display(gameversion) {
+                gameversion.innerHTML = "";
+                
                 var m = `<tr>
                                 <th style="width: 20%;">Creator(s)</th>
                                 <th style="width: 60%;">Name</th>
@@ -130,6 +181,18 @@
                             </tr>`
                 })
                 mods.innerHTML = m
+                m = `<tr>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 39%;">Version</th>
+                            </tr>`;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].coremods.forEach(mod => {
+                    m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
+                                <td>${mod.version}</td>
+                            </tr>`
+                })
+                coremods.innerHTML = m
             }
         </script>
     </body>
