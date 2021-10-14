@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rift downgrader guide</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="QuestAppVersionSwitcher guide" />
+        <meta property="og:description" content="Learn how to use the most important features of QuestAppVersionSwitcher" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/QuestAppVersionSwitcher.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;" class="bigBox">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Guide for QuestAppVersionSwitcher</div>
+                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/QuestAppVersionSwitcher/">QuestAppVersionSwitcher</a></div>
+                    </div>
+
+                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">What is this tool?</div>
+                    <div class="guideSteps" style="text-align:left; padding: 10px;">
+                        This tool allows you to backup, restore and downgrade quest apps directly on your quest
+                    </div>
+                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Info: Is this tool piracy?</div>
+                    <div class="guideSteps" style="text-align:left; padding: 10px;">
+                        No. You're downloading from Oculus servers and those check that you own the game
+                    </div>
+                    <div class="attention" style="width: 80%; margin-bottom: 20px;">
+                        <div class="attentionHeader">
+                            Important info about tokens
+                        </div>
+                        Your token is something private. Anyone who has it can download apps, send messages, ... with your name.
+                        <br/>But then the question comes why do I give it Rift downgrader? Rift downgrader needs to authenticate the download with oculus and do requests to oculus api so it needs your token. After you entered the token it gets stored locally and encrypted on your PC and ONLY shared with an official tool by Oculus to download rift apps.
+                    </div>
+
+                    <div class="header">Download and install the app</div>
+                    <div class="step">
+                        Open Sidequest on your PC and search code <code>QuestAppVersionSwitcher</code>. Simply install this app to your headset.
+                    </div>
+                    <div class="header">Downgrade games</div>
+                    <div class="step">
+                        First you need to setup authentication. For this open the <code>Tools & Options</code> tab on your Quest. Then type the adress you see at the bottom into a browser on your PC.
+                        <br>
+                        Now get your Token with <a href="ObtainToken.html">this guide</a> and put it into the token box. Then think of any password which you can remember and type on your Quests Keyboard. Type it into the password box.
+                        <br>
+                        Finally press <code>Save Token</code> and you are ready to downgrade games.
+                        <br>
+                        <br>
+                        <i>Continue in your Quest or on your PC</i>
+                        <br>
+                        Simply go to the <code>Downgrade</code> tab, search for the app your want and click the version you want to download. Put in the password you set earlier and hit <code>Start download</code>. You can now check the <code>Download Progress</code> tab to see the progress of your download.
+                        <br>
+                        After the download completed you can install the downgraded version:
+                    </div>
+                    <div class="header">Restore backups</div>
+                    <div class="step">
+                        First select the app you want to restore in the <code>Tools & Options</code> tab. Then go to the <code>Backup</code> tab and select the backup you want to restore.
+                        <br>
+                        Hit the restore button and follow the provided steps.
+                    </div>
+                    <div class="header">Create backups</div>
+                    <div class="step">
+                        Make sure you give Rift downgrader administrative access! In the menu choose option <code>3</code>. You can then type in the game you want and cofirm with enter. After that type the version you want. If you don't remember changing that then just hit enter, otherwise type the full path to your library. Your game should be copied (as Oculus doesn't allow games to start from other folders) and then be launched.
+                    </div>
+                    <div class="header">Update your access_token</div>
+                    <div class="step">
+                        First select the app you want to restore in the <code>Tools & Options</code> tab. Then go to the <code>Backup</code> tab and out in a backup name. Simply hit <code>Create backup</code> and the backup will be created.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
