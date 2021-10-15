@@ -364,7 +364,7 @@ function setAll() {
         UpdateAllFieldsOfName("bpm", format(trim(stats["bpm"]), 1))
     } catch {}
     try {
-        if(stats["location"] == 2 || stats["location"] == 5) {
+        if(stats["location"] == 2 || stats["location"] == 5 || stats["location"] == 7) {
             // Is in mp lobby or song
             if(stats["mpGameIdShown"] && showmpcode || alwaysshowmpcode) {
                 UpdateAllFieldsOfName("mpCode", format(stats["mpGameId"]))
@@ -376,7 +376,7 @@ function setAll() {
         }
     } catch {}
     try {
-        if((stats["location"] == 2 || stats["location"] == 5) && showmpcode) {
+        if((stats["location"] == 2 || stats["location"] == 5 || stats["location"] == 7) && showmpcode) {
             UpdateAllFieldsOfNameHidden("mpCodeContainer", false)
         } else {
             UpdateAllFieldsOfNameHidden("mpCodeContainer", true)
