@@ -455,6 +455,14 @@
             autoName();
             setApplyButtonState();
         })
+
+        async function GetSHA256(input) {
+            var x = await crypto.subtle.digest('SHA-256', input)
+            const hashArray = Array.from(new Uint8Array(x));                     // convert buffer to byte array
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string 
+            console.log("SHA256: " + hashHex)
+            return hashHex
+        }
         
         domInputSaveAs.onchange = domInputSaveAs.onkeydown = function()
         {
@@ -466,7 +474,7 @@
             return (!!domInputRom.files[0] && !!domInputPatch.files[0] && domInputSaveAs.value != '');
         }
         
-        function autoName()
+        async function autoName()
         {
             if(domInputSaveAs.value != '' || !domInputRom.files[0] || !domInputPatch.files[0])
             {
@@ -478,52 +486,23 @@
             var romFileName = domInputRom.files[0].name;
             var patchFileName = domInputPatch.files[0].name;
         
-            var name = ''
-            if(specialNameReg.test(patchFileName)) {
-                var versionRegex = /[0-9\.]+TO[0-9\.]+/g
-                var appid = patchFileName.substring(0, versionRegex.exec(patchFileName).index - 1)
-                var TV = patchFileName.match(versionRegex)[0].split("TO")[1]
-                if(TV.endsWith(".")) TV = TV.substring(0, TV.length - 1)
-                name = `${appid}_${TV}.apk`
-            } else {
-                var ext = romFileName.split('.').pop();
-                var parts = patchFileName.split('.');
-                parts.pop();
-                name = parts.join('.') + '.' + ext;
+            if(patchData) {
+                var sha = await GetSHA256(patchData)
+                downgrades.forEach(d => {
+                    if(d.DSHA256 == sha) domInputSaveAs.value = d.appid + " " + d.TV + "." + romFileName.split('.').pop();
+                })
             }
-            
-        
-            domInputSaveAs.value = name;
         }
         
         domInputApply.onclick = function()
         {
-            runPatcherSync();
+            runPatcher();
         }
         
         domInputApply.oncontextmenu = function()
         {
-            runPatcher();
+            runPatcherSync();
         }
-        
-        /*
-            RAM usage tests with MS Edge
-            - Async downgrading -
-
-            234 MB Base
-            1097 MB after selecting
-            ~4200 MB while downgrading
-            1099 MB After downgrading
-
-            - Sync downgrading -
-
-            268 MB Base
-            1099 MB After Selecting
-            ~2056 MB while downgrading
-            1100 MB After downgrading
-
-            => right click will be async and normal click sync.
-        */
 
         async function runPatcherSync()
         {
