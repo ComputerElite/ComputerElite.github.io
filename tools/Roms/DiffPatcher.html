@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diff Patcher - Web</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Diff Patcher - Web" />
+        <meta property="og:description" content="Patch your roms" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Roms/DiffPatcher.html" />
+        <meta property="og:image" content="https://computerelite.github.io/tools/APK_Downgrader_Web/Guide.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <script src="libpatch.js"></script>
+        <script src="../APK_Downgrader_Web/lzma.js"></script>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+        td {
+            padding: 10px;
+        }
+
+        .os {
+            font-size: 16px;
+            color: #EEE;
+        }
+
+        .item {
+            flex: 1;
+            width: 25%;
+            word-wrap: break-word;
+            padding: 3px;
+        }
+
+        .itemR {
+            flex: 1;
+            width: 25%;
+            word-wrap: break-word;
+            padding: 3px;
+            color: #FF2222;
+        }
+
+        .devicesRowItem {
+            flex: 1;
+            width: 16%;
+            text-align: center;
+        }
+
+        .devicesRowItemN {
+            flex: 1;
+            width: 16%;
+            color: #FF2222;
+            text-align: center;
+        }
+
+        .devicesRowItemY {
+            flex: 1;
+            width: 16%;
+            color: #00BB00;
+            text-align: center;
+        }
+
+        .devicesRow {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+        </style>
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;" class="bigBox">
+                    <div style=" padding: 10px;">
+                        <div style="font-size: 24px;">Diff Patcher - Web</div>
+                        <div class="headerDescription">Based on <a href="https://hack64.net/tools/patcher.php" target="_blank">Hack64's Web Patcher</a></div>
+                    </div>
+                    
+                    <table style="padding: 10px; width: 100%;">
+                        <tr><td>Rom</td><td><input type="file" id="input-rom" accept=".gb"></td></tr>
+                        <tr><td>Patch</td><td><input type="file" id="input-patch" accept=".bin, .xdelta, .xdelta3, .decr"></td></tr>
+                        <tr><td>Save as</td><td><input type="text" id="input-saveas" spellcheck="false"></td></tr>
+                    </table>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <label style="padding: 5px; font-size: 12px; vertical-align: center;" title="Skip checksum verification (not recommended)">
+                                    <input type="checkbox" style="vertical-align: middle;" id="input-skip-checksums">
+                                    <span style="margin-left: 5px;">Skip verification</span>
+                                </label>
+                            </td>
+                            <td style="text-align: right;">
+                                <input type="button" value="Downgrade" id="input-apply" disabled="true">
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="margin-bottom: 20px;"><a style="font-size: 18px; " target="_blank" href="Guide.html">Guide</a></div>
+                    <div style="background: #666; text-align: left; height: 2px;">
+                        <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF; position: absolute; max-width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;" class="bigBox">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 24px;">Download patches</div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download). Red patches may not work on 32 bit brosers as MS Edge, Google Chrome and Opera. It gets Red with 3GB est. RAM usage and more</i></div>
+                        <br/>
+                        <div style="margin-bottom: 10px;">You can downgrade downgraded apks.</div>
+                        <div style="margin: auto;">
+                            Find the downgrade path to downgrade to your target version:
+                            <table style="width: 30%; margin: auto;">
+                                <tr>
+                                    <td>
+                                        Search Term
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="searchTerm" placeholder="version, game or SHA256" onkeydown="if(event.keyCode == 13) Search()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type='button' onclick="Search()" value="Search">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                            <div class="item">Game</div>
+                            <div class="item">Source Version</div>
+                            <div class="item">Target Version</div>
+                        </a>
+                        <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
+                        </div>
+                        <br/>
+                        <div class="headerDescription"><a href="https://github.com/ComputerElite/wiki/wiki/APK-Downgrader#how-do-i-generate-downgrade-files" target="_blank">Create patches with APK Downgrader (NOT WORKING)</a></div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 20px;" class="bigBox">
+                    <div style="padding: 10px;">
+                        <div style="font-size: 20px; text-align: left;">
+                            <div style="font-size: 16px;">
+                                <div style="font-size: 20px; margin-top: 30px;"><a style="color: #EEEEEE; cursor:default;" href="#guide">Guide</a>
+                                    <div class="headerDescription">Instructions, Infos and help with this tool</i></div>
+                                    <div class="topicContainer">
+                                        <div class="tip">
+                                            <div class="tipHeader">
+                                                Tip
+                                            </div>
+                                            If you are on a device which has low RAM then close all Apps/programs except your browser and close your browser or this tab after downgrading.
+                                                <br/>
+                                            <i>(About 2GB RAM is getting used when downgrading Beat Saber)</i>
+                                        </div>
+                                        <div class="guideHeader"><a style="font-size: 20px;" href="Guide.html" target="_blank">Follow the guide here to learn how to downgrade</a></div>
+                                        <div class="guideHeader">Is this tool piracy?</div>
+                                        <div class="guideSteps">
+                                            <div style="font-weight: bold;">First of the question: What am I downloading from the Patches section above?</div>
+                                            <br/>
+                                            You are downloading a binary difference between the roms you have and the other roms you want to patch to.
+                                            <br/>
+                                            Stored in those files is how to rearrange the bytes of the rom so it'll be the other one.
+                                            <br/>
+                                            <br/>
+                                            <div style="font-weight: bold;">So is this piracy?</div>
+                                            <br/>
+                                            No. You're not downloading any game code. Those patches will only work (aka give you the other rom) if they get used with the right rom
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="font-size: 16px;">
+                                <a name="errors"></a>
+                                <div style="font-size: 20px; margin-top: 30px;">Common errors
+                                    <div class="headerDescription">Errors which may or may not show</i></div>
+                                    <div class="topicContainer">
+                                        
+                                        <div class="guideHeader"><code>Array buffer allocation failed</code> or Browser crashs</div>
+                                        <div class="guideSteps">
+                                            This means you don't have enough RAM left. Either it'll not work on your device at all or you just have too much RAM in use.
+                                        </div>
+
+                                        <div class="guideHeader">Browser doesn't do anything after pressing Patch</div>
+                                        <div class="guideSteps">
+                                            Either your browser doesn't work with This tool or you don't have enough RAM left
+                                        </div>
+                                        <div class="guideHeader">I get an <code>out of memory</code> error</div>
+                                        <div class="guideSteps">
+                                            This means that you don't have enough RAM left. Try closing all other tabs and Apps. If the problem still occurs <i>(and you have RAM left)</i> Then the patch is too big to be used. <i>You can see estimated RAM usage above.</i>
+                                        </div>
+
+                                        <div class="guideHeader"><code>Source checksum mismatch - patch is not meant for this file. [...]</code></div>
+                                        <div class="guideSteps">
+                                            First make sure you haven't tried to mod your game. If this is the case uninstall Beat Saber on your Quest and download it again. Then make a new backup and try again. Otherwise just try backing up the APK again.
+                                        </div>
+                                        <div class="guideHeader"><code>Unknown patch format</code></div>
+                                        <div class="guideSteps">
+                                            Usually this means that your browser doesn't work with the downgrader (so try some different browsers)
+                                        </div>
+                                        <div class="guideHeader"><code>Array buffer allocation failed</code></div>
+                                        <div class="guideSteps">
+                                            This error usually occurs on opera and indicates that your device has too little ram available
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            The Web Version of <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a> wouldn't have been possible without the work of <a href="https://hack64.net/tools/patcher.php" target="_blank">hack64's Web Patcher</a> which is powering most of the code behind downgrading.
+                            <br/>
+                            Tool by ComputerElite
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        
+        var sourceData = null;
+        var patchData = null;
+        var saveAsName = '';
+        var patchFileName = '';
+        
+        var domInputRom = document.querySelector('#input-rom');
+        var domInputPatch = document.querySelector('#input-patch');
+        var domInputSaveAs = document.querySelector('#input-saveas');
+        var domInputApply = document.querySelector('#input-apply');
+        var domInputSkipChecksums = document.querySelector('#input-skip-checksums')
+        var domProgressBar = document.querySelector('#progress-bar');
+        var referrer = document.referrer;
+        console.log("referrer: " + referrer)
+
+        domInputSkipChecksums.onchange = function() {
+            if(domInputSkipChecksums.checked) {
+                if(!confirm("Warning: You wanted to disable verification. If your APK is not meant for the patch you're using you'll not be able to install the downgraded APK. Do you still want to disable verification?")) {
+                    domInputSkipChecksums.checked = false;
+                }
+            }
+        }
+
+        var downgrades = {}
+        fetch("patches.json").then((res) => {
+            res.json().then((json) => {
+                downgrades = json;
+                document.getElementById("patches").innerHTML = "Ready to search"
+            })
+        })
+
+        if(InIframe()) {
+            document.location.href = "../../redirect.html"
+        }
+
+        if(referrer.includes("bslegacy.com")) {
+            console.log("Hello guy redirected from BSLG")
+        }
+        
+        /*
+        // testing
+        downgrades = {"versions": [{
+        "SV": "1.15.0",
+        "TV": "1.13.2",
+        "SSHA256": "0322e433369e45f793f2a90a6183a77eb7f85954384e7bd018c11001db03293d",
+        "DSHA256": "789463bed840a9ecb3ebbff7ed4fe6a2c7e384243b2881865902dd3c8e6ba76c",
+        "TSHA256": "cb3157ada1c97e496549ff902b20178f68d803dedd441b5b98c15f6dc3929240",
+        "download": "https://mega.nz/file/NzxGiKqb#7c_hi4BJ7n9H6BsboK6TIHdUOaMl1ubVZ4LOGfbp3g0",
+        "isDirectDownload": false,
+        "appid": "com.beatgames.beatsaber",
+        "isXDelta3": false,
+        "TargetByteSize": 497495067,
+        "SourceByteSize": 579562808
+        }]}
+        */
+
+        function Search() {
+            document.getElementById("patches").innerHTML = ""
+            var term = document.getElementById("searchTerm").value.toLowerCase()
+            downgrades.forEach(patch => {
+                if(patch.SSHA256 == term || patch.SV.toLowerCase().includes(term) || patch.TV.toLowerCase().includes(term) || patch.appid.toLowerCase().includes(term)) {
+                    //var ram = patch["isXDelta3"] ? (patch["SourceByteSize"] * 3.8) : (patch["SourceByteSize"] * 1.9 + (patch["TargetByteSize"] + patch["SourceByteSize"]) * 1.5) + 10485760
+                    document.getElementById("patches").innerHTML += GetFormatted(patch)
+                }
+            })
+            
+        }
+
+        function ShowAllPatches() {
+            DSVSet = false;
+            appid = ""
+            document.getElementById("patches").innerHTML = ""
+            var tvs = []
+            var svs = []
+            var appids = []
+            downgrades.forEach(element => {
+                if(!tvs.includes(element.TV)) tvs.push(element.TV)
+                if(!svs.includes(element.SV)) svs.push(element.SV)
+                if(!appids.includes(element.appid)) appids.push(element.appid)
+                var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
+                document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+            });
+            document.getElementById("DTV").innerHTML = ""
+            document.getElementById("DSV").innerHTML = ""
+            document.getElementById("romNames").innerHTML = ""
+            svs.sort();
+            svs.reverse();
+            svs.forEach((v) => {
+                document.getElementById("DSV").innerHTML += FormatVersionHTML(v)
+            })
+            tvs.sort();
+            tvs.forEach((v) => {
+                document.getElementById("DTV").innerHTML += FormatVersionHTML(v)
+            })
+            appids.sort();
+            appids.forEach((v) => {
+                document.getElementById("romNames").innerHTML += FormatVersionHTML(v)
+            })
+        }
+        function FormatVersionHTML(version) {
+            return `<option value="${version}">${version}</option>`
+        }
+
+        var path = []
+
+        var DSVSet = false;
+        var appid = ""
+
+        function SetUsed() {
+            DSVSet = true;
+            Find(document.getElementById("DTV").value)
+        }
+
+        function SetRom() {
+            appid = document.getElementById("romNames").value
+            Find(document.getElementById("DTV").value)
+        }
+
+        function Find (targetversion) {
+            path = []
+            document.getElementById("patches").innerHTML = "";
+            console.log("Trying to find downgrades to " + targetversion)
+            if(RecursiveFind(document.getElementById("DSV").value, targetversion, true, DSVSet)) {
+                path.forEach(cpath => {
+                    console.log("path found: ")
+                    console.log(path[0].SV)
+                    document.getElementById("patches").innerHTML += "<div style='width: 90%; margin-left: auto; margin-right: auto;'><hr></div>"
+                    cpath.forEach(element => {
+                        console.log(element.TV)
+                        var ram = element["isXDelta3"] ? (element["SourceByteSize"] * 3.8) : (element["SourceByteSize"] * 1.9 + (element["TargetByteSize"] + element["SourceByteSize"]) * 1.5) + 10485760
+                        document.getElementById("patches").innerHTML += GetFormatted(element, ram)
+                    })
+                    console.log("path end")
+                })
+            } else {
+                console.log("no path found")
+                document.getElementById("patches").innerHTML = "No path found";
+            }
+        }
+
+        var cpath = []
+        function RecursiveFind(version, targetVersion, isroot, SVNeeded)
+        {
+            var found = false;
+            downgrades.every((v, i) => {
+                if(isroot) cpath = []
+                if(isroot && !SVNeeded || isroot && version == v.SV || (!isroot && version == v.SV)) {
+                    if(appid != "" && appid != v.appid) return isroot
+                    cpath.push(v);
+                    if (v.TV == targetVersion)
+                    {
+                        // TV matches
+                        found = true;
+                        if(isroot) CheckPaths(cpath)
+                        return isroot;
+                    }
+                    if(RecursiveFind(v.TV, targetVersion, false, SVNeeded))
+                    {
+                        found = true;
+                        if(isroot) CheckPaths(cpath)
+                        return isroot;
+                    } else
+                    {
+                        cpath.pop();
+                    }
+                }
+                
+                return true;
+            });
+            return found;
+        }
+
+        function CheckPaths(cpath) {
+            for(let i = 0; i < path.length; i++) {
+                if(path[i][0].SV == cpath[0].SV) {
+                    if(path[i].length > cpath.length) {
+                        path.splice(i, 1);
+                        path.push(cpath)
+                        return;
+                    } else {
+                        return;
+                    }
+                }
+            }
+            path.push(cpath)
+        }
+        
+
+        function GetFormatted(element, ram) {
+            return `<a style="font-size: 16px; color: #EEEEEE; text-align: center; display: flex; width: 100%;" href="${element.download}" ` + (element["isDirectDownload"] ? "download" : 'target="_blank"') + `>
+                        <div class="item">${element.appid}</div>
+                        <div class="item">${element.SV}</div>
+                        <div class="item">${element.TV}</div>
+                    </a>`
+        }
+
+        function attachBinaryInput(selector, onloadend)
+        {
+            var elem = document.querySelector(selector);
+        
+            if(!elem)
+            {
+                return false;
+            }
+        
+            elem.onchange = function(e)
+            {
+                if(!this.files[0])
+                {
+                    return;
+                }
+        
+                var reader = new FileReader();
+                reader.onloadend = function()
+                {
+                    onloadend(reader.result);
+                }
+                reader.readAsArrayBuffer(this.files[0]);
+            }
+        }
+
+        attachBinaryInput('#input-rom', function(result)
+        {
+            sourceData = result;
+            autoName();
+            setApplyButtonState();
+        })
+        
+        attachBinaryInput('#input-patch', function(result)
+        {
+            patchData = result;
+            autoName();
+            setApplyButtonState();
+        })
+        
+        domInputSaveAs.onchange = domInputSaveAs.onkeydown = function()
+        {
+            setApplyButtonState();
+        }
+        
+        function isReady()
+        {
+            return (!!domInputRom.files[0] && !!domInputPatch.files[0] && domInputSaveAs.value != '');
+        }
+        
+        function autoName()
+        {
+            if(domInputSaveAs.value != '' || !domInputRom.files[0] || !domInputPatch.files[0])
+            {
+                return;
+            }
+
+            var specialNameReg = /.+_[0-9\.]+TO[0-9\.]+/g;
+
+            var romFileName = domInputRom.files[0].name;
+            var patchFileName = domInputPatch.files[0].name;
+        
+            var name = ''
+            if(specialNameReg.test(patchFileName)) {
+                var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+                var appid = patchFileName.substring(0, versionRegex.exec(patchFileName).index - 1)
+                var TV = patchFileName.match(versionRegex)[0].split("TO")[1]
+                if(TV.endsWith(".")) TV = TV.substring(0, TV.length - 1)
+                name = `${appid}_${TV}.apk`
+            } else {
+                var ext = romFileName.split('.').pop();
+                var parts = patchFileName.split('.');
+                parts.pop();
+                name = parts.join('.') + '.' + ext;
+            }
+            
+        
+            domInputSaveAs.value = name;
+        }
+        
+        domInputApply.onclick = function()
+        {
+            runPatcherSync();
+        }
+        
+        domInputApply.oncontextmenu = function()
+        {
+            runPatcher();
+        }
+        
+        /*
+            RAM usage tests with MS Edge
+            - Async downgrading -
+
+            234 MB Base
+            1097 MB after selecting
+            ~4200 MB while downgrading
+            1099 MB After downgrading
+
+            - Sync downgrading -
+
+            268 MB Base
+            1099 MB After Selecting
+            ~2056 MB while downgrading
+            1100 MB After downgrading
+
+            => right click will be async and normal click sync.
+        */
+
+        async function runPatcherSync()
+        {
+            if(!isReady())
+            {
+                return;
+            }
+            
+            disableInputs();
+            applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(result => {
+                if(result) saveAs(domInputSaveAs.value, result);
+                enableInputs();
+                domProgressBar.style.width = '0px';
+            }).catch(err => {
+                alert(err + "\n\ncheck console for more info")
+                enableInputs();
+                domProgressBar.style.width = '0px';
+            })
+        }
+
+        function updateProgress(ratio)
+        {
+            domProgressBar.style.width = (ratio * 100) + '%';
+        }
+
+        function runPatcher()
+        {
+            if(!isReady())
+            {
+                return;
+            }
+        
+            disableInputs();
+        
+            function onpatchend(targetData)
+            {
+                domProgressBar.style.width = '0px';
+                enableInputs();
+        
+                if(!debug)
+                {
+                    saveAs(domInputSaveAs.value, targetData);
+                }
+            }
+        
+            function onprogress(ratio)
+            {
+                domProgressBar.style.width = (ratio * 100) + '%';
+            }
+        
+            function onerror(message)
+            {
+                alert("Error: " + message + "\n\n" + "See console output for more information.");
+                domProgressBar.style.width = '0px';
+                enableInputs();
+            }
+        
+            var config = {
+                ignoreChecksums: domInputSkipChecksums.checked,
+                onerror: onerror,
+                onpatchend: onpatchend,
+                onprogress: onprogress
+            };
+        
+            applyPatchAsync(sourceData, patchData, config, domInputPatch.files[0].name, downgrades);
+        }
+        
+        function setApplyButtonState()
+        {
+            if(!isReady())
+            {
+                domInputApply.setAttribute('disabled', 'true');
+                return;
+            }
+        
+            domInputApply.removeAttribute('disabled');
+        }
+        
+        function disableInputs()
+        {
+            domInputRom.setAttribute('disabled', 'true');
+            domInputPatch.setAttribute('disabled', 'true');
+            domInputSaveAs.setAttribute('disabled', 'true');
+            domInputApply.setAttribute('disabled', 'true');
+        }
+        
+        function enableInputs()
+        {
+            domInputRom.removeAttribute('disabled');
+            domInputPatch.removeAttribute('disabled');
+            domInputSaveAs.removeAttribute('disabled');
+            domInputApply.removeAttribute('disabled');
+        }
+        
+        function saveAs(filename, data)
+        {
+            console.log('saving ' + filename + '...')
+        
+            var blob = new Blob([data], {type: 'octet/stream'});
+            var url = window.URL.createObjectURL(blob);
+        
+            if(navigator && navigator.msSaveBlob)
+            {
+                console.log("using msSaveBlob...");
+                navigator.msSaveBlob(blob, filename);
+            }
+            else
+            {
+                var a = document.createElement('a');
+                a.style = "display: none";
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                try
+                {
+                    a.click();
+                }
+                catch(e)
+                {
+                    console.error(e);
+                    console.log('failed to save file');
+                }
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            }
+        }
+        
+        </script>
+    </body>
+</html>

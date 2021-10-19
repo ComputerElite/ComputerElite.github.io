@@ -255,24 +255,11 @@ class DecrPatcher {
     
     GetVersion(downgrades, SV, TV, appid, isXDelta3) {
         var outp = null
-        downgrades["versions"].forEach(element => {
-            if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(SV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
-            else if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(TV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(SV) && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+        downgrades.forEach(element => {
+            if (this.element["SV"] == this.SV && this.element["TV"] == this.TV && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+            else if (this.element["SV"] == this.TV && this.element["TV"] == this.SV && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
         });
         return outp
-    }
-    
-    RemoveDotZero(input)
-    {
-        var done = false;
-        input = input.toString()
-        while(!done)
-        {
-            if (input.endsWith("0")) input = input.substring(0, input.length - 1);
-            else if (input.endsWith(".")) input = input.substring(0, input.length - 1);
-            else done = true;
-        }
-        return input;
     }
 }
 
