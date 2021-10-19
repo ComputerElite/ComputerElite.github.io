@@ -442,17 +442,17 @@
             }
         }
 
-        attachBinaryInput('#input-rom', function(result)
+        attachBinaryInput('#input-rom', async function(result)
         {
             sourceData = result;
-            autoName();
+            await autoName();
             setApplyButtonState();
         })
         
-        attachBinaryInput('#input-patch', function(result)
+        attachBinaryInput('#input-patch', async function(result)
         {
             patchData = result;
-            autoName();
+            await autoName();
             setApplyButtonState();
         })
 
@@ -537,11 +537,8 @@
             {
                 domProgressBar.style.width = '0px';
                 enableInputs();
-        
-                if(!debug)
-                {
-                    saveAs(domInputSaveAs.value, targetData);
-                }
+
+                saveAs(domInputSaveAs.value, targetData);
             }
         
             function onprogress(ratio)
