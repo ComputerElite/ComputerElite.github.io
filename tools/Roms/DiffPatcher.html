@@ -278,15 +278,15 @@
         */
 
         function Search() {
-            document.getElementById("patches").innerHTML = ""
             var term = document.getElementById("searchTerm").value.toLowerCase()
+            var inner = ""
             downgrades.forEach(patch => {
                 if(patch.SSHA256 == term || patch.SV.toLowerCase().includes(term) || patch.TV.toLowerCase().includes(term) || patch.appid.toLowerCase().includes(term)) {
                     //var ram = patch["isXDelta3"] ? (patch["SourceByteSize"] * 3.8) : (patch["SourceByteSize"] * 1.9 + (patch["TargetByteSize"] + patch["SourceByteSize"]) * 1.5) + 10485760
-                    document.getElementById("patches").innerHTML += GetFormatted(patch)
+                    inner += GetFormatted(patch)
                 }
             })
-            
+            document.getElementById("patches").innerHTML = inner
         }
 
         function ShowAllPatches() {
