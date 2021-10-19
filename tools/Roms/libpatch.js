@@ -157,7 +157,7 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
 }
 
 function extractDowngrade(patchFilename, abortOnNotFound, downgrades, isXdelta3) {
-    var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+    var versionRegex = /[0-9a-f\.]+TO[0-9a-f\.]+/g
     var vers = patchFilename.match(versionRegex)[0].split("TO")
     var SV = vers[0]
     var TV = vers[1]
@@ -256,8 +256,8 @@ class DecrPatcher {
     GetVersion(downgrades, SV, TV, appid, isXDelta3) {
         var outp = null
         downgrades.forEach(element => {
-            if (this.element["SV"] == this.SV && this.element["TV"] == this.TV && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
-            else if (this.element["SV"] == this.TV && this.element["TV"] == this.SV && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+            if (element["SV"] == this.SV && element["TV"] == this.TV && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+            else if (element["SV"] == this.TV && element["TV"] == this.SV && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
         });
         return outp
     }

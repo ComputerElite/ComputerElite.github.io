@@ -537,10 +537,6 @@
                 if(result) saveAs(domInputSaveAs.value, result);
                 enableInputs();
                 domProgressBar.style.width = '0px';
-            }).catch(err => {
-                alert(err + "\n\ncheck console for more info")
-                enableInputs();
-                domProgressBar.style.width = '0px';
             })
         }
 
