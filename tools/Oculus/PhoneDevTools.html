@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oculus site phone dev tools</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Oculus site phone dev tools" />
+        <meta property="og:description" content="Enabled you to view devtools on your phone" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/PhoneDevTools.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body style="font-size: 14px;">
+        <iframe id="site" style="width: 100%; height: 100%;">
+
+        </iframe>
+        FUCK BROWSER SECURITY
+        <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+        <script>
+            eruda.init()
+            document.getElementById("site").src = "https://oculus.com"
+
+            var funnyUri = `javascript:var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init(); };`
+        </script>
+    </body>
+</html>
