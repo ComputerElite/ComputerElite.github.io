@@ -172,7 +172,7 @@
                                             </div>
                                             This is not your fault. This shown up when my proxy server (which makes you able to do requests to Oculus) is shut down. Currently it has reached the maximum runtime for this month. While this happens all cached data will be used so you can continue to use this site.
                                         </div>`
-            var access_token = "OC|752908224809889|"
+            var access_token = "OC|1317831034909742|"
 
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
@@ -251,7 +251,7 @@
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
                 var searchTerm = document.getElementById("searchTerm").value
-                PostRequest(requestUrl, `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=4446310405385365`).then((res) => {
+                PostRequest(requestUrl, `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=3928907833885295`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
                     res.data.application_search.results.edges.forEach(element => {
@@ -277,9 +277,20 @@
                             })
                         }
                     })
-                    if(document.getElementById("apps").innerHTML == "") {
-                        document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
-                    }
+                    MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
+                        res.forEach(element => {
+                            if(element.headset != document.getElementById("headset").value || !element.name.toLowerCase().includes(searchTerm.toLowerCase())) return
+                                document.getElementById("apps").innerHTML += GetResultFormatted({
+                                    imgsrc: element.img,
+                                    name: element.name,
+                                    id: element.id
+                                })
+                            })
+                        if(document.getElementById("apps").innerHTML == "") {
+                            document.getElementById("apps").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found</div>"
+                        }
+                    })
+                    
                 }).catch(err => {
                     MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
                         document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. <i>(Basic)</i> Search has run on cached apps</div>` + RequestFailedError
