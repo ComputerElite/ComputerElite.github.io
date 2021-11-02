@@ -17,7 +17,7 @@
         <textarea id="pretty" style="width: 90%; height: 1000px;"></textarea>
         <script>
             document.getElementById("json").onchange = () => {
-                document.getElementById("pretty").innerHTML = JSON.stringify(JSON.parse(document.getElementById("json").innerHTML), null, 4) 
+                document.getElementById("pretty").value = JSON.stringify(JSON.parse(document.getElementById("json").value), null, 4) 
             }
         </script>
     </body>
