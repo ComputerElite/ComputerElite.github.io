@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON STUFF</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="JSON stuff" />
+        <meta property="og:description" content="wooooooohooooooooooooooooooo" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/random/jsonPrettyfier.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body>
+        <textarea id="json" style="width: 90%; height: 1000px;"></textarea>
+        <textarea id="pretty" style="width: 90%; height: 1000px;"></textarea>
+        <script>
+            document.getElementById("json").onchange = () => {
+                document.getElementById("pretty").innerHTML = JSON.stringify(JSON.parse(document.getElementById("json")), null, 4) 
+            }
+        </script>
+    </body>
+</html>
