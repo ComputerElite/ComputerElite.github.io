@@ -141,3 +141,33 @@ function UnixToDataAndTime(timestamp) {
     var date = new Date(timestamp * 1000);
     return AddZeroToNumber(date.getDate()) + "." + AddZeroToNumber(date.getMonth()) + "." + AddZeroToNumber(date.getFullYear(), 4) + " " + AddZeroToNumber(date.getHours()) + ":" + AddZeroToNumber(date.getMinutes()) + ":" + AddZeroToNumber(date.getSeconds())
 }
+
+
+const analyticsVersion = "1.0"
+const analyticsHosts = []
+var analytic = {
+    analyticsVersion: analyticsVersion,
+    fullUri: window.location.href,
+    sideOpen: Math.floor(Date.now() / 1000),
+    sideClose: 0,
+    referrer: document.referrer
+}
+
+
+var sent = false
+
+window.onbeforeunload = SendAnalytics
+window.onunload = SendAnalytics
+window.onpopstate = SendAnalytics
+
+function SendAnalytics() {
+    if (sent) return
+    sent = true
+    analytic.sideClose = Math.floor(Date.now() / 1000)
+    let headers = {
+        type: 'application/json'
+    };
+    let blob = new Blob([JSON.stringify(analytic)], headers);
+
+    navigator.sendBeacon("https://cors-anywhere-computerelite.herokuapp.com/test", blob)
+}
