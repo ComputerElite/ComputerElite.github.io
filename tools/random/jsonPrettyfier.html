@@ -13,8 +13,8 @@
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
     </head>
     <body>
-        <textarea id="json" style="width: 90%; height: 95%;"></textarea>
-        <textarea id="pretty" style="width: 90%; height: 95%"></textarea>
+        <textarea id="json" style="width: 90%; height: 100px;"></textarea>
+        <textarea id="pretty" style="width: 90%; height: 10000px"></textarea>
         <script>
             document.getElementById("json").onchange = () => {
                 document.getElementById("pretty").value = JSON.stringify(JSON.parse(document.getElementById("json").value), null, 4) 
