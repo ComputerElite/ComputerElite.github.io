@@ -80,6 +80,7 @@
             PullMods()
 
             function PullMods() {
+                gameVersions = {}
                 fetch("https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json").then(res => {
                     res.json().then(json => {
                         org = json
@@ -111,7 +112,6 @@
             }
 
             function SortByGameVersion() {
-                gameVersions = {}
                 org.mods.forEach(mod => {
                     var addedGameVersions = []
                     mod.downloads.forEach(download => {
