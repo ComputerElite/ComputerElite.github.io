@@ -265,3 +265,12 @@ code {
 .image {
     padding: 10px;
 }
+
+table .small
+{
+    padding-right: 5px;
+    padding-left: 5px;
+    width: auto;
+    text-align: right;
+    white-space: nowrap
+}

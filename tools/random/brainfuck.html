@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Brainfuck interpreter" />
+        <meta property="og:description" content="An online interpreter for Brainfuck" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/" />
+    </head>
+    <body>
+        <script src="../../js/standard.js"></script>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; padding: 10px; text-align: center;" class="bigBox">
+                <table style="width: 100%; height: 100%; border-spacing: 0; border-collapse: collapse;">
+                    <tr>
+                        <td class="small">Code</td>
+                        <td style="width: 100%; height: 400px;"><textarea id="code" style="height: 90%;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="small">Input</td>
+                        <td><textarea id="input"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="small">Output</td>
+                        <td style="width: 100%; height: 200px;"><textarea id="out" style="height: 90%;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="small">Memory</td>
+                        <td style="width: 100%; height: 200px;"><textarea id="mem" style="height: 90%;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><div class="customButton" onclick="execute()">Execute code</div></td>
+                        <td><div class="customButton" onclick="output.value = ''">Clear output</div></td>
+                        
+                       
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script>
+            const code = document.getElementById("code")
+            const input = document.getElementById("input")
+            const output = document.getElementById("out")
+            const mem = document.getElementById("mem")
+
+            var memory = new Uint8Array(0xFFFF);
+            var pointer = 0;
+            var programPosition = 0;
+            var lastLoopOpen = [];
+
+            function execute() {
+                var brainfuck = code.value
+                var lastInput = 0
+                pointer = 0
+                programPosition = 0
+                lastLoopOpen = []
+                memory = new Uint8Array(0xFFFF);
+                while (programPosition < brainfuck.length)
+                {
+                    if (lastLoopOpen.length >= 0 && lastLoopOpen[0] == -1)
+                    {
+                        programPosition++;
+                        continue;
+                    }
+                    switch (brainfuck[programPosition])
+                    {
+                        case '<': // Decrease pointer
+                            pointer--;
+                            if (pointer < 0) pointer = memory.Length - 1;
+                            break;
+                        case '>': // Increase pointer right
+                            pointer++;
+                            if (pointer >= memory.Length) pointer = 0;
+                            break;
+                        case '+': // Increase value
+                            memory[pointer]++;
+                            break;
+                        case '-': // Decrease value
+                            memory[pointer]--;
+                            break;
+                        case '.': // Write memory to console
+                            output.value += (String.fromCharCode(memory[pointer]));
+                            break;
+                        case '[': // Open loop
+                            lastLoopOpen.splice(0, 0, programPosition + 1);
+                            if (memory[pointer] == 0) lastLoopOpen[0] = -1;
+                            break;
+                        case ']': // Close loop
+                            if (memory[pointer] != 0)
+                            {
+                                programPosition = lastLoopOpen[0];
+                                continue;
+                            }
+                            lastLoopOpen.splice(0, 1);
+                            break;
+                        case ',': // Set the memory to the inputted key
+                            memory[pointer] =new TextEncoder().encode(input.value[lastInput])[0];
+                            lastInput++
+                            break;
+                        default:
+                            // Don't do anything in case there are any comments or line breaks
+                            break;
+
+                    }
+                    programPosition++;
+                }
+                mem.value = DisplayMemory()
+            }
+
+            function DisplayMemory(length = 30) {
+                var m = ""
+                for(let i = 0; i < length; i++)
+                {
+                    if(memory[i] == undefined) memory[i] = 0
+                    if(i == pointer) {
+                        m += "|>" + memory[i].toString().padEnd(3) + "<|"
+                    } else {
+                        m += "| " + memory[i].toString().padEnd(3) + " |"
+                    }
+                }
+                return m
+            }
+        </script>
+    </body>
+</html>
