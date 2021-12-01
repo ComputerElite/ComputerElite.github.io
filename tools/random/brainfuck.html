@@ -86,17 +86,17 @@
                             output.value += (String.fromCharCode(memory[pointer]));
                             break;
                         case '[': // Open loop
-                            lastLoopOpen.splice(0, 0, programPosition + 1);
-                            if (memory[pointer] == 0) lastLoopOpen[0] = -1;
+                            lastLoopOpen.splice(0, 0, memory[pointer] == 0 || lastLoopOpen.length >= 1 && lastLoopOpen[0] == -1 ? -1 : programPosition);
                             break;
                         case ']': // Close loop
-                            if (memory[pointer] != 0)
+                            if (memory[pointer] == 0)
                             {
-                                programPosition = lastLoopOpen[0];
-                                continue;
+                                lastLoopOpen.splice(0, 1);
+                                break;
                             }
+                            programPosition = lastLoopOpen[0];
                             lastLoopOpen.splice(0, 1);
-                            break;
+                            continue;
                         case ',': // Set the memory to the inputted key
                             memory[pointer] =new TextEncoder().encode(input.value[lastInput])[0];
                             lastInput++
