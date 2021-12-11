@@ -105,9 +105,9 @@
                 <div style="display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;" class="bigBox">
                     <div style="padding: 10px;">
                         <div style="font-size: 24px;">Download patches</div>
-                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/APKDowngrader" target="_blank">APK Downgrader</a><i> (click text to download). Red patches may not work on 32 bit brosers as MS Edge, Google Chrome and Opera. It gets Red with 3GB est. RAM usage and more</i></div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="patches.json" target="_blank">patches.json</a><i> (click text to download). Red patches may not work on 32 bit brosers as MS Edge, Google Chrome and Opera. It gets Red with 3GB est. RAM usage and more</i></div>
                         <br/>
-                        <div style="margin-bottom: 10px;">You can downgrade downgraded apks.</div>
+                        <div style="margin-bottom: 10px;">You can patch patched roms.</div>
                         <div style="margin: auto;">
                             Find the downgrade path to downgrade to your target version:
                             <table style="width: 30%; margin: auto;">
@@ -148,14 +148,6 @@
                                 <div style="font-size: 20px; margin-top: 30px;"><a style="color: #EEEEEE; cursor:default;" href="#guide">Guide</a>
                                     <div class="headerDescription">Instructions, Infos and help with this tool</i></div>
                                     <div class="topicContainer">
-                                        <div class="tip">
-                                            <div class="tipHeader">
-                                                Tip
-                                            </div>
-                                            If you are on a device which has low RAM then close all Apps/programs except your browser and close your browser or this tab after downgrading.
-                                                <br/>
-                                            <i>(About 2GB RAM is getting used when downgrading Beat Saber)</i>
-                                        </div>
                                         <div class="guideHeader"><a style="font-size: 20px;" href="Guide.html" target="_blank">Follow the guide here to learn how to downgrade</a></div>
                                         <div class="guideHeader">Is this tool piracy?</div>
                                         <div class="guideSteps">
@@ -196,7 +188,7 @@
 
                                         <div class="guideHeader"><code>Source checksum mismatch - patch is not meant for this file. [...]</code></div>
                                         <div class="guideSteps">
-                                            First make sure you haven't tried to mod your game. If this is the case uninstall Beat Saber on your Quest and download it again. Then make a new backup and try again. Otherwise just try backing up the APK again.
+                                            The patch was made for a different rom
                                         </div>
                                         <div class="guideHeader"><code>Unknown patch format</code></div>
                                         <div class="guideSteps">
@@ -259,23 +251,6 @@
         if(referrer.includes("bslegacy.com")) {
             console.log("Hello guy redirected from BSLG")
         }
-        
-        /*
-        // testing
-        downgrades = {"versions": [{
-        "SV": "1.15.0",
-        "TV": "1.13.2",
-        "SSHA256": "0322e433369e45f793f2a90a6183a77eb7f85954384e7bd018c11001db03293d",
-        "DSHA256": "789463bed840a9ecb3ebbff7ed4fe6a2c7e384243b2881865902dd3c8e6ba76c",
-        "TSHA256": "cb3157ada1c97e496549ff902b20178f68d803dedd441b5b98c15f6dc3929240",
-        "download": "https://mega.nz/file/NzxGiKqb#7c_hi4BJ7n9H6BsboK6TIHdUOaMl1ubVZ4LOGfbp3g0",
-        "isDirectDownload": false,
-        "appid": "com.beatgames.beatsaber",
-        "isXDelta3": false,
-        "TargetByteSize": 497495067,
-        "SourceByteSize": 579562808
-        }]}
-        */
 
         function Search() {
             var term = document.getElementById("searchTerm").value.toLowerCase()
