@@ -1,0 +1,5 @@
+1. For what do we use your facebook details?
+    We use them to get a oculus token which is being used to download any version of any game you own and needed to authenticate that you own the game you are trying to download.
+
+2. How can I delete my data
+    As the browser will not store your login information you only have to delete the Application with which you signed in on override it's stored credentials by updating the token.
