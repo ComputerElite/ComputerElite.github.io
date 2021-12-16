@@ -67,11 +67,11 @@
             }
 
             function onPlayerReady(event) {
-                event.target.playVideo();
                 if(height != "" && height != null) logo.height = height
                 if(width != "" && width != null) logo.width = width
                 imgWidth = parseInt(logo.width)
                 imgHeight = parseInt(logo.height)
+                setTimeout(() => videoPlayer.playVideo(), 1000)
             }
 
             var done = false;
