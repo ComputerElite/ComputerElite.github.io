@@ -71,15 +71,12 @@
                 if(width != "" && width != null) logo.width = width
                 imgWidth = parseInt(logo.width)
                 imgHeight = parseInt(logo.height)
-                setTimeout(() => videoPlayer.playVideo(), 1000)
             }
 
             var done = false;
             var setup = false;
             function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.PAUSED) {
-                    videoPlayer.playVideo()
-                }
+                videoPlayer.playVideo()
             }
 
             var noHue = url.searchParams.get("nohue") == null ? false : true
