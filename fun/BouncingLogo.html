@@ -54,7 +54,8 @@
                 videoPlayer = new YT.Player('logo', {
                 playerVars: { 
                     'autoplay': 1,
-                    'controls': 0
+                    'controls': 0,
+                    'mute': 1
                 },
                 videoId: src.substring(32, src.length),
                 events: {
@@ -78,6 +79,14 @@
             function onPlayerStateChange(event) {
                 videoPlayer.playVideo()
             }
+
+            setTimeout(() => {
+                setInterval(() => {
+                    document.getElementById("logo").dispatchEvent(new KeyboardEvent('keydown',{'key':'a'}));
+                    videoPlayer.unMute();
+                }, 1000);
+            }, 500)
+            
 
             var noHue = url.searchParams.get("nohue") == null ? false : true
 

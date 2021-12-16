@@ -104,6 +104,7 @@
                 console.log("player ready")
                 player.seekTo(start, true)
                 setInterval(() => {
+                    document.body.click()
                     player.playVideo();
                 }, 50)
             }
