@@ -175,16 +175,33 @@
 
             var url = new URL(window.location.href);
             var id = url.searchParams.get("id");
+            var query = url.searchParams.get("query");
+            var downloadId = url.searchParams.get("downloadid");
+            var downloadVersion = url.searchParams.get("downloadversion");
 
-            if(id != undefined && id != "") {
+            if(id) {
                 SearchVersions(id)
             }
-
-            var query = url.searchParams.get("query");
-
-            if(query != undefined && query != "") {
+            if(query) {
                 document.getElementById("searchTerm").value = query
-                Search()
+                Search(query)
+            }
+            if(downloadId) {
+                setTimeout(() => {
+                    var a = document.createElement("a")
+                    a.href = GetDownloadLink(downloadId)
+                    a.target = "_blank"
+                    a.click()
+                }, 100)
+            }
+            if(downloadVersion) {
+                if(!id)
+                {
+                    downloadVersion = ""    
+                    alert("id query parameter must be set to an app")
+                } else {
+                    SearchVersions(id)
+                }
             }
 
             var menuOpen = false;
@@ -244,12 +261,12 @@
                 tooltip.style.display = "none"
             }
 
-            function Search() {
+            function Search(searchTerm = undefined) {
                 document.getElementById("notesContainer").innerHTML = "";
                 showingVersions = false;
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
-                var searchTerm = document.getElementById("searchTerm").value
+                if(searchTerm == undefined) searchTerm = document.getElementById("searchTerm").value
                 PostRequest(requestUrl, `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=3928907833885295`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
@@ -502,6 +519,11 @@
                 document.getElementById("versions").innerHTML = finished < required ? loader : ""
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
+                    if(finished >= required && downloadVersion && e.version == downloadVersion) {
+                        Download(e.id, HeadsetName == "RIFT", e.appid, e.code)
+                        alert("Downloading Version " + downloadVersion + " of " + document.getElementById("versionHeader").innerHTML.replace("Versions for ", "") + ". If the download doesn't start log in on oculus.com")
+                        downloadVersion = ""
+                    }
                 })
                 document.getElementById("versions").innerHTML += finished < required ? "" : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data is being shown.</div>" + RequestFailedError : "")
                 if(document.getElementById("versions").innerHTML == "") {
