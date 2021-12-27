@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <title>BMBF Manager Web/Lite</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../../css/standard.css">
+    </head>
+    <body>
+        <div class="menuContainer">
+            <div class="sidebar">
+                <div class="CoolHeader">
+                    <div style="width: 100%;">Welcome to BMBF Manager Web/Lite</div>
+                    <div style="font-size: 80%; width: 100%;">
+                        Extensions to the BMBF Web interface
+                    </div>
+                </div>
+                <div class="menuItem selected" section="home">Home</div>
+                <div class="menuItem" section="mods">Download mods</div>
+            </div>
+            <div class="content">
+                <div class="contentItem" id="home">
+
+
+                    <div class="contentHeader">
+                        Home
+                        <div class="contentHeaderDescription">Set the most Important settings</div>
+                    </div>
+                    <div class="buttonContainer">
+                        <div>Your Quests ip address (you can find it in the top left corner of Sidequst)</div>
+                        <input type="text" placeholder="x.x.x.x" id="ip" class="buttonLabel" style="width: 600px;">
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="button" id="saveip">Save IP</div>
+                        <div class="buttonLabel">This will validate the IP you put in and check the connection with BMBF</div>
+                    </div>
+                    <div id="ipTextBox" class="textBox"></div>
+                    As far as I know myself this project will never get finished. If it does, remind me to check this version of the page so I can see that I actually made progress.
+
+                </div>
+                <div class="contentItem" id="mods">
+
+
+                    <div class="contentHeader">
+                        Download mods
+                        <div class="contentHeaderDescription">Mods are cool so use them but be ready for crashs</div>
+                    </div>
+                    <div id="ipTextBox" class="textBox"></div>
+
+
+                </div>
+                <div class="contentItem hidden" id="tools">
+                    <div class="contentHeader">
+                        Tools
+                        <div class="contentHeaderDescription">Useful for troubleshooting and managing your install</div>
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="button" id="uninstall">Uninstall app</div>
+                        <div class="buttonLabel">Uninstalls the app you selected (needs to be confirmed on android device)</div>
+                    </div>
+                    <div class="buttonContainer">
+                        <div class="button" id="changeApp">Change app</div>
+                        <div class="buttonLabel">Change the app you want to manage</div>
+                    </div>
+
+                    <div class="space">
+                        <div class="contentHeader">
+                            Token Section
+                            <div class="contentHeaderDescription">Set your token for downgrading games</div>
+                        </div>
+                        <div class="buttonContainer">
+                            <div>Oculus Token <a style="text-weight: bold;" href="https://computerelite.github.io/tools/Oculus/ObtainToken.html">Guide to get the token</a></div>
+                            <input type="password" placeholder="Token" id="token" class="buttonLabel" style="width: 600px;">
+                        </div>
+                        <div id="tokenTextBox" class="textBox"></div>
+                    </div>
+                    <div class="about">
+                        BMBF Manager Web is based on <a href="https://github.com/ComputerElite/BM">BMBF Manager</a> and both have been created by ComputerElite
+                    </div>
+                </div>
+            </div>
+
+            <div class="listContainer darken hidden" id="getPasswordContainer">
+                <div class="restoreStep" id="step7">
+                    <div class="contentHeader headerMargin">
+                        Password needed
+                    </div>
+                    Please enter the password you set when settings your oculus token. If you didn't set one or forgot your password abort the download and head to the <code>Tools & Options</code> section to set your token and password.
+                    <br>
+                    Check the <code>download progress</code> section to see if the download was successful. (There will be no indecation if the password you )
+                    <input type="password" id="passwordConfirm" placeholder="password">
+                    <div id="step7box" class="textBox"></div>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="abortPassword">Abort Download</div>
+                        </div>
+                        <div class="buttonContainer buttonMargin">
+                            <div class="button" id="confirmPassword">Start dowload</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listContainer darken hidden" id="deleteContainer">
+                <div class="restoreStep" id="step6">
+                    <div class="contentHeader headerMargin">
+                        Confirm
+                    </div>
+                    Do you really want to delete <div class="selectedBackupName inline"></div> of <div class="inline packageName">some game</div>?
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="abortDelete">No! Abort!</div>
+                        </div>
+                        <div class="buttonContainer buttonMargin">
+                            <div class="button" id="delete">Yes. Delete the Backup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listContainer darken hidden" id="restoreContainer">
+                <div id="step1" class="restoreStep">
+                    <div class="contentHeader headerMargin">
+                        Step 1
+                    </div>
+                    <div><b>Restoring a backup will overwrite your current installation. If you do not want to loose your current installtion you <u>must</u> backup it first.<br>To do this abort the restore process and create a backup.</b></div>
+                    <br>
+                    <b>Selected backup:</b> <div class="selectedBackupName inline"></div> of <div class="inline packageName">some game</div>
+                    <br>
+                    As a first step of the restore process you need to uninstall the current installation of this app (<div class="inline packageName">some game</div>).
+                    <br>
+                    <br>
+                    <i>The restore Process has to be done in headset</i>
+                    <div id="step1box" class="textBox"></div>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="abort">Abort Restore</div>
+                        </div>
+                        <div class="buttonContainer buttonMargin">
+                            <div class="button" id="uninstall2">Start uninstall</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="step2" class="restoreStep hidden">
+                    <div class="contentHeader headerMargin">
+                        Step 1.1
+                    </div>
+                    After the uninstall completed please press the continue button
+                    <br>
+                    <br>
+                    <i>If you didn't get a prompt then press continue as well</i>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="confirm1">Continue</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step3" class="restoreStep hidden">
+                    <div class="contentHeader headerMargin">
+                        Step 2
+                    </div>
+                    Now that you got the old verion uninstalled we can restore your backup!
+                    <br>
+                    We are going to install the apk (your app).
+                    <br>Press the install button to start the installation.
+                    <br>If your Quest says <code>Package Installer isn't responding</code> simply press <code>close</code>
+                    <div id="step3box" class="textBox"></div>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="install">Install app</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step4" class="restoreStep hidden">
+                    <div class="contentHeader headerMargin">
+                        Step 2.1
+                    </div>
+                    After the install completed please press the restore App Data button.
+                    <br>
+                    This will restore the app data and obbs you backed up. If you wish to not restore App Data and obbs simply press the skip button
+                    <div id="step4box" class="textBox"></div>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer">
+                            <div class="button" id="restoreappdata">Restore App Data</div>
+                        </div>
+                        <div class="buttonContainer buttonMargin">
+                            <div class="button" id="skip">Skip</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="step5" class="restoreStep hidden">
+                    <div class="contentHeader headerMargin">
+                        Finished!
+                    </div>
+                    You restored the backup <div class="slectedBackupName inline"></div> of <div class="inline packageName">some game</div>
+                    <div id="step4box" class="textBox"></div>
+                    <div class="buttonSelectionContainer">
+                        <div class="buttonContainer buttonMargin">
+                            <div class="button" id="abort2">Close</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script src="../../js/ui.js"></script>
+        <script src="bmbf.js"></script>
+        <script>
+            var config = {}
+            var selectedBackup = ""
+
+            var undefinedLoader = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`
+            document.getElementById("ip").value = localStorage.ip ? localStorage.ip : ""
+            document.getElementById("saveip").onclick = () => {
+                TextBoxText("ipTextBox", "Checking connection")
+                localStorage.ip = document.getElementById("ip").value
+                IsBMBFReachable().then(res => {
+                    if(res) {
+                        TextBoxGood("ipTextBox", "Connection checks out")
+                    } else {
+                        TextBoxError("ipTextBox", "Could not connect to BMBF. Check that your Quest is on and BMBF is running.")
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>

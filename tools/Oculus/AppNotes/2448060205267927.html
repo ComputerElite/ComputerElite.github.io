@@ -15,10 +15,19 @@
             4. Install the APK you downloaded in step 2<br/>
             You've finished
         </div>
-        <div class="info" style="width: fit-content; margin: 0px; margin-top: 10px;">
-            <div class="infoHeader">
-                You probably want to download Beat Saber version 1.17.1 if you want to get mods
-            </div>
-        </div>
+        <div id="latestVer" class="inline"></div>
     </div>
 </div>
+<script>
+    fetch("https://raw.githubusercontent.com/BMBF/resources/master/com.beatgames.beatsaber/core-mods.json").then(res => {
+        res.json().then(json => {
+            arr = []
+            for (const [key, value] of Object.entries(json)) {
+                arr.push(key)
+            }
+            latest = arr.map( a => a.replace(/\d+/g, n => +n+100000 ) ).sort().map( a => a.replace(/\d+/g, n => +n-100000 ) ).reverse()[0]
+            console.log(latest)
+            document.getElementById("latestVer").innerHTML = `<div class="customButton" style="font-size: 1.5em; margin-top: 5px;" onclick="window,location.href = '?id=${showedid}&downloadversion=${latest}'">Download latest modable version (${latest})</div>`
+        })
+    })
+</script>

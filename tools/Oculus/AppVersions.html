@@ -486,6 +486,13 @@
                     if(res.includes(id)) {
                         MakeTextGetRequestAsync(`AppNotes/${id}.html`).then(res => {
                             document.getElementById("notesContainer").innerHTML = res
+                            Array.prototype.forEach.call(document.getElementById("notesContainer").getElementsByTagName("script"), e => {
+                                console.log(e)
+                                s = document.createElement("script")
+                                s.innerHTML = e.innerHTML
+                                document.head.appendChild(s)
+                            })
+                            
                         })
                     }
                 })
