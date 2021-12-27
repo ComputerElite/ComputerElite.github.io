@@ -28,9 +28,7 @@
             latest = arr.map( a => a.replace(/\d+/g, n => +n+100000 ) ).sort().map( a => a.replace(/\d+/g, n => +n-100000 ) ).reverse()[0]
             console.log(latest)
             if(url.searchParams.get("downloadlatestmodable"))
-            setTimeout(() => {
-                window.location.href = `?id=${showedid}&downloadversion=${latest}`
-            }, 500)
+            window.location.href = `?id=${showedid}&downloadversion=${latest}`
             document.getElementById("latestVer").innerHTML = `<div class="customButton" style="font-size: 1.5em; margin-top: 5px;" onclick="window.location.href = '?id=${showedid}&downloadversion=${latest}'">Download latest modable version (${latest})</div>`
         })
     })
