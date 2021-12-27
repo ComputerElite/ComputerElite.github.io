@@ -527,12 +527,14 @@
                 versions.forEach(e => {
                     document.getElementById("versions").innerHTML += GetFormatted(e, HeadsetName == "RIFT")
                     if(finished >= required && downloadVersion && e.version == downloadVersion) {
-                        setTimeout(() => {
+                        name = document.getElementById("versionHeader").innerHTML.replace("Versions for ", "")
+                        if(confirm("Do you want to Download " + name + " version " + downloadVersion)){
                             Download(e.id, HeadsetName == "RIFT", e.appid, e.code)
-                            alert("Downloading Version " + downloadVersion + " of " + document.getElementById("versionHeader").innerHTML.replace("Versions for ", "") + ". If the download doesn't start log in on oculus.com")
-                            downloadVersion = ""
-                        }, 500)
-                        
+                            alert("Downloading Version " + downloadVersion + " of " + name + ". If the download doesn't start log in on oculus.com")
+                        } else {
+                            alert("Aborted download")
+                        }
+                        downloadVersion = ""
                     }
                 })
                 document.getElementById("versions").innerHTML += finished < required ? "" : (failed ? "<div style='font-size: 24px; text-align: center; flex: 1;'>Request to Oculus failed cached data is being shown.</div>" + RequestFailedError : "")
