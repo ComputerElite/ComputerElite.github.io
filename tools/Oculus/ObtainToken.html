@@ -57,28 +57,44 @@
                     </div>
                     <div class="header">Step 2: Open developer tools</div>
                     <div class="step">
+                        PC and Mac:
+                        <br/>
                         On <a href="https://oculus.com">oculus.com</a> hit ctrl + shift + i and go to the network tab (1, 2)
+                        <br/>
+                        <br/>
+                        Kiwi Browser (Android):
+                        <br/>
+                        On <a href="https://oculus.com">oculus.com</a> tap the 3 dots in the top right and tap on <code>developer tools</code>
                     </div>
                     <div class="image">
                         <img src="Steps/Step2.png" width="100%">
                     </div>
                     <div class="header">Step 3: Reload the page and filter for graphql</div>
                     <div class="step">
+                        PC and Mac:
+                        <br/>
                         Reload the page next to your address bar (1).<br/>
                         Then in the network tab type <code>graphql</code> into the filter box (2).
+                        <br/>
+                        <br/>
+                        Kiwi Browser (Android):
+                        <br/>
+                        Switch the tab to the developer tools tab that just opened. Click the arrows to the right on the top and click <code>Network</code>. Filter for <code>graphql</code>. Go back to the tab in which you have oculus.com open and reload the site.
                     </div>
                     <div class="image">
                         <img src="Steps/Step3.png" width="100%">
                     </div>
                     <div class="header">Step 4: Copy the access_token</div>
                     <div class="step">
-                        Next click the last request (1) and open the payload tab (2) (if payload is not present go to the header tab). Then search for a label named <code>access_token</code>. Copy the text after that (3).
+                        Next click the last request (1) and open the payload tab (2) (if payload is not present go to the header tab). Then search for a label named <code>access_token</code>. Copy the text after that (3). You can copy it by right clicking and pressing copy value.
                         <br/>
                         Firefox:
                         <br/>
-                        Next click the last request (1) and open the request tab. Then search for a label named <code>access_token</code> and copy its value (3).
+                        Next click the last request (1) and open the request tab. Then search for a label named <code>access_token</code> and copy its value (3). You can copy it by right clicking and pressing copy value.
                         <br/>
-
+                        Kiwi Browser (Android):
+                        <br/>
+                        Go back to the dev tools tab and click on the last request at the bottom. Then in the headers tab tap and hold on <code>access_token: </code> and tap copy value.
                         <br/>
                         <br/>
                         Before putting your token it you can check the validity of your token by pasting it into this text box and clicking validate
