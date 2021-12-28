@@ -10,6 +10,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
         <script src="../../js/standard.js"></script>
+        <script src="../../js/ui.js"></script>
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
         <style>
             .step {
@@ -81,6 +82,14 @@
                         Next click the last request (1) and open the request tab. Then search for a label named <code>access_token</code> and copy its value (3).
                         <br/>
 
+                        <br/>
+                        <br/>
+                        Before putting your token it you can check the validity of your token by pasting it into this text box and clicking validate
+                        <br>
+                        <input type="password" id="token" style="width: 700px;">
+                        <div class="customButton" onclick="Validate(document.getElementById('token').value)">Validate token</div>
+                        <div class="textBox" id="tb"></div>
+
                         You can then paste this token with ctrl + v into the Rift downgrader.
                     </div>
                     <div class="image">
@@ -90,5 +99,37 @@
                 
             </div>
         </div>
+        <script>
+            var requestUrl = "https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql"
+
+            function Validate(token) {
+                if(token.includes("%")) {
+                    TextBoxError("tb", "You got your token from the wrong place. Go to the payload tab. Don't get it from the url.")
+                    return
+                }
+                if(!token.startsWith("OC")) {
+                    TextBoxError("tb", "Tokens must start with 'OC'. Please get a new one.",)
+                    return
+                }
+                if(token.includes("|")) {
+                    TextBoxError("tb", "You seem to have entered a token of an application. Please get YOUR token. Usually this can be done by using another request in the network tab.")
+                    return
+                }
+                if(token.includes(":")) {
+                    TextBoxError("tb", "Don't copy anything before the OC.")
+                    return
+                }
+                TextBoxGood("tb", "Token is valid")
+                PostRequest(requestUrl, `access_token=${token}&variables={}&doc_id=4149322231793299`).then(res => {
+                    TextBoxGood("tb", "Token is valid. The token is for the User " + res.data.viewer.user.alias)
+                }).catch(a => {
+                    fetch("https://cors-anywhere-computerelite.herokuapp.com/").then(res => {
+                        if(res.status == 200) {
+                            TextBoxError("tb", "Token is not valid. Please get a new one")
+                        }
+                    })
+                })
+            }
+        </script>
     </body>
 </html>

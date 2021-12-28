@@ -142,6 +142,29 @@ function UnixToDataAndTime(timestamp) {
     return AddZeroToNumber(date.getDate()) + "." + AddZeroToNumber(date.getMonth()) + "." + AddZeroToNumber(date.getFullYear(), 4) + " " + AddZeroToNumber(date.getHours()) + ":" + AddZeroToNumber(date.getMinutes()) + ":" + AddZeroToNumber(date.getSeconds())
 }
 
+var noProxyEmulation = false
+
+function PostRequest(url, body) {
+    return new Promise((resolve, reject) => {
+        if(noProxyEmulation) reject("")
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.onerror = (err) => {
+            reject(err)
+        }
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                if(xhr.status == 200) {
+                    resolve(JSON.parse(xhr.responseText))
+                } else {
+                    reject(xhr.responseText)
+                }
+            }
+        }
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(body);
+    })
+}
 
 var script = document.createElement("script")
 script.src = "https://analytics.rui2015.me/analytics.js?origin=" + location.origin
