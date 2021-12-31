@@ -132,6 +132,10 @@
                     TextBoxError("tb", "Don't copy anything before the OC.")
                     return
                 }
+                if(/OC[0-9]{15}/g.test(token)) {
+                    TextBoxError("tb", "Don't change your token. This will only cause issues. Check another request for the right token.")
+                    return
+                }
                 TextBoxGood("tb", "Token is valid")
                 PostRequest(requestUrl, `access_token=${token}&variables={}&doc_id=4149322231793299`).then(res => {
                     TextBoxGood("tb", "Token is valid. The token is for the User " + res.data.viewer.user.alias)
