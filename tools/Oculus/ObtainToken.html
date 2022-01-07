@@ -4,7 +4,7 @@
         <title>Guide to obtain your Oculus Token</title>
         <meta property="og:site_name" content="ComputerElite">
         <meta property="og:title" content="Guide to obtain your Oculus Token" />
-        <meta property="og:description" content="For Rift downgrader and other applications" />
+        <meta property="og:description" content="For Oculus downgrader and other applications" />
         <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/ObtainToken.html" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
                 <div style="display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;" class="bigBox">
                     <div style=" padding: 10px;">
                         <div style="font-size: 24px;">Guide to obtain your Oculus Token</div>
-                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Rift-downgrader/">Rift downgrader</a> and other applications</div>
+                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Rift-downgrader/">Oculus downgrader</a> and other applications</div>
                     </div>
                     <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Info: Is this tool piracy?</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
@@ -49,7 +49,7 @@
                     <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Important</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
                         Your token is something private. Everyone who has it can download apps, send messages, ... with your name.
-                        <br/>But then the question comes why do I give it Rift downgrader? Rift downgrader needs to authenticate the download with oculus so it needs your token. After you entered the token it gets stored locally on your PC and is ONLY shared with Oculus servers to proof that you own the game.
+                        <br/>But then the question comes why do I give it Oculus downgrader? Oculus downgrader needs to authenticate the download with oculus so it needs your token. After you entered the token it gets stored locally on your PC and is ONLY shared with Oculus servers to proof that you own the game.
                     </div>
                     <div class="header">Step 1: Sign in</div>
                     <div class="step">
@@ -57,12 +57,12 @@
                     </div>
                     <div class="header">Step 2: Open developer tools</div>
                     <div class="step">
-                        PC and Mac:
+                        <b>PC and Mac:</b>
                         <br/>
-                        On <a href="https://oculus.com">oculus.com</a> hit ctrl + shift + i and go to the network tab (1, 2)
+                        On <a href="https://oculus.com">oculus.com</a> hit ctrl + shift + i and go to the network tab (see picture)
                         <br/>
                         <br/>
-                        Kiwi Browser (Android):
+                        <b>Kiwi Browser (Android):</b>
                         <br/>
                         On <a href="https://oculus.com">oculus.com</a> tap the 3 dots in the top right and tap on <code>developer tools</code>
                     </div>
@@ -71,13 +71,13 @@
                     </div>
                     <div class="header">Step 3: Reload the page and filter for graphql</div>
                     <div class="step">
-                        PC and Mac:
+                        <b>PC and Mac:</b>
                         <br/>
                         Reload the page next to your address bar (1).<br/>
                         Then in the network tab type <code>graphql</code> into the filter box (2).
                         <br/>
                         <br/>
-                        Kiwi Browser (Android):
+                        <b>Kiwi Browser (Android):</b>
                         <br/>
                         Switch the tab to the developer tools tab that just opened. Click the arrows to the right on the top and click <code>Network</code>. Filter for <code>graphql</code>. Go back to the tab in which you have oculus.com open and reload the site.
                     </div>
@@ -88,22 +88,24 @@
                     <div class="step">
                         Next click the last request (1) and open the payload tab (2) (if payload is not present go to the header tab). Then search for a label named <code>access_token</code>. Copy the text after that (3). You can copy it by right clicking and pressing copy value.
                         <br/>
-                        Firefox:
+                        <br/>
+                        <b>Firefox:</b>
                         <br/>
                         Next click the last request (1) and open the request tab. Then search for a label named <code>access_token</code> and copy its value (3). You can copy it by right clicking and pressing copy value.
                         <br/>
-                        Kiwi Browser (Android):
+                        <br/>
+                        <b>Kiwi Browser (Android):</b>
                         <br/>
                         Go back to the dev tools tab and click on the last request at the bottom. Then in the headers tab tap and hold on <code>access_token: </code> and tap copy value.
                         <br/>
                         <br/>
-                        Before putting your token it you can check the validity of your token by pasting it into this text box and clicking validate
+                        Before putting your token it you can check the validity of your token by pasting it into this text box and clicking <code>Validate token</code>
                         <br>
                         <input type="password" id="token" style="width: 700px;">
                         <div class="customButton" onclick="Validate(document.getElementById('token').value)">Validate token</div>
                         <div class="textBox" id="tb"></div>
 
-                        You can then paste this token with ctrl + v into the Rift downgrader.
+                        You can then paste your token with ctrl + v into Oculus downgrader.
                     </div>
                     <div class="image">
                         <img src="Steps/Step4.png" width="100%">
