@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rift downgrader guide</title>
+        <title>Oculus downgrader guide</title>
         <meta property="og:site_name" content="ComputerElite">
-        <meta property="og:title" content="Rift downgrader guide" />
-        <meta property="og:description" content="Learn how to use the most important features of Rift downgrader" />
+        <meta property="og:title" content="Oculus downgrader guide" />
+        <meta property="og:description" content="Learn how to use the most important features of Oculus downgrader" />
         <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/RiftDowngraderGuide.html" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -17,10 +17,9 @@
             <div style="flex: 1; flex-grow: 0; text-align: center;">
                 <div style="display: inline-block; margin-top: 20px; margin-bottom: 10px; width: 80%;" class="bigBox">
                     <div style="padding: 10px;">
-                        <div style="font-size: 24px;">Guide for Rift downgrader</div>
-                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Rift-downgrader/">Rift downgrader</a></div>
+                        <div style="font-size: 24px;">Guide for Oculus downgrader</div>
+                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Oculus-downgrader/">Oculus downgrader</a></div>
                     </div>
-                    <i>Other than the name suggests you can also downgrade quest apps</i>
                     <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Info: Is this tool piracy?</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
                         No. You're downloading from Oculus servers and those check that you own the game
@@ -30,18 +29,18 @@
                             Important info about tokens
                         </div>
                         Your token is something private. Anyone who has it can download apps, send messages, ... with your name.
-                        <br/>But then the question comes why do I give it Rift downgrader? Rift downgrader needs to authenticate the download with oculus and do requests to oculus api so it needs your token. After you entered the token it gets stored locally and encrypted on your PC and ONLY shared with an official tool by Oculus to download rift apps.
+                        <br/>But then the question comes why do I give it Oculus downgrader? Oculus downgrader needs to authenticate the download with oculus and do requests to oculus api so it needs your token. After you entered the token it gets stored locally and encrypted on your PC and ONLY shared with an official tool by Oculus to download rift apps.
                     </div>
                     <div class="tip" style="width: 80%; margin-bottom: 20px;">
                         <div class="tipHeader">
-                            Why does Rift downgrader need administrative permissions?
+                            Why does Oculus downgrader need administrative permissions?
                         </div>
-                        Oculus does not allow rift applications to run from a place other than their libary folder which is located in Program files (which needs administrative permissions to modify). So to move all the files in that folder Rift downgrader needs administrative permissions.
-                        <br/>If you have further concern you can ask me on Discord or read <a href="https://github.com/ComputerElite/Rift-downgrader">the source code</a>.
+                        Oculus does not allow rift applications to run from a place other than their libary folder which is located in Program files (which needs administrative permissions to modify). So to move all the files in that folder Oculus downgrader needs administrative permissions.
+                        <br/>If you have further concern you can ask me on Discord or read <a href="https://github.com/ComputerElite/Oculus-downgrader">the source code</a>.
                     </div>
                     <div class="header">Download the tool</div>
                     <div class="step">
-                        You can download the latest release from <a href="https://github.com/ComputerElite/Rift-downgrader/releases/latest">here</a>. Download the zip, extract it and run the program. As part of the setup process enter your access_token. Follow the guide <a href="ObtainToken.html">here</a> to obtain it.
+                        You can download the latest release from <a href="https://github.com/ComputerElite/Oculus-downgrader/releases/latest">here</a>. Download the zip, extract it and run the program. As part of the setup process enter your access_token. Follow the guide <a href="ObtainToken.html">here</a> to obtain it.
                     </div>
                     <div class="header">Downgrade Beat Saber</div>
                     <div class="step">
@@ -53,22 +52,22 @@
                     </div>
                     <div class="header">Launch your downgraded games</div>
                     <div class="step">
-                        Make sure you give Rift downgrader administrative access! In the menu choose option <code>3</code>. You can then type in the game you want and cofirm with enter. After that type the version you want. If you don't remember changing that then just hit enter, otherwise type the full path to your library. Your game should be copied (as Oculus doesn't allow games to start from other folders) and then be launched.
+                        Make sure you give Oculus downgrader administrative access! In the menu choose option <code>3</code>. You can then type in the game you want and cofirm with enter. After that type the version you want. If you don't remember changing that then just hit enter, otherwise type the full path to your library. Your game should be copied (as Oculus doesn't allow games to start from other folders) and then be launched. If you install an game you can optionally mod it from withing Oculus downgrader.
                     </div>
                     <div class="header">Update your access_token</div>
                     <div class="step">
                         In the menu choose option <code>5</code> and follow the provided steps.
                     </div>
-                    <div class="header">Change Headset to Quest/Rift</div>
+                    <div class="header">Change Headset</div>
                     <div class="step">
-                        In the menu choose option <code>8</code> and type either <code>Quest</code> or <code>Rift</code>. You can then use everything in the tool for Quest/Rift
+                        In the menu choose option <code>8</code> and type any of the headsets displayed. You can then use everything in the tool for the headset you chose
                     </div>
 
                     <div class="header">My game crashes when I launch it!</div>
                     <div class="step">
                         This is often due to a entitlement check error. Usually this is user error in the downgrader setup and can be easily resolved:<br/>
                         First open your oculus app on your PC and go into settings. There go to <code>general</code> and click <code>library location</code>. Note one of the entries down (an example can be <code>D:\Oculus</code>)<br/>
-                        Then open Rift downgrader and choose option <code>6</code>. In there put what you saw in the oculus app (in our example it is <code>D:\Oculus</code> but it may vary for you).<br/>
+                        Then open Oculus downgrader and choose option <code>6</code>. In there put what you saw in the oculus app (in our example it is <code>D:\Oculus</code> but it may vary for you).<br/>
                         You should now be able to launch your game without crashing.
                     </div>
                 </div>
