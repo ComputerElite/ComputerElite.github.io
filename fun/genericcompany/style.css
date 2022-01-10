@@ -12,6 +12,10 @@ body {
     margin: 0px;
 }
 
+.marginlow {
+    margin-left: 10px;
+}
+
 .bold {
     font-weight: bold;
     font-size: 18px;

@@ -13,6 +13,10 @@ body, table, input {
     font-family: 'Open Sans';
 }
 
+.marginlow {
+    margin-left: 10px;
+}
+
 .customButton {
     border: #111111 2px solid;
     background-color: #333333;

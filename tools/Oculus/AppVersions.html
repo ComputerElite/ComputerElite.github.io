@@ -29,6 +29,12 @@
             hr {
                 border-color: #2c2c2c;
             }
+
+            .coolimg {
+                max-width: 85vw;
+                height: auto;
+                width: 500px;
+            }
         </style>
     </head>
     <body onmousemove="UpdateMousePos(event)">
@@ -38,13 +44,11 @@
                 Get download links for all Oculus apps
             </div>
 
-            <table style="padding: 10px; width: 700px; margin: auto; margin-top: 40px;">
+            <table style="padding: 10px; margin: auto; margin-top: 40px;">
                 <tr>
-                    <td>
-                        Headset
-                    </td>
-                        <td>
-                            <select id="headset">
+                    <td style="display: flex; flex-wrap: wrap;">
+                        <div style="margin-left: 87px;" class="marginlow">Headset</div>
+                        <select id="headset" class="marginlow">
                             <option value="MONTEREY">Quest</option>
                             <option value="PACIFIC">Go</option>
                             <option value="GEARVR">GearVR</option>
@@ -53,14 +57,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        Search term for app
-                    </td>
-                    <td>
-                        <input type="text" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
-                    </td>
-                    <td>
-                        <input type="button" value="Search" onclick="Search()">
+                    <td style="display: flex; flex-wrap: wrap; align-items: center;">
+                        <div class="marginlow">Search term for app</div>
+                        <input type="text" class="marginlow" style="width: auto; min-width: 20vw; max-width: 90vw;" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
+                        <input type="button" class="marginlow" value="Search" onclick="Search()">
                     </td>
                 </tr>
             </table>
@@ -612,7 +612,7 @@
             function GetResultFormatted(element) {
                 return `<a class="darken" style="flex: 0; background-color: #22222200; font-size: 18px; padding: 5px; margin: 5px; cursor: pointer; text-align: left;" onclick="SearchVersions('${element.id}')" oncontextmenu="return SetupContextMenu(event, '${element.id}', false);">
                             <table style="width: fit-content; margin: auto;" class="defTextColor">
-                                <tr><td><img src="${element.imgsrc}" style="max-height: 250px; max-width: 600px;" onerror="if (this.src != '../../assets/ImageNotAvailable.png') this.src = '../../assets/ImageNotAvailable.png'"></td></tr><tr><td>${element.name}</td></tr>
+                                <tr><td><img class="coolimg" src="${element.imgsrc}" onerror="if (this.src != '../../assets/ImageNotAvailable.png') this.src = '../../assets/ImageNotAvailable.png'"></td></tr><tr><td>${element.name}</td></tr>
                             </table>
                         </a>`
             }
