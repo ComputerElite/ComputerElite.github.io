@@ -116,7 +116,7 @@
         {
             "Name": "Overlay_builder",
             "downloaded": false,
-            "versionCode": 12,
+            "versionCode": 13,
             "downloads": [
                 {
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/builder.html",
@@ -216,6 +216,11 @@
                 {
                     "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_3.html",
                     "Path": "tools/Streamer_Tools_Quest_Overlay/Overlay_builder/Overlay_parts/Song_3.html",
+                    "IsEntryPoint": false
+                },
+                {
+                    "URL": "https://computerelite.github.io/tools/Streamer_Tools_Quest_Overlay/default.png",
+                    "Path": "tools/Streamer_Tools_Quest_Overlay/default.png",
                     "IsEntryPoint": false
                 }
             ]
