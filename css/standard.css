@@ -1,6 +1,6 @@
 body {
     color: #EEEEEE;
-    background-color: #78e4ff;
+    background-color: #111111;
 }
 
 html {
@@ -28,6 +28,7 @@ body, table, input {
 
 .bigBox {
     background-color: #111111;
+    border-bottom: 2px solid #EEEEEE;
 }
 
 hr {
@@ -165,12 +166,14 @@ code {
     border-left: 5px solid #5fc456;
     margin-left: 10px;
     color: #73c46c;
+    width: fit-content;
 }
 
 .tipHeader {
     font-size: 16px;
     color: #5fc456;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .guideHeader {
@@ -196,12 +199,16 @@ code {
     border-left: 5px solid #c7c700;
     margin-left: 10px;
     color: #f8ffb4;
+    text-align: left;
+    width: min-content;
+    width: fit-content;
 }
 
 .infoHeader {
     font-size: 16px;
     color: #ffff00;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .warning {
@@ -211,12 +218,15 @@ code {
     border-left: 5px solid #c70000;
     margin-left: 10px;
     color: #ffb4b4;
+    text-align: left;
+    width: fit-content;
 }
 
 .warningHeader {
     font-size: 16px;
     color: #c70000;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .attention {
@@ -226,12 +236,15 @@ code {
     border-left: 5px solid #fbff00;
     margin-left: 10px;
     color: #ffd900;
+    text-align: left;
+    width: fit-content;
 }
 
 .attentionHeader {
     font-size: 18px;
     color: #fbff00;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .zoom:hover {
