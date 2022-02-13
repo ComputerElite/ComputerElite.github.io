@@ -275,6 +275,7 @@
                 document.getElementById("resultContainer").innerHTML = storeSkeleton
                 document.getElementById("apps").innerHTML = loader
                 if(searchTerm == undefined) searchTerm = document.getElementById("searchTerm").value
+                var added = []
                 PostRequest(requestUrl, `access_token=${access_token}&variables={"query":"${searchTerm}","hmdType":"${document.getElementById("headset").value}","firstSearchResultItems":100}&doc_id=3928907833885295`).then((res) => {
                     /*
                     document.getElementById("apps").innerHTML = ""
@@ -293,6 +294,8 @@
                     res.data.viewer.contextual_search.all_category_results.forEach(cat => {
                         if(cat.name == "APPS" || cat.name == "CONCEPT") {
                             cat.search_results.nodes.forEach(element => {
+                                if(added.includes(element.target_object.id)) return
+                                added.push(element.target_object.id)
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
                                     imgsrc: element.target_object.cover_landscape_image.uri,
                                     name: element.target_object.display_name,
@@ -304,6 +307,8 @@
                     MakeJSONGetRequestAsync("OlderAppVersions/index.json").then(res => {
                         res.forEach(element => {
                             if(element.headset != document.getElementById("headset").value || !element.name.toLowerCase().includes(searchTerm.toLowerCase())) return
+                                if(added.includes(element.id)) return
+                                added.push(element.id)
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
                                     imgsrc: element.img,
                                     name: element.name,
@@ -320,6 +325,8 @@
                         document.getElementById("appsinfo").innerHTML = `<div>Request to Oculus failed. <i>(Basic)</i> Search has run on cached apps</div>` + RequestFailedError
                         document.getElementById("apps").innerHTML = ""
                         res.forEach(element => {
+                            if(added.includes(element.id)) return
+                            added.push(element.id)
                             if(element.headset != document.getElementById("headset").value || !element.name.toLowerCase().includes(searchTerm.toLowerCase())) return
                                 document.getElementById("apps").innerHTML += GetResultFormatted({
                                     imgsrc: element.img,
