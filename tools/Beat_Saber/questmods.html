@@ -175,9 +175,9 @@
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].mods.forEach(mod => {
                     m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
-                                <td>${mod.creator.join(", ")}</td>
+                                <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
                                 <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
-                                <td>${mod.version}</td>
+                                <td style="vertical-align:top;">${mod.version}</td>
                             </tr>`
                 })
                 mods.innerHTML = m
