@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>field sorter</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="field sorter" />
+        <meta property="og:description" content="wooooooohooooooooooooooooooo" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/random/fieldsorter.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/standard.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+    </head>
+    <body>
+        <textarea id="json" style="width: 90%; height: 100px;"></textarea>
+        <textarea id="pretty" style="width: 90%; height: 10000px"></textarea>
+        <script>
+            
+            document.getElementById("json").onchange = () => {
+                var fields = {}
+                var current = ""
+                var name = ""
+                document.getElementById("pretty").value = ""
+                document.getElementById("json").value.split('\n').forEach(x => {
+                    var trimmed = x.trim()
+                    var split = trimmed.split(" ")
+                    if(split[0] == "public") {
+                        if(current != "") {
+                            fields[name] = current
+                        }
+                        current = ""
+                        name = split[2]
+                    }
+                    current += x + "\n"
+                })
+                if(current != "") {
+                    fields[name] = current
+                }
+                const ordered = Object.keys(fields).sort().reduce(
+                    (obj, key) => { 
+                        document.getElementById("pretty").value += fields[key]
+                        return obj;
+                    }, 
+                    {}
+                );
+                
+            }
+        </script>
+    </body>
+</html>
