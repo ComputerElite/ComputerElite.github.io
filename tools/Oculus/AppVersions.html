@@ -187,6 +187,27 @@
             var downloadId = url.searchParams.get("downloadid");
             var downloadVersion = url.searchParams.get("downloadversion");
 
+            function Fun() {
+                Array.prototype.forEach.call(document.getElementsByClassName("item"),(e) => {
+                    InternalFun(e)
+                })
+                Array.prototype.forEach.call( document.getElementsByTagName("td"), (e) => {
+                    InternalFun(e)
+                })
+            }
+
+            function ThisIsGonnaBeFun() {
+                if(new Date().getMonth() == 3  && new Date().getDate() == 1) {
+                    Fun();
+                }
+            }
+
+            
+
+            function InternalFun(e) {
+                e.innerHTML = "amogus"
+            }
+
             if(id) {
                 SearchVersions(id)
             }
@@ -568,6 +589,7 @@
                 if(document.getElementById("versions").innerHTML == "") {
                     document.getElementById("versions").innerHTML = "<div style='font-size: 24px; text-align: center; flex: 1;'>Nothing found" + (failed ? ". Request to Oculus failed and no cached data does exist." : "") + "</div>"
                 }
+                if(finished >= required) ThisIsGonnaBeFun()
             }
 
             function DownloadBytes(url) {
