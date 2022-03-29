@@ -198,7 +198,7 @@
 
             function ThisIsGonnaBeFun() {
                 var random = Math.floor(Math.random() * 100)
-                if(new Date().getMonth() == 3  && new Date().getDate() == 1 || random == 5) {
+                if((new Date().getMonth() == 3  && new Date().getDate() == 1 && random != 5) || random == 5) {
                     Fun();
                 }
             }
