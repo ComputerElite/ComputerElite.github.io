@@ -9,12 +9,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
-        <script src="../../js/standard.js"></script>
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
     </head>
     <body>
         <textarea id="json" style="width: 90%; height: 100px;"></textarea>
         <textarea id="pretty" style="width: 90%; height: 10000px"></textarea>
+        
+        <script src="../../js/standard.js"></script>
         <script>
             document.getElementById("json").onchange = () => {
                 document.getElementById("pretty").value = JSON.stringify(JSON.parse(document.getElementById("json").value), null, 4) 

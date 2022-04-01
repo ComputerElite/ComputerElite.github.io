@@ -166,11 +166,21 @@ function PostRequest(url, body) {
     })
 }
 
+function IsAprilFoolsDay() {
+    if(new Date().getMonth() == 3  && new Date().getDate() == 1) {
+        return true
+    }
+}
+
+document.body.innerHTML += `<div style="background-color: #222222; padding: 10px;"><a href="/privacy.html">View Privacy policy</a></div>`
+
 var script = document.createElement("script")
 script.src = "https://analytics.rui2015.me/analytics.js?origin=" + location.origin
 document.head.appendChild(script)
 
 // Local convenience stuff
+/*
 var script = document.createElement("script")
 script.src = "/debug.js"
 document.head.appendChild(script)
+*/
