@@ -152,7 +152,7 @@
             var tooltip = document.getElementById("tooltip")
             var showingVersions = false
             var showedid = ""
-            var requestUrl = "https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql"
+            var requestUrl = "https://oculusdb.rui2015.me/api/oculusproxy"
             //var setDNT = "1"
             const versionSkeleton = `<div style="font-size: 22px; text-align: center; font-weight: bold;" id="versionHeader">Versions</div>
                     <div style="font-size: 18px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
@@ -673,7 +673,7 @@
             var issueReported = false
             function ReportIssue() {
                 if(issueReported) return;
-                
+                /*
                     PostRequest("https://cors-anywhere-computerelite.herokuapp.com/postissue", "").then(res => {
                         console.log(res.msg)
                         alert(res.msg)
@@ -681,7 +681,7 @@
                         //alert("Reporting to Server failed! It may have stopped working.")
                         console.log("Reporting to Server failed! It may have stopped working.")
                     })
-                
+                */
                 issueReported = true;
                 
             }
