@@ -43,6 +43,7 @@
                                 <option value=""></option>
                             </select>
                         </a>
+                        <input type="text" id="search" placeholder="Search mods">
                         <h2>Core Mods</h2>
                         <table id="coremods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
                             <tr>
@@ -77,6 +78,11 @@
             const mods = document.getElementById("mods")
             const coremods = document.getElementById("coremods")
             const gameversion = document.getElementById("gameversion")
+            const search = document.getElementById("search")
+
+            search.onkeyup = e => {
+                Display(gameversion.value)
+            }
 
             PullMods()
 
@@ -175,11 +181,13 @@
                             </tr>`;
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].mods.forEach(mod => {
-                    m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
                                 <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
                                 <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
                                 <td style="vertical-align:top;">${mod.version}</td>
                             </tr>`
+                    }
                 })
                 mods.innerHTML = m
                 m = `<tr>
@@ -188,10 +196,12 @@
                             </tr>`;
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].coremods.forEach(mod => {
-                    m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
-                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
-                                <td>${mod.version}</td>
-                            </tr>`
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
+                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                                    <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
+                                    <td>${mod.version}</td>
+                                </tr>`
+                    }
                 })
                 coremods.innerHTML = m
             }
