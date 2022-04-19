@@ -196,7 +196,6 @@ if(!customText) {
     } catch {}
 }
 
-if(!ip) ip = prompt("Please enter your Quests IP:", "192.168.x.x");
 if(rate == null) rate = 100
 if(decimals == null) decimals = 2
 console.log("update rate: " + rate)
@@ -228,21 +227,31 @@ var alreadyDisabled = false
 
 
 if(streamId && streamHost) {
+    console.log("Using websocket of overlay streaming service")
     var ws = new WebSocket("ws://" + streamHost);
     ws.onopen = () => {
         console.log('WebSocket Opened');
         ws.send("data|" + streamId);
     }
 
+    var lastUpdate = Date.now()
+
     ws.onmessage = ( data ) => {
-        UpdateOverlay(JSON.parse(data))
-        ws.send("data|" + streamId);
+        var json = JSON.parse(data.data)
+        UpdateOverlay(json)
+        setTimeout(() => {
+            ws.send("data|" + streamId);
+            lastUpdate = Date.now()
+        }, Date.now() - lastUpdate > rate ? 0 : rate - (Date.now() - lastUpdate)  )
+       
+        
     }
 
     ws.onclose = () => {
         console.error('Websocket Closed');
     }
 } else {
+    if(!ip) ip = prompt("Please enter your Quests IP:", "192.168.x.x");
     var pullingLoop = setInterval(function() {
         if(!enabled) {
             if(!alreadyDisabled) basicSetNotConnected();
