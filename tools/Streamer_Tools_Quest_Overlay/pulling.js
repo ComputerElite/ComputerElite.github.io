@@ -65,7 +65,7 @@ function SetImage(id) {
         UpdateAllFieldsOfName("preKey", lastSongKey)
         lastSongKey = stats["key"]
     }
-    if((id != lastID || got404 || !coverFetched) && (stats["coverFetchable"] && !useLocalhost && (!streamId || !streamHost) || stats["coverFetchableLocalhost"] && useLocalhost && (!streamId || !streamHost) || streamHost && streamId && stats["coverFetchableRemote"])) {
+    if((id != lastID || got404 || !coverFetched) && (!useLocalhost && stats["coverFetchable"] && !(streamHost && streamId)) || (useLocalhost && stats["coverFetchableLocalhost"] && !(streamHost && streamId)) || (stats["coverFetchableRemote"] && streamHost && streamId)) {
         if(streamHost && streamId) {
             fetch(location.protocol + "//" + streamHost + "/api/cover/" + streamId).then((res) => {
                 res.text().then((base64) => {
