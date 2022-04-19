@@ -211,14 +211,6 @@ try {
     UpdateAllFieldsOfNameHidden("prekeyContainer", true)
 } catch {}
 
-fetch(localip).then((res) => {
-    useLocalhost = true
-    console.log(`Using client at ${localip} to fetch data`)
-}).catch(() => {
-    useLocalhost = false
-    console.log(`falling back to Quest ip (${ip})`)
-})
-
 var stats = {}
 
 var firstRequest = true
@@ -252,6 +244,13 @@ if(streamId && streamHost) {
     }
 } else {
     if(!ip) ip = prompt("Please enter your Quests IP:", "192.168.x.x");
+    fetch(localip).then((res) => {
+        useLocalhost = true
+        console.log(`Using client at ${localip} to fetch data`)
+    }).catch(() => {
+        useLocalhost = false
+        console.log(`falling back to Quest ip (${ip})`)
+    })
     var pullingLoop = setInterval(function() {
         if(!enabled) {
             if(!alreadyDisabled) basicSetNotConnected();
