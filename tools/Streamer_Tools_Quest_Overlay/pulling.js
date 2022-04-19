@@ -65,23 +65,39 @@ function SetImage(id) {
         UpdateAllFieldsOfName("preKey", lastSongKey)
         lastSongKey = stats["key"]
     }
-    if((id != lastID || got404 || !coverFetched) && (stats["coverFetchable"] && !useLocalhost || stats["coverFetchableLocalhost"] && useLocalhost)) {
-        fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
-            res.text().then((base64) => {
-                if(res.status != 200) {
-                    UpdateAllFieldsOfNameSrc("cover", "default.png")
-                    got404 = true;
-                } else {
-                    UpdateAllFieldsOfNameSrc("cover", base64)
-                    got404 = false;
-                    coverFetched = true
-                }
+    if((id != lastID || got404 || !coverFetched) && (stats["coverFetchable"] && !useLocalhost && (!streamId || !streamHost) || stats["coverFetchableLocalhost"] && useLocalhost && (!streamId || !streamHost) || streamHost && streamId && stats["coverFetchableRemote"])) {
+        if(streamHost && streamId) {
+            fetch(location.protocol + "//" + streamHost + "/api/cover/" + streamId).then((res) => {
+                res.text().then((base64) => {
+                    if(res.status != 200) {
+                        UpdateAllFieldsOfNameSrc("cover", "default.png")
+                        got404 = true;
+                    } else {
+                        UpdateAllFieldsOfNameSrc("cover", base64)
+                        got404 = false;
+                        coverFetched = true
+                    }
+                })
             })
-        }).catch((err) => {
-            // Fallback to default cover
-            got404 = true
-            UpdateAllFieldsOfNameSrc("cover", "default.png")
-        })
+        } else {
+            fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
+                res.text().then((base64) => {
+                    if(res.status != 200) {
+                        UpdateAllFieldsOfNameSrc("cover", "default.png")
+                        got404 = true;
+                    } else {
+                        UpdateAllFieldsOfNameSrc("cover", base64)
+                        got404 = false;
+                        coverFetched = true
+                    }
+                })
+            }).catch((err) => {
+                // Fallback to default cover
+                got404 = true
+                UpdateAllFieldsOfNameSrc("cover", "default.png")
+            })
+        }
+        
     }
     lastID = id
 }
