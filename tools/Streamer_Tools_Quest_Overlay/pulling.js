@@ -27,7 +27,7 @@ var coverFetched = false
 
 function SetImage(id) {
     if(id != lastID) coverFetched = false
-    if(id.startsWith("custom_level_") && id != lastID && !useLocalhost && !stats["fetchedKey"]) {
+    if(id.startsWith("custom_level_") && id != lastID && !useLocalhost && !stats["fetchedKey"] && !(streamHost && streamId)) {
         fetch("https://api.beatmaps.io/maps/hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
                 try {
@@ -49,7 +49,7 @@ function SetImage(id) {
                 lastSongKey = json["versions"][0]["key"]
             })
         }).catch((err) => {})
-    } else if(useLocalhost && stats["fetchedKey"]) {
+    } else if((useLocalhost || (streamHost && streamId)) && stats["fetchedKey"]) {
         try {
             UpdateAllFieldsOfName("key", stats["key"])
         } catch {}
