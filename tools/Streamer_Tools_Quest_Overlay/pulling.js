@@ -79,7 +79,24 @@ function SetImage(id) {
                     }
                 })
             })
-        } else {
+        } else if(useLocalhost) {
+            fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
+                res.text().then((base64) => {
+                    if(res.status != 200) {
+                        UpdateAllFieldsOfNameSrc("cover", "default.png")
+                        got404 = true;
+                    } else {
+                        UpdateAllFieldsOfNameSrc("cover", base64)
+                        got404 = false;
+                        coverFetched = true
+                    }
+                })
+            }).catch((err) => {
+                // Fallback to default cover
+                got404 = true
+                UpdateAllFieldsOfNameSrc("cover", "default.png")
+            })
+        } else if(stats["coverFetchable"]) {
             fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
                 res.text().then((base64) => {
                     if(res.status != 200) {
@@ -236,7 +253,7 @@ var alreadyDisabled = false
 
 if(streamId && streamHost) {
     console.log("Using websocket of overlay streaming service")
-    var ws = new WebSocket("ws://" + streamHost);
+    var ws = new WebSocket(location.protocol.replace("http", "ws") + "//" + streamHost);
     ws.onopen = () => {
         console.log('WebSocket Opened');
         ws.send("data|" + streamId);
