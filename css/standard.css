@@ -28,11 +28,10 @@ body, table, input {
 
 .bigBox {
     border-bottom: 2px solid #EEEEEE;
-    background-image: linear-gradient(0deg, #12323d 50%, #41410e 50%);
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/LGBTQ%2B_rainbow_flag_Quasar_%22Progress%22_variant.svg');
     background-attachment: fixed;
-
-
-    background-color: #111111;
+    background-blend-mode: darken;
+    background-color: #111111DD;
 }
 
 hr {

@@ -14,6 +14,7 @@
     <body>
         <textarea id="json" style="width: 90%; height: 100px;"></textarea>
         <textarea id="pretty" style="width: 90%; height: 10000px"></textarea>
+        <textarea id="fields" style="width: 90%; height: 10000px"></textarea>
         
         <script src="../../js/standard.js"></script>
         <script>
@@ -40,6 +41,7 @@
                 }
                 const ordered = Object.keys(fields).sort().reduce(
                     (obj, key) => { 
+                        document.getElementById("fields").value += key + ","
                         document.getElementById("pretty").value += fields[key]
                         return obj;
                     }, 
