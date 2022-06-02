@@ -1,11 +1,15 @@
 body {
     color: #EEEEEE;
-    background-color: #111111;
 }
 
 html {
     height: auto;
     min-height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/LGBTQ%2B_rainbow_flag_Quasar_%22Progress%22_variant.svg');
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    background-size: cover;
+    background-color: #111111DD;
 }
 
 body, table, input {
@@ -24,14 +28,6 @@ body, table, input {
     padding: 5px;
     width: fit-content;
     cursor: pointer; 
-}
-
-.bigBox {
-    border-bottom: 2px solid #EEEEEE;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/LGBTQ%2B_rainbow_flag_Quasar_%22Progress%22_variant.svg');
-    background-attachment: fixed;
-    background-blend-mode: darken;
-    background-color: #111111DD;
 }
 
 hr {

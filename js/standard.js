@@ -172,7 +172,7 @@ function IsAprilFoolsDay() {
     }
 }
 
-document.body.innerHTML += `<div style="background-color: #222222; padding: 10px;"><a href="/privacy.html">View Privacy policy</a></div>`
+document.body.innerHTML += `<div style="background-color: #222222BB; padding: 10px;"><a href="/privacy.html">View Privacy policy</a></div>`
 
 var script = document.createElement("script")
 script.src = "https://analytics.rui2015.me/analytics.js?origin=" + location.origin

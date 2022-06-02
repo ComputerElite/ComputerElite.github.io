@@ -31,9 +31,8 @@
     </head>
     <body style="font-size: 14px;">
         <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-            <div style="flex: 1; flex-grow: 0; text-align: center;">
-                <div style="display: inline-block; margin-top: 10px; margin-bottom: 10px;" class="bigBox">
-                    <div style="padding: 10px;">
+            <div style="flex: 1; flex-grow: 0; text-align: center; width: 99%;">
+                    <div style="padding: 10px; width: 100%;">
                         <div style="font-size: 24px;">Beat Saber Mod Versions</div>
                         <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json" target="_blank">BMBF Manager</a></div>
                         <br/>
@@ -45,29 +44,19 @@
                         </a>
                         <input type="text" id="search" placeholder="Search mods">
                         <h2>Core Mods</h2>
-                        <table id="coremods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
-                            <tr>
-                                <th style="width: 60%;">Name</th>
-                                <th style="width: 19%;">Version</th>
-                            </tr>
-                            
-                        </table>
+                        <div id="coremods">
+
+                        </div>
                         <h2>Mods</h2>
-                        <table id="mods" style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
-                            <tr>
-                                <th style="width: 20%;">Creator(s)</th>
-                                <th style="width: 60%;">Name</th>
-                                <th style="width: 19%;">Version</th>
-                            </tr>
-                            
-                        </table>
+                        <div id="mods">
+
+                        </div>
                         <br/>
                     </div>
                     <div style="padding: 5px;">
                         Page by ComputerElite
                     </div>
                 </div>
-            </div>
         </div>
         
         <script src="../../js/standard.js"></script>
@@ -79,6 +68,8 @@
             const coremods = document.getElementById("coremods")
             const gameversion = document.getElementById("gameversion")
             const search = document.getElementById("search")
+            const params = new URLSearchParams(window.location.search)
+            var displayMethod = params.get("displaymethod") ?? 1
 
             search.onkeyup = e => {
                 Display(gameversion.value)
@@ -165,20 +156,57 @@
                 gameversions.forEach(key => {
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
+                if(params.get("version")) {
+                    gameversion.value = params.get("version")
+                }
             }
 
             gameversion.onchange = () => {
                 Display(gameversion.value)
             }
 
-            function Display(gameversion) {
+            function DisplayCards(gameversion) {
                 gameversion.innerHTML = "";
                 
-                var m = `<tr>
-                                <th style="width: 20%;">Creator(s)</th>
-                                <th style="width: 60%;">Name</th>
-                                <th style="width: 19%;">Version</th>
-                            </tr>`;
+                var m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].mods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
+                                <h3 style="margin-bottom: 0px;">${mod.name}</h3>
+                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.creator.join(", ")}. Version ${mod.version}</div>
+                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.details.replace(/\n/g, "<br>")}</div>
+                                <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                            </div>`
+                    }
+                })
+                mods.innerHTML = ` <div style="display: grid; grid-template-columns: 33% 33% 33%; column-gap: 10px; row-gap: 10px;">
+                            ${m}
+                        </div>`
+                m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].coremods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
+                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
+                                <h3 style="margin-bottom: 0px;">${mod.name}</h3>
+                                <div style="margin-top: 0; margin-left: 20px;">Version ${mod.version}</div>
+                                <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                            </div>`
+                    }
+                })
+                coremods.innerHTML =` <div style="display: grid; grid-template-columns: 33% 33% 33%; column-gap: 10px; row-gap: 10px;">
+                            ${m}
+                        </div>`
+            }
+
+            function Display(gameversion) {
+                if(displayMethod == 1) {
+                    DisplayCards(gameversion)
+                    return;
+                }
+                gameversion.innerHTML = "";
+                
+                var m =``;
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].mods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
@@ -189,11 +217,15 @@
                             </tr>`
                     }
                 })
-                mods.innerHTML = m
-                m = `<tr>
+                mods.innerHTML = `<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 20%;">Creator(s)</th>
                                 <th style="width: 60%;">Name</th>
-                                <th style="width: 39%;">Version</th>
-                            </tr>`;
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            ${m}
+                        </table>`
+                        var m =``;
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
@@ -203,7 +235,13 @@
                                 </tr>`
                     }
                 })
-                coremods.innerHTML = m
+                coremods.innerHTML =`<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            ${m}
+                        </table>` 
             }
         </script>
     </body>
