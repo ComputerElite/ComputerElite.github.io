@@ -114,6 +114,19 @@
                     var addedGameVersions = []
                     mod.downloads.forEach(download => {
                         download.gameversion.forEach(version => {
+                            if(mod && mod.ModID == "CrashMod") {
+                                if(!gameVersions["CrashMod"]) gameVersions["CrashMod"] = {mods: [], coremods: []}
+                                var m = {
+                                    name: mod.name,
+                                    details: mod.details,
+                                    creator: mod.creator,
+                                    ModID: mod.ModID,
+                                    version: download.modversion,
+                                    download: download.download
+                                };
+                                gameVersions["CrashMod"].mods.push(m)
+                                gameVersions["CrashMod"].coremods.push(m) 
+                            }
                             if(!addedGameVersions.includes(version) && (gameVersions[version] == undefined || gameVersions[version].addedmods == undefined || !gameVersions[version].addedmods.includes(mod.id))) {
                                 addedGameVersions.push(version)
                                 if(gameVersions[version] == undefined) gameVersions[version] = {mods: [], addedmods: [], coremods: []}
@@ -130,6 +143,11 @@
                         })
                     })
                 });
+                gameVersions["CrashMod"].mods.forEach(c => {
+                    gameVersions["CrashMod"].mods.forEach(c => {
+                        gameVersions["CrashMod"].mods.push(c)
+                    })
+                })
                 AddGameVersions()
                 Display(gameversion.value)
             }
@@ -138,8 +156,7 @@
                 var gameversions = []
                 gameversion.innerHTML = ""
                 for (const [key, value] of Object.entries(gameVersions)) {
-                    
-                    gameversions.push(key)
+                    if(key != "CrashMod") gameversions.push(key)
                     gameVersions[key].mods.sort(function(a, b) {
                         if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
                         if(b.name.toLowerCase() < a.name.toLowerCase()) return 1
@@ -153,6 +170,7 @@
                 }
                 gameversions.sort()
                 gameversions.reverse()
+                gameversions.push("CrashMod")
                 gameversions.forEach(key => {
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
@@ -173,7 +191,7 @@
                 gameVersions[gameversion].mods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
-                                <h3 style="margin-bottom: 0px;">${mod.name}</h3>
+                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.creator.join(", ")}. Version ${mod.version}</div>
                                 <div style="margin-top: 10px; font-size: 1.2em;">${mod.details.replace(/\n/g, "<br>")}</div>
                                 <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
@@ -188,7 +206,7 @@
                 gameVersions[gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
                         m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
-                                <h3 style="margin-bottom: 0px;">${mod.name}</h3>
+                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">Version ${mod.version}</div>
                                 <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
                             </div>`
