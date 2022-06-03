@@ -74,11 +74,7 @@
             search.onkeyup = e => {
                 Display(gameversion.value)
             }
-            try {
-                PullMods()
-            } catch(e) {
-                alert(e)
-            }
+            PullMods()
             
 
             function PullMods() {
@@ -87,8 +83,6 @@
                     res.json().then(json => {
                         org = json
                         SortByGameVersion()
-                    }).catch(e => {
-                        alert(e)
                     })
                 })
                 fetch("https://raw.githubusercontent.com/BMBF/resources/master/com.beatgames.beatsaber/core-mods.json").then(res => {
@@ -109,8 +103,6 @@
                             version: mod.version,
                             download: mod.downloadLink
                         })
-                    }).catch(e => {
-                        alert(e)
                     })
                 }
                 AddGameVersions()
