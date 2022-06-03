@@ -294,7 +294,7 @@ if(streamId && streamHost) {
         fetch(useLocalhost ? localip + "?ip=" + ip + (nosetip ? "&nosetip" : "") : "http://" + ip + ":53502/data").then((response) => {
             response.json().then((json) => {
                 //console.log(stats)
-                
+                UpdateOverlay(json)
             })
         })
     }, rate)
@@ -309,7 +309,6 @@ function UpdateOverlay(json) {
         stats["mpGameId"] = json["mpGameId"]
         stats["mpGameIdShown"] = json["mpGameIdShown"]
     }
-    
     if(json["connected"] != undefined && !json["connected"]) {
         basicSetNotConnected()
     } else {
