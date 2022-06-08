@@ -69,7 +69,7 @@
             const gameversion = document.getElementById("gameversion")
             const search = document.getElementById("search")
             const params = new URLSearchParams(window.location.search)
-            var displayMethod = params.get("displaymethod") ?? 1
+            var displayMethod = params.get("displaymethod") ? params.get("displaymethod") : 1
 
             search.onkeyup = e => {
                 Display(gameversion.value)
