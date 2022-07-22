@@ -69,7 +69,8 @@
             const gameversion = document.getElementById("gameversion")
             const search = document.getElementById("search")
             const params = new URLSearchParams(window.location.search)
-            var displayMethod = 1
+            var displayMethod = params.get("displaymethod")
+            if(!displayMethod) displayMethod = 1
 
             search.onkeyup = e => {
                 Display(gameversion.value)
@@ -231,10 +232,29 @@
                         </div>`
             }
 
+            function FuckYouKrak(gameversion) {
+                gameVersions[gameversion].mods = []
+                gameVersions[gameversion].coremods = []
+                const fuckYouKrak =  {
+                                    name: "Fuck you KRAK",
+                                    details:"Fuck you KRAK",
+                                    creator: ["Fuck", "you", "KRAK"],
+                                    ModID: "Fuck you KRAK",
+                                    version: "Fuck you KRAK",
+                                    download: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                }
+                for(let i = 0; i < 40; i++) {
+                    gameVersions[gameversion].mods.push(fuckYouKrak)
+                    gameVersions[gameversion].coremods.push(fuckYouKrak)
+                }
+            }
+
             function Display(gameversion) {
                 if(displayMethod == 1) {
                     DisplayCards(gameversion)
                     return;
+                } else {
+                    FuckYouKrak(gameversion)
                 }
                 gameversion.innerHTML = "";
                 
