@@ -183,6 +183,16 @@
                 Display(gameversion.value)
             }
 
+            function GetModButtons(downloadLink) {
+                var githubLink = ""
+                if(downloadLink.includes("github.com")) {
+                    githubLink = downloadLink.substring(0, downloadLink.indexOf("releases"))
+                }
+                return `<input onclick="window.open('${downloadLink}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                                ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}`
+            }
+
             function DisplayCards(gameversion) {
                 gameversion.innerHTML = "";
                 
@@ -198,13 +208,11 @@
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.creator.join(", ")}. Version ${mod.version}</div>
                                 <div style="margin-top: 10px; font-size: 1.2em;">${mod.details.replace(/\n/g, "<br>")}</div>
-                                <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}
+                                ${GetModButtons(mod.download)}
                             </div>`
                     }
                 })
-                mods.innerHTML = ` <div style="display: grid; grid-template-columns: 33% 33% 33%; column-gap: 10px; row-gap: 10px;">
+                mods.innerHTML = ` <div class="grid">
                             ${m}
                         </div>`
                 m =``;
@@ -214,11 +222,11 @@
                         m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">Version ${mod.version}</div>
-                                <input onclick="window.open('${mod.download}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                            </div>`
+                                ${GetModButtons(mod.download)}
+                                </div>`
                     }
                 })
-                coremods.innerHTML =` <div style="display: grid; grid-template-columns: 33% 33% 33%; column-gap: 10px; row-gap: 10px;">
+                coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
             }

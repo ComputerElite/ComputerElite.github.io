@@ -18,6 +18,24 @@ body, table, input {
     font-family: 'Open Sans';
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%; 
+    column-gap: 10px; 
+    row-gap: 10px;
+}
+
+@media screen and (min-width: 50em) {
+    .grid {
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+@media screen and (max-width: 50em) {
+    .grid {
+        grid-template-columns: 100%;
+    }
+}
+
 .marginlow {
     margin-left: 10px;
 }
