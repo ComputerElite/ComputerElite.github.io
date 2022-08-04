@@ -70,7 +70,8 @@
 }
 
 .navBarFont {
-    font-family: var(--navBarFont)
+    font-family: var(--navBarFont);
+    font-size: 4em;
 }
 
 html {
@@ -95,13 +96,23 @@ body {
     line-height: 1.8;
 }
 
+h1 + * {
+    margin-top: 100px;
+}
+
 h1 {
     font-family: var(--headerFont);
     color: var(--textColor);
+    font-size: 5em;
+    margin-top: -30px;
+    margin-bottom: -.5em;
 }
 h2 {
     font-family: var(--headerFont);
     color: var(--textColor);
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: -.5em;
 }
 
 .content {
