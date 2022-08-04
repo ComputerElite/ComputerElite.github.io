@@ -1,0 +1,160 @@
+:root {
+    --navBarBGColor: #000000;
+    --textColor: #FFFFFF;
+    --boxTextColor: #C4B3BA;
+    --navBarFont: 'Copperplate';
+    --headerFont: 'Coluna';
+    --textFont: 'Montserrat-SemiBold';
+}
+
+@font-face {
+    font-family: Copperplate;
+    src: url("assets/Copperplate.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Copperplate;
+    src: url("assets/Copperplate-Heavy.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Coluna;
+    src: url("assets/Coluna.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url("assets/Montserrat-SemiBold.otf") format("opentype");
+}
+
+
+.logo {
+    width: 50vw;
+}
+
+.subBoxContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subBox {
+    background-color: #00000055;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px
+}
+
+.subBoxImg {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.max50 {
+    max-width: 20vw;
+}
+
+.navBar {
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: var(--navBarBGColor);
+    height: 60px;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+    position: fixed;
+    width: 100vw;
+    box-sizing: border-box;
+    font-family: var(--navBarFont);
+}
+
+.navBarFont {
+    font-family: var(--navBarFont)
+}
+
+html {
+    font-family: var(--textFont);
+    font-size: 1rem;    
+    background-color: #000000;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    color: var(--textColor);
+    line-height: 1.8;
+}
+
+h1 {
+    font-family: var(--headerFont);
+    color: var(--textColor);
+}
+h2 {
+    font-family: var(--headerFont);
+    color: var(--textColor);
+}
+
+.content {
+    margin-top: 80px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    padding: 10px;
+    background-color: #000000AA;
+    color: var(--boxTextColor);
+    width: 50%;
+    margin: 5px;
+}
+
+.navBarImg {
+    height: 100%;
+    width: auto;
+}
+
+.navBarItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fadeOut {
+    animation:ease-in-out fadeout 2s ;
+}
+@keyframes fadeout {
+    0% {
+        filter: opacity(100%)
+    }
+    100% {
+        filter: opacity(0%)
+    }
+}
+
+.fadeIn {
+    animation: ease-in-out fadein 2s;
+}
+@keyframes fadein {
+    0% {
+        filter: opacity(0%)
+    }
+    100% {
+        filter: opacity(100%)
+    }
+}
+
+.bgHidden {
+    opacity: 0;
+}

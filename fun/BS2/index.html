@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navBar">
+            <div class="navBarItem">
+                <img class="navBarImg" src="assets/cube.png">
+                PREORDER BEAT SABER 2
+            </div>
+            <div class="navBarItem">
+                WATCH THE TRAILER
+            </div>
+            <div class="navBarItem">
+                PURCHASE BEATCOIN
+                <img class="navBarImg" src="assets/beatcoin.png">
+            </div>
+        </div>
+        <div class="content">
+            <div class="navBarFont">
+                WELCOME TO THE
+            </div>
+            <img class="logo" src="assets/logo.png">
+            <div class="navBarFont">
+                (UN)OFFICIAL WEBSITE
+            </div>
+            <div class="box">
+                <h1>MORE INFO</h1>
+                As you all have probably became aware of, Beat Games no longer owns the
+                rights to the Beat Saber videogame or Beat Saber related products. As
+                Meta now COMPLETELY owns the Beat Saber IP.
+                <h2>WHAT DOES THIS MEAN?</h2>
+                It means you get more of the game that you love! We understand that changes
+                can be scary, but Meta has ensured to listen to every single word spoken by
+                the Beat Saber community. Below is a list of the new awesome changes that are
+                coming to Beat Saber!
+                <ul>
+                    <li>The game is now exclusive to Meta products.</li>
+                    <li>A whole new game!</li>
+                    <li>An even bigger community!</li>
+                    <li>Even more updates!</li>
+                    <li>New graphics</li>
+                    <li>Completely new features which can be seen listed below!</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h1>NEW FEATURES</h1>
+                <h2>Easy Anti Cheat</h2>
+                Implementing EAC should've been something that had been done years ago,
+                and we sincerely apologize. As other popular VR games have been
+                implementing EAC into their games, it about time we do as well. Goodbye
+                cheaters!
+
+                <h2>Beat Sage</h2>
+                We know you Meta Quest users have been wanting custom songs for quite a
+                long while... so here it is! With this new feature, make any map you want, with
+                the click of a button! This feature will completely replace normal custom songs,
+                as they are now obsolete.
+                <div class="subBoxContainer">
+                    <div class="subBox">
+                        <img class="subBoxImg" src="assets/beatsage.png">
+                    </div>
+                </div>
+
+                <h2>Beat-Pass and BeatCoin</h2>
+                It's hard to keep a game up without monetization. We have added these
+                optionally purchasable items into the game. We hope you enjoy the new
+                content!
+                <div class="subBoxContainer">
+                    <div class="subBox">
+                        <img class="subBoxImg" src="assets/beatpass.jpg">
+                        Beat-Pass. Only accessible in
+                        multiplayer. Pricing starts at
+                    </div>
+                    <div class="subBox">
+                        <img class="subBoxImg max50" src="assets/beatcoins.png">
+                        Beatcoin [ˈbɪ:tˌkɔɪ̯n]. Use this item to buy
+                        other items or songs in the
+                        shop! Pricing starts at $10.00
+                        per coin.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const bgs = [
+                "assets/bg1.jpg",
+                "assets/bg2.jpg",
+                "assets/bg3.jpg"
+            ]
+            var currentBG = 0
+            const totalBGs = bgs.length
+
+            BGSetUp()
+
+            
+            function BGSetUp() {
+                for(let i = 0; i < bgs.length; i++) {
+                    document.body.innerHTML += `<div class="bg bgHidden" style="background-image: url('${bgs[i]}')" id='bg${i}'></div>`
+                }
+                NextBG()
+                setInterval(NextBG, 10000)
+            }
+
+            function NextBG() {
+                var previousBG = document.getElementById("bg" + currentBG)
+                currentBG++
+                currentBG %= totalBGs
+                var nextBG = document.getElementById("bg" + currentBG)
+                previousBG.classList.add("fadeOut")
+                previousBG.classList.remove("fadeIn")
+                nextBG.classList.remove("bgHidden")
+                nextBG.classList.add("fadeIn")
+                setTimeout(() => {
+                    previousBG.classList.add("bgHidden")
+                    previousBG.classList.remove("fadeOut")
+                    nextBG.classList.remove("bgHidden")
+                }, 2000);
+            }
+        </script>
+    </body>
+</html>
