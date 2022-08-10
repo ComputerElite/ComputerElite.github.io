@@ -190,7 +190,7 @@ a {
 
 .align2img {
     width: 40%;
-    height: auto;
+    height: min-content;
     margin-right: 20px;
 }
 
