@@ -35,8 +35,34 @@
 }
 
 
-.logo {
-    width: 50vw;
+
+
+@media (min-aspect-ratio: 1/1) {
+    .logo {
+        width: 50vw;
+    }
+
+    .max50 {
+        max-width: 20vw;
+    }
+
+    .box {
+        width: 50%;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .logo {
+        width: 90vw;
+    }
+
+    .max50 {
+        max-width: 40vw;
+    }
+
+    .box {
+        width: 90%;
+    }
 }
 
 .subBoxContainer {
@@ -54,10 +80,6 @@
 .subBoxImg {
     width: 100%;
     border-radius: 5px;
-}
-
-.max50 {
-    max-width: 20vw;
 }
 
 .navBar {
@@ -139,7 +161,6 @@ a {
     padding: 10px;
     background-color: #000000AA;
     color: var(--boxTextColor);
-    width: 50%;
     margin: 5px;
 }
 
