@@ -5,6 +5,7 @@
     --navBarFont: 'Copperplate';
     --headerFont: 'Coluna';
     --textFont: 'Montserrat-SemiBold';
+    --downloadButtonFont: 'Futura';
 }
 
 @font-face {
@@ -21,6 +22,11 @@
 @font-face {
     font-family: Coluna;
     src: url("assets/Coluna.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Futura;
+    src: url("assets/Futura.ttf") format("truetype");
 }
 
 @font-face {
@@ -112,7 +118,13 @@ h2 {
     color: var(--textColor);
     font-size: 2.5em;
     margin-top: 0;
-    margin-bottom: -.5em;
+    margin-bottom: -.2em;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
 }
 
 .content {
@@ -168,4 +180,43 @@ h2 {
 
 .bgHidden {
     opacity: 0;
+}
+
+.align2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.align2img {
+    width: 40%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.margin {
+    margin-top: 20px !important;
+}
+
+.aligntopbottom2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.downloadButton {
+    color: #000000;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: var(--downloadButtonFont);
+    font-size: 2em;
+    letter-spacing: 1px;
+    height: min-content;
+    width: min-content;
+    text-decoration: none;
 }
