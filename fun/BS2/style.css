@@ -65,6 +65,10 @@
     }
 }
 
+.fullWidth {
+    width: 100%;
+}
+
 .subBoxContainer {
     display: flex;
     justify-content: space-between;
