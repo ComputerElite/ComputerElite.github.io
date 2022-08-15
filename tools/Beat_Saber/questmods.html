@@ -86,7 +86,7 @@
                         SortByGameVersion()
                     })
                 })
-                fetch("https://git.bmbf.dev/unicorns/resources/-/raw/master/com.beatgames.beatsaber/core-mods.json").then(res => {
+                fetch("https://raw.githubusercontent.com/BMBF/resources/master/com.beatgames.beatsaber/core-mods.json").then(res => {
                     res.json().then(json => {
                         coreOrg = json
                         SortByGameVersionCore()
