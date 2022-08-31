@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="RhythmBang Custom songs creator" />
+        <meta property="og:description" content="Create the basis for Custom Songs" />
+        <style>
+            input[type='text'] {
+                width: 600px;
+            }
+            input[type='file'] {
+                width: 600px;
+            }
+            input {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; padding: 10px; text-align: center;" class="bigBox">
+                <h1>RhythmBang Custom Song Creator</h1>
+                <h3>Create the basis for your custom song</h3>
+                <h2>Song info</h2>
+                <label>Song name<input type="text" id="name"></label>
+                <br>
+                <label>Artist name<input type="text" id="artist"></label>
+                <br>
+                <label>Mapper name<input type="text" id="mapper"></label>
+                <br>
+                
+                <label>Song file<input type="file" id="song"></label>
+                <br>
+                <label>song bpm<input type="text" id="bpm"></label>
+                <br>
+                <label>song offset<input type="text" id="offset"></label>
+                <br>
+                <label>song preview start (seconds)<input type="text" id="previewStart"></label>
+                <br>
+                <label>song preview length (seconds)<input type="text" id="previewLength"></label>
+                <br>
+                
+                <label>Cover file<input type="file" id="cover"></label>
+                <br>
+                <input type="button" onclick="Generate()" value="Generate song">
+                <br>
+                <br>
+                <label>Difficulty name<input type="text" id="diffName"></label>
+                <br>
+                <input type="button" onclick="AddDifficulty()" value="Add Difficulty">
+                <input type="button" onclick="RemoveDifficulty()" value="Remove Difficulty">
+                <h3>Existing difficulties</h3>
+                <div style="font-size: 2em;" id="diffsE"></div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script src="../../js/jszip.js"></script>
+        <script>
+            const name = document.getElementById("name")
+            const artist = document.getElementById("artist")
+            const mapper = document.getElementById("mapper")
+            const song = document.getElementById("song")
+            const bpm = document.getElementById("bpm")
+            const offset = document.getElementById("offset")
+            const previewStart = document.getElementById("previewStart")
+            const previewLength = document.getElementById("previewLength")
+            const cover = document.getElementById("cover")
+            const diffName = document.getElementById("diffName")
+            const diffsE = document.getElementById("diffsE")
+
+            var diffs = []
+            UpdateList()
+
+            function AddDifficulty() {
+                diffs.push(diffName.value)
+                UpdateList()
+            }
+
+            function RemoveDifficulty() {
+                diffs.splice(diffs.indexOf(diffName.value))
+                UpdateList()
+            }
+
+            function UpdateList() {
+                diffsE.innerHTML = diffs.join("<br>")
+                if(!diffsE.innerHTML) {
+                    diffsE.innerHTML = "No difficulties yet. Add some"
+                }
+            }
+
+            function Generate() {
+                var zip = new JSZip()
+                var map = {
+                    onlyDestroyFirst: true,
+                    difficulties: []
+                }
+                try {
+                    map.mapper = mapper.value
+                    map.song = name.value
+                    map.artist = artist.value
+                    map.previewAudioStart = parseFloat(previewStart.value)
+                    map.previewAudioLength = parseFloat(previewLength.value)
+                    map.bpm = parseFloat(bpm.value)
+                    map.offset = parseFloat(offset.value)
+                    map.songFileName = "song." + GetExtension(song.files[0].name)
+                    map.coverFileName = "cover." + GetExtension(cover.files[0].name)
+                    for(let i = 0; i < diffs.length; i++) {
+                        zip.file(diffs[i] + ".json", JSON.stringify({}))
+                        map.difficulties.push({
+                            difficultyName: diffs[i],
+                            difficultyFileName: diffs[i] + ".json"
+                        })
+                    }
+                    zip.file(map.songFileName, song.files[0])
+                    zip.file(map.coverFileName, cover.files[0])
+                    zip.file("map.json", JSON.stringify(map, null, 4))
+                    zip.generateAsync({type:"blob"})
+                    .then(function(content) {
+                        saveAs(content, map.song + ".zip");
+                    });
+                    
+                } catch {
+                    alert("Populate all fields")
+                }
+            }
+
+            function saveAs(data, filename)
+            {
+                console.log('saving ' + filename + '...')
+            
+                var blob = new Blob([data], {type: 'octet/stream'});
+                var url = window.URL.createObjectURL(blob);
+            
+                if(navigator && navigator.msSaveBlob)
+                {
+                    console.log("using msSaveBlob...");
+                    navigator.msSaveBlob(blob, filename);
+                }
+                else
+                {
+                    var a = document.createElement('a');
+                    a.style = "display: none";
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    try
+                    {
+                        a.click();
+                    }
+                    catch(e)
+                    {
+                        console.error(e);
+                        console.log('failed to save file');
+                    }
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }
+            }
+
+            function GetExtension(filename){
+                return filename.split('.').pop()
+            }
+        </script>
+    </body>
+</html>
