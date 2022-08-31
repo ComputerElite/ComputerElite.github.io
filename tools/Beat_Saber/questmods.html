@@ -86,7 +86,7 @@
                         SortByGameVersion()
                     })
                 })
-                fetch("https://raw.githubusercontent.com/BMBF/resources/master/com.beatgames.beatsaber/core-mods.json").then(res => {
+                fetch("https://oculusdb.rui2015.me/api/coremodsproxy").then(res => {
                     res.json().then(json => {
                         coreOrg = json
                         SortByGameVersionCore()
