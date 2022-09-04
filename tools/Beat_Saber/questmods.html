@@ -153,6 +153,181 @@
                 Display(gameversion.value)
             }
 
+            var done = 0
+            var total = 0
+            var res = {}
+            async function GetModJSON() {
+                done = 0
+                total = 0
+                for (const [key, value] of Object.entries(gameVersions)) {
+                    if(key == "CrashMod") continue;
+                    res[key] = []
+                    total += gameVersions[key].mods.length
+                    gameVersions[key].mods.forEach(async mod => {
+                        var githubLink = ""
+                        if(mod.download.includes("github.com")) {
+                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
+                        } else {
+                            ModDone(mod)
+                            return
+                        }
+                        var rawLink = `https://raw.githubusercontent.com/${githubLink.split("/")[3]}/${githubLink.split("/")[4]}/`
+                        var coverUrl = ""
+                        var modUrl = ""
+                        if(await DoesUrlExist(rawLink + "main/mod.json")) modUrl = rawLink + "main/mod.json"
+                        else if(await DoesUrlExist(rawLink + "main/mod.template.json")) modUrl = rawLink + "main/mod.template.json"
+                        else if(await DoesUrlExist(rawLink + "master/mod.json")) modUrl = rawLink + "master/mod.json"
+                        else if(await DoesUrlExist(rawLink + "master/mod.template.json")) modUrl = rawLink + "master/mod.template.json"
+                        else {
+                            ModDone(mod)
+                            return
+                        }
+                        var modJson = await (await fetch(modUrl)).json()
+                        if(await DoesUrlExist(rawLink + "master/" + modJson.coverImage)) coverUrl = rawLink + "master/" + modJson.coverImage
+                        else if(await DoesUrlExist(rawLink + "main/" + modJson.coverImage)) coverUrl = rawLink + "main/" + modJson.coverImage
+                        else {
+                            ModDone(mod)
+                            return
+                        }
+                        res[key].push({
+                            name: mod.name,
+                            description: mod.details,
+                            id: mod.ModID,
+                            version: mod.version,
+                            downloadLink: mod.download,
+                            source: githubLink,
+                            cover: coverUrl,
+                            author: {
+                                name: mod.creator.join(", "),
+                                icon: `https://avatars.githubusercontent.com/${githubLink.split("/")[3]}`
+                            }
+                        })
+                        
+                        ModDone(mod)
+                    }) 
+                }
+            }
+
+            function ModDone(mod) {
+                done++
+                console.log(mod.name + " v " + mod.version + " done")
+                if(done == total) {
+                    console.log(res)
+                    console.log(JSON.stringify(res))
+                }
+            }
+
+            function MergeModJSON() {
+                var res2 = {}
+                fetch(`https://raw.githubusercontent.com/QuestModding/QuestBeatSaberModsRepo/master/mods.json`).then(m => {
+                    m.json().then(m => {
+                        var keys = []
+                        for(const [key, value] of Object.entries(m)) {
+                            if(!keys.includes(key)) keys.push(key)
+                        }
+                        for(const [key, value] of Object.entries(res)) {
+                            if(!keys.includes(key)) keys.push(key)
+                        }
+                        console.log("hello " + keys.length)
+                        for(const v of keys) {
+                            console.log(v)
+                            res2[v] = []
+                            if(!m[v]) {
+                                // online json doesn't have game version
+                                res2[v] = res[v]
+                                continue
+                            } else if(!res[v]) {
+                                // offline json doesn't have game version
+                                res2[v] = m[v]
+                                continue
+                            }
+                            var modIds = []
+                            for(const mod of res[v]) {
+                                if(!modIds.includes(mod.id)) modIds.push(mod.id)
+                            }
+                            for(const mod of m[v]) {
+                                if(!modIds.includes(mod.id)) modIds.push(mod.id)
+                            }
+
+                            for(const id of modIds) {
+                                var online = GetMod(id, m[v])
+                                var offline = GetMod(id, res[v])
+                                if(!online) {
+                                    res2[v].push(offline)
+                                    continue
+                                }
+                                else if(!offline) {
+                                    res2[v].push(online)
+                                    continue
+                                }
+                                if(compare(online.version.split("-")[0], offline.version.split("-")[0]) >= 0) {
+                                    res2[v].push(online)
+                                } else {
+                                    res2[v].push(offline)
+                                }
+                            }
+                        }
+                        console.log(res2)
+                        console.log(JSON.stringify(res2))
+                    })
+                })
+            }
+
+            function GetMod(id, array) {
+                for(const mod of array) {
+                    if(mod.id == id) return mod
+                }
+                return null
+            }
+
+            // Return 1 if a > b
+            // Return -1 if a < b
+            // Return 0 if a == b
+            function compare(a, b) {
+                if (a === b) {
+                return 0;
+                }
+
+                var a_components = a.split(".");
+                var b_components = b.split(".");
+
+                var len = Math.min(a_components.length, b_components.length);
+
+                // loop while the components are equal
+                for (var i = 0; i < len; i++) {
+                    // A bigger than B
+                    if (parseInt(a_components[i]) > parseInt(b_components[i])) {
+                        return 1;
+                    }
+
+                    // B bigger than A
+                    if (parseInt(a_components[i]) < parseInt(b_components[i])) {
+                        return -1;
+                    }
+                }
+
+                // If one's a prefix of the other, the longer one is greater.
+                if (a_components.length > b_components.length) {
+                    return 1;
+                }
+
+                if (a_components.length < b_components.length) {
+                    return -1;
+                }
+
+                // Otherwise they are the same.
+                return 0;
+            }
+
+            function DoesUrlExist(url) {
+                return new Promise((resolve, reject) => {
+                    fetch(url).then(res => {
+                        if(res.status == 200) resolve(true)
+                        else resolve(false)
+                    })
+                })
+            }
+
             function AddGameVersions() {
                 var gameversions = []
                 gameversion.innerHTML = ""
