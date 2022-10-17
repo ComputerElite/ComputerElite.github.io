@@ -16,9 +16,10 @@
             <div style="flex: 1; flex-grow: 0; text-align: center;">
                 <div style=" padding: 10px;">
                     <div style="font-size: 24px;">Mods Json Generator</div>
+                    <div class="headerDescription" style="width: 50%; margin: auto;">Make pull requests for <a href="https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json" target="_blank">this file</a></div>
                 </div>
-                <div style="display: flex;justify-content: space-between;">
-                    <div style="display: flex; flex-direction: column; ">
+                <div style="display: flex;justify-content: space-between; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; min-width: 500px; margin-top: 50px;">
                         <label>
                             Mod Name
                             <input type="text" id="name">
@@ -34,7 +35,7 @@
                         </label>
                         <input type="button" value="Load QMOD" onclick="LoadQMOD()">
                     </div>
-                    <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: column; min-width: 500px; margin-top: 50px;">
                         <label>
                             Mod Creator/-s
                             <input type="text" id="creators">
@@ -66,7 +67,7 @@
                         </label>
                         <input type="button" value="Generate JSON" onclick="GenerateJSON()">
                     </div>
-                    <div>
+                    <div style=" min-width: 500px; margin-top: 50px;">
                         <label>
                             current JSON
                             <textarea id="json" rows="40"></textarea>
