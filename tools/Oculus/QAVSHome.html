@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ComputerElite's site</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="M5LUHbjL-evzx04cqagC8xcQBvt-9Fj21Q4agN-IQ9M" />
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; padding: 10px; text-align: center;" class="bigBox">
+                <div style="font-size: 24px; text-align: center;">QuestAppVersionSwitcher Navigation Home</div>
+                <div id="categoryContainer" style="margin-top: 10px;">
+                    
+                </div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script>
+            const pages = [
+                {
+                    "name": "",
+                    "pages": [
+                        {
+                            "name": "",
+                            "description": "",
+                            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Google_logo_%282013-2015%29.svg/1024px-Google_logo_%282013-2015%29.svg.png",
+                            "color": "#FFFFFF",
+                            "url": "https://google.com"
+                        },
+                        {
+                            "name": "Beat Saber Mods",
+                            "description": "Download Beat Saber Mods for your game",
+                            "img": "",
+                            "color": "#FFFFFF",
+                            "url": "https://computerelite.github.io/tools/Beat_Saber/questmods.html"
+                        }
+                    ]
+                }
+            ]
+            const categoryContainer = document.getElementById("categoryContainer")
+
+            pages.forEach(category => {
+                categoryContainer.innerHTML += GetCategoryFormatted(category)
+            })
+
+            function GetCategoryFormatted(category) {
+                var childs = ""
+                category.pages.forEach(page => {
+                    childs += `<div onclick="window.open('${page.url}', '_self')" class="zoom" style="cursor: pointer; display: flex; align-items: center; flex: 1; height: 250px; min-width: 400px; background-image: url('${page.img}'); background-position: center; color: ${page.color}; background-size: contain; background-repeat: no-repeat; max-width: 50%;">
+                                    <div style="flex: 1; font-size: 26px;">${page.name}<div style="font-size: 22px">${page.description}</div></div>
+                                </div>`
+                })
+                return `<div style="background-color: #262626BB;">
+                            <div style="font-size: 18px; text-align: center;">${category.name}</div>
+                            <div style="display: flex; margin: 10px; flex-wrap: wrap; justify-content: center;">
+                                ${childs}
+                            </div>
+                        </div>`
+            }
+        </script>
+    </body>
+</html>
