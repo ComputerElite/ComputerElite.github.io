@@ -34,7 +34,7 @@
             <div style="flex: 1; flex-grow: 0; text-align: center; width: 99%;">
                     <div style="padding: 10px; width: 100%;">
                         <div style="font-size: 24px;">Beat Saber Mod Versions</div>
-                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json" target="_blank">BMBF Manager</a></div>
+                        <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/ComputerElite.github.io/blob/main/tools/Beat_Saber/mods.json" target="_blank">here</a></div>
                         <br/>
                         <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                             Game Version:
@@ -80,7 +80,7 @@
 
             function PullMods() {
                 gameVersions = {}
-                fetch("https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json").then(res => {
+                fetch("mods.json").then(res => {
                     res.json().then(json => {
                         org = json
                         SortByGameVersion()
@@ -111,46 +111,182 @@
             }
 
             function SortByGameVersion() {
-                org.mods.forEach(mod => {
-                    var addedGameVersions = []
-                    mod.downloads.forEach(download => {
-                        download.gameversion.forEach(version => {
-                            if(mod && mod.ModID == "CrashMod") {
-                                if(!gameVersions["CrashMod"]) gameVersions["CrashMod"] = {mods: [], coremods: []}
-                                var m = {
-                                    name: mod.name,
-                                    details: mod.details,
-                                    creator: mod.creator,
-                                    ModID: mod.ModID,
-                                    version: download.modversion,
-                                    download: download.download
-                                };
-                                gameVersions["CrashMod"].mods.push(m)
-                                gameVersions["CrashMod"].coremods.push(m) 
-                            }
-                            if(!addedGameVersions.includes(version) && (gameVersions[version] == undefined || gameVersions[version].addedmods == undefined || !gameVersions[version].addedmods.includes(mod.id))) {
-                                addedGameVersions.push(version)
-                                if(gameVersions[version] == undefined) gameVersions[version] = {mods: [], addedmods: [], coremods: []}
-                                gameVersions[version].addedmods.push(mod.ModID)
-                                gameVersions[version].mods.push({
-                                    name: mod.name,
-                                    details: mod.details,
-                                    creator: mod.creator,
-                                    ModID: mod.ModID,
-                                    version: download.modversion,
-                                    download: download.download
-                                })
-                            }
-                        })
-                    })
-                });
-                gameVersions["CrashMod"].mods.forEach(c => {
-                    gameVersions["CrashMod"].mods.forEach(c => {
-                        gameVersions["CrashMod"].mods.push(c)
-                    })
-                })
+                for(const [key, value] of Object.entries(org)) {
+                    if(!gameVersions[key]) gameVersions[key] = {
+                        coremods: [],
+                        mods: []
+                    }
+                    gameVersions[key].mods = value
+                }
                 AddGameVersions()
                 Display(gameversion.value)
+            }
+
+            function AddGameVersions() {
+                var gameversions = []
+                gameversion.innerHTML = ""
+                for (const [key, value] of Object.entries(gameVersions)) {
+                    gameversions.push(key)
+                    gameVersions[key].mods.sort(function(a, b) {
+                        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
+                        if(b.name.toLowerCase() < a.name.toLowerCase()) return 1
+                        return 0
+                    })
+                    gameVersions[key].coremods.sort(function(a, b) {
+                        if(a.name < b.name) return -1
+                        if(b.name < a.name) return 1
+                        return 0
+                    })
+                }
+                gameversions.sort()
+                gameversions.reverse()
+                gameversions.forEach(key => {
+                    gameversion.innerHTML += `<option value="${key}">${key}</option>`
+                })
+                if(params.get("version")) {
+                    gameversion.value = params.get("version")
+                }
+            }
+
+            gameversion.onchange = () => {
+                Display(gameversion.value)
+            }
+
+            function GetModButtons(downloadLink) {
+                var githubLink = ""
+                if(downloadLink.includes("github.com")) {
+                    githubLink = downloadLink.substring(0, downloadLink.indexOf("releases"))
+                }
+                return `<input onclick="window.open('${downloadLink}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                                ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}`
+            }
+
+            function DisplayCards(gameversion) {
+                gameversion.innerHTML = "";
+                
+                var m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].mods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        var githubLink = ""
+                        if(mod.download.includes("github.com")) {
+                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
+                        }
+                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
+                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
+                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${mod.version}</div>
+                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
+                                ${GetModButtons(mod.download)}
+                            </div>`
+                    }
+                })
+                mods.innerHTML = ` <div class="grid">
+                            ${m}
+                        </div>`
+                m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].coremods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
+                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
+                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
+                                <div style="margin-top: 0; margin-left: 20px;">Version ${mod.version}</div>
+                                ${GetModButtons(mod.download)}
+                                </div>`
+                    }
+                })
+                coremods.innerHTML =` <div class="grid">
+                            ${m}
+                        </div>`
+            }
+
+            function FuckYouKrak(gameversion) {
+                gameVersions[gameversion].mods = []
+                gameVersions[gameversion].coremods = []
+                const fuckYouKrak =  {
+                                    name: "Fuck you KRAK",
+                                    details:"Fuck you KRAK",
+                                    creator: ["Fuck", "you", "KRAK"],
+                                    ModID: "Fuck you KRAK",
+                                    version: "Fuck you KRAK",
+                                    download: "/redirect?target=self&random",
+                                }
+                for(let i = 0; i < 40; i++) {
+                    gameVersions[gameversion].mods.push(fuckYouKrak)
+                    gameVersions[gameversion].coremods.push(fuckYouKrak)
+                }
+            }
+
+            function Display(gameversion) {
+                if(displayMethod == 1) {
+                    DisplayCards(gameversion)
+                    return;
+                } else {
+                    FuckYouKrak(gameversion)
+                }
+                gameversion.innerHTML = "";
+                
+                var m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].mods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                                <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
+                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
+                                <td style="vertical-align:top;">${mod.version}</td>
+                            </tr>`
+                    }
+                })
+                mods.innerHTML = `<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 20%;">Creator(s)</th>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            ${m}
+                        </table>`
+                        var m =``;
+                console.log("refreshing for " + gameversion)
+                gameVersions[gameversion].coremods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
+                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
+                                    <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
+                                    <td>${mod.version}</td>
+                                </tr>`
+                    }
+                })
+                coremods.innerHTML =`<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
+                            <tr>
+                                <th style="width: 60%;">Name</th>
+                                <th style="width: 19%;">Version</th>
+                            </tr>
+                            ${m}
+                        </table>` 
+            }
+
+            function ConvertJSON() {
+                var res = {}
+                for (const [key, value] of Object.entries(gameVersions)) {
+                    res[key] = []
+                    total += gameVersions[key].mods.length
+                    for(const mod of gameVersions[key].mods) {
+                        var githubLink = null
+                        if(mod.download.includes("github.com")) {
+                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
+                        }
+                        res[key].push({
+                            name: mod.name,
+                            description: mod.details,
+                            id: mod.ModID,
+                            version: mod.version,
+                            download: mod.download,
+                            source: githubLink,
+                            author: mod.creator.join(", "),
+                            forward: mod.forward
+                        })
+                    }  
+                }
+                console.log(JSON.stringify(res))
             }
 
             var done = 0
@@ -160,7 +296,6 @@
                 done = 0
                 total = 0
                 for (const [key, value] of Object.entries(gameVersions)) {
-                    if(key == "CrashMod") continue;
                     res[key] = []
                     total += gameVersions[key].mods.length
                     gameVersions[key].mods.forEach(async mod => {
@@ -326,149 +461,6 @@
                         else resolve(false)
                     })
                 })
-            }
-
-            function AddGameVersions() {
-                var gameversions = []
-                gameversion.innerHTML = ""
-                for (const [key, value] of Object.entries(gameVersions)) {
-                    if(key != "CrashMod") gameversions.push(key)
-                    gameVersions[key].mods.sort(function(a, b) {
-                        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
-                        if(b.name.toLowerCase() < a.name.toLowerCase()) return 1
-                        return 0
-                    })
-                    gameVersions[key].coremods.sort(function(a, b) {
-                        if(a.name < b.name) return -1
-                        if(b.name < a.name) return 1
-                        return 0
-                    })
-                }
-                gameversions.sort()
-                gameversions.reverse()
-                gameversions.push("CrashMod")
-                gameversions.forEach(key => {
-                    gameversion.innerHTML += `<option value="${key}">${key}</option>`
-                })
-                if(params.get("version")) {
-                    gameversion.value = params.get("version")
-                }
-            }
-
-            gameversion.onchange = () => {
-                Display(gameversion.value)
-            }
-
-            function GetModButtons(downloadLink) {
-                var githubLink = ""
-                if(downloadLink.includes("github.com")) {
-                    githubLink = downloadLink.substring(0, downloadLink.indexOf("releases"))
-                }
-                return `<input onclick="window.open('${downloadLink}', '_blank')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}`
-            }
-
-            function DisplayCards(gameversion) {
-                gameversion.innerHTML = "";
-                
-                var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].mods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
-                        var githubLink = ""
-                        if(mod.download.includes("github.com")) {
-                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
-                        }
-                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
-                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
-                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.creator.join(", ")}. Version ${mod.version}</div>
-                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.details.replace(/\n/g, "<br>")}</div>
-                                ${GetModButtons(mod.download)}
-                            </div>`
-                    }
-                })
-                mods.innerHTML = ` <div class="grid">
-                            ${m}
-                        </div>`
-                m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].coremods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
-                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
-                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
-                                <div style="margin-top: 0; margin-left: 20px;">Version ${mod.version}</div>
-                                ${GetModButtons(mod.download)}
-                                </div>`
-                    }
-                })
-                coremods.innerHTML =` <div class="grid">
-                            ${m}
-                        </div>`
-            }
-
-            function FuckYouKrak(gameversion) {
-                gameVersions[gameversion].mods = []
-                gameVersions[gameversion].coremods = []
-                const fuckYouKrak =  {
-                                    name: "Fuck you KRAK",
-                                    details:"Fuck you KRAK",
-                                    creator: ["Fuck", "you", "KRAK"],
-                                    ModID: "Fuck you KRAK",
-                                    version: "Fuck you KRAK",
-                                    download: "/redirect?target=self&random",
-                                }
-                for(let i = 0; i < 40; i++) {
-                    gameVersions[gameversion].mods.push(fuckYouKrak)
-                    gameVersions[gameversion].coremods.push(fuckYouKrak)
-                }
-            }
-
-            function Display(gameversion) {
-                if(displayMethod == 1) {
-                    DisplayCards(gameversion)
-                    return;
-                } else {
-                    FuckYouKrak(gameversion)
-                }
-                gameversion.innerHTML = "";
-                
-                var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].mods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
-                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
-                                <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
-                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
-                                <td style="vertical-align:top;">${mod.version}</td>
-                            </tr>`
-                    }
-                })
-                mods.innerHTML = `<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
-                            <tr>
-                                <th style="width: 20%;">Creator(s)</th>
-                                <th style="width: 60%;">Name</th>
-                                <th style="width: 19%;">Version</th>
-                            </tr>
-                            ${m}
-                        </table>`
-                        var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].coremods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
-                        m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
-                                    <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
-                                    <td>${mod.version}</td>
-                                </tr>`
-                    }
-                })
-                coremods.innerHTML =`<table style="color: #EEEEEE; width: 100%; text-align: left; word-wrap: break-word;">
-                            <tr>
-                                <th style="width: 60%;">Name</th>
-                                <th style="width: 19%;">Version</th>
-                            </tr>
-                            ${m}
-                        </table>` 
             }
         </script>
     </body>

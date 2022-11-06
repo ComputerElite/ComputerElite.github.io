@@ -16,7 +16,7 @@
             <div style="flex: 1; flex-grow: 0; text-align: center;">
                 <div style=" padding: 10px;">
                     <div style="font-size: 24px;">Mods Json Generator</div>
-                    <div class="headerDescription" style="width: 50%; margin: auto;">Make pull requests for <a href="https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json" target="_blank">this file</a></div>
+                    <div class="headerDescription" style="width: 50%; margin: auto;">Make pull requests for <a href="https://github.com/ComputerElite/ComputerElite.github.io/blob/main/tools/Beat_Saber/mods.json" target="_blank">this file</a></div>
                 </div>
                 <div style="display: flex;justify-content: space-between; flex-wrap: wrap;">
                     <div style="display: flex; flex-direction: column; min-width: 500px; margin-top: 50px;">
@@ -45,25 +45,20 @@
                             <input type="text" id="version">
                         </label>
                         <label>
-                            Made for Game Version/-s
+                            Made for Game Version
                             <input type="text" id="games">
                         </label>
                         <label>
                             Download link
                             <input type="text" id="link">
                         </label>
-                        
                         <label>
-                            Notes
-                            <input type="text" id="notes">
+                            Source code
+                            <input type="text" id="source">
                         </label>
                         <label>
                             <input type="checkbox" id="redirect">
                             Redirect to Website
-                        </label>
-                        <label>
-                            <input type="checkbox" id="core">
-                            Core Mod?
                         </label>
                         <input type="button" value="Generate JSON" onclick="GenerateJSON()">
                     </div>
@@ -81,9 +76,7 @@
             <script src="../../js/jszip.js"></script>
             <script>
                 const jsonE = document.getElementById("json")
-                const core = document.getElementById("core")
                 const redirect = document.getElementById("redirect")
-                const notes = document.getElementById("notes")
                 const link = document.getElementById("link")
                 const games = document.getElementById("games")
                 const version = document.getElementById("version")
@@ -91,9 +84,10 @@
                 const id = document.getElementById("id")
                 const description = document.getElementById("description")
                 const name = document.getElementById("name")
+                const source = document.getElementById("source")
                 var json = {}
 
-                fetch(`https://raw.githubusercontent.com/ComputerElite/BM/main/mods.json`).then(res => {
+                fetch(`mods.json`).then(res => {
                     res.json().then(res => {
                         json = res;
                         UpdateJSON()
@@ -104,49 +98,26 @@
                     jsonE.value = JSON.stringify(json, null, 4)
                 }
 
+                link.onchange = () => {
+                    var githubLink = ""
+                    if(link.value.includes("github.com")) {
+                        githubLink = link.value.substring(0, link.value.indexOf("releases"))
+                    }
+                    if(githubLink) source.value = githubLink
+                }
+
                 function GenerateJSON() {
                     console.log("generating")
-                    var existent = false
-                    var ModIndex = 0
-                    for(const c of json.mods) {
-                        if(c.ModID == id.value) {
-                            existent = true;
-                            break;
-                        }
-                        ModIndex++;
-                    }
-                    var toAdd = {
+                    if(!json[games.value]) json[games.value] = []
+                    json[games.value].unshift({
                         name: name.value,
-                        details: description.value,
-                        ModID: id.value,
-                        creator: creators.value.split(","),
-                        downloads: []
-                    }
-                    var toAdd2 = {
-                        modversion: version.value,
-                        gameversion: games.value.split(","),
+                        description: description.value,
+                        id: id.value,
+                        version: version.value,
                         download: link.value,
-                        forward: redirect.checked,
-                        coremod: core.checked,
-                        notes: notes.value
-                    }
-                    if(!existent) {
-                        console.log("not existent")
-                        for(var inn = json.mods.length; inn > 0; inn--) {
-                            var old = json.mods[inn-1];
-                            json.mods[inn] = old
-                        }
-                        ModIndex = 0;
-                        toAdd.downloads.push(toAdd2)
-                        console.log(json.mods.length)
-                        json.mods.unshift(toAdd)
-                        console.log(json.mods.length)
-                    } else {
-                        console.log("existent")
-                        toAdd.downloads = json.mods[ModIndex].downloads;
-                        toAdd.downloads.unshift(toAdd2)
-                        json.mods[ModIndex] = toAdd
-                    }
+                        source: source.value,
+                        author: creators.value
+                    })
                     UpdateJSON()
                     console.log("generated")
                 }
@@ -167,6 +138,7 @@
                             zip.loadAsync(reader.result).then(zip => {
                                 zip.file("mod.json").async("string").then(res => {
                                     var m = JSON.parse(res)
+                                    
                                     name.value = m.name;
                                     description.value = m.description;
                                     creators.value = (!m.porter ? "" : m.porter + ",") + m.author
