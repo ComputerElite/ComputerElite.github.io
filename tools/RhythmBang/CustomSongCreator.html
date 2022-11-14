@@ -38,6 +38,7 @@
                 <label>Song file<input type="file" id="song"></label>
                 <br>
                 <label>song bpm<input type="text" id="bpm"></label>
+                <label>song length (seconds)<input type="number" id="length"></label>
                 <br>
                 <label>song offset<input type="text" id="offset"></label>
                 <br>
@@ -68,6 +69,7 @@
             const song = document.getElementById("song")
             const bpm = document.getElementById("bpm")
             const offset = document.getElementById("offset")
+            const length = document.getElementById("length")
             const previewStart = document.getElementById("previewStart")
             const previewLength = document.getElementById("previewLength")
             const cover = document.getElementById("cover")
@@ -108,6 +110,7 @@
                     map.previewAudioLength = parseFloat(previewLength.value)
                     map.bpm = parseFloat(bpm.value)
                     map.offset = parseFloat(offset.value)
+                    map.length = parseInt(length.value)
                     map.songFileName = "song." + GetExtension(song.files[0].name)
                     map.coverFileName = "cover." + GetExtension(cover.files[0].name)
                     for(let i = 0; i < diffs.length; i++) {
