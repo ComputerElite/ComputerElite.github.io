@@ -1,6 +1,33 @@
 {
     "1.25.1": [
         {
+            "name": "NoParticles",
+            "description": "Allows you to disable various particles throughout the game",
+            "id": "NoParticles",
+            "version": "0.1.5",
+            "download": "https://github.com/kodenamekrak/NoParticles/releases/download/0.1.5/NoParticles-1.25.1-2.qmod",
+            "source": "https://github.com/kodenamekrak/NoParticles/",
+            "author": "AllyPallyUK, updated by KodenameKRAK"
+        },
+        {
+            "name": "Simple Beatmap Play Count",
+            "description": "",
+            "id": "BeatmapPlayCount",
+            "version": "0.2.1",
+            "download": "https://github.com/netux/BeatSaber-BeatmapPlayCount-Quest/releases/download/v0.2.1/BeatmapPlayCount.v0.2.1.qmod",
+            "source": "https://github.com/netux/BeatSaber-BeatmapPlayCount-Quest",
+            "author": "Netux"
+        },
+        {
+            "name": "Qolour Switcher",
+            "description": "Allows user full control over the colours of the notes, bombs, and walls!",
+            "id": "QolourSwitcher",
+            "version": "2.0.0",
+            "download": "https://github.com/NuggoDEV/Qolour-Switcher-Rewritten/releases/download/v2.0.0/QolourSwitcher.qmod",
+            "source": "https://githubhttps://github.com/NuggoDEV/Qolour-Switcher-Rewritten/",
+            "author": "Nuggo#9535"
+        },
+        {
             "name": "Acculight",
             "description": "changes the lighting on the result screen depending on the accuracy gained in the song",
             "id": "acculight",
