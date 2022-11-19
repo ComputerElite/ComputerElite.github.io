@@ -217,15 +217,6 @@
             "author": "FrozenAlex"
         },
         {
-            "name": "Nya",
-            "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
-            "id": "Nya",
-            "version": "0.2.3",
-            "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.3-bs-1.25.1/Nya.qmod",
-            "source": "https://github.com/FrozenAlex/Nya-quest/",
-            "author": "FrozenAlex"
-        },
-        {
             "name": "Pause Remapper",
             "description": "Allows the user to change which button pauses a map",
             "id": "PauseRemapper",
@@ -656,15 +647,6 @@
             "id": "Nya",
             "version": "0.2.4",
             "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.4-bs-1.24.0/Nya.qmod",
-            "source": "https://github.com/FrozenAlex/Nya-quest/",
-            "author": "FrozenAlex"
-        },
-        {
-            "name": "Nya",
-            "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
-            "id": "Nya",
-            "version": "0.2.3",
-            "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.3-bs-1.24.0/Nya.qmod",
             "source": "https://github.com/FrozenAlex/Nya-quest/",
             "author": "FrozenAlex"
         },
