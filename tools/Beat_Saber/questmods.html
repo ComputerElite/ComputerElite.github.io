@@ -116,7 +116,18 @@
                         coremods: [],
                         mods: []
                     }
-                    gameVersions[key].mods = value
+                    var mods = []
+                    for(const mod of value) {
+                        if(mods.map(x => x.id).includes(mod.id)) {
+                            var existing = mods[mods.map(x => x.id).indexOf(mod.id)]
+                            if(compare(mod.version, existing.version) >= 0) {
+                                mods[mods.map(x => x.id).indexOf(mod.id)] = mod
+                            }
+                        } else {
+                            mods.push(mod)
+                        }
+                    }
+                    gameVersions[key].mods = mods
                 }
                 AddGameVersions()
                 Display(gameversion.value)
