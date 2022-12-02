@@ -1,6 +1,15 @@
 {
     "1.25.1": [
         {
+            "name": "Saber Tailor",
+            "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+            "id": "sabertailor",
+            "version": "1.1.1",
+            "download": "https://cdn.discordapp.com/attachments/1015346189828374528/1047677092554342520/Saber_Tailor.qmod",
+            "source": "",
+            "author": "Polly51104"
+        },
+        {
             "name": "MultiplayerCore",
             "description": "Port of MultiplayerCore, the PC mod that adds features to BeatTogether Multiplayer.",
             "id": "multiplayer-core",
