@@ -1,6 +1,24 @@
 {
     "1.25.1": [
         {
+            "name": "Colorama",
+            "description": "Change the colors of the menu and other neat color related options.",
+            "id": "colorama",
+            "version": "2.1.0",
+            "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1251.qmod",
+            "source": "https://github.com/mineblock11/Colorama/",
+            "author": "mineblock11"
+        },
+        {
+            "name": "Vent",
+            "description": "I swear you just vented...",
+            "id": "vent",
+            "version": "1.0.0",
+            "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0+1251.qmod",
+            "source": "https://github.com/mineblock11/Vent/",
+            "author": "cal117"
+        },
+        {
             "name": "Saber Tailor",
             "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
             "id": "sabertailor",
