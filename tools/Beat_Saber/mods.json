@@ -1,6 +1,78 @@
 {
     "1.25.1": [
         {
+            "name": "Third Person mod",
+            "description": "Features:\n- Play in third person\n- Fix your camera to your saber\n- Fix your camera\n- Fly through the enviorment",
+            "id": "Play3rdPer",
+            "version": "0.9.1",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.9.1/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "SmallQubes",
+            "description": "Your lovely default cubes, but smoll. Modifiers compatible!",
+            "id": "SmallQubes",
+            "version": "0.2.0",
+            "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.2.0/SmallQubes.qmod",
+            "source": "https://github.com/NSGolova/SmallQubes/",
+            "author": "NSGolova"
+        },
+        {
+            "name": "BeatLeader",
+            "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
+            "id": "BeatLeader",
+            "version": "0.5.2",
+            "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.2/BeatLeader_1_25_1.qmod",
+            "source": "https://github.com/BeatLeader/beatleader-qmod/",
+            "author": "NSGolova"
+        },
+        {
+            "name": "BSNightcoreQuest",
+            "description": "Removes pitch compensation to make songs go nightcore on different speed",
+            "id": "BSNightcoreQuest",
+            "version": "0.1.0",
+            "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.1.0/BSNightcoreQuest_1_25_1.qmod",
+            "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+            "author": "Tatenshi"
+        },
+        {
+            "name": "More By Core",
+            "description": "More By Core, for 1.25.1! Lets you customize BeatSaber with added stuff!",
+            "id": "morebycore",
+            "version": "1.3.1",
+            "download": "https://github.com/Core-Quest/MoreByCore/releases/download/Bug-Fix-1/MoreByCore-v2.qmod",
+            "source": "https://github.com/Core-Quest/MoreByCore/",
+            "author": "Core"
+        },
+        {
+            "name": "Colorama",
+            "description": "Change the colors of the menu and other neat color related options.",
+            "id": "colorama",
+            "version": "2.1.0",
+            "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1251.qmod",
+            "source": "https://github.com/mineblock11/Colorama/",
+            "author": "mineblock11"
+        },
+        {
+            "name": "Vent",
+            "description": "I swear you just vented...",
+            "id": "vent",
+            "version": "1.0.0",
+            "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0+1251.qmod",
+            "source": "https://github.com/mineblock11/Vent/",
+            "author": "cal117"
+        },
+        {
+            "name": "Saber Tailor",
+            "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+            "id": "sabertailor",
+            "version": "1.1.1",
+            "download": "https://cdn.discordapp.com/attachments/1015346189828374528/1047677092554342520/Saber_Tailor.qmod",
+            "source": "",
+            "author": "Polly51104"
+        },
+        {
             "name": "MultiplayerCore",
             "description": "Port of MultiplayerCore, the PC mod that adds features to BeatTogether Multiplayer.",
             "id": "multiplayer-core",
