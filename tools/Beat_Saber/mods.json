@@ -1,6 +1,15 @@
 {
     "1.25.1": [
         {
+            "name": "RandomSongPicker",
+            "description": "Adds a button, that picks a random song out of the current list",
+            "id": "RandomSongPicker",
+            "version": "0.2.1",
+            "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.2.2/RandomSongPicker_1_25_1.qmod",
+            "source": "https://github.com/Tatenshi/RandomSongPicker/",
+            "author": "Tatenshi"
+        },
+        {
             "name": "ScoreQolour",
             "description": "Changes your note, bomb and obstacle colours based on your score",
             "id": "ScoreQolour",
