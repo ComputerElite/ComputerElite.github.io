@@ -1,6 +1,51 @@
 {
     "1.25.1": [
         {
+            "name": "ScoreQolour",
+            "description": "Changes your note, bomb and obstacle colours based on your score",
+            "id": "ScoreQolour",
+            "version": "1.0.0",
+            "download": "https://github.com/NuggoDEV/ScoreQolour/releases/download/v1.0.0/ScoreQolour.qmod",
+            "source": "https://github.com/NuggoDEV/ScoreQolour/",
+            "author": "Nuggo"
+        },
+        {
+            "name": "Third Person mod",
+            "description": "Features:\n- Play in third person\n- Fix your camera to your saber\n- Fix your camera\n- Fly through the enviorment",
+            "id": "Play3rdPer",
+            "version": "0.9.1",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.9.1/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "SmallQubes",
+            "description": "Your lovely default cubes, but smoll. Modifiers compatible!",
+            "id": "SmallQubes",
+            "version": "0.2.0",
+            "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.2.0/SmallQubes.qmod",
+            "source": "https://github.com/NSGolova/SmallQubes/",
+            "author": "NSGolova"
+        },
+        {
+            "name": "BeatLeader",
+            "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
+            "id": "BeatLeader",
+            "version": "0.5.2",
+            "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.2/BeatLeader_1_25_1.qmod",
+            "source": "https://github.com/BeatLeader/beatleader-qmod/",
+            "author": "NSGolova"
+        },
+        {
+            "name": "BSNightcoreQuest",
+            "description": "Removes pitch compensation to make songs go nightcore on different speed",
+            "id": "BSNightcoreQuest",
+            "version": "0.1.0",
+            "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.1.0/BSNightcoreQuest_1_25_1.qmod",
+            "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+            "author": "Tatenshi"
+        },
+        {
             "name": "More By Core",
             "description": "More By Core, for 1.25.1! Lets you customize BeatSaber with added stuff!",
             "id": "morebycore",
