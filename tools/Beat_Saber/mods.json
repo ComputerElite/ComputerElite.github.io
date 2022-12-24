@@ -1,6 +1,15 @@
 {
     "1.25.1": [
         {
+            "name": "TooManyTweaks",
+            "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
+            "id": "toomanytweaks",
+            "version": "0.3.0",
+            "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.0/toomanytweaks-0.3.0+1251.qmod",
+            "source": "https://github.com/mineblock11/TooManyTweaks/",
+            "author": "mineblock11"
+        },
+        {
             "name": "PitchBlaq",
             "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one).\nConfig menu include light and spectrogram.\n\nPort from: https://github.com/Loloppe/BeatSaber_PitchBlack\n\nAny issues? Type to me on discord: Anony#4138 or open a github issue :D",
             "id": "PitchBlaq",
