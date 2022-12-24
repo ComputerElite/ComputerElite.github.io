@@ -1,6 +1,15 @@
 {
     "1.25.1": [
         {
+            "name": "PitchBlaq",
+            "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one).\nConfig menu include light and spectrogram.\n\nPort from: https://github.com/Loloppe/BeatSaber_PitchBlack\n\nAny issues? Type to me on discord: Anony#4138 or open a github issue :D",
+            "id": "PitchBlaq",
+            "version": "0.1.0",
+            "download": "https://github.com/WaffleTheCool/PitchBlaq/releases/download/v0.1.0/PitchBlaq.qmod",
+            "source": "https://github.com/WaffleTheCool/PitchBlaq/",
+            "author": "Loloppe | Anony"
+        },
+        {
             "name": "RandomSongPicker",
             "description": "Adds a button, that picks a random song out of the current list",
             "id": "RandomSongPicker",
