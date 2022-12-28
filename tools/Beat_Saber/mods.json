@@ -4103,5 +4103,25 @@
             "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
             "author": "RedBrumbler"
         }
+    ],
+    "1.27.0_3631150051": [
+        {
+            "name": "NoParticles",
+            "description": "Allows you to disable various particles throughout the game",
+            "id": "NoParticles",
+            "version": "0.1.8",
+            "download": "https://github.com/kodenamekrak/NoParticles/releases/download/0.1.8/NoParticles-1.27.0.qmod",
+            "source": "https://github.com/kodenamekrak/NoParticles/",
+            "author": "AllyPallyUK, KodenameKRAK"
+        },
+        {
+            "name": "Colorama",
+            "description": "Change the colors of the menu and other neat color related options.",
+            "id": "colorama",
+            "version": "2.1.0",
+            "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0+1270_3631150051.qmod",
+            "source": "https://github.com/mineblock11/Colorama/",
+            "author": "mineblock11"
+        }
     ]
 }
