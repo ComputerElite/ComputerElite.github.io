@@ -4041,6 +4041,42 @@
     ],
     "1.26.2": [
         {
+            "name": "CrashMod",
+            "description": "undefined",
+            "id": "CrashMod",
+            "version": "0.10.0",
+            "download": "https://github.com/ComputerElite/CrashMod/releases/download/0.10.0/CrashMod.qmod",
+            "source": "https://github.com/ComputerElite/CrashMod/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "RedBar",
+            "description": "undefined",
+            "id": "RedBar",
+            "version": "1.12.0",
+            "download": "https://github.com/ComputerElite/RedBar/releases/download/1.12.0/RedBar.qmod",
+            "source": "https://github.com/ComputerElite/RedBar/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Third Person mod",
+            "description": "undefined",
+            "id": "Play3rdPer",
+            "version": "0.10.0",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.10.0/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Streamer Tools",
+            "description": "Allows applications to get information from the game like, currently played song.",
+            "id": "Streamer-Tools",
+            "version": "0.8.0",
+            "download": "https://github.com/EnderdracheLP/streamer-tools/releases/download/0.8.0/StreamerTools.qmod",
+            "source": "https://github.com/EnderdracheLP/streamer-tools/",
+            "author": "EnderdracheLP, ComputerElite, Lauriethefish, Phaze"
+        },
+        {
             "name": "Qosmetics Boxes",
             "description": "Qosmetics module that adds Box capabilities",
             "id": "qosmetics-walls",
