@@ -4106,6 +4106,24 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "PitchBlaq",
+            "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one). Config menu include light and spectrogram.",
+            "id": "PitchBlaq",
+            "version": "0.1.2",
+            "download": "https://github.com/WaffleTheCool/PitchBlaq/releases/download/v0.1.2/PitchBlaq.qmod",
+            "source": "https://github.com/WaffleTheCool/PitchBlaq/",
+            "author": "Loloppe | Waffle"
+        },
+        {
+            "name": "Adblock",
+            "description": "???",
+            "id": "adblock",
+            "version": "0.1.0",
+            "download": "https://github.com/WaffleTheCool/Adblock/releases/download/1.27.0_3631150051/Adblock.qmod",
+            "source": "https://github.com/WaffleTheCool/Adblock/",
+            "author": "Waffle"
+        },
+        {
             "name": "NoParticles",
             "description": "Allows you to disable various particles throughout the game",
             "id": "NoParticles",
