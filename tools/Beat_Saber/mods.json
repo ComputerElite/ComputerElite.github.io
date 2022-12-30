@@ -4106,6 +4106,42 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "Streamer Tools",
+            "description": "Allows applications to get information from the game like, currently played song.\n\nMod Features:\n- Provide information about your game via wifi (more info: https://github.com/EnderdracheLP/streamer-tools/wiki)\n- Provide your watchers with information about your song\nby @EnderdracheLP and @ComputerElite\n\nClient features:\n- Various Overlays to add to OBS (including a overlay builder)\n- Fetching of information from your Quest\nby @ComputerElite\n\nClient Download (needed on PC): https://github.com/ComputerElite/streamer-tools-client/releases\nMod Setup video: https://www.youtube.com/watch?v=1OMHjjSi-5s",
+            "id": "Streamer-Tools",
+            "version": "0.9.0",
+            "download": "https://github.com/EnderdracheLP/streamer-tools/releases/download/0.9.0/Streamer-Tools.qmod",
+            "source": "https://github.com/EnderdracheLP/streamer-tools/",
+            "author": "EnderdracheLP, ComputerElite, Lauriethefish, Phaze"
+        },
+        {
+            "name": "RedBar",
+            "description": "Change the color of your health bar according to your health",
+            "id": "RedBar",
+            "version": "1.12.0",
+            "download": "https://github.com/ComputerElite/RedBar/releases/download/1.13.0/RedBar.qmod",
+            "source": "https://github.com/ComputerElite/RedBar/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Third Person mod",
+            "description": "Features:\n- Play in third person\n- Fix your camera to your saber\n- Fix your camera\n- Fly through the enviorment",
+            "id": "Play3rdPer",
+            "version": "0.11.0",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.11.0/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "CrashMod",
+            "description": "Crash your game if you are bad and good",
+            "id": "CrashMod",
+            "version": "0.11.0",
+            "download": "https://github.com/ComputerElite/CrashMod/releases/download/0.11.0/CrashMod.qmod",
+            "source": "https://github.com/ComputerElite/CrashMod/",
+            "author": "ComputerElite"
+        },
+        {
             "name": "MultiplayerCore",
             "description": "Port of MultiplayerCore, the PC mod that adds features to BeatTogether Multiplayer.",
             "id": "multiplayer-core",
