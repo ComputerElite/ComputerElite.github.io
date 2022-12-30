@@ -4106,6 +4106,24 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "SmallQubes",
+            "description": "Your lovely default cubes, but smoll. Modifiers compatible!",
+            "id": "SmallQubes",
+            "version": "0.2.1",
+            "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.2.1/SmallQubes.qmod",
+            "source": "https://github.com/NSGolova/SmallQubes/",
+            "author": "NSGolova"
+        },
+        {
+            "name": "BeatLeader",
+            "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
+            "id": "BeatLeader",
+            "version": "0.5.3",
+            "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.3/BeatLeader_1_27_0.qmod",
+            "source": "https://github.com/BeatLeader/beatleader-qmod/",
+            "author": "NSGolova"
+        },
+        {
             "name": "ShortSaber",
             "description": "Change the length of the saber",
             "id": "ShortSaber",
