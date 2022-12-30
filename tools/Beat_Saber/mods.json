@@ -1,6 +1,69 @@
 {
     "1.25.1": [
         {
+            "name": "Qosmetics Boxes",
+            "description": "Qosmetics module that adds Box capabilities",
+            "id": "qosmetics-walls",
+            "version": "0.1.1",
+            "download": "https://github.com/Qosmetics/Qosmetics-Walls/releases/download/v0.1.1/QosmeticsBoxes.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Walls/",
+            "author": "RedBrumbler"
+        },
+        {
+            "name": "Qosmetics Cyoobs",
+            "description": "Qosmetics module that adds Cyoob capabilities",
+            "id": "qosmetics-notes",
+            "version": "0.1.1",
+            "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.1.1/QosmeticsCyoobs.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
+            "author": "RedBrumbler"
+        },
+        {
+            "name": "Qosmetics Whackers",
+            "description": "Qosmetics module that adds Whacker capabilities",
+            "id": "qosmetics-sabers",
+            "version": "0.1.1",
+            "download": "https://github.com/Qosmetics/Qosmetics-Sabers/releases/download/v0.1.1/QosmeticsWhackers.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
+            "author": "RedBrumbler"
+        },
+        {
+            "name": "TooManyTweaks",
+            "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
+            "id": "toomanytweaks",
+            "version": "0.3.0",
+            "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.0/toomanytweaks-0.3.0+1251.qmod",
+            "source": "https://github.com/mineblock11/TooManyTweaks/",
+            "author": "mineblock11"
+        },
+        {
+            "name": "PitchBlaq",
+            "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one).\nConfig menu include light and spectrogram.\n\nPort from: https://github.com/Loloppe/BeatSaber_PitchBlack\n\nAny issues? Type to me on discord: Anony#4138 or open a github issue :D",
+            "id": "PitchBlaq",
+            "version": "0.1.0",
+            "download": "https://github.com/WaffleTheCool/PitchBlaq/releases/download/v0.1.0/PitchBlaq.qmod",
+            "source": "https://github.com/WaffleTheCool/PitchBlaq/",
+            "author": "Loloppe | Anony"
+        },
+        {
+            "name": "RandomSongPicker",
+            "description": "Adds a button, that picks a random song out of the current list",
+            "id": "RandomSongPicker",
+            "version": "0.2.1",
+            "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.2.2/RandomSongPicker_1_25_1.qmod",
+            "source": "https://github.com/Tatenshi/RandomSongPicker/",
+            "author": "Tatenshi"
+        },
+        {
+            "name": "ScoreQolour",
+            "description": "Changes your note, bomb and obstacle colours based on your score",
+            "id": "ScoreQolour",
+            "version": "1.0.0",
+            "download": "https://github.com/NuggoDEV/ScoreQolour/releases/download/v1.0.0/ScoreQolour.qmod",
+            "source": "https://github.com/NuggoDEV/ScoreQolour/",
+            "author": "Nuggo"
+        },
+        {
             "name": "Third Person mod",
             "description": "Features:\n- Play in third person\n- Fix your camera to your saber\n- Fix your camera\n- Fly through the enviorment",
             "id": "Play3rdPer",
@@ -3974,6 +4037,190 @@
             "download": "https://cdn.discordapp.com/attachments/765630505000894484/775909171714981908/scorepercentage.zip",
             "source": null,
             "author": "FutureMapper"
+        }
+    ],
+    "1.26.2": [
+        {
+            "name": "CrashMod",
+            "description": "undefined",
+            "id": "CrashMod",
+            "version": "0.10.0",
+            "download": "https://github.com/ComputerElite/CrashMod/releases/download/0.10.0/CrashMod.qmod",
+            "source": "https://github.com/ComputerElite/CrashMod/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "RedBar",
+            "description": "undefined",
+            "id": "RedBar",
+            "version": "1.12.0",
+            "download": "https://github.com/ComputerElite/RedBar/releases/download/1.12.0/RedBar.qmod",
+            "source": "https://github.com/ComputerElite/RedBar/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Third Person mod",
+            "description": "undefined",
+            "id": "Play3rdPer",
+            "version": "0.10.0",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.10.0/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Streamer Tools",
+            "description": "Allows applications to get information from the game like, currently played song.",
+            "id": "Streamer-Tools",
+            "version": "0.8.0",
+            "download": "https://github.com/EnderdracheLP/streamer-tools/releases/download/0.8.0/StreamerTools.qmod",
+            "source": "https://github.com/EnderdracheLP/streamer-tools/",
+            "author": "EnderdracheLP, ComputerElite, Lauriethefish, Phaze"
+        },
+        {
+            "name": "Qosmetics Boxes",
+            "description": "Qosmetics module that adds Box capabilities",
+            "id": "qosmetics-walls",
+            "version": "0.1.2",
+            "download": "https://github.com/Qosmetics/Qosmetics-Walls/releases/download/v0.1.2/QosmeticsBoxes.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Walls/",
+            "author": "RedBrumbler"
+        },
+        {
+            "name": "Qosmetics Cyoobs",
+            "description": "Qosmetics module that adds Cyoob capabilities",
+            "id": "qosmetics-notes",
+            "version": "0.1.2",
+            "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.1.2/QosmeticsCyoobs.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
+            "author": "RedBrumbler"
+        },
+        {
+            "name": "Qosmetics Whackers",
+            "description": "Qosmetics module that adds Whacker capabilities",
+            "id": "qosmetics-sabers",
+            "version": "0.1.3",
+            "download": "https://github.com/Qosmetics/Qosmetics-Sabers/releases/download/v0.1.3/QosmeticsWhackers.qmod",
+            "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
+            "author": "RedBrumbler"
+        }
+    ],
+    "1.27.0_3631150051": [
+        {
+            "name": "ShortSaber",
+            "description": "Change the length of the saber",
+            "id": "ShortSaber",
+            "version": "0.1.4",
+            "download": "https://github.com/oli-ctrl/ShortSaber/releases/download/v0.1.4/ShortSaber.qmod",
+            "source": "https://github.com/oli-ctrl/ShortSaber/",
+            "author": "Oli"
+        },
+        {
+            "name": "Acculight",
+            "description": "changes the lighting on the result screen depending on the accuracy gained in the song",
+            "id": "acculight",
+            "version": "0.1.3",
+            "download": "https://github.com/oli-ctrl/acculight/releases/download/v0.1.3/Acculight.qmod",
+            "source": "https://github.com/oli-ctrl/acculight/",
+            "author": "Oli"
+        },
+        {
+            "name": "SessionQombo",
+            "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game `In The Groove` ",
+            "id": "SessionQombo",
+            "version": "0.1.1",
+            "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.1/SessionQombo.qmod",
+            "source": "https://github.com/oli-ctrl/SessionQombo/",
+            "author": "Original by Headaassbtw, ported by Oli"
+        },
+        {
+            "name": "Streamer Tools",
+            "description": "Allows applications to get information from the game like, currently played song.\n\nMod Features:\n- Provide information about your game via wifi (more info: https://github.com/EnderdracheLP/streamer-tools/wiki)\n- Provide your watchers with information about your song\nby @EnderdracheLP and @ComputerElite\n\nClient features:\n- Various Overlays to add to OBS (including a overlay builder)\n- Fetching of information from your Quest\nby @ComputerElite\n\nClient Download (needed on PC): https://github.com/ComputerElite/streamer-tools-client/releases\nMod Setup video: https://www.youtube.com/watch?v=1OMHjjSi-5s",
+            "id": "Streamer-Tools",
+            "version": "0.9.0",
+            "download": "https://github.com/EnderdracheLP/streamer-tools/releases/download/0.9.0/Streamer-Tools.qmod",
+            "source": "https://github.com/EnderdracheLP/streamer-tools/",
+            "author": "EnderdracheLP, ComputerElite, Lauriethefish, Phaze"
+        },
+        {
+            "name": "RedBar",
+            "description": "Change the color of your health bar according to your health",
+            "id": "RedBar",
+            "version": "1.12.0",
+            "download": "https://github.com/ComputerElite/RedBar/releases/download/1.13.0/RedBar.qmod",
+            "source": "https://github.com/ComputerElite/RedBar/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "Third Person mod",
+            "description": "Features:\n- Play in third person\n- Fix your camera to your saber\n- Fix your camera\n- Fly through the enviorment",
+            "id": "Play3rdPer",
+            "version": "0.11.0",
+            "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.11.0/Play3rdPer.qmod",
+            "source": "https://github.com/ComputerElite/play3rdper/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "CrashMod",
+            "description": "Crash your game if you are bad and good",
+            "id": "CrashMod",
+            "version": "0.11.0",
+            "download": "https://github.com/ComputerElite/CrashMod/releases/download/0.11.0/CrashMod.qmod",
+            "source": "https://github.com/ComputerElite/CrashMod/",
+            "author": "ComputerElite"
+        },
+        {
+            "name": "MultiplayerCore",
+            "description": "Port of MultiplayerCore, the PC mod that adds features to BeatTogether Multiplayer.",
+            "id": "multiplayer-core",
+            "version": "1.3.5",
+            "download": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/releases/download/1.3.5/MultiplayerCore_1.3.5.qmod",
+            "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
+            "author": "EnderdracheLP, cubic,Goobie"
+        },
+        {
+            "name": "BeatTogether",
+            "description": "A multiplayer private server for the modding community. Supports crossplay between PC and Quest.",
+            "id": "BeatTogether",
+            "version": "1.7.2",
+            "download": "https://github.com/BeatTogether/BeatTogether.Quest/releases/download/v1.7.2/BeatTogether_v1.7.2.qmod",
+            "source": "https://github.com/BeatTogether/BeatTogether.Quest/",
+            "author": "BeatTogether Team"
+        },
+        {
+            "name": "PitchBlaq",
+            "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one). Config menu include light and spectrogram.",
+            "id": "PitchBlaq",
+            "version": "0.1.2",
+            "download": "https://github.com/WaffleTheCool/PitchBlaq/releases/download/v0.1.2/PitchBlaq.qmod",
+            "source": "https://github.com/WaffleTheCool/PitchBlaq/",
+            "author": "Loloppe | Waffle"
+        },
+        {
+            "name": "Adblock",
+            "description": "???",
+            "id": "adblock",
+            "version": "0.1.0",
+            "download": "https://github.com/WaffleTheCool/Adblock/releases/download/1.27.0_3631150051/Adblock.qmod",
+            "source": "https://github.com/WaffleTheCool/Adblock/",
+            "author": "Waffle"
+        },
+        {
+            "name": "NoParticles",
+            "description": "Allows you to disable various particles throughout the game",
+            "id": "NoParticles",
+            "version": "0.1.8",
+            "download": "https://github.com/kodenamekrak/NoParticles/releases/download/0.1.8/NoParticles-1.27.0.qmod",
+            "source": "https://github.com/kodenamekrak/NoParticles/",
+            "author": "AllyPallyUK, KodenameKRAK"
+        },
+        {
+            "name": "Colorama",
+            "description": "Change the colors of the menu and other neat color related options.",
+            "id": "colorama",
+            "version": "2.1.0",
+            "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0+1270_3631150051.qmod",
+            "source": "https://github.com/mineblock11/Colorama/",
+            "author": "mineblock11"
         }
     ]
 }
