@@ -158,7 +158,7 @@
                 gameversions.forEach(key => {
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
-                if(params.get("version")) {
+                if(params.get("version") && gameversions.includes(params.get("version"))) {
                     gameversion.value = params.get("version")
                 }
             }
