@@ -19,6 +19,8 @@
         </div>
         <script src="../../js/standard.js"></script>
         <script>
+            const params = new URLSearchParams(window.location.search)
+            const version = params.get("version")
             const pages = [
                 {
                     "name": "",
@@ -35,7 +37,7 @@
                             "description": "Download Beat Saber Mods for your game",
                             "img": "",
                             "color": "#FFFFFF",
-                            "url": "https://computerelite.github.io/tools/Beat_Saber/questmods.html"
+                            "url": `https://computerelite.github.io/tools/Beat_Saber/questmods.html?version=${version}`
                         }
                     ]
                 }
