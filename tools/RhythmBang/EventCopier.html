@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <link rel="icon" href="assets/CE_64px.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="RhythmBang Custom event copier" />
+        <meta property="og:description" content="Copy events from one difficulty to another" />
+        <style>
+            input[type='text'] {
+                width: 600px;
+            }
+            input[type='file'] {
+                width: 600px;
+            }
+            input {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding-top: 10px; width: 100%; display: flex;">
+            <div style="flex: 1; padding: 10px; text-align: center;" class="bigBox">
+                <h1>RhythmBang Event copier</h1>
+                <h3>Copy Events from one difficulty to another one</h3>
+                <h2>Song info</h2>
+                <label>Song file<input type="file" id="song"></label>
+                <br><input type="button" onclick="LoadSong()" value="Load Song">
+                <br><label>Song name<input type="text" readonly id="name"></label>
+                
+                <h3>Copy events</h3>
+                from
+                <select id="from">
+
+                </select>
+                to
+                <select id="to">
+
+                </select>
+                <br>
+                <br>
+                <input type="button" onclick="CopyEvents()" value="Copy">
+                <input type="button" onclick="SaveChanges()" value="Download modified song">
+                <div style="font-size: 2em;" id="diffsE"></div>
+            </div>
+        </div>
+        <script src="../../js/standard.js"></script>
+        <script src="../../js/jszip.js"></script>
+        <script>
+            const name = document.getElementById("name")
+            const from = document.getElementById("from")
+            const song = document.getElementById("song")
+            const to = document.getElementById("to")
+
+            var diffs = []
+
+            var zip = null
+            var difficulties = {
+                
+            }
+
+            var eventEnumValuesToCopy = [
+                6, // Flash
+                7, // ColorChange
+                8, // Drive
+                9, // BpmChange
+                10 // Shake
+            ]
+
+            function CopyEvents() {
+                if(from.value == to.value) alert("Cannot copy from the same difficulty")
+                else {
+                    var fromD = difficulties[from.value]
+                    var toD = difficulties[to.value]
+                    for(let i = 0; i < fromD.targets.length; i++) {
+                        if(eventEnumValuesToCopy.includes(fromD.targets[i].type)) {
+                            toD.targets.push(fromD.targets[i])
+                        }
+                    }
+                    alert("Events copied")
+                }
+            }
+
+            function LoadSong() {
+                zip = new JSZip()
+                zip.loadAsync(song.files[0])
+                .then(function(zip) {
+                    zip.file("map.json").async("string")
+                    .then(function(map) {
+                        map = JSON.parse(map)
+                        name.value = map.song
+                        from.innerHTML = ""
+                        to.innerHTML = ""
+                        for(let i = 0; i < map.difficulties.length; i++) {
+                            zip.file(map.difficulties[i].difficultyFileName).async("string")
+                            .then(function(d) {
+                                from.innerHTML += `<option value="${map.difficulties[i].difficultyFileName}">${map.difficulties[i].difficultyFileName}`
+                                to.innerHTML += `<option value="${map.difficulties[i].difficultyFileName}">${map.difficulties[i].difficultyFileName}`
+                                var di = i
+                                difficulties[map.difficulties[di].difficultyFileName] = JSON.parse(d ? d : "{}")
+                                if(!difficulties[map.difficulties[di].difficultyFileName].targets) difficulties[map.difficulties[di].difficultyFileName].targets = []
+                            })
+                        }
+                    })
+                })
+            }
+
+            function SaveChanges() {
+                for(const [key, value] of Object.entries(difficulties)) {
+                    zip.file(key, JSON.stringify(value))
+                }
+                zip.generateAsync({type:"blob"})
+                .then(function(content) {
+                    saveAs(content, name.value + ".zip");
+                    alert("Put the zip file in the custom songs folder of RhythmBang and start the game. Hold shift while selecting a difficulty to map it")
+                });
+            }
+
+            function saveAs(data, filename)
+            {
+                console.log('saving ' + filename + '...')
+            
+                var blob = new Blob([data], {type: 'octet/stream'});
+                var url = window.URL.createObjectURL(blob);
+            
+                if(navigator && navigator.msSaveBlob)
+                {
+                    console.log("using msSaveBlob...");
+                    navigator.msSaveBlob(blob, filename);
+                }
+                else
+                {
+                    var a = document.createElement('a');
+                    a.style = "display: none";
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    try
+                    {
+                        a.click();
+                    }
+                    catch(e)
+                    {
+                        console.error(e);
+                        console.log('failed to save file');
+                    }
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }
+            }
+
+            function GetExtension(filename){
+                return filename.split('.').pop()
+            }
+        </script>
+    </body>
+</html>
