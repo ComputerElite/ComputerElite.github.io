@@ -4115,6 +4115,69 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "SearchFixes",
+            "description": "An improved search algorithm for Beat Saber",
+            "id": "SearchFixes",
+            "version": "1.2.4",
+            "download": "https://github.com/FranciscoRibeiro03/SearchFixesQuest/releases/download/v1.2.4/SearchFixes.qmod",
+            "source": "https://github.com/FranciscoRibeiro03/SearchFixesQuest/",
+            "author": "rui2015"
+        },
+        {
+            "name": "BSNightcoreQuest",
+            "description": "Removes pitch compensation to make songs go nightcore on different speed",
+            "id": "BSNightcoreQuest",
+            "version": "0.1.0",
+            "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.1.0/BSNightcoreQuest_1_27_0.qmod",
+            "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+            "author": "Tatenshi"
+        },
+        {
+            "name": "CrashReporter",
+            "description": "Automatically upload crashes.",
+            "id": "crashreporter",
+            "version": "0.1.8",
+            "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.8/CrashReporter.qmod",
+            "source": "https://github.com/darknight1050/CrashReporter/",
+            "author": "darknight1050"
+        },
+        {
+            "name": "ChatUI",
+            "description": "Shows your Twitch Chat Ingame",
+            "id": "chatui",
+            "version": "0.2.11",
+            "download": "https://github.com/darknight1050/ChatUI/releases/download/v0.2.11/ChatUI.qmod",
+            "source": "https://github.com/darknight1050/ChatUI/",
+            "author": "darknight1050"
+        },
+        {
+            "name": "RandomSongPicker",
+            "description": "Adds a button, that picks a random song out of the current list",
+            "id": "RandomSongPicker",
+            "version": "0.2.2",
+            "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.2.2/RandomSongPicker_1_27_0.qmod",
+            "source": "https://github.com/Tatenshi/RandomSongPicker/",
+            "author": "Tatenshi"
+        },
+        {
+            "name": "Vent",
+            "description": "I swear you just vented...",
+            "id": "vent",
+            "version": "1.0.0",
+            "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0+1270_3631150051.qmod",
+            "source": "https://github.com/mineblock11/Vent/",
+            "author": "mineblock11"
+        },
+        {
+            "name": "TooManyTweaks",
+            "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
+            "id": "toomanytweaks",
+            "version": "0.3.1",
+            "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.1/TooManyTweaks-0.3.1+1270_3631150051.qmod",
+            "source": "https://github.com/mineblock11/TooManyTweaks/",
+            "author": "mineblock11"
+        },
+        {
             "name": "Speecil Tweaks",
             "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Results Tweaks and more!",
             "id": "SpeecilTweaks",
