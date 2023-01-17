@@ -4169,6 +4169,15 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "ScoreSaber",
+            "description": "Allows you to upload scores to an online leaderboard at https://scoresaber.com. Earn PP from ranked maps and compare scores with others.",
+            "id": "scoresaber",
+            "version": "2.0.0",
+            "download": "https://scoresaber.com/quest",
+            "source": "https://github.com/ScoreSaber/ScoreSaber-Quest",
+            "author": "Umbranox, Optimus, RedBrumbler"
+        },
+        {
             "name": "Nya",
             "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
             "id": "Nya",
