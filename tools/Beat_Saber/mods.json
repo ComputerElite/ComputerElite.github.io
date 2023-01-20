@@ -4169,6 +4169,24 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "ImageFactory",
+            "description": "Place and customize images throughout your game.",
+            "id": "ImageFactory",
+            "version": "1.0.1",
+            "download": "https://github.com/OptimusChen/ImageFactory-Quest/releases/download/v1.0.1/ImageFactory.qmod",
+            "source": "https://github.com/OptimusChen/ImageFactory-Quest/",
+            "author": "Optimus"
+        },
+        {
+            "name": "BeatLeader",
+            "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
+            "id": "BeatLeader",
+            "version": "0.5.4",
+            "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.4/BeatLeader_1_27_0.qmod",
+            "source": "https://github.com/BeatLeader/beatleader-qmod/",
+            "author": "NSGolova"
+        },
+        {
             "name": "ScoreSaber",
             "description": "Allows you to upload scores to an online leaderboard at https://scoresaber.com. Earn PP from ranked maps and compare scores with others.",
             "id": "scoresaber",
