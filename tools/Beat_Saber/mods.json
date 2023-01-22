@@ -4187,6 +4187,15 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "BeatLeader",
+            "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
+            "id": "BeatLeader",
+            "version": "0.5.5",
+            "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.5/BeatLeader_1_27_0.qmod",
+            "source": "https://github.com/BeatLeader/beatleader-qmod/",
+            "author": "NSGolova"
+        },
+        {
             "name": "Replay",
             "description": "Watch back your best scores!",
             "id": "replay",
