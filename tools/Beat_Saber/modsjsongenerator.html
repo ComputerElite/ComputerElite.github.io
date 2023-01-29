@@ -39,6 +39,14 @@
                     </div>
                     <div style="display: flex; flex-direction: column; min-width: 500px; margin-top: 50px;">
                         <label>
+                            Download link
+                            <input placeholder="paste a dl link or drag it here from github" type="text" id="link">
+                        </label>
+                        <label>
+                            Source code
+                            <input type="text" id="source">
+                        </label>
+                        <label>
                             Mod Creator/-s
                             <input type="text" id="creators">
                         </label>
@@ -49,14 +57,6 @@
                         <label>
                             Made for Game Version
                             <input type="text" id="games">
-                        </label>
-                        <label>
-                            Download link
-                            <input type="text" id="link">
-                        </label>
-                        <label>
-                            Source code
-                            <input type="text" id="source">
                         </label>
                         <label>
                             <input type="checkbox" id="redirect">
@@ -79,6 +79,9 @@
             <script>
                 const jsonE = document.getElementById("json")
                 const redirect = document.getElementById("redirect")
+                /**
+                 * @type HTMLInputElement
+                 **/
                 const link = document.getElementById("link")
                 const games = document.getElementById("games")
                 const version = document.getElementById("version")
@@ -172,6 +175,19 @@
                     }
                     if(githubLink) source.value = githubLink
                 }
+
+                // Handle the url drop from github
+                link.addEventListener("drop", function (e) {
+                    /**
+                     * @type HTMLInputElement
+                     **/
+                    let input = e.currentTarget;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    let url = e.dataTransfer.getData("URL");
+                    input.value = url;
+                    input.onchange();
+                })
 
                 function GenerateJSON() {
                     console.log("generating")
