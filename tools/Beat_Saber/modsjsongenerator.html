@@ -26,14 +26,16 @@
                         </label>
                         <label>
                             Mod Description
-                            <textarea id="description" rows="10"></textarea>
-
+                            <textarea style="resize: none;" id="description" rows="10"></textarea>
                         </label>
                         <label>
                             Mod ID
                             <input type="text" id="id">
                         </label>
                         <input type="button" value="Load QMOD" onclick="LoadQMOD()">
+                        <div id="qmodDropZone" style="margin-top: 20px; display: block; width: 100%; height: 70px; background-color: #202225; display: flex; align-items: center; justify-content: center;">
+                            <div style="user-select: none;"> Drop the qmod here </div>
+                        </div>
                     </div>
                     <div style="display: flex; flex-direction: column; min-width: 500px; margin-top: 50px;">
                         <label>
@@ -85,6 +87,11 @@
                 const description = document.getElementById("description")
                 const name = document.getElementById("name")
                 const source = document.getElementById("source")
+                
+                /**
+                 * @type HTMLDivElement
+                 **/
+                const qmodDropZone = document.getElementById("qmodDropZone")
                 var json = {}
 
                 fetch(`mods.json`).then(res => {
@@ -97,6 +104,66 @@
                 function UpdateJSON() {
                     jsonE.value = JSON.stringify(json, null, 4)
                 }
+
+                /**
+                 *  @param {ProgressEvent<FileReader>} ev 
+                 *  @this {FileReader} 
+                 **/
+                 function onloadend(ev) {
+                    let reader = this;
+                    var zip = new JSZip();
+                    zip.loadAsync(reader.result).then(zip => {
+                        zip.file("mod.json").async("string").then(res => {
+                            var m = JSON.parse(res)
+                            
+                            name.value = m.name;
+                            description.value = m.description;
+                            creators.value = (!m.porter ? "" : m.porter + ",") + m.author
+                            version.value = m.version;
+                            games.value = m.packageVersion;
+                            id.value = m.id;
+                            console.log(m);
+                        })
+                    })
+                }
+                
+                qmodDropZone.addEventListener("drop", function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (event.dataTransfer.items) {
+                        // Use DataTransferItemList interface to access the file(s)
+                        [...event.dataTransfer.items].forEach((item, i) => {
+                            // If dropped items aren't files, reject them
+                            if (item.kind === 'file') {
+                                const file = item.getAsFile();
+                                console.log(`… file[${i}].name = ${file.name}`);
+                                
+                                var reader = new FileReader();
+                                var fileName = file.name;
+                                reader.onloadend = onloadend;
+                                reader.readAsArrayBuffer(file);
+                            }
+                        });
+                    } else {
+                        // Use DataTransfer interface to access the file(s)
+                        [...event.dataTransfer.files].forEach((file, i) => {
+                            console.log(`… file[${i}].name = ${file.name}`);
+                            var reader = new FileReader();
+                            var fileName = file.name;
+                            reader.onloadend = onloadend;
+                            reader.readAsArrayBuffer(file);
+                        });
+                    }
+                });
+
+                qmodDropZone.addEventListener("dragover",function(e){
+                    e = e || event;
+                    e.preventDefault();
+                },false);
+                qmodDropZone.addEventListener("drop",function(e){
+                    e = e || event;
+                    e.preventDefault();
+                },false);
 
                 link.onchange = () => {
                     var githubLink = ""
@@ -133,23 +200,7 @@
 
                         var reader = new FileReader();
                         var fileName = this.files[0].name
-                        reader.onloadend = function () {
-                            var zip = new JSZip();
-                            zip.loadAsync(reader.result).then(zip => {
-                                zip.file("mod.json").async("string").then(res => {
-                                    var m = JSON.parse(res)
-                                    
-                                    name.value = m.name;
-                                    description.value = m.description;
-                                    creators.value = (!m.porter ? "" : m.porter + ",") + m.author
-                                    version.value = m.version;
-                                    games.value = m.packageVersion;
-                                    id.value = m.id;
-                                    console.log(m);
-                                })
-                            })
-                            
-                        }
+                        reader.onloadend = onloadend;
                         reader.readAsArrayBuffer(this.files[0]);
                     }
 
