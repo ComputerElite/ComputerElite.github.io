@@ -4205,6 +4205,24 @@
     ],
     "1.27.0_3631150051": [
         {
+            "name": "Practice Addons",
+            "description": "#{description}",
+            "id": "practiceaddons",
+            "version": "0.1.0",
+            "download": "https://github.com/kodenamekrak/PracticeAddons/releases/download/0.1.0/PracticeAddons.qmod",
+            "source": "https://github.com/kodenamekrak/PracticeAddons/",
+            "author": "KodenameKRAK"
+        },
+        {
+            "name": "RandomSongPicker",
+            "description": "Adds a button, that picks a random song out of the current list",
+            "id": "RandomSongPicker",
+            "version": "0.3.0",
+            "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.3.0/RandomSongPicker_1_27_0.qmod",
+            "source": "https://github.com/Tatenshi/RandomSongPicker/",
+            "author": "Tatenshi"
+        },
+        {
             "name": "BeatLeader",
             "description": "Posts scores to https://beatleader.xyz/ and shows in-game leaderboards.",
             "id": "BeatLeader",
