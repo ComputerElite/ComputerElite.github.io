@@ -15,7 +15,7 @@ jobs:
         cp -R site/Programs/ModUpdater ModUpdater
     - name: Save token
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }} >> ModUpdater/token.txt
+        echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> ModUpdater/token.txt
     - name: Show files
       run: |
         cd ModUpdater
