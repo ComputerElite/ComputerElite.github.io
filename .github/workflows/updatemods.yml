@@ -28,6 +28,14 @@ jobs:
       working-directory: 'ModUpdater'
       run: |
         dotnet ModUpdater.dll
-    - name: Show mods
+    - name: Copy updated mods
       run: |
-        cat ModUpdater/mods_updated.json
+        cp ModUpdater/mods_updated.json site/tools/Beat_Saber/mods.json
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        path: site
+        title: Update Mods
+        body: Updated mods via GitHub releases api
+        commit-message: Update mods (Auto)
+        branch: update-mods
