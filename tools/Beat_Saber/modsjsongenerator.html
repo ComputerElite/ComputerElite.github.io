@@ -192,7 +192,7 @@
                 function GenerateJSON() {
                     console.log("generating")
                     if(!json[games.value]) json[games.value] = []
-                    json[games.value].unshift({
+                    var mod = {
                         name: name.value,
                         description: description.value,
                         id: id.value,
@@ -200,7 +200,13 @@
                         download: link.value,
                         source: source.value,
                         author: creators.value
-                    })
+                    }
+                    for(const e of json[games.value]) {
+                        if(e.download == mod.download) {
+                            json[games.value].splice(json[games.value].indexOf(e), 1)
+                        }
+                    }
+                    json[games.value].unshift(mod)
                     UpdateJSON()
                     console.log("generated")
                 }
