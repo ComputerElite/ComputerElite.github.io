@@ -39,6 +39,7 @@
                 <br>
                 <input type="button" onclick="GetDownloadableVersions()" value="Get Downloadable versions (JSON)">
                 <input type="button" onclick="GetDownloadableVersions(true)" value="Get Downloadable versions (Oculus Downgrader command)">
+                <input type="button" onclick="GetDownloadableVersions(false, true)" value="Show release channel names">
                 <div>Result</div>
                 <div id="resultContainer">
                     <textarea id="vars" style="height: fit-content;" readonly></textarea>
@@ -70,7 +71,7 @@
                 })
             }
 
-            function GetDownloadableVersions(oculusDowngrader = false) {
+            function GetDownloadableVersions(oculusDowngrader = false, releaseChannels = false) {
                 RequestGraphQL(`{"applicationID":"${appId.value}"}`, `2885322071572384`).then(res => {
                     var versions = res.data.node.primary_binaries.nodes
                     var ve = []
@@ -79,15 +80,28 @@
                             ve.push(v)
                         }
                     }
-                    if(oculusDowngrader) {
-                        var oculusDowngraderCommand = ``
+                    if(releaseChannels) {
+                        var releaseChannelNames = []
                         for(const v of ve) {
-                            oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset ${headset.value} --skipprompts|`
+                            if(v.binary_release_channels && v.binary_release_channels.nodes && v.binary_release_channels.nodes.length > 0) {
+                                for(const r of v.binary_release_channels.nodes) {
+                                    if(!releaseChannelNames.includes(r.channel_name)) releaseChannelNames.push(r.channel_name)
+                                }
+                            }
                         }
-                        output.innerHTML = resultSkeleton(oculusDowngraderCommand, 20)
+                        output.innerHTML = resultSkeleton(JSON.stringify(releaseChannelNames, null, 4), 20)
                     } else {
-                        output.innerHTML = resultSkeleton(JSON.stringify(ve, null, 4), 20)
+                        if(oculusDowngrader) {
+                            var oculusDowngraderCommand = ``
+                            for(const v of ve) {
+                                oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset ${headset.value} --skipprompts|`
+                            }
+                            output.innerHTML = resultSkeleton(oculusDowngraderCommand, 20)
+                        } else {
+                            output.innerHTML = resultSkeleton(JSON.stringify(ve, null, 4), 20)
+                        }
                     }
+                    
                 })
             }
 
