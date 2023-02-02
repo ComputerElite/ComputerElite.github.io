@@ -1,0 +1,27 @@
+name: Update mods via GitHub api
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        path: 'site'
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Copy ModUpdater
+      run: |
+        cp -R site/Programs/ModUpdater ModUpdater
+    - name: Save token
+      run: |
+        echo ${{ secrets.GITHUB_TOKEN }} >> ModUpdater/token.txt
+    - name: Show files
+      run: |
+        cd ModUpdater
+        ls
+      
