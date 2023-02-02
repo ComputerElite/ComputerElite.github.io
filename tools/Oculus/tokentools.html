@@ -34,6 +34,9 @@
                 <input type="text" placeholder="appId" id="appId">
                 <br>
                 <br>
+                <input type="text" placeholder="headset" value="rift" id="headset">
+                <br>
+                <br>
                 <input type="button" onclick="GetDownloadableVersions()" value="Get Downloadable versions (JSON)">
                 <input type="button" onclick="GetDownloadableVersions(true)" value="Get Downloadable versions (Oculus Downgrader command)">
                 <div>Result</div>
@@ -48,6 +51,7 @@
             var url = "https://graph.oculus.com/graphql"
             var token = document.getElementById("token");
             var appId = document.getElementById("appId");
+            var headset = document.getElementById("headset");
             var output = document.getElementById("resultContainer");
             const loader = `<div class="loader" style="width: 60px; height: 60px; margin: auto;"></div>`
             const resultSkeleton = (content, rows) => `<textarea id="vars" style="height: fit-content;" rows="${rows}" readonly>${content}</textarea>`
@@ -78,7 +82,7 @@
                     if(oculusDowngrader) {
                         var oculusDowngraderCommand = ``
                         for(const v of ve) {
-                            oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset rift --skipprompts|`
+                            oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset ${headset.value} --skipprompts|`
                         }
                         output.innerHTML = resultSkeleton(oculusDowngraderCommand, 20)
                     } else {
