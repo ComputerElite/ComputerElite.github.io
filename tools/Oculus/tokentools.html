@@ -23,9 +23,9 @@
     <body>
         <div style="padding-top: 10px; width: 100%; display: flex;">
             <div style="flex: 1; padding: 10px;" class="bigBox">
-                <div style="font-size: 24px; text-align: center;">Oculus GraphQL Requester</div>
+                <div style="font-size: 24px; text-align: center;">Token tools</div>
                 <div style="font-size: 15px; text-align: center; color: #888;">
-                    Make requests to oculus GraphQL with the default store token. Not everything may work atm
+                    Few tools don't ask too lazy to describe
                 </div>
 
                 <input type="password" placeholder="token" id="token">
@@ -78,7 +78,7 @@
                     if(oculusDowngrader) {
                         var oculusDowngraderCommand = ``
                         for(const v of ve) {
-                            oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset rift|`
+                            oculusDowngraderCommand += `d --appId ${appId.value} --versionid ${v.id} --headset rift --skipprompts|`
                         }
                         output.innerHTML = resultSkeleton(oculusDowngraderCommand, 20)
                     } else {
