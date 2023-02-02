@@ -30,6 +30,4 @@ jobs:
         dotnet ModUpdater.dll
     - name: Show mods
       run: |
-        cat ModUpdater/mods.json
-        
-      
+        cat ModUpdater/mods_updated.json
