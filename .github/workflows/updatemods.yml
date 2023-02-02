@@ -27,7 +27,7 @@ jobs:
     - name: Update mods
       working-directory: 'ModUpdater'
       run: |
-        dotnet ModUpdater/ModUpdater.dll
+        dotnet ModUpdater.dll
     - name: Show mods
       run: |
         cat ModUpdater/mods.json
