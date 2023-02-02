@@ -1,0 +1,158 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ModUpdater/1.0.0": {
+        "dependencies": {
+          "QuestPatcher.QMod": "2.0.0"
+        },
+        "runtime": {
+          "ModUpdater.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2020.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "2020.1.0.0",
+            "fileVersion": "2020.1.0.0"
+          }
+        }
+      },
+      "Json.More.Net/1.4.3": {
+        "dependencies": {
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Json.More.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.4.3.0"
+          }
+        }
+      },
+      "JsonPointer.Net/1.3.3": {
+        "dependencies": {
+          "Json.More.Net": "1.4.3",
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/JsonPointer.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.3.3.0"
+          }
+        }
+      },
+      "JsonSchema.Net/1.10.7": {
+        "dependencies": {
+          "JetBrains.Annotations": "2020.1.0",
+          "Json.More.Net": "1.4.3",
+          "JsonPointer.Net": "1.3.3",
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/JsonSchema.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.10.7.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "QuestPatcher.QMod/2.0.0": {
+        "dependencies": {
+          "JsonSchema.Net": "1.10.7",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "SemanticVersioning": "2.0.0",
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.1/QuestPatcher.QMod.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "SemanticVersioning/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/SemanticVersioning.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "System.Text.Json/5.0.2": {}
+    }
+  },
+  "libraries": {
+    "ModUpdater/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.Annotations/2020.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kD9D2ey3DGeLbfIzS8PkwLFkcF5vCOLk2rdjgfSxTfpoyovl7gAyoS6yq6T77zo9QgJGaVJ7PO/cSgLopnKlzg==",
+      "path": "jetbrains.annotations/2020.1.0",
+      "hashPath": "jetbrains.annotations.2020.1.0.nupkg.sha512"
+    },
+    "Json.More.Net/1.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0N1Vw9tK7bEpL1fsr62d3eXv4In4pbXAzKSjeFmyIGp6KGTRB7s2L2zNChiHrz0Jqbdz+2FsFm1qDbhY+eKO3g==",
+      "path": "json.more.net/1.4.3",
+      "hashPath": "json.more.net.1.4.3.nupkg.sha512"
+    },
+    "JsonPointer.Net/1.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tU0RalkVfdcZhwjjfI8bp/62UuFPMp7DHSP6GxgZ43wFx2zEq6d7SEROw5YByK80aOPoQ12LzK9wuJ2TeqxHyQ==",
+      "path": "jsonpointer.net/1.3.3",
+      "hashPath": "jsonpointer.net.1.3.3.nupkg.sha512"
+    },
+    "JsonSchema.Net/1.10.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1NRHvmKt8g+BrkJuVYLJ/vT0HlK9SjNe7WbMY7FWw3HD99Be1K/Y4jtVKIftelLy1dUhc/CvRGAvSKC7KuxFBg==",
+      "path": "jsonschema.net/1.10.7",
+      "hashPath": "jsonschema.net.1.10.7.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
+      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512"
+    },
+    "QuestPatcher.QMod/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Px9tkEAm47xG3r8+cIoLKE3goz5QkFtVQNrinyKUoJYdElsadHyrObrU01a/feVKkjEBpKb14vx9DtTUQuWz4g==",
+      "path": "questpatcher.qmod/2.0.0",
+      "hashPath": "questpatcher.qmod.2.0.0.nupkg.sha512"
+    },
+    "SemanticVersioning/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gb+AtYpacsOpphUUfx4xU5BaMSho0yqSgIl1YL2tBUc1FfdzAAFkxYbmz+hlzSZAUtjWgSsIs7R7hNdMufThAQ==",
+      "path": "semanticversioning/2.0.0",
+      "hashPath": "semanticversioning.2.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+      "path": "system.text.json/5.0.2",
+      "hashPath": "system.text.json.5.0.2.nupkg.sha512"
+    }
+  }
+}
