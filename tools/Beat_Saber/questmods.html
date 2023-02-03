@@ -186,13 +186,23 @@
                 }
                 return `<input onclick="Download('${mod.id}')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
                                 ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}`
+                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}
+                                <input onclick="Download('${mod.id}', false)" type="button" value="Mark" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">`
             }
 
-            function Download(id) {
+            function Download(id, actuallyDownload = true) {
                 if(!localStorage.oldMods) localStorage.oldMods = []
-                localStorage.oldMods = JSON.stringify(JSON.parse(localStorage.oldMods).concat([document.getElementById(id).value]))
-                window.open(document.getElementById(id).value, "_blank")
+                var toConcat = []
+                existing = JSON.parse(localStorage.oldMods)
+                for(const d of [...document.getElementById(id).options].map(o => o.value)) {
+                    console.log(d)
+                    if(!existing.includes(d)) toConcat.push(d)
+                }
+                existing = existing.concat(toConcat)
+                localStorage.oldMods = JSON.stringify(existing)
+
+                if(actuallyDownload) window.open(document.getElementById(id).value, "_blank")
+                Display(gameversion.value)
             }
 
             function DisplayCards(gameversion) {
