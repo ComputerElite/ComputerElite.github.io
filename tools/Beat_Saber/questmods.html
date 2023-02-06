@@ -178,7 +178,7 @@
                 Display(gameversion.value)
             }
 
-            function GetModButtons(mod) {
+            function GetModButtons(mod, isCore) {
                 var downloadLink = mod.download
                 var githubLink = ""
                 if(downloadLink.includes("github.com")) {
@@ -187,7 +187,7 @@
                 return `<input onclick="Download('${mod.id}')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
                                 ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
                                 <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}
-                                <input onclick="Download('${mod.id}', false)" type="button" value="Mark" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">`
+                                ${isCore ? `` : `<input onclick="Download('${mod.id}', false)" type="button" value="Mark" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">`}`
             }
 
             function Download(id, actuallyDownload = true) {
@@ -232,7 +232,7 @@
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
                                 <div style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
-                                ${GetModButtons(mod)}
+                                ${GetModButtons(mod, false)}
                             </div>`
                     }
                 })
@@ -247,7 +247,7 @@
                         m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">Version ${versionDropDown}</div>
-                                ${GetModButtons(mod)}
+                                ${GetModButtons(mod, true)}
                                 </div>`
                     }
                 })
