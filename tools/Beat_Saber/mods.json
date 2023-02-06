@@ -5400,6 +5400,15 @@
       "download": "https://github.com/RedBrumbler/TrickSaber/releases/download/v0.1.1/TrickSaber.qmod",
       "source": "https://github.com/RedBrumbler/TrickSaber/",
       "author": "RedBrumbler"
+    },
+    {
+      "name": "JDFixer",
+      "description": "Configure your Jump Distance, Speed, and more with ultra precision!",
+      "id": "jdfixer",
+      "version": "3.0.1",
+      "download": "https://github.com/Metalit/QuestJDFixer/releases/download/v3.0.1/JDFixer.qmod",
+      "source": "https://github.com/Metalit/QuestJDFixer/",
+      "author": "Metalit"
     }
   ],
   "1.26.0": [
