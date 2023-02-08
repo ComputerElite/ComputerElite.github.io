@@ -9,6 +9,7 @@ void UpdateAllMods()
 	Dictionary<string, List<string>> idAndDownload = new Dictionary<string, List<string>>();
 	List<string> blacklistetDownloads = new List<string>();
 	if (File.Exists("blacklist.json")) blacklistetDownloads = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("blacklist.json"));
+	Console.WriteLine("Blacklisted downloads: " + blacklistetDownloads.Count);
 	foreach (List<ModJSONMod> v in mods.versions.Values)
 	{
 		foreach(ModJSONMod mod in v)
