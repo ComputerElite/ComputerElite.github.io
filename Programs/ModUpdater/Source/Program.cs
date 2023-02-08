@@ -7,7 +7,9 @@ void UpdateAllMods()
 {
 	ModJSON mods = ModJSON.GetCurrentMods();
 	Dictionary<string, List<string>> idAndDownload = new Dictionary<string, List<string>>();
-	foreach(List<ModJSONMod> v in mods.versions.Values)
+	List<string> blacklistetDownloads = new List<string>();
+	if (File.Exists("blacklist.json")) blacklistetDownloads = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("blacklist.json"));
+	foreach (List<ModJSONMod> v in mods.versions.Values)
 	{
 		foreach(ModJSONMod mod in v)
 		{
@@ -47,7 +49,8 @@ void UpdateAllMods()
 				// stop here, we got all new tags
 				foreach (GithubAsset a in r.assets)
 				{
-					mods.AddMod(a.browser_download_url);
+					if(!blacklistetDownloads.Contains(a.browser_download_url)) mods.AddMod(a.browser_download_url);
+
 				}
 				if (match) break;
 			}
