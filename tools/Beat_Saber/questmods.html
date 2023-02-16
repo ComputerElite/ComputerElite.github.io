@@ -74,10 +74,12 @@
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
 
+            var firstVisit = false
             var existing = []
             if(localStorage.oldMods) {
                 existing = JSON.parse(localStorage.oldMods);
             } else {
+                firstVisit = true
                 localStorage.oldMods = JSON.stringify(existing)
             }
 
@@ -130,11 +132,12 @@
                     }
                     var mods = []
                     for(const mod of value) {
+                        if(firstVisit) AddDownloadedMod(mod.download)
                         if(mods.map(x => x.id).includes(mod.id)) {
-                            var existing = mods[mods.map(x => x.id).indexOf(mod.id)]
-                            if(compare(mod.version, existing.versions[0].version) >= 0) {
+                            var existingMod = mods[mods.map(x => x.id).indexOf(mod.id)]
+                            if(compare(mod.version, existingMod.versions[0].version) >= 0) {
                                 mods[mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
-                            } else if(compare(mod.version, existing.versions[0].version) < 0) {
+                            } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
                                 mods[mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
                             }
                         } else {
@@ -144,6 +147,7 @@
                     }
                     gameVersions[key].mods = mods
                 }
+                if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
                 Display(gameversion.value)
             }
@@ -188,6 +192,10 @@
                                 ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
                                 <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}
                                 ${isCore ? `` : `<input onclick="Download('${mod.id}', false)" type="button" value="Mark" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">`}`
+            }
+
+            function AddDownloadedMod(link) {
+                if(!existing.includes(link)) existing.push(link)
             }
 
             function Download(id, actuallyDownload = true) {
