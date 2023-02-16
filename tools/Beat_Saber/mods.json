@@ -4745,6 +4745,15 @@
   ],
   "1.27.0_3631150051": [
     {
+      "name": "Speecil Tweaks",
+      "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Quality of Life Tweaks and more!",
+      "id": "SpeecilTweaks",
+      "version": "0.2.1",
+      "download": "https://github.com/speecil/SpeecilTweaks-BSML/releases/download/v0.2.1/SpeecilTweaks.qmod",
+      "source": "https://github.com/speecil/SpeecilTweaks-BSML/",
+      "author": "Speecil"
+    },
+    {
       "name": "Practice Addons",
       "description": "#{description}",
       "id": "practiceaddons",
@@ -5418,6 +5427,15 @@
       "download": "https://github.com/WaffleTheCool/feetsaber/releases/download/v0.1.3_3631150051/feetsaber.qmod",
       "source": "https://github.com/WaffleTheCool/feetsaber/",
       "author": "Waffle"
+    },
+    {
+      "name": "Pause Remapper",
+      "description": "Allows the user to change which buttons pause the game!",
+      "id": "PauseRemapper",
+      "version": "1.2.0",
+      "download": "https://github.com/speecil/PauseRemapper/releases/download/v1.2.0/PauseRemapper.qmod",
+      "source": "https://github.com/speecil/PauseRemapper/",
+      "author": "Speecil"
     }
   ],
   "1.26.0": [
