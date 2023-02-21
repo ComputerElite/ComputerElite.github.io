@@ -5436,6 +5436,24 @@
       "download": "https://github.com/speecil/PauseRemapper/releases/download/v1.2.0/PauseRemapper.qmod",
       "source": "https://github.com/speecil/PauseRemapper/",
       "author": "Speecil"
+    },
+    {
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.1",
+      "download": "https://github.com/ItsKaitlyn03/PeripheralHUD/releases/download/v1.1.1/peripheralhud_v1.1.1.qmod",
+      "source": "https://github.com/ItsKaitlyn03/PeripheralHUD/",
+      "author": "Kaitlyn"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.1",
+      "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.1/smoothedcontroller_v1.5.1.qmod",
+      "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
+      "author": "Kinsi55"
     }
   ],
   "1.26.0": [
