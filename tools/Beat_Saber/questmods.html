@@ -94,16 +94,24 @@
 
             function PullMods() {
                 gameVersions = {}
-                fetch("mods.json").then(res => {
-                    res.json().then(json => {
-                        org = json
-                        SortByGameVersion()
-                    })
-                })
+                // Fetch core mods, then normal mods
                 fetch("https://oculusdb.rui2015.me/api/coremodsproxy").then(res => {
                     res.json().then(json => {
                         coreOrg = json
                         SortByGameVersionCore()
+                        PullNormalMods()
+                    })
+                }).catch(err => {
+                    console.log(err)
+                    PullNormalMods()
+                })
+            }
+
+            function PullNormalMods() {
+                fetch("mods.json").then(res => {
+                    res.json().then(json => {
+                        org = json
+                        SortByGameVersion()
                     })
                 })
             }
@@ -114,39 +122,31 @@
                         coremods: [],
                         mods: []
                     }
-                    var mods = []
                     for(const coremod of value.mods) {
+                        // Adapt core mods format to normal mods format
                         var mod = {
                             name: coremod.id,
                             id: coremod.id,
                             version: coremod.version,
                             download: coremod.downloadLink,
-                            description: ""
+                            description: "",
+                            author: "unknown"
                         }
                         if(firstVisit) AddDownloadedMod(mod.download)
-                        if(mods.map(x => x.id).includes(mod.id)) {
-                            var existingMod = mods[mods.map(x => x.id).indexOf(mod.id)]
+                        if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
+                            var existingMod = gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)]
                             if(compare(mod.version, existingMod.versions[0].version) >= 0) {
-                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
                             } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
-                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
                             }
                         } else {
                             mod.versions = [{version: mod.version, download: mod.download}]
-                            mods.push(mod)
+                            gameVersions[key].coremods.push(mod)
                         }
                         console.log(mod)
                     }
-                    gameVersions[key].coremods = mods
                 }
-                /*
-                for (const [key, value] of Object.entries(coreOrg)) {
-                    value.mods.forEach(mod => {
-                        if(gameVersions[key] == undefined) gameVersions[key] = {mods: [], addedmods: [], coremods: []}
-                        gameVersions[key].coremods.push()
-                    })
-                }
-                */
                 if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
                 Display(gameversion.value)
@@ -162,17 +162,29 @@
                     var coreMods = []
                     for(const mod of value) {
                         if(firstVisit) AddDownloadedMod(mod.download)
-                        if(mods.map(x => x.id).includes(mod.id)) {
-                            var existingMod = mods[mods.map(x => x.id).indexOf(mod.id)]
+                        if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
+                            var existingMod = gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)]
+                            gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].author = mod.author
                             if(compare(mod.version, existingMod.versions[0].version) >= 0) {
-                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
                             } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
-                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
                             }
                         } else {
-                            mod.versions = [{version: mod.version, download: mod.download}]
-                            mods.push(mod)
+                            if(mods.map(x => x.id).includes(mod.id)) {
+                                var existingMod = mods[mods.map(x => x.id).indexOf(mod.id)]
+                                mods[mods.map(x => x.id).indexOf(mod.id)].author = mod.author
+                                if(compare(mod.version, existingMod.versions[0].version) >= 0) {
+                                    mods[mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
+                                    mods[mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                }
+                            } else {
+                                mod.versions = [{version: mod.version, download: mod.download}]
+                                mods.push(mod)
+                            }
                         }
+                        
                     }
                     gameVersions[key].mods = mods
                 }
