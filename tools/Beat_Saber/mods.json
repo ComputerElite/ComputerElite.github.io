@@ -5418,6 +5418,77 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.1/smoothedcontroller_v1.5.1.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
       "author": "Kinsi55"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.1.6",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.6/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit"
+    },
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.8",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.8/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.7",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.7/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    }
+  ],
+  "1.26.1": [
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.5",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.5/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    }
+  ],
+  "1.26.0": [
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.4",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.4/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    }
+  ],
+  "1.24.1": [
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.0",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.0/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    }
+  ],
+  "1.22.0": [
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.6.8",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.8/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
     }
   ]
 }
