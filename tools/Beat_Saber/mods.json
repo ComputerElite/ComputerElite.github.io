@@ -5357,15 +5357,6 @@
       "author": "RedBrumbler"
     },
     {
-      "name": "ModList",
-      "description": "Displays your installed mods inside the game and gives you a warning prompt upon starting the game to tell you if a mod failed to load.",
-      "id": "mod-list",
-      "version": "0.1.10",
-      "download": "https://github.com/Lauriethefish/ModList/releases/download/v0.1.10/ModList.qmod",
-      "source": "https://github.com/Lauriethefish/ModList/",
-      "author": "Lauriethefish"
-    },
-    {
       "name": "Score Percentage",
       "description": "shows extra information after completing a level",
       "id": "scorepercentage",
@@ -5373,33 +5364,6 @@
       "download": "https://github.com/Royston1999/ScorePercentage-Quest/releases/download/v3.2.0/ScorePercentage_v3.2.0.qmod",
       "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
       "author": "Polly51104"
-    },
-    {
-      "name": "PlayerDataKeeper",
-      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
-      "id": "datakeeper",
-      "version": "0.1.6",
-      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.6/PlayerDataKeeper.qmod",
-      "source": "https://github.com/Metalit/PlayerDataKeeper/",
-      "author": "Metalit"
-    },
-    {
-      "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
-      "id": "pinkcore",
-      "version": "1.8.8",
-      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.8/PinkCore.qmod",
-      "source": "https://github.com/BSMGPink/PinkCore/",
-      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
-    },
-    {
-      "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
-      "id": "pinkcore",
-      "version": "1.8.7",
-      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.7/PinkCore.qmod",
-      "source": "https://github.com/BSMGPink/PinkCore/",
-      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
     },
     {
       "name": "Trick Saber",
@@ -5436,24 +5400,31 @@
       "download": "https://github.com/speecil/PauseRemapper/releases/download/v1.2.0/PauseRemapper.qmod",
       "source": "https://github.com/speecil/PauseRemapper/",
       "author": "Speecil"
-    }
-  ],
-  "1.26.0": [
+    },
     {
-      "name": "ModList",
-      "description": "Displays your installed mods inside the game and gives you a warning prompt upon starting the game to tell you if a mod failed to load.",
-      "id": "mod-list",
-      "version": "0.1.8",
-      "download": "https://github.com/Lauriethefish/ModList/releases/download/v0.1.8/ModList.qmod",
-      "source": "https://github.com/Lauriethefish/ModList/",
-      "author": "Lauriethefish"
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.1",
+      "download": "https://github.com/ItsKaitlyn03/PeripheralHUD/releases/download/v1.1.1/peripheralhud_v1.1.1.qmod",
+      "source": "https://github.com/ItsKaitlyn03/PeripheralHUD/",
+      "author": "Kaitlyn"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.1",
+      "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.1/smoothedcontroller_v1.5.1.qmod",
+      "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
+      "author": "Kinsi55"
     },
     {
       "name": "PlayerDataKeeper",
       "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
       "id": "datakeeper",
-      "version": "0.1.3",
-      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/0.1.3/PlayerDataKeeper.qmod",
+      "version": "0.1.6",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.6/PlayerDataKeeper.qmod",
       "source": "https://github.com/Metalit/PlayerDataKeeper/",
       "author": "Metalit"
     },
@@ -5461,28 +5432,39 @@
       "name": "PinkCore",
       "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
-      "version": "1.8.4",
-      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.4/PinkCore.qmod",
+      "version": "1.8.8",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.8/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.7",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.7/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
     }
   ],
   "1.26.1": [
     {
-      "name": "PlayerDataKeeper",
-      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
-      "id": "datakeeper",
-      "version": "0.1.4",
-      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/0.1.4/PlayerDataKeeper.qmod",
-      "source": "https://github.com/Metalit/PlayerDataKeeper/",
-      "author": "Metalit"
-    },
-    {
       "name": "PinkCore",
       "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.5",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.5/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    }
+  ],
+  "1.26.0": [
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.4",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.4/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
     }
