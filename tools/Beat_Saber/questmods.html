@@ -109,17 +109,45 @@
             }
 
             function SortByGameVersionCore() {
+                for(const [key, value] of Object.entries(coreOrg)) {
+                    if(!gameVersions[key]) gameVersions[key] = {
+                        coremods: [],
+                        mods: []
+                    }
+                    var mods = []
+                    for(const coremod of value.mods) {
+                        var mod = {
+                            name: coremod.id,
+                            id: coremod.id,
+                            version: coremod.version,
+                            download: coremod.downloadLink,
+                            description: ""
+                        }
+                        if(firstVisit) AddDownloadedMod(mod.download)
+                        if(mods.map(x => x.id).includes(mod.id)) {
+                            var existingMod = mods[mods.map(x => x.id).indexOf(mod.id)]
+                            if(compare(mod.version, existingMod.versions[0].version) >= 0) {
+                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                            } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
+                                mods[mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                            }
+                        } else {
+                            mod.versions = [{version: mod.version, download: mod.download}]
+                            mods.push(mod)
+                        }
+                        console.log(mod)
+                    }
+                    gameVersions[key].coremods = mods
+                }
+                /*
                 for (const [key, value] of Object.entries(coreOrg)) {
                     value.mods.forEach(mod => {
                         if(gameVersions[key] == undefined) gameVersions[key] = {mods: [], addedmods: [], coremods: []}
-                        gameVersions[key].coremods.push({
-                            name: mod.id,
-                            ModID: mod.id,
-                            version: mod.version,
-                            download: mod.downloadLink
-                        })
+                        gameVersions[key].coremods.push()
                     })
                 }
+                */
+                if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
                 Display(gameversion.value)
             }
@@ -131,6 +159,7 @@
                         mods: []
                     }
                     var mods = []
+                    var coreMods = []
                     for(const mod of value) {
                         if(firstVisit) AddDownloadedMod(mod.download)
                         if(mods.map(x => x.id).includes(mod.id)) {
@@ -250,6 +279,33 @@
                 m =``;
                 console.log("refreshing for " + gameversion)
                 gameVersions[gameversion].coremods.forEach(mod => {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        var githubLink = ""
+                        if(mod.download.includes("github.com")) {
+                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
+                        }
+                        var versionDropDown = `<select id="${mod.id}">`
+                        mod.versions = mod.versions.sort(function(a, b) {
+                            if(compare(a.version, b.version) > 0) return -1
+                            if(compare(a.version, b.version) < 0) return 1
+                            return 0
+                        })
+                        var isNew = false
+                        for(const v of mod.versions) {
+                            if(!existing.includes(v.download)) isNew = true
+                            versionDropDown += `<option value="${v.download}">${v.version}</option>`
+                        }
+                        versionDropDown += `</select>`
+                        m +=    `<div style="border-radius: 5px; background-color: #${isNew ? "666622BB" : "222222BB"}; padding: 10px; text-align: left;">
+                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
+                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
+                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
+                                ${GetModButtons(mod, false)}
+                            </div>`
+                    }
+                })
+                /*
+                gameVersions[gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
                         var versionDropDown = `<select id="${mod.id}"><option value="${mod.download}">${mod.version}</option></select>`
                         m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
@@ -259,6 +315,7 @@
                                 </div>`
                     }
                 })
+                */
                 coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
