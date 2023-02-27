@@ -5465,6 +5465,15 @@
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.5/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "Transitions",
+      "description": "Speed up or remove boring transitions in the game",
+      "id": "transitions",
+      "version": "1.1.2",
+      "download": "https://github.com/Metalit/Transitions/releases/download/v1.1.2/Transitions.qmod",
+      "source": "https://github.com/Metalit/Transitions/",
+      "author": "Metalit"
     }
   ],
   "1.26.0": [
