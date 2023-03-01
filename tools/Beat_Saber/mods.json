@@ -4745,6 +4745,24 @@
   ],
   "1.27.0_3631150051": [
     {
+      "name": "DebrisTweaks",
+      "description": "Adds various debris tweaks!",
+      "id": "DebrisTweaks",
+      "version": "1.0.0",
+      "download": "https://github.com/NuggoDEV/DebrisTweaks/releases/download/v1.0.0/DebrisTweaks.qmod",
+      "source": "https://github.com/NuggoDEV/DebrisTweaks/",
+      "author": "Nuggo"
+    },
+    {
+      "name": "ParticleTuner",
+      "description": "Lets you tweak individual particle settings! And has rainbow particles!",
+      "id": "particletuner",
+      "version": "0.1.0",
+      "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.1.0/ParticleTuner.qmod",
+      "source": "https://github.com/kodenamekrak/ParticleTuner/",
+      "author": "KodenameKRAK"
+    },
+    {
       "name": "Speecil Tweaks",
       "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Quality of Life Tweaks and more!",
       "id": "SpeecilTweaks",
