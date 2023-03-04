@@ -286,7 +286,7 @@
                         m +=    `<div style="border-radius: 5px; background-color: #${isNew ? "666622BB" : "222222BB"}; padding: 10px; text-align: left;">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
-                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
+                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description.replace(/\n/g, "<br>") : ""}</div>
                                 ${GetModButtons(mod, false)}
                             </div>`
                     }
