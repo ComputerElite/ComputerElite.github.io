@@ -5545,6 +5545,15 @@
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.9/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.1.7",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.7/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit"
     }
   ]
 }
