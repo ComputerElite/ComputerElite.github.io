@@ -5554,6 +5554,69 @@
       "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.7/PlayerDataKeeper.qmod",
       "source": "https://github.com/Metalit/PlayerDataKeeper/",
       "author": "Metalit"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.3",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.3-bs-1.28.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "Third Person Mod",
+      "description": null,
+      "id": "Play3rdPer",
+      "version": "0.12.0",
+      "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.12.0/Play3rdPer.qmod",
+      "source": "https://github.com/ComputerElite/play3rdper/",
+      "author": "ComputerElite"
+    },
+    {
+      "name": "Pause Remapper",
+      "description": "Allows the user to change which buttons pause the game!",
+      "id": "PauseRemapper",
+      "version": "1.2.1",
+      "download": "https://github.com/speecil/PauseRemapper/releases/download/v0.2.1_1/Pause.Remapper.qmod",
+      "source": "https://github.com/speecil/PauseRemapper/",
+      "author": "Speecil"
+    },
+    {
+      "name": "Crash Mod",
+      "description": null,
+      "id": "CrashMod",
+      "version": "0.12.0",
+      "download": "https://github.com/ComputerElite/CrashMod/releases/download/0.12.0/Crash_Mod.qmod",
+      "source": "https://github.com/ComputerElite/CrashMod/",
+      "author": "ComputerElite"
+    },
+    {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.22.2",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.2/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, rcelyte"
+    },
+    {
+      "name": "RedBar",
+      "description": null,
+      "id": "RedBar",
+      "version": "1.14.0",
+      "download": "https://github.com/ComputerElite/RedBar/releases/download/1.14.0/RedBar.qmod",
+      "source": "https://github.com/ComputerElite/RedBar/",
+      "author": "ComputerElite"
+    },
+    {
+      "name": "Streamer Tools",
+      "description": "Allows applications to get information from the game like, currently played song.",
+      "id": "Streamer-Tools",
+      "version": "0.10.0",
+      "download": "https://github.com/EnderdracheLP/streamer-tools/releases/download/0.10.0/Streamer_Tools.qmod",
+      "source": "https://github.com/EnderdracheLP/streamer-tools/",
+      "author": "EnderdracheLP, ComputerElite, Lauriethefish, Phaze"
     }
   ]
 }
