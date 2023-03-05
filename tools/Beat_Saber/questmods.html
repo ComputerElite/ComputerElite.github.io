@@ -195,6 +195,12 @@
                 }
                 if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
+                for (let checkVersion in gameVersions) {
+                    let urlVersion = params.get("version")
+                    if (checkVersion.includes(urlVersion)) {
+                        gameversion.value = checkVersion
+                    }
+                }
                 Display(gameversion.value)
             }
 
@@ -359,13 +365,6 @@
             }
 
             function Display(this_gameversion) {
-                for (let checkVersion in gameVersions) {
-                    let urlVersion = params.get("version")
-                    if (checkVersion.includes(urlVersion)) {
-                        gameversion.value = checkVersion
-                        console.log(this_gameversion.value)
-                    }
-                }
                 if(displayMethod == 1) {
                     DisplayCards(this_gameversion)
                     return;
