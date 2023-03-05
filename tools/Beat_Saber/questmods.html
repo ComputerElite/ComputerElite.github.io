@@ -74,6 +74,7 @@
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
 
+           
             var firstVisit = false
             var existing = []
             if(localStorage.oldMods) {
@@ -94,6 +95,7 @@
 
             function PullMods() {
                 gameVersions = {}
+                
                 // Fetch core mods, then normal mods
                 fetch("https://oculusdb.rui2015.me/api/coremodsproxy").then(res => {
                     res.json().then(json => {
@@ -152,14 +154,6 @@
                 }
                 if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
-                for (let checkVersion in gameVersions) {
-                    let urlVersion = params.get("version")
-                    if (checkVersion.includes(urlVersion)) {
-                        gameversion.value = checkVersion
-
-                    }
-                   
-                }
                 Display(gameversion.value)
             }
 
@@ -268,12 +262,12 @@
                 Display(gameversion.value)
             }
 
-            function DisplayCards(gameversion) {
-                gameversion.innerHTML = "";
+            function DisplayCards(this_gameversion) {
+                this_gameversion.innerHTML = "";
                 
                 var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].mods.forEach(mod => {
+                console.log("refreshing for " + this_gameversion)
+                gameVersions[this_gameversion].mods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
@@ -303,8 +297,8 @@
                             ${m}
                         </div>`
                 m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].coremods.forEach(mod => {
+                console.log("refreshing for " + this_gameversion)
+                gameVersions[this_gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
@@ -347,9 +341,9 @@
                         </div>`
             }
 
-            function FuckYouKrak(gameversion) {
-                gameVersions[gameversion].mods = []
-                gameVersions[gameversion].coremods = []
+            function FuckYouKrak(this_gameversion) {
+                gameVersions[this_gameversion].mods = []
+                gameVersions[this_gameversion].coremods = []
                 const fuckYouKrak =  {
                                     name: "Fuck you KRAK",
                                     details:"Fuck you KRAK",
@@ -359,23 +353,30 @@
                                     download: "/redirect?target=self&random",
                                 }
                 for(let i = 0; i < 40; i++) {
-                    gameVersions[gameversion].mods.push(fuckYouKrak)
-                    gameVersions[gameversion].coremods.push(fuckYouKrak)
+                    gameVersions[this_gameversion].mods.push(fuckYouKrak)
+                    gameVersions[this_gameversion].coremods.push(fuckYouKrak)
                 }
             }
 
-            function Display(gameversion) {
+            function Display(this_gameversion) {
+                for (let checkVersion in gameVersions) {
+                    let urlVersion = params.get("version")
+                    if (checkVersion.includes(urlVersion)) {
+                        gameversion.value = checkVersion
+                        console.log(this_gameversion.value)
+                    }
+                }
                 if(displayMethod == 1) {
-                    DisplayCards(gameversion)
+                    DisplayCards(this_gameversion)
                     return;
                 } else {
-                    FuckYouKrak(gameversion)
+                    FuckYouKrak(this_gameversion)
                 }
-                gameversion.innerHTML = "";
+                this_gameversion.innerHTML = "";
                 
                 var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].mods.forEach(mod => {
+                console.log("refreshing for " + this_gameversion)
+                gameVersions[this_gameversion].mods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
                                 <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
@@ -393,8 +394,8 @@
                             ${m}
                         </table>`
                         var m =``;
-                console.log("refreshing for " + gameversion)
-                gameVersions[gameversion].coremods.forEach(mod => {
+                console.log("refreshing for " + this_gameversion)
+                gameVersions[this_gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
                         m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
                                     <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div></td>
