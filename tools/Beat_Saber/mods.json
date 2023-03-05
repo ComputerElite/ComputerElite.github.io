@@ -5653,6 +5653,24 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.9-bs-1.28.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.8.1",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.8.1/ClockMod.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP"
+    },
+    {
+      "name": "QuestSounds",
+      "description": "Allows users to change their sfx sounds and in-game music easily!",
+      "id": "QuestSounds",
+      "version": "1.4.1",
+      "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.4.1/QuestSounds.qmod",
+      "source": "https://github.com/EnderdracheLP/QuestSounds/",
+      "author": "Rugtveit, EnderdracheLP"
     }
   ]
 }
