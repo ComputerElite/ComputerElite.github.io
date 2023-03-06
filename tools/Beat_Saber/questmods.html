@@ -276,8 +276,8 @@
                 console.log("refreshing for " + this_gameversion)
                 var modsToShow = gameVersions[this_gameversion].mods
                 if(gameVersions["undefined"]) {
-                    for(const m of gameVersions["undefined"]) {
-                        modsToShow.push(gameVersions["undefined"][m])
+                    for(const m of gameVersions["undefined"].mods) {
+                        modsToShow.push(m)
                     }
                 }
                 modsToShow.sort(function(a, b) {
