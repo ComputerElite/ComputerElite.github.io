@@ -209,6 +209,7 @@
                 var gameversions = []
                 gameversion.innerHTML = ""
                 for (const [key, value] of Object.entries(gameVersions)) {
+                    if(key == "undefined") continue;
                     gameversions.push(key)
                     gameVersions[key].mods.sort(function(a, b) {
                         if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
