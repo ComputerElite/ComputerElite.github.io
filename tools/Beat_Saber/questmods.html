@@ -45,7 +45,7 @@
                         </a>
                         <input type="text" id="search" placeholder="Search mods">
                         <input onclick="DownloadAllCores()" type="button" value="Download all core mods" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                        <h2>Core Mods</h2>
+                        <h2 id="coreModsText">Core Mods</h2>
                         <div id="coremods">
 
                         </div>
@@ -71,6 +71,7 @@
             const gameversion = document.getElementById("gameversion")
             const search = document.getElementById("search")
             const params = new URLSearchParams(window.location.search)
+            const coreModsText = document.getElementById("coreModsText")
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
 
@@ -357,6 +358,7 @@
                 coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
+                coreModsText.innerHTML = m ? "Core Mods" : "No core mods for this version"
             }
 
             function FuckYouKrak(this_gameversion) {
