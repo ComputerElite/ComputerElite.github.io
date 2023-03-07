@@ -5671,6 +5671,15 @@
       "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.4.1/QuestSounds.qmod",
       "source": "https://github.com/EnderdracheLP/QuestSounds/",
       "author": "Rugtveit, EnderdracheLP"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.8.0",
+      "download": "https://github.com/Christoffyw/FasterScrollQuest/releases/download/v1.8.0/FasterScroll.qmod",
+      "source": "https://github.com/Christoffyw/FasterScrollQuest/",
+      "author": "Christoffyw"
     }
   ],
   "undefined": [
