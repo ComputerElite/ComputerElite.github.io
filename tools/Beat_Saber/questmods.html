@@ -11,6 +11,54 @@
         <link href="../../css/standard.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
         <style>
+
+        @media screen and (min-width: 80em) {
+            .grid {
+                grid-template-columns: 33% 33% 33%;
+            }
+        }
+
+        @media screen and (max-width: 80em) and (min-width:65em) {
+            .grid {
+                grid-template-columns: 50% 50%;
+            }
+        }
+
+        
+        @media screen and (max-width: 65em) {
+            .grid {
+                grid-template-columns: 100%;
+            }
+        }
+        html {
+            margin:0;
+            padding:0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('pixelguy.jpg') !important;
+            background-blend-mode: unset !important;
+            background-attachment: fixed !important;
+            background-position: center !important;
+        }
+        body {
+            margin:0;
+            padding:1em;
+        }
+
+        .button:hover {
+            background-image: linear-gradient(135deg, rgba(68, 68, 255, 1) 80%,  rgba(36,36,157,1));
+            border-color: white;
+        }
+        .button {
+            margin: 0.2em;
+            border-radius: 10px;
+            background-color: rgba(0, 0 , 0 , 0);
+            background-image: linear-gradient(135deg, rgba(68, 68, 255, 1),  rgba(36,36,157,1));
+            border-color: rgba(68, 68, 255, 1);
+            border: 1px;
+            color: #EEEEEE;
+            padding: 1em;
+            font-weight: bold;
+
+        }
         td {
             padding: 10px;
         }
@@ -27,6 +75,66 @@
             padding: 3px;
             display: inline;
         }
+
+        .mod_modal {
+            border-radius: 5px; 
+            background-color: #2222228a;
+            padding: 10px; 
+            text-align: left;
+        }
+        .mod_modal:hover {
+            background-color: #222222e8;
+        }
+
+        .selector {
+            padding: 0.5em;
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+            background-image: linear-gradient(135deg, rgba(68, 68, 255, 1),  rgba(36,36,157,1));
+            background-color: rgba(0, 0 , 0 , 0);
+            border: 0;border-radius: 5px;
+            color: #eeeeee;
+            
+            
+           
+        }
+
+        .selector:hover {
+            background-image: linear-gradient(135deg, rgba(68, 68, 255, 1) 80%, rgba(0, 0, 0, 0));
+        }
+
+        .selector option {
+            color: black;
+        }
+
+        .mod_highlight {
+           
+            background-image: linear-gradient(135deg, rgba(102, 102, 34, 1), rgba(0, 0, 0, 0)) !important;
+        }
+
+        #search{
+            width: 50%;
+            min-width: 6em;
+            display: inline-block;
+            text-align: center;
+            margin: 1em;
+        }
+
+        html[data-useragent*='BMBF_Quest'] #coremods {
+            display:none;
+        }
+        html[data-useragent*='BMBF_Quest'] #coreModsText {
+            display:none;
+        }
+        html[data-useragent*='BMBF_Quest'] #core_dl_btn {
+            display:none;
+        }
+        .mod_description {
+            margin-bottom: 1em;
+            white-space: pre-wrap;
+        }
+       
         </style>
     </head>
     <body style="font-size: 14px;">
@@ -37,32 +145,38 @@
                         <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/ComputerElite.github.io/blob/main/tools/Beat_Saber/mods.json" target="_blank">here</a></div>
                         <div class="headerDescription" style="width: 50%; margin: auto;">Is your mod missing? Add it <a href="modsjsongenerator.html" target="_blank">here.</a></div>
                         <br/>
-                        <a style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
-                            Game Version:
-                            <select id="gameversion">
+                        <div style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                            <span style="display: block; margin-right:1em;">Game Version</span><br />
+                            <select id="gameversion" class="selector">
                                 <option value=""></option>
                             </select>
-                        </a>
-                        <input type="text" id="search" placeholder="Search mods">
-                        <input onclick="DownloadAllCores()" type="button" value="Download all core mods" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
+                        </div>
+                        <input type="text" id="search" placeholder="Search mods"> <br />
+                        <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
                         <h2 id="coreModsText">Core Mods</h2>
                         <div id="coremods">
-
+                            <h3>Loading....</h3>
                         </div>
                         <h2>Mods</h2>
                         <div id="mods">
-
+                            <h3>Loading....</h3>
                         </div>
                         <br/>
                     </div>
                     <div style="padding: 5px;">
-                        Page by ComputerElite
+                        Page by ComputerElite<br />
+                        Design by Alteran<br />
+                        Beat Saber render provided by Pixelguy
                     </div>
                 </div>
         </div>
         
         <script src="../../js/standard.js"></script>
         <script>
+            var b = document.documentElement;
+            b.setAttribute('data-useragent',  navigator.userAgent);
+            b.setAttribute('data-platform', navigator.platform );
+            b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
             var org = {}
             var coreOrg = {}
             var gameVersions = {}
@@ -245,10 +359,10 @@
                 if(downloadLink.includes("github.com")) {
                     githubLink = downloadLink.substring(0, downloadLink.indexOf("releases"))
                 }
-                return `<input onclick="Download('${mod.id}')" type="button" value="Download" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                ${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">
-                                <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">` : ""}
-                                ${isCore ? `` : `<input onclick="Download('${mod.id}', false)" type="button" value="Mark" style="border-radius: 5px; background-color: #4444FF; color: #EEEEEE; padding: 10px; font-weight: bold;">`}`
+                return `<input onclick="Download('${mod.id}')" type="button" value="Download" class="button">`+
+                                `${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" class="button">`+
+                                `<input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" class="button">` : ""}`+
+                                `${isCore ? `` : `<input onclick="Download('${mod.id}', false)" type="button" value="Mark" class="button">`}`
             }
 
             function AddDownloadedMod(link) {
@@ -292,7 +406,7 @@
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
                         }
-                        var versionDropDown = `<select id="${mod.id}">`
+                        var versionDropDown = `<select class='selector' id="${mod.id}">`
                         mod.versions = mod.versions.sort(function(a, b) {
                             if(compare(a.version, b.version) > 0) return -1
                             if(compare(a.version, b.version) < 0) return 1
@@ -304,10 +418,10 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div style="border-radius: 5px; background-color: #${isNew ? "666622BB" : "222222BB"}; padding: 10px; text-align: left;">
+                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
-                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description.replace(/\n/g, "<br>") : ""}</div>
+                                <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
                                 ${GetModButtons(mod, false)}
                             </div>`
                     }
@@ -323,7 +437,7 @@
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
                         }
-                        var versionDropDown = `<select id="${mod.id}">`
+                        var versionDropDown = `<select class='selector' id="${mod.id}">`
                         mod.versions = mod.versions.sort(function(a, b) {
                             if(compare(a.version, b.version) > 0) return -1
                             if(compare(a.version, b.version) < 0) return 1
@@ -335,10 +449,10 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div style="border-radius: 5px; background-color: #${isNew ? "666622BB" : "222222BB"}; padding: 10px; text-align: left;">
+                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
-                                <div style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
+                                <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
                                 ${GetModButtons(mod, false)}
                             </div>`
                     }
@@ -358,7 +472,7 @@
                 coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
-                coreModsText.innerHTML = m ? "Core Mods" : "No core mods for this version"
+                    coreModsText.innerHTML = m ? "Core Mods" : "No core mods for this version"
             }
 
             function FuckYouKrak(this_gameversion) {
