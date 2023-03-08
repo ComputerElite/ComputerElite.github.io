@@ -5680,6 +5680,15 @@
       "download": "https://github.com/Christoffyw/FasterScrollQuest/releases/download/v1.8.0/FasterScroll.qmod",
       "source": "https://github.com/Christoffyw/FasterScrollQuest/",
       "author": "Christoffyw"
+    },
+    {
+      "name": "SearchFixes",
+      "description": "An improved search algorithm for Beat Saber",
+      "id": "SearchFixes",
+      "version": "1.2.5",
+      "download": "https://github.com/FranciscoRibeiro03/SearchFixesQuest/releases/download/v1.2.5/SearchFixes.qmod",
+      "source": "https://github.com/FranciscoRibeiro03/SearchFixesQuest/",
+      "author": "rui2015"
     }
   ],
   "undefined": [
