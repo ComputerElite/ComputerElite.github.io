@@ -109,8 +109,8 @@
         }
 
         .mod_highlight {
-           
-            background-image: linear-gradient(135deg, rgba(102, 102, 34, 1), rgba(0, 0, 0, 0)) !important;
+            background-image: linear-gradient(200deg, rgba(255, 131, 0, 0.42) 0, rgba(0, 0, 0, 0)100px) !important;
+            box-shadow: inset 0 0 63px -30px rgb(255, 131, 0);
         }
 
         #search{
@@ -418,8 +418,7 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div class="mod_modal>
-                                ${isNew ? "<span class='mod_mark'>&nbsp;</span>": ""}"
+                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
                                 <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
