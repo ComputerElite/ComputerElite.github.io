@@ -78,12 +78,41 @@
 
         .mod_modal {
             border-radius: 5px; 
-            background-color: #2222228a;
+            background-color: rgba(34, 34, 34, 0.831);
             padding: 10px; 
             text-align: left;
+            position: relative;
+            overflow: hidden;
         }
         .mod_modal:hover {
-            background-color: #222222e8;
+            background-color: rgba(0, 0, 0, 0.91);
+        }
+
+        .mod_highlight::before {
+            content: '';
+            height: 40px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 110px;
+            height: 20px;
+            transform: translate(30px, 21px) rotate(45deg);
+            background: linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 1) 0%,
+                rgba(255, 154, 0, 1) 10%,
+                rgba(208, 222, 33, 1) 20%,
+                rgba(79, 220, 74, 1) 30%,
+                rgba(63, 218, 216, 1) 40%,
+                rgba(47, 201, 226, 1) 50%,
+                rgba(28, 127, 238, 1) 60%,
+                rgba(95, 21, 242, 1) 70%,
+                rgba(186, 12, 248, 1) 80%,
+                rgba(251, 7, 217, 1) 90%,
+                rgba(255, 0, 0, 1) 100%
+            );
+            filter: opacity(0.65);
         }
 
         .selector {
@@ -95,9 +124,6 @@
             background-color: rgba(0, 0 , 0 , 0);
             border: 0;border-radius: 5px;
             color: #eeeeee;
-            
-            
-           
         }
 
         .selector:hover {
@@ -106,11 +132,6 @@
 
         .selector option {
             color: black;
-        }
-
-        .mod_highlight {
-            background-image: linear-gradient(200deg, rgba(255, 0, 0, 0.42) 0, rgba(0, 0, 0, 0)150px) !important;
-            box-shadow: inset 0 0 75px -28px rgb(214 0 255);
         }
 
         #search{
