@@ -62,7 +62,7 @@
                             <input type="checkbox" id="redirect">
                             Redirect to Website
                         </label>
-                        <input type="button" value="Generate JSON" onclick="GenerateJSON()">
+                        <input type="button" value="Add Mod to JSON" onclick="GenerateJSON()">
                     </div>
                     <div style=" min-width: 500px; margin-top: 50px;">
                         <label>
@@ -209,6 +209,7 @@
                     json[games.value].unshift(mod)
                     UpdateJSON()
                     console.log("generated")
+                    alert("Mod added to current JSON")
                 }
 
                 function LoadQMOD() {
