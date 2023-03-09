@@ -197,6 +197,7 @@
             const coreModsText = document.getElementById("coreModsText")
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
+            var coreModsLoaded = false
 
            
             var firstVisit = false
@@ -219,20 +220,19 @@
 
             function PullMods() {
                 gameVersions = {}
-                
                 // Fetch core mods, then normal mods
-                fetch("https://oculusdb.rui2015.me/api/coremodsproxy").then(res => {
+                PullCoreMods()
+                PullNormalMods()
+            }
+
+            function PullCoreMods() {
+	            fetch("coreMods.json").then(res => {
                     res.json().then(json => {
                         coreOrg = json
+                        coreModsLoaded = true
                         SortByGameVersionCore()
-                        PullNormalMods()
-                    }).catch(err => {
-                        console.log(err)
-                        PullNormalMods()
+                        SortByGameVersion()
                     })
-                }).catch(err => {
-                    console.log(err)
-                    PullNormalMods()
                 })
             }
 
@@ -287,6 +287,7 @@
                         coremods: [],
                         mods: []
                     }
+                    gameVersions[key].mods = []
                     var mods = []
                     var coreMods = []
                     for(const mod of value) {
@@ -481,7 +482,7 @@
                 coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
-                    coreModsText.innerHTML = m ? "Core Mods" : "No core mods for this version"
+                coreModsText.innerHTML = coreModsLoaded ? (m ? "Core Mods" : "No core mods for this version") : "Loading...."
             }
 
             function FuckYouKrak(this_gameversion) {
