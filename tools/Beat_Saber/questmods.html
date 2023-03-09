@@ -467,18 +467,6 @@
                             </div>`
                     }
                 })
-                /*
-                gameVersions[gameversion].coremods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase())) {
-                        var versionDropDown = `<select id="${mod.id}"><option value="${mod.download}">${mod.version}</option></select>`
-                        m +=    `<div style="border-radius: 5px; background-color: #222222BB; padding: 10px; text-align: left;">
-                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
-                                <div style="margin-top: 0; margin-left: 20px;">Version ${versionDropDown}</div>
-                                ${GetModButtons(mod, true)}
-                                </div>`
-                    }
-                })
-                */
                 coremods.innerHTML =` <div class="grid">
                             ${m}
                         </div>`
