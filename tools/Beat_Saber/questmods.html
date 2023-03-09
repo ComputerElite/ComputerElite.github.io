@@ -384,10 +384,17 @@
                 var toConcat = []
                 existing = JSON.parse(localStorage.oldMods)
                 for(const d of [...document.getElementById(id).options].map(o => o.value)) {
-                    console.log(d)
                     if(!existing.includes(d)) toConcat.push(d)
                 }
-                existing = existing.concat(toConcat)
+                if(toConcat.length > 0) {
+                    // Add mods to marked
+                    existing = existing.concat(toConcat)
+                } else {
+                    // Remove mods from marked
+                    for(const d of [...document.getElementById(id).options].map(o => o.value)) {
+                        if(existing.includes(d)) existing = existing.filter(e => e != d)
+                    }
+                }
                 localStorage.oldMods = JSON.stringify(existing)
 
                 if(actuallyDownload) window.open(document.getElementById(id).value, "_blank")
