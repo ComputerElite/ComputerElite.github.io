@@ -1,0 +1,36 @@
+name: Update core mods copy via BMBF git
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/20 * * * *'
+
+jobs:
+  updateMods:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        path: 'site'
+    - name: Copy CoreModUpdater
+      run: |
+        cp -R site/Programs/CoreModUpdater CoreModUpdater
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Update mods
+      working-directory: 'CoreModUpdater'
+      run: |
+        dotnet CoreModUpdater.dll
+    - name: Copy updated core mods
+      run: |
+        cp CoreModUpdater/coreMods.json site/tools/Beat_Saber/coreMods.json
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        path: site
+        title: Update Core Mods
+        body: Updated Core Mods via BMBF API
+        commit-message: Update core mods (Auto)
+        branch: update-core-mods
