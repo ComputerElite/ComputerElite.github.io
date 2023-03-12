@@ -5761,6 +5761,15 @@
       "download": "https://github.com/StackDoubleFlow/NoodleExtensions/releases/download/v1.4.0/noodle_extensions.qmod",
       "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
       "author": "StackDoubleFlow"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.7",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.7/BeatLeader_1_28_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
     }
   ],
   "undefined": [
