@@ -5743,6 +5743,24 @@
       "download": "https://github.com/BeatTogether/BeatTogether.Quest/releases/download/v1.8.0/BeatTogether_v1.8.0.qmod",
       "source": "https://github.com/BeatTogether/BeatTogether.Quest/",
       "author": "BeatTogether Team"
+    },
+    {
+      "name": "Chroma",
+      "description": "Colors!",
+      "id": "chroma",
+      "version": "2.8.0",
+      "download": "https://github.com/bsq-ports/Chroma/releases/download/v2.8.0/chroma.qmod",
+      "source": "https://github.com/bsq-ports/Chroma/",
+      "author": "Aeroluna"
+    },
+    {
+      "name": "NoodleExtensions",
+      "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+      "id": "NoodleExtensions",
+      "version": "1.4.0-beta1",
+      "download": "https://github.com/StackDoubleFlow/NoodleExtensions/releases/download/v1.4.0/noodle_extensions.qmod",
+      "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
+      "author": "StackDoubleFlow"
     }
   ],
   "undefined": [
