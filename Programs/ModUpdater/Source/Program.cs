@@ -22,8 +22,8 @@ void UpdateAllMods()
 	int i = 0;
 	foreach (KeyValuePair<string, List<string>> d in idAndDownload)
 	{
-		Console.WriteLine("Waiting 1 sec to satisfy GitHub");
-		Thread.Sleep(1000);
+		Console.WriteLine("Waiting 2 sec to satisfy GitHub");
+		Thread.Sleep(2000);
 		Console.WriteLine("\n\nProcessing mod id " + d.Key + " (" + i + "/" + idAndDownload.Count + ")");
 		i++;
 		try

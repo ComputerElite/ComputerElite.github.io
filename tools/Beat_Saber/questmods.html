@@ -418,7 +418,7 @@
                     return 0
                 })
                 modsToShow.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.id.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))

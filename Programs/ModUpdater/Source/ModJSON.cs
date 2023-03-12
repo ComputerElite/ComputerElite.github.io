@@ -32,7 +32,8 @@ namespace ModUpdater
 				ModJSONMod j = new ModJSONMod();
 				j.name = mod.Name;
 				j.description = mod.Description;
-				j.author = mod.Author;
+				j.author = mod.Author + ", " + mod.Porter;
+				if(j.author.EndsWith(", ")) j.author = j.author.Substring(0, j.author.Length - 2);
 				j.version = mod.Version.ToString();
 				j.id = mod.Id;
 				j.download = downloadLink;
