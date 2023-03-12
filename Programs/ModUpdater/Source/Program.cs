@@ -15,8 +15,9 @@ void UpdateAllMods()
 		foreach(ModJSONMod mod in v)
 		{
 			if (!mod.download.Contains("github.com")) continue;
-			if (!idAndDownload.ContainsKey(mod.id)) idAndDownload.Add(mod.id, new List<string>());
-			idAndDownload[mod.id].Add(mod.download);
+			string modId = mod.id + "-" + Github.GetUser(mod.download) + "-" + Github.GetRepo(mod.download);
+			if (!idAndDownload.ContainsKey(modId)) idAndDownload.Add(modId, new List<string>());
+			idAndDownload[modId].Add(mod.download);
 		}
 	}
 	int i = 0;
