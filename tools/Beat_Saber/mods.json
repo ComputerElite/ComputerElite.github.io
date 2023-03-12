@@ -5761,6 +5761,24 @@
       "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.7/BeatLeader_1_28_0.qmod",
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova"
+    },
+    {
+      "name": "Time Failed",
+      "description": "Shows the time in the song you failed at in the results screen",
+      "id": "TimeFailed",
+      "version": "1.1.4",
+      "download": "https://github.com/NuggoDEV/Time-Failed/releases/download/v1.1.4/TimeFailed.qmod",
+      "source": "https://github.com/NuggoDEV/Time-Failed/",
+      "author": "Nuggo#9535"
+    },
+    {
+      "name": "Chroma",
+      "description": "Colors!",
+      "id": "chroma",
+      "version": "2.8.0",
+      "download": "https://github.com/bsq-ports/Chroma/releases/download/v2.8.0/chroma.qmod",
+      "source": "https://github.com/bsq-ports/Chroma/",
+      "author": "Aeroluna, FernTheDev, nyamimi~"
     }
   ],
   "undefined": [
@@ -5772,6 +5790,15 @@
       "download": "https://github.com/MillzyDev/bsq-ThinSaberCore/releases/download/v1.0.0/ThinSaberCore.qmod",
       "source": "https://github.com/MillzyDev/bsq-ThinSaberCore/",
       "author": "Millzy"
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows user to change colours mid-game!",
+      "id": "QolourSwitcher",
+      "version": "2.0.0",
+      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
+      "author": "Nuggo#9535"
     }
   ]
 }
