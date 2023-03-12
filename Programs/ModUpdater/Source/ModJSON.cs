@@ -39,6 +39,7 @@ namespace ModUpdater
 				j.download = downloadLink;
 				j.source = downloadLink.Substring(0, downloadLink.IndexOf("releases"));
 				string gameVersion = mod.PackageVersion;
+				if (gameVersion == "null") gameVersion = "undefined"; // undefined is for game version agnostic mods
 				if (!versions.ContainsKey(gameVersion)) versions.Add(gameVersion, new List<ModJSONMod>());
 				foreach (ModJSONMod m in versions[gameVersion])
 				{
