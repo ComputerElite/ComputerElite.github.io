@@ -5607,6 +5607,24 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.9-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "Speecil Tweaks",
+      "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Results Tweaks and more!",
+      "id": "SpeecilTweaks",
+      "version": "0.1.0",
+      "download": "https://github.com/speecil/SpeecilTweaks-Quest/releases/download/v0.1.0/SpeecilTweaks.qmod",
+      "source": "https://github.com/speecil/SpeecilTweaks-Quest/",
+      "author": "Speecil"
+    },
+    {
+      "name": "Speecil Tweaks",
+      "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Quality of Life Tweaks and more!",
+      "id": "SpeecilTweaks",
+      "version": "0.2.1",
+      "download": "https://github.com/speecil/SpeecilTweaks-Quest/releases/download/v0.2.1/SpeecilTweaks.qmod",
+      "source": "https://github.com/speecil/SpeecilTweaks-Quest/",
+      "author": "Speecil"
     }
   ],
   "1.26.1": [
@@ -5905,6 +5923,15 @@
       "download": "https://github.com/darknight1050/ChatUI/releases/download/v0.2.12/ChatUI.qmod",
       "source": "https://github.com/darknight1050/ChatUI/",
       "author": "darknight1050"
+    },
+    {
+      "name": "Speecil Tweaks",
+      "description": "This mod brings a bunch of tweaks to the table, such as: Menu Tweaks, Gameplay Tweaks, Quality of Life Tweaks and more!",
+      "id": "SpeecilTweaks",
+      "version": "0.2.2",
+      "download": "https://github.com/speecil/SpeecilTweaks-Quest/releases/download/v0.2.2/SpeecilTweaks.qmod",
+      "source": "https://github.com/speecil/SpeecilTweaks-Quest/",
+      "author": "Speecil"
     }
   ],
   "undefined": [
@@ -5916,6 +5943,15 @@
       "download": "https://github.com/MillzyDev/bsq-ThinSaberCore/releases/download/v1.0.0/ThinSaberCore.qmod",
       "source": "https://github.com/MillzyDev/bsq-ThinSaberCore/",
       "author": "Millzy"
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows user to change colours mid-game!",
+      "id": "QolourSwitcher",
+      "version": "2.0.0",
+      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
+      "author": "Nuggo#9535"
     }
   ]
 }
