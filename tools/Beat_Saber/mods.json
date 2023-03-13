@@ -5673,42 +5673,6 @@
   ],
   "1.28.0_4124311467": [
     {
-      "name": "feetsaber",
-      "description": "Phazed became bored",
-      "id": "feetsaber",
-      "version": "0.1.4",
-      "download": "https://github.com/piskndar/feetsaber/releases/download/v0.1.4/feetsaber.qmod",
-      "source": "https://github.com/piskndar/feetsaber/",
-      "author": "Waffle"
-    },
-    {
-      "name": "FingerSaber",
-      "description": "Allows you to play Beat Saber with your fingers!",
-      "id": "fingersaber",
-      "version": "0.2.0",
-      "download": "https://github.com/piskndar/FingerSaber/releases/download/v0.2.0/FingerSaber.qmod",
-      "source": "https://github.com/piskndar/FingerSaber/",
-      "author": "piskndar, Henri"
-    },
-    {
-      "name": "NoItalic",
-      "description": "Remove any italics font and screen make you comfortable.",
-      "id": "noitalic",
-      "version": "0.1.0",
-      "download": "https://github.com/piskndar/NoItalic-Quest/releases/download/v0.1.0/NoItalic.qmod",
-      "source": "https://github.com/piskndar/NoItalic-Quest/",
-      "author": "piskndar"
-    },
-    {
-      "name": "I Rember",
-      "description": "Awaken for I Forgor that should be We Rember.",
-      "id": "irember",
-      "version": "0.1.0",
-      "download": "https://github.com/piskndar/IRember-Quest/releases/download/v0.1.0/IRember.qmod",
-      "source": "https://github.com/piskndar/IRember-Quest/",
-      "author": "piskndar"
-    },
-    {
       "name": "ModList",
       "description": "Displays your installed mods inside the game and gives you a warning prompt upon starting the game to tell you if a mod failed to load.",
       "id": "mod-list",
