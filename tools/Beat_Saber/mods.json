@@ -5914,6 +5914,15 @@
       "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.1.1/ParticleTuner.qmod",
       "source": "https://github.com/kodenamekrak/ParticleTuner/",
       "author": "KodenameKRAK"
+    },
+    {
+      "name": "ChatUI",
+      "description": "Shows your Twitch Chat Ingame",
+      "id": "chatui",
+      "version": "0.2.12",
+      "download": "https://github.com/darknight1050/ChatUI/releases/download/v0.2.12/ChatUI.qmod",
+      "source": "https://github.com/darknight1050/ChatUI/",
+      "author": "darknight1050"
     }
   ],
   "undefined": [
