@@ -5932,6 +5932,24 @@
       "download": "https://github.com/speecil/SpeecilTweaks-Quest/releases/download/v0.2.2/SpeecilTweaks.qmod",
       "source": "https://github.com/speecil/SpeecilTweaks-Quest/",
       "author": "Speecil"
+    },
+    {
+      "name": "RandomSongPicker",
+      "description": "Adds a button, that picks a random song out of the current list",
+      "id": "RandomSongPicker",
+      "version": "0.3.0",
+      "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.3.0/RandomSongPicker_1_28_0.qmod",
+      "source": "https://github.com/Tatenshi/RandomSongPicker/",
+      "author": "Tatenshi"
+    },
+    {
+      "name": "FingerSaber",
+      "description": "Beat Saber At Your Finger Tips. @drumtool#4435 @NoneThing#7502",
+      "id": "fingersaber",
+      "version": "0.1.4",
+      "download": "https://github.com/im-henri/FingerSaber/releases/download/v0.1.4/FingerSaber.qmod",
+      "source": "https://github.com/im-henri/FingerSaber/",
+      "author": "Henri, piskndar"
     }
   ],
   "undefined": [
