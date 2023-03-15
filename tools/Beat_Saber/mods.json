@@ -5950,6 +5950,15 @@
       "download": "https://github.com/im-henri/FingerSaber/releases/download/v0.1.4/FingerSaber.qmod",
       "source": "https://github.com/im-henri/FingerSaber/",
       "author": "Henri, piskndar"
+    },
+    {
+      "name": "QonsistentSaberColors",
+      "description": "Menu saber colors reflect in game saber colors.",
+      "id": "qonsistentsabercolors",
+      "version": "0.1.1",
+      "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/0.1.1/QonsistentSaberColors.qmod",
+      "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
+      "author": "KodenameKRAK, Henri"
     }
   ],
   "undefined": [
