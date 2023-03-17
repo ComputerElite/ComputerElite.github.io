@@ -5968,6 +5968,15 @@
       "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/0.1.1/QonsistentSaberColors.qmod",
       "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
       "author": "KodenameKRAK, Henri"
+    },
+    {
+      "name": "PinkCore",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "id": "pinkcore",
+      "version": "1.8.10",
+      "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.10/PinkCore.qmod",
+      "source": "https://github.com/BSMGPink/PinkCore/",
+      "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
     }
   ],
   "undefined": [
