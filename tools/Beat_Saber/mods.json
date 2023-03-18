@@ -5977,6 +5977,15 @@
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.10/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.2",
+      "download": "https://github.com/ItsKaitlyn03/AnyTweaks/releases/download/v6.1.2/anytweaks_v6.1.2.qmod",
+      "source": "https://github.com/ItsKaitlyn03/AnyTweaks/",
+      "author": "Kaitlyn, xyonico"
     }
   ],
   "undefined": [
