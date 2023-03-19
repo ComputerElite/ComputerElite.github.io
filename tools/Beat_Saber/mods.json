@@ -6022,6 +6022,15 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.28.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "SessionQombo",
+      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game \u0060In The Groove\u0060",
+      "id": "SessionQombo",
+      "version": "0.1.1",
+      "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.2/SessionQombo.qmod",
+      "source": "https://github.com/oli-ctrl/SessionQombo/",
+      "author": "Original by Headaassbtw, Ported by Oli"
     }
   ],
   "undefined": [
