@@ -6031,6 +6031,15 @@
       "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.2/SessionQombo.qmod",
       "source": "https://github.com/oli-ctrl/SessionQombo/",
       "author": "Original by Headaassbtw, Ported by Oli"
+    },
+    {
+      "name": "ImageFactory",
+      "description": "Place and customize images throughout your game.",
+      "id": "ImageFactory",
+      "version": "1.0.2",
+      "download": "https://github.com/OptimusChen/ImageFactory-Quest/releases/download/v1.0.2/ImageFactory.qmod",
+      "source": "https://github.com/OptimusChen/ImageFactory-Quest/",
+      "author": "Optimus"
     }
   ],
   "undefined": [
