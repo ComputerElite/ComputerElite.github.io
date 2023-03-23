@@ -6058,6 +6058,15 @@
       "download": "https://github.com/RedBrumbler/AntiVertigo/releases/download/v1.0.6/AntiVertigo.qmod",
       "source": "https://github.com/RedBrumbler/AntiVertigo/",
       "author": "RedBrumbler"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.8",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.8/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
     }
   ],
   "undefined": [
