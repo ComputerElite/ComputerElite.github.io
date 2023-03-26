@@ -890,6 +890,15 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.10",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.25.1/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "1.24.0": [
@@ -1468,6 +1477,15 @@
       "download": "https://github.com/BeatTogether/BeatTogether.Quest/releases/download/v1.5.0/BeatTogether_v1.5.0.qmod",
       "source": "https://github.com/BeatTogether/BeatTogether.Quest/",
       "author": "BeatTogether Team"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.10",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.24.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "1.17.1": [
@@ -5661,6 +5679,15 @@
       "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.8/BeatLeader_1_27_0.qmod",
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.10",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.27.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "1.26.1": [
@@ -6085,6 +6112,15 @@
       "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.8/BeatLeader_1_28_0.qmod",
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.10",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.28.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "undefined": [
