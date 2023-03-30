@@ -899,6 +899,15 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "Custom Main Menu",
+      "description": "Customize the text on the main menu of Beat Saber",
+      "id": "CustomMainMenu",
+      "version": "0.1.1",
+      "download": "https://github.com/NotHiiragi/CustomMainMenu/releases/download/1.25.1/CustomMainMenu.qmod",
+      "source": "https://github.com/NotHiiragi/CustomMainMenu/",
+      "author": "Temmie#7854 | WaffleTheCool#8942"
     }
   ],
   "1.24.0": [
@@ -1486,6 +1495,15 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "Promotion Yeeter",
+      "description": "Yeets the Music Pack Promotion Button/Banner from the main menu",
+      "id": "PromotionYeeter",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/PromotionYeeter/releases/download/0.1.0/Promotion.Yeeter.qmod",
+      "source": "https://github.com/NotHiiragi/PromotionYeeter/",
+      "author": "WaffleTheCool#8942"
     }
   ],
   "1.17.1": [
@@ -2352,6 +2370,15 @@
       "download": "https://github.com/BobbyShmurner/ThiccSaber/releases/download/v1.0.0/ThiccSaber_v1.0.0.qmod",
       "source": "https://github.com/BobbyShmurner/ThiccSaber/",
       "author": "Bobby Shmurner"
+    },
+    {
+      "name": "Drink Water",
+      "description": "Tells you to drink water",
+      "id": "DrinkWater",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/DrinkWater/releases/download/0.2.0/DrinkWater.qmod",
+      "source": "https://github.com/NotHiiragi/DrinkWater/",
+      "author": "Idk, Vilmer#8942"
     }
   ],
   "1.21.0": [
@@ -2750,6 +2777,15 @@
       "download": "https://github.com/ComputerElite/RedBar/releases/download/1.9.0/RedBar.qmod",
       "source": "https://github.com/ComputerElite/RedBar/",
       "author": "ComputerElite"
+    },
+    {
+      "name": "AniPic",
+      "description": "Ever get anger that you cant beat a map? Then look at animal pictures until you feel calm :)",
+      "id": "AniPic",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/Anipic/releases/download/v0_1_0/AniPic_v0_1_0.qmod",
+      "source": "https://github.com/NotHiiragi/Anipic/",
+      "author": "WaffleTheCool#8942"
     }
   ],
   "1.20.0": [
@@ -5688,6 +5724,33 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "PitchBlaq",
+      "description": "Simple plugin that can completely disable lights (events) and spectrogram (if the environment has one). Config menu include light and spectrogram.",
+      "id": "PitchBlaq",
+      "version": "0.1.2",
+      "download": "https://github.com/NotHiiragi/PitchBlaq/releases/download/v0.1.2/PitchBlaq.qmod",
+      "source": "https://github.com/NotHiiragi/PitchBlaq/",
+      "author": "Loloppe | Waffle"
+    },
+    {
+      "name": "Adblock",
+      "description": "???",
+      "id": "adblock",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/Adblock/releases/download/1.27.0_3631150051/Adblock.qmod",
+      "source": "https://github.com/NotHiiragi/Adblock/",
+      "author": "Waffle"
+    },
+    {
+      "name": "feetsaber",
+      "description": "Phazed became bored",
+      "id": "feetsaber",
+      "version": "0.1.3",
+      "download": "https://github.com/NotHiiragi/feetsaber/releases/download/v0.1.3_3631150051/feetsaber.qmod",
+      "source": "https://github.com/NotHiiragi/feetsaber/",
+      "author": "Waffle"
     }
   ],
   "1.26.1": [
@@ -6141,6 +6204,17 @@
       "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
       "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
       "author": "Nuggo#9535"
+    }
+  ],
+  "1.27.0": [
+    {
+      "name": "feetsaber",
+      "description": "Phazed became bored",
+      "id": "feetsaber",
+      "version": "0.1.2",
+      "download": "https://github.com/NotHiiragi/feetsaber/releases/download/v0.1.3/feetsaber.qmod",
+      "source": "https://github.com/NotHiiragi/feetsaber/",
+      "author": "Waffle"
     }
   ]
 }
