@@ -908,6 +908,15 @@
       "download": "https://github.com/NotHiiragi/CustomMainMenu/releases/download/1.25.1/CustomMainMenu.qmod",
       "source": "https://github.com/NotHiiragi/CustomMainMenu/",
       "author": "Temmie#7854 | WaffleTheCool#8942"
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows full customization of the Bloqs, Walls and Bombs :D",
+      "id": "QolourSwitcher",
+      "version": "2.0.0",
+      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
+      "author": "Nuggo"
     }
   ],
   "1.24.0": [
@@ -6205,8 +6214,6 @@
       "source": "https://github.com/MillzyDev/bsq-ThinSaberCore/",
       "author": "Millzy"
     }
-
-
   ],
   "1.27.0": [
     {
