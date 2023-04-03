@@ -2388,6 +2388,15 @@
       "download": "https://github.com/NotHiiragi/DrinkWater/releases/download/0.2.0/DrinkWater.qmod",
       "source": "https://github.com/NotHiiragi/DrinkWater/",
       "author": "Idk, Vilmer#8942"
+    },
+    {
+      "name": "JDFixer",
+      "description": null,
+      "id": "JDFixer",
+      "version": "1.0.0",
+      "download": "https://github.com/Metalit/QuestJDFixer/releases/download/v1.0.0/JDFixer.qmod",
+      "source": "https://github.com/Metalit/QuestJDFixer/",
+      "author": "Metalit"
     }
   ],
   "1.21.0": [
