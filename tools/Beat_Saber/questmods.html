@@ -387,7 +387,7 @@
             }
 
             gameversion.onchange = () => {
-                if(!localStorage.gameversion) AddGameVersions()
+                if(!localStorage.gameversion || localStorage.gameversion == "undefined") AddGameVersions()
                 localStorage.gameversion = gameversion.value
                 Display(gameversion.value)
             }
