@@ -320,6 +320,7 @@
                     gameVersions[key].mods = mods
                 }
                 if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
+                var versionInLocastorage = localStorage.gameversion
                 AddGameVersions()
                 var foundMatchingGameversion = false
                 for (let checkVersion in gameVersions) {
@@ -327,6 +328,7 @@
                     if (checkVersion.includes(urlVersion)) {
                         foundMatchingGameversion = true
                         gameversion.value = checkVersion
+                        localStorage.gameversion = checkVersion
                     }
                 }
                 if(!foundMatchingGameversion && params.get("isqavs")) {
@@ -344,6 +346,14 @@
                         mods.innerHTML =`` 
                         return
                 }
+                if(!foundMatchingGameversion && !versionInLocastorage) {
+                    coremods.innerHTML =`<h1 style="background-color: #232323; padding: 20px; font-size: 3em">Select a game version</h1>` 
+                        mods.innerHTML =``
+                    gameversion.innerHTML = `<option value="undefined">Select a game version</option>` + gameversion.innerHTML
+                    gameversion.value = "undefined"
+                    return
+                }
+                if(versionInLocastorage) gameversion.value = versionInLocastorage
                 Display(gameversion.value)
             }
 
@@ -373,11 +383,11 @@
                 if(params.get("version") && gameversions.includes(params.get("version"))) {
                     gameversion.value = params.get("version")
                 }
-
-
             }
 
             gameversion.onchange = () => {
+                if(!localStorage.gameversion) AddGameVersions()
+                localStorage.gameversion = gameversion.value
                 Display(gameversion.value)
             }
 
