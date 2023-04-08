@@ -346,11 +346,12 @@
                         mods.innerHTML =`` 
                         return
                 }
-                if(!foundMatchingGameversion && !versionInLocastorage) {
+                if(!foundMatchingGameversion && (!versionInLocastorage || versionInLocastorage == "undefined")) {
                     coremods.innerHTML =`<h1 style="background-color: #232323; padding: 20px; font-size: 3em">Select a game version</h1>` 
                         mods.innerHTML =``
                     gameversion.innerHTML = `<option value="undefined">Select a game version</option>` + gameversion.innerHTML
                     gameversion.value = "undefined"
+                    localStorage.gameversion = undefined
                     return
                 }
                 if(versionInLocastorage) gameversion.value = versionInLocastorage
