@@ -321,11 +321,28 @@
                 }
                 if(firstVisit) localStorage.oldMods = JSON.stringify(existing)
                 AddGameVersions()
+                var foundMatchingGameversion = false
                 for (let checkVersion in gameVersions) {
                     let urlVersion = params.get("version")
                     if (checkVersion.includes(urlVersion)) {
+                        foundMatchingGameversion = true
                         gameversion.value = checkVersion
                     }
+                }
+                if(!foundMatchingGameversion && params.get("isqavs")) {
+                        coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
+                            Your installed Beat Saber version <b>does not</b> support any mods. <b>Downgrade</B> to a version which supports mods.
+                            <br>
+                            You can see the supported version in the dropdown at the top.
+                            <br>
+                            <br>
+                            Your game version: <code>${params.get("version")}</code>
+                            <br>
+                            <br>
+                            <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
+                </div>` 
+                        mods.innerHTML =`` 
+                        return
                 }
                 Display(gameversion.value)
             }
