@@ -6247,6 +6247,15 @@
       "download": "https://github.com/Qosmetics/Qosmetics-Sabers/releases/download/v0.1.6/QosmeticsWhackers.qmod",
       "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
       "author": "RedBrumbler"
+    },
+    {
+      "name": "Qosmetics Cyoobs",
+      "description": "Qosmetics module that adds Cyoob capabilities",
+      "id": "qosmetics-notes",
+      "version": "0.1.5",
+      "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.1.5/QosmeticsCyoobs.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
+      "author": "RedBrumbler"
     }
   ],
   "undefined": [
