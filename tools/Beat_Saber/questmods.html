@@ -211,6 +211,7 @@
             }
 
             search.onkeyup = e => {
+                if(gameversion.value == "undefined") return
                 Display(gameversion.value)
             }
             PullMods()
