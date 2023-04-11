@@ -6256,6 +6256,15 @@
       "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.1.5/QosmeticsCyoobs.qmod",
       "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
       "author": "RedBrumbler"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.2",
+      "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.2/smoothedcontroller_v1.5.2.qmod",
+      "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn"
     }
   ],
   "undefined": [
