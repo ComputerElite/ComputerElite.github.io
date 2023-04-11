@@ -6274,6 +6274,15 @@
       "download": "https://github.com/ItsKaitlyn03/PeripheralHUD/releases/download/v1.1.2/peripheralhud_v1.1.2.qmod",
       "source": "https://github.com/ItsKaitlyn03/PeripheralHUD/",
       "author": "Kaitlyn"
+    },
+    {
+      "name": "No Play Beat Saber",
+      "description": "This literally does not allow you to play beat saber. Why do you even want this?",
+      "id": "noplaybeatsaber",
+      "version": "11.0.0",
+      "download": "https://github.com/Kaylerr/No-Play-Beat-Saber/releases/download/v11/npbs11.qmod",
+      "source": "https://github.com/Kaylerr/No-Play-Beat-Saber/",
+      "author": "Kaylerr"
     }
   ],
   "undefined": [
