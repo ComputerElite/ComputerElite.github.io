@@ -343,7 +343,7 @@
                             <br>
                             The latest supported gameversion is <code>${GetLatestGameVersion()}</code>. To get this version press the button below.
                             <br>
-                            <input class="button" type="button" style="font-size: 1.1em" onclick="location = 'http://127.0.0.1?download=true&version=${GetLatestGameVersion()}&game=2448060205267927'" value="Download latest moddable game version">
+                            <input class="button" type="button" style="font-size: 1.1em" onclick="location = 'http://127.0.0.1:${params.get("port")}?download=true&version=${GetLatestGameVersion()}&game=2448060205267927'" value="Download latest moddable game version">
                             <br>
                             <br>
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
