@@ -475,7 +475,10 @@
                 }
                 localStorage.oldMods = JSON.stringify(existing)
 
-                if(actuallyDownload) window.open(document.getElementById(id).value, "_blank")
+                if(actuallyDownload) {
+                    window.open(document.getElementById(id).value, "_blank")
+                    if(params.get("isqavs")) window.open("https://github.com/ComputerElite/QuestAppVersionSwitcher/releases/download/1.10.8/CustomTypesPatched.qmod", "_blank")
+                }
                 Display(gameversion.value)
             }
 
