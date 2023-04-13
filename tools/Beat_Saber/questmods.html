@@ -204,6 +204,7 @@
             if(!displayMethod) displayMethod = 1
             var coreModsLoaded = false
 
+            var bypass = false
            
             var firstVisit = false
             var existing = []
@@ -335,7 +336,7 @@
                         localStorage.gameversion = checkVersion
                     }
                 }
-                if(!foundMatchingGameversion && params.get("isqavs")) {
+                if(!foundMatchingGameversion && params.get("isqavs") && !bypass) {
                     coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your installed Beat Saber version <b>does not</b> support any mods. <b>Downgrade</B> to a version which supports mods.
                             <br>
@@ -348,6 +349,8 @@
                             <br>
                             <br>
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
+                            <br>
+                            <i style="font-size: .7em;"><a onclick="bypass = true; PullMods()">View mods anyway</a></i>
                 </div>` 
                     mods.innerHTML =``
                     modsHeader.style.display = "none"
@@ -355,13 +358,15 @@
                     topStuff.style.display = "none"
                     return
                 }
-                if(params.get("ismodded").toLowerCase() == "false") {
+                if(params.get("ismodded").toLowerCase() == "false" && !bypass) {
                     coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your Beat Saber game is not modded yet. To mod it press the button below.
                             <input class="button" type="button" style="font-size: 1.1em" onclick="location = 'http://127.0.0.1:${params.get("port")}?package=com.beatgames.beatsaber&modnow=true'" value="Mod my game">
                             <br>
                             <br>
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
+                            <br>
+                            <i style="font-size: .7em;"><a onclick="bypass = true; PullMods()">View mods anyway</a></i>
                 </div>`
                     mods.innerHTML =``
                     modsHeader.style.display = "none"
