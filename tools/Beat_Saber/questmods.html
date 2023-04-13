@@ -154,20 +154,23 @@
                         <div class="headerDescription" style="width: 50%; margin: auto;">Pulled from <a href="https://github.com/ComputerElite/ComputerElite.github.io/blob/main/tools/Beat_Saber/mods.json" target="_blank">here</a></div>
                         <div class="headerDescription" style="width: 50%; margin: auto;">Is your mod missing? Add it <a href="modsjsongenerator.html" target="_blank">here.</a></div>
                         <br/>
-                        <div style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
-                            <span style="display: block; margin-right:1em;">Game Version</span><br />
-                            <select id="gameversion" class="selector">
-                                <option value=""></option>
-                            </select>
+                        <div id="topStuff">
+                            <div style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                                <span style="display: block; margin-right:1em;">Game Version</span><br />
+                                <select id="gameversion" class="selector">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <input type="text" id="search" placeholder="Search mods"> <br />
+                            <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
+                            <a class="button" href="https://github.com/ComputerElite/QuestAppVersionSwitcher/releases/download/1.10.8/CustomTypesPatched.qmod">Get V51 custom types fix</a>
                         </div>
-                        <input type="text" id="search" placeholder="Search mods"> <br />
-                        <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
-                        <a class="button" href="https://github.com/ComputerElite/QuestAppVersionSwitcher/releases/download/1.10.8/CustomTypesPatched.qmod">Get V51 custom types fix</a>
+                        
                         <h2 id="coreModsText">Core Mods</h2>
                         <div id="coremods">
                             <h3>Loading....</h3>
                         </div>
-                        <h2>Mods</h2>
+                        <h2 id="modsHeader">Mods</h2>
                         <div id="mods">
                             <h3>Loading....</h3>
                         </div>
@@ -196,6 +199,7 @@
             const search = document.getElementById("search")
             const params = new URLSearchParams(window.location.search)
             const coreModsText = document.getElementById("coreModsText")
+            const topStuff = document.getElementById("topStuff")
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
             var coreModsLoaded = false
@@ -332,7 +336,7 @@
                     }
                 }
                 if(!foundMatchingGameversion && params.get("isqavs")) {
-                        coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
+                    coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your installed Beat Saber version <b>does not</b> support any mods. <b>Downgrade</B> to a version which supports mods.
                             <br>
                             <br>
@@ -345,8 +349,11 @@
                             <br>
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
                 </div>` 
-                        mods.innerHTML =`` 
-                        return
+                    mods.innerHTML =``
+                    modsHeader.style.display = "none"
+                    coreModsText.style.display = "none"
+                    topStuff.style.display = "none"
+                    return
                 }
                 if(!foundMatchingGameversion && (!versionInLocastorage || versionInLocastorage == "undefined")) {
                     coremods.innerHTML =`<h1 style="background-color: #232323; padding: 20px; font-size: 3em">Select a game version</h1>` 
