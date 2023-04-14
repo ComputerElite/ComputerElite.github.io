@@ -359,7 +359,7 @@
                     topStuff.style.display = "none"
                     return
                 }
-                if(params.get("ismodded").toLowerCase() == "false" && !bypass) {
+                if(params.get("isqavs") && (params.get("ismodded") && params.get("ismodded").toLowerCase() == "false") && !bypass) {
                     coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your Beat Saber game is not modded yet. To mod it press the button below.
                             <input class="button" type="button" style="font-size: 1.1em" onclick="location = 'http://127.0.0.1:${params.get("port")}?package=com.beatgames.beatsaber&modnow=true'" value="Mod my game">
