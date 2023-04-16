@@ -6292,6 +6292,69 @@
       "download": "https://github.com/Kaylerr/No-Play-Beat-Saber/releases/download/v11/npbs11.qmod",
       "source": "https://github.com/Kaylerr/No-Play-Beat-Saber/",
       "author": "Kaylerr"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.2",
+      "download": "https://github.com/Christoffyw/HitScoreVisualizer/releases/download/v2.7.2/HitScoreVisualizer.qmod",
+      "source": "https://github.com/Christoffyw/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit"
+    },
+    {
+      "name": "JDFixer",
+      "description": "Configure your Jump Distance, Speed, and more with ultra precision!",
+      "id": "jdfixer",
+      "version": "3.1.0",
+      "download": "https://github.com/Metalit/QuestJDFixer/releases/download/v3.1.0/JDFixer.qmod",
+      "source": "https://github.com/Metalit/QuestJDFixer/",
+      "author": "Metalit"
+    },
+    {
+      "name": "Slice Visualizer",
+      "description": "See your slices right in front of you",
+      "id": "slicevisualizer",
+      "version": "5.0.3",
+      "download": "https://github.com/Metalit/SliceVisualizer/releases/download/v5.0.3/SliceVisualizer.qmod",
+      "source": "https://github.com/Metalit/SliceVisualizer/",
+      "author": "Henwill8, Metalit"
+    },
+    {
+      "name": "Transitions",
+      "description": "Speed up or remove boring transitions in the game",
+      "id": "transitions",
+      "version": "1.1.4",
+      "download": "https://github.com/Metalit/Transitions/releases/download/v1.1.4/Transitions.qmod",
+      "source": "https://github.com/Metalit/Transitions/",
+      "author": "Metalit"
+    },
+    {
+      "name": "SaberTrailer",
+      "description": "Make simple but powerful changes to your saber trail",
+      "id": "sabertrailer",
+      "version": "0.1.0",
+      "download": "https://github.com/Metalit/SaberTrailer/releases/download/v0.1.1/SaberTrailer.qmod",
+      "source": "https://github.com/Metalit/SaberTrailer/",
+      "author": "Metalit"
+    },
+    {
+      "name": "AccMiss",
+      "description": "Miss when you acc bad",
+      "id": "accmiss",
+      "version": "0.1.0",
+      "download": "https://github.com/Metalit/AccMiss/releases/download/v0.1.1/AccMiss.qmod",
+      "source": "https://github.com/Metalit/AccMiss/",
+      "author": "Metalit"
+    },
+    {
+      "name": "Qounters-",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "id": "qounters-minus",
+      "version": "1.2.3",
+      "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/1.2.3/Qounters-.qmod",
+      "source": "https://github.com/Metalit/bsq-qounters-minus/",
+      "author": "Metalit, danrouse"
     }
   ],
   "undefined": [
