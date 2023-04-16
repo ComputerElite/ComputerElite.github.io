@@ -6355,6 +6355,15 @@
       "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/1.2.3/Qounters-.qmod",
       "source": "https://github.com/Metalit/bsq-qounters-minus/",
       "author": "Metalit, danrouse"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.2.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.2.1/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit"
     }
   ],
   "undefined": [
