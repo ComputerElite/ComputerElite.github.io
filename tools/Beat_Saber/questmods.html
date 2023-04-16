@@ -228,7 +228,9 @@
             
             function DownloadV51FixIfNeeded() {
                 if(params.get("isqavs")) {
-                    window.open("https://github.com/ComputerElite/QuestAppVersionSwitcher/releases/download/1.10.8/CustomTypesPatched.qmod")
+                    setTimeout(() => {
+                        window.open("https://github.com/ComputerElite/QuestAppVersionSwitcher/releases/download/1.10.8/CustomTypesPatched.qmod")
+                    }, 1000)
                 }
             }
 
