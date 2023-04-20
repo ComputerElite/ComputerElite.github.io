@@ -2804,6 +2804,15 @@
       "download": "https://github.com/NotHiiragi/Anipic/releases/download/v0_1_0/AniPic_v0_1_0.qmod",
       "source": "https://github.com/NotHiiragi/Anipic/",
       "author": "WaffleTheCool#8942"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/2.0.0/Colorama-2.0.0-1210.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
     }
   ],
   "1.20.0": [
@@ -3031,6 +3040,24 @@
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.6/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/2.0.0/Colorama-2.0.0-1200.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "1.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/1.0.0/Colorama-1.0.0%2B1200.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
     }
   ],
   "1.19.1": [
