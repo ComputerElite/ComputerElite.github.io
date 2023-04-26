@@ -733,13 +733,13 @@
         ]
     },
     "1.28.0_4124311467": {
-        "lastUpdated": "2023-03-04T06:03:19.174Z",
+        "lastUpdated": "2023-04-26T19:20:00Z",
         "mods": [
             {
                 "id": "custom-types",
-                "version": "0.15.23",
-                "downloadLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.23/CustomTypes.qmod",
-                "filename": "CustomTypes_0_15_23.qmod"
+                "version": "0.15.24",
+                "downloadLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod",
+                "filename": "CustomTypes_0_15_24.qmod"
             },
             {
                 "id": "codegen",
