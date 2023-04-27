@@ -5850,6 +5850,15 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.9",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.9/BeatLeader_1_27_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
     }
   ],
   "1.26.1": [
@@ -6472,6 +6481,15 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.28.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.9",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.9/BeatLeader_1_28_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
     }
   ],
   "undefined": [
