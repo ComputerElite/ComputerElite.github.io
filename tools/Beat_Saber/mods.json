@@ -6490,6 +6490,15 @@
       "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.9/BeatLeader_1_28_0.qmod",
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova"
+    },
+    {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.22.4",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.4/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, rcelyte"
     }
   ],
   "undefined": [
