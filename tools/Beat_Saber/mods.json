@@ -917,6 +917,24 @@
       "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
       "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
       "author": "Nuggo"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.25.1/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.11",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.25.1/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "1.24.0": [
@@ -1513,6 +1531,15 @@
       "download": "https://github.com/NotHiiragi/PromotionYeeter/releases/download/0.1.0/Promotion.Yeeter.qmod",
       "source": "https://github.com/NotHiiragi/PromotionYeeter/",
       "author": "WaffleTheCool#8942"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.11",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.24.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
     }
   ],
   "1.17.1": [
@@ -2804,6 +2831,15 @@
       "download": "https://github.com/NotHiiragi/Anipic/releases/download/v0_1_0/AniPic_v0_1_0.qmod",
       "source": "https://github.com/NotHiiragi/Anipic/",
       "author": "WaffleTheCool#8942"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/2.0.0/Colorama-2.0.0-1210.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
     }
   ],
   "1.20.0": [
@@ -3031,6 +3067,24 @@
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.6/PinkCore.qmod",
       "source": "https://github.com/BSMGPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/2.0.0/Colorama-2.0.0-1200.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "1.0.0",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/1.0.0/Colorama-1.0.0%2B1200.qmod",
+      "source": "https://github.com/mineblock11/Colorama/",
+      "author": "cal117"
     }
   ],
   "1.19.1": [
@@ -4957,6 +5011,15 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.26.2/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
     }
   ],
   "1.27.0_3631150051": [
@@ -5769,6 +5832,33 @@
       "download": "https://github.com/NotHiiragi/feetsaber/releases/download/v0.1.3_3631150051/feetsaber.qmod",
       "source": "https://github.com/NotHiiragi/feetsaber/",
       "author": "Waffle"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.27.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.11",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.27.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.9",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.9/BeatLeader_1_27_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
     }
   ],
   "1.26.1": [
@@ -6364,6 +6454,51 @@
       "download": "https://github.com/Metalit/Replay/releases/download/v0.2.1/Replay.qmod",
       "source": "https://github.com/Metalit/Replay/",
       "author": "Metalit"
+    },
+    {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.22.3",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.3/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, rcelyte"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.28.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.11",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.28.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex"
+    },
+    {
+      "name": "BeatLeader",
+      "description": null,
+      "id": "BeatLeader",
+      "version": "0.5.9",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.5.9/BeatLeader_1_28_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova"
+    },
+    {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.22.4",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.4/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, rcelyte"
     }
   ],
   "undefined": [

@@ -227,6 +227,7 @@
             }
             
             function DownloadV51FixIfNeeded() {
+	        return
                 if(params.get("isqavs")) {
                     setTimeout(() => {
                         window.open("https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod")
