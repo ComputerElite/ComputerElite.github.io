@@ -6499,6 +6499,15 @@
       "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.4/MappingExtensions.qmod",
       "source": "https://github.com/rcelyte/MappingExtensions/",
       "author": "StackDoubleFlow, rxzz0, rcelyte"
+    },
+    {
+      "name": "ParticleTuner",
+      "description": "Lets you tweak individual particle settings! And has rainbow particles!",
+      "id": "particletuner",
+      "version": "0.2.0",
+      "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.2.0/ParticleTuner.qmod",
+      "source": "https://github.com/kodenamekrak/ParticleTuner/",
+      "author": "KodenameKRAK"
     }
   ],
   "undefined": [
