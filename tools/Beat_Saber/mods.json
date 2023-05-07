@@ -6508,6 +6508,15 @@
       "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.2.0/ParticleTuner.qmod",
       "source": "https://github.com/kodenamekrak/ParticleTuner/",
       "author": "KodenameKRAK"
+    },
+    {
+      "name": "Pause Remapper",
+      "description": "Allows the user to change which buttons pause and resume the game!",
+      "id": "PauseRemapper",
+      "version": "1.2.2",
+      "download": "https://github.com/speecil/PauseRemapper/releases/download/v0.2.2/PauseRemapper.qmod",
+      "source": "https://github.com/speecil/PauseRemapper/",
+      "author": "Speecil"
     }
   ],
   "undefined": [
