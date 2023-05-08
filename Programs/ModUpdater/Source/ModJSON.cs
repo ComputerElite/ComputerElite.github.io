@@ -43,6 +43,7 @@ namespace ModUpdater
 				string gameVersion = mod.PackageVersion;
 				if (gameVersion == null) gameVersion = "undefined"; // undefined is for game version agnostic mods
 				if (!versions.ContainsKey(gameVersion)) versions.Add(gameVersion, new List<ModJSONMod>());
+				bool found = false;
 				for (int i = 0; i < versions[gameVersion].Count; i++)
 				{
 					if (versions[gameVersion][i].cover == null && versions[gameVersion][i].source.ToLower().Contains("github.com"))
@@ -64,14 +65,16 @@ namespace ModUpdater
 						}
 						Console.WriteLine("Updated entry of mod with cover");
 					}
-					if (versions[gameVersion][i].download == j.download)
+					if (versions[gameVersion][i].download == j.download && !found)
 					{
 						mod.Dispose();
 						f.Dispose();
 						if(File.Exists("mod.qmod")) File.Delete("mod.qmod");
-						return;
+						found = true;
 					}
 				}
+
+				if (found) return;
 				Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
 				j.cover = GetCoverUrl(j, mod.CoverImagePath);
 				if (j.cover == "")

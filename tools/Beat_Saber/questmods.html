@@ -526,7 +526,11 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
+                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}" ${mod.cover ? `style="background-image: url('${mod.cover}');
+    background-blend-mode: color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;"` : ``}>
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
                                 <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
