@@ -46,7 +46,7 @@ namespace ModUpdater
 				bool found = false;
 				for (int i = 0; i < versions[gameVersion].Count; i++)
 				{
-					if (versions[gameVersion][i].cover == null && versions[gameVersion][i].source.ToLower().Contains("github.com"))
+					if (versions[gameVersion][i].cover == null && versions[gameVersion][i].id == j.id && versions[gameVersion][i].source.ToLower().Contains("github.com"))
 					{
 						// Try to get the cover of the mod as it wasn't attempted to be added yet
 						Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
