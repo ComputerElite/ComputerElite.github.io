@@ -104,6 +104,7 @@ namespace ModUpdater
 
 		private string GetCoverUrl(ModJSONMod modJsonMod, string coverFileName)
 		{
+			if (coverFileName == "") return "";
 			string rawLink = "https://raw.githubusercontent.com/" + modJsonMod.source.Split('/')[3] + "/" +
 			                 modJsonMod.source.Split('/')[4] + "/";
 			Console.WriteLine(rawLink + "master/" + coverFileName);
