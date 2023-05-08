@@ -596,7 +596,7 @@
                 if(displayMethod == 1) {
                     DisplayCards(this_gameversion)
                     return;
-                } else {
+                } else if(displayMethod != 69) {
                     FuckYouKrak(this_gameversion)
                 }
                 this_gameversion.innerHTML = "";
@@ -606,8 +606,8 @@
                 gameVersions[this_gameversion].mods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.creator.join(", ").toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
                         m +=    `<tr class="hrColorTr pointer" onclick='window.open("${mod.download}", "_blank")'>
-                                <td style="vertical-align:top;">${mod.creator.join(", ")}</td>
-                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.details.replace(/\n/g, "<br>")}</div></td>
+                                <td style="vertical-align:top;">${mod.author}</td>
+                                <td><div style="font-size: 120%; font-weight: bold;">${mod.name}</div><div>${mod.description.replace(/\n/g, "<br>")}</div></td>
                                 <td style="vertical-align:top;">${mod.version}</td>
                             </tr>`
                     }
