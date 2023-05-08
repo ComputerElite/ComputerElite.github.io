@@ -27,8 +27,10 @@ namespace ModUpdater
 				client.Headers.Add("User-Agent", "ModUpdater/0.1");
 				if (!downloadLink.EndsWith(".qmod")) return;
 				Console.WriteLine("Downloading from " + downloadLink);
+				if(File.Exists("mod.qmod")) File.Delete("mod.qmod");
 				client.DownloadFile(downloadLink, "mod.qmod");
-				QMod mod = QMod.ParseAsync(ZipFile.OpenRead("mod.qmod")).Result;
+				ZipArchive f = ZipFile.OpenRead("mod.qmod");
+				QMod mod = QMod.ParseAsync(f).Result;
 				ModJSONMod j = new ModJSONMod();
 				j.name = mod.Name;
 				j.description = mod.Description;
@@ -41,12 +43,56 @@ namespace ModUpdater
 				string gameVersion = mod.PackageVersion;
 				if (gameVersion == null) gameVersion = "undefined"; // undefined is for game version agnostic mods
 				if (!versions.ContainsKey(gameVersion)) versions.Add(gameVersion, new List<ModJSONMod>());
-				foreach (ModJSONMod m in versions[gameVersion])
+				for (int i = 0; i < versions[gameVersion].Count; i++)
 				{
-					if (m.download == j.download) return;
+					if (versions[gameVersion][i].download == j.download)
+					{
+						mod.Dispose();
+						f.Dispose();
+						if(File.Exists("mod.qmod")) File.Delete("mod.qmod");
+						if (versions[gameVersion][i].source.ToLower().Contains("github.com"))
+						{
+							if (versions[gameVersion][i].cover == null)
+							{
+								// Try to get the cover of the mod
+								Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
+								versions[gameVersion][i].cover = GetCoverUrl(versions[gameVersion][i], mod.CoverImagePath);
+								if (versions[gameVersion][i].cover == "")
+								{
+									Console.ForegroundColor = ConsoleColor.Red;
+									Console.WriteLine("Cover not found");
+									Console.ForegroundColor = ConsoleColor.White;
+								}
+								else
+								{
+									Console.ForegroundColor = ConsoleColor.Green;
+									Console.WriteLine("Cover found at " + versions[gameVersion][i].cover);
+									Console.ForegroundColor = ConsoleColor.White;
+								}
+								Console.WriteLine("Updated entry of mod with cover");
+							}
+						}
+						return;
+					}
+				}
+				Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
+				j.cover = GetCoverUrl(j, mod.CoverImagePath);
+				if (j.cover == "")
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Cover not found");
+					Console.ForegroundColor = ConsoleColor.White;
+				}
+				else
+				{
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.WriteLine("Cover found at " + j.cover);
+					Console.ForegroundColor = ConsoleColor.White;
 				}
 				Console.WriteLine("Added mod " + j.name + " - " + j.version + " for " + gameVersion + " to list.");
-				File.Delete("mod.qmod");
+				mod.Dispose();
+				f.Dispose();
+				if(File.Exists("mod.qmod")) File.Delete("mod.qmod");
 				versions[gameVersion].Add(j);
 			} catch(Exception e)
 			{
@@ -54,6 +100,42 @@ namespace ModUpdater
 				Console.WriteLine("failed: " + e.ToString());
 			}
 			
+		}
+
+		private string GetCoverUrl(ModJSONMod modJsonMod, string coverFileName)
+		{
+			string rawLink = "https://raw.githubusercontent.com/" + modJsonMod.source.Split('/')[3] + "/" +
+			                 modJsonMod.source.Split('/')[4] + "/";
+			Console.WriteLine(rawLink + "master/" + coverFileName);
+			if(DoesUrlExit(rawLink + "master/" + coverFileName)) return rawLink + "master/" + coverFileName;
+			if(DoesUrlExit(rawLink + "main/" + coverFileName)) return rawLink + "main/" + coverFileName;
+			
+			return "";
+		}
+
+		private bool DoesUrlExit(string url)
+		{
+			try
+			{
+				//Creating the HttpWebRequest
+				HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
+				//Setting the Request method HEAD, you can also use GET too.
+				request.Method = "HEAD";
+				request.Headers.Add("authorization", File.ReadAllText("token.txt"));
+				request.Headers.Add("User-Agent", "ModUpdater/0.1");
+				//Getting the Web Response.
+				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+				//Returns TRUE if the Status code == 200
+				bool exists = response.StatusCode == HttpStatusCode.OK;
+				response.Close();
+				return exists;
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine(e.ToString());
+				//Any exception will returns false.
+				return false;
+			}
 		}
 	}
 		
@@ -66,5 +148,6 @@ namespace ModUpdater
 		public string download { get; set; } = "";
 		public string source { get; set; } = "";
 		public string author { get; set; } = "";
+		public string cover { get; set; } = null;
 	}
 }
