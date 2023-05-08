@@ -45,33 +45,30 @@ namespace ModUpdater
 				if (!versions.ContainsKey(gameVersion)) versions.Add(gameVersion, new List<ModJSONMod>());
 				for (int i = 0; i < versions[gameVersion].Count; i++)
 				{
+					if (versions[gameVersion][i].cover == null && versions[gameVersion][i].source.ToLower().Contains("github.com"))
+					{
+						// Try to get the cover of the mod as it wasn't attempted to be added yet
+						Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
+						versions[gameVersion][i].cover = GetCoverUrl(versions[gameVersion][i], mod.CoverImagePath);
+						if (versions[gameVersion][i].cover == "")
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+							Console.WriteLine("Cover not found");
+							Console.ForegroundColor = ConsoleColor.White;
+						}
+						else
+						{
+							Console.ForegroundColor = ConsoleColor.Green;
+							Console.WriteLine("Cover found at " + versions[gameVersion][i].cover);
+							Console.ForegroundColor = ConsoleColor.White;
+						}
+						Console.WriteLine("Updated entry of mod with cover");
+					}
 					if (versions[gameVersion][i].download == j.download)
 					{
 						mod.Dispose();
 						f.Dispose();
 						if(File.Exists("mod.qmod")) File.Delete("mod.qmod");
-						if (versions[gameVersion][i].source.ToLower().Contains("github.com"))
-						{
-							if (versions[gameVersion][i].cover == null)
-							{
-								// Try to get the cover of the mod
-								Console.WriteLine("Getting cover url for mod " + j.name + " - " + j.version + " for " + gameVersion);
-								versions[gameVersion][i].cover = GetCoverUrl(versions[gameVersion][i], mod.CoverImagePath);
-								if (versions[gameVersion][i].cover == "")
-								{
-									Console.ForegroundColor = ConsoleColor.Red;
-									Console.WriteLine("Cover not found");
-									Console.ForegroundColor = ConsoleColor.White;
-								}
-								else
-								{
-									Console.ForegroundColor = ConsoleColor.Green;
-									Console.WriteLine("Cover found at " + versions[gameVersion][i].cover);
-									Console.ForegroundColor = ConsoleColor.White;
-								}
-								Console.WriteLine("Updated entry of mod with cover");
-							}
-						}
 						return;
 					}
 				}
