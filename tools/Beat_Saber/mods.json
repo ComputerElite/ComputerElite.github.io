@@ -86,7 +86,7 @@
       "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
       "id": "toomanytweaks",
       "version": "0.3.0",
-      "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.0/toomanytweaks-0.3.0+1251.qmod",
+      "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.0/toomanytweaks-0.3.0\u002B1251.qmod",
       "source": "https://github.com/mineblock11/TooManyTweaks/",
       "author": "mineblock11"
     },
@@ -176,13 +176,13 @@
       "description": "I swear you just vented...",
       "id": "vent",
       "version": "1.0.0",
-      "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0+1251.qmod",
+      "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0\u002B1251.qmod",
       "source": "https://github.com/mineblock11/Vent/",
       "author": "cal117"
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "1.1.1",
       "download": "https://cdn.discordapp.com/attachments/1015346189828374528/1047677092554342520/Saber_Tailor.qmod",
@@ -587,7 +587,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.2.1",
       "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/v1.2.1/Qounters-.qmod",
@@ -650,7 +650,7 @@
     },
     {
       "name": "SessionQombo",
-      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game `In The Groove` ",
+      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game \u0060In The Groove\u0060 ",
       "id": "SessionQombo",
       "version": "0.1.0",
       "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.0/SessionQombo.qmod",
@@ -848,7 +848,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.3",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.3/PinkCore.qmod",
@@ -857,7 +857,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.2",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.2/PinkCore.qmod",
@@ -866,7 +866,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.1",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.1/PinkCore.qmod",
@@ -1273,7 +1273,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.2.0",
       "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/v1.2.0/Qounters-.qmod",
@@ -1318,7 +1318,7 @@
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "1.1.1",
       "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/1.1.1/Saber.Tailor.qmod",
@@ -1345,7 +1345,7 @@
     },
     {
       "name": "Simple Beatmap Play Count",
-      "description": "Keep track of how many times you've played a song",
+      "description": "Keep track of how many times you\u0027ve played a song",
       "id": "BeatmapPlayCount",
       "version": "0.1.1",
       "download": "https://github.com/netux/BeatSaber-BeatmapPlayCount-Quest/releases/download/v0.1.1/BeatmapPlayCount.v0.1.1.qmod",
@@ -1480,7 +1480,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.7.0",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.7.0/PinkCore.qmod",
@@ -1489,7 +1489,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.10",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.10/PinkCore.qmod",
@@ -1634,7 +1634,7 @@
       "author": "darknight1050"
     },
     {
-      "name": "Cheater's anxeity",
+      "name": "Cheater\u0027s anxeity",
       "description": "Russian Roulette with CRASHES!",
       "id": "nopause",
       "version": "0.1.0",
@@ -1662,7 +1662,7 @@
     },
     {
       "name": "Custom Backgrounds",
-      "description": "Import your own 360 images as custom skyboxes!\nScans the 'CustomBackgrounds' ModData folder for imported images.",
+      "description": "Import your own 360 images as custom skyboxes!\nScans the \u0027CustomBackgrounds\u0027 ModData folder for imported images.",
       "id": "CustomBackgrounds",
       "version": "1.3.2",
       "download": "https://github.com/Raemien/CustomBackgroundsQuest/releases/download/v1.3.2/CustomBackgrounds.qmod",
@@ -1707,7 +1707,7 @@
     },
     {
       "name": "Discord Presence",
-      "description": "Allows discord rich presence to see which song you're playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn't a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic's app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it's not working, try these:\r\n- Make sure your Quest IP hasn't changed, if so, update it in the app, see installation.\r\n- Make sure you've opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
+      "description": "Allows discord rich presence to see which song you\u0027re playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn\u0027t a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic\u0027s app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it\u0027s not working, try these:\r\n- Make sure your Quest IP hasn\u0027t changed, if so, update it in the app, see installation.\r\n- Make sure you\u0027ve opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
       "id": "discord-presence",
       "version": "0.3.5",
       "download": "https://github.com/Lauriethefish/Quest-Discord-Presence/releases/download/0.3.5/discord-presence_v0.3.5.qmod",
@@ -1770,7 +1770,7 @@
     },
     {
       "name": "GAY FROGS!",
-      "description": "I DON'T LIKE EM' PUTTIN' CHEMICALS IN THE WATER THAT TURNED THE FREAKIN' FROGS GAY!!!",
+      "description": "I DON\u0027T LIKE EM\u0027 PUTTIN\u0027 CHEMICALS IN THE WATER THAT TURNED THE FREAKIN\u0027 FROGS GAY!!!",
       "id": "GayFrogs",
       "version": "0.1.0",
       "download": "https://cdn.discordapp.com/attachments/959136713987465326/968556900453068820/GayFrogs-0.1.0.qmod",
@@ -1824,7 +1824,7 @@
     },
     {
       "name": "JDFixer",
-      "description": "This mod allows you to change the spawn offset of any map at will to a desired jump distance. Features also include setting the jump distance to the map's default or to a configurable reaction time.\r\n\r\nThis is a port of the PC mod with the same name, created by Zephyr: https://discord.com/channels/441805394323439646/889894313763422218/895936512938623056\r\nIf you find any bugs, please let me know.\r\n",
+      "description": "This mod allows you to change the spawn offset of any map at will to a desired jump distance. Features also include setting the jump distance to the map\u0027s default or to a configurable reaction time.\r\n\r\nThis is a port of the PC mod with the same name, created by Zephyr: https://discord.com/channels/441805394323439646/889894313763422218/895936512938623056\r\nIf you find any bugs, please let me know.\r\n",
       "id": "JDFixer",
       "version": "1.1.0",
       "download": "https://github.com/Metalit/QuestJDFixer/releases/download/v1.1.0/JDFixer.qmod",
@@ -1869,7 +1869,7 @@
     },
     {
       "name": "MultiQuestensions",
-      "description": "Lightweight port of MultiplayerExtensions, the PC mod that adds features to official Multiplayer.\r\n\r\nFeatures:\r\n- Lets you play Multiplayer with Custom Songs between PC and Quest.\r\n- Automatically downloads songs when missing.\r\n- Shows a loading indicator that shows how many players have the song downloaded and are ready\r\n- Shows a downloading indicator when downloading songs you're missing\r\n- Shows a platform icon for each player\r\n- Has a download history in the GameplaySetupMenu (GameplaySetupMenu is sometimes a bit buggy)\r\n- Auto-Delete Toggle to automatically delete songs that were downloaded in Multiplayer after playing them.\r\n- Lag Reducer Toggle that hides notes/bombs and walls from other players. (Specifically useful when playing ME maps)\r\n- Lets you select a custom color for your platform and name tag for everyone to see.\r\n- Increases the Max Players amount for Lobby creation to 10.\r\n- Disabled Avatar Pose Restrictions, you can freely walk over to others if you so desire.\r\n\r\nWarning: This mod is still not fully stable and you may experience issues such as crashes when playing with others. \r\n\r\nOther incompatible mods:\r\nChroma versions below v2.5.7\r\nDiscord Presence v0.3.5 and below\r\n\r\nRequires: Beat Together Mod post in this channel https://discord.com/channels/441805394323439646/885555565760237598/909500373465698355",
+      "description": "Lightweight port of MultiplayerExtensions, the PC mod that adds features to official Multiplayer.\r\n\r\nFeatures:\r\n- Lets you play Multiplayer with Custom Songs between PC and Quest.\r\n- Automatically downloads songs when missing.\r\n- Shows a loading indicator that shows how many players have the song downloaded and are ready\r\n- Shows a downloading indicator when downloading songs you\u0027re missing\r\n- Shows a platform icon for each player\r\n- Has a download history in the GameplaySetupMenu (GameplaySetupMenu is sometimes a bit buggy)\r\n- Auto-Delete Toggle to automatically delete songs that were downloaded in Multiplayer after playing them.\r\n- Lag Reducer Toggle that hides notes/bombs and walls from other players. (Specifically useful when playing ME maps)\r\n- Lets you select a custom color for your platform and name tag for everyone to see.\r\n- Increases the Max Players amount for Lobby creation to 10.\r\n- Disabled Avatar Pose Restrictions, you can freely walk over to others if you so desire.\r\n\r\nWarning: This mod is still not fully stable and you may experience issues such as crashes when playing with others. \r\n\r\nOther incompatible mods:\r\nChroma versions below v2.5.7\r\nDiscord Presence v0.3.5 and below\r\n\r\nRequires: Beat Together Mod post in this channel https://discord.com/channels/441805394323439646/885555565760237598/909500373465698355",
       "id": "multiquestensions",
       "version": "0.1.1",
       "download": "https://github.com/Goobwabber/MultiQuestensions/releases/download/v0.1.1/MultiQuestensions.qmod",
@@ -1923,7 +1923,7 @@
     },
     {
       "name": "Note Vortex",
-      "description": "It's back and it's not broken this time!\r\n\r\nEver wanted notes bigger than the sun? No? Well here you go anyway!\r\n\r\nA very simple mod that has options for:\r\n     - world rotation that rotates your world by 1 degree every time a note spawns (Credit to Phish, his guide is lower down)\r\n     - A fun note effect that causes notes to spawn beneath you and swirl upwards.\r\n     - A multiplier for your note size, allowing you to make the notes bigger than the sun or smaller than your brain!",
+      "description": "It\u0027s back and it\u0027s not broken this time!\r\n\r\nEver wanted notes bigger than the sun? No? Well here you go anyway!\r\n\r\nA very simple mod that has options for:\r\n     - world rotation that rotates your world by 1 degree every time a note spawns (Credit to Phish, his guide is lower down)\r\n     - A fun note effect that causes notes to spawn beneath you and swirl upwards.\r\n     - A multiplier for your note size, allowing you to make the notes bigger than the sun or smaller than your brain!",
       "id": "noteVortex",
       "version": "0.1.1",
       "download": "https://github.com/AllyPallyUK/NoteVortex/releases/download/V1.0.2/noteVortex_v0.1.2.qmod",
@@ -1977,7 +1977,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.1.5-1",
       "download": "https://cdn.discordapp.com/attachments/885555565760237598/938563489247670282/QountersMinus.qmod",
@@ -2040,7 +2040,7 @@
     },
     {
       "name": "RumbleMod",
-      "description": "Allows you to adjust controller haptic feedback.\r\nQuest re-port of the PC mod with the same name by nalulululuna\r\n\r\nThe mod is disabled by default, please go to the Mod Settings menu to enable.\r\n\r\n What's New? \r\n- Rewritten the mod\r\n- Implemented a shitty hooking system (as per usual)\r\n- Made UI very close to the PC version\r\n- Updated to 1.17.1\r\n\r\n Known Issues: \r\n- \"The rumble buttons stop rumbling the controller after pressing one of the rumble buttons, exiting the RumbleMod menu, and then going back in the menu\", this will be fixed, as soon as I can find the issue",
+      "description": "Allows you to adjust controller haptic feedback.\r\nQuest re-port of the PC mod with the same name by nalulululuna\r\n\r\nThe mod is disabled by default, please go to the Mod Settings menu to enable.\r\n\r\n What\u0027s New? \r\n- Rewritten the mod\r\n- Implemented a shitty hooking system (as per usual)\r\n- Made UI very close to the PC version\r\n- Updated to 1.17.1\r\n\r\n Known Issues: \r\n- \u0022The rumble buttons stop rumbling the controller after pressing one of the rumble buttons, exiting the RumbleMod menu, and then going back in the menu\u0022, this will be fixed, as soon as I can find the issue",
       "id": "RumbleMod",
       "version": "2.0.0",
       "download": "https://github.com/MillzyDev/BeatSaber-RumbleMod/releases/download/2.0.0/RumbleMod-2.0.0.qmod",
@@ -2049,7 +2049,7 @@
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "1.0.0",
       "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v1.0.0/sabertailor_v1.0.0.qmod",
@@ -2193,7 +2193,7 @@
     },
     {
       "name": "Technicolour",
-      "description": "Yes, it's colour with a U\r\n\r\nUltra-customisable rainbow lights/sabers/walls/blocks/bombs mod, originally made by Aeroluna for PC.\r\nSettings are accessible in the gameplay setup tab.\r\n\r\nPorted for the questmas trivia event.",
+      "description": "Yes, it\u0027s colour with a U\r\n\r\nUltra-customisable rainbow lights/sabers/walls/blocks/bombs mod, originally made by Aeroluna for PC.\r\nSettings are accessible in the gameplay setup tab.\r\n\r\nPorted for the questmas trivia event.",
       "id": "technicolour",
       "version": "1.0.0",
       "download": "https://github.com/Lauriethefish/Technicolour/releases/download/1.0.0/Technicolour.qmod",
@@ -2319,7 +2319,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.3",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.3/PinkCore.qmod",
@@ -2328,7 +2328,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.2",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.2/PinkCore.qmod",
@@ -2519,7 +2519,7 @@
     },
     {
       "name": "CustomMissText",
-      "description": "This Beat Saber mod allows you to change the 'MISS' text that appears when being bad at the game and missing a note, while not only allowing the user to change the text, it also gives you the ability to change the text font size (basically the text size) and the text color to customize it even more!\nPink cute",
+      "description": "This Beat Saber mod allows you to change the \u0027MISS\u0027 text that appears when being bad at the game and missing a note, while not only allowing the user to change the text, it also gives you the ability to change the text font size (basically the text size) and the text color to customize it even more!\nPink cute",
       "id": "CustomMissText",
       "version": "2.0.0",
       "download": "https://github.com/rxzz0/CustomMissText/releases/download/v2.0.0/CustomMissText.qmod",
@@ -2681,7 +2681,7 @@
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "1.1.0",
       "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v1.1.1/sabertailor_v1.1.0.qmod",
@@ -2807,7 +2807,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.7",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.7/PinkCore.qmod",
@@ -2899,7 +2899,7 @@
     },
     {
       "name": "CustomMissText",
-      "description": "This Beat Saber mod allows you to change the 'MISS' text that appears when being bad at the game and missing a note, while not only allowing the user to change the text, it also gives you the ability to change the text font size (basically the text size) and the text color to customize it even more!\nPink cute",
+      "description": "This Beat Saber mod allows you to change the \u0027MISS\u0027 text that appears when being bad at the game and missing a note, while not only allowing the user to change the text, it also gives you the ability to change the text font size (basically the text size) and the text color to customize it even more!\nPink cute",
       "id": "CustomMissText",
       "version": "1.0.0",
       "download": "https://github.com/rxzz0/CustomMissText/releases/download/1.0.0/CustomMissText.qmod",
@@ -2962,7 +2962,7 @@
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "1.1.0",
       "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v1.1.0/sabertailor_v1.1.0.qmod",
@@ -3061,7 +3061,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.6",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.6/PinkCore.qmod",
@@ -3162,7 +3162,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.1.8",
       "download": "https://cdn.discordapp.com/attachments/950844650808311878/951174851937312798/qounters-minus.qmod",
@@ -3234,7 +3234,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.5",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.5/PinkCore.qmod",
@@ -3272,7 +3272,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.4",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.4/PinkCore.qmod",
@@ -3337,7 +3337,7 @@
     },
     {
       "name": "Custom Backgrounds",
-      "description": "Import your own 360 images as custom skyboxes!\nScans the 'CustomBackgrounds' ModData folder for imported images.",
+      "description": "Import your own 360 images as custom skyboxes!\nScans the \u0027CustomBackgrounds\u0027 ModData folder for imported images.",
       "id": "CustomBackgrounds",
       "version": "1.3.1",
       "download": "https://github.com/Raemien/CustomBackgroundsQuest/releases/download/v1.3.1/CustomBackgrounds.qmod",
@@ -3373,7 +3373,7 @@
     },
     {
       "name": "Discord Presence",
-      "description": "Allows discord rich presence to see which song you're playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn't a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic's app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it's not working, try these:\r\n- Make sure your Quest IP hasn't changed, if so, update it in the app, see installation.\r\n- Make sure you've opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
+      "description": "Allows discord rich presence to see which song you\u0027re playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn\u0027t a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic\u0027s app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it\u0027s not working, try these:\r\n- Make sure your Quest IP hasn\u0027t changed, if so, update it in the app, see installation.\r\n- Make sure you\u0027ve opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
       "id": "discord-presence",
       "version": "0.3.4",
       "download": "https://github.com/Lauriethefish/Quest-Discord-Presence/releases/download/0.3.4/discord-presence_v0.3.4.qmod",
@@ -3454,7 +3454,7 @@
     },
     {
       "name": "More Precise Player Height",
-      "description": "Let's you view your own height... but more precise.",
+      "description": "Let\u0027s you view your own height... but more precise.",
       "id": "MorePrecisePlayerHeight",
       "version": "1.0.0",
       "download": "https://github.com/NotAika/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
@@ -3481,7 +3481,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.1.2",
       "download": "https://github.com/danrouse/bsq-qounters-minus/releases/download/v1.1.2/qounters-minus_v1.1.2.qmod",
@@ -3598,7 +3598,7 @@
     },
     {
       "name": "More Precise Player Height",
-      "description": "Let's you view your own height... but more precise.",
+      "description": "Let\u0027s you view your own height... but more precise.",
       "id": "MorePrecisePlayerHeight",
       "version": "1.0.0",
       "download": "https://github.com/ItsKaitlyn03/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
@@ -3607,7 +3607,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.1",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.1/PinkCore.qmod",
@@ -3616,7 +3616,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.0",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.0/PinkCore.qmod",
@@ -3708,7 +3708,7 @@
     },
     {
       "name": "Custom Backgrounds",
-      "description": "Import your own 360 images as custom skyboxes!\nScans the 'CustomBackgrounds' ModData folder for imported images.",
+      "description": "Import your own 360 images as custom skyboxes!\nScans the \u0027CustomBackgrounds\u0027 ModData folder for imported images.",
       "id": "CustomBackgrounds",
       "version": "1.3.0",
       "download": "https://github.com/Raemien/CustomBackgroundsQuest/releases/download/v1.3.0/CustomBackgrounds.qmod",
@@ -3744,7 +3744,7 @@
     },
     {
       "name": "Discord Presence",
-      "description": "Allows discord rich presence to see which song you're playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn't a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic's app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it's not working, try these:\r\n- Make sure your Quest IP hasn't changed, if so, update it in the app, see installation.\r\n- Make sure you've opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
+      "description": "Allows discord rich presence to see which song you\u0027re playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn\u0027t a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic\u0027s app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it\u0027s not working, try these:\r\n- Make sure your Quest IP hasn\u0027t changed, if so, update it in the app, see installation.\r\n- Make sure you\u0027ve opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
       "id": "discord-presence",
       "version": "0.3.3",
       "download": "https://github.com/Lauriethefish/Quest-Discord-Presence/releases/download/0.3.3/discord-presence_v0.3.3.qmod",
@@ -3852,7 +3852,7 @@
     },
     {
       "name": "Particles",
-      "description": "Quest Particles allows you to boost/reduce/remove note slash particles, saber clash particles, remove environmental dust, and make particle rainbow.\r\n\r\nThis mod does nothing out of the box. You will need to use the in-game mod config UI (Settings -> Mod Settings -> ParticleTuner) to change the particle behaviors.\r\n\r\nKnown Issues:\r\n* Particles having white tints in rainbow mode (colorOverLifetime?)\r\n* Sometimes the preset buttons may fail to work (please lmk if you can reproduce this issue consistently)",
+      "description": "Quest Particles allows you to boost/reduce/remove note slash particles, saber clash particles, remove environmental dust, and make particle rainbow.\r\n\r\nThis mod does nothing out of the box. You will need to use the in-game mod config UI (Settings -\u003E Mod Settings -\u003E ParticleTuner) to change the particle behaviors.\r\n\r\nKnown Issues:\r\n* Particles having white tints in rainbow mode (colorOverLifetime?)\r\n* Sometimes the preset buttons may fail to work (please lmk if you can reproduce this issue consistently)",
       "id": "particletuner",
       "version": "1.3.0",
       "download": "https://github.com/SuperMarcus/QuestParticleTuner/releases/download/1.3.0/ParticleTuner.qmod",
@@ -3879,7 +3879,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.1.0",
       "download": "https://github.com/danrouse/bsq-qounters-minus/releases/download/1.1.0/qounters-minus_v1.1.0.qmod",
@@ -4014,7 +4014,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "PinkCore",
       "version": "1.5.4",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.5.4/PinkCore.qmod",
@@ -4023,7 +4023,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "PinkCore",
       "version": "1.5.3",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.5.3/PinkCore.qmod",
@@ -4032,7 +4032,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "PinkCore",
       "version": "1.5.2",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.5.2/PinkCore.qmod",
@@ -4041,7 +4041,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "PinkCore",
       "version": "1.5.0",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.5.0/PinkCore.qmod",
@@ -4070,7 +4070,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.9",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.9/PinkCore.qmod",
@@ -4153,7 +4153,7 @@
     },
     {
       "name": "Custom Backgrounds",
-      "description": "Import your own 360 images as custom skyboxes!\nScans the 'CustomBackgrounds' ModData folder for imported images.",
+      "description": "Import your own 360 images as custom skyboxes!\nScans the \u0027CustomBackgrounds\u0027 ModData folder for imported images.",
       "id": "CustomBackgrounds",
       "version": "1.2.6",
       "download": "https://github.com/Raemien/CustomBackgroundsQuest/releases/download/v1.2.6/CustomBackgrounds.zip",
@@ -4189,7 +4189,7 @@
     },
     {
       "name": "Discord Presence",
-      "description": "Allows discord rich presence to see which song you're playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn't a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic's app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it's not working, try these:\r\n- Make sure your Quest IP hasn't changed, if so, update it in the app, see installation.\r\n- Make sure you've opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
+      "description": "Allows discord rich presence to see which song you\u0027re playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn\u0027t a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic\u0027s app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it\u0027s not working, try these:\r\n- Make sure your Quest IP hasn\u0027t changed, if so, update it in the app, see installation.\r\n- Make sure you\u0027ve opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
       "id": "discord-presence",
       "version": "0.3.1",
       "download": "https://github.com/Lauriethefish/Quest-Discord-Presence/releases/download/0.3.1/discord-presence_v0.3.1.zip",
@@ -4224,7 +4224,7 @@
       "author": "Lillie"
     },
     {
-      "name": "I'm Not Interested",
+      "name": "I\u0027m Not Interested",
       "description": "Gets rid of the DLC Promo on the Main Menu\r\n\r\nWill eventually be compiled with other mods into Tweakaroo",
       "id": "IAmNotInterested",
       "version": "1.0.1",
@@ -4288,7 +4288,7 @@
     },
     {
       "name": "No Names",
-      "description": "Removes the ArtistName Text from BeatMap \"Descriptions\" and Level Bars\r\n\r\nFeatures:\r\n    - Pause Menu Level Bar Elimination",
+      "description": "Removes the ArtistName Text from BeatMap \u0022Descriptions\u0022 and Level Bars\r\n\r\nFeatures:\r\n    - Pause Menu Level Bar Elimination",
       "id": "quest_noname",
       "version": "1.0.0",
       "download": "https://github.com/MillzyG/QuestNoName/releases/download/1.13.2/quest_nonames_v1.0.0.zip",
@@ -4297,7 +4297,7 @@
     },
     {
       "name": "Particles",
-      "description": "Quest Particles allows you to boost/reduce/remove note slash particles, saber clash particles, remove environmental dust, and make particle rainbow.\r\n\r\nThis mod does nothing out of the box. You will need to use the in-game mod config UI (Settings -> Mod Settings -> ParticleTuner) to change the particle behaviors.\r\n\r\nKnown Issues:\r\n* Particles having white tints in rainbow mode (colorOverLifetime?)\r\n* Sometimes the preset buttons may fail to work (please lmk if you can reproduce this issue consistently)",
+      "description": "Quest Particles allows you to boost/reduce/remove note slash particles, saber clash particles, remove environmental dust, and make particle rainbow.\r\n\r\nThis mod does nothing out of the box. You will need to use the in-game mod config UI (Settings -\u003E Mod Settings -\u003E ParticleTuner) to change the particle behaviors.\r\n\r\nKnown Issues:\r\n* Particles having white tints in rainbow mode (colorOverLifetime?)\r\n* Sometimes the preset buttons may fail to work (please lmk if you can reproduce this issue consistently)",
       "id": "particletuner",
       "version": "1.1.2",
       "download": "https://github.com/SuperMarcus/QuestParticleTuner/releases/download/1.1.2/ParticleTuner_1.1.2.zip",
@@ -4324,7 +4324,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.0.2",
       "download": "https://github.com/danrouse/bsq-qounters-minus/releases/download/1.0.2/qounters-minus_v1.0.2.zip",
@@ -4378,7 +4378,7 @@
     },
     {
       "name": "SlowResume",
-      "description": "Allows you to change how long the countdown takes to resume when paused. Disables score submission if the amount of time is increased, since this makes pausing an easier method to get back your stamina.\r\n\r\nTo change the amount of time, go to the Settings Icon in the main menu -> Mod Settings -> SlowResume.\r\n\r\nThis mod was commissioned",
+      "description": "Allows you to change how long the countdown takes to resume when paused. Disables score submission if the amount of time is increased, since this makes pausing an easier method to get back your stamina.\r\n\r\nTo change the amount of time, go to the Settings Icon in the main menu -\u003E Mod Settings -\u003E SlowResume.\r\n\r\nThis mod was commissioned",
       "id": "slow-resume",
       "version": "0.1.1",
       "download": "https://github.com/Lauriethefish/SlowResume/releases/download/0.1.1/slow-resume_v0.1.1.zip",
@@ -4423,7 +4423,7 @@
     },
     {
       "name": "Tweakaroo",
-      "description": "Tweakaroo is a \"compilation\" of minor changes/modifications to the game\r\n\r\nDeveloped by Myself and BoopetyDoopety \r\n\r\nALL Features are Toggleable\r\n\r\nFeatures:\r\n- No Names - Removes the Artist/Mapper Name for the Pause Menu.\r\n- I'm Not Interested - Removes the DLC Promo in the Main Menu.\r\nRGB Menu - Allows you to change the colour of Menu Environment Objects.\r\n- Void Menu Environment - Removes the Menu Environment, turning it into an Abyssal Void.\r\n\r\n- Settings UI\r\n\r\nExamples and Descriptions of all Tweaks can be found here: \r\nhttps://github.com/MillzyG/QuestTweakaroo/blob/main/README.md\r\n\r\nPlease Submit Requests and Issues here:\r\nhttps://github.com/MillzyG/QuestTweakaroo/issues",
+      "description": "Tweakaroo is a \u0022compilation\u0022 of minor changes/modifications to the game\r\n\r\nDeveloped by Myself and BoopetyDoopety \r\n\r\nALL Features are Toggleable\r\n\r\nFeatures:\r\n- No Names - Removes the Artist/Mapper Name for the Pause Menu.\r\n- I\u0027m Not Interested - Removes the DLC Promo in the Main Menu.\r\nRGB Menu - Allows you to change the colour of Menu Environment Objects.\r\n- Void Menu Environment - Removes the Menu Environment, turning it into an Abyssal Void.\r\n\r\n- Settings UI\r\n\r\nExamples and Descriptions of all Tweaks can be found here: \r\nhttps://github.com/MillzyG/QuestTweakaroo/blob/main/README.md\r\n\r\nPlease Submit Requests and Issues here:\r\nhttps://github.com/MillzyG/QuestTweakaroo/issues",
       "id": "Tweakaroo",
       "version": "1.0.0",
       "download": "https://github.com/MillzyG/QuestTweakaroo/releases/download/v1.0.0/Tweakaroo_v1.0.0.zip",
@@ -4515,7 +4515,7 @@
     },
     {
       "name": "DebrisKeeper",
-      "description": "Prevents any debris within eight meters of the platform from disappearing.\r\nThis is a feature pulled from another project I'm working on called DebrisTweaker, which will Soon TM allow for full configuration of debris lifetime and velocity.",
+      "description": "Prevents any debris within eight meters of the platform from disappearing.\r\nThis is a feature pulled from another project I\u0027m working on called DebrisTweaker, which will Soon TM allow for full configuration of debris lifetime and velocity.",
       "id": "debris-keeper",
       "version": "0.1.1",
       "download": "https://cdn.discordapp.com/attachments/776551464117075978/780981587021791232/DebrisKeeper_v0.1.1.zip",
@@ -4533,7 +4533,7 @@
     },
     {
       "name": "Discord Presence",
-      "description": "Allows discord rich presence to see which song you're playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn't a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic's app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it's not working, try these:\r\n- Make sure your Quest IP hasn't changed, if so, update it in the app, see installation.\r\n- Make sure you've opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
+      "description": "Allows discord rich presence to see which song you\u0027re playing, the current time, and much more.\r\n\r\nMod Installation: https://github.com/Lauriethefish/Quest-Discord-Presence-Client/blob/main/README.md\r\nYou must follow this to set up the client on your PC and the mod on your Quest.\r\nIf you get a virus warning during installation, ignore it, this isn\u0027t a virus - Windows is oversensitive.\r\n\r\nAlternatively, follow this guide to use MadMagic\u0027s app for general presence of any Quest app: https://github.com/madmagic007/Oculus-Quest-Presence\r\n\r\nIf it\u0027s not working, try these:\r\n- Make sure your Quest IP hasn\u0027t changed, if so, update it in the app, see installation.\r\n- Make sure you\u0027ve opened the app.\r\n- Make sure Beat Saber is open and your headset is on your head.\r\n- You have discord on your PC not in the browser.\r\n- Try restarting discord.",
       "id": "discord-presence",
       "version": "0.2.1",
       "download": "https://github.com/Lauriethefish/Quest-Discord-Presence/releases/download/0.2.1/discord-presence_v0.2.1.zip",
@@ -4605,7 +4605,7 @@
     },
     {
       "name": "MorePrecisePlayerHeight",
-      "description": "Original mod made by Eris for PC (Ported by Lillie)\r\n\r\nA very small Beat Saber mod that's let you view your own height with higher precision... at least one more decimal.\r\n\r\nConfig:\r\n    - enabled (true | false) - Enables the mod\r\n    - measureInFeet (true | false ) - Changes from meter to Feet. ",
+      "description": "Original mod made by Eris for PC (Ported by Lillie)\r\n\r\nA very small Beat Saber mod that\u0027s let you view your own height with higher precision... at least one more decimal.\r\n\r\nConfig:\r\n    - enabled (true | false) - Enables the mod\r\n    - measureInFeet (true | false ) - Changes from meter to Feet. ",
       "id": "preciseplayerheight",
       "version": "0.1.3",
       "download": "https://cdn.discordapp.com/attachments/776551464117075978/776918481831723048/MorePrecisePlayerHeightForQuest.zip",
@@ -4668,7 +4668,7 @@
     },
     {
       "name": "PauseConfirm",
-      "description": "Makes you confirm before going back to the menu, restarting or pressing continue when in the pause menu. This is to avoid you accidentally doing it when you're about to set a really good play, which I'm sure you've all done many times.\r\n\r\nTo choose which buttons require confirmation go to the Settings Icon in the main menu -> Mod Settings -> PauseConfirm. The default is that all three buttons require confirmation, but some might not want that.",
+      "description": "Makes you confirm before going back to the menu, restarting or pressing continue when in the pause menu. This is to avoid you accidentally doing it when you\u0027re about to set a really good play, which I\u0027m sure you\u0027ve all done many times.\r\n\r\nTo choose which buttons require confirmation go to the Settings Icon in the main menu -\u003E Mod Settings -\u003E PauseConfirm. The default is that all three buttons require confirmation, but some might not want that.",
       "id": "pause-confirm",
       "version": "0.2.0",
       "download": "https://github.com/Lauriethefish/PauseConfirm/releases/download/0.2.0/pause-confirm_v0.2.0.zip",
@@ -4686,7 +4686,7 @@
     },
     {
       "name": "Practice Skipper",
-      "description": "Adds the ability to seek and change song speed while in practice mode. Double tap left or right with your left controller's analog stick to skip through the song, and double tap up or down to adjust the song speed. Options are available to change which controller to use, how long to skip, and how much to change speed.",
+      "description": "Adds the ability to seek and change song speed while in practice mode. Double tap left or right with your left controller\u0027s analog stick to skip through the song, and double tap up or down to adjust the song speed. Options are available to change which controller to use, how long to skip, and how much to change speed.",
       "id": "practice_skipper",
       "version": "1.0.0",
       "download": "https://github.com/danrouse/bsq-practice-skipper/releases/download/1.0.0/practice_skipper_v1.0.0.zip",
@@ -4695,7 +4695,7 @@
     },
     {
       "name": "PracticePlus",
-      "description": "A mod that adds a few features to the practice mode menu\r\n\r\n - Set the NJS and note offset for the song\r\n - Expands the speed slider from 50%-200% to 25%-300% (because why not)\r\n\r\nThis is an updated/refactored version of the mod originally made by L_, and should hopefully be easy to update in the future.\r\n\r\nNOTE: The in-game menu for setting njs/offset is gone for now, until I can figure out why new buttons in the pause menu aren't clickable",
+      "description": "A mod that adds a few features to the practice mode menu\r\n\r\n - Set the NJS and note offset for the song\r\n - Expands the speed slider from 50%-200% to 25%-300% (because why not)\r\n\r\nThis is an updated/refactored version of the mod originally made by L_, and should hopefully be easy to update in the future.\r\n\r\nNOTE: The in-game menu for setting njs/offset is gone for now, until I can figure out why new buttons in the pause menu aren\u0027t clickable",
       "id": "PracticePlus",
       "version": "0.3.0",
       "download": "https://github.com/krx/PracticePlus/releases/download/0.3.0/PracticePlus_v0.3.0.zip",
@@ -4713,7 +4713,7 @@
     },
     {
       "name": "Quest Particles",
-      "description": "Partially ported ParticleOverdrive to the Quest. Particles (a.k.a. ParticleTuner) allows you to adjust the particles spawned after slicing a note, remove saber clashing effects, and reduce environmental dust. There's also a built-in rainbow mode for particles :)",
+      "description": "Partially ported ParticleOverdrive to the Quest. Particles (a.k.a. ParticleTuner) allows you to adjust the particles spawned after slicing a note, remove saber clashing effects, and reduce environmental dust. There\u0027s also a built-in rainbow mode for particles :)",
       "id": "particletuner",
       "version": "1.0.1",
       "download": "https://github.com/SuperMarcus/QuestParticleTuner/releases/download/1.0.1/ParticleTuner_1.0.1.zip",
@@ -4731,7 +4731,7 @@
     },
     {
       "name": "RandomEndless",
-      "description": "Features:\r\n-Random song button, when clicked it will select a random song from the current playlist.\r\n-Endless button, when clicked it will play all valid songs in the playlist back to back.\r\n-A bunch of settings for both Random and Endless, configurable from the Mod Settings UI in game.\r\n\r\nOST/DLC songs are not currently supported because I cba.\r\nSome songs won't have valid song paths, meaning endless can't find and load them, if there are songs you want to play in endless but have invalid song paths the only thing you can do is delete and reinstall them from beatsaver/beastsaber. If you have PinkCore it should tell you if a song has an invalid path.\r\nIf a song is OST/DLC or has an invalid path endless will skip it.\r\n\r\nIf you have any bug reports or feature requests DM L_#8786.",
+      "description": "Features:\r\n-Random song button, when clicked it will select a random song from the current playlist.\r\n-Endless button, when clicked it will play all valid songs in the playlist back to back.\r\n-A bunch of settings for both Random and Endless, configurable from the Mod Settings UI in game.\r\n\r\nOST/DLC songs are not currently supported because I cba.\r\nSome songs won\u0027t have valid song paths, meaning endless can\u0027t find and load them, if there are songs you want to play in endless but have invalid song paths the only thing you can do is delete and reinstall them from beatsaver/beastsaber. If you have PinkCore it should tell you if a song has an invalid path.\r\nIf a song is OST/DLC or has an invalid path endless will skip it.\r\n\r\nIf you have any bug reports or feature requests DM L_#8786.",
       "id": "RandomEndless",
       "version": "2.0.0",
       "download": "https://cdn.discordapp.com/attachments/776551464117075978/788705187862544384/randomendless.zip",
@@ -4776,7 +4776,7 @@
     },
     {
       "name": "SlowResume",
-      "description": "Allows you to change how long the countdown takes to resume when paused. Disables score submission if the amount of time is increased, since this makes pausing an easier method to get back your stamina.\r\n\r\nTo change the amount of time, go to the Settings Icon in the main menu -> Mod Settings -> SlowResume.\r\n\r\nThis mod was commissioned",
+      "description": "Allows you to change how long the countdown takes to resume when paused. Disables score submission if the amount of time is increased, since this makes pausing an easier method to get back your stamina.\r\n\r\nTo change the amount of time, go to the Settings Icon in the main menu -\u003E Mod Settings -\u003E SlowResume.\r\n\r\nThis mod was commissioned",
       "id": "slow-resume",
       "version": "0.1.0",
       "download": "https://github.com/Lauriethefish/SlowResume/releases/download/0.1.0/slow-resume_v0.1.0.zip",
@@ -4805,7 +4805,7 @@
     },
     {
       "name": "MorePrecisePlayerHeight",
-      "description": "Original mod made by Eris for PC (Ported by Lillie)\r\n\r\nA very small Beat Saber mod that's let you view your own height with higher precision... at least one more decimal.\r\n\r\nConfig:\r\n    - enabled (true | false) - Enables the mod\r\n    - measureInFeet (true | false ) - Changes from meter to Feet. ",
+      "description": "Original mod made by Eris for PC (Ported by Lillie)\r\n\r\nA very small Beat Saber mod that\u0027s let you view your own height with higher precision... at least one more decimal.\r\n\r\nConfig:\r\n    - enabled (true | false) - Enables the mod\r\n    - measureInFeet (true | false ) - Changes from meter to Feet. ",
       "id": "preciseplayerheight",
       "version": "0.1.2",
       "download": "https://cdn.discordapp.com/attachments/765630505000894484/773112282913570827/MorePrecisePlayerHeightForQuest.zip",
@@ -4823,7 +4823,7 @@
     },
     {
       "name": "Quest Particles",
-      "description": "Partially ported ParticleOverdrive to the Quest. Particles (a.k.a. ParticleTuner) allows you to adjust the particles spawned after slicing a note, remove saber clashing effects, and reduce environmental dust. There's also a built-in rainbow mode for particles :)",
+      "description": "Partially ported ParticleOverdrive to the Quest. Particles (a.k.a. ParticleTuner) allows you to adjust the particles spawned after slicing a note, remove saber clashing effects, and reduce environmental dust. There\u0027s also a built-in rainbow mode for particles :)",
       "id": "particletuner",
       "version": "1.0.0",
       "download": "https://github.com/SuperMarcus/QuestParticleTuner/releases/download/1.0.0/ParticleTuner_1.0.0.zip",
@@ -4850,7 +4850,7 @@
     },
     {
       "name": "RumbleRumbleQuest",
-      "description": "RumbleRumbleQuest allows you to adjust controller haptics \"rumbles\" in-game. RumbleRumbleQuest is a Quest port of the popular RumbleMod.",
+      "description": "RumbleRumbleQuest allows you to adjust controller haptics \u0022rumbles\u0022 in-game. RumbleRumbleQuest is a Quest port of the popular RumbleMod.",
       "id": "rumblerumblequest",
       "version": "1.0.0",
       "download": "https://github.com/SuperMarcus/RumbleRumbleQuest/releases/download/1.0.0/RumbleRumbleQuest.zip",
@@ -4987,7 +4987,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.6",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.6/PinkCore.qmod",
@@ -5124,7 +5124,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.2.2",
       "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/1.2.2/Qounters-.qmod",
@@ -5352,7 +5352,7 @@
       "description": "I swear you just vented...",
       "id": "vent",
       "version": "1.0.0",
-      "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0+1270_3631150051.qmod",
+      "download": "https://github.com/mineblock11/Vent/releases/download/1.0.0/Vent-1.0.0\u002B1270_3631150051.qmod",
       "source": "https://github.com/mineblock11/Vent/",
       "author": "mineblock11"
     },
@@ -5361,7 +5361,7 @@
       "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
       "id": "toomanytweaks",
       "version": "0.3.1",
-      "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.1/TooManyTweaks-0.3.1+1270_3631150051.qmod",
+      "download": "https://github.com/mineblock11/TooManyTweaks/releases/download/0.3.1/TooManyTweaks-0.3.1\u002B1270_3631150051.qmod",
       "source": "https://github.com/mineblock11/TooManyTweaks/",
       "author": "mineblock11"
     },
@@ -5376,7 +5376,7 @@
     },
     {
       "name": "AccessAbility",
-      "description": "Gives more options to play Beat Saber, mainly made for those who can't play the game intended",
+      "description": "Gives more options to play Beat Saber, mainly made for those who can\u0027t play the game intended",
       "id": "AccessAbility",
       "version": "0.2.0",
       "download": "https://github.com/NuggoDEV/AccessAbility/releases/download/0.2.0/AccessAbility.qmod",
@@ -5385,7 +5385,7 @@
     },
     {
       "name": "Mapping Extensions",
-      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.\n\nReminder: difficulties that require both Mapping Extensions and Noodle Extensions at the same time do not work. This is intended behaviour on Noodle's part.",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.\n\nReminder: difficulties that require both Mapping Extensions and Noodle Extensions at the same time do not work. This is intended behaviour on Noodle\u0027s part.",
       "id": "MappingExtensions",
       "version": "0.22.1",
       "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.1/MappingExtensions.qmod",
@@ -5403,7 +5403,7 @@
     },
     {
       "name": "QuestSounds",
-      "description": "Allows users to change their sfx sounds and in-game music easily!\n\n  Avoid using any files that use MPEG format like MP3 or MP2 unless you don't mind brief freezing upon loading\n\nSounds you can change and their default folder Path:\n-  HitSounds:                       sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/HitSounds/\n-  BadHitSounds:        sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/BadHitSounds/\n-  NoteMissedSounds:    sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/NoteMissedSounds/\n-  MenuMusic:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/MenuMusic/\n-  MenuClicks:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/MenuClicks/\n-  Firework:                          sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/Fireworks/\n-  LevelCleared:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LevelCleared/\n-  LevelFailed:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LevelFailed/\n-  LobbyMusic:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LobbyMusic/",
+      "description": "Allows users to change their sfx sounds and in-game music easily!\n\n  Avoid using any files that use MPEG format like MP3 or MP2 unless you don\u0027t mind brief freezing upon loading\n\nSounds you can change and their default folder Path:\n-  HitSounds:                       sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/HitSounds/\n-  BadHitSounds:        sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/BadHitSounds/\n-  NoteMissedSounds:    sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/NoteMissedSounds/\n-  MenuMusic:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/MenuMusic/\n-  MenuClicks:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/MenuClicks/\n-  Firework:                          sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/Fireworks/\n-  LevelCleared:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LevelCleared/\n-  LevelFailed:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LevelFailed/\n-  LobbyMusic:                sdcard/ModData/com.beatgames.beatsaber/Mods/QuestSounds/LobbyMusic/",
       "id": "QuestSounds",
       "version": "1.4.0",
       "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.4.0/QuestSounds.qmod",
@@ -5466,7 +5466,7 @@
     },
     {
       "name": "SessionQombo",
-      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game `In The Groove` ",
+      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game \u0060In The Groove\u0060 ",
       "id": "SessionQombo",
       "version": "0.1.1",
       "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.1/SessionQombo.qmod",
@@ -5559,7 +5559,7 @@
       "description": "Change the colors of the menu and other neat color related options.",
       "id": "colorama",
       "version": "2.1.0",
-      "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0+1270_3631150051.qmod",
+      "download": "https://github.com/mineblock11/Colorama/releases/download/2.1.0/Colorama-2.1.0\u002B1270_3631150051.qmod",
       "source": "https://github.com/mineblock11/Colorama/",
       "author": "mineblock11"
     },
@@ -5619,7 +5619,7 @@
     },
     {
       "name": "Saber Tailor",
-      "description": "Edit controller settings for each saber independently. Also includes Kinsi's Controller Settings Helper mod",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
       "id": "sabertailor",
       "version": "2.0.0",
       "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v2.0.0/SaberTailor_v2.0.0.qmod",
@@ -5727,7 +5727,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.8",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.8/PinkCore.qmod",
@@ -5736,7 +5736,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.7",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.7/PinkCore.qmod",
@@ -5864,7 +5864,7 @@
   "1.26.1": [
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.5",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.5/PinkCore.qmod",
@@ -5893,7 +5893,7 @@
   "1.26.0": [
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.4",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.4/PinkCore.qmod",
@@ -5904,7 +5904,7 @@
   "1.24.1": [
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.0",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.0/PinkCore.qmod",
@@ -5915,7 +5915,7 @@
   "1.22.0": [
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.6.8",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.6.8/PinkCore.qmod",
@@ -5980,7 +5980,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.9",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.9/PinkCore.qmod",
@@ -6241,7 +6241,7 @@
     },
     {
       "name": "PinkCore",
-      "description": "PinkCore is a core mod that ports over the rest of SongCore's features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
+      "description": "PinkCore is a core mod that ports over the rest of SongCore\u0027s features.\nThis includes adding information to your game such as Mappers names, Mod Requirements, Custom Colours, Custom Difficulty names, Burn Marks, and more!",
       "id": "pinkcore",
       "version": "1.8.10",
       "download": "https://github.com/BSMGPink/PinkCore/releases/download/v1.8.10/PinkCore.qmod",
@@ -6268,7 +6268,7 @@
     },
     {
       "name": "SessionQombo",
-      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game `In The Groove`",
+      "description": "A mod for beat saber that makes the combo counter persist across level load, like in the game \u0060In The Groove\u0060",
       "id": "SessionQombo",
       "version": "0.1.1",
       "download": "https://github.com/oli-ctrl/SessionQombo/releases/download/v0.1.2/SessionQombo.qmod",
@@ -6448,7 +6448,7 @@
     },
     {
       "name": "Qounters-",
-      "description": "Store brand version of Counters+ for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
+      "description": "Store brand version of Counters\u002B for the Quest version of Beat Saber. Adds a variety of configurable Qounters to display statistics in-game.",
       "id": "qounters-minus",
       "version": "1.2.3",
       "download": "https://github.com/Metalit/bsq-qounters-minus/releases/download/1.2.3/Qounters-.qmod",
@@ -6517,6 +6517,15 @@
       "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.2.0/ParticleTuner.qmod",
       "source": "https://github.com/kodenamekrak/ParticleTuner/",
       "author": "KodenameKRAK"
+    },
+    {
+      "name": "Pause Remapper",
+      "description": "Allows the user to change which buttons pause and resume the game!",
+      "id": "PauseRemapper",
+      "version": "1.2.2",
+      "download": "https://github.com/speecil/PauseRemapper/releases/download/v0.2.2/PauseRemapper.qmod",
+      "source": "https://github.com/speecil/PauseRemapper/",
+      "author": "Speecil"
     }
   ],
   "undefined": [
