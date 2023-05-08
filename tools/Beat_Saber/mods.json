@@ -5925,6 +5925,15 @@
   ],
   "1.28.0_4124311467": [
     {
+      "name": "SimplyMaxFPS",
+      "description": "Bump up FPS. No fuss, just maximum framage.",
+      "id": "simply-max-fps",
+      "version": "0.1.0",
+      "download": "https://github.com/pikipirs/simply-max-fps/releases/download/v0.1.0/SimplyMaxFPS.qmod",
+      "source": "https://github.com/pikipirs/simply-max-fps/",
+      "author": "pikipirs"
+    },
+    {
       "name": "BSNightcoreQuest",
       "description": "Removes pitch compensation to make songs go nightcore on different speed",
       "id": "BSNightcoreQuest",
@@ -6499,6 +6508,24 @@
       "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.22.4/MappingExtensions.qmod",
       "source": "https://github.com/rcelyte/MappingExtensions/",
       "author": "StackDoubleFlow, rxzz0, rcelyte"
+    },
+    {
+      "name": "ParticleTuner",
+      "description": "Lets you tweak individual particle settings! And has rainbow particles!",
+      "id": "particletuner",
+      "version": "0.2.0",
+      "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/0.2.0/ParticleTuner.qmod",
+      "source": "https://github.com/kodenamekrak/ParticleTuner/",
+      "author": "KodenameKRAK"
+    },
+    {
+      "name": "Pause Remapper",
+      "description": "Allows the user to change which buttons pause and resume the game!",
+      "id": "PauseRemapper",
+      "version": "1.2.2",
+      "download": "https://github.com/speecil/PauseRemapper/releases/download/v0.2.2/PauseRemapper.qmod",
+      "source": "https://github.com/speecil/PauseRemapper/",
+      "author": "Speecil"
     }
   ],
   "undefined": [
