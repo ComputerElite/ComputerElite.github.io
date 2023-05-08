@@ -203,6 +203,7 @@
             var displayMethod = params.get("displaymethod")
             if(!displayMethod) displayMethod = 1
             var coreModsLoaded = false
+            var displayCovers = params.get("covers")
 
             var bypass = false
            
@@ -491,7 +492,6 @@
                 }
                 Display(gameversion.value)
             }
-
             function DisplayCards(this_gameversion) {
                 this_gameversion.innerHTML = "";
                 
@@ -526,7 +526,7 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}" ${mod.cover ? `style="background-image: url('${mod.cover}');
+                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}" ${mod.cover && displayCovers ? `style="background-image: url('${mod.cover}');
     background-blend-mode: color;
     background-size: cover;
     background-repeat: no-repeat;
