@@ -5564,7 +5564,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "BetterSongSearch",
@@ -5574,7 +5574,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": ""
     }
   ],
   "1.27.0_3631150051": [
