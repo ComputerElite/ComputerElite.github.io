@@ -8,7 +8,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.8-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BetterSongSearch",
@@ -28,7 +28,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.7-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BetterSongSearch",
@@ -228,7 +228,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.6-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Darth Maul",
@@ -588,7 +588,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.3-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "NoodleExtensions",
@@ -618,7 +618,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.4-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Pause Remapper",
@@ -978,7 +978,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.9-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BetterSongSearch",
@@ -998,7 +998,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Custom Main Menu",
@@ -1038,7 +1038,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.25.1/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BetterSongSearch",
@@ -1049,6 +1049,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.12",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.12-bs-1.25.1/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.24.0": [
@@ -1060,7 +1070,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.8-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Nya",
@@ -1070,7 +1080,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.7-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Acculight",
@@ -1300,7 +1310,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.3-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "More By Core",
@@ -1350,7 +1360,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.4-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "PeripheralHUD",
@@ -1680,7 +1690,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.9-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BeatTogether",
@@ -1700,7 +1710,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Promotion Yeeter",
@@ -1720,7 +1730,17 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.24.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.12",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.12-bs-1.24.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.17.1": [
@@ -5676,7 +5696,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.8-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "AnyTweaks",
@@ -5836,7 +5856,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.7-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BetterSongSearch",
@@ -6036,7 +6056,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.6-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Clock Mod",
@@ -6416,7 +6436,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.9-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "Speecil Tweaks",
@@ -6466,7 +6486,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.10-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "PitchBlaq",
@@ -6516,7 +6536,7 @@
       "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.11-bs-1.27.0/Nya.qmod",
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     },
     {
       "name": "BeatLeader",
@@ -6537,6 +6557,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.12",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.12-bs-1.27.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.26.1": [
@@ -7287,6 +7317,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.12",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.12-bs-1.28.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "undefined": [
