@@ -18,7 +18,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.3-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "Nya",
@@ -38,7 +38,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.2-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BetterSongSearch",
@@ -48,7 +48,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.1-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BeatLeader",
@@ -988,7 +988,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "Nya",
@@ -1028,7 +1028,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.25.1/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "Nya",
@@ -1039,6 +1039,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": null
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.6",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.6-bs-1.25.1/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     }
   ],
   "1.24.0": [
@@ -5414,7 +5424,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.3-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BetterSongSearch",
@@ -5424,7 +5434,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.2-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BetterSongSearch",
@@ -5434,7 +5444,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.1-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "CrashMod",
@@ -5564,7 +5574,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BetterSongSearch",
@@ -5574,7 +5584,17 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.26.2/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.6",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.6-bs-1.26.2/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     }
   ],
   "1.27.0_3631150051": [
@@ -5786,7 +5806,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.3-bs-1.27.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "ImageFactory",
@@ -5826,7 +5846,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.2-bs-1.27.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BetterSongSearch",
@@ -5836,7 +5856,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.1-bs-1.27.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "Pause Remapper",
@@ -6426,7 +6446,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.4-bs-1.27.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "BeatLeader",
@@ -6486,7 +6506,7 @@
       "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.5-bs-1.27.0/BetterSongSearch.qmod",
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     },
     {
       "name": "Nya",
@@ -6507,6 +6527,16 @@
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.6",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.6-bs-1.27.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     }
   ],
   "1.26.1": [
@@ -7247,6 +7277,16 @@
       "source": "https://github.com/speecil/PauseRemapper/",
       "author": "Speecil",
       "cover": "https://raw.githubusercontent.com/speecil/PauseRemapper/master/PauseRemapper.gif"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.6",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.6-bs-1.28.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
     }
   ],
   "undefined": [
