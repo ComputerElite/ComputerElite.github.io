@@ -6567,6 +6567,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "AccessAbility",
+      "description": "Gives more options to play Beat Saber, mainly made for those who can\u0027t play the game intended",
+      "id": "AccessAbility",
+      "version": "0.1.0",
+      "download": "https://github.com/NuggoDEV/AccessAbility/releases/download/v0.1.0/AccessAbility.qmod",
+      "source": "https://github.com/NuggoDEV/AccessAbility/",
+      "author": "Nuggo",
+      "cover": ""
     }
   ],
   "1.26.1": [
