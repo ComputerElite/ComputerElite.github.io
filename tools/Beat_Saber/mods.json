@@ -7337,6 +7337,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "ScoreQolour",
+      "description": "Changes your note, bomb and obstacle colours based on your score",
+      "id": "ScoreQolour",
+      "version": "1.0.1",
+      "download": "https://github.com/NuggoDEV/ScoreQolour/releases/download/v1.0.1/ScoreQolour.qmod",
+      "source": "https://github.com/NuggoDEV/ScoreQolour/",
+      "author": "Nuggo",
+      "cover": ""
     }
   ],
   "undefined": [
