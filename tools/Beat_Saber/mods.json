@@ -7359,6 +7359,16 @@
       "source": "https://github.com/MillzyDev/bsq-ThinSaberCore/",
       "author": "Millzy",
       "cover": ""
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows user to change colours mid-game!",
+      "id": "QolourSwitcher",
+      "version": "1.2.0",
+      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.1/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
+      "author": "Nuggo#9535",
+      "cover": "https://raw.githubusercontent.com/NuggoDEV/Qolour-Switcher/master/cover.jpg"
     }
   ],
   "1.27.0": [
