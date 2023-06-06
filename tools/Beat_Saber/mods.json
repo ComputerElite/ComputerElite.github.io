@@ -4213,6 +4213,16 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, Darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.jpg"
+    },
+    {
+      "name": "More Precise Player Height",
+      "description": "Let\u0027s you view your own height... but more precise.",
+      "id": "MorePrecisePlayerHeight",
+      "version": "1.0.0",
+      "download": "https://github.com/kaitlyndotmoe/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/MorePrecisePlayerHeight/",
+      "author": "Eris, Aika",
+      "cover": ""
     }
   ],
   "1.16.4": [
