@@ -1099,6 +1099,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.0",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v6.1.0/anytweaks_v6.1.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
     }
   ],
   "1.24.0": [
@@ -1811,6 +1821,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.0.0",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v6.0.0/anytweaks_v6.0.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
     }
   ],
   "1.17.1": [
@@ -2813,6 +2833,16 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, Darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.jpg"
+    },
+    {
+      "name": "AikaTweaks",
+      "description": "Various tweaks for Beat Saber.",
+      "id": "aikatweaks",
+      "version": "3.0.0",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v3.0.0/aikatweaks_v3.0.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Aika, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
     }
   ],
   "1.21.0": [
@@ -3285,6 +3315,16 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.png"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "5.0.1",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v5.0.1/anytweaks_v5.0.1.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
     }
   ],
   "1.20.0": [
@@ -6827,6 +6867,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.1",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v6.1.1/anytweaks_v6.1.1.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
     }
   ],
   "1.26.1": [
@@ -7677,6 +7727,36 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.2",
+      "download": "https://github.com/kaitlyndotmoe/AnyTweaks/releases/download/v6.1.2/anytweaks_v6.1.2.qmod",
+      "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.2",
+      "download": "https://github.com/kaitlyndotmoe/PeripheralHUD/releases/download/v1.1.2/peripheralhud_v1.1.2.qmod",
+      "source": "https://github.com/kaitlyndotmoe/PeripheralHUD/",
+      "author": "Kaitlyn",
+      "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/PeripheralHUD/master/cover.png"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.2",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.5.2/smoothedcontroller_v1.5.2.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": ""
     }
   ],
   "undefined": [
