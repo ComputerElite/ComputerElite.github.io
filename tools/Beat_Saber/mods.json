@@ -6989,6 +6989,16 @@
   ],
   "1.28.0_4124311467": [
     {
+      "name": "StopForgettingMySettings",
+      "description": "Makes the game remember override environment settings.",
+      "id": "settings",
+      "version": "0.3.2",
+      "download": "https://cdn.discordapp.com/attachments/1080273364498776084/1096576973913989211/StopForgettingMySettings.qmod",
+      "source": "",
+      "author": "Metalit",
+      "cover": null
+    },
+    {
       "name": "SongChartVisualizer",
       "description": "",
       "id": "songchartvisualizer",
@@ -7757,6 +7767,46 @@
       "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
       "author": "Kinsi55, Kaitlyn",
       "cover": ""
+    },
+    {
+      "name": "Intro Skip",
+      "description": "Skip the intro and outro of maps",
+      "id": "IntroSkip",
+      "version": "1.1.0",
+      "download": "https://github.com/Royston1999/IntroSkip-Quest/releases/download/v1.1.0/IntroSkip_v1.1.0.qmod",
+      "source": "https://github.com/Royston1999/IntroSkip-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/IntroSkip-Quest/master/Cover.png"
+    },
+    {
+      "name": "Saber Tailor",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
+      "id": "sabertailor",
+      "version": "2.0.1",
+      "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v2.0.1/SaberTailor_v2.0.1.qmod",
+      "source": "https://github.com/Royston1999/Saber-Tailor-quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/Saber-Tailor-quest/master/Cover.png"
+    },
+    {
+      "name": "Slice Details",
+      "description": "View extra information about your swings",
+      "id": "slicedetails",
+      "version": "1.1.3",
+      "download": "https://github.com/Royston1999/SliceDetails-Quest/releases/download/v1.1.3/SliceDetails_v1.1.3.qmod",
+      "source": "https://github.com/Royston1999/SliceDetails-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/SliceDetails-Quest/master/Cover.jpg"
+    },
+    {
+      "name": "Score Percentage",
+      "description": "shows extra information after completing a level",
+      "id": "scorepercentage",
+      "version": "3.2.1",
+      "download": "https://github.com/Royston1999/ScorePercentage-Quest/releases/download/v3.2.1/ScorePercentage_v3.2.1.qmod",
+      "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg"
     }
   ],
   "undefined": [
