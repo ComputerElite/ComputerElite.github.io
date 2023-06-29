@@ -7807,6 +7807,16 @@
       "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
       "author": "Polly51104",
       "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.2.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.3.0/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": ""
     }
   ],
   "undefined": [
