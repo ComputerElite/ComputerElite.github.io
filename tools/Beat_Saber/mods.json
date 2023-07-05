@@ -1109,6 +1109,16 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows full customization of the Bloqs, Walls and Bombs :D",
+      "id": "QolourSwitcher",
+      "version": "2.0.0",
+      "download": "https://github.com/NuggoDEV/Colour-Switcher-Quest/releases/download/v2.0.0/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Colour-Switcher-Quest/",
+      "author": "Nuggo",
+      "cover": ""
     }
   ],
   "1.24.0": [
@@ -7849,6 +7859,16 @@
       "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
       "author": "Nuggo#9535",
       "cover": "https://raw.githubusercontent.com/NuggoDEV/Qolour-Switcher/master/cover.jpg"
+    },
+    {
+      "name": "Qolour Switcher",
+      "description": "Allows user to change colours mid-game!",
+      "id": "QolourSwitcher",
+      "version": "1.2.0",
+      "download": "https://github.com/NuggoDEV/Colour-Switcher-Quest/releases/download/v2.0.1/QolourSwitcher.qmod",
+      "source": "https://github.com/NuggoDEV/Colour-Switcher-Quest/",
+      "author": "Nuggo#9535",
+      "cover": "https://raw.githubusercontent.com/NuggoDEV/Colour-Switcher-Quest/master/cover.jpg"
     }
   ],
   "1.27.0": [
