@@ -2853,6 +2853,16 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Aika, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "Drink Water",
+      "description": "Tells you to drink water",
+      "id": "DrinkWater",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/DrinkWater/releases/download/0.1.0/DrinkWater.qmod",
+      "source": "https://github.com/NotHiiragi/DrinkWater/",
+      "author": "Idk, Vilmer#8942",
+      "cover": ""
     }
   ],
   "1.21.0": [
