@@ -6346,7 +6346,7 @@
       "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.2.1/SmallQubes.qmod",
       "source": "https://github.com/NSGolova/SmallQubes/",
       "author": "NSGolova",
-      "cover": null
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png"
     },
     {
       "name": "BeatLeader",
