@@ -1119,6 +1119,16 @@
       "source": "https://github.com/NuggoDEV/Colour-Switcher-Quest/",
       "author": "Nuggo",
       "cover": ""
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.14",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.14-bs-1.25.1/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.24.0": [
@@ -1841,6 +1851,16 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.14",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.14-bs-1.24.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.17.1": [
@@ -6897,6 +6917,16 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.14",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.14-bs-1.27.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "1.26.1": [
@@ -7887,6 +7917,16 @@
       "source": "https://github.com/im-henri/FingerSaber/",
       "author": "Henri",
       "cover": "https://raw.githubusercontent.com/im-henri/FingerSaber/master/cover.jpg"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.14",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.14-bs-1.28.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
     }
   ],
   "undefined": [
