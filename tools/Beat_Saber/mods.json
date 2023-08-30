@@ -3992,7 +3992,7 @@
       "download": "https://github.com/wiresboy-exe/darthmaul-mod/releases/download/v1.0.1/darthmaul_new.qmod",
       "source": "https://github.com/wiresboy-exe/darthmaul-mod/",
       "author": "Phaze#6193",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "DebrisTweaks",
@@ -4322,6 +4322,16 @@
       "download": "https://github.com/kaitlyndotmoe/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
       "source": "https://github.com/kaitlyndotmoe/MorePrecisePlayerHeight/",
       "author": "Eris, Aika",
+      "cover": ""
+    },
+    {
+      "name": "darthmaul",
+      "description": "i got bored (again)",
+      "id": "darthmaul",
+      "version": "0.1.1",
+      "download": "https://github.com/phaze-the-dumb/darthmaul-mod/releases/download/v1.0.1/darthmaul_new.qmod",
+      "source": "https://github.com/phaze-the-dumb/darthmaul-mod/",
+      "author": "Phaze#6193",
       "cover": ""
     }
   ],
@@ -4825,6 +4835,16 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, Darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.jpg"
+    },
+    {
+      "name": "darthmaul",
+      "description": "i got bored (again)",
+      "id": "darthmaul",
+      "version": "0.1.1",
+      "download": "https://github.com/phaze-the-dumb/darthmaul-mod/releases/download/v1.0.0/darthmaul.qmod",
+      "source": "https://github.com/phaze-the-dumb/darthmaul-mod/",
+      "author": "Phaze#6193",
+      "cover": ""
     }
   ],
   "1.23.0": [
