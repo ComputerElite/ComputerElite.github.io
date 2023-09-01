@@ -43,6 +43,7 @@
                 </select>
                 <br>
                 <br>
+                <label>Remove all previously existing events<input type="checkbox" id="clear" checked></label>
                 <input type="button" onclick="CopyEvents()" value="Copy">
                 <input type="button" onclick="SaveChanges()" value="Download modified song">
                 <div style="font-size: 2em;" id="diffsE"></div>
@@ -55,6 +56,7 @@
             const from = document.getElementById("from")
             const song = document.getElementById("song")
             const to = document.getElementById("to")
+            const clear = document.getElementById("clear")
 
             var diffs = []
 
@@ -76,6 +78,8 @@
                 else {
                     var fromD = difficulties[from.value]
                     var toD = difficulties[to.value]
+
+                    if(clear.checked) toD.targets = toD.targets.filter(x => !eventEnumValuesToCopy.includes(x.type))
                     for(let i = 0; i < fromD.targets.length; i++) {
                         if(eventEnumValuesToCopy.includes(fromD.targets[i].type)) {
                             toD.targets.push(fromD.targets[i])

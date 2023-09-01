@@ -761,9 +761,9 @@
             },
             {
                 "id": "songloader",
-                "version": "0.10.15",
-                "downloadLink": "https://github.com/darknight1050/SongLoader/releases/download/v0.10.15/SongLoader.qmod",
-                "filename": "SongLoader_0_10_15.qmod"
+                "version": "0.10.17",
+                "downloadLink": "https://github.com/darknight1050/SongLoader/releases/download/v0.10.17/SongLoader.qmod",
+                "filename": "SongLoader_0_10_17.qmod"
             },
             {
                 "id": "pinkcore",
