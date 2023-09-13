@@ -8007,6 +8007,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.3.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.3.1/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": ""
     }
   ],
   "undefined": [
