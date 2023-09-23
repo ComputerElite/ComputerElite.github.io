@@ -41,10 +41,6 @@
                         <div style="font-size: 24px;">Guide to obtain your Oculus Token</div>
                         <div class="headerDescription">For <a href="https://github.com/ComputerElite/Oculus-downgrader/">Oculus downgrader</a> and other applications</div>
                     </div>
-                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Info: Is this tool piracy?</div>
-                    <div class="guideSteps" style="text-align:left; padding: 10px;">
-                        No. You're downloading from Oculus servers and those check that you own the game
-                    </div>
                     <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Important</div>
                     <div class="guideSteps" style="text-align:left; padding: 10px;">
                         Your token is something private. Everyone who has it can download apps, send messages, ... with your name.
@@ -56,52 +52,17 @@
                     </div>
                     <div class="header">Step 2: Open developer tools</div>
                     <div class="step">
-                        <b>PC and Mac:</b>
+                        <b>Chrome:</b>
                         <br/>
-                        On <a href="https://developer.oculus.com/manage">https://developer.oculus.com/manage</a> hit ctrl + shift + i and go to the network tab (see picture)
+                        On <a href="https://developer.oculus.com/manage">https://developer.oculus.com/manage</a> hit ctrl + shift + i and go to the Application tab
                         <br/>
                         <br/>
-                        <b>Kiwi Browser (Android):</b>
-                        <br>
-                        <b>If you haven't already install Kiwi Browser from the Play Store</b>
-                        <br/>
-                        On <a href="https://developer.oculus.com/manage">https://developer.oculus.com/manage</a> tap the 3 dots in the top right and tap on <code>developer tools</code>
                     </div>
-                    <div class="image">
-                        <img src="Steps/Step2.png" width="100%">
-                    </div>
-                    <div class="header">Step 3: Reload the page and filter for graphql</div>
+                    <div class="header">Step 3: Copy the access_token</div>
                     <div class="step">
-                        <b>PC and Mac:</b>
-                        <br/>
-                        Reload the page next to your address bar (1).<br/>
-                        Then in the network tab type <code>graphql</code> into the filter box (2).
+                        Next click on <code>Cookies</code> (1) then <code>https://developer.oculus.com</code> (2) and then <code>oc_www_at</code> (3). You can then copy your token (4) and validate it via the box below.
                         <br/>
                         <br/>
-                        <b>Kiwi Browser (Android):</b>
-                        <br/>
-                        Switch the tab to the developer tools tab that just opened. Click the arrows to the right on the top and click <code>Network</code>. Filter for <code>graphql</code>. Go back to the tab in which you have https://developer.oculus.com/manage open and reload the site.
-                    </div>
-                    <div class="image">
-                        <img src="Steps/Step3.png" width="100%">
-                    </div>
-                    <div class="header">Step 4: Copy the access_token</div>
-                    <div class="step">
-                        Next click the last request (1) and open the payload tab (2) (if payload is not present go to the header tab). Then search for a label named <code>access_token</code>. Copy the text after that (3). You can copy it by right clicking and pressing copy value.
-                        <br/>
-                        <br/>
-                        <b>Firefox:</b>
-                        <br/>
-                        Next click the last request (1) and open the request tab. Then search for a label named <code>access_token</code> and copy its value (3). You can copy it by right clicking and pressing copy value.
-                        <br/>
-                        <br/>
-                        <b>Kiwi Browser (Android):</b>
-                        <br/>
-                        Go back to the dev tools tab and click on the last request at the bottom. Then in the headers tab tap and hold on <code>access_token: </code> and tap copy value.
-                        <br/>
-                        <br/>
-                        Before putting your token it you can check the validity of your token by pasting it into this text box and clicking <code>Validate token</code>
-                        <br>
                         <input type="password" id="token" style="width: 700px; max-width: 100%;">
                         <div class="customButton" style="margin-top: 30px;" onclick="Validate(document.getElementById('token').value)">Validate token</div>
                         <div class="textBox" id="tb"></div>
@@ -109,7 +70,7 @@
                         You can then paste your token with ctrl + v into Oculus downgrader.
                     </div>
                     <div class="image">
-                        <img src="Steps/Step4.png" width="100%">
+                        <img src="Steps/Step3.png" width="100%">
                     </div>
                 </div>
                 
