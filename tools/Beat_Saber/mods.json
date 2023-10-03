@@ -4855,6 +4855,16 @@
       "source": "https://github.com/phaze-the-dumb/darthmaul-mod/",
       "author": "Phaze#6193",
       "cover": ""
+    },
+    {
+      "name": "Third Person mod",
+      "description": null,
+      "id": "Play3rdPer",
+      "version": "0.2.0",
+      "download": "https://github.com/ComputerElite/play3rdper/releases/download/0.2/Play3rdPer.qmod",
+      "source": "https://github.com/ComputerElite/play3rdper/",
+      "author": "ComputerElite",
+      "cover": ""
     }
   ],
   "1.23.0": [
