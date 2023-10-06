@@ -108,7 +108,7 @@
       "download": "https://github.com/WaffleTheCool/PitchBlaq/releases/download/v0.1.0/PitchBlaq.qmod",
       "source": "https://github.com/WaffleTheCool/PitchBlaq/",
       "author": "Loloppe | Anony",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "RandomSongPicker",
@@ -1149,6 +1149,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "PitchBlaq",
+      "description": " ",
+      "id": "PitchBlaq",
+      "version": "0.1.0",
+      "download": "https://github.com/NotHiiragi/PitchBlaq/releases/download/v0.1.0/PitchBlaq.qmod",
+      "source": "https://github.com/NotHiiragi/PitchBlaq/",
+      "author": "Loloppe | Anony",
+      "cover": ""
     }
   ],
   "1.24.0": [
@@ -5985,6 +5995,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "PitchBlaq",
+      "description": " ",
+      "id": "PitchBlaq",
+      "version": "0.1.1",
+      "download": "https://github.com/NotHiiragi/PitchBlaq/releases/download/v0.1.1/PitchBlaq.qmod",
+      "source": "https://github.com/NotHiiragi/PitchBlaq/",
+      "author": "Loloppe | Anony",
+      "cover": ""
     }
   ],
   "1.27.0_3631150051": [
