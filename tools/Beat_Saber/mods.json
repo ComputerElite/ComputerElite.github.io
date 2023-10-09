@@ -8107,6 +8107,16 @@
       "source": "https://github.com/skyewontmiss/No-Play-Beat-Saber/",
       "author": "Kaylerr",
       "cover": "https://raw.githubusercontent.com/skyewontmiss/No-Play-Beat-Saber/master/npbs.png"
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.1",
+      "download": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/releases/download/0.1.1/TwitchSongReQuest.qmod",
+      "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": ""
     }
   ],
   "undefined": [
