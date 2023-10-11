@@ -768,7 +768,7 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.0/smoothedcontroller_v1.5.0.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
       "author": "Kaitlyn, Kinsi55",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "Speecil Tweaks",
@@ -1158,6 +1158,16 @@
       "download": "https://github.com/NotHiiragi/PitchBlaq/releases/download/v0.1.0/PitchBlaq.qmod",
       "source": "https://github.com/NotHiiragi/PitchBlaq/",
       "author": "Loloppe | Anony",
+      "cover": ""
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.0",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.5.0/smoothedcontroller_v1.5.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
       "cover": ""
     }
   ],
@@ -1660,7 +1670,7 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.4.0/smoothedcontroller_v1.4.0.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
       "author": "Kaitlyn, Kinsi55",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "StopForgettingMySettings",
@@ -1901,6 +1911,16 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.4.0",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.4.0/smoothedcontroller_v1.4.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": ""
     }
   ],
   "1.17.1": [
@@ -2562,7 +2582,7 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController-old/releases/download/v1.2.0/smoothedcontroller_v1.2.0.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController-old/",
       "author": "Kaitlyn, Kinsi55",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "Song Difficulty Chart",
@@ -2923,6 +2943,16 @@
       "source": "https://github.com/NotHiiragi/DrinkWater/",
       "author": "Idk, Vilmer#8942",
       "cover": ""
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.2.0",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.2.0/smoothedcontroller_v1.2.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Violet",
+      "cover": ""
     }
   ],
   "1.21.0": [
@@ -3254,7 +3284,7 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.3.0/smoothedcontroller_v1.3.0.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
       "author": "Kaitlyn, Kinsi55",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "StopForgettingMyEnvironments",
@@ -3405,6 +3435,16 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.3.0",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.3.0/smoothedcontroller_v1.3.0.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": ""
     }
   ],
   "1.20.0": [
@@ -6776,7 +6816,7 @@
       "download": "https://github.com/ItsKaitlyn03/SmoothedController/releases/download/v1.5.1/smoothedcontroller_v1.5.1.qmod",
       "source": "https://github.com/ItsKaitlyn03/SmoothedController/",
       "author": "Kinsi55",
-      "cover": null
+      "cover": ""
     },
     {
       "name": "PlayerDataKeeper",
@@ -7037,6 +7077,16 @@
       "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.1",
+      "download": "https://github.com/kaitlyndotmoe/SmoothedController/releases/download/v1.5.1/smoothedcontroller_v1.5.1.qmod",
+      "source": "https://github.com/kaitlyndotmoe/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": ""
     }
   ],
   "1.26.1": [
@@ -8114,6 +8164,26 @@
       "id": "TwitchSongReQuest",
       "version": "0.1.1",
       "download": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/releases/download/0.1.1/TwitchSongReQuest.qmod",
+      "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": ""
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.1",
+      "download": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/releases/download/0.1.3/TwitchSongReQuest.qmod",
+      "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/master/cover.png"
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.1",
+      "download": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/releases/download/0.1.2/TwitchSongReQuest.qmod",
       "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
       "author": "hdgamer1404Jonas",
       "cover": ""
