@@ -8187,6 +8187,16 @@
       "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
       "author": "hdgamer1404Jonas",
       "cover": ""
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.1",
+      "download": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/releases/download/0.1.4/TwitchSongReQuest.qmod",
+      "source": "https://github.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/hdgamer1404Jonas/Twitch-Song-ReQuest-Mod/master/cover.png"
     }
   ],
   "undefined": [
