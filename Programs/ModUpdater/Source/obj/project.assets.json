@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "JetBrains.Annotations/2020.1.0": {
+      "JetBrains.Annotations/2021.2.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/JetBrains.Annotations.dll": {
@@ -15,10 +15,10 @@
           }
         }
       },
-      "Json.More.Net/1.4.3": {
+      "Json.More.Net/1.9.0": {
         "type": "package",
         "dependencies": {
-          "System.Text.Json": "4.7.2"
+          "System.Text.Json": "6.0.2"
         },
         "compile": {
           "lib/netstandard2.0/Json.More.dll": {
@@ -31,11 +31,10 @@
           }
         }
       },
-      "JsonPointer.Net/1.3.3": {
+      "JsonPointer.Net/3.0.3": {
         "type": "package",
         "dependencies": {
-          "Json.More.Net": "1.4.2",
-          "System.Text.Json": "4.7.2"
+          "Json.More.Net": "1.8.0"
         },
         "compile": {
           "lib/netstandard2.0/JsonPointer.Net.dll": {
@@ -48,13 +47,12 @@
           }
         }
       },
-      "JsonSchema.Net/1.10.7": {
+      "JsonSchema.Net/5.2.6": {
         "type": "package",
         "dependencies": {
-          "JetBrains.Annotations": "2020.1.0",
-          "Json.More.Net": "1.4.3",
-          "JsonPointer.Net": "1.3.3",
-          "System.Text.Json": "4.7.2"
+          "JetBrains.Annotations": "2021.2.0",
+          "Json.More.Net": "1.9.0",
+          "JsonPointer.Net": "3.0.3"
         },
         "compile": {
           "lib/netstandard2.0/JsonSchema.Net.dll": {
@@ -67,7 +65,7 @@
           }
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -80,13 +78,13 @@
           }
         }
       },
-      "QuestPatcher.QMod/2.0.0": {
+      "QuestPatcher.QMod/2.1.0": {
         "type": "package",
         "dependencies": {
-          "JsonSchema.Net": "1.10.7",
-          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
-          "SemanticVersioning": "2.0.0",
-          "System.Text.Json": "5.0.2"
+          "JsonSchema.Net": "5.2.6",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "SemanticVersioning": "2.0.2",
+          "System.Text.Json": "6.0.8"
         },
         "compile": {
           "lib/netstandard2.1/QuestPatcher.QMod.dll": {}
@@ -95,7 +93,7 @@
           "lib/netstandard2.1/QuestPatcher.QMod.dll": {}
         }
       },
-      "SemanticVersioning/2.0.0": {
+      "SemanticVersioning/2.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/SemanticVersioning.dll": {}
@@ -104,31 +102,79 @@
           "lib/netstandard2.0/SemanticVersioning.dll": {}
         }
       },
-      "System.Text.Json/5.0.2": {
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Encodings.Web/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/6.0.8": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encodings.Web": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/System.Text.Json.targets": {}
         }
       }
     }
   },
   "libraries": {
-    "JetBrains.Annotations/2020.1.0": {
-      "sha512": "kD9D2ey3DGeLbfIzS8PkwLFkcF5vCOLk2rdjgfSxTfpoyovl7gAyoS6yq6T77zo9QgJGaVJ7PO/cSgLopnKlzg==",
+    "JetBrains.Annotations/2021.2.0": {
+      "sha512": "kKSyoVfndMriKHLfYGmr0uzQuI4jcc3TKGyww7buJFCYeHb/X0kodYBPL7n9454q7v6ASiRmDgpPGaDGerg/Hg==",
       "type": "package",
-      "path": "jetbrains.annotations/2020.1.0",
+      "path": "jetbrains.annotations/2021.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
-        "jetbrains.annotations.2020.1.0.nupkg.sha512",
+        "jetbrains.annotations.2021.2.0.nupkg.sha512",
         "jetbrains.annotations.nuspec",
         "lib/net20/JetBrains.Annotations.dll",
         "lib/net20/JetBrains.Annotations.xml",
@@ -142,55 +188,54 @@
         "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
       ]
     },
-    "Json.More.Net/1.4.3": {
-      "sha512": "0N1Vw9tK7bEpL1fsr62d3eXv4In4pbXAzKSjeFmyIGp6KGTRB7s2L2zNChiHrz0Jqbdz+2FsFm1qDbhY+eKO3g==",
+    "Json.More.Net/1.9.0": {
+      "sha512": "MMjd2dOh32hLbcZg9YyA+7aEH9gu2cMTEAWrQY17in4+aEsPg2NtYTcwgWHJS9Tt2WUx+4iN1mNegR2uiEwsVQ==",
       "type": "package",
-      "path": "json.more.net/1.4.3",
+      "path": "json.more.net/1.9.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "json-logo-256.png",
-        "json.more.net.1.4.3.nupkg.sha512",
+        "json.more.net.1.9.0.nupkg.sha512",
         "json.more.net.nuspec",
         "lib/netstandard2.0/Json.More.dll",
         "lib/netstandard2.0/Json.More.xml"
       ]
     },
-    "JsonPointer.Net/1.3.3": {
-      "sha512": "tU0RalkVfdcZhwjjfI8bp/62UuFPMp7DHSP6GxgZ43wFx2zEq6d7SEROw5YByK80aOPoQ12LzK9wuJ2TeqxHyQ==",
+    "JsonPointer.Net/3.0.3": {
+      "sha512": "mCGQc15lHLp1R2CVhWiipnZurHXm93+LbPPAT/vXQm5PdHt6WQuYLhaEF8VZ+aXL9P2I6bGND6pDTEfqFs6gig==",
       "type": "package",
-      "path": "jsonpointer.net/1.3.3",
+      "path": "jsonpointer.net/3.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "json-logo-256.png",
-        "jsonpointer.net.1.3.3.nupkg.sha512",
+        "jsonpointer.net.3.0.3.nupkg.sha512",
         "jsonpointer.net.nuspec",
         "lib/netstandard2.0/JsonPointer.Net.dll",
         "lib/netstandard2.0/JsonPointer.Net.xml"
       ]
     },
-    "JsonSchema.Net/1.10.7": {
-      "sha512": "1NRHvmKt8g+BrkJuVYLJ/vT0HlK9SjNe7WbMY7FWw3HD99Be1K/Y4jtVKIftelLy1dUhc/CvRGAvSKC7KuxFBg==",
+    "JsonSchema.Net/5.2.6": {
+      "sha512": "Zu+Zh6v7GVcqUxA2Ur1SifMMUIvaJULYZijscqiofEg6H6XuGuItXLZanaLp6PU2wtUoLVu4mcSPvyZvCEp5Lg==",
       "type": "package",
-      "path": "jsonschema.net/1.10.7",
+      "path": "jsonschema.net/5.2.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
         "json-logo-256.png",
-        "jsonschema.net.1.10.7.nupkg.sha512",
+        "jsonschema.net.5.2.6.nupkg.sha512",
         "jsonschema.net.nuspec",
         "lib/netstandard2.0/JsonSchema.Net.dll",
         "lib/netstandard2.0/JsonSchema.Net.xml"
       ]
     },
-    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
-      "sha512": "W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
       "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -203,28 +248,27 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-        "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
-    "QuestPatcher.QMod/2.0.0": {
-      "sha512": "Px9tkEAm47xG3r8+cIoLKE3goz5QkFtVQNrinyKUoJYdElsadHyrObrU01a/feVKkjEBpKb14vx9DtTUQuWz4g==",
+    "QuestPatcher.QMod/2.1.0": {
+      "sha512": "C0AKzTAH/R7nfInIcGn+2N1JXLJmGHmubcNs1HxbJqoONAHiLOINvjD5sGqMikhfzz/9sWNoL4F2ep9hK76eXA==",
       "type": "package",
-      "path": "questpatcher.qmod/2.0.0",
+      "path": "questpatcher.qmod/2.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.1/QuestPatcher.QMod.dll",
-        "questpatcher.qmod.2.0.0.nupkg.sha512",
+        "questpatcher.qmod.2.1.0.nupkg.sha512",
         "questpatcher.qmod.nuspec"
       ]
     },
-    "SemanticVersioning/2.0.0": {
-      "sha512": "gb+AtYpacsOpphUUfx4xU5BaMSho0yqSgIl1YL2tBUc1FfdzAAFkxYbmz+hlzSZAUtjWgSsIs7R7hNdMufThAQ==",
+    "SemanticVersioning/2.0.2": {
+      "sha512": "4EQgYdNZ92SyaO7YFk6olVnebF5V+jrHyMUjvPq89tLeMo8NSfgDF+6Zwq/lgh9j/0yfQp9Lkm0ZA0rUATCZFA==",
       "type": "package",
-      "path": "semanticversioning/2.0.0",
+      "path": "semanticversioning/2.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -232,36 +276,120 @@
         "lib/net45/SemanticVersioning.dll",
         "lib/netstandard1.1/SemanticVersioning.dll",
         "lib/netstandard2.0/SemanticVersioning.dll",
-        "semanticversioning.2.0.0.nupkg.sha512",
+        "semanticversioning.2.0.2.nupkg.sha512",
         "semanticversioning.nuspec"
       ]
     },
-    "System.Text.Json/5.0.2": {
-      "sha512": "I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "type": "package",
-      "path": "system.text.json/5.0.2",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Encodings.Web/6.0.0": {
+      "sha512": "Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
+      "type": "package",
+      "path": "system.text.encodings.web/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Text.Encodings.Web.dll",
+        "lib/net461/System.Text.Encodings.Web.xml",
+        "lib/net6.0/System.Text.Encodings.Web.dll",
+        "lib/net6.0/System.Text.Encodings.Web.xml",
+        "lib/netcoreapp3.1/System.Text.Encodings.Web.dll",
+        "lib/netcoreapp3.1/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.6.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/6.0.8": {
+      "sha512": "WhW6zPEgRZoo+c1NEvSSmrME4+LqXmW6tcsRFsEiSMeco+qZ9rpLs7tT53EIkE/s9GNTYS4/STQoaGiKDSWifQ==",
+      "type": "package",
+      "path": "system.text.json/6.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp3.1/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
         "lib/net461/System.Text.Json.dll",
         "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/netcoreapp3.1/System.Text.Json.dll",
+        "lib/netcoreapp3.1/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.5.0.2.nupkg.sha512",
+        "system.text.json.6.0.8.nupkg.sha512",
         "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "QuestPatcher.QMod >= 2.0.0"
+      "QuestPatcher.QMod >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -311,7 +439,7 @@
         "dependencies": {
           "QuestPatcher.QMod": {
             "target": "Package",
-            "version": "[2.0.0, )"
+            "version": "[2.1.0, )"
           }
         },
         "imports": [

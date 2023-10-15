@@ -21,3 +21,4 @@ C:\Users\ComputerElite\Documents\rider\computerelite.github.io\Programs\ModUpdat
 C:\Users\ComputerElite\Documents\rider\computerelite.github.io\Programs\ModUpdater\Source\obj\Debug\net6.0\ModUpdater.pdb
 C:\Users\ComputerElite\Documents\rider\computerelite.github.io\Programs\ModUpdater\Source\obj\Debug\net6.0\ModUpdater.genruntimeconfig.cache
 C:\Users\ComputerElite\Documents\rider\computerelite.github.io\Programs\ModUpdater\Source\obj\Debug\net6.0\ref\ModUpdater.dll
+C:\Users\ComputerElite\Documents\rider\computerelite.github.io\Programs\ModUpdater\Source\bin\Debug\net6.0\System.Text.Json.dll

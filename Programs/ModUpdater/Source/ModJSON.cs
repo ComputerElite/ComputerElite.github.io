@@ -5,11 +5,6 @@ using System.Text.Json;
 
 namespace ModUpdater
 {
-	class ModLoader
-	{
-		public static string QuestLoader = "QuestLoader";
-		public static string Scotland2 = "Scotland2";
-	}
 	
 	internal class ModJSON
 	{
@@ -44,7 +39,7 @@ namespace ModUpdater
 				if(j.author.EndsWith(", ")) j.author = j.author.Substring(0, j.author.Length - 2);
 				j.version = mod.Version.ToString();
 				j.id = mod.Id;
-				j.modloader = ModLoader.QuestLoader;
+				j.modloader = mod.ModLoader.ToString();
 				j.download = downloadLink;
 				j.source = downloadLink.Substring(0, downloadLink.IndexOf("releases"));
 				string gameVersion = mod.PackageVersion;
@@ -157,6 +152,6 @@ namespace ModUpdater
 		public string source { get; set; } = "";
 		public string author { get; set; } = "";
 		public string cover { get; set; } = null;
-		public string modloader { get; set; } = ModLoader.QuestLoader;
+		public string modloader { get; set; } = ModLoader.QuestLoader.ToString();
 	}
 }
