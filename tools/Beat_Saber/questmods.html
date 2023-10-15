@@ -161,6 +161,13 @@
                                     <option value=""></option>
                                 </select>
                             </div>
+                            <div id="modloadercontainer" style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
+                                <span style="display: block; margin-right:1em;">Modloader</span><br />
+                                <select id="modloader" class="selector">
+                                    <option value="modloader">og modloader</option>
+                                    <option value="sl2">scotland2</option>
+                                </select>
+                            </div>
                             <input type="text" id="search" placeholder="Search mods"> <br />
                             <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
                             <a class="button" href="https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod">Get V51 custom types fix</a>
@@ -204,6 +211,17 @@
             if(!displayMethod) displayMethod = 1
             var coreModsLoaded = false
             var displayCovers = params.get("covers")
+            var modloader = params.get("modloader")
+            if(modloader) document.getElementById("modloader").value = modloader
+
+            if(params.get("isqavs") && params.get("ismodded")) {
+                document.getElementById("modloadercontainer").style.display = "none"
+            }
+
+            document.getElementById("modloader").onchange = () => {
+                modloader = document.getElementById("modloader").value
+                Display(gameversion.value)
+            }
 
             var bypass = false
            
@@ -277,7 +295,8 @@
                             version: coremod.version,
                             download: coremod.downloadLink,
                             description: "",
-                            author: "unknown"
+                            author: "unknown",
+                            modType: "modloader"
                         }
                         if(firstVisit) AddDownloadedMod(mod.download)
                         if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
@@ -492,6 +511,22 @@
                 }
                 Display(gameversion.value)
             }
+
+            function GetModType(mod) {
+                if(mod.modType == "sl2_mod" || mod.modType == "sl2_early") return "Scotland2 Mod"
+                if(mod.modType == "sl2_lib") return "Scotland2 Library"
+                if(mod.modType == "modloader" || !mod.modType) return "og modloader mod"
+            }
+
+            function ShowMod(mod) {
+                if(modloader) {
+                    // Don't show mods with another modloader
+                    if(modloader == "modloader" && mod.modType != "modloader" && mod.modType) return false
+                    if(modloader == "sl2" && mod.modType != "sl2_mod" && mod.modType != "sl2_early" && mod.modType != "sl2_lib") return false
+                }
+                return true
+            }
+
             function DisplayCards(this_gameversion) {
                 this_gameversion.innerHTML = "";
                 
@@ -510,6 +545,9 @@
                 })
                 modsToShow.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.id.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        
+                        if(!ShowMod(mod)) return
+                        
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
@@ -531,6 +569,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;"` : ``}>
+                                <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
                                 <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
@@ -545,6 +584,7 @@
                 console.log("refreshing for " + this_gameversion)
                 gameVersions[this_gameversion].coremods.forEach(mod => {
                     if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
+                        if(!ShowMod(mod)) return
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
@@ -562,6 +602,7 @@
                         }
                         versionDropDown += `</select>`
                         m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
+                                <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
                                 <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
                                 <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
                                 <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>

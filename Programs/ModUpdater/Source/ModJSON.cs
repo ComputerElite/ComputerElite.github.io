@@ -7,7 +7,8 @@ namespace ModUpdater
 {
 	class ModType
 	{
-		public static string Modloader = "modloader";
+		public static string modloader_lib = "modloader_lib";
+		public static string modloader_mod = "modloader_mod";
 		public static string sl2_early = "sl2_early";
 		public static string sl2_mod = "sl2_mod";
 		public static string sl2_lib = "sl2_lib";
@@ -46,7 +47,7 @@ namespace ModUpdater
 				if(j.author.EndsWith(", ")) j.author = j.author.Substring(0, j.author.Length - 2);
 				j.version = mod.Version.ToString();
 				j.id = mod.Id;
-				j.modType = ModType.Modloader;
+				j.modType = mod.IsLibrary ? ModType.modloader_lib : ModType.modloader_mod;
 				j.download = downloadLink;
 				j.source = downloadLink.Substring(0, downloadLink.IndexOf("releases"));
 				string gameVersion = mod.PackageVersion;
@@ -159,6 +160,6 @@ namespace ModUpdater
 		public string source { get; set; } = "";
 		public string author { get; set; } = "";
 		public string cover { get; set; } = null;
-		public string modType { get; set; } = ModType.Modloader;
+		public string modType { get; set; } = ModType.modloader_mod;
 	}
 }
