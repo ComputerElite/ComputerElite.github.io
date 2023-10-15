@@ -164,8 +164,8 @@
                             <div id="modloadercontainer" style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
                                 <span style="display: block; margin-right:1em;">Modloader</span><br />
                                 <select id="modloader" class="selector">
-                                    <option value="modloader">og modloader</option>
-                                    <option value="sl2">scotland2</option>
+                                    <option value="QuestLoader">QuestLoader</option>
+                                    <option value="Scotland2">Scotland2</option>
                                 </select>
                             </div>
                             <input type="text" id="search" placeholder="Search mods"> <br />
@@ -296,7 +296,7 @@
                             download: coremod.downloadLink,
                             description: "",
                             author: "unknown",
-                            modType: "modloader_lib"
+                            modloader: "QuestLoader"
                         }
                         if(firstVisit) AddDownloadedMod(mod.download)
                         if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
@@ -513,17 +513,15 @@
             }
 
             function GetModType(mod) {
-                if(mod.modType == "sl2_mod" || mod.modType == "sl2_early") return "Scotland2 mod"
-                if(mod.modType == "sl2_lib") return "Scotland2 library"
-                if(mod.modType == "modloader_mod" || !mod.modType) return "og modloader mod"
-                if(mod.modType == "modloader_lib" || !mod.modType) return "og modloader library"
+                if(mod.modloader == "Scotland2") return "Scotland2"
+                if(mod.modloader == "QuestLoader" || !mod.modloader) return "QuestLoader"
             }
 
             function ShowMod(mod) {
                 if(modloader) {
                     // Don't show mods with another modloader
-                    if(modloader == "modloader" && mod.modType != "modloader_lib" && mod.modType != "modloader_mod" && mod.modType) return false
-                    if(modloader == "sl2" && mod.modType != "sl2_mod" && mod.modType != "sl2_early" && mod.modType != "sl2_lib") return false
+                    if(modloader == "QuestLoader" && mod.modloader != "QuestLoader" && mod.modloader) return false
+                    if(modloader == "Scotland2" && mod.modloader != "Scotland2") return false
                 }
                 return true
             }
