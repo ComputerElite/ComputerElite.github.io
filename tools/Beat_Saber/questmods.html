@@ -296,7 +296,7 @@
                             download: coremod.downloadLink,
                             description: "",
                             author: "unknown",
-                            modType: "modloader"
+                            modType: "modloader_lib"
                         }
                         if(firstVisit) AddDownloadedMod(mod.download)
                         if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
@@ -513,15 +513,16 @@
             }
 
             function GetModType(mod) {
-                if(mod.modType == "sl2_mod" || mod.modType == "sl2_early") return "Scotland2 Mod"
-                if(mod.modType == "sl2_lib") return "Scotland2 Library"
-                if(mod.modType == "modloader" || !mod.modType) return "og modloader mod"
+                if(mod.modType == "sl2_mod" || mod.modType == "sl2_early") return "Scotland2 mod"
+                if(mod.modType == "sl2_lib") return "Scotland2 library"
+                if(mod.modType == "modloader_mod" || !mod.modType) return "og modloader mod"
+                if(mod.modType == "modloader_lib" || !mod.modType) return "og modloader library"
             }
 
             function ShowMod(mod) {
                 if(modloader) {
                     // Don't show mods with another modloader
-                    if(modloader == "modloader" && mod.modType != "modloader" && mod.modType) return false
+                    if(modloader == "modloader" && mod.modType != "modloader_lib" && mod.modType != "modloader_mod" && mod.modType) return false
                     if(modloader == "sl2" && mod.modType != "sl2_mod" && mod.modType != "sl2_early" && mod.modType != "sl2_lib") return false
                 }
                 return true
