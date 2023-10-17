@@ -910,7 +910,7 @@
       "download": "https://github.com/RedBrumbler/TrickSaber/releases/download/v0.1.0/TrickSaber.qmod",
       "source": "https://github.com/RedBrumbler/TrickSaber/",
       "author": "RedBrumbler",
-      "cover": null,
+      "cover": "https://raw.githubusercontent.com/RedBrumbler/TrickSaber/master/cover.png",
       "modloader": "QuestLoader"
     },
     {
