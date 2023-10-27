@@ -353,17 +353,6 @@
       "modloader": "QuestLoader"
     },
     {
-      "name": "Time Failed",
-      "description": "Shows the time in the song you failed at in the results screen",
-      "id": "TimeFailed",
-      "version": "1.1.1",
-      "download": "https://github.com/NuggoDEV/Time-Failed/releases/download/v1.1.1/TimeFailed.qmod",
-      "source": "https://github.com/NuggoDEV/Time-Failed/",
-      "author": "Nuggo#9535",
-      "cover": null,
-      "modloader": "QuestLoader"
-    },
-    {
       "name": "NoParticles",
       "description": "Allows you to disable various particles throughout the game",
       "id": "NoParticles",
@@ -382,17 +371,6 @@
       "download": "https://github.com/netux/BeatSaber-BeatmapPlayCount-Quest/releases/download/v0.2.1/BeatmapPlayCount.v0.2.1.qmod",
       "source": "https://github.com/netux/BeatSaber-BeatmapPlayCount-Quest",
       "author": "Netux",
-      "cover": "",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Qolour Switcher",
-      "description": "Allows user full control over the colours of the notes, bombs, and walls!",
-      "id": "QolourSwitcher",
-      "version": "2.0.0",
-      "download": "https://github.com/NuggoDEV/Qolour-Switcher-Rewritten/releases/download/v2.0.0/QolourSwitcher.qmod",
-      "source": "https://githubhttps://github.com/NuggoDEV/Qolour-Switcher-Rewritten/",
-      "author": "Nuggo#9535",
       "cover": "",
       "modloader": "QuestLoader"
     },
@@ -1112,17 +1090,6 @@
       "modloader": "QuestLoader"
     },
     {
-      "name": "Qolour Switcher",
-      "description": "Allows full customization of the Bloqs, Walls and Bombs :D",
-      "id": "QolourSwitcher",
-      "version": "2.0.0",
-      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.0/QolourSwitcher.qmod",
-      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
-      "author": "Nuggo",
-      "cover": "",
-      "modloader": "QuestLoader"
-    },
-    {
       "name": "BetterSongSearch",
       "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
       "id": "BetterSongSearch",
@@ -1219,17 +1186,6 @@
       "source": "https://github.com/kaitlyndotmoe/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/kaitlyndotmoe/AnyTweaks/master/cover.png",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Qolour Switcher",
-      "description": "Allows full customization of the Bloqs, Walls and Bombs :D",
-      "id": "QolourSwitcher",
-      "version": "2.0.0",
-      "download": "https://github.com/NuggoDEV/Colour-Switcher-Quest/releases/download/v2.0.0/QolourSwitcher.qmod",
-      "source": "https://github.com/NuggoDEV/Colour-Switcher-Quest/",
-      "author": "Nuggo",
-      "cover": "",
       "modloader": "QuestLoader"
     },
     {
@@ -1650,17 +1606,6 @@
       "source": "https://github.com/WaffleTheCool/PromotionYeeter/",
       "author": "WaffleTheCool#8942",
       "cover": "",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Qolour Switcher",
-      "description": "Gives user full control over the colours of the Notes, Bombs and Walls!",
-      "id": "QolourSwitcher",
-      "version": "1.2.0",
-      "download": "https://github.com/NuggoDEV/Qolour-Switcher-Rewritten/releases/download/v1.2.0/QolourSwitcher.qmod",
-      "source": "https://github.com/NuggoDEV/Qolour-Switcher-Rewritten/",
-      "author": "Nuggo#9535",
-      "cover": null,
       "modloader": "QuestLoader"
     },
     {
@@ -7091,17 +7036,6 @@
       "modloader": "QuestLoader"
     },
     {
-      "name": "AccessAbility",
-      "description": "Gives more options to play Beat Saber, mainly made for those who can\u0027t play the game intended",
-      "id": "AccessAbility",
-      "version": "0.2.0",
-      "download": "https://github.com/NuggoDEV/AccessAbility/releases/download/0.2.0/AccessAbility.qmod",
-      "source": "https://github.com/NuggoDEV/AccessAbility/",
-      "author": "Nuggo",
-      "cover": "",
-      "modloader": "QuestLoader"
-    },
-    {
       "name": "Mapping Extensions",
       "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.\n\nReminder: difficulties that require both Mapping Extensions and Noodle Extensions at the same time do not work. This is intended behaviour on Noodle\u0027s part.",
       "id": "MappingExtensions",
@@ -7363,17 +7297,6 @@
       "source": "https://github.com/mineblock11/Vent/",
       "author": "mineblock11",
       "cover": "https://raw.githubusercontent.com/mineblock11/Vent/master/cover.png",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Time Failed",
-      "description": "Shows the time in the song you failed at in the results screen",
-      "id": "TimeFailed",
-      "version": "1.1.2",
-      "download": "https://github.com/NuggoDEV/Time-Failed/releases/download/v1.1.3/TimeFailed.qmod",
-      "source": "https://github.com/NuggoDEV/Time-Failed/",
-      "author": "Nuggo#9535",
-      "cover": null,
       "modloader": "QuestLoader"
     },
     {
@@ -7704,17 +7627,6 @@
       "source": "https://github.com/FrozenAlex/Nya-quest/",
       "author": "FrozenAlex",
       "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "AccessAbility",
-      "description": "Gives more options to play Beat Saber, mainly made for those who can\u0027t play the game intended",
-      "id": "AccessAbility",
-      "version": "0.1.0",
-      "download": "https://github.com/NuggoDEV/AccessAbility/releases/download/v0.1.0/AccessAbility.qmod",
-      "source": "https://github.com/NuggoDEV/AccessAbility/",
-      "author": "Nuggo",
-      "cover": "",
       "modloader": "QuestLoader"
     },
     {
@@ -8275,17 +8187,6 @@
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Time Failed",
-      "description": "Shows the time in the song you failed at in the results screen",
-      "id": "TimeFailed",
-      "version": "1.1.4",
-      "download": "https://github.com/NuggoDEV/Time-Failed/releases/download/v1.1.4/TimeFailed.qmod",
-      "source": "https://github.com/NuggoDEV/Time-Failed/",
-      "author": "Nuggo#9535",
-      "cover": "",
       "modloader": "QuestLoader"
     },
     {
@@ -9047,28 +8948,6 @@
       "source": "https://github.com/MillzyDev/bsq-ThinSaberCore/",
       "author": "Millzy",
       "cover": "",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Qolour Switcher",
-      "description": "Allows user to change colours mid-game!",
-      "id": "QolourSwitcher",
-      "version": "1.2.0",
-      "download": "https://github.com/NuggoDEV/Qolour-Switcher/releases/download/v2.0.1/QolourSwitcher.qmod",
-      "source": "https://github.com/NuggoDEV/Qolour-Switcher/",
-      "author": "Nuggo#9535",
-      "cover": "https://raw.githubusercontent.com/NuggoDEV/Qolour-Switcher/master/cover.jpg",
-      "modloader": "QuestLoader"
-    },
-    {
-      "name": "Qolour Switcher",
-      "description": "Allows user to change colours mid-game!",
-      "id": "QolourSwitcher",
-      "version": "1.2.0",
-      "download": "https://github.com/NuggoDEV/Colour-Switcher-Quest/releases/download/v2.0.1/QolourSwitcher.qmod",
-      "source": "https://github.com/NuggoDEV/Colour-Switcher-Quest/",
-      "author": "Nuggo#9535",
-      "cover": "https://raw.githubusercontent.com/NuggoDEV/Colour-Switcher-Quest/master/cover.jpg",
       "modloader": "QuestLoader"
     }
   ],
