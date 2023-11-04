@@ -49,6 +49,46 @@
                     This site has been moved and rewritten by the one and only God of Crashs, me, ComputerElite (in short GoCmCE). If you want to downgrade use <a href="https://oculusdb.rui2015.me">OculusDB</a>
                 </div>
             </div>
+            <div style="font-size: 15px; text-align: center;">Feel free to try the new <a href="https://oculusdb.rui2015.me">Oculus DB</a> website for downgrading your games ;)</div>
+            <table style="padding: 10px; margin: auto; margin-top: 40px;">
+                <tr>
+                    <td style="display: flex; flex-wrap: wrap;">
+                        <div style="margin-left: 87px;" class="marginlow">Headset</div>
+                        <select id="headset" class="marginlow">
+                            <option value="MONTEREY">Quest</option>
+                            <option value="PACIFIC">Go</option>
+                            <option value="GEARVR">GearVR</option>
+                            <option value="RIFT">Rift (downloads working via seperate program)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: flex; flex-wrap: wrap; align-items: center;">
+                        <div class="marginlow">Search term for app</div>
+                        <input type="text" class="marginlow" style="width: auto; min-width: 20vw; max-width: 90vw;" value="Beat Saber" id="searchTerm" spellcheck="false" onkeydown='if(event.keyCode == 13) Search()'>
+                        <input type="button" class="marginlow" value="Search" onclick="Search()">
+                    </td>
+                </tr>
+            </table>
+            <div style="position: fixed; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #00000099; visibility: hidden; top: 0; left: 0" id="popupContainer" onclick="if(event.target.id == 'popupContainer') document.getElementById('popupContainer').style.visibility = 'hidden'">
+                <div style="background-color: #222222; padding: 10px;">
+                    <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;" id="popup">
+
+                    </div>
+                </div>
+            </div>
+            <div id="notesContainer" style="margin-bottom: 50px;">
+
+            </div>
+            <div id="resultContainer">
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div style="flex: 1; font-size: 18px; padding: 5px; margin: 5px;">
+                        <table style="width: fit-content; margin: auto;">
+                            <tr><td><img src="../../assets/CE_512px.png" width="100px" height="100px"></td><td>Please search</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
             <div id="contextMenu" class="contextMenu">
                 <div class="contextMenuItem" onclick="navigator.clipboard.writeText(forClipboard)">Copy id</div>
