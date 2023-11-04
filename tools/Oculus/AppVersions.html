@@ -156,17 +156,20 @@
 
             const oculusdb = "https://oculusdb.rui2015.me/"
 
-            if(id) {
-               location = `${oculusdb}id/${id}?connected=versions`
+            if(!url.searchParams.has("bypass")) {
+                if(id) {
+                location = `${oculusdb}id/${id}?connected=versions`
+                }
+                else if(query) {
+                    location = `${oculusdb}search?query=${query}`
+                }
+                else if(downloadVersion) {
+                    location = `${oculusdb}id/${id}?downloadversion=${downloadVersion}`
+                } else {
+                    location = `${oculusdb}search?query=Beat Saber`
+                }
             }
-            else if(query) {
-                location = `${oculusdb}search?query=${query}`
-            }
-            else if(downloadVersion) {
-                location = `${oculusdb}id/${id}?downloadversion=${downloadVersion}`
-            } else {
-                location = `${oculusdb}search?query=Beat Saber`
-            }
+            
             
 
             var fun = false
