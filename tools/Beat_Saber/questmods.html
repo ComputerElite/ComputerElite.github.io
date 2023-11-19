@@ -91,8 +91,6 @@
         .mod_highlight::before {
             content: '';
             height: 40px;
-            display:    content: '';
-            height: 40px;
             display: block;
             position: absolute;
             top: 0;
@@ -170,7 +168,6 @@
                             </div>
                             <input type="text" id="search" placeholder="Search mods"> <br />
                             <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
-                            <a class="button" href="https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod">Get V51 custom types fix</a>
                         </div>
                         
                         <h2 id="coreModsText">Core Mods</h2>
@@ -242,16 +239,6 @@
             
             function DownloadAllCores() {
                 window.open("https://oculusdb.rui2015.me/api/coremodsdownload/" + gameversion.value + ".qmod", "_blank")
-                DownloadV51FixIfNeeded()
-            }
-            
-            function DownloadV51FixIfNeeded() {
-	        return
-                if(params.get("isqavs")) {
-                    setTimeout(() => {
-                        window.open("https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod")
-                    }, 1000)
-                }
             }
 
             function PullMods() {
