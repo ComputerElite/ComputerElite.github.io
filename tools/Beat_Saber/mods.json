@@ -9068,6 +9068,17 @@
       "author": "Kinsi55, Kaitlyn",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "SongRankedBadge",
+      "description": "",
+      "id": "songrankedbadge",
+      "version": "1.0.1",
+      "download": "https://github.com/kodenamekrak/SongRankedBadge/releases/download/1.0.1/SongRankedBadge.qmod",
+      "source": "https://github.com/kodenamekrak/SongRankedBadge/",
+      "author": "qe201020335, KodenameKRAK",
+      "cover": "",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
