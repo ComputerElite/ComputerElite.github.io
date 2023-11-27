@@ -1253,6 +1253,28 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/BunniKaitlyn/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1251.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "mineblock11",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "I swear you just vented...",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1251.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -3237,6 +3259,28 @@
       "author": "Aika, xyonico",
       "cover": "https://raw.githubusercontent.com/BunniKaitlyn/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1171.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "Failed so hard you wanted to vent out of the game? Then here it is. (Launches amongus vr if installed)",
+      "id": "vent",
+      "version": "0.1.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1171.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.21.0": [
@@ -3789,6 +3833,28 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/BunniKaitlyn/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1210.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "I swear you just vented...",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1210.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.20.0": [
@@ -4099,6 +4165,28 @@
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1200.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "I swear you just vented...",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1200.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.19.1": [
@@ -4310,6 +4398,28 @@
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, Darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.jpg",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0-1191.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "Failed so hard you wanted to vent out of the game? Then here it is. (Launches amongus vr if installed)",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1191.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.19.0": [
@@ -4355,6 +4465,17 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, Darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "Failed so hard you wanted to vent out of the game? Then here it is. (Launches amongus vr if installed)",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1190.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "cal117",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -7781,6 +7902,39 @@
       "source": "https://github.com/BunniKaitlyn/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/BunniKaitlyn/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "TooManyTweaks",
+      "description": "Adds many togglable tweaks and options to tailor the game to your desire.",
+      "id": "toomanytweaks",
+      "version": "0.3.1",
+      "download": "https://github.com/IMB11/TooManyTweaks/releases/download/0.3.1/TooManyTweaks-0.3.1%2B1270_3631150051.qmod",
+      "source": "https://github.com/IMB11/TooManyTweaks/",
+      "author": "mineblock11",
+      "cover": "https://raw.githubusercontent.com/IMB11/TooManyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change the colors of the menu and other neat color related options.",
+      "id": "colorama",
+      "version": "2.1.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/2.1.0/Colorama-2.1.0%2B1270_3631150051.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "mineblock11",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Vent",
+      "description": "I swear you just vented...",
+      "id": "vent",
+      "version": "1.0.0",
+      "download": "https://github.com/IMB11/Vent/releases/download/1.0.0/Vent-1.0.0%2B1270_3631150051.qmod",
+      "source": "https://github.com/IMB11/Vent/",
+      "author": "mineblock11",
+      "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
