@@ -1473,7 +1473,7 @@
       "download": "https://github.com/WaffleTheCool/feetsaber/releases/download/v0.1.2/feetsaber.qmod",
       "source": "https://github.com/WaffleTheCool/feetsaber/",
       "author": "Phaze#6193 | Publisher: nesiLLL",
-      "cover": null,
+      "cover": "",
       "modloader": "QuestLoader"
     },
     {
@@ -2101,6 +2101,17 @@
       "source": "https://github.com/BunniKaitlyn/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/BunniKaitlyn/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "feetsaber",
+      "description": "i got bored",
+      "id": "feetsaber",
+      "version": "0.1.2",
+      "download": "https://github.com/NotHiiragi/feetsaber/releases/download/v0.1.2/feetsaber.qmod",
+      "source": "https://github.com/NotHiiragi/feetsaber/",
+      "author": "Phaze#6193 | Publisher: nesiLLL",
+      "cover": "",
       "modloader": "QuestLoader"
     }
   ],
