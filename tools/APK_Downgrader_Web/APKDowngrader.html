@@ -141,6 +141,7 @@
                             <div class="item">App</div>
                             <div class="item">APK Version</div>
                             <div class="item">Target Version</div>
+                            <div class="item">Annotation</div>
                             <div class="item">Est. RAM Usage</div>
                         </a>
                         <div id="patches" style="display: flex; color: #EEEEEE; width: 100%; justify-content: space-evenly; flex-direction: column;">
@@ -508,6 +509,7 @@
                         <div class="item">${element.appid}</div>
                         <div class="item">${element.SV}</div>
                         <div class="item">${element.TV}</div>
+                        <div class="item">${element.Annotation ?? "-"}</div>
                         <div class="` + (ram >= 3221225472 ? `itemR` : `item`) + `">${ByteSizeToString(ram)}</div>
                     </a>`
         }
