@@ -107,10 +107,10 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
             timeStart = _this.performance.now();
             
             if(!ignoreChecksums) {
-                var downgrade = extractDowngrade(patchFilename, false, downgrades, true)
+                console.log("Calculating SSHA256")
+                var SSHA256 = await GetSHA256(sourceData)
+                var downgrade = extractDowngrade(patchFilename, false, downgrades, true, SSHA256)
                 if(downgrade != null) {
-                    console.log("Calculating SSHA256")
-                    var SSHA256 = await GetSHA256(sourceData)
                     console.log("finished: " + SSHA256)
                     if(SSHA256 != downgrade["SSHA256"]) {
                         console.log("SSHA256 mismatch")
@@ -156,8 +156,8 @@ async function applyPatch(sourceData, patchData, ignoreChecksums, patchFilename,
     }
 }
 
-function extractDowngrade(patchFilename, abortOnNotFound, downgrades, isXdelta3) {
-    var versionRegex = /[0-9\.]+TO[0-9\.]+/g
+function extractDowngrade(patchFilename, abortOnNotFound, downgrades, isXdelta3, SSHA256) {
+    var versionRegex = /[0-9\._]+TO[0-9\._]+/g
     var vers = patchFilename.match(versionRegex)[0].split("TO")
     var SV = vers[0]
     var TV = vers[1]
@@ -165,7 +165,7 @@ function extractDowngrade(patchFilename, abortOnNotFound, downgrades, isXdelta3)
     console.log(`extracted infos from FileName: SV: ${SV}, TV: ${TV}, appid: ${appid}`)
 
     var patcher = new DecrPatcher();
-    var downgrade = patcher.GetVersion(downgrades, SV, TV, appid, isXdelta3)
+    var downgrade = patcher.GetVersion(downgrades, SV, TV, appid, isXdelta3, SSHA256)
     if(downgrade == null && abortOnNotFound) {
         console.log("Entry not found.")
         alert(`Version ${SV} to ${TV} of ${appid} doesn't seem to exist. Aborting due to lack of information.`)
@@ -253,10 +253,10 @@ class DecrPatcher {
         return hashHex
     }
     
-    GetVersion(downgrades, SV, TV, appid, isXDelta3) {
+    GetVersion(downgrades, SV, TV, appid, isXDelta3, SSHA256) {
         var outp = null
         downgrades["versions"].forEach(element => {
-            if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(SV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
+            if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(SV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(TV) && appid == element["appid"] && element["isXDelta3"] == isXDelta3 && SSHA256 && element["SSHA256"]) { outp = element; return false;}
             else if (this.RemoveDotZero(element["SV"]) == this.RemoveDotZero(TV) && this.RemoveDotZero(element["TV"]) == this.RemoveDotZero(SV) && element["SourceByteSize"] == element["TargetByteSize"] && appid == element["appid"] && element["isXDelta3"] == isXDelta3) { outp = element; return false;}
         });
         return outp
