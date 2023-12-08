@@ -632,6 +632,7 @@
             disableInputs();
             applyPatch(sourceData, patchData, domInputSkipChecksums.checked, domInputPatch.files[0].name, downgrades, true).then(result => {
                 if(result) saveAs(domInputSaveAs.value, result);
+                alert("Done! Apk saved in your downloads folder")
                 enableInputs();
                 domProgressBar.style.width = '0px';
             }).catch(err => {
