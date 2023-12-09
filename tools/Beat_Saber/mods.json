@@ -9321,6 +9321,17 @@
       "author": "ThinSaberCore - Millzy, ThinSaberUI - Nuggo",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "SongInfoPlus",
+      "description": "View extra details about a map in Beat Saber!",
+      "id": "songinfoplus",
+      "version": "3.0.0",
+      "download": "https://github.com/OptimusChen/SongInfoPlus/releases/download/v3.0.0/SongInfoPlus.qmod",
+      "source": "https://github.com/OptimusChen/SongInfoPlus/",
+      "author": "Optimus",
+      "cover": "",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
