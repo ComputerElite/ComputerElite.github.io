@@ -90,14 +90,14 @@
                         </td>
                     </tr>
                 </table>
-                <p style="font-size: 30px;" id="current-status-text">Select APK file</p>
+                <p style="font-size: 30px;" id="current-status-text">Select your game's APK file</p>
                 <div style="margin-bottom: 20px;"><a style="font-size: 18px; " target="_blank" href="Guide.html">Guide</a></div>
                 <div style="background: #666; text-align: left; height: 2px;">
                     <div id="progress-bar" style="display: inline-block; height: 2px; width: 0px; background: #00FFFF; position: absolute; max-width: 80%;"></div>
                 </div>
             </div>
         </div>
-        <div style="flex: 1; flex-grow: 0; text-align: center;">
+        <div style="flex: 1; flex-grow: 0; text-align: center;" class="showAfterApkSelect">
             <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 10px;">
                 <div style="padding: 10px;">
                     <div style="font-size: 24px;">Download patches</div>
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div style="flex: 1; flex-grow: 0; text-align: center;">
+        <div style="flex: 1; flex-grow: 0; text-align: center;" class="showAfterApkSelect">
             <div style="background-color: rgb(47,49,54); display: inline-block; margin-top: 10px; width: 80%; margin-bottom: 20px;">
                 <div style="padding: 10px;">
                     <div style="font-size: 24px;">Notes</div>
@@ -318,6 +318,13 @@
         }
     }
 
+    function ShowAfterApkSelect(shown) {
+        var ar = document.getElementsByClassName("showAfterApkSelect")
+        for(let e of ar) {
+            ar.style.display = shown ? "block" : "none"
+        }
+    }
+
     var downgrades = {}
     fetch("https://raw.githubusercontent.com/ComputerElite/APKDowngrader/main/versions.json").then((res) => {
         res.json().then((json) => {
@@ -351,13 +358,14 @@
     "SourceByteSize": 579562808
     }]}
     */
-
+    ShowAfterApkSelect(false)
     function ApkSelected() {
         domStatusText.textContent = 'Loading patches...';
         hashfile(domInputRom.files[0], hash => {
             const versions = downgrades.versions.filter(v => v.SSHA256 == hash);
             ShowAllPatches(versions);
             domStatusText.textContent = 'Select patch below';
+            ShowAfterApkSelect(true)
         })
     }
 
