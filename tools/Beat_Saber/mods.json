@@ -8069,6 +8069,15 @@
   ],
   "1.28.0_4124311467": [
     {
+      "name": "Trick Saber",
+      "description": "Mod that lets you throw and spin your sabers every which way you want!",
+      "id": "trick-saber",
+      "version": "0.0.1",
+      "download": "https://github.com/RileyPrince/TrickSaber-1.28.0/releases/download/0.0.1/Tricksaber.qmod",
+      "source": "https://github.com/RileyPrince/TrickSaber-1.28.0/",
+      "author": "RedBrumbler - Updated by Riley"
+    },
+    {
       "name": "RecentlyPlayed",
       "description": "Adds a history tab that displays the most recently played maps",
       "id": "RecentlyPlayed",
