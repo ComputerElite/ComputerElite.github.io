@@ -1275,6 +1275,17 @@
       "author": "cal117",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.8",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.8-bs-1.25.1/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2112,6 +2123,17 @@
       "source": "https://github.com/NotHiiragi/feetsaber/",
       "author": "Phaze#6193 | Publisher: nesiLLL",
       "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.16",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.16-bs-1.24.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
       "modloader": "QuestLoader"
     }
   ],
@@ -6790,6 +6812,17 @@
       "author": "Loloppe | Anony",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.8",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.8-bs-1.26.2/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.27.0_3631150051": [
@@ -7946,6 +7979,28 @@
       "source": "https://github.com/IMB11/Vent/",
       "author": "mineblock11",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.16",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.16-bs-1.27.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.8",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.8-bs-1.27.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -9375,6 +9430,28 @@
       "source": "https://github.com/kodenamekrak/SongChartVisualizer/",
       "author": "Eris, KodenameKRAK",
       "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "0.2.16",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v0.2.16-bs-1.28.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "1.0.8",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v1.0.8-bs-1.28.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
