@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guide to obtain your Oculus Token</title>
+        <meta property="og:site_name" content="ComputerElite">
+        <meta property="og:title" content="Guide to obtain your Oculus Token" />
+        <meta property="og:description" content="For Oculus downgrader and other applications" />
+        <meta property="og:url" content="https://computerelite.github.io/tools/Oculus/ObtainToken.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="../../css/standard.css" type="text/css" rel="stylesheet">
+        <script src="../../js/ui.js"></script>
+        <link rel="icon" href="../../assets/CE_64px.png" type="image/x-icon">
+        <style>
+            .step {
+                padding: 10px;
+                font-size: 16px;
+                text-align: left;
+                padding-left: 25px;
+                line-height: 1.5;
+            }
+
+            .header {
+                text-align: left;
+                font-size: 20px;
+                margin-left: 10px;
+                text-decoration: underline;
+                margin-top: 40px;
+            }
+
+            .image {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body style="font-size: 14px;">
+        <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+            <div style="flex: 1; flex-grow: 0; text-align: center;">
+                <div style="display: inline-block; margin-top: 20px; margin-bottom: 10px;" class="bigBox">
+                    <div style=" padding: 10px;">
+                        <div style="font-size: 24px;">Guide to obtain your Oculus Device scoped access Token</div>
+                        <div class="headerDescription">For <a href="https://github.com/ComputerElite/Oculus-downgrader/">Oculus downgrader</a> and other applications</div>
+                    </div>
+                    <div class="guideHeader" style="text-align:left; padding: 5px; text-decoration: underline;">Important</div>
+                    <div class="guideSteps" style="text-align:left; padding: 10px;">
+                        Your token is something private. Everyone who has it can download apps, send messages, ... with your name.
+                        <br/>But then the question comes why do I give it Oculus downgrader? Oculus downgrader needs to authenticate the download with oculus so it needs your token. After you entered the token it gets stored locally on your PC and is ONLY shared with Oculus servers to proof that you own the game.
+                    </div>
+                    <div class="header">Step 1: Install and log into the Oculus Rift app if you don't already have it</div>
+                    <div class="step">
+                        You can get the setup <a href="https://securecdn.oculus.com/binaries/download/?id=3552425908372122&access_token=OC%7C1196467420370658%7C">here</a>
+                    </div>
+                    <div class="header">Step 2: Open developer tools</div>
+                    <div class="step">
+                        Open Oculus and press ctrl + shift + i
+                        <br>
+                        This should show something like This
+                    </div>
+                    <div class="header">Step 3: Copy the access_token</div>
+                    <div class="step">
+                        Next click on <code>Network</code> (1), filter for <code>graph</code> (2), click on the first request (3) and open the <code>Headers</code> tab (4).
+                        <br>
+                        At the bottom you should now see your token (5). It should start with <code>FRL</code>. Select it with your mouse and press ctrl + c to copy it.
+                        <br>
+                        If you want you can validate your token using the box below the picture by pasting it into the box and pressing the button.
+                        <br/>
+                        <img src="Steps/1_new.png">
+                        <br/>
+                        Token box
+                        <input type="password" id="token" style="width: 700px; max-width: 100%;">
+                        <div class="customButton" style="margin-top: 30px;" onclick="Validate(document.getElementById('token').value)">Validate token</div>
+                        <div class="textBox" id="tb"></div>
+
+                        You can then paste your token with ctrl + v into Oculus downgrader.
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <script src="../../js/standard.js"></script>
+        <script>
+            var requestUrl = "https://cors-anywhere-computerelite.herokuapp.com/https://graph.oculus.com/graphql"
+
+            function Validate(token) {
+                if(token.includes("%")) {
+                    TextBoxError("tb", "You got your token from the wrong place. Go to the payload tab. Don't get it from the url.")
+                    return
+                }
+                if(!token.startsWith("FRL")) {
+                    TextBoxError("tb", "Tokens must start with 'FRL'. Please get a new one.",)
+                    return
+                }
+                if(token.includes("|")) {
+                    TextBoxError("tb", "You seem to have entered a token of an application. Please get YOUR token. Usually this can be done by using another request in the network tab.")
+                    return
+                }
+                if(token.includes(":")) {
+                    TextBoxError("tb", "Don't copy anything before the OC.")
+                    return
+                }
+                if(/OC[0-9]{15}/g.test(token)) {
+                    TextBoxError("tb", "Don't change your token. This will only cause issues. Check another request for the right token.")
+                    return
+                }
+                TextBoxGood("tb", "Token seems to be valid")
+            }
+        </script>
+    </body>
+</html>
