@@ -57,7 +57,8 @@
             color: #EEEEEE;
             padding: 1em;
             font-weight: bold;
-
+            user-select: none;
+            cursor: pointer;
         }
         td {
             padding: 10px;
@@ -223,6 +224,10 @@
             var bypass = false
            
             var firstVisit = false
+            /**
+            * Stores all downloaded mods
+            * @type {string} url
+            */
             var existing = []
             if(localStorage.oldMods) {
                 existing = JSON.parse(localStorage.oldMods);
@@ -289,9 +294,10 @@
                         if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
                             var existingMod = gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)]
                             if(compare(mod.version, existingMod.versions[0].version) >= 0) {
-                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                existingMod.download = mod.download
+                                existingMod.versions.unshift({version: mod.version, download: mod.download})
                             } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
-                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                existingMod.versions.push({version: mod.version, download: mod.download})
                             }
                         } else {
                             mod.versions = [{version: mod.version, download: mod.download}]
@@ -315,25 +321,42 @@
                     var coreMods = []
                     for(const mod of value) {
                         if(firstVisit) AddDownloadedMod(mod.download)
+
+                        // If mod is core mod, add it to core mods
                         if(gameVersions[key].coremods.map(x => x.id).includes(mod.id)) {
                             var existingMod = gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)]
-                            gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].author = mod.author
+                            
                             if(compare(mod.version, existingMod.versions[0].version) >= 0) {
-                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                existingMod.author = mod.author
+                                existingMod.download = mod.download
+                                existingMod.versions.unshift({version: mod.version, download: mod.download})
                             } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
-                                gameVersions[key].coremods[gameVersions[key].coremods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                existingMod.versions.push({
+                                    version: mod.version, 
+                                    download: mod.download,
+                                    author: mod.author
+                                })
                             }
                         } else {
                             if(Mods.map(x => x.id).includes(mod.id)) {
-                                var existingMod = Mods[Mods.map(x => x.id).indexOf(mod.id)]
-                                Mods[Mods.map(x => x.id).indexOf(mod.id)].author = mod.author
+                                if (mod.author.includes("FrozenAlex")) {
+                                    console.log("Adding mod " + mod.name + " to mods", 'Version: ' + mod.version, 'Download: ' + mod.download, 'Author: ' + mod.author)
+                                };
+                                const existingMod = Mods[Mods.map(x => x.id).indexOf(mod.id)]
+                                
                                 if(compare(mod.version, existingMod.versions[0].version) >= 0) {
-                                    Mods[Mods.map(x => x.id).indexOf(mod.id)].versions.unshift({version: mod.version, download: mod.download})
+                                    existingMod.author = mod.author
+                                    existingMod.download = mod.download
+                                    existingMod.versions.unshift({version: mod.version, download: mod.download})
                                 } else if(compare(mod.version, existingMod.versions[0].version) < 0) {
-                                    Mods[Mods.map(x => x.id).indexOf(mod.id)].versions.push({version: mod.version, download: mod.download})
+                                    existingMod.versions.push({version: mod.version, download: mod.download})
                                 }
                             } else {
-                                mod.versions = [{version: mod.version, download: mod.download}]
+                                mod.versions = [{
+                                    version: mod.version, 
+                                    download: mod.download,
+                                    author: mod.author
+                                }]
                                 Mods.push(mod)
                             }
                         }
@@ -354,7 +377,8 @@
                     }
                 }
                 if(!foundMatchingGameversion && params.get("isqavs") && !bypass) {
-                    coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
+                    coremods.innerHTML =`
+                        <div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your installed Beat Saber version <b>does not</b> support any mods. <b>Downgrade</B> to a version which supports mods.
                             <br>
                             <br>
@@ -368,7 +392,7 @@
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
                             <br>
                             <i style="font-size: .7em;"><a onclick="bypass = true; PullMods()">View mods anyway</a></i>
-                </div>` 
+                        </div>` 
                     mods.innerHTML =``
                     modsHeader.style.display = "none"
                     coreModsText.style.display = "none"
@@ -376,7 +400,8 @@
                     return
                 }
                 if(params.get("isqavs") && (params.get("ismodded") && params.get("ismodded").toLowerCase() == "false") && !bypass) {
-                    coremods.innerHTML =`<div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
+                    coremods.innerHTML =`
+                        <div class="attention" style="margin-bottom: 20px; margin-left: 50%; transform: translate(-50%, 0%); font-size: 2em">
                             Your Beat Saber game is not modded yet. To mod it press the button below.
                             <input class="button" type="button" style="font-size: 1.1em" onclick="location = 'http://127.0.0.1:${params.get("port")}?package=com.beatgames.beatsaber&modnow=true'" value="Mod my game">
                             <br>
@@ -384,7 +409,8 @@
                             <i style="font-size: .7em;">Use the <code>QuestAppVersionSwitcher</code> button at the top right to get back to the main menu</i>
                             <br>
                             <i style="font-size: .7em;"><a onclick="bypass = true; PullMods()">View mods anyway</a></i>
-                </div>`
+                        </div>
+                    `
                     mods.innerHTML =``
                     modsHeader.style.display = "none"
                     coreModsText.style.display = "none"
@@ -464,44 +490,61 @@
                 if(downloadLink.includes("github.com")) {
                     githubLink = downloadLink.substring(0, downloadLink.indexOf("releases"))
                 }
-                return `<input onclick="Download('${mod.id}')" type="button" value="Download" class="button">`+
-                                `${githubLink ? `<input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" class="button">`+
-                                `<input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" class="button">` : ""}`+
-                                `${isCore ? `` : `<input onclick="Download('${mod.id}', false)" type="button" value="Mark" class="button">`}`
+
+                return `
+                    <a href="${downloadLink}" class="button downloadButton">Download</a>
+                    ${githubLink ? `
+                        <input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" class="button">
+                        <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" class="button">
+                    ` : ""}
+                    ${isCore ? `` : `
+                        <input type="button" value="Mark" class="button markButton">
+                    `}
+                `
             }
 
             function AddDownloadedMod(link) {
                 if(!existing.includes(link)) existing.push(link)
             }
 
-            function Download(id, actuallyDownload = true) {
+            /**
+            * @param {string} modId
+            * @param {boolean} toggle 
+            */
+            function MarkAsDownloaded(modId, toggle = false) {
                 if (!localStorage.oldMods) localStorage.oldMods = []
+                
                 var toConcat = []
                 existing = JSON.parse(localStorage.oldMods)
-                for (const d of [...document.getElementById(id).options].map(o => o.value)) {
+                for (const d of [...document.getElementById(modId).options].map(o => o.value)) {
                     if (!existing.includes(d)) toConcat.push(d)
                 }
+                
                 if (toConcat.length > 0) {
                     // Add mods to marked
                     existing = existing.concat(toConcat)
-                } else if (!actuallyDownload) {
+                } else if (toggle) {
                     // Remove mods from marked
-                    for (const d of [...document.getElementById(id).options].map(o => o.value)) {
+                    for (const d of [...document.getElementById(modId).options].map(o => o.value)) {
                         if (existing.includes(d)) existing = existing.filter(e => e != d)
                     }
                 }
                 localStorage.oldMods = JSON.stringify(existing)
 
-                if (actuallyDownload) {
-                    window.open(document.getElementById(id).value, "_blank")
-                    DownloadV51FixIfNeeded()
-                }
                 Display(gameversion.value)
             }
 
             function GetModType(mod) {
                 if(mod.modloader == "Scotland2") return "Scotland2"
                 if(mod.modloader == "QuestLoader" || !mod.modloader) return "QuestLoader"
+            }
+            
+            /**
+            * Makes a string searchable by removing spaces and making it lowercase
+            * @param {string} str
+            */
+            function toSearchableString(str) {
+                return str.toLowerCase().replace(/ /g, '').toLowerCase().trim()
             }
 
             function ShowMod(mod) {
@@ -510,34 +553,153 @@
                     if(modloader == "QuestLoader" && mod.modloader != "QuestLoader" && mod.modloader) return false
                     if(modloader == "Scotland2" && mod.modloader != "Scotland2") return false
                 }
+                
+                /**
+                * @type {string}
+                */ 
+                const searchValue = toSearchableString(search.value)
+
+                if (searchValue) {
+                    if (!(
+                        toSearchableString(mod.name).includes(searchValue) ||
+                        toSearchableString(mod.id).includes(searchValue) ||
+                        toSearchableString(mod.author).includes(searchValue) ||
+                        toSearchableString(mod.description ? mod.description : "").includes(searchValue)
+                    )) return false;
+                }
+
                 return true
+            }
+            
+            function OnModVersionSelect(e){
+                const modContainer = e.currentTarget.closest(".mod_modal")
+                const downloadButton = modContainer.querySelector(".downloadButton")
+                const modId = modContainer.getAttribute("data-modid")
+                    
+                // Get selected version from dropdown
+                const this_gameversion = gameversion.value
+                
+                // Find mod
+                let mod = gameVersions[this_gameversion].mods.find(m => m.id == modId)
+                if(!mod) mod = gameVersions[this_gameversion].coremods.find(m => m.id == modId)
+                if (!mod) return console.error("Mod not found");
+
+                // Find version
+                const version = mod.versions.find(v => v.download == e.target.value)
+                downloadButton.setAttribute("href", version.download)
+            }
+
+            function OnModDownloadClick(e) {
+                const modContainer = e.currentTarget.closest(".mod_modal")
+                const downloadButton = modContainer.querySelector(".downloadButton")
+                const modId = modContainer.getAttribute("data-modid")
+                
+                MarkAsDownloaded(modId)    
+            }
+
+            function OnModMarkClick(e) {
+                const modContainer = e.currentTarget.closest(".mod_modal")
+                const downloadButton = modContainer.querySelector(".downloadButton")
+                const modId = modContainer.getAttribute("data-modid")
+
+                MarkAsDownloaded(modId, true)
             }
 
             function DisplayCards(this_gameversion) {
                 this_gameversion.innerHTML = "";
-                
-                var m =``;
-                console.log("refreshing for " + this_gameversion)
-                var modsToShow = [...gameVersions[this_gameversion].mods]
-                if(gameVersions["undefined"]) {
-                    for(const m of gameVersions["undefined"].mods) {
-                        modsToShow.push(m)
+
+                // Mods
+                {
+                    // Create container for all elements
+                    let container = document.createElement("div")
+                    container.className = "grid"
+
+                    console.log("refreshing for " + this_gameversion)
+                    var modsToShow = [...gameVersions[this_gameversion].mods]
+                    if(gameVersions["undefined"]) {
+                        for(const m of gameVersions["undefined"].mods) {
+                            modsToShow.push(m)
+                        }
                     }
+                    modsToShow.sort(function(a, b) {
+                        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
+                        if(b.name.toLowerCase() < a.name.toLowerCase()) return 1
+                        return 0
+                    })
+                    modsToShow.forEach(mod => {
+                        // Handle search
+                        if(!ShowMod(mod)) return
+                        
+                        // Handle github links
+                        var githubLink = ""
+                        if(mod.download.includes("github.com")) {
+                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
+                        }
+
+                        // Create version dropdown
+                        var versionDropDown = `<select class='selector' id="${mod.id}">`
+                        mod.versions = mod.versions.sort(function(a, b) {
+                            if(compare(a.version, b.version) > 0) return -1
+                            if(compare(a.version, b.version) < 0) return 1
+                            return 0
+                        })
+                        var isNew = false
+                        for(const v of mod.versions) {
+                            if(!existing.includes(v.download)) isNew = true
+                            versionDropDown += `<option value="${v.download}" >${v.version}</option>`
+                        }
+                        versionDropDown += `</select>`
+                        
+                        // Render item
+                        var item = document.createElement("div")
+                        item.classList.add("mod_modal")
+                        item.setAttribute("data-modid", mod.id)
+                        isNew && item.classList.add("mod_highlight")
+                        if (mod.cover && displayCovers) {
+                            item.style.backgroundImage = `url('${mod.cover}')`
+                            item.style.backgroundBlendMode = "color"
+                            item.style.backgroundSize = "cover"
+                            item.style.backgroundRepeat = "no-repeat"
+                            item.style.backgroundPosition = "center"
+                        }
+                        
+                        item.innerHTML =   `
+                            <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
+                            <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
+                            <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
+                            <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
+                            ${GetModButtons(mod, false)}
+                        `
+
+                        // Add listeners
+                        const downloadButton = item.querySelector(".downloadButton")
+                        downloadButton.addEventListener("click", OnModDownloadClick)
+                        const selector = item.querySelector(".selector")
+                        selector && selector.addEventListener("change", OnModVersionSelect)
+                        const markButton = item.querySelector(".markButton")
+                        markButton && markButton.addEventListener("click", OnModMarkClick)
+
+                        container.appendChild(item)
+                    })
+
+                    // Refresh mods container
+                    mods.innerHTML = ``
+                    mods.appendChild(container)
                 }
-                modsToShow.sort(function(a, b) {
-                    if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
-                    if(b.name.toLowerCase() < a.name.toLowerCase()) return 1
-                    return 0
-                })
-                modsToShow.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.id.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
-                        
+                
+                // Core mods
+                {
+                    let container = document.createElement("div")
+                    container.className = "grid"
+                    gameVersions[this_gameversion].coremods.forEach(mod => {
+                        // Handle search
                         if(!ShowMod(mod)) return
-                        
+
                         var githubLink = ""
                         if(mod.download.includes("github.com")) {
                             githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
                         }
+
                         var versionDropDown = `<select class='selector' id="${mod.id}">`
                         mod.versions = mod.versions.sort(function(a, b) {
                             if(compare(a.version, b.version) > 0) return -1
@@ -550,56 +712,34 @@
                             versionDropDown += `<option value="${v.download}">${v.version}</option>`
                         }
                         versionDropDown += `</select>`
-                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}" ${mod.cover && displayCovers ? `style="background-image: url('${mod.cover}');
-    background-blend-mode: color;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;"` : ``}>
-                                <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
-                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
-                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
-                                <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description ? mod.description : ""}</div>
-                                ${GetModButtons(mod, false)}
-                            </div>`
-                    }
-                })
-                mods.innerHTML = ` <div class="grid">
-                            ${m}
-                        </div>`
-                m =``;
-                console.log("refreshing for " + this_gameversion)
-                gameVersions[this_gameversion].coremods.forEach(mod => {
-                    if(mod.name.toLowerCase().replace(/ /g, '').includes(search.value.replace(/ /g, '').toLowerCase()) || mod.author.toLowerCase().replace(/ /g, '').includes(search.value.toLowerCase().replace(/ /g, ''))) {
-                        if(!ShowMod(mod)) return
-                        var githubLink = ""
-                        if(mod.download.includes("github.com")) {
-                            githubLink = mod.download.substring(0, mod.download.indexOf("releases"))
-                        }
-                        var versionDropDown = `<select class='selector' id="${mod.id}">`
-                        mod.versions = mod.versions.sort(function(a, b) {
-                            if(compare(a.version, b.version) > 0) return -1
-                            if(compare(a.version, b.version) < 0) return 1
-                            return 0
-                        })
-                        var isNew = false
-                        for(const v of mod.versions) {
-                            if(!existing.includes(v.download)) isNew = true
-                            versionDropDown += `<option value="${v.download}">${v.version}</option>`
-                        }
-                        versionDropDown += `</select>`
-                        m +=    `<div class="mod_modal ${isNew ? "mod_highlight": ""}">
-                                <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
-                                <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
-                                <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
-                                <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
-                                ${GetModButtons(mod, false)}
-                            </div>`
-                    }
-                })
-                coremods.innerHTML =` <div class="grid">
-                            ${m}
-                        </div>`
-                coreModsText.innerHTML = coreModsLoaded ? (m ? "Core Mods" : "No core mods for this version") : "Loading...."
+                        
+                        var item = document.createElement("div")
+                        item.setAttribute("data-modid", mod.id)
+                        item.classList.add("mod_modal")
+                        isNew && item.classList.add("mod_highlight")
+                        
+                        item.innerHTML = `
+                            <i style="margin-bottom: 5px; margin-top: 0; color: #FFFFFF66">${GetModType(mod)}</i>
+                            <h3 style="margin-bottom: 0px; margin-top: 0;">${mod.name}</h3>
+                            <div style="margin-top: 0; margin-left: 20px;">by ${mod.author}. Version ${versionDropDown}</div>
+                            <div class="mod_description" style="margin-top: 10px; font-size: 1.2em;">${mod.description.replace(/\n/g, "<br>")}</div>
+                            ${GetModButtons(mod, false)}
+                        `
+                        
+                        // Add listeners
+                        const downloadButton = item.querySelector(".downloadButton")
+                        downloadButton.addEventListener("click", OnModDownloadClick)
+                        const selector = item.querySelector(".selector")
+                        selector && selector.addEventListener("change", OnModVersionSelect)
+                        const markButton = item.querySelector(".markButton")
+                        markButton && markButton.addEventListener("click", OnModMarkClick)
+                        
+                        container.appendChild(item)
+                    })
+                    coremods.innerHTML =``
+                    coremods.appendChild(container)
+                    coreModsText.innerHTML = coreModsLoaded ? (container.children.length ? "Core Mods" : "No core mods for this version") : "Loading...."
+                }
             }
 
             function FuckYouKrak(this_gameversion) {
