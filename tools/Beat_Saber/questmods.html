@@ -60,6 +60,9 @@
             user-select: none;
             cursor: pointer;
         }
+        a.button:visited {
+            color: #EEEEEE;
+        }
         td {
             padding: 10px;
         }
@@ -494,8 +497,8 @@
                 return `
                     <a href="${downloadLink}" class="button downloadButton">Download</a>
                     ${githubLink ? `
-                        <input onclick="window.open('${githubLink}issues', '_blank')" type="button" value="Report Bug" class="button">
-                        <input onclick="window.open('${githubLink}', '_blank')" type="button" value="Open GitHub Repository" class="button">
+                        <a class="button" href="${githubLink}issues" target="_blank">Report Bug</a>
+                        <a class="button" href="${githubLink}" target="_blank">Open GitHub Repository</a>
                     ` : ""}
                     ${isCore ? `` : `
                         <input type="button" value="Mark" class="button markButton">
