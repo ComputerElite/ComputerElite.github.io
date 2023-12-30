@@ -8135,6 +8135,15 @@
   ],
   "1.28.0_4124311467": [
     {
+      "name": "GaySabers",
+      "description": "Makes your sabers gay (i mean glow in rainbow colors)",
+      "id": "gaysabers",
+      "version": "0.1.0",
+      "download": "https://github.com/hdgamer1404Jonas/GaySabers/releases/download/0.1.0/GaySabers.qmod",
+      "source": "https://github.com/hdgamer1404Jonas/GaySabers/",
+      "author": "hdgamer1404Jonas"
+    },
+    {
       "name": "VRM Qavatars",
       "description": "A VRM based Custom Avatar mod for Beat Saber",
       "id": "vrm-qavatars",
