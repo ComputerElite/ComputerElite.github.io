@@ -8141,7 +8141,9 @@
       "version": "0.1.0",
       "download": "https://github.com/hdgamer1404Jonas/GaySabers/releases/download/0.1.0/GaySabers.qmod",
       "source": "https://github.com/hdgamer1404Jonas/GaySabers/",
-      "author": "hdgamer1404Jonas"
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/hdgamer1404Jonas/GaySabers/master/logo.gif",
+      "modloader": "QuestLoader"
     },
     {
       "name": "VRM Qavatars",
