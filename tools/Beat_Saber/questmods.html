@@ -146,6 +146,9 @@
             white-space: pre-wrap;
         }
        
+        #core_dl_btn {
+            display: inline-block;
+        }
         </style>
     </head>
     <body style="font-size: 14px;">
@@ -171,7 +174,7 @@
                                 </select>
                             </div>
                             <input type="text" id="search" placeholder="Search mods"> <br />
-                            <input onclick="DownloadAllCores()" id="core_dl_btn" type="button" value="Download all core mods" class="button">
+                            <a id="core_dl_btn" class="button" target="_blank">Download all core mods</a>
                         </div>
                         
                         <h2 id="coreModsText">Core Mods</h2>
@@ -244,10 +247,6 @@
                 Display(gameversion.value)
             }
             PullMods()
-            
-            function DownloadAllCores() {
-                window.open("https://oculusdb.rui2015.me/api/coremodsdownload/" + gameversion.value + ".qmod", "_blank")
-            }
 
             function PullMods() {
                 gameVersions = {}
@@ -763,6 +762,18 @@
             }
 
             function Display(this_gameversion) {
+                // Update download all cores link
+                const allCoresLink = document.getElementById("core_dl_btn");
+                console.log(allCoresLink)
+                if (allCoresLink) {
+                    if (this_gameversion) {
+                        allCoresLink.setAttribute(
+                            "href", 
+                            `https://oculusdb.rui2015.me/api/coremodsdownload/${this_gameversion}.qmod`
+                        )
+                    }
+                }
+
                 if(displayMethod == 1) {
                     DisplayCards(this_gameversion)
                     return;
