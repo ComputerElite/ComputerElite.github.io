@@ -9541,6 +9541,17 @@
       "author": "ThinSaberCore - Millzy, ThinSaberUI - Nuggo",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.3.0",
+      "download": "https://github.com/Metalit/Replay/releases/download/0.3.2/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
