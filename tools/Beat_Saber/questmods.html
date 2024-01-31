@@ -473,6 +473,7 @@
                 gameversions.sort()
                 gameversions.reverse()
                 gameversions.forEach(key => {
+                    if(key == "1.34.2_7115288407") return
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
                 if(params.get("version") && gameversions.includes(params.get("version"))) {
