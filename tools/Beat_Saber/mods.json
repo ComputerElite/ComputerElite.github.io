@@ -9596,6 +9596,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Colorama",
+      "description": "Change all the colors!",
+      "id": "colorama",
+      "version": "3.0.0",
+      "download": "https://github.com/IMB11/Colorama/releases/download/v3.0.0/Colorama-3.0.0%2B1.28.qmod",
+      "source": "https://github.com/IMB11/Colorama/",
+      "author": "IMB11 (IMB11)",
+      "cover": "https://raw.githubusercontent.com/IMB11/Colorama/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
