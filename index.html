@@ -79,8 +79,9 @@
                             "name": "OculusDB",
                             "description": "Download any version of any oculus app",
                             "img": "assets/oculus.jpg",
-                            "color": "#11aa22",
-                            "url": "https://oculusdb.rui2015.me/"
+                            "color": "#40a9f5",
+                            "url": "https://oculusdb.rui2015.me/",
+                            "opacity": 0.3
                         },
                         {
                             "name": "Streamer tools overlays",
@@ -107,8 +108,10 @@
                             "name": "Chaos and Furry events",
                             "description": "southwestern germany (by kingfisher)",
                             "img": "https://kingfisher.contact/profilepic.jpg",
-                            "color": "#111111",
-                            "url": "https://kingfisher.contact/events/"
+                            "color": "#EEEEEE",
+                            "url": "https://kingfisher.contact/events/",
+                            "opacity": 0.35
+
                         },
                         {
                             "name": "Mod JSON Generator",
@@ -142,8 +145,9 @@
                             "name": "Oculus API APP Versions",
                             "description": "Download any version of any oculus app (outdated)",
                             "img": "assets/oculus.jpg",
-                            "color": "#11aa22",
-                            "url": "tools/Oculus/AppVersions.html"
+                            "color": "#40a9f5",
+                            "url": "tools/Oculus/AppVersions.html",
+                            "opacity": 0.3
                         },
                         {
                             "name": "APK Downgrader",
@@ -161,22 +165,25 @@
                             "name": "Oculus Downgrader",
                             "description": "A Guide for Oculus Downgrader",
                             "img": "assets/oculus.jpg",
-                            "color": "#11aa22",
-                            "url": "tools/Oculus/OculusDowngraderGuide.html"
+                            "color": "#40a9f5",
+                            "url": "tools/Oculus/OculusDowngraderGuide.html",
+                            "opacity": 0.3
                         },
                         {
                             "name": "Obtain Oculus Token",
                             "description": "A Guide for obtaining your Oculus Token",
                             "img": "assets/oculus.jpg",
-                            "color": "#11aa22",
-                            "url": "tools/Oculus/ObtainTokenNew.html"
+                            "color": "#40a9f5",
+                            "url": "tools/Oculus/ObtainTokenNew.html",
+                            "opacity": 0.3
                         },
                         {
                             "name": "QuestAppVersionSwitcher",
                             "description": "A Guide for QuestAppVersionSwitcher",
                             "img": "assets/QuestAppVersionSwitcher.png",
-                            "color": "#111111",
-                            "url": "tools/Oculus/QuestAppVersionSwitcher.html"
+                            "color": "#f58840",
+                            "url": "tools/Oculus/QuestAppVersionSwitcher.html",
+                            "opacity": 0.3
                         },
                         {
                             "name": "Beat Saber Downgrading guide",
@@ -202,8 +209,9 @@
                             "name": "OculusDB",
                             "description": "Download any version of any oculus app",
                             "img": "assets/oculus.jpg",
-                            "color": "#11aa22",
-                            "url": "https://oculusdb.rui2015.me/"
+                            "color": "#40a9f5",
+                            "url": "https://oculusdb.rui2015.me/",
+                            "opacity": 0.3
                         },
                         {
                             "name": "ComputerAnalytics",
@@ -222,21 +230,24 @@
                             "description": "A rhythm game based on aiming with your mouse I work on",
                             "img": "assets/RB.png",
                             "color": "#EEEEEE",
-                            "url": "https://store.steampowered.com/app/2156810/Rhythm_Bang/"
+                            "url": "https://store.steampowered.com/app/2156810/Rhythm_Bang/",
+                            "opacity": 0.2
                         },
                         {
                             "name": "Custom Song Preparer",
                             "description": "Prepare custom songs for mapping",
                             "img": "assets/RB.png",
                             "color": "#EEEEEE",
-                            "url": "tools/RhythmBang/CustomSongCreator.html"
+                            "url": "tools/RhythmBang/CustomSongCreator.html",
+                            "opacity": 0.2
                         },
                         {
                             "name": "Event Copier",
                             "description": "Copy events from one difficulty to another",
                             "img": "assets/RB.png",
                             "color": "#EEEEEE",
-                            "url": "tools/RhythmBang/EventCopier.html"
+                            "url": "tools/RhythmBang/EventCopier.html",
+                            "opacity": 0.2
                         }
                     ]
                 },
@@ -284,8 +295,8 @@
                 var childs = ""
                 category.pages.forEach(page => {
                     childs += `<div onclick="window.open('${page.url}', '_self')" class="zoom" style="cursor: pointer; display: flex; align-items: center; flex: 1; height: 100px; min-width: 400px; background:linear-gradient(
-          rgba(0, 0, 0, 0.3), 
-          rgba(0, 0, 0, 0.3)
+          rgba(0, 0, 0, ${page.opacity ?? 0}), 
+          rgba(0, 0, 0, ${page.opacity ?? 0})
         ), url('${page.img}'); background-position: center; color: ${page.color}; background-size: cover; max-width: 50%;">
                                     <div style="flex: 1; font-size: 22px;">${page.name}<div style="font-size: 16px">${page.description}</div></div>
                                 </div>`
