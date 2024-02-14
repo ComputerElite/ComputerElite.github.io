@@ -283,7 +283,10 @@
             function GetCategoryFormatted(category) {
                 var childs = ""
                 category.pages.forEach(page => {
-                    childs += `<div onclick="window.open('${page.url}', '_self')" class="zoom" style="cursor: pointer; display: flex; align-items: center; flex: 1; height: 100px; min-width: 400px; background-image: url('${page.img}'); background-position: center; color: ${page.color}; background-size: cover; max-width: 50%;">
+                    childs += `<div onclick="window.open('${page.url}', '_self')" class="zoom" style="cursor: pointer; display: flex; align-items: center; flex: 1; height: 100px; min-width: 400px; background:linear-gradient(
+          rgba(0, 0, 0, 0.65), 
+          rgba(0, 0, 0, 0.65)
+        ), url('${page.img}'); background-position: center; color: ${page.color}; background-size: cover; max-width: 50%;">
                                     <div style="flex: 1; font-size: 22px;">${page.name}<div style="font-size: 16px">${page.description}</div></div>
                                 </div>`
                 })
