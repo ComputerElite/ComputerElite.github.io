@@ -312,6 +312,8 @@
                 Display(gameversion.value)
             }
 
+            var hiddenGameVersions = ["1.34.2_7115288407"]
+
             function SortByGameVersion() {
                 for(const [key, value] of Object.entries(org)) {
                     if(!gameVersions[key]) gameVersions[key] = {
@@ -436,6 +438,7 @@
                 gameversion.innerHTML = ""
                 for (const [key, value] of Object.entries(gameVersions)) {
                     if(key == "undefined") continue;
+                    if(hiddenGameVersions.includes(key)) continue;
                     gameversions.push(key)
                     gameVersions[key].mods.sort(function(a, b) {
                         if(a.name.toLowerCase() < b.name.toLowerCase()) return -1
@@ -473,7 +476,7 @@
                 gameversions.sort()
                 gameversions.reverse()
                 gameversions.forEach(key => {
-                    if(key == "1.34.2_7115288407") return
+                    if(hiddenGameVersions.includes(key)) return
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
                 if(params.get("version") && gameversions.includes(params.get("version"))) {
