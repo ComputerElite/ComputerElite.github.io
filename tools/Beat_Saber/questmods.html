@@ -209,16 +209,18 @@
             var coreModsLoaded = false
             var displayCovers = params.get("covers")
             var modloader = params.get("modloader")
-            if(modloader) document.getElementById("modloader").value = modloader
+            //if(modloader) document.getElementById("modloader").value = modloader
 
             if(params.get("isqavs") && params.get("ismodded")) {
-                document.getElementById("modloadercontainer").style.display = "none"
+                //document.getElementById("modloadercontainer").style.display = "none"
             }
 
+            /*
             document.getElementById("modloader").onchange = () => {
                 modloader = document.getElementById("modloader").value
                 Display(gameversion.value)
             }
+            */
 
             var bypass = false
            
