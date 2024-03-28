@@ -9713,5 +9713,25 @@
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.png",
       "modloader": "Scotland2"
     }
+  ],
+  "1.35.0_8016709773": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.0",
+      "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.0/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827/bs-no-promo/",
+      "author": "DanTheMan827"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.0",
+      "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.0/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
+      "author": "DanTheMan827"
+    }
   ]
 }
