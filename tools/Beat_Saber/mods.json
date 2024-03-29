@@ -9719,21 +9719,23 @@
       "name": "NoPromo",
       "description": "Hides the promo banner on the main screen.",
       "id": "NoPromo",
-      "modloader": "Scotland2",
       "version": "0.1.1",
       "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.1/NoPromo.qmod",
       "source": "https://github.com/DanTheMan827/bs-no-promo/",
-      "author": "DanTheMan827"
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
     },
     {
       "name": "DlcSorter",
       "description": "Sorts the DLC packs alphabetically.",
       "id": "DlcSorter",
-      "modloader": "Scotland2",
       "version": "0.1.1",
       "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.1/DlcSorter.qmod",
       "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
-      "author": "DanTheMan827"
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
     },
     {
       "name": "PlayerDataKeeper",
