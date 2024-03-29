@@ -166,13 +166,6 @@
                                     <option value=""></option>
                                 </select>
                             </div>
-                            <div id="modloadercontainer" style="font-size: 22px; color: #EEEEEE; text-align: center; display: flex; justify-content: center; width: 100%;">
-                                <span style="display: block; margin-right:1em;">Modloader</span><br />
-                                <select id="modloader" class="selector">
-                                    <option value="QuestLoader">QuestLoader</option>
-                                    <option value="Scotland2">Scotland2</option>
-                                </select>
-                            </div>
                             <input type="text" id="search" placeholder="Search mods"> <br />
                             <a id="core_dl_btn" class="button" target="_blank">Download all core mods</a>
                         </div>
@@ -216,16 +209,18 @@
             var coreModsLoaded = false
             var displayCovers = params.get("covers")
             var modloader = params.get("modloader")
-            if(modloader) document.getElementById("modloader").value = modloader
+            //if(modloader) document.getElementById("modloader").value = modloader
 
             if(params.get("isqavs") && params.get("ismodded")) {
-                document.getElementById("modloadercontainer").style.display = "none"
+                //document.getElementById("modloadercontainer").style.display = "none"
             }
 
+            /*
             document.getElementById("modloader").onchange = () => {
                 modloader = document.getElementById("modloader").value
                 Display(gameversion.value)
             }
+            */
 
             var bypass = false
            
@@ -576,11 +571,13 @@
             }
 
             function ShowMod(mod) {
+                /*
                 if(modloader) {
                     // Don't show mods with another modloader
                     if(modloader == "QuestLoader" && mod.modloader != "QuestLoader" && mod.modloader) return false
                     if(modloader == "Scotland2" && mod.modloader != "Scotland2") return false
                 }
+                */
                 
                 /**
                 * @type {string}
