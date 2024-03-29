@@ -9722,7 +9722,9 @@
       "version": "0.1.0",
       "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.0/NoPromo.qmod",
       "source": "https://github.com/DanTheMan827/bs-no-promo/",
-      "author": "DanTheMan827"
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "QuestLoader"
     },
     {
       "name": "DlcSorter",
@@ -9731,7 +9733,9 @@
       "version": "0.1.0",
       "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.0/DlcSorter.qmod",
       "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
-      "author": "DanTheMan827"
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "QuestLoader"
     },
     {
       "name": "PlayerDataKeeper",
@@ -9796,6 +9800,28 @@
       "download": "https://github.com/Tatenshi/RecentlyPlayed/releases/download/v1.0.0/RecentlyPlayed_1_35_0.qmod",
       "source": "https://github.com/Tatenshi/RecentlyPlayed/",
       "author": "Tatenshi",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.1",
+      "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.1/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827/bs-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.1",
+      "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.1/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
+      "author": "DanTheMan827",
       "cover": "",
       "modloader": "Scotland2"
     }
