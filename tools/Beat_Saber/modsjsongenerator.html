@@ -59,6 +59,10 @@
                             <input type="text" id="games">
                         </label>
                         <label>
+                            Modloader
+                            <input type="text" id="modloader">
+                        </label>
+                        <label>
                             <input type="checkbox" id="redirect">
                             Redirect to Website
                         </label>
@@ -90,6 +94,7 @@
                 const description = document.getElementById("description")
                 const name = document.getElementById("name")
                 const source = document.getElementById("source")
+                const modloader = document.getElementById("modloader")
                 
                 /**
                  * @type HTMLDivElement
@@ -125,6 +130,7 @@
                             version.value = m.version;
                             games.value = m.packageVersion;
                             id.value = m.id;
+                            modloader.value = m.modloader ?? "QuestLoader";
                             console.log(m);
                         })
                     })
@@ -199,7 +205,8 @@
                         version: version.value,
                         download: link.value,
                         source: source.value,
-                        author: creators.value
+                        author: creators.value,
+                        modloader: modloader.value
                     }
                     for(const e of json[games.value]) {
                         if(e.download == mod.download) {
