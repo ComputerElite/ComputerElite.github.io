@@ -798,7 +798,7 @@
         ]
     },
     "1.35.0_8016709773": {
-        "lastUpdated": "2024-03-28T16:25:00Z",
+        "lastUpdated": "2024-03-29T04:11:43Z",
         "mods": [
             {
                 "id": "custom-types",
@@ -820,21 +820,27 @@
             },
             {
                 "id": "songcore",
-                "version": "1.1.2",
-                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.2/SongCore.qmod",
-                "filename": "SongCore_v1_1_2.qmod"
+                "version": "1.1.4",
+                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.4/SongCore.qmod",
+                "filename": "SongCore_v1_1_4.qmod"
             },
             {
                 "id": "playlistcore",
-                "version": "1.3.0",
-                "downloadLink": "https://github.com/Metalit/PlaylistCore/releases/download/v1.3.0/PlaylistCore.qmod",
-                "filename": "PlaylistCore_v1_3_0.qmod"
+                "version": "1.3.2",
+                "downloadLink": "https://github.com/Metalit/PlaylistCore/releases/download/v1.3.2/PlaylistCore.qmod",
+                "filename": "PlaylistCore_v1_3_2.qmod"
             },
             {
                 "id": "paperlog_scotland2",
                 "version": "0.1.0",
                 "downloadLink": "https://github.com/Fernthedev/paperlog/releases/download/v3.6.3/paperlog_sl2.qmod",
                 "filename": "PaperLogSL2_v0_1_0.qmod"
+            },
+            {
+                "id": "datakeeper",
+                "version": "0.1.8",
+                "downloadLink": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.8/PlayerDataKeeper.qmod",
+                "filename": "PlayerDataKeeper_V0_1_8.qmod"
             }
         ]
     }
