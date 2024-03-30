@@ -9815,7 +9815,7 @@
       "modloader": "Scotland2"
     },
     {
-      "name": "PlayistDownloader",
+      "name": "PlaylistDownloader",
       "description": "Adds a in-game playlist downloader, similar to MorePlaylists on PC. Supports AccSaber, BeatSaver, BeatLeader, and Hitbloq.",
       "id": "playlistdownloader",
       "version": "0.1.0",
@@ -9834,6 +9834,28 @@
       "source": "https://github.com/darknight1050/CrashReporter/",
       "author": "darknight1050",
       "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "A library/mod for Quest Beat Saber that handles song loading, song requirements and capabilities.",
+      "id": "songcore",
+      "version": "1.1.6",
+      "download": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.6/SongCore.qmod",
+      "source": "https://github.com/raineio/Quest-SongCore",
+      "author": "RedBrumbler, Raine, Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MoreButtons",
+      "description": "Use all the special characters you could possibly want, now accessible through the keyboard's number pad!",
+      "id": "morebuttons",
+      "version": "1.0.0",
+      "download": "https://github.com/Metalit/MoreButtons/releases/download/v1.0.0/MoreButtons.qmod",
+      "source": "https://github.com/Metalit/MoreButtons",
+      "author": "Metalit",
+      "cover": "",
       "modloader": "Scotland2"
     }
   ]
