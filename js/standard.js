@@ -184,3 +184,66 @@ var script = document.createElement("script")
 script.src = "/debug.js"
 document.head.appendChild(script)
 */
+
+
+const dict = {
+    "search": "Sniff :3",
+    "yes": "yes daddy",
+    "no": "no D:",
+    "beat": "UwU",
+    "saber": "senpai",
+    "query": "Sniff term",
+    "versions": "wowzees",
+    "details": "the tails",
+    "show": "showo",
+    "download": "Catch mod owo"
+}
+
+function OwOify(text) {
+    if(!text) return ""
+    var words = text.split(" ")
+    for(i = 0; i < words.length; i++) {
+        var lower = words[i].toLowerCase()
+        if(dict[lower]) words[i] = dict[lower]
+        else {
+            //continue;
+            words[i] = words[i].replace(/(?:r|l)/g, "w");
+            words[i] = words[i].replace(/(?:R|L)/g, "W");
+            words[i] = words[i].replace(/n([aeiou])/g, 'ny$1');
+            words[i] = words[i].replace(/N([aeiou])/g, 'Ny$1');
+            words[i] = words[i].replace(/N([AEIOU])/g, 'Ny$1');
+            words[i] = words[i].replace(/ove/g, "uv");
+            words[i] = words[i].replace(/th/g, "d");
+            words[i] = words[i].replace(/Th/g, "D");
+            words[i] = words[i].replace(/TH/g, "D");
+            words[i] = words[i].replace(/!+/g, " " + GetRandomFace() + " ");
+        }
+    }
+    return words.join(" ");
+}
+var now = new Date();
+if(now.getMonth() == 3 && now.getDate() == 1) {
+    OwO()
+    setInterval(OwO, 100)
+}
+function OwO() {
+
+    var allTags = document.querySelectorAll('*:not(:has(:not(br):not(b):not(i):not(style):not(head)))');
+    
+    for (var i = 0, max = allTags.length; i < max; i++) {
+        if(allTags[i].changed || allTags[i].tagName == "STYLE") continue;
+        allTags[i].changed = true
+        allTags[i].innerText = OwOify(allTags[i].innerText)
+        if(allTags[i].value && allTags[i].tagName == "INPUT" && allTags[i].type == "button") {
+            allTags[i].value = OwOify(allTags[i].value)
+        }
+        if(allTags[i].placeholder) {
+            allTags[i].placeholder = OwOify(allTags[i].placeholder)
+        }
+    }
+}
+
+function GetRandomFace() {
+    var faces = ["(・`ω´・)", ";;w;;", "owo", "UwU", ">w<", "^w^", "(*^ω^)", "(◕‿◕✿)", "(◕ᴥ◕)", "ʕ•ᴥ•ʔ"];
+    return faces[Math.floor(Math.random() * faces.length)];
+}
