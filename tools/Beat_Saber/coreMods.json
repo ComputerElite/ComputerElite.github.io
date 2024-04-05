@@ -841,6 +841,12 @@
                 "version": "0.1.8",
                 "downloadLink": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.8/PlayerDataKeeper.qmod",
                 "filename": "PlayerDataKeeper_V0_1_8.qmod"
+            },
+            {
+                "id": "songdownloader",
+                "version": "0.7.3",
+                "downloadLink": "https://github.com/darknight1050/SongDownloader/releases/download/v0.7.3/SongDownloader.qmod",
+                "filename": "songdownloader_v0_7_3.qmod"
             }
         ]
     }
