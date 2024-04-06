@@ -814,15 +814,15 @@
             },
             {
                 "id": "bsml",
-                "version": "0.4.20",
-                "downloadLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.4.20/BSML.qmod",
-                "filename": "BSML_v0_4_20.qmod"
+                "version": "0.4.22",
+                "downloadLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.4.22/BSML.qmod",
+                "filename": "BSML_v0_4_22.qmod"
             },
             {
                 "id": "songcore",
-                "version": "1.1.4",
-                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.4/SongCore.qmod",
-                "filename": "SongCore_v1_1_4.qmod"
+                "version": "1.1.8",
+                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.8/SongCore.qmod",
+                "filename": "SongCore_v1_1_8.qmod"
             },
             {
                 "id": "playlistcore",
