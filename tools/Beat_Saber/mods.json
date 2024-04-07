@@ -9705,6 +9705,16 @@
   ],
   "1.35.0_8016709773": [
     {
+      "name": "GraphicsTweaks",
+      "description": "Mod to unlock pc graphics settings on quest beat saber",
+      "id": "graphicstweaks",
+      "version": "0.1.0",
+      "download": "https://github.com/FrozenAlex/GraphicsTweaks/releases/download/0.1.0/GraphicsTweaks.qmod",
+      "source": "https://github.com/FrozenAlex/GraphicsTweaks/",
+      "author": "FrozenAlex, Futuremappermydud",
+      "modloader": "Scotland2"
+    },
+    {
       "name": "SongDownloader",
       "description": "Download Custom Songs at Runtime",
       "id": "songdownloader",
