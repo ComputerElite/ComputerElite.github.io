@@ -9901,6 +9901,17 @@
       "author": "KodenameKRAK",
       "cover": "https://raw.githubusercontent.com/kodenamekrak/ParticleTuner/master/cover.gif",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.9",
+      "download": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.9/SongCore.qmod",
+      "source": "https://github.com/raineio/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/main/cover.jpg",
+      "modloader": "Scotland2"
     }
   ]
 }
