@@ -245,5 +245,11 @@ function OwO() {
 
 function GetRandomFace() {
     var faces = ["(・`ω´・)", ";;w;;", "owo", "UwU", ">w<", "^w^", "(*^ω^)", "(◕‿◕✿)", "(◕ᴥ◕)", "ʕ•ᴥ•ʔ"];
-    return faces[Math.floor(Math.random() * faces.length)];
+    return faces[Math.floor(MoreRandom() * faces.length)];
+}
+
+function MoreRandom() {
+    let random = MoreRandom()
+    random = parseInt((random + "").slice(-5)) / 100000
+    return random
 }
