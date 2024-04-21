@@ -9651,6 +9651,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Trick Saber",
+      "description": "Mod that lets you throw and spin your sabers every which way you want!",
+      "id": "trick-saber",
+      "version": "0.0.1",
+      "download": "https://github.com/NuggoDEV/TrickSaber-1.28.0/releases/download/0.0.1/Tricksaber.qmod",
+      "source": "https://github.com/NuggoDEV/TrickSaber-1.28.0/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/NuggoDEV/TrickSaber-1.28.0/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -9908,6 +9919,19 @@
       "id": "songcore",
       "version": "1.1.9",
       "download": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.9/SongCore.qmod",
+      "source": "https://github.com/raineio/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.36.1_8647505571": [
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.10",
+      "download": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.10/SongCore.qmod",
       "source": "https://github.com/raineio/Quest-SongCore/",
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
