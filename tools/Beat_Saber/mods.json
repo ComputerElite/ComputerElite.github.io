@@ -9662,6 +9662,28 @@
       "author": "RedBrumbler",
       "cover": "https://raw.githubusercontent.com/NuggoDEV/TrickSaber-1.28.0/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Weeb Saber",
+      "description": "Weeb-ifies your Beat Saber",
+      "id": "weebsaber",
+      "version": "0.1.2",
+      "download": "https://github.com/jxnxsdev/WeebSaber/releases/download/0.1.2/Weeb.Saber.qmod",
+      "source": "https://github.com/jxnxsdev/WeebSaber/",
+      "author": "jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/WeebSaber/master/logo.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.1",
+      "download": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/releases/download/0.1.4/TwitchSongReQuest.qmod",
+      "source": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/Twitch-Song-ReQuest-Mod/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -9922,6 +9944,17 @@
       "source": "https://github.com/raineio/Quest-SongCore/",
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GaySabers",
+      "description": "Makes your sabers gay (i mean glow in rainbow colors)",
+      "id": "gaysabers",
+      "version": "1.0.3",
+      "download": "https://github.com/jxnxsdev/GaySabers/releases/download/1.0.3/GaySabers.qmod",
+      "source": "https://github.com/jxnxsdev/GaySabers/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
       "modloader": "Scotland2"
     }
   ],
