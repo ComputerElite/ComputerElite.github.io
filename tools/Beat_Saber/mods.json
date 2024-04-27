@@ -9956,6 +9956,50 @@
       "author": "hdgamer1404Jonas",
       "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "1.0.1",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v1.0.1-bs-1.35.0/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Boxes",
+      "description": "Qosmetics module that adds Box capabilities",
+      "id": "qosmetics-walls",
+      "version": "0.2.0",
+      "download": "https://github.com/Qosmetics/Qosmetics-Walls/releases/download/v0.2.0/QosmeticsBoxes.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Walls/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Walls/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Cyoobs",
+      "description": "Qosmetics module that adds Cyoob capabilities",
+      "id": "qosmetics-notes",
+      "version": "0.2.0",
+      "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.2.0/QosmeticsCyoobs.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Notes/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Whackers",
+      "description": "Qosmetics module that adds Whacker capabilities",
+      "id": "qosmetics-sabers",
+      "version": "0.2.0",
+      "download": "https://github.com/Qosmetics/Qosmetics-Sabers/releases/download/v0.2.0/QosmeticsWhackers.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Sabers/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
