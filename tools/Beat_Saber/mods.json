@@ -10000,6 +10000,17 @@
       "author": "RedBrumbler",
       "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Sabers/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.0",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.0/SmallQubes.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
