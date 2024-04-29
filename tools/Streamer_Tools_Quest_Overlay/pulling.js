@@ -28,7 +28,7 @@ var coverFetched = false
 function SetImage(id) {
     if(id != lastID) coverFetched = false
     if(id.startsWith("custom_level_") && id != lastID && !useLocalhost && !stats["fetchedKey"] && !(streamHost && streamId)) {
-        fetch("https://api.beatmaps.io/maps/hash/" + id.replace("custom_level_", "")).then((result) => {
+        fetch("https://api.beatsaver.com/maps/hash/" + id.replace("custom_level_", "")).then((result) => {
             result.json().then((json) => {
                 try {
                     UpdateAllFieldsOfName("key", json["versions"][0]["key"])
@@ -80,22 +80,29 @@ function SetImage(id) {
                 })
             })
         } else if(useLocalhost) {
-            fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
-                res.text().then((base64) => {
-                    if(res.status != 200) {
-                        UpdateAllFieldsOfNameSrc("cover", "default.png")
-                        got404 = true;
-                    } else {
-                        UpdateAllFieldsOfNameSrc("cover", base64)
-                        got404 = false;
-                        coverFetched = true
-                    }
+            coverFetched = true
+            let requestedId = id
+            setTimeout(() => {
+                coverFetched = false
+                if(requestedId != id) return
+                fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
+                    res.text().then((base64) => {
+                        if(res.status != 200) {
+                            UpdateAllFieldsOfNameSrc("cover", "default.png")
+                            got404 = true;
+                        } else {
+                            UpdateAllFieldsOfNameSrc("cover", base64)
+                            got404 = false;
+                            coverFetched = true
+                        }
+                    })
+                }).catch((err) => {
+                    // Fallback to default cover
+                    got404 = true
+                    UpdateAllFieldsOfNameSrc("cover", "default.png")
                 })
-            }).catch((err) => {
-                // Fallback to default cover
-                got404 = true
-                UpdateAllFieldsOfNameSrc("cover", "default.png")
-            })
+            }, 1000)
+            
         } else if(stats["coverFetchable"]) {
             fetch(useLocalhost ? localip + "cover" : "http://" + ip + ":53502/cover/base64").then((res) => {
                 res.text().then((base64) => {
