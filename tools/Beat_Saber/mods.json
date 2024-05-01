@@ -9745,6 +9745,7 @@
       "download": "https://github.com/FrozenAlex/Transitions/releases/download/v1.2.0/Transitions.qmod",
       "source": "https://github.com/FrozenAlex/Transitions/",
       "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Transitions/master/cover.png",
       "modloader": "Scotland2"
     },
     {
@@ -10021,6 +10022,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.0",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.0/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
@@ -10033,6 +10045,17 @@
       "source": "https://github.com/raineio/Quest-SongCore/",
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "QonsistentSaberColors",
+      "description": "Menu saber colors reflect in game saber colors.",
+      "id": "qonsistentsabercolors",
+      "version": "0.2.0",
+      "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/0.2.0/QonsistentSaberColors.qmod",
+      "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
+      "author": "KodenameKRAK, Henri",
+      "cover": "",
       "modloader": "Scotland2"
     }
   ]
