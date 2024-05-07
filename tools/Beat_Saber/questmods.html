@@ -492,8 +492,9 @@
                 }
                 gameversions.sort()
                 gameversions.reverse()
+                var coreModVersions = Object.keys(coreOrg);
                 gameversions.forEach(key => {
-                    if(hiddenGameVersions.includes(key)) return
+                    if(hiddenGameVersions.includes(key) || (coreModsLoaded && !coreModVersions.includes(key))) return
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
                 if(params.get("version") && gameversions.includes(params.get("version"))) {
