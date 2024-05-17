@@ -493,7 +493,7 @@
                 gameversions.sort()
                 gameversions.reverse()
                 gameversions.forEach(key => {
-                    if (gameVersions[key].coremods.length === 0) return;
+                    if (gameVersions[key].coremods.length === 0 && !params.has("showall")) return;
                     if(hiddenGameVersions.includes(key)) return
                     gameversion.innerHTML += `<option value="${key}">${key}</option>`
                 })
