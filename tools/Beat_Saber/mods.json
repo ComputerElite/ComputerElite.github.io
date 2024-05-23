@@ -1297,6 +1297,17 @@
       "author": "Nuggo",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.0",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v6.1.0/anytweaks_v6.1.0.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2178,6 +2189,17 @@
       "source": "https://github.com/Unifox-BeatSaberThings/RainbowQuest/",
       "author": "Unifox",
       "cover": "https://raw.githubusercontent.com/Unifox-BeatSaberThings/RainbowQuest/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.0.0",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v6.0.0/anytweaks_v6.0.0.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -3358,6 +3380,17 @@
       "author": "IMB11 (IMB11)",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AikaTweaks",
+      "description": "Various tweaks for Beat Saber.",
+      "id": "aikatweaks",
+      "version": "3.0.0",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v3.0.0/aikatweaks_v3.0.0.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Aika, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.21.0": [
@@ -3931,6 +3964,17 @@
       "source": "https://github.com/IMB11/Vent/",
       "author": "IMB11 (IMB11)",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "5.0.1",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v5.0.1/anytweaks_v5.0.1.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -5037,6 +5081,17 @@
       "version": "1.0.0",
       "download": "https://github.com/BunniKaitlyn/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
       "source": "https://github.com/BunniKaitlyn/MorePrecisePlayerHeight/",
+      "author": "Eris, Aika",
+      "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "More Precise Player Height",
+      "description": "Let\u0027s you view your own height... but more precise.",
+      "id": "MorePrecisePlayerHeight",
+      "version": "1.0.0",
+      "download": "https://github.com/irlbunny/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
+      "source": "https://github.com/irlbunny/MorePrecisePlayerHeight/",
       "author": "Eris, Aika",
       "cover": "",
       "modloader": "QuestLoader"
@@ -8046,6 +8101,17 @@
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.1",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v6.1.1/anytweaks_v6.1.1.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.26.1": [
@@ -9683,6 +9749,39 @@
       "source": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/",
       "author": "hdgamer1404Jonas",
       "cover": "https://raw.githubusercontent.com/jxnxsdev/Twitch-Song-ReQuest-Mod/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.2",
+      "download": "https://github.com/irlbunny/AnyTweaks/releases/download/v6.1.2/anytweaks_v6.1.2.qmod",
+      "source": "https://github.com/irlbunny/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.2",
+      "download": "https://github.com/irlbunny/PeripheralHUD/releases/download/v1.1.2/peripheralhud_v1.1.2.qmod",
+      "source": "https://github.com/irlbunny/PeripheralHUD/",
+      "author": "Kaitlyn",
+      "cover": "https://raw.githubusercontent.com/irlbunny/PeripheralHUD/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.2",
+      "download": "https://github.com/irlbunny/SmoothedController/releases/download/v1.5.2/smoothedcontroller_v1.5.2.qmod",
+      "source": "https://github.com/irlbunny/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
       "modloader": "QuestLoader"
     }
   ],
