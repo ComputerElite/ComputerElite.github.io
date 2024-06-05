@@ -1,0 +1,15 @@
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/bin/Debug/net6.0/CoreModUpdater
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/bin/Debug/net6.0/CoreModUpdater.deps.json
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/bin/Debug/net6.0/CoreModUpdater.runtimeconfig.json
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/bin/Debug/net6.0/CoreModUpdater.dll
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/bin/Debug/net6.0/CoreModUpdater.pdb
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.AssemblyInfoInputs.cache
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.AssemblyInfo.cs
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.csproj.CoreCompileInputs.cache
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.sourcelink.json
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.dll
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/refint/CoreModUpdater.dll
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.pdb
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/CoreModUpdater.genruntimeconfig.cache
+/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/Debug/net6.0/ref/CoreModUpdater.dll

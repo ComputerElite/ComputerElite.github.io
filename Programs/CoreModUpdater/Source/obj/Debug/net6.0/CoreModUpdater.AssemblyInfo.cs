@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoreModUpdater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0578cfd04c1cb3cbc7cd492f0d20af316f110fe1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoreModUpdater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreModUpdater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
