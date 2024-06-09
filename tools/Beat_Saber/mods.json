@@ -10280,5 +10280,40 @@
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
     }
+  ],
+  "1.37.0_9064817954": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.2",
+      "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.2/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827/bs-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.2",
+      "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.2/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827/bs-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.13",
+      "download": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.13/SongCore.qmod",
+      "source": "https://github.com/raineio/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    }
   ]
 }
