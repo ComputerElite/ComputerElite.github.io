@@ -10264,6 +10264,28 @@
       "author": "HardCPP",
       "cover": "https://raw.githubusercontent.com/hardcpp/QBeatSaberPlus-MenuMusic/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.23.1",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.23.1/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, \u0026 rcelyte",
+      "cover": "https://raw.githubusercontent.com/rcelyte/MappingExtensions/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongDownloader",
+      "description": "Download Custom Songs at Runtime",
+      "id": "songdownloader",
+      "version": "0.7.4",
+      "download": "https://github.com/darknight1050/SongDownloader/releases/download/v0.7.4/SongDownloader.qmod",
+      "source": "https://github.com/darknight1050/SongDownloader/",
+      "author": "darknight1050, EnderdracheLP, Metalit",
+      "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
