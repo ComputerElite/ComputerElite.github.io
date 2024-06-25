@@ -10369,6 +10369,17 @@
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.1.9",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.9/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
