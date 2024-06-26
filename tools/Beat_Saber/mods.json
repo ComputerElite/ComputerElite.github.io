@@ -10380,6 +10380,17 @@
       "author": "Metalit",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SongDownloader",
+      "description": "Download Custom Songs at Runtime",
+      "id": "songdownloader",
+      "version": "0.8.0",
+      "download": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.0/SongDownloader.qmod",
+      "source": "https://github.com/darknight1050/SongDownloader/",
+      "author": "darknight1050, EnderdracheLP, Metalit",
+      "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
