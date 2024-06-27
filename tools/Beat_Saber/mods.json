@@ -8241,6 +8241,7 @@
       "download": "https://github.com/lixiangwuxian/Quest-Discord-Presence/releases/download/0.4.0/discord-presence.qmod",
       "source": "https://github.com/lixiangwuxian/Quest-Discord-Presence/",
       "author": "Lauriethefish#6700, lxtend",
+      "cover": "https://raw.githubusercontent.com/lixiangwuxian/Quest-Discord-Presence/main/cover.png",
       "modloader": "QuestLoader"
     },
     {
@@ -10466,6 +10467,17 @@
       "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
       "author": "StackDoubleFlow",
       "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GaySabers",
+      "description": "Makes your sabers gay (i mean glow in rainbow colors)",
+      "id": "gaysabers",
+      "version": "1.0.4",
+      "download": "https://github.com/jxnxsdev/GaySabers/releases/download/1.0.4/GaySabers.qmod",
+      "source": "https://github.com/jxnxsdev/GaySabers/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
       "modloader": "Scotland2"
     }
   ]
