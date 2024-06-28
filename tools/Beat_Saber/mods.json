@@ -10479,6 +10479,28 @@
       "author": "hdgamer1404Jonas",
       "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.3",
+      "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.3/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827/bs-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.3",
+      "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.3/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827/bs-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
