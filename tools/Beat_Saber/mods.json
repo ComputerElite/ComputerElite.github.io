@@ -10501,6 +10501,17 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827/bs-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Chroma",
+      "description": "Colors!",
+      "id": "chroma",
+      "version": "2.9.1",
+      "download": "https://github.com/bsq-ports/Chroma/releases/download/v2.9.1/Chroma.qmod",
+      "source": "https://github.com/bsq-ports/Chroma/",
+      "author": "Aeroluna, FernTheDev, nyamimi~",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
