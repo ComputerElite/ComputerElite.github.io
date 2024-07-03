@@ -10356,6 +10356,7 @@
       "download": "https://github.com/jxnxsdev/QustomMenu/releases/download/1.0.0/Qustom.Menu.qmod",
       "source": "https://github.com/jxnxsdev/QustomMenu/",
       "author": "jxnxsdev",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/QustomMenu/master/cover.png",
       "modloader": "Scotland2"
     },
     {
@@ -10554,6 +10555,39 @@
       "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
       "author": "KodenameKRAK, Henri",
       "cover": "https://raw.githubusercontent.com/kodenamekrak/QonsistentSaberColors/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoodleExtensions",
+      "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+      "id": "NoodleExtensions",
+      "version": "1.5.1",
+      "download": "https://github.com/StackDoubleFlow/NoodleExtensions/releases/download/v1.5.1/NoodleExtensions.qmod",
+      "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
+      "author": "StackDoubleFlow",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.4",
+      "download": "https://github.com/DanTheMan827/bs-no-promo/releases/download/v0.1.4/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827/bs-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.4",
+      "download": "https://github.com/DanTheMan827/bs-dlc-sorter/releases/download/v0.1.4/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827/bs-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827/bs-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
