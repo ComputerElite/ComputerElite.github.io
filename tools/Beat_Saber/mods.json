@@ -9837,6 +9837,16 @@
   ],
   "1.35.0_8016709773": [
     {
+      "name": "BeatSaverVoting",
+      "description": "Quest mod to allow users to vote on beatsaver",
+      "id": "beatsavervoting",
+      "version": "0.1.0",
+      "download": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/releases/download/v0.1.0/BeatSaverVoting.qmod",
+      "source": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/",
+      "author": "RedBrumbler",
+      "modloader": "Scotland2"
+    },
+    {
       "name": "HeartBeatLanReceiver",
       "description": "Receive and display heart rate data from an external apk. The apk can be installed in quest headset itself or an android device via local network. ",
       "id": "HeartBeatLanReceiver",
@@ -10349,6 +10359,15 @@
   ],
   "1.37.0_9064817954": [
     {
+      "name": "BeatSaverVoting",
+      "description": "Quest mod to allow users to vote on beatsaver",
+      "id": "beatsavervoting",
+      "version": "0.1.1",
+      "download": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/releases/download/v0.1.1/BeatSaverVoting.qmod",
+      "source": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/",
+      "author": "RedBrumbler",
+      "modloader": "Scotland2"
+    },
       "name": "Qustom Menu",
       "description": "Customise the Beat Saber menu",
       "id": "qustommenu",
