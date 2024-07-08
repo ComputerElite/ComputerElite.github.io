@@ -1308,6 +1308,17 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.2.0",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.2.0/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2200,6 +2211,17 @@
       "source": "https://github.com/irlbunny/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.1.0",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.1.0/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -3975,6 +3997,17 @@
       "source": "https://github.com/irlbunny/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.0.0",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.0.0/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit, darknight1050",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -6922,6 +6955,17 @@
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.2.2",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.2.2/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.27.0_3631150051": [
@@ -8112,6 +8156,17 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.2.3",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.2.3/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.26.1": [
@@ -8181,6 +8236,17 @@
       "source": "https://github.com/ModdingPink/PinkCore/",
       "author": "RedBrumbler, Pink, StackDoubleFlow, Lillie, darknight1050",
       "cover": "https://raw.githubusercontent.com/ModdingPink/PinkCore/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.2.1",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.2.1/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -9783,6 +9849,17 @@
       "author": "Kinsi55, Kaitlyn",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Create and manage playlists ingame!",
+      "id": "playlistmanager",
+      "version": "1.2.4",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.2.4/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -10308,6 +10385,17 @@
       "author": "darknight1050, EnderdracheLP, Metalit",
       "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.0",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.1/BeatLeader_1.35.0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
@@ -10711,7 +10799,7 @@
       "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
       "modloader": "Scotland2"
     },
-        {
+    {
       "name": "Mapping Extensions",
       "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
       "id": "MappingExtensions",
@@ -10728,6 +10816,28 @@
       "id": "PlaylistManager",
       "version": "1.3.0",
       "download": "https://github.com/Metalit/PlaylistManager/releases/download/1.3.0/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.1",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.1/BeatLeader_1.37.0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Manage all your songs and playlists!",
+      "id": "playlistmanager",
+      "version": "1.3.0",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.3.0/PlaylistManager.qmod",
       "source": "https://github.com/Metalit/PlaylistManager/",
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
