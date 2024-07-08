@@ -10710,6 +10710,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
       "modloader": "Scotland2"
+    },
+        {
+      "name": "Mapping Extensions",
+      "description": "This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu.",
+      "id": "MappingExtensions",
+      "version": "0.24.0",
+      "download": "https://github.com/rcelyte/MappingExtensions/releases/download/0.24.0/MappingExtensions.qmod",
+      "source": "https://github.com/rcelyte/MappingExtensions/",
+      "author": "StackDoubleFlow, rxzz0, \u0026 rcelyte",
+      "cover": "https://raw.githubusercontent.com/rcelyte/MappingExtensions/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
