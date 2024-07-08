@@ -10811,17 +10811,6 @@
       "modloader": "Scotland2"
     },
     {
-      "name": "Playlist Manager",
-      "description": "Adds support for in-game Playlist Management, with a new and improved UI.",
-      "id": "PlaylistManager",
-      "version": "1.3.0",
-      "download": "https://github.com/Metalit/PlaylistManager/releases/download/1.3.0/PlaylistManager.qmod",
-      "source": "https://github.com/Metalit/PlaylistManager/",
-      "author": "Metalit",
-      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
-      "modloader": "Scotland2"
-    },
-    {
       "name": "BeatLeader",
       "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
       "id": "BeatLeader",
