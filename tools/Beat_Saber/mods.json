@@ -10699,6 +10699,17 @@
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineio/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.1",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.1/SmallQubes.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
