@@ -9860,6 +9860,17 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.1",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.1/BeatLeader_1.28.0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
