@@ -10864,6 +10864,17 @@
       "author": "StackDoubleFlow",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.10.0",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.10.0/ClockMod_1.10.0.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
