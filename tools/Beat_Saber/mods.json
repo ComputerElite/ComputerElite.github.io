@@ -10407,6 +10407,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.2",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.2/SmallQubes_1.35.0.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
@@ -10873,6 +10884,28 @@
       "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.10.0/ClockMod_1.10.0.qmod",
       "source": "https://github.com/EnderdracheLP/ClockMod/",
       "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.1",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.2/SmallQubes_1.37.0.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Haptic Revert",
+      "description": "Reverts haptics to pre-1.35 behavior",
+      "id": "haptic-revert",
+      "version": "0.1.0",
+      "download": "https://github.com/Futuremappermydud/HapticRevert/releases/download/v0.2.0/HapticRevert.qmod",
+      "source": "https://github.com/Futuremappermydud/HapticRevert/",
+      "author": "FutureMapper",
       "cover": "",
       "modloader": "Scotland2"
     }
