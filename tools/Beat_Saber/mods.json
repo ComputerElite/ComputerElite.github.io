@@ -10964,5 +10964,18 @@
       "cover": "",
       "modloader": "Scotland2"
     }
+  ],
+  "1.37.1_9895289101": [
+    {
+      "name": "BeatSaverVoting",
+      "description": "Quest mod to allow users to vote on beatsaver",
+      "id": "beatsavervoting",
+      "version": "0.1.3",
+      "download": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/releases/download/v0.1.3/BeatSaverVoting.qmod",
+      "source": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/",
+      "author": "RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    }
   ]
 }
