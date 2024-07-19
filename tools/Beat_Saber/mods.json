@@ -10963,6 +10963,17 @@
       "author": "Tatenshi",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Qustom Menu",
+      "description": "Customise the Beat Saber menu",
+      "id": "qustommenu",
+      "version": "1.0.1",
+      "download": "https://github.com/jxnxsdev/QustomMenu/releases/download/1.0.1/Qustom.Menu.qmod",
+      "source": "https://github.com/jxnxsdev/QustomMenu/",
+      "author": "jxnxsdev",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/QustomMenu/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
