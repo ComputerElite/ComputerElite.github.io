@@ -10996,6 +10996,28 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.0",
+      "download": "https://github.com/Christoffyw/HitScoreVisualizer/releases/download/v2.8.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/Christoffyw/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/Christoffyw/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.3.3",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.3.3/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
