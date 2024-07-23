@@ -11031,6 +11031,28 @@
       "author": "RedBrumbler",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatSaverVoting",
+      "description": "Quest mod to allow users to vote on beatsaver",
+      "id": "beatsavervoting",
+      "version": "0.1.4",
+      "download": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/releases/download/v0.1.4/BeatSaverVoting.qmod",
+      "source": "https://github.com/RedBrumbler/BeatSaverVoting.Quest/",
+      "author": "RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.4",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.4-testdeploy/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
