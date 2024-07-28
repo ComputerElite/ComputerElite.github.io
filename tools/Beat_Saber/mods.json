@@ -11018,6 +11018,17 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "QuestSounds",
+      "description": "Allows users to change their sfx sounds and in-game music easily!",
+      "id": "QuestSounds",
+      "version": "1.5.0",
+      "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.5.0/QuestSounds_1.5.0.qmod",
+      "source": "https://github.com/EnderdracheLP/QuestSounds/",
+      "author": "Rugtveit, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/QuestSounds/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
