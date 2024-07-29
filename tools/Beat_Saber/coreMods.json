@@ -851,7 +851,7 @@
         ]
     },
     "1.37.0_9064817954": {
-        "lastUpdated": "2024-07-07T16:03:10Z",
+        "lastUpdated": "2024-07-29T20:28:30Z",
         "mods": [
             {
                 "id": "custom-types",
@@ -873,9 +873,9 @@
             },
             {
                 "id": "songcore",
-                "version": "1.1.14",
-                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.14/SongCore.qmod",
-                "filename": "SongCore_v1_1_14.qmod"
+                "version": "1.1.15",
+                "downloadLink": "https://github.com/raineio/Quest-SongCore/releases/download/v1.1.15/SongCore.qmod",
+                "filename": "SongCore_v1_1_15.qmod"
             },
             {
                 "id": "playlistcore",
