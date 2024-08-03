@@ -10451,6 +10451,17 @@
       "author": "RedBrumbler",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.3",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.3/SmallQubes_1.35.0.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
@@ -11072,6 +11083,28 @@
       "source": "https://github.com/darknight1050/SongDownloader/",
       "author": "darknight1050, EnderdracheLP, Metalit",
       "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.3",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.3/SmallQubes_1.37.0.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BSNightcoreQuest",
+      "description": "Removes pitch compensation to make songs go nightcore on different speed",
+      "id": "BSNightcoreQuest",
+      "version": "0.2.0",
+      "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.2.0/BSNightcoreQuest_1_37_0.qmod",
+      "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+      "author": "Tatenshi",
+      "cover": "",
       "modloader": "Scotland2"
     }
   ],
