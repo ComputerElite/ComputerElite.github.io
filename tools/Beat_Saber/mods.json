@@ -11106,6 +11106,39 @@
       "author": "Tatenshi",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Boxes",
+      "description": "Qosmetics module that adds Box capabilities",
+      "id": "qosmetics-walls",
+      "version": "0.2.1",
+      "download": "https://github.com/Qosmetics/Qosmetics-Walls/releases/download/v0.2.1/QosmeticsBoxes.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Walls/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Walls/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Cyoobs",
+      "description": "Qosmetics module that adds Cyoob capabilities",
+      "id": "qosmetics-notes",
+      "version": "0.2.1",
+      "download": "https://github.com/Qosmetics/Qosmetics-Notes/releases/download/v0.2.1/QosmeticsCyoobs.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Notes/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Notes/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Qosmetics Whackers",
+      "description": "Qosmetics module that adds Whacker capabilities",
+      "id": "qosmetics-sabers",
+      "version": "0.2.1",
+      "download": "https://github.com/Qosmetics/Qosmetics-Sabers/releases/download/v0.2.1/QosmeticsWhackers.qmod",
+      "source": "https://github.com/Qosmetics/Qosmetics-Sabers/",
+      "author": "RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/Qosmetics/Qosmetics-Sabers/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
