@@ -11172,6 +11172,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SongChartVisualizer",
+      "description": "",
+      "id": "songchartvisualizer",
+      "version": "1.1.0",
+      "download": "https://github.com/kodenamekrak/SongChartVisualizer/releases/download/v1.1.0/SongChartVisualizer.qmod",
+      "source": "https://github.com/kodenamekrak/SongChartVisualizer/",
+      "author": "Eris, KodenameKRAK",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
