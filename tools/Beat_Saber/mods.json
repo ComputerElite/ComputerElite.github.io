@@ -11183,6 +11183,17 @@
       "author": "Eris, KodenameKRAK",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "FasterScroll, version 1.10.0!",
+      "id": "FasterScroll",
+      "version": "1.10.0",
+      "download": "https://github.com/Christoffyw/FasterScrollQuest/releases/download/v1.10.0/FasterScroll.qmod",
+      "source": "https://github.com/Christoffyw/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
