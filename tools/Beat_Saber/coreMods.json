@@ -861,9 +861,9 @@
             },
             {
                 "id": "lapiz",
-                "version": "0.2.11",
-                "downloadLink": "https://github.com/raineio/Lapiz/releases/download/v0.2.11/Lapiz.qmod",
-                "filename": "Lapiz_v0_2_11.qmod"
+                "version": "0.2.12",
+                "downloadLink": "https://github.com/raineio/Lapiz/releases/download/v0.2.12/Lapiz.qmod",
+                "filename": "Lapiz_v0_2_12.qmod"
             },
             {
                 "id": "bsml",
@@ -891,9 +891,9 @@
             },
             {
                 "id": "songdownloader",
-                "version": "0.8.0",
-                "downloadLink": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.0/SongDownloader.qmod",
-                "filename": "songdownloader_v0_8_0.qmod"
+                "version": "0.8.3",
+                "downloadLink": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.3/SongDownloader.qmod",
+                "filename": "songdownloader_v0_8_3.qmod"
             },
             {
                 "id": "unicode",
