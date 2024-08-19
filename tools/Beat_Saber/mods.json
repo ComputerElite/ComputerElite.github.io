@@ -10524,6 +10524,16 @@
       "modloader": "Scotland2"
     },
     {
+      "name": "Endless",
+      "description": "Allows you to play endlessly, or at least until you fail.",
+      "id": "endless",
+      "version": "0.1.1",
+      "download": "https://github.com/TheZipCreator/endless-qmod/releases/download/v0.1.1/Endless.qmod",
+      "source": "https://github.com/TheZipCreator/endless-qmod/",
+      "author": "TheZipCreator",
+      "modloader": "Scotland2"
+    },
+    {
       "name": "BeatSaverVoting",
       "description": "Quest mod to allow users to vote on beatsaver",
       "id": "beatsavervoting",
