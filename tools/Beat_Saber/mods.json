@@ -11194,6 +11194,17 @@
       "author": "Christoffyw",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "FingerSaber",
+      "description": "Beat Saber At Your Finger Tips. @drumtool",
+      "id": "fingersaber",
+      "version": "0.1.8",
+      "download": "https://github.com/im-henri/FingerSaber/releases/download/v0.1.8/FingerSaber018.qmod",
+      "source": "https://github.com/im-henri/FingerSaber/",
+      "author": "Henri",
+      "cover": "https://raw.githubusercontent.com/im-henri/FingerSaber/master/cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
