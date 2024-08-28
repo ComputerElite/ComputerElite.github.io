@@ -2223,6 +2223,17 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "ImageCoverExpander",
+      "description": "Expands the Cover Image to the full right side of the song select menu!",
+      "id": "ImageCoverExpander",
+      "version": "0.2.1",
+      "download": "https://github.com/raineaeternal/ImageCoverExpander-Quest/releases/download/0.2.2/ImageCoverExpander.qmod",
+      "source": "https://github.com/raineaeternal/ImageCoverExpander-Quest/",
+      "author": "Millzy and Raine",
+      "cover": "",
+      "modloader": "QuestLoader"
     }
   ],
   "1.17.1": [
