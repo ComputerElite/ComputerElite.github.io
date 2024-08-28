@@ -11282,6 +11282,17 @@
       "author": "Henri",
       "cover": "https://raw.githubusercontent.com/im-henri/FingerSaber/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.15",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.15/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
