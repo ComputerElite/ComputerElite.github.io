@@ -11337,6 +11337,17 @@
       "author": "Kinsi55, Kaitlyn",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.6.6",
+      "download": "https://github.com/FrozenAlex/SmoothedController/releases/download/v1.6.6/SmoothedController.qmod",
+      "source": "https://github.com/FrozenAlex/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
