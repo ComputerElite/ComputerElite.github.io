@@ -9980,6 +9980,17 @@
       "modloader": "Scotland2"
     },
     {
+      "name": "BetterHaptics",
+      "description": "Reverts haptic feedback changes without breaking arc and chain notes.",
+      "id": "BetterHaptics",
+      "version": "0.1.0",
+      "download": "https://github.com/Crunkle/BetterHaptics/releases/download/v0.1.0/BetterHaptics.qmod",
+      "source": "https://github.com/Crunkle/BetterHaptics/",
+      "author": "Crunkle",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
       "name": "Transitions",
       "description": "Speed up or remove boring transitions in the game",
       "id": "transitions",
