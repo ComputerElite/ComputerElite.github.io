@@ -11381,6 +11381,17 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "IForgor \uD83D\uDC80",
+      "description": "Shows the direction of the last blocks and the angle of your sabers before you paused",
+      "id": "iforgor",
+      "version": "1.1.0",
+      "download": "https://github.com/Futuremappermydud/IForgor-quest/releases/download/v1.1.0/IForgor.qmod",
+      "source": "https://github.com/Futuremappermydud/IForgor-quest/",
+      "author": "FutureMapper",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
