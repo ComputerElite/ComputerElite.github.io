@@ -11392,6 +11392,17 @@
       "author": "FutureMapper",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "QonsistentSaberColors",
+      "description": "Menu saber colors reflect in game saber colors.",
+      "id": "qonsistentsabercolors",
+      "version": "0.2.2",
+      "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/v0.2.2/QonsistentSaberColors.qmod",
+      "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
+      "author": "KodenameKRAK, Henri",
+      "cover": "https://raw.githubusercontent.com/kodenamekrak/QonsistentSaberColors/master/cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
