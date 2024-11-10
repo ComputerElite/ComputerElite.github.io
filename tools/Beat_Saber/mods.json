@@ -11403,6 +11403,28 @@
       "author": "KodenameKRAK, Henri",
       "cover": "https://raw.githubusercontent.com/kodenamekrak/QonsistentSaberColors/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "ParticleTuner",
+      "description": "Lets you tweak individual particle settings! And has rainbow particles!",
+      "id": "particletuner",
+      "version": "0.3.2",
+      "download": "https://github.com/kodenamekrak/ParticleTuner/releases/download/v0.3.2/ParticleTuner.qmod",
+      "source": "https://github.com/kodenamekrak/ParticleTuner/",
+      "author": "KodenameKRAK",
+      "cover": "https://raw.githubusercontent.com/kodenamekrak/ParticleTuner/master/cover.gif",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongChartVisualizer",
+      "description": "",
+      "id": "songchartvisualizer",
+      "version": "1.1.1",
+      "download": "https://github.com/kodenamekrak/SongChartVisualizer/releases/download/v1.1.1/SongChartVisualizer.qmod",
+      "source": "https://github.com/kodenamekrak/SongChartVisualizer/",
+      "author": "Eris, KodenameKRAK",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
