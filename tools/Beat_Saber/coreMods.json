@@ -851,7 +851,7 @@
         ]
     },
     "1.37.0_9064817954": {
-        "lastUpdated": "2024-07-29T20:28:30Z",
+        "lastUpdated": "2024-11-19T20:38:00Z",
         "mods": [
             {
                 "id": "custom-types",
@@ -897,15 +897,15 @@
             },
             {
                 "id": "unicode",
-                "version": "0.1.2",
-                "downloadLink": "https://github.com/Metalit/UnicodeQuest/releases/download/v0.1.2/Unicode.qmod",
-                "filename": "unicode_v0_1_2.qmod"
+                "version": "0.1.3",
+                "downloadLink": "https://github.com/Metalit/UnicodeQuest/releases/download/v0.1.3/Unicode.qmod",
+                "filename": "unicode_v0_1_3.qmod"
             },
             {
                 "id": "datakeeper",
-                "version": "0.1.9",
-                "downloadLink": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.1.9/PlayerDataKeeper.qmod",
-                "filename": "PlayerDataKeeper_V0_1_9.qmod"
+                "version": "0.2.0",
+                "downloadLink": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.0/PlayerDataKeeper.qmod",
+                "filename": "PlayerDataKeeper_V0_2_0.qmod"
             }
         ]
     }
