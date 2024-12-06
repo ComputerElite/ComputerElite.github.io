@@ -1319,6 +1319,17 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.0/anytweaks_v6.1.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2233,6 +2244,17 @@
       "source": "https://github.com/raineaeternal/ImageCoverExpander-Quest/",
       "author": "Millzy and Raine",
       "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.0.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.0.0/anytweaks_v6.0.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -3424,6 +3446,17 @@
       "author": "Aika, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AikaTweaks",
+      "description": "Various tweaks for Beat Saber.",
+      "id": "aikatweaks",
+      "version": "3.0.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v3.0.0/aikatweaks_v3.0.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Aika, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.21.0": [
@@ -4019,6 +4052,17 @@
       "source": "https://github.com/Metalit/PlaylistManager/",
       "author": "Metalit, darknight1050",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "5.0.1",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v5.0.1/anytweaks_v5.0.1.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
     }
   ],
@@ -5136,6 +5180,17 @@
       "version": "1.0.0",
       "download": "https://github.com/irlbunny/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
       "source": "https://github.com/irlbunny/MorePrecisePlayerHeight/",
+      "author": "Eris, Aika",
+      "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "More Precise Player Height",
+      "description": "Let\u0027s you view your own height... but more precise.",
+      "id": "MorePrecisePlayerHeight",
+      "version": "1.0.0",
+      "download": "https://github.com/whatdahopper/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
+      "source": "https://github.com/whatdahopper/MorePrecisePlayerHeight/",
       "author": "Eris, Aika",
       "cover": "",
       "modloader": "QuestLoader"
@@ -8178,6 +8233,17 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.1",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.1/anytweaks_v6.1.1.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
     }
   ],
   "1.26.1": [
@@ -9882,6 +9948,39 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.2",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.2/anytweaks_v6.1.2.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.2",
+      "download": "https://github.com/whatdahopper/PeripheralHUD/releases/download/v1.1.2/peripheralhud_v1.1.2.qmod",
+      "source": "https://github.com/whatdahopper/PeripheralHUD/",
+      "author": "Kaitlyn",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/PeripheralHUD/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.2",
+      "download": "https://github.com/whatdahopper/SmoothedController/releases/download/v1.5.2/smoothedcontroller_v1.5.2.qmod",
+      "source": "https://github.com/whatdahopper/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -11435,6 +11534,39 @@
       "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
       "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
       "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.5",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.5/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.2.0",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.0/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "Receive and display heart rate data. Need patch the game with bluetooth permission or install an external apk.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.3",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.3/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
     }
   ],
