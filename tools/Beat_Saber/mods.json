@@ -11568,6 +11568,116 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.1.3",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.1.3-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.62",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.62/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.30",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.30/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.1",
+      "download": "https://github.com/Christoffyw/HitScoreVisualizer/releases/download/v2.8.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/Christoffyw/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/Christoffyw/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.4.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.4.1/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.4.0",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.4.0/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Manage all your songs and playlists!",
+      "id": "playlistmanager",
+      "version": "1.3.1",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.3.1/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "Receive and display heart rate data. Need patch the game with bluetooth permission or install an external apk.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.4",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.4/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlaylistDownloader",
+      "description": "Download playlists from websites directly in game",
+      "id": "playlistdownloader",
+      "version": "0.2.0",
+      "download": "https://github.com/Metalit/PlaylistDownloader/releases/download/v0.2.0/PlaylistDownloader.qmod",
+      "source": "https://github.com/Metalit/PlaylistDownloader/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MoreButtons",
+      "description": "Overloads your keyboard!",
+      "id": "morebuttons",
+      "version": "1.0.2",
+      "download": "https://github.com/Metalit/MoreButtons/releases/download/v1.0.2/MoreButtons.qmod",
+      "source": "https://github.com/Metalit/MoreButtons/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
