@@ -11678,6 +11678,50 @@
       "author": "Metalit",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Intro Skip",
+      "description": "Skip the intro and outro of maps",
+      "id": "IntroSkip",
+      "version": "1.2.0",
+      "download": "https://github.com/Royston1999/IntroSkip-Quest/releases/download/v1.2.0/IntroSkip_v1.2.0.qmod",
+      "source": "https://github.com/Royston1999/IntroSkip-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/IntroSkip-Quest/master/Cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Saber Tailor",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
+      "id": "sabertailor",
+      "version": "2.1.1",
+      "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v2.1.1/SaberTailor_v2.1.1.qmod",
+      "source": "https://github.com/Royston1999/Saber-Tailor-quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/Saber-Tailor-quest/master/Cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Slice Details",
+      "description": "View extra information about your swings",
+      "id": "slicedetails",
+      "version": "2.1.0",
+      "download": "https://github.com/Royston1999/SliceDetails-Quest/releases/download/v2.1.0/SliceDetails_v2.1.0.qmod",
+      "source": "https://github.com/Royston1999/SliceDetails-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/SliceDetails-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Score Percentage",
+      "description": "shows extra information after completing a level",
+      "id": "scorepercentage",
+      "version": "3.3.2",
+      "download": "https://github.com/Royston1999/ScorePercentage-Quest/releases/download/v3.3.2/ScorePercentage_v3.3.2.qmod",
+      "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
