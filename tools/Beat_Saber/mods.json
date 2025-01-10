@@ -11722,6 +11722,39 @@
       "author": "Polly51104",
       "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "QonsistentSaberColors",
+      "description": "Menu saber colors reflect in game saber colors.",
+      "id": "qonsistentsabercolors",
+      "version": "0.2.3",
+      "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/v0.2.3/QonsistentSaberColors.qmod",
+      "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
+      "author": "KodenameKRAK, Henri",
+      "cover": "https://raw.githubusercontent.com/kodenamekrak/QonsistentSaberColors/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongChartVisualizer",
+      "description": "",
+      "id": "songchartvisualizer",
+      "version": "1.1.2",
+      "download": "https://github.com/kodenamekrak/SongChartVisualizer/releases/download/v1.1.2/SongChartVisualizer.qmod",
+      "source": "https://github.com/kodenamekrak/SongChartVisualizer/",
+      "author": "Eris, KodenameKRAK",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.16",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.16/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -11753,6 +11786,30 @@
       "id": "DlcSorter",
       "version": "0.1.4",
       "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.4-testdeploy/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.0_2229": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.5/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.5/DlcSorter.qmod",
       "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
