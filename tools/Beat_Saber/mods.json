@@ -11755,6 +11755,17 @@
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "GaySabers",
+      "description": "Makes your sabers gay (i mean glow in rainbow colors)",
+      "id": "gaysabers",
+      "version": "1.0.6",
+      "download": "https://github.com/jxnxsdev/GaySabers/releases/download/1.0.6/GaySabers.qmod",
+      "source": "https://github.com/jxnxsdev/GaySabers/",
+      "author": "jxnxsdev",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
