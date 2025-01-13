@@ -11825,6 +11825,17 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.17",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.17/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
     }
   ]
 }
