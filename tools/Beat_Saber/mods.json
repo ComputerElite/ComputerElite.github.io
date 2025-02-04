@@ -12025,6 +12025,17 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.6/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
