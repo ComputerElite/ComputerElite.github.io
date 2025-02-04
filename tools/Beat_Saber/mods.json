@@ -1330,6 +1330,28 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.7.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.7.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.7.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2255,6 +2277,28 @@
       "source": "https://github.com/whatdahopper/AnyTweaks/",
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.6.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.6.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.6.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.6.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
       "modloader": "QuestLoader"
     }
   ],
@@ -3457,6 +3501,28 @@
       "author": "Aika, xyonico",
       "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this customizable faster scrolling mod.",
+      "id": "fasterscroll",
+      "version": "1.3.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.3.0/fasterscroll_v1.3.0.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Hit Score Visualizer",
+      "description": "Changes the scores that pop up when you hit notes.",
+      "id": "hitscore",
+      "version": "2.3.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.3.0/HitScoreVisualizer_v2.3.0.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw and Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.21.0": [
@@ -4064,6 +4130,28 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.5.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.5.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.5.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.5.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.20.0": [
@@ -4628,6 +4716,17 @@
       "source": "https://github.com/IMB11/Vent/",
       "author": "IMB11 (IMB11)",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.4.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.4.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
       "modloader": "QuestLoader"
     }
   ],
@@ -8244,6 +8343,17 @@
       "author": "Kaitlyn, xyonico",
       "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.1",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.7.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.26.1": [
@@ -9981,6 +10091,28 @@
       "author": "Kinsi55, Kaitlyn",
       "cover": "",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.8.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.8.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.2",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.7.2/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -10582,6 +10714,17 @@
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this customizable faster scrolling mod.",
+      "id": "FasterScroll",
+      "version": "1.9.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.9.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "",
       "modloader": "Scotland2"
     }
   ],
@@ -11766,6 +11909,39 @@
       "author": "jxnxsdev",
       "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "FasterScroll, version 1.10.0!",
+      "id": "FasterScroll",
+      "version": "1.10.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.10.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.1",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.8.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.8.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -11835,6 +12011,19 @@
       "source": "https://github.com/raineaeternal/Quest-SongCore/",
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.1_3323": [
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.6/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
