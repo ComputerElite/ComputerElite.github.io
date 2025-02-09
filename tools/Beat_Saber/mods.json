@@ -11942,6 +11942,28 @@
       "author": "Christoffyw, Metalit",
       "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "MultiplayerCore",
+      "description": "Adds custom songs to Beat Saber Multiplayer.",
+      "id": "multiplayer-core",
+      "version": "1.6.0",
+      "download": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/releases/download/1.6.0/MultiplayerCore_1.6.0.qmod",
+      "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
+      "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoodleExtensions",
+      "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+      "id": "NoodleExtensions",
+      "version": "1.5.4",
+      "download": "https://github.com/StackDoubleFlow/NoodleExtensions/releases/download/v1.5.4/NoodleExtensions.qmod",
+      "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
+      "author": "StackDoubleFlow",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12035,6 +12057,30 @@
       "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
       "author": "DanTheMan827",
       "cover": "",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.2_4113": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.7/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.7/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
