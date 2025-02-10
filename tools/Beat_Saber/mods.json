@@ -12082,6 +12082,17 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this mod.",
+      "id": "FasterScroll",
+      "version": "1.11.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.11.0/Faster.Scroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ]
 }
