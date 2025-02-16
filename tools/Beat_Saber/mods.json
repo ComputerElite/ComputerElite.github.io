@@ -12093,6 +12093,17 @@
       "author": "Christoffyw",
       "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.7.0",
+      "download": "https://github.com/FrozenAlex/SmoothedController/releases/download/v1.7.0/Smoothed.Controller.qmod",
+      "source": "https://github.com/FrozenAlex/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
