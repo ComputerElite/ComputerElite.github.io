@@ -12041,6 +12041,17 @@
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.5",
+      "download": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/releases/download/0.1.15/TwitchSongReQuest.qmod",
+      "source": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/Twitch-Song-ReQuest-Mod/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12314,6 +12325,17 @@
       "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.19",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.19/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
     }
   ]
