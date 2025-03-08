@@ -12052,6 +12052,17 @@
       "author": "hdgamer1404Jonas",
       "cover": "https://raw.githubusercontent.com/jxnxsdev/Twitch-Song-ReQuest-Mod/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays your heart rate in the quest game. Supported multiple data sources and Bluetooth data source requires a permission patch via ModsBeforeFriday.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.6",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.6/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
