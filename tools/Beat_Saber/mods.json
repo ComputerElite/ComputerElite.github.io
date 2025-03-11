@@ -12348,6 +12348,28 @@
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.2",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.2-bs-1.40.3/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.15",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.15/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
