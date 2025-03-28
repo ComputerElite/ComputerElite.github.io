@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <button onclick="inputNumber('1')">1</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('2')">2</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('3')">3</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="inputNumber('4')">4</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('5')">5</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('6')">6</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="inputNumber('7')">7</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('8')">8</button>
+            </td>
+            <td>
+                <button onclick="inputNumber('9')">9</button>
+            </td>
+        </tr>
+    </table>
+    <input type="password" id="password" readonly>
+    <script>
+        const passwort = "12345678"
+        let currentInput = ""
+
+        function inputNumber(num) {
+            currentInput += num;
+            validate()
+            if(currentInput.length == passwort.length) onCorrect()
+            document.getElementById("password").value = currentInput;
+        }
+
+        function validate() {
+            if(passwort.startsWith(currentInput)) return;
+            currentInput = ""
+        }
+
+        function onCorrect() {
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
+        }
+    </script>
+</body>
+
+</html>
