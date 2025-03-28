@@ -1319,6 +1319,39 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.0/anytweaks_v6.1.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.7.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.7.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.7.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.24.0": [
@@ -2233,6 +2266,39 @@
       "source": "https://github.com/raineaeternal/ImageCoverExpander-Quest/",
       "author": "Millzy and Raine",
       "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.0.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.0.0/anytweaks_v6.0.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.6.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.6.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.6.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.6.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
       "modloader": "QuestLoader"
     }
   ],
@@ -3424,6 +3490,39 @@
       "author": "Aika, xyonico",
       "cover": "https://raw.githubusercontent.com/irlbunny/AnyTweaks/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AikaTweaks",
+      "description": "Various tweaks for Beat Saber.",
+      "id": "aikatweaks",
+      "version": "3.0.0",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v3.0.0/aikatweaks_v3.0.0.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Aika, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this customizable faster scrolling mod.",
+      "id": "fasterscroll",
+      "version": "1.3.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.3.0/fasterscroll_v1.3.0.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Hit Score Visualizer",
+      "description": "Changes the scores that pop up when you hit notes.",
+      "id": "hitscore",
+      "version": "2.3.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.3.0/HitScoreVisualizer_v2.3.0.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw and Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.21.0": [
@@ -4020,6 +4119,39 @@
       "author": "Metalit, darknight1050",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "5.0.1",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v5.0.1/anytweaks_v5.0.1.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.5.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.5.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.5.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.5.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.20.0": [
@@ -4585,6 +4717,17 @@
       "author": "IMB11 (IMB11)",
       "cover": "https://raw.githubusercontent.com/IMB11/Vent/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.4.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.4.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.19.0": [
@@ -5136,6 +5279,17 @@
       "version": "1.0.0",
       "download": "https://github.com/irlbunny/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
       "source": "https://github.com/irlbunny/MorePrecisePlayerHeight/",
+      "author": "Eris, Aika",
+      "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "More Precise Player Height",
+      "description": "Let\u0027s you view your own height... but more precise.",
+      "id": "MorePrecisePlayerHeight",
+      "version": "1.0.0",
+      "download": "https://github.com/whatdahopper/MorePrecisePlayerHeight/releases/download/v1.0.0/MorePrecisePlayerHeight_v1.0.0.qmod",
+      "source": "https://github.com/whatdahopper/MorePrecisePlayerHeight/",
       "author": "Eris, Aika",
       "cover": "",
       "modloader": "QuestLoader"
@@ -8178,6 +8332,28 @@
       "author": "Metalit",
       "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.1",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.1/anytweaks_v6.1.1.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.1",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/2.7.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "1.26.1": [
@@ -9882,6 +10058,61 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "AnyTweaks",
+      "description": "Level up your Beat Saber experience on Quest! AnyTweaks provides various tweaks to help boost your experience on Quest, such as Bloom, FPS Counter and more.",
+      "id": "anytweaks",
+      "version": "6.1.2",
+      "download": "https://github.com/whatdahopper/AnyTweaks/releases/download/v6.1.2/anytweaks_v6.1.2.qmod",
+      "source": "https://github.com/whatdahopper/AnyTweaks/",
+      "author": "Kaitlyn, xyonico",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/AnyTweaks/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "PeripheralHUD",
+      "description": "Move your in-game HUD into your peripheral vision, allowing for easy at-a-glance viewing of your combo, score, etc!",
+      "id": "peripheralhud",
+      "version": "1.1.2",
+      "download": "https://github.com/whatdahopper/PeripheralHUD/releases/download/v1.1.2/peripheralhud_v1.1.2.qmod",
+      "source": "https://github.com/whatdahopper/PeripheralHUD/",
+      "author": "Kaitlyn",
+      "cover": "https://raw.githubusercontent.com/whatdahopper/PeripheralHUD/master/cover.png",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.5.2",
+      "download": "https://github.com/whatdahopper/SmoothedController/releases/download/v1.5.2/smoothedcontroller_v1.5.2.qmod",
+      "source": "https://github.com/whatdahopper/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your songs faster using this mod.",
+      "id": "FasterScroll",
+      "version": "1.8.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.8.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "QuestLoader"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.7.2",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.7.2/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
@@ -10483,6 +10714,17 @@
       "source": "https://github.com/BeatLeader/beatleader-qmod/",
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this customizable faster scrolling mod.",
+      "id": "FasterScroll",
+      "version": "1.9.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.9.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "",
       "modloader": "Scotland2"
     }
   ],
@@ -11436,6 +11678,391 @@
       "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.5",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.5/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.2.0",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.0/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "Receive and display heart rate data. Need patch the game with bluetooth permission or install an external apk.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.3",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.3/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.1.3",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.1.3-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.62",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.62/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.xyz | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.30",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.30/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.1",
+      "download": "https://github.com/Christoffyw/HitScoreVisualizer/releases/download/v2.8.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/Christoffyw/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/Christoffyw/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.4.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.4.1/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.4.0",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.4.0/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlaylistManager",
+      "description": "Manage all your songs and playlists!",
+      "id": "playlistmanager",
+      "version": "1.3.1",
+      "download": "https://github.com/Metalit/PlaylistManager/releases/download/v1.3.1/PlaylistManager.qmod",
+      "source": "https://github.com/Metalit/PlaylistManager/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/PlaylistManager/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "Receive and display heart rate data. Need patch the game with bluetooth permission or install an external apk.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.4",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.4/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlaylistDownloader",
+      "description": "Download playlists from websites directly in game",
+      "id": "playlistdownloader",
+      "version": "0.2.0",
+      "download": "https://github.com/Metalit/PlaylistDownloader/releases/download/v0.2.0/PlaylistDownloader.qmod",
+      "source": "https://github.com/Metalit/PlaylistDownloader/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MoreButtons",
+      "description": "Overloads your keyboard!",
+      "id": "morebuttons",
+      "version": "1.0.2",
+      "download": "https://github.com/Metalit/MoreButtons/releases/download/v1.0.2/MoreButtons.qmod",
+      "source": "https://github.com/Metalit/MoreButtons/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Intro Skip",
+      "description": "Skip the intro and outro of maps",
+      "id": "IntroSkip",
+      "version": "1.2.0",
+      "download": "https://github.com/Royston1999/IntroSkip-Quest/releases/download/v1.2.0/IntroSkip_v1.2.0.qmod",
+      "source": "https://github.com/Royston1999/IntroSkip-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/IntroSkip-Quest/master/Cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Saber Tailor",
+      "description": "Edit controller settings for each saber independently. Also includes Kinsi\u0027s Controller Settings Helper mod",
+      "id": "sabertailor",
+      "version": "2.1.1",
+      "download": "https://github.com/Royston1999/Saber-Tailor-quest/releases/download/v2.1.1/SaberTailor_v2.1.1.qmod",
+      "source": "https://github.com/Royston1999/Saber-Tailor-quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/Saber-Tailor-quest/master/Cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Slice Details",
+      "description": "View extra information about your swings",
+      "id": "slicedetails",
+      "version": "2.1.0",
+      "download": "https://github.com/Royston1999/SliceDetails-Quest/releases/download/v2.1.0/SliceDetails_v2.1.0.qmod",
+      "source": "https://github.com/Royston1999/SliceDetails-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/SliceDetails-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Score Percentage",
+      "description": "shows extra information after completing a level",
+      "id": "scorepercentage",
+      "version": "3.3.2",
+      "download": "https://github.com/Royston1999/ScorePercentage-Quest/releases/download/v3.3.2/ScorePercentage_v3.3.2.qmod",
+      "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "QonsistentSaberColors",
+      "description": "Menu saber colors reflect in game saber colors.",
+      "id": "qonsistentsabercolors",
+      "version": "0.2.3",
+      "download": "https://github.com/kodenamekrak/QonsistentSaberColors/releases/download/v0.2.3/QonsistentSaberColors.qmod",
+      "source": "https://github.com/kodenamekrak/QonsistentSaberColors/",
+      "author": "KodenameKRAK, Henri",
+      "cover": "https://raw.githubusercontent.com/kodenamekrak/QonsistentSaberColors/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongChartVisualizer",
+      "description": "",
+      "id": "songchartvisualizer",
+      "version": "1.1.2",
+      "download": "https://github.com/kodenamekrak/SongChartVisualizer/releases/download/v1.1.2/SongChartVisualizer.qmod",
+      "source": "https://github.com/kodenamekrak/SongChartVisualizer/",
+      "author": "Eris, KodenameKRAK",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.16",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.16/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GaySabers",
+      "description": "Makes your sabers gay (i mean glow in rainbow colors)",
+      "id": "gaysabers",
+      "version": "1.0.6",
+      "download": "https://github.com/jxnxsdev/GaySabers/releases/download/1.0.6/GaySabers.qmod",
+      "source": "https://github.com/jxnxsdev/GaySabers/",
+      "author": "jxnxsdev",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/GaySabers/master/logo.gif",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "FasterScroll, version 1.10.0!",
+      "id": "FasterScroll",
+      "version": "1.10.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.10.0/FasterScroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.1",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.8.1/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HitScoreVisualizer",
+      "description": "Changes the scores that pop up when you hit notes",
+      "id": "HitScoreVisualizer",
+      "version": "2.8.0",
+      "download": "https://github.com/christopherweinhardt/HitScoreVisualizer/releases/download/v2.8.0/HitScoreVisualizer.qmod",
+      "source": "https://github.com/christopherweinhardt/HitScoreVisualizer/",
+      "author": "Christoffyw, Metalit",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MultiplayerCore",
+      "description": "Adds custom songs to Beat Saber Multiplayer.",
+      "id": "multiplayer-core",
+      "version": "1.6.0",
+      "download": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/releases/download/1.6.0/MultiplayerCore_1.6.0.qmod",
+      "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
+      "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoodleExtensions",
+      "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+      "id": "NoodleExtensions",
+      "version": "1.5.4",
+      "download": "https://github.com/StackDoubleFlow/NoodleExtensions/releases/download/v1.5.4/NoodleExtensions.qmod",
+      "source": "https://github.com/StackDoubleFlow/NoodleExtensions/",
+      "author": "StackDoubleFlow",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.0",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.0-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.4",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.4/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.4",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.4/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.63",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.63/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GraphicsTweaks",
+      "description": "Mod to unlock pc graphics settings on quest beat saber",
+      "id": "graphicstweaks",
+      "version": "0.1.4",
+      "download": "https://github.com/FrozenAlex/GraphicsTweaks/releases/download/v0.1.4/GraphicsTweaks.qmod",
+      "source": "https://github.com/FrozenAlex/GraphicsTweaks/",
+      "author": "FrozenAlex, Futuremappermydud",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/GraphicsTweaks/master/image.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "Receive and display heart rate data. Need patch the game with bluetooth permission or install an external apk.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.5/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.1",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.1-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "TwitchSongReQuest",
+      "description": "Let your viewers suggest maps",
+      "id": "TwitchSongReQuest",
+      "version": "0.1.5",
+      "download": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/releases/download/0.1.15/TwitchSongReQuest.qmod",
+      "source": "https://github.com/jxnxsdev/Twitch-Song-ReQuest-Mod/",
+      "author": "hdgamer1404Jonas",
+      "cover": "https://raw.githubusercontent.com/jxnxsdev/Twitch-Song-ReQuest-Mod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays your heart rate in the quest game. Supported multiple data sources and Bluetooth data source requires a permission patch via ModsBeforeFriday.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.2.6",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.2.6/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -11470,6 +12097,278 @@
       "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.0_2229": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.5/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.5/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.17",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.17/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.5/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.5",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.5/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.1_3323": [
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.6/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.6/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.6/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.6",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.6/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.2_4113": [
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/releases/download/v0.1.7/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-no-promo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/releases/download/v0.1.7/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/bsq-dlc-sorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this mod.",
+      "id": "FasterScroll",
+      "version": "1.11.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.11.0/Faster.Scroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.7.0",
+      "download": "https://github.com/FrozenAlex/SmoothedController/releases/download/v1.7.0/Smoothed.Controller.qmod",
+      "source": "https://github.com/FrozenAlex/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.7/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.7",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.7/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.14",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.14/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.13",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.13/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.18",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.18/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.3_4614": [
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this mod.",
+      "id": "FasterScroll",
+      "version": "1.12.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.12.0/Faster.Scroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.8",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.8/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.8",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.8/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.19",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.19/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.2",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.2-bs-1.40.3/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.15",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.15/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
