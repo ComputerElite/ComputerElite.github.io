@@ -1,63 +1,205 @@
 <html>
 
 <head>
+    <title>ImPIssible puzzle</title>
+    <style>
+        :root {
+            --bg: lightblue;
+            --error: red;
+            --button: white;
+        }
+        body {
+            background-color: var(--bg);
+        }
 
+        .wrong {
+            animation: wrong 0.6s linear;
+        }
+
+        .wrongButton {
+            animation: wrongButton 3s linear;
+        }
+
+        @keyframes wrongButton {
+            0% {
+                background-color: var(--button);
+            }
+            25% {
+                background-color: var(--error);
+            }
+            50% {
+                background-color: var(--button);
+            }
+            75% {
+                background-color: var(--error);
+            }
+            100% {
+                background-color: var(--button);
+            }
+        }
+
+        @keyframes wrong {
+            0% {
+                background-color: red;
+                transform: translate(0px, 0px);
+            }
+
+            16% {
+                background-color: orange;
+                transform: translate(-15px, -20px);
+            }
+
+            32% {
+                background-color: yellow;
+                transform: translate(15px, -5px);
+            }
+
+            48% {
+                background-color: rgb(50, 203, 50);
+                transform: translate(5px, 25px);
+            }
+
+            64% {
+                background-color: rgb(55, 112, 196);
+                transform: translate(-25px, -4px);
+            }
+
+            80% {
+                background-color: violet;
+                transform: translate(-15px, -20px);
+            }
+        }
+
+        button {
+            width: 5rem;
+            height: 5rem;
+            font-size: 2rem;
+            background-color: var(--button);
+            border-radius: 15px;
+        }
+
+        .correct {
+            animation: correct 0.4s;
+        }
+
+        .alwaysCorrect {
+            background-color: green !important;
+        }
+
+        @keyframes correct {
+            from {
+                background-color: green;
+            }
+            to {
+                background-color: var(--button);
+            }
+        }
+
+        input {
+            font-size: 2rem;
+            width: 12rem;
+            background-color: var(--button);
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        tbody {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-    <table>
-        <tr>
-            <td>
-                <button onclick="inputNumber('1')">1</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('2')">2</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('3')">3</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="inputNumber('4')">4</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('5')">5</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('6')">6</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="inputNumber('7')">7</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('8')">8</button>
-            </td>
-            <td>
-                <button onclick="inputNumber('9')">9</button>
-            </td>
-        </tr>
-    </table>
-    <input type="password" id="password" readonly>
+    <div class="center">
+        <table>
+            <tr>
+                <td>
+                    <button onclick="inputNumber(event.target, '1')">1</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '2')">2</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '3')">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="inputNumber(event.target, '4')">4</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '5')">5</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '6')">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="inputNumber(event.target, '7')">7</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '8')">8</button>
+                </td>
+                <td>
+                    <button onclick="inputNumber(event.target, '9')">9</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="inputNumber(event.target, '0')">0</button>
+                </td>
+            </tr>
+        </table>
+        <input type="password" id="password" readonly>
+    </div>
+
     <script>
-        const passwort = "12345678"
+        const passwort = "31415"
         let currentInput = ""
 
-        function inputNumber(num) {
+        function inputNumber(element, num) {
             currentInput += num;
-            validate()
-            if(currentInput.length == passwort.length) onCorrect()
+            for(const e of document.getElementsByTagName("button")) {
+                e.classList.remove("correct")
+                e.classList.remove("alwaysCorrect")
+            }
+            if(validate()) {
+                setTimeout(() => {
+                    console.log("correct")
+                    element.classList.add("correct")
+                }, 1);
+            }
+            if (currentInput.length == passwort.length) onCorrect()
             document.getElementById("password").value = currentInput;
         }
 
         function validate() {
-            if(passwort.startsWith(currentInput)) return;
+            document.body.classList.remove("wrong")
+            for(const e of document.getElementsByTagName("button")) e.classList.remove("wrongButton")
+            for(const e of document.getElementsByTagName("input")) e.classList.remove("wrongButton")
+            if (passwort.startsWith(currentInput)) return true;
+            setTimeout(() => {
+                document.body.classList.add("wrong")
+                for(const e of document.getElementsByTagName("button")) e.classList.add("wrongButton")
+                for(const e of document.getElementsByTagName("input")) e.classList.add("wrongButton")
+            }, 1);
+
             currentInput = ""
+            return false
         }
 
+
         function onCorrect() {
+            for(const e of document.getElementsByTagName("button")) e.classList.add("alwaysCorrect")
             window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
         }
     </script>
