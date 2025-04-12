@@ -12063,6 +12063,50 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.5-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.4",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.4-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.3",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.3-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.64",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.64/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12369,6 +12413,107 @@
       "source": "https://github.com/darknight1050/CrashReporter/",
       "author": "darknight1050",
       "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.5-bs-1.40.3/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.4",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.4-bs-1.40.3/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.3",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.3-bs-1.40.3/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.4_5283": [
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.6",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.6-bs-1.40.4/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.5",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.5-bs-1.40.4/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this mod.",
+      "id": "FasterScroll",
+      "version": "1.13.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.13.0/Faster.Scroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.20",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.20/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.9",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.9/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.9",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.9/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
