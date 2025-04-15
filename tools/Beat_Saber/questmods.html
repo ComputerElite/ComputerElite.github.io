@@ -232,6 +232,7 @@
         
         <script src="../../js/standard.js"></script>
         <script>
+            location.href = `https://mods.bsquest.xyz/qavs/?${location.href.split("?")[1] || ""}`;
             var b = document.documentElement;
             b.setAttribute('data-useragent',  navigator.userAgent);
             b.setAttribute('data-platform', navigator.platform );
