@@ -12515,6 +12515,50 @@
       "author": "DanTheMan827",
       "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.11.0",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.11.0/ClockMod_1.11.0.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.16",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.16/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.2.1",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.1/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongDownloader",
+      "description": "Download Custom Songs at Runtime",
+      "id": "songdownloader",
+      "version": "0.8.4",
+      "download": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.4/SongDownloader.qmod",
+      "source": "https://github.com/darknight1050/SongDownloader/",
+      "author": "darknight1050, EnderdracheLP, Metalit",
+      "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
