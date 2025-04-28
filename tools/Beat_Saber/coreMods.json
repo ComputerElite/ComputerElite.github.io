@@ -910,13 +910,13 @@
         ]
     },
     "1.40.4_5283": {
-        "lastUpdated": "2025-04-24T17:50:54Z",
+        "lastUpdated": "2025-04-27T22:10:00Z",
         "mods": [
             {
                 "id": "custom-types",
-                "version": "0.18.12",
+                "version": "0.18.2",
                 "downloadLink": "https://github.com/QuestPackageManager/Il2CppQuestTypePatching/releases/download/v0.18.2/CustomTypes.qmod",
-                "filename": "CustomTypes_v0_18_12.qmod"
+                "filename": "CustomTypes_v0_18_2.qmod"
             },
             {
                 "id": "lapiz",
@@ -971,6 +971,12 @@
                 "version": "1.0.0",
                 "downloadLink": "https://github.com/Metalit/MetaCore/releases/download/v1.0.0/MetaCore.qmod",
                 "filename": "MetaCore_V1_0_0.qmod"
+            },
+            {
+                "id": "FakeId",
+                "version": "0.1.5",
+                "downloadLink": "https://github.com/DanTheMan827-BeatSaber/Quest.FakeID/releases/download/v0.1.5/Fake.ID.qmod",
+                "filename": "FakeId_v0_1_5.qmod"
             }
         ]
     }
