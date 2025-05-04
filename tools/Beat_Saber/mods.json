@@ -12107,6 +12107,28 @@
       "author": "NSGolova",
       "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.64",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.70/BeatLeader_1_37_0.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.3",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.4/SmallQubes_1_37_0.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12558,6 +12580,116 @@
       "source": "https://github.com/darknight1050/SongDownloader/",
       "author": "darknight1050, EnderdracheLP, Metalit",
       "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "1.1.2",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v1.1.2-bs-1.40.4/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.70",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.70/BeatLeader_1_40_4.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "RandomSongPicker",
+      "description": "Adds a button, that picks a random song out of the current list",
+      "id": "RandomSongPicker",
+      "version": "0.4.0",
+      "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.4.0/RandomSongPicker_1_40_4.qmod",
+      "source": "https://github.com/Tatenshi/RandomSongPicker/",
+      "author": "Tatenshi",
+      "cover": "https://raw.githubusercontent.com/Tatenshi/RandomSongPicker/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SmallQubes",
+      "description": "Adds a slider to change default cubes size",
+      "id": "SmallQubes",
+      "version": "0.3.4",
+      "download": "https://github.com/NSGolova/SmallQubes/releases/download/v0.3.4/SmallQubes_1_40_4.qmod",
+      "source": "https://github.com/NSGolova/SmallQubes/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/NSGolova/SmallQubes/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BSNightcoreQuest",
+      "description": "Removes pitch compensation to make songs go nightcore on different speed",
+      "id": "BSNightcoreQuest",
+      "version": "0.2.0",
+      "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.2.0/BSNightcoreQuest_1_40_4.qmod",
+      "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+      "author": "Tatenshi",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MultiplayerCore",
+      "description": "Adds custom songs to Beat Saber Multiplayer.",
+      "id": "multiplayer-core",
+      "version": "1.6.1",
+      "download": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/releases/download/1.6.1/MultiplayerCore_1.6.1.qmod",
+      "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
+      "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatTogether",
+      "description": "A multiplayer private server for the modding community. Supports crossplay between PC and Quest.",
+      "id": "BeatTogether",
+      "version": "2.2.1",
+      "download": "https://github.com/BeatTogether/BeatTogether.Quest/releases/download/v2.2.1/BeatTogether_v2.2.1.qmod",
+      "source": "https://github.com/BeatTogether/BeatTogether.Quest/",
+      "author": "BeatTogether Team",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "RecentlyPlayed",
+      "description": "Adds a history tab that displays the most recently played maps",
+      "id": "RecentlyPlayed",
+      "version": "1.0.0",
+      "download": "https://github.com/Tatenshi/RecentlyPlayed/releases/download/v1.0.0/RecentlyPlayed_1_40_4.qmod",
+      "source": "https://github.com/Tatenshi/RecentlyPlayed/",
+      "author": "Tatenshi",
+      "cover": "https://raw.githubusercontent.com/Tatenshi/RecentlyPlayed/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.7.1",
+      "download": "https://github.com/FrozenAlex/SmoothedController/releases/download/v1.7.1/SmoothedController.qmod",
+      "source": "https://github.com/FrozenAlex/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GraphicsTweaks",
+      "description": "Mod to unlock pc graphics settings on quest beat saber",
+      "id": "graphicstweaks",
+      "version": "0.1.5",
+      "download": "https://github.com/FrozenAlex/GraphicsTweaks/releases/download/v0.1.5/GraphicsTweaks.qmod",
+      "source": "https://github.com/FrozenAlex/GraphicsTweaks/",
+      "author": "FrozenAlex, Futuremappermydud",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/GraphicsTweaks/master/image.png",
       "modloader": "Scotland2"
     }
   ]
