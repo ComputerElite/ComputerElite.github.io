@@ -12780,5 +12780,40 @@
       "cover": "https://raw.githubusercontent.com/FrozenAlex/GraphicsTweaks/master/image.png",
       "modloader": "Scotland2"
     }
+  ],
+  "1.40.5_5928": [
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.17",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.17/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.10",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.10/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.10",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.10/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    }
   ]
 }
