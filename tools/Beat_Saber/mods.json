@@ -10113,6 +10113,17 @@
       "author": "Christoffyw, Metalit",
       "cover": "https://raw.githubusercontent.com/christopherweinhardt/HitScoreVisualizer/master/Cover.jpg",
       "modloader": "QuestLoader"
+    },
+    {
+      "name": "No Play Beat Saber",
+      "description": "This literally does not allow you to play beat saber. Why do you even want this?",
+      "id": "noplaybeatsaber",
+      "version": "11.0.0",
+      "download": "https://github.com/kiaratheeanalyst/No-Play-Beat-Saber/releases/download/v11/npbs11.qmod",
+      "source": "https://github.com/kiaratheeanalyst/No-Play-Beat-Saber/",
+      "author": "Kaylerr",
+      "cover": "https://raw.githubusercontent.com/kiaratheeanalyst/No-Play-Beat-Saber/master/npbs.png",
+      "modloader": "QuestLoader"
     }
   ],
   "undefined": [
