@@ -979,5 +979,76 @@
                 "filename": "FakeId_v0_1_5.qmod"
             }
         ]
+    },
+    "1.40.6_6407": {
+        "lastUpdated": "2025-04-27T22:10:00Z",
+        "mods": [
+            {
+                "id": "custom-types",
+                "version": "0.18.3",
+                "downloadLink": "https://github.com/QuestPackageManager/Il2CppQuestTypePatching/releases/download/v0.18.3/CustomTypes.qmod",
+                "filename": "CustomTypes_v0_18_3.qmod"
+            },
+            {
+                "id": "lapiz",
+                "version": "0.2.21",
+                "downloadLink": "https://github.com/raineaeternal/Lapiz/releases/download/v0.2.21/Lapiz.qmod",
+                "filename": "Lapiz_v0_2_21.qmod"
+            },
+            {
+                "id": "bsml",
+                "version": "0.4.53",
+                "downloadLink": "https://github.com/bsq-ports/Quest-BSML/releases/download/v0.4.53/BSML.qmod",
+                "filename": "BSML_v0_4_53.qmod"
+            },
+            {
+                "id": "songcore",
+                "version": "1.1.22",
+                "downloadLink": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.22/SongCore.qmod",
+                "filename": "SongCore_v1_1_22.qmod"
+            },
+            {
+                "id": "playlistcore",
+                "version": "1.5.2",
+                "downloadLink": "https://github.com/Metalit/PlaylistCore/releases/download/v1.5.2/PlaylistCore.qmod",
+                "filename": "PlaylistCore_v1_5_2.qmod"
+            },
+            {
+                "id": "paper2_scotland2",
+                "version": "4.6.4",
+                "downloadLink": "https://github.com/Fernthedev/paperlog/releases/download/v4.6.4/paper2_scotland2.qmod",
+                "filename": "paper2_scotland2_v4_6_4.qmod"
+            },
+            {
+                "id": "songdownloader",
+                "version": "0.8.6",
+                "downloadLink": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.6/SongDownloader.qmod",
+                "filename": "songdownloader_v0_8_6.qmod"
+            },
+            {
+                "id": "unicode",
+                "version": "0.1.5",
+                "downloadLink": "https://github.com/Metalit/UnicodeQuest/releases/download/v0.1.5/Unicode.qmod",
+                "filename": "unicode_v0_1_5.qmod"
+            },
+            {
+                "id": "datakeeper",
+                "version": "0.2.2",
+                "downloadLink": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.2/PlayerDataKeeper.qmod",
+                "filename": "PlayerDataKeeper_V0_2_2.qmod"
+            },
+            {
+                "id": "metacore",
+                "version": "1.3.0",
+                "downloadLink": "https://github.com/Metalit/MetaCore/releases/download/v1.3.0/MetaCore.qmod",
+                "filename": "MetaCore_V1_3_0.qmod"
+            },
+            {
+                "id": "FakeId",
+                "version": "0.1.7",
+                "downloadLink": "https://github.com/DanTheMan827-BeatSaber/Quest.FakeID/releases/download/v0.1.7/Fake.ID.qmod",
+                "filename": "FakeId_v0_1_7.qmod"
+            }
+        ]
     }
 }
