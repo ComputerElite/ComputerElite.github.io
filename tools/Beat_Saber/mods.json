@@ -12162,6 +12162,17 @@
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "NoodleExtensions",
+      "description": "This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.",
+      "id": "NoodleExtensions",
+      "version": "1.5.4",
+      "download": "https://github.com/bsq-ports/NoodleExtensions/releases/download/v1.5.4/NoodleExtensions.qmod",
+      "source": "https://github.com/bsq-ports/NoodleExtensions/",
+      "author": "StackDoubleFlow",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -13123,6 +13134,39 @@
       "source": "https://github.com/Metalit/MoreButtons/",
       "author": "Metalit",
       "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "MultiplayerCore",
+      "description": "Adds custom songs to Beat Saber Multiplayer.",
+      "id": "multiplayer-core",
+      "version": "1.6.2",
+      "download": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/releases/download/1.6.2/MultiplayerCore_1.6.2.qmod",
+      "source": "https://github.com/EnderdracheLP/MultiplayerCore.Quest/",
+      "author": "Goobie, LookAtHippo, EnderdracheLP, cubic, EnderdracheLP, cubic, RedBrumbler",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatTogether",
+      "description": "A multiplayer private server for the modding community. Supports crossplay between PC and Quest.",
+      "id": "BeatTogether",
+      "version": "2.2.2",
+      "download": "https://github.com/BeatTogether/BeatTogether.Quest/releases/download/v2.2.2/BeatTogether_v2.2.2.qmod",
+      "source": "https://github.com/BeatTogether/BeatTogether.Quest/",
+      "author": "BeatTogether Team",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays your heart rate in the quest game. Supported multiple data sources and Bluetooth data source requires a permission patch via ModsBeforeFriday.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.2",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.2/HeartBeatQuest.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
