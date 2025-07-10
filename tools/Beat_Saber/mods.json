@@ -13168,6 +13168,17 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.12.0",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.12.0/ClockMod_1.12.0.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ]
 }
