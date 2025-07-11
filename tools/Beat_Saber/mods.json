@@ -13179,6 +13179,63 @@
       "author": "BoopetyDoopety, EnderdracheLP",
       "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.12.1",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.12.1/ClockMod_1.12.1.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
+      "modloader": "Scotland2"
+    }
+  ],
+  "1.40.7_7060": [
+    {
+      "name": "Faster Scroll",
+      "description": "Find your song faster with this mod.",
+      "id": "FasterScroll",
+      "version": "1.16.0",
+      "download": "https://github.com/christopherweinhardt/FasterScrollQuest/releases/download/v1.16.0/Faster.Scroll.qmod",
+      "source": "https://github.com/christopherweinhardt/FasterScrollQuest/",
+      "author": "Christoffyw",
+      "cover": "https://raw.githubusercontent.com/christopherweinhardt/FasterScrollQuest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "DlcSorter",
+      "description": "Sorts the DLC packs alphabetically.",
+      "id": "DlcSorter",
+      "version": "0.1.12",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/releases/download/v0.1.12/DlcSorter.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.DlcSorter/",
+      "author": "DanTheMan827",
+      "cover": "https://raw.githubusercontent.com/DanTheMan827-BeatSaber/Quest.DlcSorter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.23",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.23/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "NoPromo",
+      "description": "Hides the promo banner on the main screen.",
+      "id": "NoPromo",
+      "version": "0.1.12",
+      "download": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/releases/download/v0.1.12/NoPromo.qmod",
+      "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
+      "author": "DanTheMan827",
+      "cover": "",
+      "modloader": "Scotland2"
     }
   ]
 }
