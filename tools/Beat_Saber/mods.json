@@ -12173,6 +12173,17 @@
       "author": "StackDoubleFlow",
       "cover": "",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.9",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.9-bs-1.37.0/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12823,6 +12834,17 @@
       "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
       "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "QuestSounds",
+      "description": "Allows users to change their sfx sounds and in-game music easily!",
+      "id": "QuestSounds",
+      "version": "1.5.1",
+      "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.5.1/QuestSounds_1.5.1.qmod",
+      "source": "https://github.com/EnderdracheLP/QuestSounds/",
+      "author": "Rugtveit, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/QuestSounds/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.40.5_5928": [
@@ -13190,6 +13212,28 @@
       "author": "BoopetyDoopety, EnderdracheLP",
       "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.9",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.9-bs-1.40.6/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "QuestSounds",
+      "description": "Allows users to change their sfx sounds and in-game music easily!",
+      "id": "QuestSounds",
+      "version": "1.5.2",
+      "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.5.2/QuestSounds_1.5.2.qmod",
+      "source": "https://github.com/EnderdracheLP/QuestSounds/",
+      "author": "Rugtveit, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/QuestSounds/master/Cover.jpg",
+      "modloader": "Scotland2"
     }
   ],
   "1.40.7_7060": [
@@ -13235,6 +13279,149 @@
       "source": "https://github.com/DanTheMan827-BeatSaber/Quest.NoPromo/",
       "author": "DanTheMan827",
       "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Nya",
+      "description": "Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!",
+      "id": "Nya",
+      "version": "1.1.2",
+      "download": "https://github.com/FrozenAlex/Nya-quest/releases/download/v1.1.2-bs-1.40.7/Nya.qmod",
+      "source": "https://github.com/FrozenAlex/Nya-quest/",
+      "author": "FrozenAlex",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/Nya-quest/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BetterSongSearch",
+      "description": "Search and download songs with a lot of filtering and sorting options and without frustration!",
+      "id": "BetterSongSearch",
+      "version": "2.2.9",
+      "download": "https://github.com/bsq-ports/BetterSongSearchQuest/releases/download/v2.2.9-bs-1.40.7/BetterSongSearch.qmod",
+      "source": "https://github.com/bsq-ports/BetterSongSearchQuest/",
+      "author": "FrozenAlex, FernTheDev, FutureMapper, and Christoffyw",
+      "cover": "https://raw.githubusercontent.com/bsq-ports/BetterSongSearchQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BeatLeader",
+      "description": "beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more",
+      "id": "BeatLeader",
+      "version": "0.8.72",
+      "download": "https://github.com/BeatLeader/beatleader-qmod/releases/download/v0.8.72/BeatLeader.qmod",
+      "source": "https://github.com/BeatLeader/beatleader-qmod/",
+      "author": "NSGolova",
+      "cover": "https://raw.githubusercontent.com/BeatLeader/beatleader-qmod/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.13.0",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.13.0/ClockMod_1.13.0.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "CrashReporter",
+      "description": "Automatically upload crashes.",
+      "id": "crashreporter",
+      "version": "0.1.19",
+      "download": "https://github.com/darknight1050/CrashReporter/releases/download/v0.1.19/CrashReporter.qmod",
+      "source": "https://github.com/darknight1050/CrashReporter/",
+      "author": "darknight1050",
+      "cover": "https://raw.githubusercontent.com/darknight1050/CrashReporter/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "QuestSounds",
+      "description": "Allows users to change their sfx sounds and in-game music easily!",
+      "id": "QuestSounds",
+      "version": "1.5.3",
+      "download": "https://github.com/EnderdracheLP/QuestSounds/releases/download/1.5.3/QuestSounds_1.5.3.qmod",
+      "source": "https://github.com/EnderdracheLP/QuestSounds/",
+      "author": "Rugtveit, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/QuestSounds/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "PlayerDataKeeper",
+      "description": "Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost",
+      "id": "datakeeper",
+      "version": "0.2.4",
+      "download": "https://github.com/Metalit/PlayerDataKeeper/releases/download/v0.2.4/PlayerDataKeeper.qmod",
+      "source": "https://github.com/Metalit/PlayerDataKeeper/",
+      "author": "Metalit",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Intro Skip",
+      "description": "Skip the intro and outro of maps",
+      "id": "IntroSkip",
+      "version": "1.2.1",
+      "download": "https://github.com/Royston1999/IntroSkip-Quest/releases/download/v1.2.1/IntroSkip_v1.2.1.qmod",
+      "source": "https://github.com/Royston1999/IntroSkip-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/IntroSkip-Quest/master/Cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Slice Details",
+      "description": "View extra information about your swings",
+      "id": "slicedetails",
+      "version": "2.1.2",
+      "download": "https://github.com/Royston1999/SliceDetails-Quest/releases/download/v2.1.2/SliceDetails_v2.1.2.qmod",
+      "source": "https://github.com/Royston1999/SliceDetails-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/SliceDetails-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Score Percentage",
+      "description": "shows extra information after completing a level",
+      "id": "scorepercentage",
+      "version": "3.3.3",
+      "download": "https://github.com/Royston1999/ScorePercentage-Quest/releases/download/v3.3.3/ScorePercentage_v3.3.3.qmod",
+      "source": "https://github.com/Royston1999/ScorePercentage-Quest/",
+      "author": "Polly51104",
+      "cover": "https://raw.githubusercontent.com/Royston1999/ScorePercentage-Quest/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Smoothed Controller",
+      "description": "Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc.",
+      "id": "smoothedcontroller",
+      "version": "1.7.3",
+      "download": "https://github.com/FrozenAlex/SmoothedController/releases/download/v1.7.3/SmoothedController.qmod",
+      "source": "https://github.com/FrozenAlex/SmoothedController/",
+      "author": "Kinsi55, Kaitlyn",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "GraphicsTweaks",
+      "description": "Mod to unlock pc graphics settings on quest beat saber",
+      "id": "graphicstweaks",
+      "version": "0.1.7",
+      "download": "https://github.com/FrozenAlex/GraphicsTweaks/releases/download/v0.1.7/GraphicsTweaks.qmod",
+      "source": "https://github.com/FrozenAlex/GraphicsTweaks/",
+      "author": "FrozenAlex, Futuremappermydud",
+      "cover": "https://raw.githubusercontent.com/FrozenAlex/GraphicsTweaks/master/image.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongDownloader",
+      "description": "Download Custom Songs at Runtime",
+      "id": "songdownloader",
+      "version": "0.8.7",
+      "download": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.7/SongDownloader.qmod",
+      "source": "https://github.com/darknight1050/SongDownloader/",
+      "author": "darknight1050, EnderdracheLP, Metalit",
+      "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
       "modloader": "Scotland2"
     }
   ]
