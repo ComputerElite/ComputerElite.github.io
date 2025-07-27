@@ -13590,6 +13590,28 @@
       "author": "Raine \u0026 RedBrumbler",
       "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including HypeRate, Bluetooth and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.3",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.3-incr-4008/HeartBeatQuest.1_40_8.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongDownloader",
+      "description": "Download Custom Songs at Runtime",
+      "id": "songdownloader",
+      "version": "0.8.8",
+      "download": "https://github.com/darknight1050/SongDownloader/releases/download/v0.8.8/SongDownloader.qmod",
+      "source": "https://github.com/darknight1050/SongDownloader/",
+      "author": "darknight1050, EnderdracheLP, Metalit",
+      "cover": "https://raw.githubusercontent.com/darknight1050/SongDownloader/master/cover.png",
+      "modloader": "Scotland2"
     }
   ]
 }
