@@ -10759,6 +10759,17 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_35_0.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.36.1_8647505571": [
@@ -12228,6 +12239,17 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_37_0.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.37.1_9895289101": [
@@ -12922,6 +12944,17 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_40_4.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.40.5_5928": [
@@ -13344,6 +13377,17 @@
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
       "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_40_6.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
     }
   ],
   "1.40.7_7060": [
@@ -13628,6 +13672,17 @@
       "id": "HeartBeatLanReceiver",
       "version": "0.3.4",
       "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.4/HeartBeatQuest.1_40_7.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_40_7.qmod",
       "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
       "author": "frto027",
       "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
@@ -13985,6 +14040,94 @@
       "source": "https://github.com/Metalit/MoreButtons/",
       "author": "Metalit",
       "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "RandomSongPicker",
+      "description": "Adds a button, that picks a random song out of the current list",
+      "id": "RandomSongPicker",
+      "version": "0.4.0",
+      "download": "https://github.com/Tatenshi/RandomSongPicker/releases/download/v0.4.0/RandomSongPicker_1_40_8.qmod",
+      "source": "https://github.com/Tatenshi/RandomSongPicker/",
+      "author": "Tatenshi",
+      "cover": "https://raw.githubusercontent.com/Tatenshi/RandomSongPicker/master/cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "BSNightcoreQuest",
+      "description": "Removes pitch compensation to make songs go nightcore on different speed",
+      "id": "BSNightcoreQuest",
+      "version": "0.2.0",
+      "download": "https://github.com/Tatenshi/BSNightcoreQuest/releases/download/v0.2.0/BSNightcoreQuest_1_40_8.qmod",
+      "source": "https://github.com/Tatenshi/BSNightcoreQuest/",
+      "author": "Tatenshi",
+      "cover": "",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Clock Mod",
+      "description": "Displays the time in game. Alternatively also the Battery Percentage",
+      "id": "ClockMod",
+      "version": "1.15.0",
+      "download": "https://github.com/EnderdracheLP/ClockMod/releases/download/1.15.0/ClockMod_1.15.0.qmod",
+      "source": "https://github.com/EnderdracheLP/ClockMod/",
+      "author": "BoopetyDoopety, EnderdracheLP",
+      "cover": "https://raw.githubusercontent.com/EnderdracheLP/ClockMod/master/Cover.jpg",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.5.1",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.5.1/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "Replay",
+      "description": "Watch back your best scores!",
+      "id": "replay",
+      "version": "0.5.0",
+      "download": "https://github.com/Metalit/Replay/releases/download/v0.5.0/Replay.qmod",
+      "source": "https://github.com/Metalit/Replay/",
+      "author": "Metalit",
+      "cover": "https://raw.githubusercontent.com/Metalit/Replay/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "RecentlyPlayed",
+      "description": "Adds a history tab that displays the most recently played maps",
+      "id": "RecentlyPlayed",
+      "version": "1.0.0",
+      "download": "https://github.com/Tatenshi/RecentlyPlayed/releases/download/v1.0.0/RecentlyPlayed_1_40_8.qmod",
+      "source": "https://github.com/Tatenshi/RecentlyPlayed/",
+      "author": "Tatenshi",
+      "cover": "https://raw.githubusercontent.com/Tatenshi/RecentlyPlayed/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "HeartBeatQuest",
+      "description": "This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it.",
+      "id": "HeartBeatLanReceiver",
+      "version": "0.3.5",
+      "download": "https://github.com/frto027/HeartBeatLanClientBSQuest/releases/download/v0.3.5/HeartBeatQuest.1_40_8.qmod",
+      "source": "https://github.com/frto027/HeartBeatLanClientBSQuest/",
+      "author": "frto027",
+      "cover": "https://raw.githubusercontent.com/frto027/HeartBeatLanClientBSQuest/master/cover.png",
+      "modloader": "Scotland2"
+    },
+    {
+      "name": "SongCore",
+      "description": "Adds songloading, map requirement handling and related utilities to the game.",
+      "id": "songcore",
+      "version": "1.1.25",
+      "download": "https://github.com/raineaeternal/Quest-SongCore/releases/download/v1.1.25/SongCore.qmod",
+      "source": "https://github.com/raineaeternal/Quest-SongCore/",
+      "author": "Raine \u0026 RedBrumbler",
+      "cover": "https://raw.githubusercontent.com/raineaeternal/Quest-SongCore/master/cover.jpg",
       "modloader": "Scotland2"
     }
   ]
