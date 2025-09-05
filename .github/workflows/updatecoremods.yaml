@@ -2,8 +2,8 @@ name: Update core mods copy via BMBF git
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */12 * * *'
+  #schedule:
+    #- cron: '0 */12 * * *'
 
 jobs:
   updateMods:
