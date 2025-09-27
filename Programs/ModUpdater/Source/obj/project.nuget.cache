@@ -1,19 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "+Yu2H+lWqryDdS2zAU1zEAaMlYEB+RdAwEY0QSstp8prh11TEaXj4CXKNJODPttBv92KauK8G7EzT1g2UPRzsQ==",
+  "dgSpecHash": "BQMuaGiKIn0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\ModUpdater.csproj",
+  "projectFilePath": "/home/computerelite/rider/computerelite.github.io/Programs/ModUpdater/Source/ModUpdater.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\jetbrains.annotations\\2021.2.0\\jetbrains.annotations.2021.2.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\json.more.net\\1.9.0\\json.more.net.1.9.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\jsonpointer.net\\3.0.3\\jsonpointer.net.3.0.3.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\jsonschema.net\\5.2.6\\jsonschema.net.5.2.6.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\questpatcher.qmod\\2.1.0\\questpatcher.qmod.2.1.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\semanticversioning\\2.0.2\\semanticversioning.2.0.2.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\ComputerElite\\.nuget\\packages\\system.text.json\\6.0.8\\system.text.json.6.0.8.nupkg.sha512"
+    "/home/computerelite/.nuget/packages/jetbrains.annotations/2021.2.0/jetbrains.annotations.2021.2.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/json.more.net/1.9.0/json.more.net.1.9.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/jsonpointer.net/3.0.3/jsonpointer.net.3.0.3.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/jsonschema.net/5.2.6/jsonschema.net.5.2.6.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/questpatcher.qmod/2.1.0/questpatcher.qmod.2.1.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/semanticversioning/2.0.2/semanticversioning.2.0.2.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/system.text.json/6.0.8/system.text.json.6.0.8.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "/home/computerelite/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.36/microsoft.netcore.app.host.linux-x64.6.0.36.nupkg.sha512"
   ],
   "logs": []
 }

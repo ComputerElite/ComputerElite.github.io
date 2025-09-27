@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj": {}
+    "/home/computerelite/rider/computerelite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj": {}
   },
   "projects": {
-    "/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj": {
+    "/home/computerelite/rider/computerelite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj",
+        "projectUniqueName": "/home/computerelite/rider/computerelite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj",
         "projectName": "CoreModUpdater",
-        "projectPath": "/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/ComputerElite.github.io/Programs/CoreModUpdater/Source/obj/",
+        "projectPath": "/home/computerelite/rider/computerelite.github.io/Programs/CoreModUpdater/Source/CoreModUpdater.csproj",
+        "packagesPath": "/home/computerelite/.nuget/packages/",
+        "outputPath": "/home/computerelite/rider/computerelite.github.io/Programs/CoreModUpdater/Source/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "/home/computerelite/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -56,15 +57,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -72,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.301/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.104/RuntimeIdentifierGraph.json"
         }
       }
     }
